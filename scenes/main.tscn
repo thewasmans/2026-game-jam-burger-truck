@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ckuxgrtn5s1cd" path="res://contents/prefabs/enemy_spawner.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://ciot641kpekgm" path="res://contents/prefabs/snack_truck.tscn" id="1_a7v2k"]
 [ext_resource type="PackedScene" uid="uid://djc6xavhxsjd6" path="res://contents/prefabs/ui/game_ui.tscn" id="3_jyhfs"]
-[ext_resource type="Script" uid="uid://bpehwe0t5rrlr" path="res://scripts/ui/game_ui.gd" id="4_tbgi4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_color = Color(0.88235295, 0, 0, 1)
@@ -44,13 +43,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56, 5.19)
 [node name="TargetPositionClients" type="Node3D" parent="Level/SnackTruck" unique_id=1746330562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.56, -2.034757)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/SnackTruck/TargetPositionClients" unique_id=696312194]
+[node name="FrontTruck" type="MeshInstance3D" parent="Level/SnackTruck/TargetPositionClients" unique_id=1816251431]
 mesh = SubResource("SphereMesh_0wfyh")
 
-[node name="EnemySpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("target_position_clients", "target_position_mesh_debug") instance=ExtResource("1_0wfyh")]
+[node name="Leaving" type="MeshInstance3D" parent="Level/SnackTruck/TargetPositionClients" unique_id=696312194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.507998, 0, 0)
+mesh = SubResource("SphereMesh_0wfyh")
+
+[node name="EnemySpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target") instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
-target_position_clients = NodePath("../SnackTruck/TargetPositionClients")
-target_position_mesh_debug = NodePath("../SnackTruck/TargetPositionClients/MeshInstance3D")
+front_truck_target = NodePath("../SnackTruck/TargetPositionClients/FrontTruck")
+out_screen_target = NodePath("../SnackTruck/TargetPositionClients/Leaving")
 
 [node name="Ground" type="MeshInstance3D" parent="Level" unique_id=1600320922]
 transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, 0, 0)
@@ -86,4 +89,3 @@ transform = Transform3D(0.635, 0, 0, 0, 1, 0, 0, 0, 0.635, 1.38, 3.58, 31.565)
 mesh = SubResource("BoxMesh_jyhfs")
 
 [node name="GameUI" parent="." unique_id=149232493 instance=ExtResource("3_jyhfs")]
-script = ExtResource("4_tbgi4")

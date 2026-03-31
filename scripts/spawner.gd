@@ -4,13 +4,14 @@ class_name EnemySpawner
 
 @export var enemy_scene: PackedScene
 @export var spawn_area: BoxShape3D
-@export var target_position_clients: Node3D
-@export var target_position_mesh_debug: MeshInstance3D 
+@export var front_truck_target: MeshInstance3D 
+@export var out_screen_target: MeshInstance3D 
 
 var timer: Timer
 
 func _ready() -> void:
-	target_position_mesh_debug.hide()
+	front_truck_target.hide()
+	out_screen_target.hide()
 	timer = Timer.new()
 	timer.wait_time = 2.0
 	timer.timeout.connect(spawn_enemy)
@@ -22,7 +23,8 @@ func spawn_enemy() -> void:
 		return
 
 	var enemy: Enemy = enemy_scene.instantiate()
-	enemy.target_position = target_position_clients.global_position
+	enemy.target_position = front_truck_target.global_position
+	enemy.target_leaving = out_screen_target.global_position
 	var spawn_position: Vector3 = get_random_spawn_position()
 	get_parent().add_child(enemy)
 	enemy.global_transform.origin = spawn_position
