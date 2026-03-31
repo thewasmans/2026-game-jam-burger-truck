@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://da52klgb8iem0"]
+
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_r0r7x"]
+
+[resource]
+script = ExtResource("1_r0r7x")
+name = "steack"

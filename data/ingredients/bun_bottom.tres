@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://ds12p0l6sb6u3"]
+
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_3lgsw"]
+
+[resource]
+script = ExtResource("1_3lgsw")
+name = "Bun Bottom"
