@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 class_name Enemy
 
+signal leaving_truck
+
 enum State { MOVING_TO_TRUCK, WAITING, LEAVING }
 
 @export var speed: float = 5.0
@@ -18,7 +20,7 @@ func _ready() -> void:
 	wait_timer.timeout.connect(_on_wait_timer_timeout)
 	add_child(wait_timer)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	match current_state:
 		State.MOVING_TO_TRUCK:
 			var direction: Vector3 = (target_position - global_transform.origin).normalized()
@@ -34,11 +36,14 @@ func _physics_process(delta: float) -> void:
 			pass
 			
 		State.LEAVING:
-			velocity = Vector3.RIGHT * speed
-			if global_transform.origin.x > 20:
+			var direction: Vector3 = (target_leaving - global_transform.origin).normalized()
+			if global_transform.origin.distance_to(target_leaving) > 1:
+				velocity = direction * speed
+			else:
 				queue_free()
 
 	move_and_slide()
 
 func _on_wait_timer_timeout() -> void:
 	current_state = State.LEAVING
+	leaving_truck.emit()

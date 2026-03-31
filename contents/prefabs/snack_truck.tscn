@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ciot641kpekgm"]
 
+[ext_resource type="Script" uid="uid://c48dl325ub3ad" path="res://scripts/snack_truck.gd" id="1_afr5m"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_1"]
 size = Vector3(4.2857666, 2, 2.3920898)
 
@@ -9,6 +11,7 @@ size = Vector3(2, 2, 2)
 [sub_resource type="CylinderMesh" id="CylinderMesh_jjpmk"]
 
 [node name="SnackTruck" type="StaticBody3D" unique_id=300776292]
+script = ExtResource("1_afr5m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1434122766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06573486, 0, 0.022705078)
