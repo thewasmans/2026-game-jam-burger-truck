@@ -11,6 +11,15 @@ config_version=5
 [application]
 
 config/name="2026-game-jam-burger-truck"
+run/main_scene="uid://cgrt8n5e5c5q8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 config/main_scene="res://scenes/main.tscn"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
