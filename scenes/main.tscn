@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cgrt8n5e5c5q8"]
+
+[ext_resource type="PackedScene" uid="uid://ciot641kpekgm" path="res://scenes/snack_truck.tscn" id="1_a7v2k"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="2_c5d1k"]
+[ext_resource type="Script" uid="uid://dl30bfxeahsmq" path="res://scripts/spawner.gd" id="3_abcde"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(20, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_sugp2"]
+sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
+
+[sub_resource type="Environment" id="Environment_jyhfs"]
+background_mode = 2
+sky = SubResource("Sky_sugp2")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
+size = Vector3(10, 10, 10)
+
+[node name="Main" type="Node3D" unique_id=113603498]
+
+[node name="Global" type="Node" parent="." unique_id=994244857]
+
+[node name="Camera3D" type="Camera3D" parent="Global" unique_id=1726156330]
+transform = Transform3D(-1, 2.2626681e-08, -8.444392e-08, 0, 0.9659259, 0.25881907, 8.742278e-08, 0.25881907, -0.9659258, 0, 5, -10.443594)
+
+[node name="Level" type="Node" parent="." unique_id=751625337]
+
+[node name="EnemySpawner" type="Node3D" parent="Level" unique_id=456789123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5595524, -10)
+script = ExtResource("3_abcde")
+enemy_scene = ExtResource("2_c5d1k")
+spawn_area = SubResource("BoxShape3D_1")
+
+[node name="SnackTruck" parent="Level" unique_id=306403872 instance=ExtResource("1_a7v2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56, 5.19)
+
+[node name="Ground" type="MeshInstance3D" parent="Level" unique_id=1600320922]
+transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("BoxMesh_sugp2")
+
+[node name="Environments" type="Node" parent="." unique_id=382932535]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environments" unique_id=574237056]
+environment = SubResource("Environment_jyhfs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environments" unique_id=330718780]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Placeholder Enviro" type="MeshInstance3D" parent="Environments" unique_id=123015361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.745, 3.64, 15.63)
+mesh = SubResource("BoxMesh_jyhfs")
+
+[node name="Placeholder Enviro4" type="MeshInstance3D" parent="Environments" unique_id=728387048]
+transform = Transform3D(1.875, 0, 0, 0, 1.41, 0, 0, 0, 1, -9.785, 3.64, 22.535)
+mesh = SubResource("BoxMesh_jyhfs")
+
+[node name="Placeholder Enviro5" type="MeshInstance3D" parent="Environments" unique_id=1259912896]
+transform = Transform3D(1.875, 0, 0, 0, 1.41, 0, 0, 0, 1, -22.455, 3.64, 14.41)
+mesh = SubResource("BoxMesh_jyhfs")
+
+[node name="Placeholder Enviro2" type="MeshInstance3D" parent="Environments" unique_id=568876925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22, 1.1, 20.03)
+mesh = SubResource("BoxMesh_jyhfs")
+
+[node name="Placeholder Enviro3" type="MeshInstance3D" parent="Environments" unique_id=1669315401]
+transform = Transform3D(0.635, 0, 0, 0, 1, 0, 0, 0, 0.635, 1.38, 3.58, 31.565)
+mesh = SubResource("BoxMesh_jyhfs")
