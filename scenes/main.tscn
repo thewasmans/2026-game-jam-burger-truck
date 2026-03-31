@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ckuxgrtn5s1cd" path="res://contents/prefabs/enemy_spawner.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://ciot641kpekgm" path="res://contents/prefabs/snack_truck.tscn" id="1_a7v2k"]
+[ext_resource type="PackedScene" uid="uid://djc6xavhxsjd6" path="res://contents/prefabs/ui/game_ui.tscn" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://bpehwe0t5rrlr" path="res://scripts/ui/game_ui.gd" id="4_tbgi4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_color = Color(0.88235295, 0, 0, 1)
@@ -82,3 +84,6 @@ mesh = SubResource("BoxMesh_jyhfs")
 [node name="Placeholder Enviro3" type="MeshInstance3D" parent="Environments" unique_id=1669315401]
 transform = Transform3D(0.635, 0, 0, 0, 1, 0, 0, 0, 0.635, 1.38, 3.58, 31.565)
 mesh = SubResource("BoxMesh_jyhfs")
+
+[node name="GameUI" parent="." unique_id=149232493 instance=ExtResource("3_jyhfs")]
+script = ExtResource("4_tbgi4")
