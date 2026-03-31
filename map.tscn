@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dhsoftcr8jh33"]
+
+[ext_resource type="PackedScene" uid="uid://p88ke4grqydx" path="res://counter.tscn" id="1_e0an3"]
+[ext_resource type="PackedScene" uid="uid://bhmkjwxuwlec6" path="res://ingredient_crate.tscn" id="2_p5pve"]
+[ext_resource type="PackedScene" uid="uid://btn56u0cjwte3" path="res://stove.tscn" id="3_urblq"]
+
+[node name="Map" type="Node" unique_id=814760066]
+
+[node name="Counter" parent="." unique_id=870078296 instance=ExtResource("1_e0an3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Counter2" parent="." unique_id=1273896585 instance=ExtResource("1_e0an3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="Counter3" parent="." unique_id=1426588164 instance=ExtResource("1_e0an3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="Counter4" parent="." unique_id=1862443140 instance=ExtResource("1_e0an3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+
+[node name="Counter5" parent="." unique_id=410858721 instance=ExtResource("1_e0an3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="Counter6" parent="." unique_id=296049483 instance=ExtResource("1_e0an3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3)
+
+[node name="Counter7" parent="." unique_id=795371894 instance=ExtResource("1_e0an3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="Ingredient_Crate" parent="." unique_id=919005442 instance=ExtResource("2_p5pve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5)
+
+[node name="Ingredient_Crate2" parent="." unique_id=1315375097 instance=ExtResource("2_p5pve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5)
+
+[node name="Ingredient_Crate3" parent="." unique_id=1029953727 instance=ExtResource("2_p5pve")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 0, -4)
+
+[node name="Ingredient_Crate4" parent="." unique_id=1139325182 instance=ExtResource("2_p5pve")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 0, -3)
+
+[node name="Stove" parent="." unique_id=153617488 instance=ExtResource("3_urblq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Stove2" parent="." unique_id=317811751 instance=ExtResource("3_urblq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
+
+[node name="Stove3" parent="." unique_id=1137081799 instance=ExtResource("3_urblq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -5)
