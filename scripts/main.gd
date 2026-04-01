@@ -3,7 +3,6 @@ extends Node3D
 @export var snack_truck: SnackTruck
 @export var game_ui: GameUI
 @export var spawner: EnemySpawner
-@export var level: Node
 
 func _ready() -> void:
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
