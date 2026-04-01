@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://djc6xavhxsjd6"]
 
 [ext_resource type="Script" uid="uid://b8ox1k3noecv8" path="res://scripts/ui/game_ui.gd" id="1_84on6"]
-[ext_resource type="Script" uid="uid://dxgp27gfp76am" path="res://scripts/ui/score_timer_ui.gd" id="2_ajtxk"]
 [ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/in_game_theme.tres" id="1_ajtxk"]
+[ext_resource type="Script" path="res://scripts/ui/score_timer_ui.gd" id="2_ajtxk"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("reputation_slider", "button_create_burger")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("reputation_slider", "button_create_burger", "container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,6 +15,7 @@ theme = ExtResource("1_ajtxk")
 script = ExtResource("1_84on6")
 reputation_slider = NodePath("HSlider")
 button_create_burger = NodePath("ButtonCreateBurger")
+container = NodePath("HBoxContainer")
 
 [node name="HSlider" type="HSlider" parent="." unique_id=74886958]
 layout_mode = 0
@@ -57,3 +58,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 script = ExtResource("2_ajtxk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1966454403]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 186.0
+offset_right = 573.0
+offset_bottom = 226.0
