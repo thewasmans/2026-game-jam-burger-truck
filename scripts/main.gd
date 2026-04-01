@@ -6,11 +6,13 @@ class_name Main
 @export var game_ui: GameUI
 @export var spawner: EnemySpawner
 @export var burgers_data: Array[BurgerData]
+@export var ingredients_data: Array[Ingredient]
 var _clients:Array[Enemy] = []
 
 func _ready() -> void:
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
 	game_ui.button_create_burger.pressed.connect(create_burger)
+	game_ui.init_buttons_ingredients(ingredients_data)
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is Enemy:
