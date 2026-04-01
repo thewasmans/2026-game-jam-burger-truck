@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://cuu7aqcr35s2l"]
+
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_ypucx"]
+[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_yr0u2"]
+[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="3_udw1l"]
+[ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="4_ypucx"]
+[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="5_8kp5d"]
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/burger_data.gd" id="6_j3bcd"]
+
+[resource]
+script = ExtResource("6_j3bcd")
+ingredients = Array[ExtResource("1_ypucx")]([ExtResource("2_yr0u2"), ExtResource("3_udw1l"), ExtResource("4_ypucx"), ExtResource("4_ypucx"), ExtResource("4_ypucx"), ExtResource("5_8kp5d")])
+metadata/_custom_type_script = "uid://b250qdutrqhpq"
