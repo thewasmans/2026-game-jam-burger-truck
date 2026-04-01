@@ -15,7 +15,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_278i7"]
 resource_local_to_scene = true
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.78431374)
+albedo_color = Color(1, 1, 1, 0.88235295)
 albedo_texture = SubResource("ViewportTexture_i5gv5")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_i5gv5"]
@@ -36,9 +36,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8244037, 0)
 mesh = SubResource("BoxMesh_1")
 
 [node name="Hover" type="MeshInstance3D" parent="." unique_id=771406449]
-transform = Transform3D(-3.5299995, 2.9808697e-07, 7.987217e-08, 2.7971151e-07, 3.4764783, -0.61237127, -1.3037219e-07, -0.61237127, -3.4764783, -0.049915195, 1.9152641, 0.0037679672)
+transform = Transform3D(-4.951, 1.0615918e-07, 5.3805445e-07, 0, 0.97124, -2.5794523, -7.4758026e-07, -0.7030605, -3.5633733, -0.049915195, 2.1681755, 0.0037679672)
 mesh = SubResource("PlaneMesh_i5gv5")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=769199299]
+size = Vector2i(1152, 648)
 
 [node name="ClientRequest" parent="SubViewport" unique_id=853921984 instance=ExtResource("3_y2qxo")]

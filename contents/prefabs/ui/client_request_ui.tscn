@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b47evmm3yxiqf"]
 
 [ext_resource type="Script" uid="uid://cdhu8yyerjr5u" path="res://scripts/ui/client_request_ui.gd" id="1_e2jbl"]
+[ext_resource type="Texture2D" uid="uid://du6wlw8v76xmu" path="res://contents/ui/ingredients/placholder_cheese.png" id="2_go603"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ta5aa"]
 
@@ -18,7 +19,7 @@ border_color = Color(0.16565639, 0.16565642, 0.1656563, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta5aa"]
 
-[node name="Control" type="VBoxContainer" unique_id=2100109262 node_paths=PackedStringArray("label", "waiting")]
+[node name="ClientRequestUI" type="VBoxContainer" unique_id=2100109262 node_paths=PackedStringArray("label", "waiting", "ingredients_container")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -27,29 +28,74 @@ grow_vertical = 2
 script = ExtResource("1_e2jbl")
 label = NodePath("ClientRequest/Label")
 waiting = NodePath("HSlider")
+ingredients_container = NodePath("ClientRequest/FlowContainer")
 
 [node name="ClientRequest" type="Panel" parent="." unique_id=298207108]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ClientRequest" unique_id=1515744081]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="ClientRequest" unique_id=210546071 node_paths=PackedStringArray("label")]
+[node name="Label" type="Label" parent="ClientRequest" unique_id=210546071]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 9.0
+offset_bottom = -349.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 84
 text = "REQUEST"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_e2jbl")
-label = NodePath(".")
+
+[node name="FlowContainer" type="HFlowContainer" parent="ClientRequest" unique_id=2100042202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -58.0
+offset_top = 277.5
+offset_right = 58.0
+offset_bottom = -70.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ClientRequest/FlowContainer" unique_id=8562131]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_go603")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ClientRequest/FlowContainer" unique_id=1833358389]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_go603")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="ClientRequest/FlowContainer" unique_id=568146444]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_go603")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="ClientRequest/FlowContainer" unique_id=1726589448]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_go603")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="ClientRequest/FlowContainer" unique_id=734530533]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_go603")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="ClientRequest/FlowContainer" unique_id=1620704640]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_go603")
+expand_mode = 1
 
 [node name="HSlider" type="HSlider" parent="." unique_id=1997633651]
 layout_mode = 2
