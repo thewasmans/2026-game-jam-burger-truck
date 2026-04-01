@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bhmkjwxuwlec6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cvfe5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2c1oy"]
+size = Vector3(1, 0.9945679, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xng24"]
+
+[node name="Ingredient_Crate" type="CSGMesh3D" unique_id=919005442]
+mesh = SubResource("BoxMesh_cvfe5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=120719558]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1591249721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0027160645, 0)
+shape = SubResource("BoxShape3D_2c1oy")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=473910717]
+transform = Transform3D(0.79807574, 0, 0, 0, 0.79807574, 0, 0, 0, 0.25291377, 0, 0, 0.6)
+operation = 2
+mesh = SubResource("BoxMesh_xng24")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=396230925]
+transform = Transform3D(0.7980757, 0, 0, 0, -3.4884994e-08, 0.25291374, 0, -0.7980756, -1.1055211e-08, 0, 0.6, 0)
+operation = 2
+mesh = SubResource("BoxMesh_xng24")
