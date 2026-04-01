@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b8q3ynq5ni8tq"]
+
+[node name="Node3D" type="Control" unique_id=1829518468]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=106615898]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 182.0
+offset_bottom = 146.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+folded = true
+title = "Buy Menu"
+title_alignment = 1
+
+[node name="Button" type="Button" parent="FoldableContainer" unique_id=2121802122]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Table 150$"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=135392274]
+layout_mode = 0
+offset_right = 182.0
+offset_bottom = 45.0
+tooltip_text = "This is how much money you have, earn more by selling burgers."
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=31775040]
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 0
+theme_override_font_sizes/font_size = 32
+text = "$:"
+horizontal_alignment = 1
+vertical_alignment = 1

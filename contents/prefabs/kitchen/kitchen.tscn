@@ -19,49 +19,49 @@ script = ExtResource("1_frebv")
 shape = SubResource("BoxShape3D_frebv")
 
 [node name="Counter" parent="." unique_id=870078296 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4956052)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 0, 0.42527205, 1.4576944)
 
 [node name="Counter2" parent="." unique_id=1273896585 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1.4956052)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -1, 0.42527205, 1.4576944)
 
 [node name="Counter3" parent="." unique_id=1426588164 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1.4956052)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -2, 0.42527205, 1.4576944)
 
 [node name="Counter4" parent="." unique_id=1862443140 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.4956052)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 1, 0.42527205, 1.4576944)
 
 [node name="Counter5" parent="." unique_id=410858721 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1.4956052)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 2, 0.42527205, 1.4576944)
 
 [node name="Counter6" parent="." unique_id=296049483 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0.49560523)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 3, 0.6486752, 0.4829683)
 
 [node name="Counter7" parent="." unique_id=795371894 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -0.50439477)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 3, 0.8720784, -0.4917578)
 
 [node name="Ingredient_Crate" parent="." unique_id=919005442 instance=ExtResource("2_23j7w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.5043948)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -1, 1.0954816, -1.4664838)
 
 [node name="Ingredient_Crate2" parent="." unique_id=1315375097 instance=ExtResource("2_23j7w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5043948)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -2, 1.0954816, -1.4664838)
 
 [node name="Ingredient_Crate3" parent="." unique_id=1029953727 instance=ExtResource("2_23j7w")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 0, -0.50439477)
+transform = Transform3D(-4.371139e-08, 0, 1, 0.2234032, 0.97472614, 9.765264e-09, -0.97472614, 0.2234032, -4.260663e-08, -3, 0.8720784, -0.4917578)
 
 [node name="Ingredient_Crate4" parent="." unique_id=1139325182 instance=ExtResource("2_23j7w")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3, 0, 0.49560523)
+transform = Transform3D(-4.371139e-08, 0, 1, 0.2234032, 0.97472614, 9.765264e-09, -0.97472614, 0.2234032, -4.260663e-08, -3, 0.6486752, 0.4829683)
 
 [node name="Stove" parent="." unique_id=153617488 instance=ExtResource("3_wsxgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5043948)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 0, 1.0954816, -1.4664838)
 
 [node name="Stove2" parent="." unique_id=317811751 instance=ExtResource("3_wsxgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.5043948)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 1, 1.0954816, -1.4664838)
 
 [node name="Stove3" parent="." unique_id=1137081799 instance=ExtResource("3_wsxgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1.5043948)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 2, 1.0954816, -1.4664838)
 
 [node name="Counter8" type="MeshInstance3D" parent="." unique_id=1699754072]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1.4956052)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -3, 0.42527205, 1.4576944)
 mesh = SubResource("BoxMesh_4xowi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Counter8" unique_id=86061582]
@@ -70,7 +70,7 @@ mesh = SubResource("BoxMesh_4xowi")
 shape = SubResource("BoxShape3D_a202f")
 
 [node name="Counter9" type="MeshInstance3D" parent="." unique_id=984301121]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1.5043948)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -3, 1.0954816, -1.4664838)
 mesh = SubResource("BoxMesh_4xowi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Counter9" unique_id=1588025069]
@@ -79,7 +79,7 @@ mesh = SubResource("BoxMesh_4xowi")
 shape = SubResource("BoxShape3D_a202f")
 
 [node name="Counter10" type="MeshInstance3D" parent="." unique_id=543244537]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1.5043948)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 3, 1.0954816, -1.4664838)
 mesh = SubResource("BoxMesh_4xowi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Counter10" unique_id=1445336444]
@@ -88,7 +88,7 @@ mesh = SubResource("BoxMesh_4xowi")
 shape = SubResource("BoxShape3D_a202f")
 
 [node name="Counter11" type="MeshInstance3D" parent="." unique_id=1557949106]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1.4956052)
+transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 3, 0.42527205, 1.4576944)
 mesh = SubResource("BoxMesh_4xowi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Counter11" unique_id=2097294972]
