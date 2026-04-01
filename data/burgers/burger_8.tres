@@ -10,4 +10,5 @@
 [resource]
 script = ExtResource("5_2fu7n")
 ingredients = Array[ExtResource("1_iv2n4")]([ExtResource("2_r3e0r"), ExtResource("3_ll77q"), ExtResource("2_r3e0r"), ExtResource("3_ll77q"), ExtResource("4_r3e0r"), ExtResource("4_x88qq")])
+name = "2 Floor Burger"
 metadata/_custom_type_script = "uid://b250qdutrqhpq"
