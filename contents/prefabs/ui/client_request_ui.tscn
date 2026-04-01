@@ -32,6 +32,11 @@ waiting = NodePath("HSlider")
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="HBoxContainer" type="HBoxContainer" parent="ClientRequest" unique_id=1515744081]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Label" type="Label" parent="ClientRequest" unique_id=210546071 node_paths=PackedStringArray("label")]
 layout_mode = 1
 anchors_preset = 15

@@ -9,7 +9,7 @@ var _clients:Array[Enemy] = []
 
 func _ready() -> void:
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
-	game_ui.button.pressed.connect(create_burger)
+	game_ui.button_create_burger.pressed.connect(create_burger)
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is Enemy:
