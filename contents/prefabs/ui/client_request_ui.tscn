@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b47evmm3yxiqf"]
+
+[ext_resource type="Script" uid="uid://cdhu8yyerjr5u" path="res://scripts/ui/client_request_ui.gd" id="1_e2jbl"]
+
+[node name="ClientRequest" type="Panel" unique_id=298207108 node_paths=PackedStringArray("label")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e2jbl")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=210546071 node_paths=PackedStringArray("label")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 84
+text = "REQUEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_e2jbl")
+label = NodePath(".")
