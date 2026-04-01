@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cswgje7b0i4vs"]
 
-[ext_resource type="Texture2D" uid="uid://db27ror4xebrx" path="res://contents/ui/ingredients/placeholder_cheese.png" id="1_8upd0"]
+[ext_resource type="Texture2D" uid="uid://du6wlw8v76xmu" path="res://contents/ui/ingredients/placholder_cheese.png" id="1_8upd0"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_abcde"]
 
 [resource]

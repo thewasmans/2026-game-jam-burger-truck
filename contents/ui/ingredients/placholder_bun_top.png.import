@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b38tki1u4bt5x"
-path.s3tc="res://.godot/imported/placeholder_salad.png-5733e26031960e86d8af33bc6bd92039.s3tc.ctex"
+uid="uid://wo4ma1j1r3yy"
+path.s3tc="res://.godot/imported/placholder_bun_top.png-b294ead04b28ad6ed8c653b06e95069b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://contents/ui/ingredients/placeholder_salad.png"
-dest_files=["res://.godot/imported/placeholder_salad.png-5733e26031960e86d8af33bc6bd92039.s3tc.ctex"]
+source_file="res://contents/ui/ingredients/placholder_bun_top.png"
+dest_files=["res://.godot/imported/placholder_bun_top.png-b294ead04b28ad6ed8c653b06e95069b.s3tc.ctex"]
 
 [params]
 

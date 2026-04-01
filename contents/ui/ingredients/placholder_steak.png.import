@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3wk4bvxjwcfj"
-path.s3tc="res://.godot/imported/placeholder_bun_bottom.png-c4a56b1eb13590b0ddeea52da644b5df.s3tc.ctex"
+uid="uid://8r31g5mnesv1"
+path.s3tc="res://.godot/imported/placholder_steak.png-c144e53b4a617d552bab106c0f3b0e9c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://contents/ui/ingredients/placeholder_bun_bottom.png"
-dest_files=["res://.godot/imported/placeholder_bun_bottom.png-c4a56b1eb13590b0ddeea52da644b5df.s3tc.ctex"]
+source_file="res://contents/ui/ingredients/placholder_steak.png"
+dest_files=["res://.godot/imported/placholder_steak.png-c144e53b4a617d552bab106c0f3b0e9c.s3tc.ctex"]
 
 [params]
 

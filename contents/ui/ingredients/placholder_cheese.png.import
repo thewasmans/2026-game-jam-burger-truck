@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr6wn0ypn15kl"
-path.s3tc="res://.godot/imported/placeholder_tomato.png-9d03fc6291580ef4cf19911cbf65e9b4.s3tc.ctex"
+uid="uid://du6wlw8v76xmu"
+path.s3tc="res://.godot/imported/placholder_cheese.png-89a9375f2dcc625f07988afe20707225.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://contents/ui/ingredients/placeholder_tomato.png"
-dest_files=["res://.godot/imported/placeholder_tomato.png-9d03fc6291580ef4cf19911cbf65e9b4.s3tc.ctex"]
+source_file="res://contents/ui/ingredients/placholder_cheese.png"
+dest_files=["res://.godot/imported/placholder_cheese.png-89a9375f2dcc625f07988afe20707225.s3tc.ctex"]
 
 [params]
 
