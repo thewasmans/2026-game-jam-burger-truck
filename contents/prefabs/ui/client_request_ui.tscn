@@ -2,16 +2,42 @@
 
 [ext_resource type="Script" uid="uid://cdhu8yyerjr5u" path="res://scripts/ui/client_request_ui.gd" id="1_e2jbl"]
 
-[node name="ClientRequest" type="Panel" unique_id=298207108 node_paths=PackedStringArray("label")]
+[sub_resource type="ImageTexture" id="ImageTexture_ta5aa"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_go603"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_r44ed"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_y88vk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y88vk"]
+bg_color = Color(0.17103913, 0.17103916, 0.17103904, 1)
+border_width_top = 77
+border_width_bottom = 19
+border_color = Color(0.16565639, 0.16565642, 0.1656563, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta5aa"]
+
+[node name="Control" type="VBoxContainer" unique_id=2100109262 node_paths=PackedStringArray("label", "waiting")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e2jbl")
-label = NodePath("Label")
+label = NodePath("ClientRequest/Label")
+waiting = NodePath("HSlider")
 
-[node name="Label" type="Label" parent="." unique_id=210546071 node_paths=PackedStringArray("label")]
+[node name="ClientRequest" type="Panel" parent="." unique_id=298207108]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ClientRequest" unique_id=1515744081]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="ClientRequest" unique_id=210546071 node_paths=PackedStringArray("label")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,3 +50,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_e2jbl")
 label = NodePath(".")
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1997633651]
+layout_mode = 2
+theme_override_icons/grabber = SubResource("ImageTexture_ta5aa")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_go603")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_r44ed")
+theme_override_icons/tick = SubResource("ImageTexture_y88vk")
+theme_override_styles/slider = SubResource("StyleBoxFlat_y88vk")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ta5aa")
+max_value = 3.0
+step = 0.01
+value = 3.0

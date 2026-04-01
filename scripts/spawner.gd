@@ -2,6 +2,8 @@ extends Node3D
 
 class_name EnemySpawner
 
+signal client_spawned(client:Enemy)
+
 @export var enemy_scene: PackedScene
 @export var spawn_area: BoxShape3D
 @export var front_truck_target: MeshInstance3D 
@@ -28,6 +30,7 @@ func spawn_enemy() -> void:
 	var spawn_position: Vector3 = get_random_spawn_position()
 	get_parent().add_child(enemy)
 	enemy.global_transform.origin = spawn_position
+	client_spawned.emit(enemy)
 
 func get_random_spawn_position() -> Vector3:
 	var spawn_area_size: Vector3 = spawn_area.size
