@@ -17,6 +17,7 @@ enum State { MOVING_TO_TRUCK, WAITING, LEAVING }
 var current_state: State = State.MOVING_TO_TRUCK
 var wait_timer: Timer
 
+var _burger_request:BurgerData
 var _is_hungry: bool
 var _is_leaved: bool
 var value_waiting: float
@@ -29,6 +30,9 @@ func _ready() -> void:
 	wait_timer.timeout.connect(_on_wait_timer_timeout)
 	add_child(wait_timer)
 	client_request_ui.set_request("FOOD")
+	
+func set_burger(burger_data:BurgerData):
+	_burger_request = burger_data
 
 func _physics_process(delta: float) -> void:
 	if _is_leaved:
