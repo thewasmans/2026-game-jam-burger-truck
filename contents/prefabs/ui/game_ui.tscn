@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djc6xavhxsjd6"]
 
 [ext_resource type="Script" uid="uid://b8ox1k3noecv8" path="res://scripts/ui/game_ui.gd" id="1_84on6"]
+[ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/in_game_theme.tres" id="1_ajtxk"]
 
 [node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("reputation_slider", "button_create_burger")]
 layout_mode = 3
@@ -9,23 +10,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ajtxk")
 script = ExtResource("1_84on6")
 reputation_slider = NodePath("HSlider")
 button_create_burger = NodePath("ButtonCreateBurger")
 
 [node name="HSlider" type="HSlider" parent="." unique_id=74886958]
 layout_mode = 0
-offset_left = 488.0
-offset_top = 136.0
+offset_left = 489.0
+offset_top = 133.0
 offset_right = 709.0
-offset_bottom = 162.0
+offset_bottom = 167.0
 max_value = 10.0
 value = 10.0
 
 [node name="ButtonCreateBurger" type="Button" parent="." unique_id=1547378560]
 layout_mode = 0
-offset_left = 463.0
+offset_left = 477.0
 offset_top = 30.0
-offset_right = 705.0
+offset_right = 719.0
 offset_bottom = 124.0
 text = "CREATE BURGER"
