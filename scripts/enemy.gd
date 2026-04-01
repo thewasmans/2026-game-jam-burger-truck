@@ -33,6 +33,7 @@ func _ready() -> void:
 	
 func set_burger(burger_data:BurgerData):
 	_burger_request = burger_data
+	client_request_ui.set_burger(burger_data)
 
 func _physics_process(delta: float) -> void:
 	if _is_leaved:

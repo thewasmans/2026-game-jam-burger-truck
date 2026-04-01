@@ -13,7 +13,9 @@ func add_ingredients(ingredient:Ingredient):
 	ingredients_container.add_child(ingredient_icon)
 	
 func set_burger(burger_data:BurgerData):
-	#label.text = burger_data.name
+	for elt in ingredients_container.get_children():
+		elt.queue_free()
+	label.text = burger_data.name
 	for ingredient in burger_data.ingredients:
 		add_ingredients(ingredient)
 
