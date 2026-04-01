@@ -8,6 +8,7 @@ signal client_spawned(client:Enemy)
 @export var spawn_area: BoxShape3D
 @export var front_truck_target: MeshInstance3D 
 @export var out_screen_target: MeshInstance3D 
+@export var spawn_time: float = 4.0
 
 var timer: Timer
 
@@ -15,7 +16,7 @@ func _ready() -> void:
 	front_truck_target.hide()
 	out_screen_target.hide()
 	timer = Timer.new()
-	timer.wait_time = 2.0
+	timer.wait_time = spawn_time
 	timer.timeout.connect(spawn_enemy)
 	add_child(timer)
 	timer.start()

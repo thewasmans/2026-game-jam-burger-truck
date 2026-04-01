@@ -8,4 +8,5 @@
 [resource]
 script = ExtResource("6_2wghj")
 ingredients = Array[ExtResource("1_ydifg")]([ExtResource("2_3qhwg"), ExtResource("5_iccv0")])
+name = "Empty Burger"
 metadata/_custom_type_script = "uid://b250qdutrqhpq"
