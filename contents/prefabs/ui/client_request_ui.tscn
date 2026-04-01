@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b47evmm3yxiqf"]
 
 [ext_resource type="Script" uid="uid://cdhu8yyerjr5u" path="res://scripts/ui/client_request_ui.gd" id="1_e2jbl"]
+[ext_resource type="Texture2D" uid="uid://c1ty2c05lm22s" path="res://contents/ui/ingredients/placholder_bun_bottom.png" id="2_go603"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ta5aa"]
 
@@ -18,7 +19,7 @@ border_color = Color(0.16565639, 0.16565642, 0.1656563, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta5aa"]
 
-[node name="Control" type="VBoxContainer" unique_id=2100109262 node_paths=PackedStringArray("label", "waiting")]
+[node name="ClientRequestUI" type="VBoxContainer" unique_id=2100109262 node_paths=PackedStringArray("label", "waiting")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,10 +33,19 @@ waiting = NodePath("HSlider")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ClientRequest" unique_id=1515744081]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="FlowContainer" type="HFlowContainer" parent="ClientRequest" unique_id=2100042202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ClientRequest/FlowContainer" unique_id=1678973156]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_go603")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="ClientRequest" unique_id=210546071 node_paths=PackedStringArray("label")]
 layout_mode = 1
