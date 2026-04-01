@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://bk10a4vqsufll"]
+
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_0o70h"]
+[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_edqxl"]
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/burger_data.gd" id="2_nvuy1"]
+[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="3_1c86t"]
+[ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="4_w8pb3"]
+[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="5_3l64k"]
+
+[resource]
+script = ExtResource("2_nvuy1")
+ingredients = Array[ExtResource("1_0o70h")]([ExtResource("2_edqxl"), ExtResource("3_1c86t"), ExtResource("4_w8pb3"), ExtResource("5_3l64k")])
+name = "Simple Cheeseburger"
+metadata/_custom_type_script = "uid://b250qdutrqhpq"
