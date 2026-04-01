@@ -18,9 +18,6 @@ func set_burger(burger_data:BurgerData):
 	label.text = burger_data.name
 	for ingredient in burger_data.ingredients:
 		add_ingredients(ingredient)
-
-func set_request(value:String):
-	label.text = value
 	
 func set_waiting(value:float):
 	waiting.value = value

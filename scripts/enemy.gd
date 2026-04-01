@@ -29,7 +29,6 @@ func _ready() -> void:
 	wait_timer.one_shot = true
 	wait_timer.timeout.connect(_on_wait_timer_timeout)
 	add_child(wait_timer)
-	client_request_ui.set_request("FOOD")
 	
 func set_burger(burger_data:BurgerData):
 	_burger_request = burger_data
