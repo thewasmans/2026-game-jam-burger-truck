@@ -1,10 +1,24 @@
 [gd_scene format=3 uid="uid://p88ke4grqydx"]
 
-[ext_resource type="PackedScene" uid="uid://cduw1pe1m48rv" path="res://plate.tscn" id="1_wcxvy"]
+[ext_resource type="PackedScene" uid="uid://cduw1pe1m48rv" path="res://scenes/plate.tscn" id="1_wcxvy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4xowi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a202f"]
+
+[sub_resource type="GDScript" id="GDScript_sc7mx"]
+script/source = "extends CSGCylinder3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="Counter" type="MeshInstance3D" unique_id=870078296]
 mesh = SubResource("BoxMesh_4xowi")
@@ -16,3 +30,4 @@ shape = SubResource("BoxShape3D_a202f")
 
 [node name="Plate" parent="." unique_id=1494039195 instance=ExtResource("1_wcxvy")]
 transform = Transform3D(0.85564893, 0, 0, 0, 0.045509398, 0, 0, 0, 0.85564893, 0, 0.5482122, 0)
+script = SubResource("GDScript_sc7mx")
