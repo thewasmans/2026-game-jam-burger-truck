@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://ds12p0l6sb6u3"]
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_3lgsw"]
+[ext_resource type="Texture2D" uid="uid://c1ty2c05lm22s" path="res://contents/ui/ingredients/placholder_bun_bottom.png" id="1_lc35h"]
 
 [resource]
 script = ExtResource("1_3lgsw")
 name = "Bun Bottom"
+icon = ExtResource("1_lc35h")
