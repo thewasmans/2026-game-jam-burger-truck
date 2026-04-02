@@ -28,6 +28,7 @@ func _ready() -> void:
 	wait_timer = Timer.new()
 	wait_timer.wait_time = randf_range(wait_time.x, wait_time.y)
 	client_request_ui.waiting.max_value = wait_timer.wait_time
+	client_request_ui.waiting.value = wait_timer.wait_time
 	wait_timer.one_shot = true
 	wait_timer.timeout.connect(_on_wait_timer_timeout)
 	add_child(wait_timer)

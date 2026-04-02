@@ -20,6 +20,8 @@ func _ready() -> void:
 	timer.timeout.connect(spawn_enemy)
 	add_child(timer)
 	timer.start()
+	await get_tree().create_timer(.01).timeout
+	spawn_enemy()
 
 func spawn_enemy() -> void:
 	if enemy_scene == null:
