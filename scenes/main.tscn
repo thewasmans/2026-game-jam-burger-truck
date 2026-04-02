@@ -59,7 +59,8 @@ ingredients_data = Array[ExtResource("13_pm3ni")]([ExtResource("14_y6deb"), ExtR
 [node name="Global" type="Node" parent="." unique_id=1804165768]
 
 [node name="Camera3D" type="Camera3D" parent="Global" unique_id=1998703230]
-transform = Transform3D(-1, -7.5710346e-08, 4.3711385e-08, 0, 0.49999997, 0.86602545, -8.742278e-08, 0.86602545, -0.49999997, 0, 8, -4.159)
+transform = Transform3D(-1, 4.371139e-08, -7.5710346e-08, 0, 0.8660254, 0.5, 8.742278e-08, 0.5, -0.8660254, 0, 8.985, -8.699)
+fov = 48.3
 
 [node name="Level" type="Node" parent="." unique_id=751625337]
 
@@ -80,6 +81,7 @@ mesh = SubResource("SphereMesh_0wfyh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
 front_truck_target = NodePath("../Kitchen/TargetPositionClients/FrontTruck")
 out_screen_target = NodePath("../Kitchen/TargetPositionClients/Leaving")
+spawn_time = 10.0
 
 [node name="Ground" type="MeshInstance3D" parent="Level" unique_id=1600320922]
 transform = Transform3D(100.000015, 0, 0, 0, 0.1, 0, 0, 0, 100.000015, 0, 0, 0)

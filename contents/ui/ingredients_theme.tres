@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://cvnnsdpuxjgqj"]
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/constants/icon_max_width = 100

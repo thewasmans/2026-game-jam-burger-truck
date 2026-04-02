@@ -7,12 +7,16 @@ class_name Main
 @export var spawner: EnemySpawner
 @export var burgers_data: Array[BurgerData]
 @export var ingredients_data: Array[Ingredient]
+var _current_burger:Array[Ingredient]
 var _clients:Array[Enemy] = []
 
 func _ready() -> void:
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
 	game_ui.button_create_burger.pressed.connect(create_burger)
 	game_ui.init_buttons_ingredients(ingredients_data)
+	for button in game_ui.ingredients_buttons:
+		var ingredient:Ingredient = button.get_meta("ingredient")
+		button.pressed.connect(create_burger.bind(ingredient))
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is Enemy:
@@ -35,7 +39,10 @@ func on_enemy_leaving_hungry(client:Enemy) -> void:
 func on_enemy_leaving_satiated():
 	print("TODDO : INCREASE MONEY")
 
-func create_burger():
+func create_burger(ingredient:Ingredient):
+	_current_burger.append(ingredient)
+	game_ui.add_ingredient(ingredient)
+	return
 	if _clients.size() > 0:
 		var client: Enemy = _clients.front()
 		if client:
