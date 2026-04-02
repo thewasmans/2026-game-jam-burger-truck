@@ -15,6 +15,7 @@ enum State { MOVING_TO_TRUCK, WAITING, LEAVING }
 @export var client_request_ui: ClientRequestUI
 @export var hover_node: Node3D
 @export var wait_time: Vector2 = Vector2(10, 15)
+@export var anchor_burger: Node3D
 
 var current_state: State = State.MOVING_TO_TRUCK
 var wait_timer: Timer
@@ -39,7 +40,12 @@ func _ready() -> void:
 	
 func set_burger(burger_data:BurgerData):
 	_burger_request = burger_data
-	client_request_ui.set_burger(burger_data)
+	for ingredient in burger_data.ingredients:
+		var instance: Node3D = ingredient.model_3d.instantiate()
+		instance.position += Vector3.LEFT * anchor_burger.get_child_count() * .25
+		instance.rotate(Vector3.FORWARD, -PI * 0.25)
+		instance.scale = Vector3.ONE * .25
+		anchor_burger.add_child(instance)
 
 func _physics_process(delta: float) -> void:
 	if _is_leaved:
@@ -80,12 +86,12 @@ func _on_wait_timer_timeout() -> void:
 	else:
 		leaving_satiated.emit()
 		
-func give_food(burger:Array[Ingredient])-> bool:
+func give_food(_burger:Array[Ingredient])-> bool:
 	if current_state == State.WAITING:
 		_is_hungry = false
 		wait_timer.stop()
 		current_state = State.LEAVING
-		hover_node.hide()
+		anchor_burger.hide()
 		return true
 	return false
 	

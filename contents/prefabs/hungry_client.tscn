@@ -38,13 +38,14 @@ albedo_texture = SubResource("ViewportTexture_i5gv5")
 [sub_resource type="PlaneMesh" id="PlaneMesh_i5gv5"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_278i7")
-size = Vector2(0.5, 0.25)
+size = Vector2(0.5, 0.053)
 
-[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui", "hover_node")]
+[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui", "hover_node", "anchor_burger")]
 script = ExtResource("1_mntof")
 speed = 2.0
 client_request_ui = NodePath("SubViewport/ClientRequest")
 hover_node = NodePath("Hover")
+anchor_burger = NodePath("Anchor Burger")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1118751600]
 transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0.8244037, 0)
@@ -71,10 +72,13 @@ mesh = SubResource("CylinderMesh_ntmap")
 surface_material_override/0 = SubResource("StandardMaterial3D_rtm0h")
 
 [node name="Hover" type="MeshInstance3D" parent="." unique_id=771406449]
-transform = Transform3D(-4.951, -8.4585515e-08, -2.2713088e-07, 0, 0.70813626, -3.5498185, 4.3283018e-07, -0.96754545, -2.5980744, -1.643, 1.761, -0.301)
+transform = Transform3D(-4.951, -8.4585515e-08, -2.2713088e-07, 0, 0.70813626, -3.5498185, 4.3283018e-07, -0.96754545, -2.5980744, -1.643, 1.2038006, -0.301)
 mesh = SubResource("PlaneMesh_i5gv5")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=769199299]
-size = Vector2i(1152, 648)
+size = Vector2i(1152, 96)
 
 [node name="ClientRequest" parent="SubViewport" unique_id=853921984 instance=ExtResource("2_tnfmv")]
+
+[node name="Anchor Burger" type="Node3D" parent="." unique_id=1795400529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8035934, 1.3651247, 0)
