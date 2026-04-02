@@ -3,7 +3,6 @@ extends Control
 class_name GameUI
 
 @export var reputation_slider: HSlider
-@export var button_create_burger:Button
 @export var container_buttons_ingredients:Container
 @export var container_ingredients_current_burger:Container
 @export var theme_ingredients:Theme
