@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://nv67orp1v886"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ps1qd"]
+transparency = 1
+albedo_color = Color(0.35686275, 1, 1, 0.34509805)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g5dyd"]
+material = SubResource("StandardMaterial3D_ps1qd")
+
+[node name="Selector" type="Node3D" unique_id=375739968]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=524141834]
+transform = Transform3D(1, 0, 0, 0, 0.1812061, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_g5dyd")
