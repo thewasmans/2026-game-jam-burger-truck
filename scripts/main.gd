@@ -62,7 +62,7 @@ func on_enemy_leaving_hungry(client:Enemy) -> void:
 	snack_truck.take_damage(1)
 
 func on_enemy_leaving_satiated(client:Enemy):
-	_money += 0
+	_money += client._burger_request.price
 	game_ui.set_money_value(client._burger_request.price)
 
 func create_burger(ingredient:Ingredient):
