@@ -58,6 +58,7 @@ func on_child_entered_tree(node: Node) -> void:
 			var burger_data = burgers_data.pick_random()
 			client.set_burger(burger_data)
 		client.leaving_hungry.connect(on_enemy_leaving_hungry.bind(client))
+		client.waiting_food.connect(check_all_burgers)
 		_clients.append(client)
 		client.leaved.connect(free_client.bind(client))
 
@@ -71,32 +72,37 @@ func on_enemy_leaving_hungry(client:HungryClient) -> void:
 func add_ingredient_on_plate(ingredient:Ingredient):
 	game_ui.add_ingredient(ingredient)
 	current_plate.add_ingredient(ingredient)
-	var client := current_burger_match_with_client()
-	if client:
-		client.give_food(current_burger)
-		_money += client._burger_request.price
-		game_ui.set_money_value(_money)
-		current_plate.clear()
-		_clients.erase(client)
+	burger_match_with_client(current_burger)
 	
 func plate_selected_changed(side:int):
 	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)
 	plate_selector.global_position = current_plate._anchor.global_position
 	
-func current_burger_match_with_client() -> HungryClient:
+func check_all_burgers() -> void:
+	for plate: Plate in _plates:
+		var client: HungryClient = burger_match_with_client(plate._ingredients)
+		if client:
+			client.give_food(plate._ingredients)
+			_money += client._burger_request.price
+			game_ui.set_money_value(_money)
+			plate.clear()
+			_clients.erase(client)
+
+func burger_match_with_client(burger: Array[Ingredient]) -> HungryClient:
 	for client: HungryClient in _clients:
-		var request_ingredients: Array[Ingredient] = client._burger_request.ingredients
-		var is_match: bool = true
-		
-		if request_ingredients.size() != current_burger.size():
-			is_match = false
-		else:
-			for i: int in range(current_burger.size()):
-				if request_ingredients[i] != current_burger[i]:
-					is_match = false
-					break
-					
-		if is_match:
-			return client
+		if client.is_waiting:
+			var request_ingredients: Array[Ingredient] = client._burger_request.ingredients
+			var is_match: bool = true
+			
+			if request_ingredients.size() != burger.size():
+				is_match = false
+			else:
+				for i: int in range(burger.size()):
+					if request_ingredients[i] != burger[i]:
+						is_match = false
+						break
+						
+			if is_match:
+				return client
 			
 	return null

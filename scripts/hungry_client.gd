@@ -22,6 +22,9 @@ var _burger_request:BurgerData
 var _is_hungry: bool
 var _is_leaved: bool
 var value_waiting: float = -1
+var is_waiting:
+	get:
+		return current_state == State.WAITING
 
 func _ready() -> void:
 	_is_hungry = true
