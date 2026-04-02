@@ -3,11 +3,28 @@
 [ext_resource type="Script" uid="uid://fejlyf0b53bw" path="res://scripts/hungry_client.gd" id="1_mntof"]
 [ext_resource type="PackedScene" uid="uid://b47evmm3yxiqf" path="res://contents/prefabs/ui/client_request_ui.tscn" id="2_tnfmv"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_mntof"]
 size = Vector3(1, 2, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_1"]
-size = Vector3(1, 2, 1)
+[sub_resource type="PrismMesh" id="PrismMesh_tnfmv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x21bv"]
+albedo_color = Color(0.2509804, 0.41568628, 0.19215687, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_fectd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcmfp"]
+albedo_color = Color(0.75006616, 0.639939, 0.25627246, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tniq0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e25xl"]
+albedo_color = Color(0.47191608, 0.28181767, 0.0595572, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ntmap"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtm0h"]
+albedo_color = Color(0.47058824, 0.28235295, 0.05882353, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_i5gv5"]
 viewport_path = NodePath("SubViewport")
@@ -28,16 +45,32 @@ script = ExtResource("1_mntof")
 speed = 2.0
 client_request_ui = NodePath("SubViewport/ClientRequest")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=222683004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8244037, 0)
-shape = SubResource("BoxShape3D_1")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1118751600]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0.8244037, 0)
+shape = SubResource("BoxShape3D_mntof")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=100047945]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8244037, 0)
-mesh = SubResource("BoxMesh_1")
+[node name="Body" type="MeshInstance3D" parent="." unique_id=807406255]
+transform = Transform3D(1, 0, 0, 0, -1, 1.2079664e-07, 0, -1.509958e-07, -0.8, 0, 0.5, 0)
+mesh = SubResource("PrismMesh_tnfmv")
+surface_material_override/0 = SubResource("StandardMaterial3D_x21bv")
+
+[node name="Head" type="MeshInstance3D" parent="." unique_id=1196041355]
+transform = Transform3D(0.80952924, 0, 0, 0, 0.82090056, 0, 0, 0, 0.81373817, 0, 1.409066, 0)
+mesh = SubResource("SphereMesh_fectd")
+surface_material_override/0 = SubResource("StandardMaterial3D_jcmfp")
+
+[node name="HatCylinder" type="MeshInstance3D" parent="." unique_id=2027331020]
+transform = Transform3D(0.69923836, 0, 0, 0, 0.015897809, 0, 0, 0, 0.6881968, 0, 1.8250308, 0)
+mesh = SubResource("CylinderMesh_tniq0")
+surface_material_override/0 = SubResource("StandardMaterial3D_e25xl")
+
+[node name="HatCylinder2" type="MeshInstance3D" parent="." unique_id=196296434]
+transform = Transform3D(0.51599705, 0, 0, 0, 0.05667877, 0, 0, 0, 0.57029665, 0, 1.9025326, 0)
+mesh = SubResource("CylinderMesh_ntmap")
+surface_material_override/0 = SubResource("StandardMaterial3D_rtm0h")
 
 [node name="Hover" type="MeshInstance3D" parent="." unique_id=771406449]
-transform = Transform3D(-4.951, 1.0615918e-07, 5.3805445e-07, 0, 0.97124, -2.5794523, -7.4758026e-07, -0.7030605, -3.5633733, -0.049915195, 2.1681755, 0.0037679672)
+transform = Transform3D(-4.951, -8.4585515e-08, -2.2713088e-07, 0, 0.70813626, -3.5498185, 4.3283018e-07, -0.96754545, -2.5980744, -1.643, 1.761, -0.301)
 mesh = SubResource("PlaneMesh_i5gv5")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=769199299]
