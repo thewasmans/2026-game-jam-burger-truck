@@ -29,6 +29,7 @@ class Plate:
 @export var ingredients_data: Array[Ingredient]
 @export var anchor_plates: Array[Node3D]
 @export var plate_selector: Node3D
+@export var vfx_burger_disappear: GPUParticles3D
 var _clients: Array[HungryClient] = []
 var _money: int = 0
 var _plates: Array[Plate]
@@ -87,11 +88,13 @@ func check_all_burgers() -> void:
 			feed_client(client, plate)
 			
 func feed_client(client:HungryClient, plate:Plate):
-			client.give_food(plate._ingredients)
-			_money += client._burger_request.price
-			game_ui.set_money_value(_money)
-			plate.clear()
-			_clients.erase(client)
+	vfx_burger_disappear.emitting = true
+	vfx_burger_disappear.global_position = plate._anchor.global_position
+	client.give_food(plate._ingredients)
+	_money += client._burger_request.price
+	game_ui.set_money_value(_money)
+	plate.clear()
+	_clients.erase(client)
 
 func burger_match_with_client(burger: Array[Ingredient]) -> HungryClient:
 	for client: HungryClient in _clients:
