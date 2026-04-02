@@ -15,6 +15,12 @@ class Plate:
 		instance.position += Vector3.UP * _ingredients.size() * .25
 		instance.scale = Vector3.ONE * .25
 		_anchor.add_child(instance)
+	
+	func clear():
+		for child in _anchor.get_children():
+			child.queue_free()
+		_ingredients = []
+		
 
 @export var snack_truck: SnackTruck
 @export var game_ui: GameUI
@@ -71,18 +77,29 @@ func create_burger(ingredient:Ingredient):
 	game_ui.add_ingredient(ingredient)
 	current_plate.add_ingredient(ingredient)
 	var client := current_burger_match_with_client()
-	
 	if client:
 		client.give_food(current_burger)
-
+		current_plate.clear()
+	_clients.erase(client)
+	
 func plate_selected_changed(side:int):
 	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)
 	plate_selector.global_position = current_plate._anchor.global_position
 	
-func current_burger_match_with_client()-> HungryClient:
-	for client in spawner._hungries_clients:
-		if client._burger_request.ingredients.size() == current_burger.size():
-			for i in current_burger.size():
-				if client._burger_request.ingredients[i] != current_burger[i]:
+func current_burger_match_with_client() -> HungryClient:
+	for client: HungryClient in _clients:
+		var request_ingredients: Array[Ingredient] = client._burger_request.ingredients
+		var is_match: bool = true
+		
+		if request_ingredients.size() != current_burger.size():
+			is_match = false
+		else:
+			for i: int in range(current_burger.size()):
+				if request_ingredients[i] != current_burger[i]:
+					is_match = false
 					break
+					
+		if is_match:
+			return client
+			
 	return null
