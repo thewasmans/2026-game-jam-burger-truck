@@ -66,6 +66,7 @@ grow_horizontal = 2
 mouse_filter = 2
 max_value = 10.0
 value = 10.0
+editable = false
 
 [node name="HBoxIngredientsButtons" type="HBoxContainer" parent="." unique_id=1966454403]
 layout_mode = 1
