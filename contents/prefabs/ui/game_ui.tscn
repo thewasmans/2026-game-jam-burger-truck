@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/ingredients_theme.tres" id="3_uuvj8"]
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("reputation_slider", "container_buttons_ingredients", "container_ingredients_current_burger", "money_label", "button_left", "button_right")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("reputation_slider", "container_buttons_ingredients", "money_label", "button_left", "button_right")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,6 @@ theme = ExtResource("1_ajtxk")
 script = ExtResource("1_84on6")
 reputation_slider = NodePath("HSlider")
 container_buttons_ingredients = NodePath("HBoxIngredientsButtons")
-container_ingredients_current_burger = NodePath("IngredientsCurrentBurger")
 money_label = NodePath("Money/PanelContainer/Label")
 theme_ingredients = ExtResource("3_uuvj8")
 button_left = NodePath("HBoxIngredientsButtons/ButtonLeft")
@@ -67,20 +66,6 @@ grow_horizontal = 2
 mouse_filter = 2
 max_value = 10.0
 value = 10.0
-
-[node name="IngredientsCurrentBurger" type="VBoxContainer" parent="." unique_id=265625374]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -370.075
-offset_top = -189.0
-offset_right = -270.075
-offset_bottom = 189.0
-grow_horizontal = 0
-grow_vertical = 2
 
 [node name="HBoxIngredientsButtons" type="HBoxContainer" parent="." unique_id=1966454403]
 layout_mode = 1

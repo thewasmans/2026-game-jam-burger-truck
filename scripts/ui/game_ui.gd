@@ -6,7 +6,6 @@ signal select_plate_changed(side:int)
 
 @export var reputation_slider: HSlider
 @export var container_buttons_ingredients:Container
-@export var container_ingredients_current_burger:Container
 @export var money_label:Label
 @export var theme_ingredients:Theme
 @export var button_left:Button
@@ -35,7 +34,6 @@ func add_ingredient(ingredient:Ingredient):
 	ingredient_texture.texture = ingredient.icon
 	ingredient_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	ingredient_texture.custom_minimum_size = Vector2(100, 100)
-	container_ingredients_current_burger.add_child(ingredient_texture)
 
 func set_money_value(value:int):
 	money_label.text = str(value) + "$"

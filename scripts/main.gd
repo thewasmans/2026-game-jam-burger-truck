@@ -8,6 +8,13 @@ class Plate:
 	
 	func _init(anchor:Node3D) -> void:
 		_anchor = anchor	
+		
+	func add_ingredient(ingredient:Ingredient):
+		var instance: Node3D = ingredient.model_3d.instantiate()
+		_ingredients.append(ingredient)
+		instance.position += Vector3.UP * _ingredients.size() * .25
+		instance.scale = Vector3.ONE * .25
+		_anchor.add_child(instance)
 
 @export var snack_truck: SnackTruck
 @export var game_ui: GameUI
@@ -61,12 +68,7 @@ func on_enemy_leaving_satiated(client:Enemy):
 func create_burger(ingredient:Ingredient):
 	_current_burger.append(ingredient)
 	game_ui.add_ingredient(ingredient)
-	return
-	if _clients.size() > 0:
-		var client: Enemy = _clients.front()
-		if client:
-			if client.give_food():
-				_clients.pop_front()
+	current_plate.add_ingredient(ingredient)
 
 func plate_selected_changed(side:int):
 	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)
