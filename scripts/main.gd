@@ -29,7 +29,7 @@ class Plate:
 @export var anchor_plates: Array[Node3D]
 @export var plate_selector: Node3D
 @export var vfx_burger_disappear: GPUParticles3D
-@export var default_amount_money: float = 100.0
+@export var default_amount_money: float = 10.0
 var _clients: Array[HungryClient] = []
 var _money: float = 0
 var _plates: Array[Plate]
@@ -77,6 +77,8 @@ func on_enemy_leaving_hungry(client:HungryClient) -> void:
 	snack_truck.take_damage(1)
 
 func add_ingredient_on_plate(ingredient:Ingredient):
+	if _money - ingredient.price < 0:
+		return
 	_money -= ingredient.price
 	game_ui.set_money_value(_money)
 	current_plate.add_ingredient(ingredient)
