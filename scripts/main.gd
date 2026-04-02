@@ -34,6 +34,7 @@ func _ready() -> void:
 		button.pressed.connect(create_burger.bind(ingredient))
 	for anchor in anchor_plates:
 		_plates.append(Plate.new(anchor))
+	plate_selected_changed(0)
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is Enemy:
@@ -68,5 +69,5 @@ func create_burger(ingredient:Ingredient):
 				_clients.pop_front()
 
 func plate_selected_changed(side:int):
-	_current_index_plate = clamp(0, anchor_plates.size() - 1, _current_index_plate + side)
+	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)
 	plate_selector.global_position = current_plate._anchor.global_position

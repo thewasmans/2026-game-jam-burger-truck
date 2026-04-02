@@ -56,7 +56,7 @@ game_ui = NodePath("GameUI")
 spawner = NodePath("Level/EnemySpawner")
 burgers_data = Array[ExtResource("2_jkv2x")]([ExtResource("3_jbj1t"), ExtResource("4_muem4"), ExtResource("5_dp3eg"), ExtResource("6_0ld40"), ExtResource("7_gqmmt"), ExtResource("8_yc10j"), ExtResource("9_jscy8"), ExtResource("10_pm3ni"), ExtResource("11_y6deb"), ExtResource("12_og1vs")])
 ingredients_data = Array[ExtResource("13_pm3ni")]([ExtResource("14_y6deb"), ExtResource("15_og1vs"), ExtResource("16_2wyq8"), ExtResource("17_vxglm"), ExtResource("18_2f3dj"), ExtResource("19_yq6so"), ExtResource("20_fv21b")])
-anchor_plates = [NodePath("Level/Kitchen/AnchorPlate/AnchorPlate01"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate02"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate03"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate04"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate05"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate06"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate07")]
+anchor_plates = [NodePath("Level/Kitchen/AnchorPlate/AnchorPlate01"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate02"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate03"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate04"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate05")]
 plate_selector = NodePath("Level/Selector")
 
 [node name="Global" type="Node" parent="." unique_id=1804165768]
