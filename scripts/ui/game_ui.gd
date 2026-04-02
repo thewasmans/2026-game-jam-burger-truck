@@ -3,6 +3,7 @@ extends Control
 class_name GameUI
 
 signal select_plate_changed(side:int)
+signal deleted_current_plate
 
 @export var reputation_slider: HSlider
 @export var container_buttons_ingredients:Container
@@ -10,12 +11,14 @@ signal select_plate_changed(side:int)
 @export var theme_ingredients:Theme
 @export var button_left:Button
 @export var button_right:Button
+@export var button_delete:Button
 var ingredients_buttons:Array[Button]
 
 func _ready() -> void:
 	money_label.text = "0 $"
 	button_left.pressed.connect(select_plate.bind(-1))
 	button_right.pressed.connect(select_plate.bind(1))
+	button_delete.pressed.connect(func(): deleted_current_plate.emit())
 
 func init_buttons_ingredients(ingredients:Array[Ingredient]):
 	for ingredient in ingredients:

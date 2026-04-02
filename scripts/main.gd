@@ -45,6 +45,7 @@ func _ready() -> void:
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
 	game_ui.init_buttons_ingredients(ingredients_data)
 	game_ui.select_plate_changed.connect(plate_selected_changed)
+	game_ui.deleted_current_plate.connect(flush_current_plate)
 	for button in game_ui.ingredients_buttons:
 		var ingredient:Ingredient = button.get_meta("ingredient")
 		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
@@ -53,6 +54,9 @@ func _ready() -> void:
 	_money = default_amount_money
 	game_ui.set_money_value(default_amount_money)
 	plate_selected_changed(0)
+	
+func flush_current_plate():
+	current_plate.clear()
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is HungryClient:
