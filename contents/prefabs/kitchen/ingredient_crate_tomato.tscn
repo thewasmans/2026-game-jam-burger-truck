@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bdcuwmfqri1eu"]
+
+[ext_resource type="PackedScene" uid="uid://cd04tlumvrdtx" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_tomato/ingredient_crate_tomato.gltf" id="1_kekl8"]
+[ext_resource type="Texture2D" uid="uid://f4h1uqh1gkqw" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_atlas.png" id="2_gc7bc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cs0qr"]
+albedo_texture = ExtResource("2_gc7bc")
+
+[node name="ingredient_crate_tomato" unique_id=335073314 instance=ExtResource("1_kekl8")]
+
+[node name="Ingredient_Crate2" parent="." index="0" unique_id=1495309892]
+surface_material_override/0 = SubResource("StandardMaterial3D_cs0qr")

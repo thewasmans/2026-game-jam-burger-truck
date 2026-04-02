@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ln0xvjyi4mjp"]
+
+[ext_resource type="PackedScene" uid="uid://crsdalviqsuwx" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_onion/ingredient_crate_onion.gltf" id="1_iltt0"]
+[ext_resource type="Texture2D" uid="uid://f4h1uqh1gkqw" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_atlas.png" id="2_ypc6c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0uj0"]
+albedo_texture = ExtResource("2_ypc6c")
+
+[node name="ingredient_crate_onion" unique_id=743235345 instance=ExtResource("1_iltt0")]
+
+[node name="Ingredient_Crate2" parent="." index="0" unique_id=741594631]
+surface_material_override/0 = SubResource("StandardMaterial3D_b0uj0")
