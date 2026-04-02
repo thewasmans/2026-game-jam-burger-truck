@@ -21,7 +21,7 @@ var wait_timer: Timer
 var _burger_request:BurgerData
 var _is_hungry: bool
 var _is_leaved: bool
-var value_waiting: float
+var value_waiting: float = -1
 
 func _ready() -> void:
 	_is_hungry = true
@@ -57,6 +57,7 @@ func _physics_process(delta: float) -> void:
 				client_request_ui.set_waiting(wait_timer.wait_time - value_waiting)
 			else:
 				waiting_food.emit()
+				value_waiting = 0
 			
 		State.LEAVING:
 			var direction: Vector3 = (target_leaving - global_transform.origin).normalized()
@@ -74,8 +75,8 @@ func _on_wait_timer_timeout() -> void:
 		leaving_hungry.emit()
 	else:
 		leaving_satiated.emit()
-	
-func give_food()-> bool:
+		
+func give_food(burger:Array[Ingredient])-> bool:
 	if current_state == State.WAITING:
 		_is_hungry = false
 		wait_timer.stop()

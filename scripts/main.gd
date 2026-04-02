@@ -23,7 +23,6 @@ class Plate:
 @export var ingredients_data: Array[Ingredient]
 @export var anchor_plates: Array[Node3D]
 @export var plate_selector: Node3D
-var _current_burger: Array[Ingredient]
 var _clients: Array[HungryClient] = []
 var _money: int = 0
 var _plates: Array[Plate]
@@ -31,6 +30,9 @@ var _current_index_plate: int
 var current_plate:Plate:
 	get:
 		return _plates[_current_index_plate]
+var current_burger:Array[Ingredient]:
+	get:
+		return current_plate._ingredients
 
 func _ready() -> void:
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
@@ -66,10 +68,21 @@ func on_enemy_leaving_satiated(client:HungryClient):
 	game_ui.set_money_value(client._burger_request.price)
 
 func create_burger(ingredient:Ingredient):
-	_current_burger.append(ingredient)
 	game_ui.add_ingredient(ingredient)
 	current_plate.add_ingredient(ingredient)
+	var client := current_burger_match_with_client()
+	
+	if client:
+		client.give_food(current_burger)
 
 func plate_selected_changed(side:int):
 	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)
 	plate_selector.global_position = current_plate._anchor.global_position
+	
+func current_burger_match_with_client()-> HungryClient:
+	for client in spawner._hungries_clients:
+		if client._burger_request.ingredients.size() == current_burger.size():
+			for i in current_burger.size():
+				if client._burger_request.ingredients[i] != current_burger[i]:
+					break
+	return null
