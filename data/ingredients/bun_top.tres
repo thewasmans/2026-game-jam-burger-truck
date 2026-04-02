@@ -9,3 +9,4 @@ script = ExtResource("1_abcde")
 name = "Bun Top"
 icon = ExtResource("1_0h7ij")
 model_3d = ExtResource("2_veirf")
+price = 0.5

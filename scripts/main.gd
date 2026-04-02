@@ -20,7 +20,6 @@ class Plate:
 		for child in _anchor.get_children():
 			child.queue_free()
 		_ingredients = []
-		
 
 @export var snack_truck: SnackTruck
 @export var game_ui: GameUI
@@ -30,8 +29,9 @@ class Plate:
 @export var anchor_plates: Array[Node3D]
 @export var plate_selector: Node3D
 @export var vfx_burger_disappear: GPUParticles3D
+@export var default_amount_money: float = 100.0
 var _clients: Array[HungryClient] = []
-var _money: int = 0
+var _money: float = 0
 var _plates: Array[Plate]
 var _current_index_plate: int
 var current_plate:Plate:
@@ -50,6 +50,8 @@ func _ready() -> void:
 		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
 	for anchor in anchor_plates:
 		_plates.append(Plate.new(anchor))
+	_money = default_amount_money
+	game_ui.set_money_value(default_amount_money)
 	plate_selected_changed(0)
 
 func on_child_entered_tree(node: Node) -> void:
@@ -71,7 +73,8 @@ func on_enemy_leaving_hungry(client:HungryClient) -> void:
 	snack_truck.take_damage(1)
 
 func add_ingredient_on_plate(ingredient:Ingredient):
-	game_ui.add_ingredient(ingredient)
+	_money -= ingredient.price
+	game_ui.set_money_value(_money)
 	current_plate.add_ingredient(ingredient)
 	var client := burger_match_with_client(current_burger)
 	if client:
