@@ -3,12 +3,6 @@ extends Control
 @export var _timer_label:Label
 var _timer: float = 0.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	_timer == 0
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_timer += delta
 	_timer_label.text = "Open since: " + _format_time(_timer)
