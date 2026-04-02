@@ -21,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="16_2wyq8"]
 [ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="17_vxglm"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="19_yq6so"]
+[ext_resource type="PackedScene" uid="uid://cnqxm7mb2fw5c" path="res://contents/vfx/smoke_vfx.tscn" id="20_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://nv67orp1v886" path="res://scenes/selector.tscn" id="22_y6deb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
@@ -47,15 +48,16 @@ glow_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
 size = Vector3(10, 10, 10)
 
-[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("snack_truck", "game_ui", "spawner", "anchor_plates", "plate_selector")]
+[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("snack_truck", "game_ui", "spawner", "anchor_plates", "plate_selector", "vfx_burger_disappear")]
 script = ExtResource("4_abcde")
 snack_truck = NodePath("Level/Kitchen")
 game_ui = NodePath("GameUI")
-spawner = NodePath("Level/EnemySpawner")
+spawner = NodePath("Level/HungryClientSpawner")
 burgers_data = Array[ExtResource("2_jkv2x")]([ExtResource("3_jbj1t"), ExtResource("4_muem4"), ExtResource("5_dp3eg"), ExtResource("6_0ld40"), ExtResource("7_gqmmt"), ExtResource("8_yc10j"), ExtResource("9_jscy8"), ExtResource("10_pm3ni"), ExtResource("11_y6deb"), ExtResource("12_og1vs")])
 ingredients_data = Array[ExtResource("13_pm3ni")]([ExtResource("14_y6deb"), ExtResource("15_og1vs"), ExtResource("16_2wyq8"), ExtResource("17_vxglm"), ExtResource("19_yq6so")])
 anchor_plates = [NodePath("Level/Kitchen/AnchorPlate/AnchorPlate01"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate02"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate03"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate04"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate05")]
 plate_selector = NodePath("Level/Selector")
+vfx_burger_disappear = NodePath("Level/Kitchen/AnchorPlate/VFX Burger Disappear/GPUParticles3D")
 
 [node name="Global" type="Node" parent="." unique_id=1804165768]
 
@@ -79,6 +81,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.507998, 0, 0)
 mesh = SubResource("SphereMesh_0wfyh")
 
 [node name="AnchorPlate" type="Node3D" parent="Level/Kitchen" unique_id=1635520529]
+
+[node name="VFX Burger Disappear" parent="Level/Kitchen/AnchorPlate" unique_id=869497307 instance=ExtResource("20_pm3ni")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.09317541, 1.1247842, 1.7059641)
 
 [node name="AnchorPlate01" type="Node3D" parent="Level/Kitchen/AnchorPlate" unique_id=124030163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.001902, 0.97140896, 1.603271)
@@ -104,7 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0307477, 1.4226, -0.3531956
 [node name="Selector" parent="Level" unique_id=375739968 instance=ExtResource("22_y6deb")]
 transform = Transform3D(1, 0, 0, 0, 0.980782, 0.19510747, 0, -0.19510747, 0.980782, 0.31791592, 0.8635261, 4.795539)
 
-[node name="EnemySpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target") instance=ExtResource("1_0wfyh")]
+[node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target") instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
 front_truck_target = NodePath("../Kitchen/TargetPositionClients/FrontTruck")
 out_screen_target = NodePath("../Kitchen/TargetPositionClients/Leaving")
@@ -147,3 +152,5 @@ mesh = SubResource("BoxMesh_jyhfs")
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
 [connection signal="child_entered_tree" from="GameUI" to="GameUI" method="_on_child_entered_tree"]
+
+[editable path="Level/Kitchen/AnchorPlate/VFX Burger Disappear"]

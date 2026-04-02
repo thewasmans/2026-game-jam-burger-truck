@@ -1,8 +1,8 @@
 extends Node3D
 
-class_name EnemySpawner
+class_name HungryClientSpawner
 
-signal client_spawned(client:Enemy)
+signal client_spawned(client:HungryClient)
 
 @export var enemy_scene: PackedScene
 @export var spawn_area: BoxShape3D
@@ -11,6 +11,7 @@ signal client_spawned(client:Enemy)
 @export var spawn_time: float = 4.0
 
 var timer: Timer
+var _hungries_clients: Array[HungryClient] = []
 
 func _ready() -> void:
 	front_truck_target.hide()
@@ -27,13 +28,15 @@ func spawn_enemy() -> void:
 	if enemy_scene == null:
 		return
 
-	var enemy: Enemy = enemy_scene.instantiate()
-	enemy.target_position = front_truck_target.global_position
-	enemy.target_leaving = out_screen_target.global_position
+	var client: HungryClient = enemy_scene.instantiate()
+	client.target_position = front_truck_target.global_position
+	client.target_leaving = out_screen_target.global_position
 	var spawn_position: Vector3 = get_random_spawn_position()
-	get_parent().add_child(enemy)
-	enemy.global_transform.origin = spawn_position
-	client_spawned.emit(enemy)
+	get_parent().add_child(client)
+	client.global_transform.origin = spawn_position
+	client_spawned.emit(client)
+	_hungries_clients.append(client)
+	
 
 func get_random_spawn_position() -> Vector3:
 	var spawn_area_size: Vector3 = spawn_area.size

@@ -35,7 +35,7 @@ func add_ingredient(ingredient:Ingredient):
 	ingredient_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	ingredient_texture.custom_minimum_size = Vector2(100, 100)
 
-func set_money_value(value:int):
+func set_money_value(value:float):
 	money_label.text = str(value) + "$"
 
 func select_plate(side:int):
