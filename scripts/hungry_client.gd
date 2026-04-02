@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-class_name Enemy
+class_name HungryClient
 
 signal leaving_hungry
 signal leaving_satiated

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b6h3u02w2i8s"]
 
-[ext_resource type="Script" uid="uid://fejlyf0b53bw" path="res://scripts/enemy.gd" id="1_wexqf"]
-[ext_resource type="PackedScene" uid="uid://b47evmm3yxiqf" path="res://contents/prefabs/ui/client_request_ui.tscn" id="3_y2qxo"]
+[ext_resource type="Script" uid="uid://fejlyf0b53bw" path="res://scripts/hungry_client.gd" id="1_mntof"]
+[ext_resource type="PackedScene" uid="uid://b47evmm3yxiqf" path="res://contents/prefabs/ui/client_request_ui.tscn" id="2_tnfmv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1"]
 size = Vector3(1, 2, 1)
@@ -23,8 +23,8 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_278i7")
 size = Vector2(0.5, 0.25)
 
-[node name="Enemy" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui")]
-script = ExtResource("1_wexqf")
+[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui")]
+script = ExtResource("1_mntof")
 speed = 2.0
 client_request_ui = NodePath("SubViewport/ClientRequest")
 
@@ -43,4 +43,4 @@ mesh = SubResource("PlaneMesh_i5gv5")
 [node name="SubViewport" type="SubViewport" parent="." unique_id=769199299]
 size = Vector2i(1152, 648)
 
-[node name="ClientRequest" parent="SubViewport" unique_id=853921984 instance=ExtResource("3_y2qxo")]
+[node name="ClientRequest" parent="SubViewport" unique_id=853921984 instance=ExtResource("2_tnfmv")]
