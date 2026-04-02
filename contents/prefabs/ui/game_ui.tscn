@@ -31,12 +31,12 @@ grow_vertical = 2
 theme = ExtResource("1_ajtxk")
 script = ExtResource("1_84on6")
 reputation_slider = NodePath("HSlider")
-container_buttons_ingredients = NodePath("HBoxIngredientsButtons")
+container_buttons_ingredients = NodePath("HBoxIngredientsButton")
 money_label = NodePath("Money/PanelContainer/Label")
 theme_ingredients = ExtResource("3_uuvj8")
-button_left = NodePath("HBoxIngredientsButtons/ButtonLeft")
-button_right = NodePath("HBoxIngredientsButtons/ButtonRight")
-button_delete = NodePath("HBoxIngredientsButtons/ButtonDelete")
+button_left = NodePath("HBoxControl/ButtonLeft")
+button_right = NodePath("HBoxControl/ButtonRight")
+button_delete = NodePath("HBoxControl/ButtonDelete")
 
 [node name="Panel" type="Panel" parent="." unique_id=1249262908]
 layout_mode = 1
@@ -84,17 +84,19 @@ max_value = 10.0
 value = 10.0
 editable = false
 
-[node name="HBoxIngredientsButtons" type="HBoxContainer" parent="." unique_id=1966454403]
+[node name="HBoxControl" type="HBoxContainer" parent="." unique_id=2039292817]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -113.0
+offset_top = -212.845
+offset_bottom = -112.84497
 grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
 
-[node name="ButtonLeft" type="Button" parent="HBoxIngredientsButtons" unique_id=1872290763]
+[node name="ButtonLeft" type="Button" parent="HBoxControl" unique_id=392811196]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("3_uuvj8")
@@ -102,7 +104,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3sry6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cdxd4")
 icon = ExtResource("5_nkv2q")
 
-[node name="ButtonRight" type="Button" parent="HBoxIngredientsButtons" unique_id=344388307]
+[node name="ButtonRight" type="Button" parent="HBoxControl" unique_id=1738100146]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("3_uuvj8")
@@ -110,12 +112,23 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_13grj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cdxd4")
 icon = ExtResource("6_ckmay")
 
-[node name="ButtonDelete" type="Button" parent="HBoxIngredientsButtons" unique_id=173277496]
+[node name="ButtonDelete" type="Button" parent="HBoxControl" unique_id=1508579575]
 layout_mode = 2
 theme = ExtResource("3_uuvj8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ckmay")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cdxd4")
 icon = ExtResource("7_ckmay")
+
+[node name="HBoxIngredientsButton" type="HBoxContainer" parent="." unique_id=1966454403]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
 
 [node name="Money" parent="." unique_id=1829518468 instance=ExtResource("5_ytt4t")]
 layout_mode = 1
