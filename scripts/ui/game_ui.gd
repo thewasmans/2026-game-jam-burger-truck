@@ -2,15 +2,21 @@ extends Control
 
 class_name GameUI
 
+signal select_plate_changed(side:int)
+
 @export var reputation_slider: HSlider
 @export var container_buttons_ingredients:Container
 @export var container_ingredients_current_burger:Container
 @export var money_label:Label
 @export var theme_ingredients:Theme
+@export var button_left:Button
+@export var button_right:Button
 var ingredients_buttons:Array[Button]
 
 func _ready() -> void:
 	money_label.text = "0 $"
+	button_left.pressed.connect(select_plate.bind(-1))
+	button_right.pressed.connect(select_plate.bind(1))
 
 func init_buttons_ingredients(ingredients:Array[Ingredient]):
 	for ingredient in ingredients:
@@ -33,3 +39,6 @@ func add_ingredient(ingredient:Ingredient):
 
 func set_money_value(value:int):
 	money_label.text = str(value) + "$"
+
+func select_plate(side:int):
+	select_plate_changed.emit(side)

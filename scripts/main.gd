@@ -2,21 +2,38 @@ extends Node3D
 
 class_name Main
 
+class Plate:
+	var _ingredients:Array[Ingredient] = []
+	var _anchor:Node3D
+	
+	func _init(anchor:Node3D) -> void:
+		_anchor = anchor	
+
 @export var snack_truck: SnackTruck
 @export var game_ui: GameUI
 @export var spawner: EnemySpawner
 @export var burgers_data: Array[BurgerData]
 @export var ingredients_data: Array[Ingredient]
-var _current_burger:Array[Ingredient]
-var _clients:Array[Enemy] = []
-var _money:int = 0
+@export var anchor_plates: Array[Node3D]
+@export var plate_selector: Node3D
+var _current_burger: Array[Ingredient]
+var _clients: Array[Enemy] = []
+var _money: int = 0
+var _plates: Array[Plate]
+var _current_index_plate: int
+var current_plate:Plate:
+	get:
+		return _plates[_current_index_plate]
 
 func _ready() -> void:
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
 	game_ui.init_buttons_ingredients(ingredients_data)
+	game_ui.select_plate_changed.connect(plate_selected_changed)
 	for button in game_ui.ingredients_buttons:
 		var ingredient:Ingredient = button.get_meta("ingredient")
 		button.pressed.connect(create_burger.bind(ingredient))
+	for anchor in anchor_plates:
+		_plates.append(Plate.new(anchor))
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is Enemy:
@@ -49,3 +66,7 @@ func create_burger(ingredient:Ingredient):
 		if client:
 			if client.give_food():
 				_clients.pop_front()
+
+func plate_selected_changed(side:int):
+	_current_index_plate = clamp(0, anchor_plates.size() - 1, _current_index_plate + side)
+	plate_selector.global_position = current_plate._anchor.global_position
