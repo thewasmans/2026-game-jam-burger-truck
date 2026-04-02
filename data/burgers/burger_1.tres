@@ -11,4 +11,5 @@
 script = ExtResource("2_nvuy1")
 ingredients = Array[ExtResource("1_0o70h")]([ExtResource("2_edqxl"), ExtResource("3_1c86t"), ExtResource("4_w8pb3"), ExtResource("5_3l64k")])
 name = "Simple Cheeseburger"
+price = 5
 metadata/_custom_type_script = "uid://b250qdutrqhpq"

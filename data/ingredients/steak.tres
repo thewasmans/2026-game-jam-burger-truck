@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://da52klgb8iem0"]
 
 [ext_resource type="Texture2D" uid="uid://8r31g5mnesv1" path="res://contents/ui/ingredients/placholder_steak.png" id="1_epcle"]
+[ext_resource type="PackedScene" uid="uid://oeh16qemojhb" path="res://contents/3d/ingredients/steak_3d.glb" id="2_b7rw3"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="2_vyhdy"]
 
 [resource]
 script = ExtResource("2_vyhdy")
 name = "steak"
 icon = ExtResource("1_epcle")
+model_3d = ExtResource("2_b7rw3")

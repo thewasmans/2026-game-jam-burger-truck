@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_abcde"]
 [ext_resource type="Texture2D" uid="uid://d0vbik5oew326" path="res://contents/ui/ingredients/placholder_salad.png" id="1_rkd20"]
+[ext_resource type="PackedScene" uid="uid://bgup57wukn4bu" path="res://contents/3d/ingredients/salad_3d.glb" id="2_jnmx8"]
 
 [resource]
 script = ExtResource("1_abcde")
 name = "Lettuce"
 icon = ExtResource("1_rkd20")
+model_3d = ExtResource("2_jnmx8")

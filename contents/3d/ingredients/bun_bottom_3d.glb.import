@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "mat_bread": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://contents/materials/bun_mat.tres",
+"use_external/fallback_path": "res://contents/3d/materials/bun_mat.tres",
 "use_external/path": "uid://cf65shwfnmn43"
 }
 }
