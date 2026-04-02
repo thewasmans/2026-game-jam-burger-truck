@@ -1,5 +1,5 @@
 class_name ClientRequestUI
-extends Node
+extends Control
 
 @export var label:Label
 @export var waiting:Slider

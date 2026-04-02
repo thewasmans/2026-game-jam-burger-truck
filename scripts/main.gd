@@ -72,7 +72,9 @@ func on_enemy_leaving_hungry(client:HungryClient) -> void:
 func add_ingredient_on_plate(ingredient:Ingredient):
 	game_ui.add_ingredient(ingredient)
 	current_plate.add_ingredient(ingredient)
-	burger_match_with_client(current_burger)
+	var client := burger_match_with_client(current_burger)
+	if client:
+		feed_client(client, current_plate)
 	
 func plate_selected_changed(side:int):
 	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)
@@ -82,6 +84,9 @@ func check_all_burgers() -> void:
 	for plate: Plate in _plates:
 		var client: HungryClient = burger_match_with_client(plate._ingredients)
 		if client:
+			feed_client(client, plate)
+			
+func feed_client(client:HungryClient, plate:Plate):
 			client.give_food(plate._ingredients)
 			_money += client._burger_request.price
 			game_ui.set_money_value(_money)
