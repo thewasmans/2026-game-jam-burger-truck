@@ -13,6 +13,7 @@ enum State { MOVING_TO_TRUCK, WAITING, LEAVING }
 @export var target_position: Vector3
 @export var target_leaving: Vector3
 @export var client_request_ui: ClientRequestUI
+@export var wait_time: Vector2 = Vector2(10, 15)
 
 var current_state: State = State.MOVING_TO_TRUCK
 var wait_timer: Timer
@@ -25,7 +26,8 @@ var value_waiting: float
 func _ready() -> void:
 	_is_hungry = true
 	wait_timer = Timer.new()
-	wait_timer.wait_time = 3.0
+	wait_timer.wait_time = randf_range(wait_time.x, wait_time.y)
+	client_request_ui.waiting.max_value = wait_timer.wait_time
 	wait_timer.one_shot = true
 	wait_timer.timeout.connect(_on_wait_timer_timeout)
 	add_child(wait_timer)

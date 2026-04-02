@@ -1,6 +1,6 @@
 extends Control
 
-@onready var _timer_label = $/root/Main/GameUI/Panel/Label
+@export var _timer_label:Label
 var _timer: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
