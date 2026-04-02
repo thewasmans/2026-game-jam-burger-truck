@@ -5,8 +5,12 @@ class_name GameUI
 @export var reputation_slider: HSlider
 @export var container_buttons_ingredients:Container
 @export var container_ingredients_current_burger:Container
+@export var money_label:Label
 @export var theme_ingredients:Theme
 var ingredients_buttons:Array[Button]
+
+func _ready() -> void:
+	money_label.text = "0 $"
 
 func init_buttons_ingredients(ingredients:Array[Ingredient]):
 	for ingredient in ingredients:
@@ -26,3 +30,6 @@ func add_ingredient(ingredient:Ingredient):
 	ingredient_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	ingredient_texture.custom_minimum_size = Vector2(100, 100)
 	container_ingredients_current_burger.add_child(ingredient_texture)
+
+func set_money_value(value:int):
+	money_label.text = str(value) + "$"

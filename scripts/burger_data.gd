@@ -3,3 +3,4 @@ extends Resource
 
 @export var ingredients:Array[Ingredient]
 @export var name: String
+@export var price: int
