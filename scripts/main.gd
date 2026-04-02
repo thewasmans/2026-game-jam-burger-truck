@@ -46,7 +46,7 @@ func _ready() -> void:
 	game_ui.select_plate_changed.connect(plate_selected_changed)
 	for button in game_ui.ingredients_buttons:
 		var ingredient:Ingredient = button.get_meta("ingredient")
-		button.pressed.connect(create_burger.bind(ingredient))
+		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
 	for anchor in anchor_plates:
 		_plates.append(Plate.new(anchor))
 	plate_selected_changed(0)
@@ -58,7 +58,6 @@ func on_child_entered_tree(node: Node) -> void:
 			var burger_data = burgers_data.pick_random()
 			client.set_burger(burger_data)
 		client.leaving_hungry.connect(on_enemy_leaving_hungry.bind(client))
-		client.leaving_satiated.connect(on_enemy_leaving_satiated.bind(client))
 		_clients.append(client)
 		client.leaved.connect(free_client.bind(client))
 
@@ -69,18 +68,16 @@ func on_enemy_leaving_hungry(client:HungryClient) -> void:
 	_clients.erase(client)
 	snack_truck.take_damage(1)
 
-func on_enemy_leaving_satiated(client:HungryClient):
-	_money += client._burger_request.price
-	game_ui.set_money_value(client._burger_request.price)
-
-func create_burger(ingredient:Ingredient):
+func add_ingredient_on_plate(ingredient:Ingredient):
 	game_ui.add_ingredient(ingredient)
 	current_plate.add_ingredient(ingredient)
 	var client := current_burger_match_with_client()
 	if client:
 		client.give_food(current_burger)
+		_money += client._burger_request.price
+		game_ui.set_money_value(_money)
 		current_plate.clear()
-	_clients.erase(client)
+		_clients.erase(client)
 	
 func plate_selected_changed(side:int):
 	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)
