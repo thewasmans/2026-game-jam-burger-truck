@@ -1,0 +1,82 @@
+[gd_scene format=4 uid="uid://bctaal8fr8t6o"]
+
+[ext_resource type="PackedScene" uid="uid://s5861u02r8go" path="res://contents/3d/decor/tree_bed.gltf" id="1_htp3w"]
+[ext_resource type="PackedScene" uid="uid://bbo40opj73v32" path="res://contents/3d/decor/tree.gltf" id="2_py72o"]
+[ext_resource type="PackedScene" uid="uid://opd3bmx0nuyl" path="res://contents/3d/decor/sidewalk.gltf" id="3_xn25y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6dni"]
+resource_name = "Material.sidewalk"
+cull_mode = 2
+albedo_color = Color(0.48627463, 0.47058833, 0.45098048, 1)
+roughness = 0.8
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_eujd8"]
+_surfaces = [{
+"aabb": AABB(0, -0.14148317, -5.954834, 10, 0.16272044, 9.954834),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Material.sidewalk",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6ce8n"]
+resource_name = "sidewalk_Cube_014"
+_surfaces = [{
+"aabb": AABB(0, -0.14148317, -5.954834, 10, 0.16272044, 9.954834),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_f6dni"),
+"name": "Material.sidewalk",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_eujd8")
+
+[node name="Node3D" type="Node3D" unique_id=1062952153]
+
+[node name="tree_bed" parent="." unique_id=2135355179 instance=ExtResource("1_htp3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.129384, 0.14687121, 5.809559)
+
+[node name="tree_bed2" parent="." unique_id=1360497458 instance=ExtResource("1_htp3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.166067, 0.14687121, 5.809559)
+
+[node name="tree" parent="." unique_id=53791532 instance=ExtResource("2_py72o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.024361, 0, 5.8428)
+
+[node name="tree2" parent="." unique_id=902894825 instance=ExtResource("2_py72o")]
+transform = Transform3D(0.24530742, 0, -0.96944535, 0, 1, 0, 0.96944535, 0, 0.24530742, -6.2099266, 0, 5.783615)
+
+[node name="sidewalk" parent="." unique_id=1818132930 instance=ExtResource("3_xn25y")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.3117332, 0.08167791, -1.1273642)
+
+[node name="Cube_012" type="MeshInstance3D" parent="sidewalk/Sidewalk" parent_id_path=PackedInt32Array(1818132930, 2126027104) index="2" unique_id=1759550760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.092501655, -13.965683)
+mesh = SubResource("ArrayMesh_6ce8n")
+
+[node name="sidewalk3" parent="." unique_id=533408192 instance=ExtResource("3_xn25y")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.306124, 0.08167791, -1.1273642)
+
+[node name="Cube_012" type="MeshInstance3D" parent="sidewalk3/Sidewalk" parent_id_path=PackedInt32Array(533408192, 2126027104) index="2" unique_id=310428645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.536743e-07, 0.092501655, -13.984686)
+mesh = SubResource("ArrayMesh_6ce8n")
+
+[node name="sidewalk2" parent="." unique_id=440128282 instance=ExtResource("3_xn25y")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.683174, 0.08167791, -1.1273642)
+
+[node name="Cube_012" type="MeshInstance3D" parent="sidewalk2/Sidewalk" parent_id_path=PackedInt32Array(440128282, 2126027104) index="2" unique_id=1981761704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.092501655, -13.93182)
+mesh = SubResource("ArrayMesh_6ce8n")
+
+[editable path="sidewalk"]
+[editable path="sidewalk3"]
+[editable path="sidewalk2"]
