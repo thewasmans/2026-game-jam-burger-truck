@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b72wwid26w7k8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sea8"]
+albedo_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0oiqr"]
+radial_segments = 10
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omx6e"]
+albedo_color = Color(0.18296319, 0.08839821, 6.016344e-08, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1086264772]
+
+[node name="Leg" type="MeshInstance3D" parent="." unique_id=1147122270]
+transform = Transform3D(0.5, 0, 0, 0, 0.02571026, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_8sea8")
+mesh = SubResource("CylinderMesh_0oiqr")
+
+[node name="Pole" type="MeshInstance3D" parent="." unique_id=1727862982]
+transform = Transform3D(0.146, 0, 0, 0, 0.3, 0, 0, 0, 0.147, 0, 0.28651458, 0)
+material_override = SubResource("StandardMaterial3D_8sea8")
+mesh = SubResource("CylinderMesh_0oiqr")
+
+[node name="Table" type="MeshInstance3D" parent="." unique_id=1118271789]
+transform = Transform3D(0.8, 0, 0, 0, 0.015273253, 0, 0, 0, 0.8, 0, 0.5768801, 0)
+material_override = SubResource("StandardMaterial3D_omx6e")
+mesh = SubResource("CylinderMesh_0oiqr")

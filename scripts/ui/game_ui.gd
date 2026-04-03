@@ -3,6 +3,7 @@ extends Control
 class_name GameUI
 
 signal select_plate_changed(side:int)
+signal furniture_selected(furniture:Furniture)
 signal deleted_current_plate
 
 @export var reputation_slider: HSlider
@@ -32,11 +33,12 @@ func init_buttons_ingredients(ingredients:Array[Ingredient]):
 
 func init_buttons_furnitures(furnitures:Array[Furniture]):
 	for furniture in furnitures:
-		var button = Button.new()
+		var button := Button.new()
 		button.icon = furniture.icon
 		button.text = furniture.name + " " + str(furniture.price) + "$"
 		button.custom_minimum_size = Vector2(100, 100)
 		button.theme = theme_ingredients
+		button.pressed.connect(func(): furniture_selected.emit(furniture))
 		container_furnitures.add_child(button)
 
 func on_reputation_changed(new_reputation: int) -> void:
@@ -53,3 +55,4 @@ func set_money_value(value:float):
 
 func select_plate(side:int):
 	select_plate_changed.emit(side)
+	

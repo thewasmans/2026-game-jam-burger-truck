@@ -25,7 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://bbtfkx7mh5t6o" path="res://contents/ui/assets/trash.png" id="20_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://cnqxm7mb2fw5c" path="res://contents/vfx/smoke_vfx.tscn" id="20_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://0xjac1r22bli" path="res://contents/3d/kitchen/stove/stove.gltf" id="21_vxglm"]
+[ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
 [ext_resource type="PackedScene" uid="uid://nv67orp1v886" path="res://scenes/selector.tscn" id="22_y6deb"]
+[ext_resource type="Resource" uid="uid://blfgjhw8oqugu" path="res://data/furnitures/furniture_02.tres" id="23_tel4y"]
+[ext_resource type="Resource" uid="uid://2vameyebt50x" path="res://data/furnitures/furniture_03.tres" id="24_qkpxi"]
+[ext_resource type="Resource" uid="uid://c454qusiang0y" path="res://data/furnitures/furniture_04.tres" id="25_5q0nq"]
 
 [sub_resource type="Resource" id="Resource_2wyq8"]
 script = ExtResource("19_og1vs")
@@ -68,7 +72,7 @@ anchor_plates = [NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate01"), NodePa
 anchor_plates_clients = [NodePath("Level/Kitchen/AnchorPlateClients/AnchorPlate08"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorPlate09"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorPlate10"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorPlate11"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorPlate12")]
 plate_selector = NodePath("Level/Selector")
 vfx_burger_disappear = NodePath("Level/Kitchen/AnchorPlateFood/VFX Burger Disappear/GPUParticles3D")
-furnitures = Array[ExtResource("19_og1vs")]([SubResource("Resource_2wyq8")])
+furnitures = Array[ExtResource("19_og1vs")]([SubResource("Resource_2wyq8"), ExtResource("22_fv21b"), ExtResource("23_tel4y"), ExtResource("24_qkpxi"), ExtResource("25_5q0nq")])
 
 [node name="Global" type="Node" parent="." unique_id=1804165768]
 
@@ -177,6 +181,7 @@ transform = Transform3D(0.635, 0, 0, 0, 1, 0, 0, 0, 0.635, 1.38, 3.58, 31.565)
 mesh = SubResource("BoxMesh_jyhfs")
 
 [node name="GameUI" parent="." unique_id=149232493 instance=ExtResource("3_jyhfs")]
+mouse_filter = 2
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
 [connection signal="child_entered_tree" from="GameUI" to="GameUI" method="_on_child_entered_tree"]
