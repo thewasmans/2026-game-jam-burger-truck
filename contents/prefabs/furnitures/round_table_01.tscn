@@ -4,6 +4,7 @@
 albedo_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0oiqr"]
+radial_segments = 10
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omx6e"]
 albedo_color = Color(0.18296319, 0.08839821, 6.016344e-08, 1)
@@ -11,7 +12,7 @@ albedo_color = Color(0.18296319, 0.08839821, 6.016344e-08, 1)
 [node name="Node3D" type="Node3D" unique_id=1086264772]
 
 [node name="Leg" type="MeshInstance3D" parent="." unique_id=1147122270]
-transform = Transform3D(0.5, 0, 0, 0, 0.047584206, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.02571026, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_8sea8")
 mesh = SubResource("CylinderMesh_0oiqr")
 

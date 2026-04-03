@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Furniture" format=3 uid="uid://c454qusiang0y"]
+
+[ext_resource type="Texture2D" uid="uid://esvur3ye6x83" path="res://contents/placeholder/placeholder_arrow_sign.png" id="1_bkmfn"]
+[ext_resource type="PackedScene" uid="uid://c7axspgrjoxee" path="res://contents/prefabs/furnitures/arrow_sign.tscn" id="2_6f6ga"]
+[ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/furnitures.gd" id="2_bkmfn"]
+
+[resource]
+script = ExtResource("2_bkmfn")
+name = "Arrow Sign"
+icon = ExtResource("1_bkmfn")
+model_3d = ExtResource("2_6f6ga")
+price = 70.0
+metadata/_custom_type_script = "uid://cby3s6lg60sk5"

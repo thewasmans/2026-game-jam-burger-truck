@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Furniture" format=3 uid="uid://ceppbwd4jotj4"]
+
+[ext_resource type="Texture2D" uid="uid://bvth41fcotnd7" path="res://contents/placeholder/placeholder_table_01.png" id="1_dovji"]
+[ext_resource type="PackedScene" uid="uid://b72wwid26w7k8" path="res://contents/prefabs/furnitures/round_table_01.tscn" id="1_fbiwf"]
+[ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/furnitures.gd" id="1_x2v1u"]
+
+[resource]
+script = ExtResource("1_x2v1u")
+name = "Round Table 1"
+icon = ExtResource("1_dovji")
+model_3d = ExtResource("1_fbiwf")
+price = 5.0
+metadata/_custom_type_script = "uid://cby3s6lg60sk5"
