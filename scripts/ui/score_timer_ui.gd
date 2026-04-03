@@ -1,17 +1,17 @@
-extends Control
+extends Node3D
 
-@export var _timer_label:Label
-var _timer: float = 0.0
+@export var timer_label: Label3D
+var timer: float = 0.0
 
 func _process(delta: float) -> void:
-	_timer += delta
-	_timer_label.text = "Open since: " + _format_time(_timer)
+	timer += delta
+	timer_label.text = "Open\n since:\n " + format_time(timer)
 
-func _format_time(time_in_seconds: float) -> String:
-	var _total_seconds = int(time_in_seconds)
+func format_time(time_in_seconds: float) -> String:
+	var total_seconds = int(time_in_seconds)
 	
-	var _hours = _total_seconds / 3600
-	var _minutes = (_total_seconds % 3600) / 60
-	var _seconds = _total_seconds % 60
+	var hours = total_seconds / 3600
+	var minutes = (total_seconds % 3600) / 60
+	var seconds = total_seconds % 60
 	
-	return "%02d:%02d:%02d" % [_hours,_minutes,_seconds]
+	return "%02d:%02d:%02d" % [hours, minutes, seconds]

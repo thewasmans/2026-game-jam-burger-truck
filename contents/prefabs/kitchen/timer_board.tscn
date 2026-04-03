@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://18yckut1bvmj"]
+
+[ext_resource type="Script" uid="uid://dxgp27gfp76am" path="res://scripts/ui/score_timer_ui.gd" id="1_4srj0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4srj0"]
+albedo_color = Color(0.61114883, 0.9974908, 0.6877138, 1)
+emission_enabled = true
+emission = Color(0.07333376, 0.43038115, 0.61284584, 1)
+emission_energy_multiplier = 0.58
+
+[sub_resource type="BoxMesh" id="BoxMesh_1x022"]
+material = SubResource("StandardMaterial3D_4srj0")
+
+[node name="TimerBoard" type="Node3D" unique_id=879052196 node_paths=PackedStringArray("timer_label")]
+script = ExtResource("1_4srj0")
+timer_label = NodePath("Label3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=728976690]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.3, 0, 1.8507714, 0)
+mesh = SubResource("BoxMesh_1x022")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1467979251]
+transform = Transform3D(0.19687712, 0, 0, 0, 2, 0, 0, 0, 0.45487225, 0.5463072, 1.8507714, 0)
+mesh = SubResource("BoxMesh_1x022")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1777937877]
+transform = Transform3D(0.19687712, 0, 0, 0, 2, 0, 0, 0, 0.45487225, -0.58851695, 1.8507714, 0)
+mesh = SubResource("BoxMesh_1x022")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=232842145]
+transform = Transform3D(0.19687712, 0, 0, 0, 0.6384454, 0, 0, 0, 0.23865108, -0.04667592, 0.45039645, 0)
+mesh = SubResource("BoxMesh_1x022")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=2046652779]
+transform = Transform3D(1.1340609, 0, 0, 0, 0.18561228, 0, 0, 0, 1.2249252, -0.04667592, 0.028395861, 0)
+mesh = SubResource("BoxMesh_1x022")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=523432731]
+transform = Transform3D(-8.605772e-09, 1.335867, 0, -0.19687712, -5.8392605e-08, 0, 0, 0, 0.45487225, -0.020408034, 2.8046737, 0)
+mesh = SubResource("BoxMesh_1x022")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=566961030]
+transform = Transform3D(-8.605772e-09, 1.335867, 0, -0.19687712, -5.8392605e-08, 0, 0, 0, 0.45487225, -0.020408034, 0.79559714, 0)
+mesh = SubResource("BoxMesh_1x022")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=615302430]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.952822, -0.1800667)
