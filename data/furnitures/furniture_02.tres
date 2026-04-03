@@ -9,5 +9,5 @@ script = ExtResource("2_4byl2")
 name = "Round Table 2"
 icon = ExtResource("1_4byl2")
 model_3d = ExtResource("1_073hl")
-price = 40.0
+price = 15.0
 metadata/_custom_type_script = "uid://cby3s6lg60sk5"

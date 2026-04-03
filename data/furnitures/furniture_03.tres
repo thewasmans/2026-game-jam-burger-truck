@@ -9,5 +9,5 @@ script = ExtResource("2_ng4r3")
 name = "Chair"
 icon = ExtResource("1_ng4r3")
 model_3d = ExtResource("1_2bara")
-price = 30.0
+price = 8.0
 metadata/_custom_type_script = "uid://cby3s6lg60sk5"

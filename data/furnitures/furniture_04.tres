@@ -9,5 +9,5 @@ script = ExtResource("2_bkmfn")
 name = "Arrow Sign"
 icon = ExtResource("1_bkmfn")
 model_3d = ExtResource("2_6f6ga")
-price = 70.0
+price = 20.0
 metadata/_custom_type_script = "uid://cby3s6lg60sk5"
