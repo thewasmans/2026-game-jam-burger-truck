@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://bglklru7boruo"]
 
-[ext_resource type="Texture2D" uid="uid://wo4ma1j1r3yy" path="res://contents/ui/ingredients/placholder_bun_top.png" id="1_0h7ij"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_abcde"]
+[ext_resource type="Texture2D" uid="uid://dhksdtifuvne6" path="res://contents/ui/ingredients/bun_top.png" id="1_veirf"]
 [ext_resource type="PackedScene" uid="uid://dvwq2ngf5kyh7" path="res://contents/3d/ingredients/bun_top_3d.glb" id="2_veirf"]
 
 [resource]
 script = ExtResource("1_abcde")
 name = "Bun Top"
-icon = ExtResource("1_0h7ij")
+icon = ExtResource("1_veirf")
 model_3d = ExtResource("2_veirf")
 price = 0.5
