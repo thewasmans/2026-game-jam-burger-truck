@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c7axspgrjoxee"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5dlr"]
+albedo_color = Color(0.28485027, 0.28485027, 0.28485027, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mjwgp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibc3l"]
+albedo_color = Color(1, 0.7529412, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_fluw2"]
+
+[node name="Node3D" type="Node3D" unique_id=2064244411]
+
+[node name="Leg" type="MeshInstance3D" parent="." unique_id=2133377569]
+transform = Transform3D(1.8, 0, 0, 0, 0.122, 0, 0, 0, 1.8, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_v5dlr")
+mesh = SubResource("BoxMesh_mjwgp")
+
+[node name="Pole" type="MeshInstance3D" parent="." unique_id=48728776]
+transform = Transform3D(0.3, 0, 0, 0, 0.64319646, 0, 0, 0, 0.3, 0, 0.34607863, 0)
+material_override = SubResource("StandardMaterial3D_v5dlr")
+mesh = SubResource("BoxMesh_mjwgp")
+
+[node name="Block1" type="MeshInstance3D" parent="." unique_id=1511467717]
+transform = Transform3D(1.6313366, 0, 0, 0, 0.85787165, 0, 0, 0, 0.58195543, -0.03835088, 1.0830332, 0)
+material_override = SubResource("StandardMaterial3D_ibc3l")
+mesh = SubResource("BoxMesh_mjwgp")
+
+[node name="Arrow" type="MeshInstance3D" parent="." unique_id=1323349112]
+transform = Transform3D(-5.4823442e-08, 0.85787165, 0, -1.2542142, -3.749876e-08, 0, 0, 0, 0.5819554, 1.0929856, 1.0830332, 0)
+material_override = SubResource("StandardMaterial3D_ibc3l")
+mesh = SubResource("PrismMesh_fluw2")
+
+[node name="Block2" type="MeshInstance3D" parent="." unique_id=1513379045]
+transform = Transform3D(1.0011326, 0, 0, 0, 1.6036364, 0, 0, 0, 0.58195543, -0.3531481, 2.3100593, 0)
+material_override = SubResource("StandardMaterial3D_ibc3l")
+mesh = SubResource("BoxMesh_mjwgp")
+
+[node name="Text" type="Label3D" parent="Block2" unique_id=1907287919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1386205, 0.51625395)
+modulate = Color(0.59830123, 0.6371827, 0.590925, 1)
+text = "OPEN NOW !
+THIS WAY !"
+outline_size = 8
