@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_3lgsw"]
 [ext_resource type="Texture2D" uid="uid://c1ty2c05lm22s" path="res://contents/ui/ingredients/placholder_bun_bottom.png" id="1_lc35h"]
-[ext_resource type="PackedScene" uid="uid://b7hk7qjtttpsi" path="res://contents/3d/ingredients/bun_bottom_3d.glb" id="2_jm00w"]
+[ext_resource type="PackedScene" uid="uid://q621txyph8vk" path="res://contents/prefabs/ingredients/bun.tscn" id="2_jm00w"]
 
 [resource]
 script = ExtResource("1_3lgsw")

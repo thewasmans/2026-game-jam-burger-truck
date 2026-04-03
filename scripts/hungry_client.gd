@@ -16,6 +16,7 @@ enum State { MOVING_TO_TRUCK, WAITING, LEAVING }
 @export var hover_node: Node3D
 @export var wait_time: Vector2 = Vector2(10, 15)
 @export var anchor_burger: Node3D
+@export var collision: CollisionShape3D
 
 var current_state: State = State.MOVING_TO_TRUCK
 var wait_timer: Timer
@@ -62,6 +63,7 @@ func _physics_process(delta: float) -> void:
 				wait_timer.start()
 		
 		State.WAITING:
+			collision.disabled = true
 			if value_waiting >= 0:
 				value_waiting += delta
 				client_request_ui.set_waiting(wait_timer.wait_time - value_waiting)

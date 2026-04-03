@@ -40,14 +40,15 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_278i7")
 size = Vector2(0.5, 0.053)
 
-[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui", "hover_node", "anchor_burger")]
+[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui", "hover_node", "anchor_burger", "collision")]
 script = ExtResource("1_mntof")
 speed = 2.0
 client_request_ui = NodePath("SubViewport/ClientRequest")
 hover_node = NodePath("Hover")
 anchor_burger = NodePath("Anchor Burger")
+collision = NodePath("CollisionShape3D")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1118751600]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1118751600]
 transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0.8244037, 0)
 shape = SubResource("BoxShape3D_mntof")
 

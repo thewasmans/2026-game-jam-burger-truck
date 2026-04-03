@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://q621txyph8vk"]
+
+[ext_resource type="PackedScene" uid="uid://b7hk7qjtttpsi" path="res://contents/3d/ingredients/bun_bottom_3d.glb" id="1_wjnf4"]
+[ext_resource type="Animation" uid="uid://bnwq76w30nvar" path="res://idle.res" id="2_0s2bj"]
+
+[sub_resource type="Animation" id="Animation_0s2bj"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bun_bottom_3d")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -1, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0s2bj"]
+_data = {
+&"RESET": SubResource("Animation_0s2bj"),
+&"idle": ExtResource("2_0s2bj")
+}
+
+[node name="Bun" type="Node3D" unique_id=1505059493]
+
+[node name="bun_bottom_3d" parent="." unique_id=1146729361 instance=ExtResource("1_wjnf4")]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, -0.17364825, 0, 0.17364825, 0.9848077, 0, -1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=216774663]
+libraries/ = SubResource("AnimationLibrary_0s2bj")
+autoplay = &"idle"

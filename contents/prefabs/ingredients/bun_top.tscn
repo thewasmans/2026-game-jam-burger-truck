@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://chxubxxxrxig4"]
+
+[ext_resource type="PackedScene" uid="uid://dvwq2ngf5kyh7" path="res://contents/3d/ingredients/bun_top_3d.glb" id="1_3sspk"]
+[ext_resource type="Animation" uid="uid://bnwq76w30nvar" path="res://idle.res" id="2_6rw40"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y7ut1"]
+_data = {
+&"idle": ExtResource("2_6rw40")
+}
+
+[node name="Node3D" type="Node3D" unique_id=2082182732]
+
+[node name="BunTop" parent="." unique_id=2052167475 instance=ExtResource("1_3sspk")]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, -0.17364822, 0, 0.17364822, 0.9848077, 0, -0.1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1929013948]
+libraries/ = SubResource("AnimationLibrary_y7ut1")
+autoplay = &"idle"
