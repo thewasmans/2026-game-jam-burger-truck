@@ -27,9 +27,14 @@ class Plate:
 @export var burgers_data: Array[BurgerData]
 @export var ingredients_data: Array[Ingredient]
 @export var anchor_plates: Array[Node3D]
+@export var anchor_plates_clients: Array[Node3D]
 @export var plate_selector: Node3D
 @export var vfx_burger_disappear: GPUParticles3D
-@export var default_amount_money: float = 100.0
+@export var default_amount_money: float = 10.0
+@export var furnitures:Array[Furniture]
+
+var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
+var _waiting_queue: Array[HungryClient] = []
 var _clients: Array[HungryClient] = []
 var _money: float = 0
 var _plates: Array[Plate]
@@ -51,6 +56,10 @@ func _ready() -> void:
 		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
 	for anchor in anchor_plates:
 		_plates.append(Plate.new(anchor))
+		
+	for anchor in anchor_plates_clients:
+		_plates_availalble[anchor] = null
+		
 	_money = default_amount_money
 	game_ui.set_money_value(default_amount_money)
 	plate_selected_changed(0)
@@ -66,6 +75,7 @@ func on_child_entered_tree(node: Node) -> void:
 			client.set_burger(burger_data)
 		client.leaving_hungry.connect(on_enemy_leaving_hungry.bind(client))
 		client.waiting_food.connect(check_all_burgers)
+		client.waiting_food.connect(on_client_waiting_food.bind(client))
 		_clients.append(client)
 		client.leaved.connect(free_client.bind(client))
 
@@ -74,9 +84,32 @@ func free_client(client:HungryClient):
 
 func on_enemy_leaving_hungry(client:HungryClient) -> void:
 	_clients.erase(client)
+	_waiting_queue.erase(client)
+	release_client_plate(client)
 	snack_truck.take_damage(1)
 
+func on_client_waiting_food(client: HungryClient) -> void:
+	_waiting_queue.append(client)
+	assign_clients_to_plates()
+	check_all_burgers()
+
+func assign_clients_to_plates() -> void:
+	for anchor: Node3D in anchor_plates_clients:
+		if _plates_availalble[anchor] == null and _waiting_queue.size() > 0:
+			var next_client: HungryClient = _waiting_queue.pop_front()
+			_plates_availalble[anchor] = next_client
+			next_client.global_position = anchor.global_position
+
+func release_client_plate(client: HungryClient) -> void:
+	for anchor: Node3D in _plates_availalble.keys():
+		if _plates_availalble[anchor] == client:
+			_plates_availalble[anchor] = null
+			break
+	assign_clients_to_plates()
+
 func add_ingredient_on_plate(ingredient:Ingredient):
+	if _money - ingredient.price < 0:
+		return
 	_money -= ingredient.price
 	game_ui.set_money_value(_money)
 	current_plate.add_ingredient(ingredient)
@@ -102,10 +135,12 @@ func feed_client(client:HungryClient, plate:Plate):
 	game_ui.set_money_value(_money)
 	plate.clear()
 	_clients.erase(client)
+	_waiting_queue.erase(client)
+	release_client_plate(client)
 
 func burger_match_with_client(burger: Array[Ingredient]) -> HungryClient:
 	for client: HungryClient in _clients:
-		if client.is_waiting:
+		if client.is_waiting and client in _plates_availalble.values():
 			var request_ingredients: Array[Ingredient] = client._burger_request.ingredients
 			var is_match: bool = true
 			
