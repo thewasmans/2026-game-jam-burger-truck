@@ -88,6 +88,17 @@ func _process(_delta: float) -> void:
 			var intersection: Variant = plane.intersects_ray(ray_origin, ray_dir)
 			if intersection != null:
 				_current_furniture_instance.global_position = intersection
+
+func _unhandled_input(event: InputEvent) -> void:
+	if is_instance_valid(_current_furniture_instance):
+		if event is InputEventMouseButton and event.pressed:
+			if event.button_index == MOUSE_BUTTON_LEFT:
+				_current_furniture = null
+				_current_furniture_instance = null
+			elif event.button_index == MOUSE_BUTTON_RIGHT:
+				_current_furniture_instance.queue_free()
+				_current_furniture = null
+				_current_furniture_instance = null
 	
 func flush_current_plate():
 	current_plate.clear()

@@ -177,6 +177,7 @@ transform = Transform3D(0.635, 0, 0, 0, 1, 0, 0, 0, 0.635, 1.38, 3.58, 31.565)
 mesh = SubResource("BoxMesh_jyhfs")
 
 [node name="GameUI" parent="." unique_id=149232493 instance=ExtResource("3_jyhfs")]
+mouse_filter = 2
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
 [connection signal="child_entered_tree" from="GameUI" to="GameUI" method="_on_child_entered_tree"]
