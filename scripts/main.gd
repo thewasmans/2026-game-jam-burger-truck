@@ -49,6 +49,7 @@ var current_burger:Array[Ingredient]:
 func _ready() -> void:
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
 	game_ui.init_buttons_ingredients(ingredients_data)
+	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.select_plate_changed.connect(plate_selected_changed)
 	game_ui.deleted_current_plate.connect(flush_current_plate)
 	for button in game_ui.ingredients_buttons:
