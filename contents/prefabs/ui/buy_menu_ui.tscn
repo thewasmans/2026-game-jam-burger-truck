@@ -8,23 +8,19 @@ size_flags_vertical = 0
 mouse_filter = 2
 
 [node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=106615898]
-visible = false
 layout_mode = 0
 offset_top = 45.0
 offset_right = 182.0
-offset_bottom = 146.0
+offset_bottom = 511.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 24
-folded = true
 title = "Buy Menu"
 title_alignment = 1
 
-[node name="Button" type="Button" parent="FoldableContainer" unique_id=2121802122]
-visible = false
+[node name="GridContainer" type="GridContainer" parent="FoldableContainer" unique_id=35522992]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Table 150$"
+columns = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=135392274]
 layout_mode = 0

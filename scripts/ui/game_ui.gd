@@ -12,6 +12,7 @@ signal deleted_current_plate
 @export var button_left:Button
 @export var button_right:Button
 @export var button_delete:Button
+@export var container_furnitures:GridContainer
 var ingredients_buttons:Array[Button]
 
 func _ready() -> void:
@@ -28,6 +29,15 @@ func init_buttons_ingredients(ingredients:Array[Ingredient]):
 		container_buttons_ingredients.add_child(button)
 		button.set_meta("ingredient", ingredient)
 		ingredients_buttons.append(button)
+
+func init_buttons_furnitures(furnitures:Array[Furniture]):
+	for furniture in furnitures:
+		var button = Button.new()
+		button.icon = furniture.icon
+		button.text = furniture.name + " " + str(furniture.price) + "$"
+		button.custom_minimum_size = Vector2(100, 100)
+		button.theme = theme_ingredients
+		container_furnitures.add_child(button)
 
 func on_reputation_changed(new_reputation: int) -> void:
 	reputation_slider.value = new_reputation

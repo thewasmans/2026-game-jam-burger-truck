@@ -21,7 +21,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckmay"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("reputation_slider", "container_buttons_ingredients", "money_label", "button_left", "button_right", "button_delete")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("reputation_slider", "container_buttons_ingredients", "money_label", "button_left", "button_right", "button_delete", "container_furnitures")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,6 +37,7 @@ theme_ingredients = ExtResource("3_uuvj8")
 button_left = NodePath("HBoxControl/ButtonLeft")
 button_right = NodePath("HBoxControl/ButtonRight")
 button_delete = NodePath("HBoxControl/ButtonDelete")
+container_furnitures = NodePath("Money/FoldableContainer/GridContainer")
 
 [node name="Panel" type="Panel" parent="." unique_id=1249262908]
 layout_mode = 1
@@ -136,6 +137,12 @@ offset_left = 25.0
 offset_top = 38.0
 offset_right = 25.0
 offset_bottom = 38.0
+
+[node name="FoldableContainer" parent="Money" index="0" unique_id=106615898]
+folded = true
+
+[node name="GridContainer" parent="Money/FoldableContainer" index="0" unique_id=35522992]
+visible = false
 
 [node name="Label" parent="Money/PanelContainer" parent_id_path=PackedInt32Array(1829518468, 135392274) index="0" unique_id=31775040]
 text = "XXX $"

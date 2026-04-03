@@ -30,6 +30,9 @@ class Plate:
 @export var plate_selector: Node3D
 @export var vfx_burger_disappear: GPUParticles3D
 @export var default_amount_money: float = 10.0
+@export var plates_availalble:Dictionary[Node3D, HungryClient] = {}
+@export var furnitures_data:Array[Furniture]
+
 var _clients: Array[HungryClient] = []
 var _money: float = 0
 var _plates: Array[Plate]
@@ -44,6 +47,7 @@ var current_burger:Array[Ingredient]:
 func _ready() -> void:
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
 	game_ui.init_buttons_ingredients(ingredients_data)
+	game_ui.init_buttons_furnitures(furnitures_data)
 	game_ui.select_plate_changed.connect(plate_selected_changed)
 	game_ui.deleted_current_plate.connect(flush_current_plate)
 	for button in game_ui.ingredients_buttons:

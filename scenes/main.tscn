@@ -20,9 +20,19 @@
 [ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="15_og1vs"]
 [ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="16_2wyq8"]
 [ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="17_vxglm"]
+[ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/furnitures.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="19_yq6so"]
+[ext_resource type="Texture2D" uid="uid://bbtfkx7mh5t6o" path="res://contents/ui/assets/trash.png" id="20_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://cnqxm7mb2fw5c" path="res://contents/vfx/smoke_vfx.tscn" id="20_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://dnlc8nnqtb4l2" path="res://contents/3d/kitchen/counter/counter.gltf" id="21_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://nv67orp1v886" path="res://scenes/selector.tscn" id="22_y6deb"]
+
+[sub_resource type="Resource" id="Resource_vxglm"]
+script = ExtResource("19_og1vs")
+icon = ExtResource("20_2wyq8")
+model_3d = ExtResource("21_2wyq8")
+price = 23.0
+metadata/_custom_type_script = "uid://cby3s6lg60sk5"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_color = Color(0.88235295, 0, 0, 1)
@@ -58,6 +68,7 @@ ingredients_data = Array[ExtResource("13_pm3ni")]([ExtResource("14_y6deb"), ExtR
 anchor_plates = [NodePath("Level/Kitchen/AnchorPlate/AnchorPlate01"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate02"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate03"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate04"), NodePath("Level/Kitchen/AnchorPlate/AnchorPlate05")]
 plate_selector = NodePath("Level/Selector")
 vfx_burger_disappear = NodePath("Level/Kitchen/AnchorPlate/VFX Burger Disappear/GPUParticles3D")
+furnitures_data = Array[ExtResource("19_og1vs")]([SubResource("Resource_vxglm")])
 
 [node name="Global" type="Node" parent="." unique_id=1804165768]
 
