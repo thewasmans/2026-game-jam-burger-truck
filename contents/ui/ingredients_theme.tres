@@ -2,6 +2,18 @@
 
 [ext_resource type="StyleBox" uid="uid://b8rcmj8xwjxcr" path="res://contents/ui/style_box_flat_alpha.tres" id="1_33i5m"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33i5m"]
+bg_color = Color(0.78430176, 0.58278763, 0.47660834, 0.5294118)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.45882353, 0.27450982, 0.13725491, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
@@ -17,5 +29,5 @@ Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/constants/icon_max_width = 100
 Button/styles/hover = ExtResource("1_33i5m")
 Button/styles/hover_pressed = ExtResource("1_33i5m")
-Button/styles/normal = ExtResource("1_33i5m")
+Button/styles/normal = SubResource("StyleBoxFlat_33i5m")
 Button/styles/pressed = ExtResource("1_33i5m")

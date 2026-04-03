@@ -94,7 +94,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.29
 mesh = SubResource("SphereMesh_0wfyh")
 
 [node name="Leaving" type="MeshInstance3D" parent="Level/Kitchen/TargetPositionClients" unique_id=696312194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.507998, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4920025, 0, 0)
 mesh = SubResource("SphereMesh_0wfyh")
 
 [node name="AnchorPlateFood" type="Node3D" parent="Level/Kitchen" unique_id=1635520529]
