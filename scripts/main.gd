@@ -39,6 +39,8 @@ var _clients: Array[HungryClient] = []
 var _money: float = 0
 var _plates: Array[Plate]
 var _current_index_plate: int
+var _current_furniture:Furniture
+var _current_furniture_instance: Node3D
 var current_plate:Plate:
 	get:
 		return _plates[_current_index_plate]
@@ -47,11 +49,13 @@ var current_burger:Array[Ingredient]:
 		return current_plate._ingredients
 
 func _ready() -> void:
+	_current_furniture = null
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
 	game_ui.init_buttons_ingredients(ingredients_data)
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.select_plate_changed.connect(plate_selected_changed)
 	game_ui.deleted_current_plate.connect(flush_current_plate)
+	game_ui.furniture_selected.connect(furniture_selected)
 	for button in game_ui.ingredients_buttons:
 		var ingredient:Ingredient = button.get_meta("ingredient")
 		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
@@ -64,6 +68,26 @@ func _ready() -> void:
 	_money = default_amount_money
 	game_ui.set_money_value(default_amount_money)
 	plate_selected_changed(0)
+	
+func furniture_selected(furniture:Furniture):
+	_current_furniture = furniture
+	if is_instance_valid(_current_furniture_instance):
+		_current_furniture_instance.queue_free()
+	if _current_furniture != null:
+		_current_furniture_instance = _current_furniture.model_3d.instantiate()
+		add_child(_current_furniture_instance)
+
+func _process(_delta: float) -> void:
+	if is_instance_valid(_current_furniture_instance):
+		var camera: Camera3D = get_viewport().get_camera_3d()
+		if camera:
+			var mouse_pos: Vector2 = get_viewport().get_mouse_position()
+			var ray_origin: Vector3 = camera.project_ray_origin(mouse_pos)
+			var ray_dir: Vector3 = camera.project_ray_normal(mouse_pos)
+			var plane: Plane = Plane(Vector3.UP, 0)
+			var intersection: Variant = plane.intersects_ray(ray_origin, ray_dir)
+			if intersection != null:
+				_current_furniture_instance.global_position = intersection
 	
 func flush_current_plate():
 	current_plate.clear()
