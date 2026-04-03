@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://cnqxm7mb2fw5c" path="res://contents/vfx/smoke_vfx.tscn" id="20_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://0xjac1r22bli" path="res://contents/3d/kitchen/stove/stove.gltf" id="21_vxglm"]
 [ext_resource type="PackedScene" uid="uid://nv67orp1v886" path="res://scenes/selector.tscn" id="22_y6deb"]
-[ext_resource type="PackedScene" uid="uid://dqnq63sblaykl" path="res://contents/prefabs/anchor.tscn" id="24_vxglm"]
 
 [sub_resource type="Resource" id="Resource_2wyq8"]
 script = ExtResource("19_og1vs")
@@ -66,7 +65,7 @@ spawner = NodePath("Level/HungryClientSpawner")
 burgers_data = Array[ExtResource("2_jkv2x")]([ExtResource("3_jbj1t"), ExtResource("4_muem4"), ExtResource("5_dp3eg"), ExtResource("6_0ld40"), ExtResource("7_gqmmt"), ExtResource("8_yc10j"), ExtResource("9_jscy8"), ExtResource("10_pm3ni"), ExtResource("11_y6deb"), ExtResource("12_og1vs")])
 ingredients_data = Array[ExtResource("13_pm3ni")]([ExtResource("14_y6deb"), ExtResource("15_og1vs"), ExtResource("16_2wyq8"), ExtResource("17_vxglm"), ExtResource("19_yq6so")])
 anchor_plates = [NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate01"), NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate02"), NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate03"), NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate04"), NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate05")]
-anchor_plates_clients = [NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient01"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient02"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient03"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient04"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient05")]
+anchor_plates_clients = [NodePath("Level/Kitchen/AnchorPlateClients/AnchorPlate08"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorPlate09"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorPlate10"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorPlate11"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorPlate12")]
 plate_selector = NodePath("Level/Selector")
 vfx_burger_disappear = NodePath("Level/Kitchen/AnchorPlateFood/VFX Burger Disappear/GPUParticles3D")
 furnitures = Array[ExtResource("19_og1vs")]([SubResource("Resource_2wyq8")])
@@ -97,37 +96,43 @@ mesh = SubResource("SphereMesh_0wfyh")
 [node name="VFX Burger Disappear" parent="Level/Kitchen/AnchorPlateFood" unique_id=869497307 instance=ExtResource("20_pm3ni")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.09317541, 1.1247842, 1.7059641)
 
-[node name="AnchorPlate01" parent="Level/Kitchen/AnchorPlateFood" unique_id=2005341662 instance=ExtResource("24_vxglm")]
-transform = Transform3D(-1, -2.7300837e-08, 8.305062e-08, 0, 0.9499884, 0.31228518, -8.742278e-08, 0.31228518, -0.9499884, -2.0235007, 1.0324961, 1.5875225)
+[node name="AnchorPlate01" type="Node3D" parent="Level/Kitchen/AnchorPlateFood" unique_id=124030163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.001902, 0.97140896, 1.603271)
 
-[node name="AnchorPlate02" parent="Level/Kitchen/AnchorPlateFood" unique_id=2103294591 instance=ExtResource("24_vxglm")]
-transform = Transform3D(-1, -2.7300837e-08, 8.305062e-08, 0, 0.9499884, 0.31228518, -8.742278e-08, 0.31228518, -0.9499884, -1.0000496, 1.0324961, 1.5875225)
+[node name="AnchorPlate02" type="Node3D" parent="Level/Kitchen/AnchorPlateFood" unique_id=200803847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9709521, 0.97140896, 1.603271)
 
-[node name="AnchorPlate03" parent="Level/Kitchen/AnchorPlateFood" unique_id=119094868 instance=ExtResource("24_vxglm")]
-transform = Transform3D(-1, -2.7300837e-08, 8.305062e-08, 0, 0.9499884, 0.31228518, -8.742278e-08, 0.31228518, -0.9499884, 0.01587832, 1.0324961, 1.5875225)
+[node name="AnchorPlate03" type="Node3D" parent="Level/Kitchen/AnchorPlateFood" unique_id=1540901818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0007827282, 0.97140896, 1.603271)
 
-[node name="AnchorPlate04" parent="Level/Kitchen/AnchorPlateFood" unique_id=15618722 instance=ExtResource("24_vxglm")]
-transform = Transform3D(-1, -2.7300837e-08, 8.305062e-08, 0, 0.9499884, 0.31228518, -8.742278e-08, 0.31228518, -0.9499884, 1.013045, 1.0324961, 1.5875225)
+[node name="AnchorPlate04" type="Node3D" parent="Level/Kitchen/AnchorPlateFood" unique_id=1061810154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0012841, 0.97140896, 1.603271)
 
-[node name="AnchorPlate05" parent="Level/Kitchen/AnchorPlateFood" unique_id=151056600 instance=ExtResource("24_vxglm")]
-transform = Transform3D(-1, -2.7300837e-08, 8.305062e-08, 0, 0.9499884, 0.31228518, -8.742278e-08, 0.31228518, -0.9499884, 1.9977374, 1.0324961, 1.5875225)
+[node name="AnchorPlate05" type="Node3D" parent="Level/Kitchen/AnchorPlateFood" unique_id=1882925386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0318427, 0.97140896, 1.603271)
+
+[node name="AnchorPlate06" type="Node3D" parent="Level/Kitchen/AnchorPlateFood" unique_id=1019934734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0307477, 1.2293506, 0.6174693)
+
+[node name="AnchorPlate07" type="Node3D" parent="Level/Kitchen/AnchorPlateFood" unique_id=2115886505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0307477, 1.4226, -0.35319567)
 
 [node name="AnchorPlateClients" type="Node3D" parent="Level/Kitchen" unique_id=425371094]
 
-[node name="AnchorClient01" parent="Level/Kitchen/AnchorPlateClients" unique_id=65175567 instance=ExtResource("24_vxglm")]
-transform = Transform3D(-1, 2.4470896e-09, 8.738853e-08, 0, 0.9996082, -0.027991444, -8.742278e-08, -0.027991444, -0.9996082, -1.9325514, 0.37554455, 3.048413)
+[node name="AnchorPlate08" type="Node3D" parent="Level/Kitchen/AnchorPlateClients" unique_id=499575583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0019019, 0.40174246, 2.6469977)
 
-[node name="AnchorClient02" parent="Level/Kitchen/AnchorPlateClients" unique_id=1417876902 instance=ExtResource("24_vxglm")]
-transform = Transform3D(-1, 2.4470896e-09, 8.738853e-08, 0, 0.9996082, -0.027991444, -8.742278e-08, -0.027991444, -0.9996082, -0.9322241, 0.37554455, 3.0484133)
+[node name="AnchorPlate09" type="Node3D" parent="Level/Kitchen/AnchorPlateClients" unique_id=1653963282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97095233, 0.40174246, 2.646998)
 
-[node name="AnchorClient03" parent="Level/Kitchen/AnchorPlateClients" unique_id=2072164188 instance=ExtResource("24_vxglm")]
-transform = Transform3D(-1, 2.4470896e-09, 8.738853e-08, 0, 0.9996082, -0.027991444, -8.742278e-08, -0.027991444, -0.9996082, 0.054030955, 0.37554455, 3.0484133)
+[node name="AnchorPlate10" type="Node3D" parent="Level/Kitchen/AnchorPlateClients" unique_id=937849001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0007828176, 0.40174246, 2.646998)
 
-[node name="AnchorClient04" parent="Level/Kitchen/AnchorPlateClients" unique_id=1044366058 instance=ExtResource("24_vxglm")]
-transform = Transform3D(-1, 2.4470896e-09, 8.738853e-08, 0, 0.9996082, -0.027991444, -8.742278e-08, -0.027991444, -0.9996082, 1.0779842, 0.37554455, 3.0484133)
+[node name="AnchorPlate11" type="Node3D" parent="Level/Kitchen/AnchorPlateClients" unique_id=1496209612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.001284, 0.40174246, 2.646998)
 
-[node name="AnchorClient05" parent="Level/Kitchen/AnchorPlateClients" unique_id=2063401319 instance=ExtResource("24_vxglm")]
-transform = Transform3D(-1, 2.4470896e-09, 8.738853e-08, 0, 0.9996082, -0.027991444, -8.742278e-08, -0.027991444, -0.9996082, 2.0266836, 0.37554455, 3.0484135)
+[node name="AnchorPlate12" type="Node3D" parent="Level/Kitchen/AnchorPlateClients" unique_id=1285739853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0318427, 0.40174246, 2.6469982)
 
 [node name="Selector" parent="Level" unique_id=375739968 instance=ExtResource("22_y6deb")]
 transform = Transform3D(1, 0, 0, 0, 0.980782, 0.19510747, 0, -0.19510747, 0.980782, 0.31791592, 0.8635261, 4.795539)
