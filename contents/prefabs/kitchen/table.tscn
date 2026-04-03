@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b8brhg5t7mx4k"]
+
+[ext_resource type="PackedScene" uid="uid://bnyjcgu6t4xw7" path="res://contents/3d/kitchen/table.gltf" id="1_whlev"]
+
+[node name="table" unique_id=1112525421 instance=ExtResource("1_whlev")]

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://p88ke4grqydx" path="res://contents/prefabs/kitchen/counter.tscn" id="1_3r5eq"]
 [ext_resource type="Script" uid="uid://c48dl325ub3ad" path="res://scripts/snack_truck.gd" id="1_frebv"]
+[ext_resource type="PackedScene" uid="uid://b0kvbgro1phhp" path="res://contents/prefabs/kitchen/Walls.gltf" id="2_lgyoh"]
 [ext_resource type="PackedScene" uid="uid://c48a266u7g4sb" path="res://contents/prefabs/kitchen/ingredient_crate_meat.tscn" id="3_870tw"]
 [ext_resource type="PackedScene" uid="uid://btn56u0cjwte3" path="res://contents/prefabs/kitchen/stove.tscn" id="3_wsxgx"]
 [ext_resource type="PackedScene" uid="uid://b8lhp5o3d801f" path="res://contents/prefabs/kitchen/ingredient_crate_bun.tscn" id="4_lgyoh"]
@@ -88,6 +89,9 @@ shadow_mesh = SubResource("ArrayMesh_qgbrd")
 
 [node name="Kitchen" type="StaticBody3D" unique_id=328235971]
 script = ExtResource("1_frebv")
+
+[node name="Walls2" parent="." unique_id=56575144 instance=ExtResource("2_lgyoh")]
+transform = Transform3D(1, 0, 0, 0, 0.9747612, -0.2232501, 0, 0.2232501, 0.9747612, -1.393954, 0.42271733, -1.4915354)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2015096152]
 shape = SubResource("BoxShape3D_frebv")
