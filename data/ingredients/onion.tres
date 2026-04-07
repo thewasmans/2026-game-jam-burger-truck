@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_26b5r"]
 [ext_resource type="Texture2D" uid="uid://duuf7ikxre4bm" path="res://contents/ui/ingredients/placholder_onion.png" id="1_u8eol"]
+[ext_resource type="PackedScene" uid="uid://623i4wb6g6kt" path="res://contents/3d/ingredients/onion_slice_3d.glb" id="2_iw7w2"]
 
 [resource]
 script = ExtResource("1_26b5r")
 name = "Onion"
 icon = ExtResource("1_u8eol")
+model_3d = ExtResource("2_iw7w2")
