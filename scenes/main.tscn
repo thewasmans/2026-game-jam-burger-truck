@@ -20,7 +20,7 @@
 [ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="15_og1vs"]
 [ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="16_2wyq8"]
 [ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="17_vxglm"]
-[ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/furnitures.gd" id="19_og1vs"]
+[ext_resource type="Script" path="res://scripts/furnitures.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="19_yq6so"]
 [ext_resource type="Texture2D" uid="uid://bbtfkx7mh5t6o" path="res://contents/ui/assets/trash.png" id="20_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://cnqxm7mb2fw5c" path="res://contents/vfx/smoke_vfx.tscn" id="20_pm3ni"]
@@ -32,7 +32,7 @@
 [ext_resource type="Resource" uid="uid://c454qusiang0y" path="res://data/furnitures/furniture_04.tres" id="25_5q0nq"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="28_tel4y"]
 [ext_resource type="PackedScene" uid="uid://bctaal8fr8t6o" path="res://contents/prefabs/Environment.tscn" id="31_tel4y"]
-[ext_resource type="PackedScene" uid="uid://18yckut1bvmj" path="res://contents/prefabs/kitchen/timer_board.tscn" id="33_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://bi2kgiq5snutc" path="res://contents/prefabs/kitchen/timer_board.tscn" id="33_5q0nq"]
 
 [sub_resource type="Resource" id="Resource_2wyq8"]
 script = ExtResource("19_og1vs")
@@ -130,19 +130,19 @@ transform = Transform3D(-1, -2.4256808e-08, 8.399017e-08, 0, 0.96073556, 0.27746
 [node name="AnchorPlateClients" type="Node3D" parent="Level/Kitchen" unique_id=425371094]
 
 [node name="AnchorClient01" parent="Level/Kitchen/AnchorPlateClients" unique_id=1267885147 instance=ExtResource("28_tel4y")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.9943163, 0.41701627, 2.638892)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.9943163, 0.41701627, 3.2756712)
 
 [node name="AnchorClient02" parent="Level/Kitchen/AnchorPlateClients" unique_id=1994084612 instance=ExtResource("28_tel4y")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.98113316, 0.41701627, 2.638892)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.9811333, 0.41701627, 3.2756712)
 
 [node name="AnchorClient03" parent="Level/Kitchen/AnchorPlateClients" unique_id=154420530 instance=ExtResource("28_tel4y")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.02932027, 0.41701627, 2.638892)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.02932021, 0.41701627, 3.2756712)
 
 [node name="AnchorClient04" parent="Level/Kitchen/AnchorPlateClients" unique_id=1630830520 instance=ExtResource("28_tel4y")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.9990934, 0.41701627, 2.638892)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.9990934, 0.41701627, 3.2756712)
 
 [node name="AnchorClient05" parent="Level/Kitchen/AnchorPlateClients" unique_id=1737106433 instance=ExtResource("28_tel4y")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.990742, 0.41701627, 2.6388922)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.990742, 0.41701627, 3.2756715)
 
 [node name="Selector" parent="Level" unique_id=375739968 instance=ExtResource("22_y6deb")]
 transform = Transform3D(1, 0, 0, 0, 0.980782, 0.19510747, 0, -0.19510747, 0.980782, 0.31791592, 0.8635261, 4.795539)
@@ -151,7 +151,6 @@ transform = Transform3D(1, 0, 0, 0, 0.980782, 0.19510747, 0, -0.19510747, 0.9807
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
 front_truck_target = NodePath("../Kitchen/TargetPositionClients/FrontTruck")
 out_screen_target = NodePath("../Kitchen/TargetPositionClients/Leaving")
-spawn_time = 10.0
 
 [node name="Ground" type="MeshInstance3D" parent="Level" unique_id=1600320922]
 transform = Transform3D(100.000015, 0, 0, 0, 0.1, 0, 0, 0, 100.000015, 0, 0, 0)

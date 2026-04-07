@@ -2,11 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://2oefgj7y27wx" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_meat/ingredient_crate_meat.gltf" id="1_w25hv"]
 [ext_resource type="Texture2D" uid="uid://f4h1uqh1gkqw" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_atlas.png" id="2_hr0m6"]
+[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/ingredient_crate.gd" id="2_nydxa"]
+[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="3_nydxa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nydxa"]
 albedo_texture = ExtResource("2_hr0m6")
 
-[node name="ingredient_crate_meat" unique_id=1245749798 instance=ExtResource("1_w25hv")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_nydxa"]
 
-[node name="Ingredient_Crate2" parent="." index="0" unique_id=2025599904]
+[node name="ingredient_crate_meat" unique_id=1245749798 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn") instance=ExtResource("1_w25hv")]
+script = ExtResource("2_nydxa")
+node_hover_feedback = NodePath(".")
+ingredient = ExtResource("3_nydxa")
+anchor_spawn = NodePath("AnchorIngredient")
+
+[node name="Ingredient_Crate2" parent="." index="0" unique_id=1457337761]
 surface_material_override/0 = SubResource("StandardMaterial3D_nydxa")
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=1977311923]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1067225842]
+shape = SubResource("BoxShape3D_nydxa")
+
+[node name="AnchorIngredient" type="Node3D" parent="." index="2" unique_id=588348372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5841943, 0)
