@@ -34,6 +34,7 @@ func spawn_enemy() -> void:
 		return
 
 	var client: HungryClient = enemy_scene.instantiate()
+	client.agent.target_position = front_truck_target.global_position
 	client.target_position = front_truck_target.global_position
 	client.target_leaving = out_screen_target.global_position
 	var spawn_position: Vector3 = get_random_spawn_position()
