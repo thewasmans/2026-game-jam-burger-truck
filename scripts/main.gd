@@ -32,6 +32,7 @@ class Plate:
 @export var vfx_burger_disappear: GPUParticles3D
 @export var default_amount_money: float = 10.0
 @export var furnitures:Array[Furniture]
+@export var navigation:NavigationRegion3D
 
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
 var _waiting_queue: Array[HungryClient] = []
@@ -95,6 +96,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_instance_valid(_current_furniture_instance):
 		if event is InputEventMouseButton and event.pressed:
 			if event.button_index == MOUSE_BUTTON_LEFT:
+				_current_furniture_instance.reparent(navigation)
+				navigation.add_child(_current_furniture_instance)
+				navigation.bake_navigation_mesh()
 				_current_furniture = null
 				_current_furniture_instance = null
 			elif event.button_index == MOUSE_BUTTON_RIGHT:

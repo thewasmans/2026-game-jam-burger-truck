@@ -17,6 +17,7 @@ enum State { MOVING_TO_TRUCK, WAITING, LEAVING }
 @export var wait_time: Vector2 = Vector2(10, 15)
 @export var anchor_burger: Node3D
 @export var collision: CollisionShape3D
+@export var agent: NavigationAgent3D
 
 var current_state: State = State.MOVING_TO_TRUCK
 var wait_timer: Timer
@@ -43,8 +44,8 @@ func set_burger(burger_data:BurgerData):
 	_burger_request = burger_data
 	for ingredient in burger_data.ingredients:
 		var instance: Node3D = ingredient.model_3d.instantiate()
-		instance.position += Vector3.LEFT * anchor_burger.get_child_count() * .25
-		instance.rotate(Vector3.FORWARD, -PI * 0.25)
+		instance.position += Vector3.UP * anchor_burger.get_child_count() * .25
+		#instance.rotate(Vector3.LEFT, PI * 0.25)
 		instance.scale = Vector3.ONE * .25
 		anchor_burger.add_child(instance)
 
@@ -53,14 +54,15 @@ func _physics_process(delta: float) -> void:
 		return 
 	match current_state:
 		State.MOVING_TO_TRUCK:
-			var direction: Vector3 = (target_position - global_transform.origin).normalized()
-
-			if global_transform.origin.distance_to(target_position) > 1:
-				velocity = direction * speed
-			else:
+			if agent.is_navigation_finished():
 				velocity = Vector3.ZERO
 				current_state = State.WAITING
 				wait_timer.start()
+			else:
+				var current_agent_position: Vector3 = global_position
+				var next_path_position: Vector3 = agent.get_next_path_position()
+
+				velocity = current_agent_position.direction_to(next_path_position) * speed
 		
 		State.WAITING:
 			collision.disabled = true
