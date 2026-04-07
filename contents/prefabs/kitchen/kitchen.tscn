@@ -6,11 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://c48a266u7g4sb" path="res://contents/prefabs/kitchen/ingredient_crate_meat.tscn" id="3_870tw"]
 [ext_resource type="PackedScene" uid="uid://btn56u0cjwte3" path="res://contents/prefabs/kitchen/stove.tscn" id="3_wsxgx"]
 [ext_resource type="PackedScene" uid="uid://b8lhp5o3d801f" path="res://contents/prefabs/kitchen/ingredient_crate_bun.tscn" id="4_lgyoh"]
+[ext_resource type="PackedScene" uid="uid://csmrd1nv7dm7q" path="res://contents/3d/kitchen/chopping_board.glb" id="4_n3lqd"]
 [ext_resource type="PackedScene" uid="uid://6ekfmab0p5cg" path="res://contents/prefabs/kitchen/ingredient_crate_cheese.tscn" id="5_akdsp"]
 [ext_resource type="PackedScene" uid="uid://bmjudp7a5lbqv" path="res://contents/prefabs/kitchen/ingredient_crate_salad.tscn" id="6_eqcjw"]
+[ext_resource type="PackedScene" uid="uid://bdcuwmfqri1eu" path="res://contents/prefabs/kitchen/ingredient_crate_tomato.tscn" id="10_sfdcp"]
+[ext_resource type="PackedScene" uid="uid://ln0xvjyi4mjp" path="res://contents/prefabs/kitchen/ingredient_crate_onion.tscn" id="11_sd4tf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_frebv"]
-size = Vector3(8.023193, 1, 4.850586)
+size = Vector3(9.846085, 0.9956665, 4.748947)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kase"]
 resource_name = "Material.Counter"
@@ -87,89 +90,197 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qgbrd")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxkoo"]
+resource_name = "Material.Counter"
+cull_mode = 2
+albedo_color = Color(0.5397138, 0.32237017, 0.23206227, 1)
+roughness = 0.6
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u40xe"]
+_surfaces = [{
+"aabb": AABB(-0.5, -0.5, -0.5, 1, 1, 1),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAACAAEAAwACAAQABQABAAAABQAAAAMABQAGAAEABAABAAYABQADAAcAAwAEAAcABwAGAAUABwAEAAYA"),
+"name": "Material.Counter",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAP///////wAA//8AAP//AAD/////AAAAAAAAAAAAAAAAAAD//wAAAAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gr4wk"]
+resource_name = "counter_Mesh_0"
+_surfaces = [{
+"aabb": AABB(-0.5, -0.5, -0.5, 1, 1, 1),
+"attribute_data": PackedByteArray("AAD/fwAAAABVVQAAVVX/f6qq/3+qqgAA//8AAP///39VVf9/VVUAAKqqAACqqv9/AAD//wAA/39VVf9/VVX//1VV//9VVf9/qqr/f6qq//+qqv//qqr/f////3//////"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_cxkoo"),
+"name": "Material.Counter",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//AIAAAP////8AgP///////wCA//8AAP//AID//wAAAAD///////8AAP//AAD//wAA//8AAAAAAAD/////AAD///+//////////7//////AAD/v///AAAAAP+/AAAAAAAA/78AAP//AAD/vwAA//////+/AAAAAP///7//////AAD/////////////AAD///////8AAP//AAD//wAAAAAAAP+/AAAAAP///7///wAA////v///AAAAAP+//3////9/////f////3////9/////f////3////9/////fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9//7//f/+//3//v/9//78AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_u40xe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsw62"]
+resource_name = "Material.CounterTop"
+cull_mode = 2
+albedo_color = Color(0.45490208, 0.3529412, 0.27058828, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e7hnh"]
+_surfaces = [{
+"aabb": AABB(-0.5148929, 0.3893715, -0.5148929, 1.0297858, 0.15647072, 1.0297858),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Material.CounterTop",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6ofnw"]
+resource_name = "counter_Cube_001"
+_surfaces = [{
+"aabb": AABB(-0.5148929, 0.3893715, -0.5148929, 1.0297858, 0.15647072, 1.0297858),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_jsw62"),
+"name": "Material.CounterTop",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_e7hnh")
+
 [node name="Kitchen" type="StaticBody3D" unique_id=328235971]
 script = ExtResource("1_frebv")
 
 [node name="Walls2" parent="." unique_id=56575144 instance=ExtResource("2_lgyoh")]
-transform = Transform3D(1, 0, 0, 0, 0.9747612, -0.2232501, 0, 0.2232501, 0.9747612, -1.393954, 0.42271733, -1.4915354)
+transform = Transform3D(1.2749999, 0, 0, 0, 0.97247565, -0.23300405, 0, 0.23300405, 0.97247565, -1.6392018, 0.37241054, -1.40824)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2015096152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17942047, -0.002166748, -0.2533493)
 shape = SubResource("BoxShape3D_frebv")
 
 [node name="Counter" parent="." unique_id=870078296 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 0, 0.42527205, 1.4576944)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 1.168, 0.36197266, 1.4508336)
 
 [node name="Counter2" parent="." unique_id=1273896585 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -1, 0.42527205, 1.4576944)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 0.168, 0.36197266, 1.4508336)
 
 [node name="Counter3" parent="." unique_id=1426588164 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -2, 0.42527205, 1.4576944)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, -0.832, 0.36197266, 1.4508336)
+
+[node name="Counter8" parent="." unique_id=710695029 instance=ExtResource("1_3r5eq")]
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, -1.832, 0.36197266, 1.4508336)
+
+[node name="Counter9" parent="." unique_id=650798285 instance=ExtResource("1_3r5eq")]
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, -2.832, 0.36197266, 1.4508336)
 
 [node name="Counter4" parent="." unique_id=1862443140 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 1, 0.42527205, 1.4576944)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 2.168, 0.36197266, 1.4508336)
 
 [node name="Counter5" parent="." unique_id=410858721 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 2, 0.42527205, 1.4576944)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 3.168, 0.36197266, 1.4508336)
 
-[node name="Counter6" parent="." unique_id=296049483 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 3, 0.6486752, 0.4829683)
+[node name="Counter6" type="Node3D" parent="." unique_id=296049483]
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 4.168, 0.59474367, 0.47933024)
 
-[node name="Counter7" parent="." unique_id=795371894 instance=ExtResource("1_3r5eq")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 3, 0.8720784, -0.4917578)
+[node name="Counter" type="MeshInstance3D" parent="Counter6" unique_id=546108989]
+mesh = SubResource("ArrayMesh_h0hy4")
+
+[node name="Cube" type="MeshInstance3D" parent="Counter6/Counter" unique_id=226666521]
+mesh = SubResource("ArrayMesh_bqbrw")
+
+[node name="chopping_board" parent="Counter6/Counter/Cube" unique_id=1101740316 instance=ExtResource("4_n3lqd")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.11713362, 0.5466735, 0.010364294)
+
+[node name="Counter7" type="Node3D" parent="." unique_id=795371894]
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 4.168, 0.82751477, -0.49217296)
+
+[node name="Counter" type="MeshInstance3D" parent="Counter7" unique_id=903533081]
+mesh = SubResource("ArrayMesh_h0hy4")
+
+[node name="Cube" type="MeshInstance3D" parent="Counter7/Counter" unique_id=866217644]
+mesh = SubResource("ArrayMesh_bqbrw")
+
+[node name="chopping_board" parent="Counter7/Counter/Cube" unique_id=2083499353 instance=ExtResource("4_n3lqd")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.1139245, 0.55004823, 0.009590864)
 
 [node name="ingredient_crate_meat" parent="." unique_id=1245749798 instance=ExtResource("3_870tw")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -1, 1.0954816, -1.4664838)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 0.16837096, 1.0607309, -1.4642506)
 
 [node name="ingredient_crate_bun" parent="." unique_id=814188862 instance=ExtResource("4_lgyoh")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -2, 1.0954816, -1.4664838)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, -0.83162904, 1.0607309, -1.4642506)
 
 [node name="ingredient_crate_cheese" parent="." unique_id=1799325268 instance=ExtResource("5_akdsp")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0.2234032, 0.97472614, 9.765264e-09, -0.97472614, 0.2234032, -4.260663e-08, -3, 0.8720784, -0.4917578)
+transform = Transform3D(0.9999999, 0, 3.5527137e-15, 8.277968e-16, 0.9724757, -0.23300406, -3.4549282e-15, 0.23300406, 0.9724757, -1.831629, 1.0605189, -1.4646486)
 
 [node name="ingredient_crate_salad" parent="." unique_id=50451063 instance=ExtResource("6_eqcjw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0.2234032, 0.97472614, 9.765264e-09, -0.97472614, 0.2234032, -4.260663e-08, -3, 0.6486752, 0.4829683)
+transform = Transform3D(0.9999999, 0, 3.5527137e-15, 8.277968e-16, 0.9724757, -0.23300406, -3.4549282e-15, 0.23300406, 0.9724757, -2.831629, 1.0607519, -1.4656212)
 
 [node name="Stove" parent="." unique_id=153617488 instance=ExtResource("3_wsxgx")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 0, 1.0954816, -1.4664838)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 1.168371, 1.0607309, -1.4642506)
 
 [node name="Stove2" parent="." unique_id=317811751 instance=ExtResource("3_wsxgx")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 1, 1.0954816, -1.4664838)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 2.168371, 1.0607309, -1.4642506)
 
 [node name="Stove3" parent="." unique_id=1137081799 instance=ExtResource("3_wsxgx")]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 2, 1.0954816, -1.4664838)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 3.168371, 1.0607309, -1.4642506)
 
-[node name="counter" type="Node3D" parent="." unique_id=710695029]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -3, 0.42527205, 1.4576944)
+[node name="counter" type="Node3D" parent="." unique_id=717736100]
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, -3.831629, 0.36197266, 1.4508336)
 
 [node name="Counter" type="MeshInstance3D" parent="counter" unique_id=1952653319]
-mesh = SubResource("ArrayMesh_h0hy4")
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+mesh = SubResource("ArrayMesh_gr4wk")
 
 [node name="Cube" type="MeshInstance3D" parent="counter/Counter" unique_id=1816544603]
-mesh = SubResource("ArrayMesh_bqbrw")
+mesh = SubResource("ArrayMesh_6ofnw")
 
 [node name="counter4" type="Node3D" parent="." unique_id=1297446546]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, -3, 1.0954816, -1.4664838)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, -2.831629, 1.0607309, -1.4642506)
 
 [node name="Counter" type="MeshInstance3D" parent="counter4" unique_id=1623033713]
-mesh = SubResource("ArrayMesh_h0hy4")
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -1, 0, 0)
+mesh = SubResource("ArrayMesh_gr4wk")
 
 [node name="Cube" type="MeshInstance3D" parent="counter4/Counter" unique_id=386292414]
-mesh = SubResource("ArrayMesh_bqbrw")
+mesh = SubResource("ArrayMesh_6ofnw")
 
 [node name="counter3" type="Node3D" parent="." unique_id=1986353755]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 3, 1.0954816, -1.4664838)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 4.168371, 1.0607309, -1.4642506)
 
 [node name="Counter" type="MeshInstance3D" parent="counter3" unique_id=1890370978]
-mesh = SubResource("ArrayMesh_h0hy4")
+mesh = SubResource("ArrayMesh_gr4wk")
 
 [node name="Cube" type="MeshInstance3D" parent="counter3/Counter" unique_id=2013604224]
-mesh = SubResource("ArrayMesh_bqbrw")
+mesh = SubResource("ArrayMesh_6ofnw")
 
 [node name="counter2" type="Node3D" parent="." unique_id=606471956]
-transform = Transform3D(1, 0, 0, 0, 0.97472614, -0.2234032, 0, 0.2234032, 0.97472614, 3, 0.42527205, 1.4576944)
+transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 4.168, 0.36197266, 1.4508336)
 
 [node name="Counter" type="MeshInstance3D" parent="counter2" unique_id=1123035033]
-mesh = SubResource("ArrayMesh_h0hy4")
+mesh = SubResource("ArrayMesh_gr4wk")
 
 [node name="Cube" type="MeshInstance3D" parent="counter2/Counter" unique_id=1709233587]
-mesh = SubResource("ArrayMesh_bqbrw")
+mesh = SubResource("ArrayMesh_6ofnw")
+
+[node name="ingredient_crate_tomato" parent="." unique_id=335073314 instance=ExtResource("10_sfdcp")]
+transform = Transform3D(-4.4457096e-08, 1.4079492e-10, 1, 0.23300406, 0.9724757, 1.02217665e-08, -0.9724757, 0.23300406, -4.3266255e-08, -3.831629, 0.8272817, -0.49120045)
+
+[node name="ingredient_crate_onion" parent="." unique_id=743235345 instance=ExtResource("11_sd4tf")]
+transform = Transform3D(-4.4457096e-08, 1.4079492e-10, 1, 0.23300406, 0.9724757, 1.02217665e-08, -0.9724757, 0.23300406, -4.3266255e-08, -3.831629, 0.59497666, 0.4783578)
