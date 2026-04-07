@@ -42,12 +42,13 @@ func _ready() -> void:
 	
 func set_burger(burger_data:BurgerData):
 	_burger_request = burger_data
+	var burger_node = Node3D.new()
+	burger_node.scale *= .25
+	anchor_burger.add_child(burger_node)
 	for ingredient in burger_data.ingredients:
 		var instance: Node3D = ingredient.model_3d.instantiate()
-		instance.position += Vector3.UP * anchor_burger.get_child_count() * .25
-		#instance.rotate(Vector3.LEFT, PI * 0.25)
-		instance.scale = Vector3.ONE * .25
-		anchor_burger.add_child(instance)
+		instance.position += Vector3.UP * burger_node.get_child_count() * .35
+		burger_node.add_child(instance)
 
 func _physics_process(delta: float) -> void:
 	if _is_leaved:

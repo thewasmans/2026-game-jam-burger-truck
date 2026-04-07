@@ -97,7 +97,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and event.pressed:
 			if event.button_index == MOUSE_BUTTON_LEFT:
 				_current_furniture_instance.reparent(navigation)
-				navigation.add_child(_current_furniture_instance)
 				navigation.bake_navigation_mesh()
 				_current_furniture = null
 				_current_furniture_instance = null
