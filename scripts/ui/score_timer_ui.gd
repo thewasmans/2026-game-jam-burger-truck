@@ -8,10 +8,10 @@ func _process(delta: float) -> void:
 	timer_label.text = "OPEN\n SINCE\n " + format_time(timer)
 
 func format_time(time_in_seconds: float) -> String:
-	var total_seconds = int(time_in_seconds)
+	var total_seconds = (time_in_seconds)
 	
-	var hours = total_seconds / 3600
-	var minutes = (total_seconds % 3600) / 60
-	var seconds = total_seconds % 60
+	var _hours = total_seconds / 3600.0
+	var minutes = (int(total_seconds) % 3600) / 60.0
+	var seconds = int(total_seconds) % 60
 	
 	return "%02d:%02d" % [minutes, seconds]
