@@ -8,18 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c5vhv8j1pq7ok" path="res://contents/ui/assets/right_arrow.png" id="6_ckmay"]
 [ext_resource type="Texture2D" uid="uid://bbtfkx7mh5t6o" path="res://contents/ui/assets/trash.png" id="7_ckmay"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sry6"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdxd4"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13grj"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ckmay"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
 [node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("reputation_slider", "container_buttons_ingredients", "money_label", "button_left", "button_right", "button_delete", "container_furnitures")]
 layout_mode = 3
 anchors_preset = 15
@@ -59,8 +47,8 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -212.845
-offset_bottom = -112.84497
+offset_top = -433.0
+offset_bottom = -233.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
@@ -69,23 +57,17 @@ alignment = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("3_uuvj8")
-theme_override_styles/normal = SubResource("StyleBoxFlat_3sry6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cdxd4")
 icon = ExtResource("5_nkv2q")
 
 [node name="ButtonRight" type="Button" parent="HBoxControl" unique_id=1738100146]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme = ExtResource("3_uuvj8")
-theme_override_styles/normal = SubResource("StyleBoxFlat_13grj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cdxd4")
 icon = ExtResource("6_ckmay")
 
 [node name="ButtonDelete" type="Button" parent="HBoxControl" unique_id=1508579575]
 layout_mode = 2
 theme = ExtResource("3_uuvj8")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ckmay")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cdxd4")
 icon = ExtResource("7_ckmay")
 
 [node name="HBoxIngredientsButton" type="HBoxContainer" parent="." unique_id=1966454403]

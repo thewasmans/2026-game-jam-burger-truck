@@ -78,6 +78,8 @@ func furniture_selected(furniture:Furniture):
 		add_child(_current_furniture_instance)
 
 func _process(_delta: float) -> void:
+	_money += _delta
+	game_ui.set_money_value(_money)
 	if is_instance_valid(_current_furniture_instance):
 		var camera: Camera3D = get_viewport().get_camera_3d()
 		if camera:

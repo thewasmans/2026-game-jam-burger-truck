@@ -27,6 +27,7 @@ func init_buttons_ingredients(ingredients:Array[Ingredient]):
 		var button = Button.new()
 		button.icon = ingredient.icon
 		button.theme = theme_ingredients
+		button.custom_minimum_size = Vector2(200, 200)
 		container_buttons_ingredients.add_child(button)
 		button.set_meta("ingredient", ingredient)
 		ingredients_buttons.append(button)
@@ -36,7 +37,7 @@ func init_buttons_furnitures(furnitures:Array[Furniture]):
 		var button := Button.new()
 		button.icon = furniture.icon
 		button.text = furniture.name + " " + str(furniture.price) + "$"
-		button.custom_minimum_size = Vector2(100, 100)
+		button.custom_minimum_size = Vector2(200, 200)
 		button.theme = theme_ingredients
 		button.pressed.connect(func(): furniture_selected.emit(furniture))
 		container_furnitures.add_child(button)
@@ -48,10 +49,10 @@ func add_ingredient(ingredient:Ingredient):
 	var ingredient_texture := TextureRect.new()
 	ingredient_texture.texture = ingredient.icon
 	ingredient_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	ingredient_texture.custom_minimum_size = Vector2(100, 100)
+	ingredient_texture.custom_minimum_size = Vector2(200, 200)
 
 func set_money_value(value:float):
-	money_label.text = str(value) + "$"
+	money_label.text = str(floor(value)) + "$"
 
 func select_plate(side:int):
 	select_plate_changed.emit(side)
