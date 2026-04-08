@@ -49,7 +49,7 @@ material = SubResource("StandardMaterial3D_0wfyh")
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5q0nq"]
-size = Vector3(20, 1, 20)
+size = Vector3(20, 1, 17)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5q0nq"]
 vertices = PackedVector3Array(-9.5, 1, -13.389643, -9.5, 1, 5.6103573, 9.5, 1, 5.6103573, 9.5, 1, -13.389643)
