@@ -20,7 +20,7 @@
 [ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="15_og1vs"]
 [ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="16_2wyq8"]
 [ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="17_vxglm"]
-[ext_resource type="Script" path="res://scripts/furnitures.gd" id="19_og1vs"]
+[ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/furnitures.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="19_yq6so"]
 [ext_resource type="Texture2D" uid="uid://bbtfkx7mh5t6o" path="res://contents/ui/assets/trash.png" id="20_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://cnqxm7mb2fw5c" path="res://contents/vfx/smoke_vfx.tscn" id="20_pm3ni"]
@@ -32,7 +32,7 @@
 [ext_resource type="Resource" uid="uid://c454qusiang0y" path="res://data/furnitures/furniture_04.tres" id="25_5q0nq"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="28_tel4y"]
 [ext_resource type="PackedScene" uid="uid://bctaal8fr8t6o" path="res://contents/prefabs/Environment.tscn" id="31_tel4y"]
-[ext_resource type="PackedScene" uid="uid://bi2kgiq5snutc" path="res://contents/prefabs/kitchen/timer_board.tscn" id="33_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://18yckut1bvmj" path="res://contents/prefabs/kitchen/timer_board.tscn" id="33_5q0nq"]
 
 [sub_resource type="Resource" id="Resource_2wyq8"]
 script = ExtResource("19_og1vs")
@@ -47,6 +47,9 @@ albedo_color = Color(0.88235295, 0, 0, 1)
 material = SubResource("StandardMaterial3D_0wfyh")
 
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5q0nq"]
+size = Vector3(20, 1, 20)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5q0nq"]
 vertices = PackedVector3Array(-9.5, 1, -13.389643, -9.5, 1, 5.6103573, 9.5, 1, 5.6103573, 9.5, 1, -13.389643)
@@ -71,7 +74,7 @@ glow_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
 size = Vector3(10, 10, 10)
 
-[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("snack_truck", "game_ui", "spawner", "anchor_plates", "anchor_plates_clients", "plate_selector", "vfx_burger_disappear", "navigation")]
+[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("snack_truck", "game_ui", "spawner", "anchor_plates", "anchor_plates_clients", "plate_selector", "vfx_burger_disappear", "navigation", "placement_zone")]
 script = ExtResource("4_abcde")
 snack_truck = NodePath("Level/Kitchen")
 game_ui = NodePath("GameUI")
@@ -85,6 +88,7 @@ vfx_burger_disappear = NodePath("Level/Kitchen/AnchorPlateFood/VFX Burger Disapp
 default_amount_money = 100.0
 furnitures = Array[ExtResource("19_og1vs")]([SubResource("Resource_2wyq8"), ExtResource("22_fv21b"), ExtResource("23_tel4y"), ExtResource("24_qkpxi"), ExtResource("25_5q0nq")])
 navigation = NodePath("Level/NavigationRegion3D")
+placement_zone = NodePath("Level/PlacementZoneFurniture")
 
 [node name="Global" type="Node" parent="." unique_id=1804165768]
 
@@ -155,6 +159,12 @@ out_screen_target = NodePath("../Kitchen/TargetPositionClients/Leaving")
 [node name="Ground" type="MeshInstance3D" parent="Level" unique_id=1600320922]
 transform = Transform3D(100.000015, 0, 0, 0, 0.1, 0, 0, 0, 100.000015, 0, 0, 0)
 mesh = SubResource("BoxMesh_sugp2")
+
+[node name="PlacementZoneFurniture" type="Area3D" parent="Level" unique_id=1980600924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15556955, -7.206752)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/PlacementZoneFurniture" unique_id=2059791750]
+shape = SubResource("BoxShape3D_5q0nq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Level" unique_id=1196850353]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.74210477, 0)
