@@ -87,8 +87,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qgbrd")
 
-[node name="Kitchen" type="StaticBody3D" unique_id=328235971]
+[node name="Kitchen" type="StaticBody3D" unique_id=328235971 node_paths=PackedStringArray("ingredient_box", "plates_box")]
 script = ExtResource("1_frebv")
+ingredient_box = [NodePath("ingredient_crate_meat"), NodePath("ingredient_crate_bun"), NodePath("ingredient_crate_cheese"), NodePath("ingredient_crate_salad")]
+plates_box = [NodePath("Counter"), NodePath("Counter2"), NodePath("Counter3"), NodePath("Counter4"), NodePath("Counter5"), NodePath("Counter6"), NodePath("Counter7")]
 
 [node name="Walls2" parent="." unique_id=56575144 instance=ExtResource("2_lgyoh")]
 transform = Transform3D(1, 0, 0, 0, 0.9747612, -0.2232501, 0, 0.2232501, 0.9747612, -1.393954, 0.42271733, -1.4915354)
