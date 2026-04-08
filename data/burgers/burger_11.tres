@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://b8jvutxydjaa5"]
+
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_8kd25"]
+[ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="2_18nma"]
+[ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="3_x3q66"]
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/burger_data.gd" id="4_dpil0"]
+
+[resource]
+script = ExtResource("4_dpil0")
+ingredients = Array[ExtResource("1_8kd25")]([ExtResource("2_18nma"), ExtResource("3_x3q66"), ExtResource("2_18nma")])
+name = "CheeseSalader"
+price = 5
+metadata/_custom_type_script = "uid://b250qdutrqhpq"

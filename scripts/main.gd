@@ -2,31 +2,13 @@ extends Node3D
 
 class_name Main
 
-class Plate:
-	var _ingredients:Array[Ingredient] = []
-	var _anchor:Node3D
-	
-	func _init(anchor:Node3D) -> void:
-		_anchor = anchor	
-		
-	func add_ingredient(ingredient:Ingredient):
-		var instance: Node3D = ingredient.model_3d.instantiate()
-		_ingredients.append(ingredient)
-		instance.position += Vector3.UP * _ingredients.size() * .25
-		instance.scale = Vector3.ONE * .25
-		_anchor.add_child(instance)
-	
-	func clear():
-		for child in _anchor.get_children():
-			child.queue_free()
-		_ingredients = []
+signal money_changed
 
 @export var snack_truck: SnackTruck
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
 @export var burgers_data: Array[BurgerData]
 @export var ingredients_data: Array[Ingredient]
-@export var anchor_plates: Array[Node3D]
 @export var anchor_plates_clients: Array[Node3D]
 @export var plate_selector: Node3D
 @export var vfx_burger_disappear: GPUParticles3D
@@ -43,16 +25,19 @@ var _plates: Array[Plate]
 var _current_index_plate: int
 var _current_furniture:Furniture
 var _current_furniture_instance: Node3D
-var current_plate:Plate:
-	get:
-		return _plates[_current_index_plate]
+var current_plate:Plate
 var current_burger:Array[Ingredient]:
 	get:
 		return current_plate._ingredients
+var anchor_plates: Array:
+	get:
+		var box = snack_truck.plates_box.map(func(elt:BoxInterract): return elt.anchor_spawn)
+		return box
 
 func _ready() -> void:
 	_current_furniture = null
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
+	snack_truck.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
 	game_ui.init_buttons_ingredients(ingredients_data)
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.select_plate_changed.connect(plate_selected_changed)
@@ -61,16 +46,18 @@ func _ready() -> void:
 	for button in game_ui.ingredients_buttons:
 		var ingredient:Ingredient = button.get_meta("ingredient")
 		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
-	for anchor in anchor_plates:
-		_plates.append(Plate.new(anchor))
+		
+	for box in snack_truck.plates_box:
+		var plate = Plate.new(box.anchor_spawn)
+		box._plate = plate
+		_plates.append(plate)
 		
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
 		
 	_money = default_amount_money
 	game_ui.set_money_value(default_amount_money)
-	plate_selected_changed(0)
-	
+
 func furniture_selected(furniture:Furniture):
 	_current_furniture = furniture
 	if is_instance_valid(_current_furniture_instance):
@@ -123,7 +110,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				_current_furniture_instance = null
 	
 func flush_current_plate():
-	current_plate.clear()
+	if current_plate:
+		current_plate.clear()
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is HungryClient:
@@ -164,16 +152,25 @@ func release_client_plate(client: HungryClient) -> void:
 			_plates_availalble[anchor] = null
 			break
 	assign_clients_to_plates()
+	
+func _on_ingredient_plate_assigned(box: BoxInterract, ingredient: Ingredient):
+	current_plate = box._plate
+	add_ingredient_on_plate(ingredient)
 
 func add_ingredient_on_plate(ingredient:Ingredient):
+	if buy_ingredient(ingredient):
+		current_plate.add_ingredient(ingredient)
+		var client := burger_match_with_client(current_burger)
+		if client:
+			feed_client(client, current_plate)
+
+func buy_ingredient(ingredient) -> bool:
 	if _money - ingredient.price < 0:
-		return
+		return false
 	_money -= ingredient.price
 	game_ui.set_money_value(_money)
-	current_plate.add_ingredient(ingredient)
-	var client := burger_match_with_client(current_burger)
-	if client:
-		feed_client(client, current_plate)
+	money_changed.emit()
+	return true
 	
 func plate_selected_changed(side:int):
 	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)

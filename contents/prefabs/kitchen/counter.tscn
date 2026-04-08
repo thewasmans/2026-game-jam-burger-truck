@@ -1,5 +1,20 @@
 [gd_scene format=3 uid="uid://p88ke4grqydx"]
 
 [ext_resource type="PackedScene" uid="uid://dnlc8nnqtb4l2" path="res://contents/3d/kitchen/counter/counter.gltf" id="1_yg53l"]
+[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="2_tqr7n"]
+[ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="3_nmrw8"]
 
-[node name="counter" unique_id=710695029 instance=ExtResource("1_yg53l")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_yg53l"]
+
+[node name="counter" unique_id=710695029 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn") instance=ExtResource("1_yg53l")]
+script = ExtResource("2_tqr7n")
+node_hover_feedback = NodePath("Counter")
+anchor_spawn = NodePath("Counter/AnchorBurger")
+
+[node name="AnchorBurger" parent="Counter" parent_id_path=PackedInt32Array(1567535548) index="0" unique_id=952649832 instance=ExtResource("3_nmrw8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=1611687756]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=143875316]
+shape = SubResource("BoxShape3D_yg53l")

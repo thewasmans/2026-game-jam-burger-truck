@@ -23,7 +23,6 @@
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/furnitures.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="19_yq6so"]
 [ext_resource type="Texture2D" uid="uid://bbtfkx7mh5t6o" path="res://contents/ui/assets/trash.png" id="20_2wyq8"]
-[ext_resource type="PackedScene" uid="uid://cnqxm7mb2fw5c" path="res://contents/vfx/smoke_vfx.tscn" id="20_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://0xjac1r22bli" path="res://contents/3d/kitchen/stove/stove.gltf" id="21_vxglm"]
 [ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
 [ext_resource type="PackedScene" uid="uid://nv67orp1v886" path="res://scenes/selector.tscn" id="22_y6deb"]
@@ -39,6 +38,51 @@ script = ExtResource("19_og1vs")
 icon = ExtResource("20_2wyq8")
 model_3d = ExtResource("21_vxglm")
 metadata/_custom_type_script = "uid://cby3s6lg60sk5"
+
+[sub_resource type="Gradient" id="Gradient_vnvi5"]
+offsets = PackedFloat32Array(0, 0.437018, 1)
+colors = PackedColorArray(0.38170326, 0.38170326, 0.3817031, 0.84705883, 1, 0.9372549, 0.8117647, 0.88235295, 0.9529412, 0.92941177, 0.6901961, 0.9411765)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w3lu1"]
+gradient = SubResource("Gradient_vnvi5")
+
+[sub_resource type="Curve" id="Curve_457x1"]
+_limits = [0.0, 4.45, 0.0, 1.0]
+_data = [Vector2(0, 1.4444716), 0.0, 0.41160738, 0, 0, Vector2(1, 0.03161621), -4.619612, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6rs2f"]
+curve = SubResource("Curve_457x1")
+
+[sub_resource type="Curve" id="Curve_eb7q1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ti0k1"]
+curve = SubResource("Curve_eb7q1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xt8e8"]
+lifetime_randomness = 0.4
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+initial_velocity_min = 0.29999998
+initial_velocity_max = 1.5
+gravity = Vector3(0, 1.1, 0)
+scale_min = 0.19999999
+scale_max = 0.39999998
+scale_curve = SubResource("CurveTexture_ti0k1")
+color = Color(0.65882355, 0.65882355, 0.65882355, 0.67058825)
+color_initial_ramp = SubResource("GradientTexture1D_w3lu1")
+emission_curve = SubResource("CurveTexture_6rs2f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7jxu"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ithj1"]
+material = SubResource("StandardMaterial3D_a7jxu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_color = Color(0.88235295, 0, 0, 1)
@@ -81,10 +125,9 @@ game_ui = NodePath("GameUI")
 spawner = NodePath("Level/HungryClientSpawner")
 burgers_data = Array[ExtResource("2_jkv2x")]([ExtResource("3_jbj1t"), ExtResource("4_muem4"), ExtResource("5_dp3eg"), ExtResource("6_0ld40"), ExtResource("7_gqmmt"), ExtResource("8_yc10j"), ExtResource("9_jscy8"), ExtResource("10_pm3ni"), ExtResource("11_y6deb"), ExtResource("12_og1vs")])
 ingredients_data = Array[ExtResource("13_pm3ni")]([ExtResource("14_y6deb"), ExtResource("15_og1vs"), ExtResource("16_2wyq8"), ExtResource("17_vxglm"), ExtResource("19_yq6so")])
-anchor_plates = [NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate01"), NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate02"), NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate03"), NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate04"), NodePath("Level/Kitchen/AnchorPlateFood/AnchorPlate05")]
 anchor_plates_clients = [NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient01"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient02"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient03"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient04"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient05")]
 plate_selector = NodePath("Level/Selector")
-vfx_burger_disappear = NodePath("Level/Kitchen/AnchorPlateFood/VFX Burger Disappear/GPUParticles3D")
+vfx_burger_disappear = NodePath("Level/Kitchen/GPUParticles3D")
 default_amount_money = 100.0
 furnitures = Array[ExtResource("19_og1vs")]([SubResource("Resource_2wyq8"), ExtResource("22_fv21b"), ExtResource("23_tel4y"), ExtResource("24_qkpxi"), ExtResource("25_5q0nq")])
 navigation = NodePath("Level/NavigationRegion3D")
@@ -98,8 +141,21 @@ fov = 60.0
 
 [node name="Level" type="Node" parent="." unique_id=751625337]
 
-[node name="Kitchen" parent="Level" unique_id=848894539 instance=ExtResource("2_jyhfs")]
+[node name="Kitchen" parent="Level" unique_id=848894539 node_paths=PackedStringArray("camera") instance=ExtResource("2_jyhfs")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.293, 0, 6.366)
+camera = NodePath("../../Global/Camera3D")
+distance = 14.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Level/Kitchen" unique_id=1636278527]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.3301512, 1.1950979, 1.7882056)
+emitting = false
+amount = 20
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_xt8e8")
+draw_pass_1 = SubResource("SphereMesh_ithj1")
 
 [node name="TargetPositionClients" type="Node3D" parent="Level/Kitchen" unique_id=1746330562]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.2929997, 0, 3.210757)
@@ -110,26 +166,6 @@ mesh = SubResource("SphereMesh_0wfyh")
 [node name="Leaving" type="MeshInstance3D" parent="Level/Kitchen/TargetPositionClients" unique_id=696312194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4920025, 0, 0)
 mesh = SubResource("SphereMesh_0wfyh")
-
-[node name="AnchorPlateFood" type="Node3D" parent="Level/Kitchen" unique_id=1635520529]
-
-[node name="VFX Burger Disappear" parent="Level/Kitchen/AnchorPlateFood" unique_id=869497307 instance=ExtResource("20_pm3ni")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.09317541, 1.1247842, 1.7059641)
-
-[node name="AnchorPlate01" parent="Level/Kitchen/AnchorPlateFood" unique_id=952649832 instance=ExtResource("28_tel4y")]
-transform = Transform3D(-1, -2.4256808e-08, 8.399017e-08, 0, 0.96073556, 0.27746555, -8.742278e-08, 0.27746555, -0.96073556, -2.0024374, 1.0088128, 1.5918484)
-
-[node name="AnchorPlate02" parent="Level/Kitchen/AnchorPlateFood" unique_id=2061098516 instance=ExtResource("28_tel4y")]
-transform = Transform3D(-1, -2.4256808e-08, 8.399017e-08, 0, 0.96073556, 0.27746555, -8.742278e-08, 0.27746555, -0.96073556, -0.99566084, 1.0088128, 1.5918484)
-
-[node name="AnchorPlate03" parent="Level/Kitchen/AnchorPlateFood" unique_id=1504277941 instance=ExtResource("28_tel4y")]
-transform = Transform3D(-1, -2.4256808e-08, 8.399017e-08, 0, 0.96073556, 0.27746555, -8.742278e-08, 0.27746555, -0.96073556, 0.015567303, 1.0088128, 1.5918484)
-
-[node name="AnchorPlate04" parent="Level/Kitchen/AnchorPlateFood" unique_id=1394967471 instance=ExtResource("28_tel4y")]
-transform = Transform3D(-1, -2.4256808e-08, 8.399017e-08, 0, 0.96073556, 0.27746555, -8.742278e-08, 0.27746555, -0.96073556, 1.0016363, 1.0088128, 1.5918484)
-
-[node name="AnchorPlate05" parent="Level/Kitchen/AnchorPlateFood" unique_id=1369997224 instance=ExtResource("28_tel4y")]
-transform = Transform3D(-1, -2.4256808e-08, 8.399017e-08, 0, 0.96073556, 0.27746555, -8.742278e-08, 0.27746555, -0.96073556, 2.0044355, 1.0088128, 1.5918484)
 
 [node name="AnchorPlateClients" type="Node3D" parent="Level/Kitchen" unique_id=425371094]
 
@@ -213,5 +249,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.352456, 0.15928459, 4.2732
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
 [connection signal="child_entered_tree" from="GameUI" to="GameUI" method="_on_child_entered_tree"]
-
-[editable path="Level/Kitchen/AnchorPlateFood/VFX Burger Disappear"]

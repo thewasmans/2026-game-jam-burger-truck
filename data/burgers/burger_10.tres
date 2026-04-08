@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_feg2e"]
 [ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="2_dbrcp"]
-[ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="4_ovlbe"]
+[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_feg2e"]
+[ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="3_e1fx4"]
+[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="5_2jg5n"]
 [ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/burger_data.gd" id="6_mlynw"]
 
 [resource]
 script = ExtResource("6_mlynw")
-ingredients = Array[ExtResource("1_feg2e")]([ExtResource("2_dbrcp"), ExtResource("4_ovlbe"), ExtResource("2_dbrcp")])
-name = "CheeseSalader"
-price = 5
+ingredients = Array[ExtResource("1_feg2e")]([ExtResource("2_feg2e"), ExtResource("3_e1fx4"), ExtResource("3_e1fx4"), ExtResource("2_dbrcp"), ExtResource("3_e1fx4"), ExtResource("5_2jg5n")])
+name = "Shrek Burger"
+price = 7
 metadata/_custom_type_script = "uid://b250qdutrqhpq"
