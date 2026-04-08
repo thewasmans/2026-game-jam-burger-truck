@@ -115,8 +115,6 @@ glow_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
 size = Vector3(10, 10, 10)
 
-[sub_resource type="SphereMesh" id="SphereMesh_5q0nq"]
-
 [node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("snack_truck", "game_ui", "spawner", "anchor_plates_clients", "plate_selector", "vfx_burger_disappear", "navigation")]
 script = ExtResource("4_abcde")
 snack_truck = NodePath("Level/Kitchen")
@@ -238,10 +236,6 @@ mouse_filter = 2
 
 [node name="TimerBoard" parent="." unique_id=879052196 instance=ExtResource("33_5q0nq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.352456, 0.15928459, 4.2732744)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=527043493]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-mesh = SubResource("SphereMesh_5q0nq")
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
 [connection signal="child_entered_tree" from="GameUI" to="GameUI" method="_on_child_entered_tree"]
