@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dd0nd1ua82cvb"]
+
+[ext_resource type="PackedScene" uid="uid://dn6oqdluiig68" path="res://contents/3d/ingredients/steak_3d.glb" id="1_6g6b6"]
+[ext_resource type="Script" uid="uid://dalq67poekwk3" path="res://scripts/steak_cooking.gd" id="2_tr54m"]
+[ext_resource type="Shader" uid="uid://crdjkodgtqowd" path="res://shaders/steak_cooking.gdshader" id="3_l31y5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q0si4"]
+render_priority = 0
+shader = ExtResource("3_l31y5")
+shader_parameter/_base_color = Color(0.8235294, 0.23137255, 0.18431373, 1)
+shader_parameter/_cooked_color = Color(0.20115027, 0.08951814, 0.015338849, 1)
+shader_parameter/_cook_progress = 0.0
+
+[node name="steak_3d" unique_id=1563343797 node_paths=PackedStringArray("_mesh", "_doneness_bar") instance=ExtResource("1_6g6b6")]
+script = ExtResource("2_tr54m")
+_mesh = NodePath("Meat")
+_doneness_bar = NodePath("DonenessBar/ProgressBar")
+
+[node name="Meat" parent="." index="0" unique_id=1789906443]
+surface_material_override/0 = SubResource("ShaderMaterial_q0si4")
+
+[node name="DonenessBar" type="Control" parent="." index="1" unique_id=1365554849]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="DonenessBar" index="0" unique_id=1238218381]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+indeterminate = true
+editor_preview_indeterminate = false
