@@ -2,6 +2,8 @@ extends Node3D
 
 class_name Main
 
+signal money_changed
+
 class Plate:
 	var _ingredients:Array[Ingredient] = []
 	var _anchor:Node3D
@@ -52,6 +54,7 @@ var current_burger:Array[Ingredient]:
 func _ready() -> void:
 	_current_furniture = null
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
+	snack_truck.ingredient_plate_assigned.connect(lol)
 	game_ui.init_buttons_ingredients(ingredients_data)
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.select_plate_changed.connect(plate_selected_changed)
@@ -69,7 +72,7 @@ func _ready() -> void:
 	_money = default_amount_money
 	game_ui.set_money_value(default_amount_money)
 	plate_selected_changed(0)
-	
+
 func furniture_selected(furniture:Furniture):
 	_current_furniture = furniture
 	if is_instance_valid(_current_furniture_instance):
@@ -147,16 +150,24 @@ func release_client_plate(client: HungryClient) -> void:
 			_plates_availalble[anchor] = null
 			break
 	assign_clients_to_plates()
+	
+func lol(box, ingredient:Ingredient):
+	add_ingredient_on_plate(ingredient)
 
 func add_ingredient_on_plate(ingredient:Ingredient):
+	if buy_ingredient(ingredient):
+		current_plate.add_ingredient(ingredient)
+		var client := burger_match_with_client(current_burger)
+		if client:
+			feed_client(client, current_plate)
+
+func buy_ingredient(ingredient) -> bool:
 	if _money - ingredient.price < 0:
-		return
+		return false
 	_money -= ingredient.price
 	game_ui.set_money_value(_money)
-	current_plate.add_ingredient(ingredient)
-	var client := burger_match_with_client(current_burger)
-	if client:
-		feed_client(client, current_plate)
+	money_changed.emit()
+	return true
 	
 func plate_selected_changed(side:int):
 	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)
