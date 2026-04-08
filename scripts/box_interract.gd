@@ -8,6 +8,7 @@ signal box_selected()
 @export var scale_animation:float = 1.5
 @export var ingredient:Ingredient
 @export var anchor_spawn:Node3D
+var _plate:Plate
 
 func _ready() -> void:
 	$Area3D.mouse_entered.connect(_on_area_3d_mouse_entered)

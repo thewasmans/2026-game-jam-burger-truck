@@ -9,12 +9,12 @@
 [node name="counter" unique_id=710695029 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn") instance=ExtResource("1_yg53l")]
 script = ExtResource("2_tqr7n")
 node_hover_feedback = NodePath("Counter")
-anchor_spawn = NodePath("AnchorBurger")
+anchor_spawn = NodePath("Counter/AnchorBurger")
 
-[node name="AnchorBurger" parent="." index="1" unique_id=952649832 instance=ExtResource("3_nmrw8")]
+[node name="AnchorBurger" parent="Counter" parent_id_path=PackedInt32Array(1567535548) index="0" unique_id=952649832 instance=ExtResource("3_nmrw8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669, 0)
 
-[node name="Area3D" type="Area3D" parent="." index="2" unique_id=1611687756]
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=1611687756]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=143875316]
 shape = SubResource("BoxShape3D_yg53l")

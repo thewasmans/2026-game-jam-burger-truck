@@ -3,7 +3,7 @@ extends StaticBody3D
 class_name SnackTruck
 
 signal reputation_changed(new_reputation: int)
-signal ingredient_plate_assigned(box:Node3D, ingredient:Ingredient)
+signal ingredient_plate_assigned(box:BoxInterract, ingredient:Ingredient)
 
 @export var ingredient_box: Array[BoxInterract]
 @export var plates_box: Array[BoxInterract]
