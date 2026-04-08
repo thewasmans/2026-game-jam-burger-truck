@@ -47,7 +47,6 @@ func _ready() -> void:
 		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
 		
 	for box in snack_truck.plates_box:
-		print("box.anchor_spawn", box.anchor_spawn)
 		var plate = Plate.new(box.anchor_spawn)
 		box._plate = plate
 		_plates.append(plate)
@@ -138,13 +137,11 @@ func release_client_plate(client: HungryClient) -> void:
 	assign_clients_to_plates()
 	
 func _on_ingredient_plate_assigned(box: BoxInterract, ingredient: Ingredient):
-	print("box._plate ", box._plate)
 	current_plate = box._plate
 	add_ingredient_on_plate(ingredient)
 
 func add_ingredient_on_plate(ingredient:Ingredient):
 	if buy_ingredient(ingredient):
-		print("current_plate,", current_plate)
 		current_plate.add_ingredient(ingredient)
 		var client := burger_match_with_client(current_burger)
 		if client:
