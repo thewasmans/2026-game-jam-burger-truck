@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://5kd2bmstigmj"]
+
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_r62ni"]
+[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_oo6oq"]
+[ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="5_3xjnx"]
+[ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="6_4akjd"]
+[ext_resource type="Resource" uid="uid://byemthqhebahh" path="res://data/ingredients/tomato.tres" id="7_2ev3d"]
+[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="8_d7v5s"]
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/burger_data.gd" id="9_sknuj"]
+
+[resource]
+script = ExtResource("9_sknuj")
+ingredients = Array[ExtResource("1_r62ni")]([ExtResource("2_oo6oq"), ExtResource("7_2ev3d"), ExtResource("6_4akjd"), ExtResource("7_2ev3d"), ExtResource("5_3xjnx"), ExtResource("8_d7v5s")])
+name = "Vegan Burger"
+price = 7
+metadata/_custom_type_script = "uid://b250qdutrqhpq"

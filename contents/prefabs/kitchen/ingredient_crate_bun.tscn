@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dt8gbongjsax3" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_bun/ingredient_crate_bun.gltf" id="1_w5ch6"]
 [ext_resource type="Texture2D" uid="uid://f4h1uqh1gkqw" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_atlas.png" id="2_73khl"]
-[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/ingredient_crate.gd" id="2_j0jkq"]
+[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="2_j0jkq"]
 [ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="3_j0jkq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0jkq"]
@@ -12,17 +12,17 @@ albedo_texture = ExtResource("2_73khl")
 
 [node name="ingredient_crate_bun" unique_id=814188862 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn") instance=ExtResource("1_w5ch6")]
 script = ExtResource("2_j0jkq")
-node_hover_feedback = NodePath(".")
+node_hover_feedback = NodePath("Ingredient_Crate2")
 ingredient = ExtResource("3_j0jkq")
-anchor_spawn = NodePath("AnchorIngredient")
+anchor_spawn = NodePath("Ingredient_Crate2/AnchorIngredient")
 
 [node name="Ingredient_Crate2" parent="." index="0" unique_id=19531649]
 surface_material_override/0 = SubResource("StandardMaterial3D_j0jkq")
+
+[node name="AnchorIngredient" type="Node3D" parent="Ingredient_Crate2" index="0" unique_id=731724752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5841943, 0)
 
 [node name="Area3D" type="Area3D" parent="." index="1" unique_id=859375977]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=451565638]
 shape = SubResource("BoxShape3D_j0jkq")
-
-[node name="AnchorIngredient" type="Node3D" parent="." index="2" unique_id=731724752]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5841943, 0)

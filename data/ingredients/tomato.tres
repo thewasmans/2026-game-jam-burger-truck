@@ -7,3 +7,4 @@
 script = ExtResource("1_abcde")
 name = "Tomato"
 icon = ExtResource("1_yrw8v")
+price = 1.0

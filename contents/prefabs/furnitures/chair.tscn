@@ -35,3 +35,8 @@ mesh = SubResource("CylinderMesh_470by")
 transform = Transform3D(0.00089054415, -0.0008538151, -0.07499438, 0.011919682, 0.42616394, -1.2703177e-10, 0.072783716, -0.06978178, 0.00091759255, 0.0007218644, 0.41872746, 0.2807179)
 material_override = SubResource("StandardMaterial3D_8nnye")
 mesh = SubResource("CylinderMesh_470by")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=843625907]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.0178487, 0, -0.013314903)
+vertices = PackedVector3Array(-0.3761361, 0, -0.38207856, 0.4297137, 0, -0.38207856, 0.42144844, 0, 0.39484322, -0.3802686, 0, 0.41137353)
+affect_navigation_mesh = true

@@ -42,6 +42,7 @@ value = 10.0
 editable = false
 
 [node name="HBoxControl" type="HBoxContainer" parent="." unique_id=2039292817]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -71,6 +72,7 @@ theme = ExtResource("3_uuvj8")
 icon = ExtResource("7_ckmay")
 
 [node name="HBoxIngredientsButton" type="HBoxContainer" parent="." unique_id=1966454403]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
