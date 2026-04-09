@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://byemthqhebahh"]
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://byemthqhebahh"]
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_abcde"]
 [ext_resource type="Texture2D" uid="uid://d08m5s7p3wmbl" path="res://contents/ui/icons/ingredients/tomato.png" id="1_yrw8v"]
