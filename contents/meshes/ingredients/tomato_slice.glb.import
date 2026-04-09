@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://brckj3htmeyq1"
-path="res://.godot/imported/sidewalk.glb-f458923016256140344ab2aa0153580c.scn"
+uid="uid://da68poutptknq"
+path="res://.godot/imported/tomato_slice.glb-1f469f6d279053a4aef273c274838c9c.scn"
 
 [deps]
 
-source_file="res://contents/meshes/environment/sidewalk.glb"
-dest_files=["res://.godot/imported/sidewalk.glb-f458923016256140344ab2aa0153580c.scn"]
+source_file="res://contents/meshes/ingredients/tomato_slice.glb"
+dest_files=["res://.godot/imported/tomato_slice.glb-1f469f6d279053a4aef273c274838c9c.scn"]
 
 [params]
 
