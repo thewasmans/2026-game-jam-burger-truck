@@ -14,15 +14,6 @@ var ingredients_buttons:Array[Button]
 func _ready() -> void:
 	money_label.text = "0 $"
 
-func init_buttons_ingredients(ingredients:Array[IngredientData]):
-	for ingredient in ingredients:
-		var button = Button.new()
-		button.icon = ingredient.icon
-		button.theme = theme_ingredients
-		button.custom_minimum_size = Vector2(200, 200)
-		button.set_meta("ingredient", ingredient)
-		ingredients_buttons.append(button)
-
 func init_buttons_furnitures(furnitures:Array[FurnitureData]):
 	for furniture in furnitures:
 		var button := Button.new()

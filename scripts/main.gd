@@ -38,10 +38,8 @@ func _ready() -> void:
 	_current_furniture = null
 	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
 	snack_truck.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
-	game_ui.init_buttons_ingredients(ingredients_data)
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.select_plate_changed.connect(plate_selected_changed)
-	game_ui.deleted_current_plate.connect(flush_current_plate)
 	game_ui.furniture_selected.connect(furniture_selected)
 	for button in game_ui.ingredients_buttons:
 		var ingredient:IngredientData = button.get_meta("ingredient")
@@ -108,10 +106,6 @@ func _unhandled_input(event: InputEvent) -> void:
 				_current_furniture_instance.queue_free()
 				_current_furniture = null
 				_current_furniture_instance = null
-	
-func flush_current_plate():
-	if current_plate:
-		current_plate.clear()
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is HungryClient:
