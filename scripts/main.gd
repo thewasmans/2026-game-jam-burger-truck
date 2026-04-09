@@ -8,12 +8,12 @@ signal money_changed
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
 @export var burgers_data: Array[BurgerData]
-@export var ingredients_data: Array[Ingredient]
+@export var ingredients_data: Array[IngredientData]
 @export var anchor_plates_clients: Array[Node3D]
 @export var plate_selector: Node3D
 @export var vfx_burger_disappear: GPUParticles3D
 @export var default_amount_money: float = 10.0
-@export var furnitures:Array[Furniture]
+@export var furnitures:Array[FurnitureData]
 @export var navigation:NavigationRegion3D
 @export var placement_zone: Area3D
 
@@ -23,10 +23,10 @@ var _clients: Array[HungryClient] = []
 var _money: float = 0
 var _plates: Array[Plate]
 var _current_index_plate: int
-var _current_furniture:Furniture
+var _current_furniture:FurnitureData
 var _current_furniture_instance: Node3D
 var current_plate:Plate
-var current_burger:Array[Ingredient]:
+var current_burger:Array[IngredientData]:
 	get:
 		return current_plate._ingredients
 var anchor_plates: Array:
@@ -44,7 +44,7 @@ func _ready() -> void:
 	game_ui.deleted_current_plate.connect(flush_current_plate)
 	game_ui.furniture_selected.connect(furniture_selected)
 	for button in game_ui.ingredients_buttons:
-		var ingredient:Ingredient = button.get_meta("ingredient")
+		var ingredient:IngredientData = button.get_meta("ingredient")
 		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
 		
 	for box in snack_truck.plates_box:
@@ -58,7 +58,7 @@ func _ready() -> void:
 	_money = default_amount_money
 	game_ui.set_money_value(default_amount_money)
 
-func furniture_selected(furniture:Furniture):
+func furniture_selected(furniture:FurnitureData):
 	_current_furniture = furniture
 	if is_instance_valid(_current_furniture_instance):
 		_current_furniture_instance.queue_free()
@@ -153,11 +153,11 @@ func release_client_plate(client: HungryClient) -> void:
 			break
 	assign_clients_to_plates()
 	
-func _on_ingredient_plate_assigned(box: BoxInterract, ingredient: Ingredient):
+func _on_ingredient_plate_assigned(box: BoxInterract, ingredient: IngredientData):
 	current_plate = box._plate
 	add_ingredient_on_plate(ingredient)
 
-func add_ingredient_on_plate(ingredient:Ingredient):
+func add_ingredient_on_plate(ingredient: IngredientData):
 	if buy_ingredient(ingredient):
 		current_plate.add_ingredient(ingredient)
 		var client := burger_match_with_client(current_burger)
@@ -193,10 +193,10 @@ func feed_client(client:HungryClient, plate:Plate):
 	_waiting_queue.erase(client)
 	release_client_plate(client)
 
-func burger_match_with_client(burger: Array[Ingredient]) -> HungryClient:
+func burger_match_with_client(burger: Array[IngredientData]) -> HungryClient:
 	for client: HungryClient in _clients:
 		if client.is_waiting and client in _plates_availalble.values():
-			var request_ingredients: Array[Ingredient] = client._burger_request.ingredients
+			var request_ingredients: Array[IngredientData] = client._burger_request.ingredients
 			var is_match: bool = true
 			
 			if request_ingredients.size() != burger.size():
