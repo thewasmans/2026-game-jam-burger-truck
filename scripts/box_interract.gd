@@ -16,12 +16,10 @@ func _ready() -> void:
 	$Area3D.input_event.connect(_on_area_3d_input_event)
 
 func _on_area_3d_mouse_entered() -> void:
-	var tween = create_tween()
-	tween.tween_property(node_hover_feedback, "scale", Vector3.ONE * scale_animation, speed_animation).set_trans(Tween.TRANS_ELASTIC)
+	create_tween().tween_property(node_hover_feedback, "scale", Vector3.ONE * scale_animation, speed_animation).set_trans(Tween.TRANS_ELASTIC)
 
 func _on_area_3d_mouse_exited() -> void:
-	var tween = create_tween()
-	tween.tween_property(node_hover_feedback, "scale", Vector3.ONE, speed_animation).set_trans(Tween.TRANS_ELASTIC)
+	create_tween().tween_property(node_hover_feedback, "scale", Vector3.ONE, speed_animation).set_trans(Tween.TRANS_ELASTIC)
 
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
