@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d0f47tui3a0by" path="res://contents/prefabs/furnitures/chair.tscn" id="1_2bara"]
 [ext_resource type="Texture2D" uid="uid://dadg510kie0vi" path="res://contents/placeholder/placeholder_chair.png" id="1_ng4r3"]
-[ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/furnitures.gd" id="2_ng4r3"]
+[ext_resource type="Script" path="res://scripts/furnitures.gd" id="2_ng4r3"]
 
 [resource]
 script = ExtResource("2_ng4r3")
