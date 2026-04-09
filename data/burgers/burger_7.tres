@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://ccvn0pxkda0e2"]
 
-[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_ydifg"]
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_ydifg"]
 [ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_3qhwg"]
 [ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="5_iccv0"]
-[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/burger_data.gd" id="6_2wghj"]
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="6_2wghj"]
 
 [resource]
 script = ExtResource("6_2wghj")
