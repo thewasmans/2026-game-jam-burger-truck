@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dpm42ue08gex7"
-path="res://.godot/imported/Paper Scratch.otf-2ce36fa06f68c1769a669baf4ff9b7a0.fontdata"
+path="res://.godot/imported/paper_scratch.otf-94a020c4cdea24bfa71eeeb83ccf26b2.fontdata"
 
 [deps]
 
-source_file="res://contents/ui/fonts/Paper Scratch.otf"
-dest_files=["res://.godot/imported/Paper Scratch.otf-2ce36fa06f68c1769a669baf4ff9b7a0.fontdata"]
+source_file="res://contents/ui/fonts/paper_scratch.otf"
+dest_files=["res://.godot/imported/paper_scratch.otf-94a020c4cdea24bfa71eeeb83ccf26b2.fontdata"]
 
 [params]
 

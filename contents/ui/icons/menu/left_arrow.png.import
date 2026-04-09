@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqa6vtf5ndom"
-path="res://.godot/imported/round_table01_icon.png-92c44085ed8d8f90c5fae47d905bfc05.ctex"
+uid="uid://dw8hm6hguqk20"
+path="res://.godot/imported/left_arrow.png-172ddd80f9de8f15251b52943a1d36b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/ui/icons/furnitures/round_table01_icon.png"
-dest_files=["res://.godot/imported/round_table01_icon.png-92c44085ed8d8f90c5fae47d905bfc05.ctex"]
+source_file="res://contents/ui/icons/menu/left_arrow.png"
+dest_files=["res://.godot/imported/left_arrow.png-172ddd80f9de8f15251b52943a1d36b1.ctex"]
 
 [params]
 

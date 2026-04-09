@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3reikr8breno"
-path="res://.godot/imported/REP_Bar_Slider.png-bf7db767daae3e95e479deb5e2c99d21.ctex"
+uid="uid://cqa6vtf5ndom"
+path="res://.godot/imported/round_table_a_icon.png-05626b5024763d216f19dc4b74c3d464.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/ui/icons/game_view_ui/REP_Bar_Slider.png"
-dest_files=["res://.godot/imported/REP_Bar_Slider.png-bf7db767daae3e95e479deb5e2c99d21.ctex"]
+source_file="res://contents/ui/icons/furnitures/round_table_a_icon.png"
+dest_files=["res://.godot/imported/round_table_a_icon.png-05626b5024763d216f19dc4b74c3d464.ctex"]
 
 [params]
 

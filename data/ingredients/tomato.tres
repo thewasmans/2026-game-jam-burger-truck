@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://byemthqhebahh"]
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_abcde"]
-[ext_resource type="Texture2D" uid="uid://d08m5s7p3wmbl" path="res://contents/ui/icons/ingredients/placholder_tomato.png" id="1_yrw8v"]
+[ext_resource type="Texture2D" uid="uid://d08m5s7p3wmbl" path="res://contents/ui/icons/ingredients/tomato.png" id="1_yrw8v"]
 [ext_resource type="PackedScene" uid="uid://2b7clhtdiqa4" path="res://contents/3d/ingredients/tomato_slice_3d.glb" id="2_4deeg"]
 
 [resource]

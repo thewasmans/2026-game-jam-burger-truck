@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://djc6xavhxsjd6"]
 
 [ext_resource type="Script" uid="uid://b8ox1k3noecv8" path="res://scripts/ui/game_ui.gd" id="1_84on6"]
-[ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/in_game_theme.tres" id="1_ajtxk"]
-[ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/ingredients_theme.tres" id="3_uuvj8"]
-[ext_resource type="Texture2D" uid="uid://dw8hm6hguqk20" path="res://contents/ui/icons/menu_icons/left_arrow.png" id="5_nkv2q"]
+[ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/theme/in_game_theme.tres" id="1_ajtxk"]
+[ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/theme/ingredients_theme.tres" id="3_uuvj8"]
+[ext_resource type="Texture2D" uid="uid://dw8hm6hguqk20" path="res://contents/ui/icons/menu/left_arrow.png" id="5_nkv2q"]
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
-[ext_resource type="Texture2D" uid="uid://c5vhv8j1pq7ok" path="res://contents/ui/icons/menu_icons/right_arrow.png" id="6_ckmay"]
-[ext_resource type="Texture2D" uid="uid://bbtfkx7mh5t6o" path="res://contents/ui/icons/menu_icons/trash.png" id="7_ckmay"]
+[ext_resource type="Texture2D" uid="uid://c5vhv8j1pq7ok" path="res://contents/ui/icons/menu/right_arrow.png" id="6_ckmay"]
+[ext_resource type="Texture2D" uid="uid://bbtfkx7mh5t6o" path="res://contents/ui/icons/menu/trash.png" id="7_ckmay"]
 
 [node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("reputation_slider", "container_buttons_ingredients", "money_label", "button_left", "button_right", "button_delete", "container_furnitures")]
 layout_mode = 3
