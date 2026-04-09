@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b47evmm3yxiqf" path="res://contents/prefabs/ui/client_request_ui.tscn" id="2_tnfmv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mntof"]
-size = Vector3(1, 2, 1)
+size = Vector3(0.5407715, 2, 0.38305664)
 
 [sub_resource type="PrismMesh" id="PrismMesh_tnfmv"]
 
@@ -40,46 +40,52 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_278i7")
 size = Vector2(0.5, 0.053)
 
-[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui", "hover_node", "anchor_burger", "collision")]
+[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui", "hover_node", "anchor_burger", "collision", "agent")]
 script = ExtResource("1_mntof")
 speed = 2.0
 client_request_ui = NodePath("SubViewport/ClientRequest")
 hover_node = NodePath("Hover")
 anchor_burger = NodePath("Anchor Burger")
 collision = NodePath("CollisionShape3D")
+agent = NodePath("NavigationAgent3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1118751600]
-transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0.8244037, 0)
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0.824, 0)
 shape = SubResource("BoxShape3D_mntof")
 
-[node name="Body" type="MeshInstance3D" parent="." unique_id=807406255]
-transform = Transform3D(1, 0, 0, 0, -1, 1.2079664e-07, 0, -1.509958e-07, -0.8, 0, 0.5, 0)
+[node name="Model" type="Node3D" parent="." unique_id=702819584]
+transform = Transform3D(0.80952924, 0, 0, 0, 0.82090056, 0, 0, 0, 0.81373817, 0, 1.409066, 0)
+
+[node name="Body" type="MeshInstance3D" parent="Model" unique_id=807406255]
+transform = Transform3D(1.2352858, 0, 0, 0, -1.2181743, 1.4715137e-07, 0, -1.855582e-07, -0.9831172, 0, -1.1074009, 0)
 mesh = SubResource("PrismMesh_tnfmv")
 surface_material_override/0 = SubResource("StandardMaterial3D_x21bv")
 
-[node name="Head" type="MeshInstance3D" parent="." unique_id=1196041355]
-transform = Transform3D(0.80952924, 0, 0, 0, 0.82090056, 0, 0, 0, 0.81373817, 0, 1.409066, 0)
+[node name="Head" type="MeshInstance3D" parent="Model" unique_id=1196041355]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("SphereMesh_fectd")
 surface_material_override/0 = SubResource("StandardMaterial3D_jcmfp")
 
-[node name="HatCylinder" type="MeshInstance3D" parent="." unique_id=2027331020]
-transform = Transform3D(0.69923836, 0, 0, 0, 0.015897809, 0, 0, 0, 0.6881968, 0, 1.8250308, 0)
+[node name="HatCylinder" type="MeshInstance3D" parent="Model" unique_id=2027331020]
+transform = Transform3D(0.86375916, 0, 0, 0, 0.019366302, 0, 0, 0, 0.8457226, 0, 0.5067178, 0)
 mesh = SubResource("CylinderMesh_tniq0")
 surface_material_override/0 = SubResource("StandardMaterial3D_e25xl")
 
-[node name="HatCylinder2" type="MeshInstance3D" parent="." unique_id=196296434]
-transform = Transform3D(0.51599705, 0, 0, 0, 0.05667877, 0, 0, 0, 0.57029665, 0, 1.9025326, 0)
+[node name="HatCylinder2" type="MeshInstance3D" parent="Model" unique_id=196296434]
+transform = Transform3D(0.6374038, 0, 0, 0, 0.06904462, 0, 0, 0, 0.7008355, 0, 0.60112846, 0)
 mesh = SubResource("CylinderMesh_ntmap")
 surface_material_override/0 = SubResource("StandardMaterial3D_rtm0h")
 
+[node name="Anchor Burger" type="Node3D" parent="." unique_id=1795400529]
+transform = Transform3D(1, 0, 0, 0, 0.8261278, -0.56348276, 0, 0.56348276, 0.8261278, -0.0035933852, 0.97790086, -1.0058272)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2083574708]
+
 [node name="Hover" type="MeshInstance3D" parent="." unique_id=771406449]
-transform = Transform3D(-4.951, -8.4585515e-08, -2.2713088e-07, 0, 0.70813626, -3.5498185, 4.3283018e-07, -0.96754545, -2.5980744, -1.643, 1.2038006, -0.301)
+transform = Transform3D(-1.751, -1.460953e-07, -3.922984e-07, 0, 0.70813626, -3.5498185, 2.6439366e-07, -0.9675454, -2.5980747, 0, 1.8024361, -0.41671503)
 mesh = SubResource("PlaneMesh_i5gv5")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=769199299]
 size = Vector2i(1152, 96)
 
 [node name="ClientRequest" parent="SubViewport" unique_id=853921984 instance=ExtResource("2_tnfmv")]
-
-[node name="Anchor Burger" type="Node3D" parent="." unique_id=1795400529]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8035934, 1.3651247, 0)

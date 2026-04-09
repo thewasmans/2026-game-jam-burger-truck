@@ -1,12 +1,29 @@
 [gd_scene format=3 uid="uid://bdcuwmfqri1eu"]
 
 [ext_resource type="PackedScene" uid="uid://cd04tlumvrdtx" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_tomato/ingredient_crate_tomato.gltf" id="1_kekl8"]
+[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="2_cs0qr"]
 [ext_resource type="Texture2D" uid="uid://f4h1uqh1gkqw" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_atlas.png" id="2_gc7bc"]
+[ext_resource type="Resource" uid="uid://byemthqhebahh" path="res://data/ingredients/tomato.tres" id="3_qne20"]
+[ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="4_qne20"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cs0qr"]
 albedo_texture = ExtResource("2_gc7bc")
 
-[node name="ingredient_crate_tomato" unique_id=335073314 instance=ExtResource("1_kekl8")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_qne20"]
 
-[node name="Ingredient_Crate2" parent="." index="0" unique_id=1495309892]
+[node name="ingredient_crate_tomato" unique_id=335073314 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn") instance=ExtResource("1_kekl8")]
+script = ExtResource("2_cs0qr")
+node_hover_feedback = NodePath("Ingredient_Crate2")
+ingredient = ExtResource("3_qne20")
+anchor_spawn = NodePath("Ingredient_Crate2/Node3D")
+
+[node name="Ingredient_Crate2" parent="." index="0" unique_id=977297179]
 surface_material_override/0 = SubResource("StandardMaterial3D_cs0qr")
+
+[node name="Node3D" parent="Ingredient_Crate2" index="0" unique_id=952649832 instance=ExtResource("4_qne20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5305679, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=1186983072]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=361585463]
+shape = SubResource("BoxShape3D_qne20")

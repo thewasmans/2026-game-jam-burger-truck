@@ -1,12 +1,29 @@
 [gd_scene format=3 uid="uid://ln0xvjyi4mjp"]
 
 [ext_resource type="PackedScene" uid="uid://crsdalviqsuwx" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_onion/ingredient_crate_onion.gltf" id="1_iltt0"]
+[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="2_b0uj0"]
 [ext_resource type="Texture2D" uid="uid://f4h1uqh1gkqw" path="res://contents/3d/kitchen/ingredient_crates/ingredient_crate_atlas.png" id="2_ypc6c"]
+[ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="3_8qvug"]
+[ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="4_8qvug"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0uj0"]
 albedo_texture = ExtResource("2_ypc6c")
 
-[node name="ingredient_crate_onion" unique_id=743235345 instance=ExtResource("1_iltt0")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_8qvug"]
 
-[node name="Ingredient_Crate2" parent="." index="0" unique_id=741594631]
+[node name="ingredient_crate_onion" unique_id=743235345 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn") instance=ExtResource("1_iltt0")]
+script = ExtResource("2_b0uj0")
+node_hover_feedback = NodePath("Ingredient_Crate2")
+ingredient = ExtResource("3_8qvug")
+anchor_spawn = NodePath("Ingredient_Crate2/Node3D")
+
+[node name="Ingredient_Crate2" parent="." index="0" unique_id=384839555]
 surface_material_override/0 = SubResource("StandardMaterial3D_b0uj0")
+
+[node name="Node3D" parent="Ingredient_Crate2" index="0" unique_id=952649832 instance=ExtResource("4_8qvug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6131024, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=108683148]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1327487425]
+shape = SubResource("BoxShape3D_8qvug")

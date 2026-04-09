@@ -11,6 +11,7 @@ albedo_color = Color(1, 0.7529412, 0, 1)
 [sub_resource type="PrismMesh" id="PrismMesh_fluw2"]
 
 [node name="Node3D" type="Node3D" unique_id=2064244411]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Leg" type="MeshInstance3D" parent="." unique_id=2133377569]
 transform = Transform3D(1.8, 0, 0, 0, 0.122, 0, 0, 0, 1.8, 0, 0, 0)
@@ -43,3 +44,8 @@ modulate = Color(0.59830123, 0.6371827, 0.590925, 1)
 text = "OPEN NOW !
 THIS WAY !"
 outline_size = 8
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1344380410]
+transform = Transform3D(1.55, 0, 0, 0, 1.55, 0, 0, 0, 1.55, 0.21699572, 0, 1.8970368e-08)
+vertices = PackedVector3Array(1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, 1)
+affect_navigation_mesh = true

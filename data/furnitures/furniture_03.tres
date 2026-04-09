@@ -2,12 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://d0f47tui3a0by" path="res://contents/prefabs/furnitures/chair.tscn" id="1_2bara"]
 [ext_resource type="Texture2D" uid="uid://dadg510kie0vi" path="res://contents/placeholder/placeholder_chair.png" id="1_ng4r3"]
-[ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/furnitures.gd" id="2_ng4r3"]
+[ext_resource type="Script" path="res://scripts/furnitures.gd" id="2_ng4r3"]
 
 [resource]
 script = ExtResource("2_ng4r3")
 name = "Chair"
 icon = ExtResource("1_ng4r3")
 model_3d = ExtResource("1_2bara")
-price = 8.0
-metadata/_custom_type_script = "uid://cby3s6lg60sk5"
+price = 12.0

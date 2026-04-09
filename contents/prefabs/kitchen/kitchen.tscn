@@ -165,8 +165,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e7hnh")
 
-[node name="Kitchen" type="StaticBody3D" unique_id=328235971]
+[node name="Kitchen" type="StaticBody3D" unique_id=328235971 node_paths=PackedStringArray("ingredient_box", "plates_box")]
 script = ExtResource("1_frebv")
+ingredient_box = [NodePath("ingredient_crate_meat"), NodePath("ingredient_crate_bun"), NodePath("ingredient_crate_cheese"), NodePath("ingredient_crate_salad"), NodePath("ingredient_crate_tomato"), NodePath("ingredient_crate_onion")]
+plates_box = [NodePath("Counter"), NodePath("Counter2"), NodePath("Counter3"), NodePath("Counter8"), NodePath("Counter9"), NodePath("Counter4"), NodePath("Counter5")]
 
 [node name="Walls2" parent="." unique_id=56575144 instance=ExtResource("2_lgyoh")]
 transform = Transform3D(1.2749999, 0, 0, 0, 0.97247565, -0.23300405, 0, 0.23300405, 0.97247565, -1.6392018, 0.37241054, -1.40824)
@@ -232,6 +234,12 @@ transform = Transform3D(0.9999999, 0, 3.5527137e-15, 8.277968e-16, 0.9724757, -0
 [node name="ingredient_crate_salad" parent="." unique_id=50451063 instance=ExtResource("6_eqcjw")]
 transform = Transform3D(0.9999999, 0, 3.5527137e-15, 8.277968e-16, 0.9724757, -0.23300406, -3.4549282e-15, 0.23300406, 0.9724757, -2.831629, 1.0607519, -1.4656212)
 
+[node name="ingredient_crate_tomato" parent="." unique_id=335073314 instance=ExtResource("10_sfdcp")]
+transform = Transform3D(-4.4457096e-08, 1.4079492e-10, 1, 0.23300406, 0.9724757, 1.02217665e-08, -0.9724757, 0.23300406, -4.3266255e-08, -3.831629, 0.8272817, -0.49120045)
+
+[node name="ingredient_crate_onion" parent="." unique_id=743235345 instance=ExtResource("11_sd4tf")]
+transform = Transform3D(-4.4457096e-08, 1.4079492e-10, 1, 0.23300406, 0.9724757, 1.02217665e-08, -0.9724757, 0.23300406, -4.3266255e-08, -3.831629, 0.59497666, 0.4783578)
+
 [node name="Stove" parent="." unique_id=153617488 instance=ExtResource("3_wsxgx")]
 transform = Transform3D(1, 0, 0, 0, 0.9724757, -0.23300406, 0, 0.23300406, 0.9724757, 1.168371, 1.0607309, -1.4642506)
 
@@ -278,9 +286,3 @@ mesh = SubResource("ArrayMesh_gr4wk")
 
 [node name="Cube" type="MeshInstance3D" parent="counter2/Counter" unique_id=1709233587]
 mesh = SubResource("ArrayMesh_6ofnw")
-
-[node name="ingredient_crate_tomato" parent="." unique_id=335073314 instance=ExtResource("10_sfdcp")]
-transform = Transform3D(-4.4457096e-08, 1.4079492e-10, 1, 0.23300406, 0.9724757, 1.02217665e-08, -0.9724757, 0.23300406, -4.3266255e-08, -3.831629, 0.8272817, -0.49120045)
-
-[node name="ingredient_crate_onion" parent="." unique_id=743235345 instance=ExtResource("11_sd4tf")]
-transform = Transform3D(-4.4457096e-08, 1.4079492e-10, 1, 0.23300406, 0.9724757, 1.02217665e-08, -0.9724757, 0.23300406, -4.3266255e-08, -3.831629, 0.59497666, 0.4783578)

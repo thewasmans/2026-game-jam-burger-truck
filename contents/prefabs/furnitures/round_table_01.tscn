@@ -10,6 +10,7 @@ radial_segments = 10
 albedo_color = Color(0.18296319, 0.08839821, 6.016344e-08, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1086264772]
+transform = Transform3D(1.8, 0, 0, 0, 1.9556284, 0, 0, 0, 1.8, 0, 0, 0)
 
 [node name="Leg" type="MeshInstance3D" parent="." unique_id=1147122270]
 transform = Transform3D(0.5, 0, 0, 0, 0.02571026, 0, 0, 0, 0.5, 0, 0, 0)
@@ -25,3 +26,8 @@ mesh = SubResource("CylinderMesh_0oiqr")
 transform = Transform3D(0.8, 0, 0, 0, 0.015273253, 0, 0, 0, 0.8, 0, 0.5768801, 0)
 material_override = SubResource("StandardMaterial3D_omx6e")
 mesh = SubResource("CylinderMesh_0oiqr")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1040806228]
+transform = Transform3D(1.3999999, 0, 0, 0, 0.8421248, 0, 0, 0, 1.3999999, 0, 0, 0)
+vertices = PackedVector3Array(-0.36511546, 0, -0.3855467, 0.36582237, 0, -0.39476022, 0.37196475, 0, 0.41295686, -0.37432903, 0, 0.41295686)
+affect_navigation_mesh = true

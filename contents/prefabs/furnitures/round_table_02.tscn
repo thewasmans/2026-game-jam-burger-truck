@@ -3,3 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bnyjcgu6t4xw7" path="res://contents/3d/kitchen/table.gltf" id="1_whlev"]
 
 [node name="table" unique_id=1112525421 instance=ExtResource("1_whlev")]
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." index="1" unique_id=868435028]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+vertices = PackedVector3Array(-0.6809847, 0, -0.70884866, 0.68963134, 0, -0.7070872, 0.6807665, 0, 0.70862126, -0.69463736, 0, 0.6896582)
+affect_navigation_mesh = true

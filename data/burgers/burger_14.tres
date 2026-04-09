@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://bqaj644qt5row"]
+
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_8hc6b"]
+[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_t4dvj"]
+[ext_resource type="Resource" uid="uid://byemthqhebahh" path="res://data/ingredients/tomato.tres" id="3_n2087"]
+[ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="4_7qhao"]
+[ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="4_t4dvj"]
+[ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="5_rmdkh"]
+[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="6_sa2tg"]
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/burger_data.gd" id="7_d5lgp"]
+
+[resource]
+script = ExtResource("7_d5lgp")
+ingredients = Array[ExtResource("1_8hc6b")]([ExtResource("2_t4dvj"), ExtResource("3_n2087"), ExtResource("4_t4dvj"), ExtResource("4_7qhao"), ExtResource("3_n2087"), ExtResource("5_rmdkh"), ExtResource("6_sa2tg")])
+name = "Veggi Burger"
+price = 9
+metadata/_custom_type_script = "uid://b250qdutrqhpq"
