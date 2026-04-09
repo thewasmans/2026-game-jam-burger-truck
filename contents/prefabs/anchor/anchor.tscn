@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctj3ppi44odtp"]
 
-[ext_resource type="Script" path="res://scripts/anchor_hide.gd" id="1_gdjek"]
+[ext_resource type="Script" uid="uid://q4egoy8130vf" path="res://scripts/anchor_hide.gd" id="1_gdjek"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hs5qy"]
 albedo_color = Color(0.19215687, 0.5921569, 0.99607843, 1)
@@ -14,10 +14,9 @@ albedo_color = Color(0.19090894, 0.5910943, 0.9952046, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_wllpp"]
 material = SubResource("StandardMaterial3D_lm60w")
 
-[node name="Node3D" type="Node3D" unique_id=952649832 node_paths=PackedStringArray("anchor_pole", "anchor_sphere")]
+[node name="Node3D" type="Node3D" unique_id=952649832 node_paths=PackedStringArray("meshes")]
 script = ExtResource("1_gdjek")
-anchor_pole = NodePath("MeshInstance3D2")
-anchor_sphere = NodePath("MeshInstance3D")
+meshes = [NodePath("MeshInstance3D"), NodePath("MeshInstance3D2")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1189193794]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
