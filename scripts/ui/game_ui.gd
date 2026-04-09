@@ -3,7 +3,7 @@ extends Control
 class_name GameUI
 
 signal select_plate_changed(side:int)
-signal furniture_selected(furniture:Furniture)
+signal furniture_selected(furniture:FurnitureData)
 signal deleted_current_plate
 
 @export var reputation_slider: HSlider
@@ -22,7 +22,7 @@ func _ready() -> void:
 	button_right.pressed.connect(select_plate.bind(1))
 	button_delete.pressed.connect(func(): deleted_current_plate.emit())
 
-func init_buttons_ingredients(ingredients:Array[Ingredient]):
+func init_buttons_ingredients(ingredients:Array[IngredientData]):
 	for ingredient in ingredients:
 		var button = Button.new()
 		button.icon = ingredient.icon
@@ -32,7 +32,7 @@ func init_buttons_ingredients(ingredients:Array[Ingredient]):
 		button.set_meta("ingredient", ingredient)
 		ingredients_buttons.append(button)
 
-func init_buttons_furnitures(furnitures:Array[Furniture]):
+func init_buttons_furnitures(furnitures:Array[FurnitureData]):
 	for furniture in furnitures:
 		var button := Button.new()
 		button.icon = furniture.icon
@@ -45,7 +45,7 @@ func init_buttons_furnitures(furnitures:Array[Furniture]):
 func on_reputation_changed(new_reputation: int) -> void:
 	reputation_slider.value = new_reputation
 
-func add_ingredient(ingredient:Ingredient):
+func add_ingredient(ingredient:IngredientData):
 	var ingredient_texture := TextureRect.new()
 	ingredient_texture.texture = ingredient.icon
 	ingredient_texture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE

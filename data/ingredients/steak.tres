@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Ingredient" format=4 uid="uid://da52klgb8iem0"]
 
 [ext_resource type="Texture2D" uid="uid://5t3txf5ap6dl" path="res://contents/ui/ingredients/meat.png" id="1_vyhdy"]
-[ext_resource type="PackedScene" uid="uid://oeh16qemojhb" path="res://contents/3d/ingredients/steak_3d.glb" id="2_b7rw3"]
-[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="2_vyhdy"]
+[ext_resource type="PackedScene" uid="uid://dn6oqdluiig68" path="res://contents/3d/ingredients/steak_3d.glb" id="2_b7rw3"]
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_vyhdy"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0wwx8"]
 _surfaces = [{
