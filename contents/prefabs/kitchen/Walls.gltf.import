@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b0kvbgro1phhp"
-path="res://.godot/imported/walls.gltf-c8f4283287b655b4bdee0ef1f410b529.scn"
+path="res://.godot/imported/Walls.gltf-9ffe262b2c3c6617c5cea4accd41b3af.scn"
 
 [deps]
 
-source_file="res://contents/prefabs/kitchen/walls.gltf"
-dest_files=["res://.godot/imported/walls.gltf-c8f4283287b655b4bdee0ef1f410b529.scn"]
+source_file="res://contents/prefabs/kitchen/Walls.gltf"
+dest_files=["res://.godot/imported/Walls.gltf-9ffe262b2c3c6617c5cea4accd41b3af.scn"]
 
 [params]
 
