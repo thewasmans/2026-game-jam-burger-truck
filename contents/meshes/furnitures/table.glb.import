@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2jko2uldwk2x"
-path="res://.godot/imported/tree_bed.glb-24f2877e39bfc105b60d0c55c7aaa2ab.scn"
+uid="uid://d0t4h27uwm5or"
+path="res://.godot/imported/table.glb-09631c46eb5381f7a73d836c268c1f18.scn"
 
 [deps]
 
-source_file="res://contents/meshes/decor/tree_bed.glb"
-dest_files=["res://.godot/imported/tree_bed.glb-24f2877e39bfc105b60d0c55c7aaa2ab.scn"]
+source_file="res://contents/meshes/furnitures/table.glb"
+dest_files=["res://.godot/imported/table.glb-09631c46eb5381f7a73d836c268c1f18.scn"]
 
 [params]
 

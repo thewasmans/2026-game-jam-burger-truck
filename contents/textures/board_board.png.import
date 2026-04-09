@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjkf112ftopj4"
-path.s3tc="res://.godot/imported/ingredient_crate_onion_Ingredient_Crate_Meat.png-bd63a8ad0c7566d343d16e5605519875.s3tc.ctex"
+uid="uid://xi2sy6142lv4"
+path.s3tc="res://.godot/imported/board_board.png-725930455f8c633ac967a61380236b15.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f8083e10797b2fb055954cbc1d739180"
+"md5": "dbe87cafc2ce5788ac650c15e86f0321"
 }
 
 [deps]
 
-source_file="res://contents/meshes/ingredient_crates/ingredient_crate_onion_Ingredient_Crate_Meat.png"
-dest_files=["res://.godot/imported/ingredient_crate_onion_Ingredient_Crate_Meat.png-bd63a8ad0c7566d343d16e5605519875.s3tc.ctex"]
+source_file="res://contents/textures/board_board.png"
+dest_files=["res://.godot/imported/board_board.png-725930455f8c633ac967a61380236b15.s3tc.ctex"]
 
 [params]
 

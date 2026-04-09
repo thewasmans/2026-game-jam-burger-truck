@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://421gu3lyq0qs"
-path.s3tc="res://.godot/imported/ingredient_crate_salad_Ingredient_Crate_Meat.png-31659e81ccf4c361dec545ce7cd0985b.s3tc.ctex"
+path.s3tc="res://.godot/imported/ingredient_crate_salad_Ingredient_Crate_Meat.png-d59804ce08066c29f1901f8c75b0bfe5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://contents/meshes/ingredient_crates/ingredient_crate_salad_Ingredient_Crate_Meat.png"
-dest_files=["res://.godot/imported/ingredient_crate_salad_Ingredient_Crate_Meat.png-31659e81ccf4c361dec545ce7cd0985b.s3tc.ctex"]
+source_file="res://contents/textures/ingredients/ingredient_crate_salad_Ingredient_Crate_Meat.png"
+dest_files=["res://.godot/imported/ingredient_crate_salad_Ingredient_Crate_Meat.png-d59804ce08066c29f1901f8c75b0bfe5.s3tc.ctex"]
 
 [params]
 
