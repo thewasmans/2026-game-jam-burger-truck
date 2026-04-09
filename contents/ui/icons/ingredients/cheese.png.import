@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqa6vtf5ndom"
-path="res://.godot/imported/round_table01_icon.png-38a0ad9dc9b58adfd4408e4357533e0a.ctex"
+uid="uid://pooo8qf5qtf3"
+path="res://.godot/imported/cheese.png-e4515689cbd0a234b527a535e84c4012.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/ui/furniture_icon/round_table01_icon.png"
-dest_files=["res://.godot/imported/round_table01_icon.png-38a0ad9dc9b58adfd4408e4357533e0a.ctex"]
+source_file="res://contents/ui/icons/ingredients/cheese.png"
+dest_files=["res://.godot/imported/cheese.png-e4515689cbd0a234b527a535e84c4012.ctex"]
 
 [params]
 

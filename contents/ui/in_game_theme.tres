@@ -1,15 +1,15 @@
 [gd_resource type="Theme" format=3 uid="uid://bfmopjudgwf0u"]
 
-[ext_resource type="FontFile" uid="uid://b4cgabxfthsbj" path="res://contents/ui/fonts/Thesead.otf" id="1_8ftue"]
-[ext_resource type="Texture2D" uid="uid://d3reikr8breno" path="res://contents/ui/assets/REP_Bar_Slider.png" id="2_v23nn"]
-[ext_resource type="Texture2D" uid="uid://dcwcwi1wkl3k2" path="res://contents/ui/assets/REP_Bar_Top.png" id="3_dkct0"]
-[ext_resource type="Texture2D" uid="uid://xqtndduxksku" path="res://contents/ui/assets/REP_Bar_Bottom.png" id="3_v23nn"]
+[ext_resource type="FontFile" uid="uid://b4cgabxfthsbj" path="res://contents/ui/fonts/thesead.otf" id="1_8ftue"]
+[ext_resource type="Texture2D" uid="uid://d3reikr8breno" path="res://contents/ui/icons/game_view_ui/REP_Bar_Slider.png" id="2_v23nn"]
+[ext_resource type="Texture2D" uid="uid://dcwcwi1wkl3k2" path="res://contents/ui/icons/game_view_ui/REP_Bar_Top.png" id="3_dkct0"]
+[ext_resource type="Texture2D" uid="uid://xqtndduxksku" path="res://contents/ui/icons/game_view_ui/REP_Bar_Bottom.png" id="4_j2ywk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v23nn"]
 texture = ExtResource("3_dkct0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mslo3"]
-texture = ExtResource("3_v23nn")
+texture = ExtResource("4_j2ywk")
 texture_margin_top = 13.0
 texture_margin_bottom = 13.0
 

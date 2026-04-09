@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl5pdqdnidapc"
-path.s3tc="res://.godot/imported/Floor_baked.png-31bb4788783c96c1f45381d866e68ec8.s3tc.ctex"
+path.s3tc="res://.godot/imported/floor_baked.png-216216f3e6d7e88b241843b7cf12adc7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://contents/prefabs/kitchen/Floor_baked.png"
-dest_files=["res://.godot/imported/Floor_baked.png-31bb4788783c96c1f45381d866e68ec8.s3tc.ctex"]
+source_file="res://contents/prefabs/kitchen/floor_baked.png"
+dest_files=["res://.godot/imported/floor_baked.png-216216f3e6d7e88b241843b7cf12adc7.s3tc.ctex"]
 
 [params]
 

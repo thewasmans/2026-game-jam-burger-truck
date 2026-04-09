@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcwcwi1wkl3k2"
-path="res://.godot/imported/REP_Bar_Top.png-69cfc554e03b2b609c909d9ff9ea7794.ctex"
+uid="uid://5t3txf5ap6dl"
+path="res://.godot/imported/meat.png-7b1bd30b035cbf9819a0dddba84d07d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/ui/assets/REP_Bar_Top.png"
-dest_files=["res://.godot/imported/REP_Bar_Top.png-69cfc554e03b2b609c909d9ff9ea7794.ctex"]
+source_file="res://contents/ui/icons/ingredients/meat.png"
+dest_files=["res://.godot/imported/meat.png-7b1bd30b035cbf9819a0dddba84d07d8.ctex"]
 
 [params]
 

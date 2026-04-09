@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cobi1lvid0mbt"
-path="res://.godot/imported/bun_bottom.png-21f8a2ac82c1f32dac2dc8a6c653fdfd.ctex"
+uid="uid://d3reikr8breno"
+path="res://.godot/imported/REP_Bar_Slider.png-bf7db767daae3e95e479deb5e2c99d21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/ui/ingredients/bun_bottom.png"
-dest_files=["res://.godot/imported/bun_bottom.png-21f8a2ac82c1f32dac2dc8a6c653fdfd.ctex"]
+source_file="res://contents/ui/icons/game_view_ui/REP_Bar_Slider.png"
+dest_files=["res://.godot/imported/REP_Bar_Slider.png-bf7db767daae3e95e479deb5e2c99d21.ctex"]
 
 [params]
 

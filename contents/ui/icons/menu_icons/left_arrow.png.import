@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bswelmlauf01g"
-path="res://.godot/imported/salad.png-0a518d0ed906ea7911a9c141e343373b.ctex"
+uid="uid://dw8hm6hguqk20"
+path="res://.godot/imported/left_arrow.png-a11fdbecdd1d465b7de813fcd1b1a2f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/ui/ingredients/salad.png"
-dest_files=["res://.godot/imported/salad.png-0a518d0ed906ea7911a9c141e343373b.ctex"]
+source_file="res://contents/ui/icons/menu_icons/left_arrow.png"
+dest_files=["res://.godot/imported/left_arrow.png-a11fdbecdd1d465b7de813fcd1b1a2f5.ctex"]
 
 [params]
 
