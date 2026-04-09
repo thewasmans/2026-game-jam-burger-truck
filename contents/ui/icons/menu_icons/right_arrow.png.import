@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cobi1lvid0mbt"
-path="res://.godot/imported/bun_bottom.png-21f8a2ac82c1f32dac2dc8a6c653fdfd.ctex"
+uid="uid://c5vhv8j1pq7ok"
+path="res://.godot/imported/right_arrow.png-b8d68d42859f27ccd7a9eca7d0980fc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/ui/ingredients/bun_bottom.png"
-dest_files=["res://.godot/imported/bun_bottom.png-21f8a2ac82c1f32dac2dc8a6c653fdfd.ctex"]
+source_file="res://contents/ui/icons/menu_icons/right_arrow.png"
+dest_files=["res://.godot/imported/right_arrow.png-b8d68d42859f27ccd7a9eca7d0980fc9.ctex"]
 
 [params]
 

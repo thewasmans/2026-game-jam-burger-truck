@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xqtndduxksku"
-path="res://.godot/imported/REP_Bar_Bottom.png-68aaacc883d2e0ae66cf09eb33b7d851.ctex"
+uid="uid://pooo8qf5qtf3"
+path="res://.godot/imported/cheese.png-e4515689cbd0a234b527a535e84c4012.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/ui/assets/REP_Bar_Bottom.png"
-dest_files=["res://.godot/imported/REP_Bar_Bottom.png-68aaacc883d2e0ae66cf09eb33b7d851.ctex"]
+source_file="res://contents/ui/icons/ingredients/cheese.png"
+dest_files=["res://.godot/imported/cheese.png-e4515689cbd0a234b527a535e84c4012.ctex"]
 
 [params]
 

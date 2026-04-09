@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pooo8qf5qtf3"
-path="res://.godot/imported/cheese.png-3119b48181d6fc1de0d5a85f7ad7fa9e.ctex"
+uid="uid://bswelmlauf01g"
+path="res://.godot/imported/salad.png-56ef394d597ce8ff0acf1160ad92dc2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/ui/ingredients/cheese.png"
-dest_files=["res://.godot/imported/cheese.png-3119b48181d6fc1de0d5a85f7ad7fa9e.ctex"]
+source_file="res://contents/ui/icons/ingredients/salad.png"
+dest_files=["res://.godot/imported/salad.png-56ef394d597ce8ff0acf1160ad92dc2a.ctex"]
 
 [params]
 
