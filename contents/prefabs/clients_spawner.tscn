@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ckuxgrtn5s1cd"]
 
-[ext_resource type="Script" uid="uid://dl30bfxeahsmq" path="res://scripts/spawner.gd" id="1_devoi"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="1_devoi"]
 [ext_resource type="PackedScene" uid="uid://b6h3u02w2i8s" path="res://contents/prefabs/hungry_client.tscn" id="2_xl0gr"]
-[ext_resource type="Shape3D" uid="uid://dfp85wqupdio5" path="res://contents/spawn/spawn_box_shape_3d.tres" id="3_xl0gr"]
+[ext_resource type="Shape3D" uid="uid://dfp85wqupdio5" path="res://contents/others/spawn_box_shape_3d.tres" id="3_xl0gr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xl0gr"]
 
