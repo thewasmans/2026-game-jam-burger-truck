@@ -91,7 +91,7 @@ func _on_wait_timer_timeout() -> void:
 	else:
 		leaving_satiated.emit()
 		
-func give_food(_burger:Array[Ingredient])-> bool:
+func give_food(_burger:Array[IngredientData])-> bool:
 	if current_state == State.WAITING:
 		_is_hungry = false
 		wait_timer.stop()

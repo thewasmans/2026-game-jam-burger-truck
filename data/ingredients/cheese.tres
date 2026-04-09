@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cswgje7b0i4vs"]
 
 [ext_resource type="Texture2D" uid="uid://pooo8qf5qtf3" path="res://contents/ui/ingredients/cheese.png" id="1_2tg6n"]
-[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/ingredient.gd" id="1_abcde"]
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_abcde"]
 [ext_resource type="PackedScene" uid="uid://03hvbonklywu" path="res://contents/3d/ingredients/cheese_3d.glb" id="2_2tg6n"]
 
 [resource]

@@ -1,4 +1,4 @@
-class_name Furniture
+class_name FurnitureData
 extends Resource
 
 @export var name: String

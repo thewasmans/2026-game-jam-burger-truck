@@ -1,13 +1,13 @@
 extends Object
 class_name Plate
 
-var _ingredients:Array[Ingredient] = []
+var _ingredients:Array[IngredientData] = []
 var _anchor:Node3D
 
 func _init(anchor:Node3D) -> void:
 	_anchor = anchor	
 	
-func add_ingredient(ingredient:Ingredient):
+func add_ingredient(ingredient:IngredientData):
 	var instance: Node3D = ingredient.model_3d.instantiate()
 	_ingredients.append(ingredient)
 	instance.position += Vector3.UP * _ingredients.size() * .25
