@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvth41fcotnd7"
-path.s3tc="res://.godot/imported/placeholder_table_01.png-73872a6bef50c38fbd8c555b39e85883.s3tc.ctex"
+uid="uid://degqkfu6a6vas"
+path="res://.godot/imported/arrow_sign_icon.png-100dccc1e57e5eb99bce3ed71df248d2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/placeholder/placeholder_table_01.png"
-dest_files=["res://.godot/imported/placeholder_table_01.png-73872a6bef50c38fbd8c555b39e85883.s3tc.ctex"]
+source_file="res://contents/ui/furniture_icon/arrow_sign_icon.png"
+dest_files=["res://.godot/imported/arrow_sign_icon.png-100dccc1e57e5eb99bce3ed71df248d2.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
