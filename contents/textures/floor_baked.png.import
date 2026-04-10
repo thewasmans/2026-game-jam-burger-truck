@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4x5pxotpu1h2"
-path="res://.godot/imported/walls_baked.png-f6064bb581720683f37360f409a30f04.ctex"
+uid="uid://br5pmgmneno6j"
+path="res://.godot/imported/floor_baked.png-44a831ac19aaa2da4ddce9d84f229ebd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/textures/new_textures/walls_baked.png"
-dest_files=["res://.godot/imported/walls_baked.png-f6064bb581720683f37360f409a30f04.ctex"]
+source_file="res://contents/textures/floor_baked.png"
+dest_files=["res://.godot/imported/floor_baked.png-44a831ac19aaa2da4ddce9d84f229ebd.ctex"]
 
 [params]
 

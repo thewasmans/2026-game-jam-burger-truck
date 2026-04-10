@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvwq2ngf5kyh7"
-path="res://.godot/imported/bun_top_3d.glb-a0ee1b93afcae5cec6ecfaf197cc4aca.scn"
+uid="uid://b7s5eumiaajja"
+path="res://.godot/imported/tomato_3d.glb-9f3e217b2520d3afe7361dbca401ffe4.scn"
 
 [deps]
 
-source_file="res://contents/3d/ingredients/bun_top_3d.glb"
-dest_files=["res://.godot/imported/bun_top_3d.glb-a0ee1b93afcae5cec6ecfaf197cc4aca.scn"]
+source_file="res://contents/meshes/ingredients/tomato/tomato_3d.glb"
+dest_files=["res://.godot/imported/tomato_3d.glb-9f3e217b2520d3afe7361dbca401ffe4.scn"]
 
 [params]
 
@@ -37,14 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"mat_bread.001": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://contents/3d/materials/bun_mat.tres",
-"use_external/path": "uid://cf65shwfnmn43"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

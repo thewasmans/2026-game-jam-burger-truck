@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wk0gl1yynggv"
-path="res://.godot/imported/onion_slice.png-17f53758ee987f62be32673d120b28f1.ctex"
+uid="uid://c1i5i8840kovg"
+path="res://.godot/imported/board.png-94f93f80989141f83f412a612b6cd854.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/textures/new_textures/onion_slice.png"
-dest_files=["res://.godot/imported/onion_slice.png-17f53758ee987f62be32673d120b28f1.ctex"]
+source_file="res://contents/textures/board.png"
+dest_files=["res://.godot/imported/board.png-94f93f80989141f83f412a612b6cd854.ctex"]
 
 [params]
 

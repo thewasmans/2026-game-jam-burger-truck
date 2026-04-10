@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8pjtjo08dhd1"
-path="res://.godot/imported/chopping_board_knife_block.png-3af2eac4c37db454b4bde2ea238d7698.ctex"
+path="res://.godot/imported/chopping_board_knife_block.png-c623d6a959056d712a0ba8ff74116903.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/textures/new_textures/chopping_board_knife_block.png"
-dest_files=["res://.godot/imported/chopping_board_knife_block.png-3af2eac4c37db454b4bde2ea238d7698.ctex"]
+source_file="res://contents/textures/chopping_board_knife_block.png"
+dest_files=["res://.godot/imported/chopping_board_knife_block.png-c623d6a959056d712a0ba8ff74116903.ctex"]
 
 [params]
 

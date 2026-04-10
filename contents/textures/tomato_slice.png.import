@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br5pmgmneno6j"
-path="res://.godot/imported/floor_baked.png-5b25e303d693cdf073c02ebdf865d2a7.ctex"
+uid="uid://blulgtkbheb18"
+path="res://.godot/imported/tomato_slice.png-0f50202ea8ef7fb789c97e36b1cc0ad5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/textures/new_textures/floor_baked.png"
-dest_files=["res://.godot/imported/floor_baked.png-5b25e303d693cdf073c02ebdf865d2a7.ctex"]
+source_file="res://contents/textures/tomato_slice.png"
+dest_files=["res://.godot/imported/tomato_slice.png-0f50202ea8ef7fb789c97e36b1cc0ad5.ctex"]
 
 [params]
 

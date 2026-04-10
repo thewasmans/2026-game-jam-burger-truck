@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dkauu1j16ut33"
-path="res://.godot/imported/onion_3d.glb-465d1d54078aeeb5ebdb811834e9c1dc.scn"
+path="res://.godot/imported/onion_3d.glb-e0db7a4a6d47c8f925dd1368b998f0ba.scn"
 
 [deps]
 
-source_file="res://contents/3d/ingredients/onion_3d.glb"
-dest_files=["res://.godot/imported/onion_3d.glb-465d1d54078aeeb5ebdb811834e9c1dc.scn"]
+source_file="res://contents/meshes/ingredients/onion/onion_3d.glb"
+dest_files=["res://.godot/imported/onion_3d.glb-e0db7a4a6d47c8f925dd1368b998f0ba.scn"]
 
 [params]
 
