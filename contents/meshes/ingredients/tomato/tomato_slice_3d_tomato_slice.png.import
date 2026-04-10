@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn0jcygv33b3y"
-path.s3tc="res://.godot/imported/onion_slice_3d_onion_slice.png-625b41afb97c0b62ebf71896ee73ca95.s3tc.ctex"
+uid="uid://dwxt5l508khif"
+path.s3tc="res://.godot/imported/tomato_slice_3d_tomato_slice.png-626661abeed4b2bdc64c21b0444289eb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a2ceab5d9e6abf9258456852733a8c90"
+"md5": "46880217b52a93e4a6c83fd335388383"
 }
 
 [deps]
 
-source_file="res://contents/textures/old_textures/ingredients/onion_slice_3d_onion_slice.png"
-dest_files=["res://.godot/imported/onion_slice_3d_onion_slice.png-625b41afb97c0b62ebf71896ee73ca95.s3tc.ctex"]
+source_file="res://contents/meshes/ingredients/tomato/tomato_slice_3d_tomato_slice.png"
+dest_files=["res://.godot/imported/tomato_slice_3d_tomato_slice.png-626661abeed4b2bdc64c21b0444289eb.s3tc.ctex"]
 
 [params]
 
