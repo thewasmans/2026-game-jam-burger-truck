@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://bctaal8fr8t6o"]
 
-[ext_resource type="PackedScene" uid="uid://s5861u02r8go" path="res://contents/3d/decor/tree_bed.gltf" id="1_htp3w"]
-[ext_resource type="PackedScene" uid="uid://bbo40opj73v32" path="res://contents/3d/decor/tree.gltf" id="2_py72o"]
-[ext_resource type="PackedScene" uid="uid://opd3bmx0nuyl" path="res://contents/3d/decor/sidewalk.gltf" id="3_xn25y"]
+[ext_resource type="PackedScene" uid="uid://dmq6e4f8rymce" path="res://contents/meshes/environment/tree.glb" id="3_hj7nv"]
+[ext_resource type="PackedScene" uid="uid://brckj3htmeyq1" path="res://contents/meshes/environment/sidewalk.glb" id="5_obma5"]
+[ext_resource type="PackedScene" uid="uid://dljsqkaph6uci" path="res://contents/meshes/environment/tree_bed.glb" id="6_re61j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6dni"]
 resource_name = "Material.sidewalk"
@@ -42,41 +42,37 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eujd8")
 
-[node name="envrionment" type="Node3D" unique_id=1062952153]
+[node name="Envrionment" type="Node3D" unique_id=1062952153]
 
-[node name="tree_bed" parent="." unique_id=2135355179 instance=ExtResource("1_htp3w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.129384, 0.14687121, 5.809559)
-
-[node name="tree_bed2" parent="." unique_id=1360497458 instance=ExtResource("1_htp3w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.166067, 0.14687121, 5.809559)
-
-[node name="tree" parent="." unique_id=53791532 instance=ExtResource("2_py72o")]
+[node name="Tree 1" parent="." unique_id=1599454774 instance=ExtResource("3_hj7nv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.024361, 0, 5.8428)
 
-[node name="tree2" parent="." unique_id=902894825 instance=ExtResource("2_py72o")]
+[node name="Base" parent="Tree 1" unique_id=563968777 instance=ExtResource("6_re61j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10502291, 0.14687121, -0.033241272)
+
+[node name="Tree 2" parent="." unique_id=1834087585 instance=ExtResource("3_hj7nv")]
 transform = Transform3D(0.24530742, 0, -0.96944535, 0, 1, 0, 0.96944535, 0, 0.24530742, -6.2099266, 0, 5.783615)
 
-[node name="sidewalk" parent="." unique_id=1818132930 instance=ExtResource("3_xn25y")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.3117332, 0.08167791, -1.1273642)
+[node name="Base" parent="Tree 2" unique_id=1698047254 instance=ExtResource("6_re61j")]
+transform = Transform3D(0.24530742, 0, 0.96944535, 0, 1, 0, -0.96944535, 0, 0.24530742, 0.035910606, 0.14687121, -0.036155224)
 
-[node name="Cube_012" type="MeshInstance3D" parent="sidewalk/Sidewalk" parent_id_path=PackedInt32Array(1818132930, 285705050) index="2" unique_id=1759550760]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.092501655, -13.965683)
-mesh = SubResource("ArrayMesh_6ce8n")
-
-[node name="sidewalk3" parent="." unique_id=533408192 instance=ExtResource("3_xn25y")]
+[node name="Sidewalk 1" parent="." unique_id=1402712168 instance=ExtResource("5_obma5")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.306124, 0.08167791, -1.1273642)
 
-[node name="Cube_012" type="MeshInstance3D" parent="sidewalk3/Sidewalk" parent_id_path=PackedInt32Array(533408192, 285705050) index="2" unique_id=310428645]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.536743e-07, 0.092501655, -13.984686)
+[node name="Walk" type="MeshInstance3D" parent="Sidewalk 1" unique_id=1926035231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 0.092501655, -13.965683)
 mesh = SubResource("ArrayMesh_6ce8n")
 
-[node name="sidewalk2" parent="." unique_id=440128282 instance=ExtResource("3_xn25y")]
+[node name="Sidewalk 2" parent="." unique_id=748144221 instance=ExtResource("5_obma5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.3117332, 0.08167791, -1.1273642)
+
+[node name="Walk" type="MeshInstance3D" parent="Sidewalk 2" unique_id=1759550760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 0.092501655, -13.965683)
+mesh = SubResource("ArrayMesh_6ce8n")
+
+[node name="Sidewalk 3" parent="." unique_id=1214590131 instance=ExtResource("5_obma5")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.683174, 0.08167791, -1.1273642)
 
-[node name="Cube_012" type="MeshInstance3D" parent="sidewalk2/Sidewalk" parent_id_path=PackedInt32Array(440128282, 285705050) index="2" unique_id=1981761704]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.092501655, -13.93182)
+[node name="Walk" type="MeshInstance3D" parent="Sidewalk 3" unique_id=507653559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 0.092501655, -13.965683)
 mesh = SubResource("ArrayMesh_6ce8n")
-
-[editable path="sidewalk"]
-[editable path="sidewalk3"]
-[editable path="sidewalk2"]
