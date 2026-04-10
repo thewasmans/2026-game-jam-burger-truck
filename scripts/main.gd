@@ -20,7 +20,6 @@ signal money_changed
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
 var _waiting_queue: Array[HungryClient] = []
 var _clients: Array[HungryClient] = []
-var _money: float = 0
 var _plates: Array[Plate]
 var _current_index_plate: int
 var _current_furniture:FurnitureData
@@ -53,8 +52,7 @@ func _ready() -> void:
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
 		
-	_money = default_amount_money
-	game_ui.set_money_value(default_amount_money)
+		MoneyManager.initialize(default_amount_money)
 
 func furniture_selected(furniture:FurnitureData):
 	_current_furniture = furniture
@@ -78,8 +76,6 @@ func is_inside_placement_zone(point: Vector3) -> bool:
 	)
 
 func _process(_delta: float) -> void:
-	_money += _delta
-	game_ui.set_money_value(_money)
 	if is_instance_valid(_current_furniture_instance):
 		var camera: Camera3D = get_viewport().get_camera_3d()
 		if camera:
@@ -152,19 +148,13 @@ func _on_ingredient_plate_assigned(box: BoxInterract, ingredient: IngredientData
 	add_ingredient_on_plate(ingredient)
 
 func add_ingredient_on_plate(ingredient: IngredientData):
-	if buy_ingredient(ingredient):
+	if MoneyManager.buy_ingredient(ingredient):
 		current_plate.add_ingredient(ingredient)
 		var client := burger_match_with_client(current_burger)
 		if client:
 			feed_client(client, current_plate)
 
-func buy_ingredient(ingredient) -> bool:
-	if _money - ingredient.price < 0:
-		return false
-	_money -= ingredient.price
-	game_ui.set_money_value(_money)
-	money_changed.emit()
-	return true
+
 	
 func plate_selected_changed(side:int):
 	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)
@@ -180,8 +170,8 @@ func feed_client(client:HungryClient, plate:Plate):
 	vfx_burger_disappear.emitting = true
 	vfx_burger_disappear.global_position = plate._anchor.global_position
 	client.give_food(plate._ingredients)
-	_money += client._burger_request.price
-	game_ui.set_money_value(_money)
+	MoneyManager.add_money(client._burger_request.price)
+	#game_ui.set_money_value(_money)
 	plate.clear()
 	_clients.erase(client)
 	_waiting_queue.erase(client)

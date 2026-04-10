@@ -13,6 +13,7 @@ var ingredients_buttons:Array[Button]
 
 func _ready() -> void:
 	money_label.text = "0 $"
+	MoneyManager.money_changed.connect(func(): set_money_value(MoneyManager._money))
 
 func init_buttons_furnitures(furnitures:Array[FurnitureData]):
 	for furniture in furnitures:
