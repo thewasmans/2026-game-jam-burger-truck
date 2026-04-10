@@ -45,7 +45,7 @@ albedo_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_ithj1"]
 material = SubResource("StandardMaterial3D_a7jxu")
 
-[node name="Node3D" type="Node3D" unique_id=869497307]
+[node name="SmokeVFX" type="Node3D" unique_id=869497307]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1636278527]
 emitting = false

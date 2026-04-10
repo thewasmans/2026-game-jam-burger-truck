@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bnyjcgu6t4xw7"
-path="res://.godot/imported/table.gltf-2197e16d4565bad651d81e223616615c.scn"
+uid="uid://dv7d8uw6aamrs"
+path="res://.godot/imported/onion_slice.glb-e990c1eb16879cc9326e82e7909e46e5.scn"
 
 [deps]
 
-source_file="res://contents/3d/kitchen/table.gltf"
-dest_files=["res://.godot/imported/table.gltf-2197e16d4565bad651d81e223616615c.scn"]
+source_file="res://contents/meshes/ingredients/onion/onion_slice.glb"
+dest_files=["res://.godot/imported/onion_slice.glb-e990c1eb16879cc9326e82e7909e46e5.scn"]
 
 [params]
 

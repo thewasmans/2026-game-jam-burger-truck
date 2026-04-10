@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8q3ynq5ni8tq"]
 
-[node name="Node3D" type="Control" unique_id=1829518468]
+[node name="BuyMenuUI" type="Control" unique_id=1829518468]
 layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 0

@@ -66,12 +66,12 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("SphereMesh_fectd")
 surface_material_override/0 = SubResource("StandardMaterial3D_jcmfp")
 
-[node name="HatCylinder" type="MeshInstance3D" parent="Model" unique_id=2027331020]
+[node name="HatCylinder 1" type="MeshInstance3D" parent="Model" unique_id=2027331020]
 transform = Transform3D(0.86375916, 0, 0, 0, 0.019366302, 0, 0, 0, 0.8457226, 0, 0.5067178, 0)
 mesh = SubResource("CylinderMesh_tniq0")
 surface_material_override/0 = SubResource("StandardMaterial3D_e25xl")
 
-[node name="HatCylinder2" type="MeshInstance3D" parent="Model" unique_id=196296434]
+[node name="HatCylinder 2" type="MeshInstance3D" parent="Model" unique_id=196296434]
 transform = Transform3D(0.6374038, 0, 0, 0, 0.06904462, 0, 0, 0, 0.7008355, 0, 0.60112846, 0)
 mesh = SubResource("CylinderMesh_ntmap")
 surface_material_override/0 = SubResource("StandardMaterial3D_rtm0h")

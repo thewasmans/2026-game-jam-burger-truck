@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkauu1j16ut33"
-path="res://.godot/imported/onion_3d.glb-465d1d54078aeeb5ebdb811834e9c1dc.scn"
+uid="uid://b7s5eumiaajja"
+path="res://.godot/imported/tomato_3d.glb-9f3e217b2520d3afe7361dbca401ffe4.scn"
 
 [deps]
 
-source_file="res://contents/3d/ingredients/onion_3d.glb"
-dest_files=["res://.godot/imported/onion_3d.glb-465d1d54078aeeb5ebdb811834e9c1dc.scn"]
+source_file="res://contents/meshes/ingredients/tomato/tomato_3d.glb"
+dest_files=["res://.godot/imported/tomato_3d.glb-9f3e217b2520d3afe7361dbca401ffe4.scn"]
 
 [params]
 
