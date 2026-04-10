@@ -5,7 +5,7 @@ signal box_selected()
 
 @export var node_hover_feedback:Node3D
 @export var speed_animation:float = .35 
-@export var scale_animation:float = 1.5
+@export var scale_animation:float = 1.25
 @export var ingredient:IngredientData
 @export var anchor_spawn:Node3D
 var _plate:Plate
