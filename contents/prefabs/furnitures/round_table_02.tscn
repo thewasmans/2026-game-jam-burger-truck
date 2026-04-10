@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://b8brhg5t7mx4k"]
 
-[ext_resource type="PackedScene" uid="uid://bnyjcgu6t4xw7" path="res://contents/3d/kitchen/table.gltf" id="1_whlev"]
+[ext_resource type="PackedScene" uid="uid://c52ss737lhbvd" path="res://contents/meshes/furnitures/table.glb" id="1_qcuv0"]
 
-[node name="table" unique_id=1112525421 instance=ExtResource("1_whlev")]
+[node name="round_table_02" type="Node3D" unique_id=1112525421]
 
-[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." index="1" unique_id=868435028]
+[node name="table" parent="." unique_id=1425745787 instance=ExtResource("1_qcuv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008687377, 0, -0.012563348)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=868435028]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 vertices = PackedVector3Array(-0.6809847, 0, -0.70884866, 0.68963134, 0, -0.7070872, 0.6807665, 0, 0.70862126, -0.69463736, 0, 0.6896582)
 affect_navigation_mesh = true
