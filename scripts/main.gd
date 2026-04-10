@@ -33,9 +33,6 @@ func _ready() -> void:
 	kitchen.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
-	for button in game_ui.ingredients_buttons:
-		var ingredient:IngredientData = button.get_meta("ingredient")
-		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
 		
 	for box in kitchen.plates_box:
 		var plate = Plate.new(box.anchor_spawn)
