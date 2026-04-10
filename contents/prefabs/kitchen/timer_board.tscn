@@ -27,22 +27,22 @@ script = ExtResource("1_4srj0")
 timer_label = NodePath("Label3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=728976690]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 0.3, 0, 1.8507714, 0)
+transform = Transform3D(1, 0, 0, 0, 1.407955, -0.21306668, 0, 1.4204445, 0.21119326, 0, 1.8294952, -0.008975996)
 mesh = SubResource("BoxMesh_1x022")
 surface_material_override/0 = SubResource("StandardMaterial3D_gtecl")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1467979251]
-transform = Transform3D(0.19687712, 0, 0, 0, 2, 0, 0, 0, 0.45487225, 0.5463072, 1.8507714, 0)
+transform = Transform3D(0.19687712, 0, 0, 0, 1.4079552, -0.32306036, 0, 1.4204445, 0.32021984, 0.5463072, 1.8294952, -0.008975996)
 mesh = SubResource("BoxMesh_1x022")
 surface_material_override/0 = SubResource("StandardMaterial3D_rhhfm")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1777937877]
-transform = Transform3D(0.19687712, 0, 0, 0, 2, 0, 0, 0, 0.45487225, -0.58851695, 1.8507714, 0)
+transform = Transform3D(0.19687712, 0, 0, 0, 1.4079552, -0.32306036, 0, 1.4204445, 0.32021984, -0.58851695, 1.8294952, -0.008975996)
 mesh = SubResource("BoxMesh_1x022")
 surface_material_override/0 = SubResource("StandardMaterial3D_rhhfm")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=232842145]
-transform = Transform3D(0.19687712, 0, 0, 0, 0.6384454, 0, 0, 0, 0.23865108, -0.04667592, 0.45039645, 0)
+transform = Transform3D(0.197, 0, 0, 0, 2, 0, 0, 0, 0.239, -0.04667592, 0.97529197, 0)
 mesh = SubResource("BoxMesh_1x022")
 surface_material_override/0 = SubResource("StandardMaterial3D_0v7h2")
 
@@ -52,16 +52,16 @@ mesh = SubResource("BoxMesh_1x022")
 surface_material_override/0 = SubResource("StandardMaterial3D_0v7h2")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=523432731]
-transform = Transform3D(-8.605772e-09, 1.335867, 0, -0.19687712, -5.8392605e-08, 0, 0, 0, 0.45487225, -0.020408034, 2.8046737, 0)
+transform = Transform3D(-8.605773e-09, 1.335867, 0, -0.13859707, -4.110708e-08, -0.3230604, -0.13982654, -4.147173e-08, 0.32021987, -0.020408034, 2.501021, 0.6685065)
 mesh = SubResource("BoxMesh_1x022")
 surface_material_override/0 = SubResource("StandardMaterial3D_rhhfm")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=566961030]
-transform = Transform3D(-8.605772e-09, 1.335867, 0, -0.19687712, -5.8392605e-08, 0, 0, 0, 0.45487225, -0.020408034, 0.79559714, 0)
+transform = Transform3D(-8.605773e-09, 1.335867, 0, -0.13859707, -4.110708e-08, -0.3230604, -0.13982654, -4.147173e-08, 0.32021987, -0.020408034, 1.0866764, -0.7583842)
 mesh = SubResource("BoxMesh_1x022")
 surface_material_override/0 = SubResource("StandardMaterial3D_rhhfm")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=615302430]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.952822, -0.1800667)
+transform = Transform3D(-1, 0, 8.742278e-08, 6.2089605e-08, 0.70397764, 0.71022236, -6.154368e-08, 0.71022236, -0.70397764, 0, 2.029224, -0.06326038)
 pixel_size = 0.0075
 text = "00:00"
