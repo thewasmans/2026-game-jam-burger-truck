@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bwq7y2nyoabrd" path="res://contents/textures/new_textures/ingredient_crate_atlas.png" id="2_73khl"]
 [ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="2_j0jkq"]
+[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="2_s3y2s"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="3_73khl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0djgw"]
@@ -44,6 +45,7 @@ albedo_texture = ExtResource("2_73khl")
 [node name="IngredientCrateBun" type="Node3D" unique_id=2082175122 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn")]
 script = ExtResource("2_j0jkq")
 node_hover_feedback = NodePath("IngredientCrate")
+ingredient = ExtResource("2_s3y2s")
 anchor_spawn = NodePath("IngredientCrate/AnchorCrate")
 
 [node name="IngredientCrate" type="MeshInstance3D" parent="." unique_id=619686891]

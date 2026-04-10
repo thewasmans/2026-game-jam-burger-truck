@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://c48a266u7g4sb"]
 
+[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="2_5scxn"]
 [ext_resource type="Texture2D" uid="uid://bwq7y2nyoabrd" path="res://contents/textures/new_textures/ingredient_crate_atlas.png" id="2_hr0m6"]
 [ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="2_nydxa"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="3_hr0m6"]
@@ -44,6 +45,7 @@ albedo_texture = ExtResource("2_hr0m6")
 [node name="IngredientCrateMeat" type="Node3D" unique_id=1817698737 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn")]
 script = ExtResource("2_nydxa")
 node_hover_feedback = NodePath("IngredientCrate")
+ingredient = ExtResource("2_5scxn")
 anchor_spawn = NodePath("IngredientCrate/Anchor")
 
 [node name="IngredientCrate" type="MeshInstance3D" parent="." unique_id=2076159782]

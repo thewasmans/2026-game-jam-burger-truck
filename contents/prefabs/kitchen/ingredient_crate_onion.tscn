@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://ln0xvjyi4mjp"]
 
+[ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="2_8qvug"]
 [ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="2_b0uj0"]
 [ext_resource type="Texture2D" uid="uid://bwq7y2nyoabrd" path="res://contents/textures/new_textures/ingredient_crate_atlas.png" id="2_ypc6c"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="4_8qvug"]
@@ -44,6 +45,7 @@ albedo_texture = ExtResource("2_ypc6c")
 [node name="IngredientCrateOnion" type="Node3D" unique_id=1207703322 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn")]
 script = ExtResource("2_b0uj0")
 node_hover_feedback = NodePath("IngredientCrate")
+ingredient = ExtResource("2_8qvug")
 anchor_spawn = NodePath("IngredientCrate/Anchor")
 
 [node name="IngredientCrate" type="MeshInstance3D" parent="." unique_id=1407381274]
