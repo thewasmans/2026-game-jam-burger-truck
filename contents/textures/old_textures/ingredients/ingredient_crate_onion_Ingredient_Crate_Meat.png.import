@@ -2,20 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4x5pxotpu1h2"
-path="res://.godot/imported/walls_baked.png-221aa3842da6aaa22e9f23c6c415cc1f.ctex"
+uid="uid://bjkf112ftopj4"
+path.s3tc="res://.godot/imported/ingredient_crate_onion_Ingredient_Crate_Meat.png-3bc7b5aff50888513ffae4750bd31fa1.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "f8083e10797b2fb055954cbc1d739180"
 }
 
 [deps]
 
-source_file="res://contents/new_textures/walls_baked.png"
-dest_files=["res://.godot/imported/walls_baked.png-221aa3842da6aaa22e9f23c6c415cc1f.ctex"]
+source_file="res://contents/textures/old_textures/ingredients/ingredient_crate_onion_Ingredient_Crate_Meat.png"
+dest_files=["res://.godot/imported/ingredient_crate_onion_Ingredient_Crate_Meat.png-3bc7b5aff50888513ffae4750bd31fa1.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +27,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

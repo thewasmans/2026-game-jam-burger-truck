@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8pjtjo08dhd1"
-path="res://.godot/imported/chopping_board_knife_block.png-07830df5e9fc134e7e22c0b23c4b6ab0.ctex"
+uid="uid://bwq7y2nyoabrd"
+path="res://.godot/imported/ingredient_crate_atlas.png-0703e2f9d887932d12d0925935937905.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/new_textures/chopping_board_knife_block.png"
-dest_files=["res://.godot/imported/chopping_board_knife_block.png-07830df5e9fc134e7e22c0b23c4b6ab0.ctex"]
+source_file="res://contents/textures/new_textures/ingredient_crate_atlas.png"
+dest_files=["res://.godot/imported/ingredient_crate_atlas.png-0703e2f9d887932d12d0925935937905.ctex"]
 
 [params]
 

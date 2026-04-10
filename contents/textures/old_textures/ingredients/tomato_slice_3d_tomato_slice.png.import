@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhamg64mpj4uq"
-path.s3tc="res://.godot/imported/ingredient_crate_meat_Ingredient_Crate_Meat.png-eb91ea42a02e9f8cc54897b6179097a7.s3tc.ctex"
+uid="uid://dpt3vcko1scls"
+path.s3tc="res://.godot/imported/tomato_slice_3d_tomato_slice.png-23e28948843741191046805e4013458b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f8083e10797b2fb055954cbc1d739180"
+"md5": "46880217b52a93e4a6c83fd335388383"
 }
 
 [deps]
 
-source_file="res://contents/textures/ingredients/ingredient_crate_meat_Ingredient_Crate_Meat.png"
-dest_files=["res://.godot/imported/ingredient_crate_meat_Ingredient_Crate_Meat.png-eb91ea42a02e9f8cc54897b6179097a7.s3tc.ctex"]
+source_file="res://contents/textures/old_textures/ingredients/tomato_slice_3d_tomato_slice.png"
+dest_files=["res://.godot/imported/tomato_slice_3d_tomato_slice.png-23e28948843741191046805e4013458b.s3tc.ctex"]
 
 [params]
 

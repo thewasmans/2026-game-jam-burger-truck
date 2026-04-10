@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xi2sy6142lv4"
-path.s3tc="res://.godot/imported/board_board.png-725930455f8c633ac967a61380236b15.s3tc.ctex"
+uid="uid://blulgtkbheb18"
+path="res://.godot/imported/tomato_slice.png-720afc696916392850f4c0a0d037979b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
-generator_parameters={
-"md5": "dbe87cafc2ce5788ac650c15e86f0321"
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/textures/board_board.png"
-dest_files=["res://.godot/imported/board_board.png-725930455f8c633ac967a61380236b15.s3tc.ctex"]
+source_file="res://contents/textures/new_textures/tomato_slice.png"
+dest_files=["res://.godot/imported/tomato_slice.png-720afc696916392850f4c0a0d037979b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -27,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -41,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

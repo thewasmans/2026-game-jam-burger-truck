@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwq7y2nyoabrd"
-path="res://.godot/imported/ingredient_crate_atlas.png-40b6380c99b22e9fadb0548e1c33bd5a.ctex"
+uid="uid://c4x5pxotpu1h2"
+path="res://.godot/imported/walls_baked.png-f6064bb581720683f37360f409a30f04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/new_textures/ingredient_crate_atlas.png"
-dest_files=["res://.godot/imported/ingredient_crate_atlas.png-40b6380c99b22e9fadb0548e1c33bd5a.ctex"]
+source_file="res://contents/textures/new_textures/walls_baked.png"
+dest_files=["res://.godot/imported/walls_baked.png-f6064bb581720683f37360f409a30f04.ctex"]
 
 [params]
 
