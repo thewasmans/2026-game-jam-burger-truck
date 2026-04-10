@@ -25,11 +25,12 @@
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/data/furniture_data.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="19_yq6so"]
 [ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
-[ext_resource type="PackedScene" uid="uid://nv67orp1v886" path="res://scenes/selector.tscn" id="22_y6deb"]
+[ext_resource type="PackedScene" path="res://scenes/selector.tscn" id="22_y6deb"]
 [ext_resource type="Resource" uid="uid://blfgjhw8oqugu" path="res://data/furnitures/furniture_02.tres" id="23_tel4y"]
 [ext_resource type="Resource" uid="uid://2vameyebt50x" path="res://data/furnitures/furniture_03.tres" id="24_qkpxi"]
 [ext_resource type="Resource" uid="uid://c454qusiang0y" path="res://data/furnitures/furniture_04.tres" id="25_5q0nq"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="28_tel4y"]
+[ext_resource type="PackedScene" uid="uid://dwbihghpkmpdq" path="res://contents/prefabs/environment/board.tscn" id="30_5q0nq"]
 [ext_resource type="PackedScene" uid="uid://bctaal8fr8t6o" path="res://contents/prefabs/global/environment.tscn" id="31_tel4y"]
 [ext_resource type="PackedScene" uid="uid://18yckut1bvmj" path="res://contents/prefabs/kitchen/timer_board.tscn" id="33_5q0nq"]
 
@@ -203,9 +204,10 @@ navigation_mesh = SubResource("NavigationMesh_5q0nq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.8896427)
 mesh = SubResource("BoxMesh_5q0nq")
 
-[node name="Environments" type="Node" parent="." unique_id=382932535]
+[node name="Board" parent="Level" unique_id=2101916 instance=ExtResource("30_5q0nq")]
+transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 2.4777727, 7.918475)
 
-[node name="envrionment" parent="Environments" unique_id=1062952153 instance=ExtResource("31_tel4y")]
+[node name="Environments" type="Node" parent="." unique_id=382932535]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environments" unique_id=574237056]
 environment = SubResource("Environment_jyhfs")
@@ -236,6 +238,8 @@ mesh = SubResource("BoxMesh_jyhfs")
 
 [node name="GameUI" parent="." unique_id=149232493 instance=ExtResource("3_jyhfs")]
 mouse_filter = 2
+
+[node name="RepAndTimeBoard" parent="." unique_id=1062952153 instance=ExtResource("31_tel4y")]
 
 [node name="TimerBoard" parent="." unique_id=879052196 instance=ExtResource("33_5q0nq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2563047, 0.15928459, 4.2732744)
