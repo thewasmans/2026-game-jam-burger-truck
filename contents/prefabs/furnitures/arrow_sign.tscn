@@ -23,7 +23,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.64319646, 0, 0, 0, 0.3, 0, 0.34607863, 0
 material_override = SubResource("StandardMaterial3D_v5dlr")
 mesh = SubResource("BoxMesh_mjwgp")
 
-[node name="Block1" type="MeshInstance3D" parent="." unique_id=1511467717]
+[node name="Block 1" type="MeshInstance3D" parent="." unique_id=1511467717]
 transform = Transform3D(1.6313366, 0, 0, 0, 0.85787165, 0, 0, 0, 0.58195543, -0.03835088, 1.0830332, 0)
 material_override = SubResource("StandardMaterial3D_ibc3l")
 mesh = SubResource("BoxMesh_mjwgp")
@@ -33,12 +33,12 @@ transform = Transform3D(-5.4823442e-08, 0.85787165, 0, -1.2542142, -3.749876e-08
 material_override = SubResource("StandardMaterial3D_ibc3l")
 mesh = SubResource("PrismMesh_fluw2")
 
-[node name="Block2" type="MeshInstance3D" parent="." unique_id=1513379045]
+[node name="Block 2" type="MeshInstance3D" parent="." unique_id=1513379045]
 transform = Transform3D(1.0011326, 0, 0, 0, 1.6036364, 0, 0, 0, 0.58195543, -0.3531481, 2.3100593, 0)
 material_override = SubResource("StandardMaterial3D_ibc3l")
 mesh = SubResource("BoxMesh_mjwgp")
 
-[node name="Text" type="Label3D" parent="Block2" unique_id=1907287919]
+[node name="Text" type="Label3D" parent="Block 2" unique_id=1907287919]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1386205, 0.51625395)
 modulate = Color(0.59830123, 0.6371827, 0.590925, 1)
 text = "OPEN NOW !
