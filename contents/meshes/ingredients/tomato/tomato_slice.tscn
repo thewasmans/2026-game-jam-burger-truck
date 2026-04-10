@@ -1,0 +1,45 @@
+[gd_scene format=4 uid="uid://bq2ir2cvkyius"]
+
+[ext_resource type="Texture2D" uid="uid://dpt3vcko1scls" path="res://contents/textures/tomato_slice_3d_tomato_slice.png" id="1_guv4r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uc5hq"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xpfg0"]
+_surfaces = [{
+"aabb": AABB(-0.28531694, -0.024999991, -0.29999998, 0.5706339, 0.049999982, 0.59999996),
+"format": 34896613377,
+"index_count": 120,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAQAEAAMAAQAFAAQAAAAFAAEABgADAAQAAgADAAcABgAHAAMACAACAAcAAAACAAgACAAHAAkABgAJAAcACgAIAAkAAAAIAAoACgAJAAsABgALAAkADAAKAAsAAAAKAAwADAALAA0ABgANAAsADgAMAA0AAAAMAA4ADgANAA8ABgAPAA0AAAAOABAAEAAOAA8ABgARAA8AEAAPABEAEgAQABEAAAAQABIABgATABEAEgARABMAAAASABQAFAASABMAAAAUAAUABgAVABMAFAATABUABQAUABUABgAEABUABQAVAAQA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 22,
+"vertex_data": PackedByteArray("/38AAP9/AAAazwAAchgAAP9/AAAAAAAAGs///3IYAAD/////cVgAAP//AABxWAAA/3////9/AAD/f///AAAAAOQwAAByGAAA5DD//3IYAAAAAAAAcVgAAAAA//9xWAAAAAAAAI2nAAAAAP//jacAAOQwAACM5wAA5DD//4znAAD/fwAA//8AAP9//////wAAGs8AAIznAAAaz///jOcAAP//AACNpwAA/////42nAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_w48kv"]
+resource_name = "tomato_slice_Cylinder_002"
+_surfaces = [{
+"aabb": AABB(-0.28531694, -0.024999991, -0.29999998, 0.5706339, 0.049999982, 0.59999996),
+"attribute_data": PackedByteArray("/9/34A3y3Mf/3+/BNv1g1/DN3Mc2/Y7qx8Jg1w3yEfrHwo7q/9////DNEfr/n/fg/5/vwQ2y3MfwjdzHNr1g18iCYNc2vY7qyIKO6g2yEfrwjRH6/5//////pMAy8/9/////fzLzpMAy86TAZeb/fzLz/39l5qTAZeakwJjZ/39l5v9/mNmkwJjZpMDLzP9/mNn/f8vMpMDLzKTA/7//f8vM/3//v6TA/7+kwDKz/3//v/9/MrOkwDKzpMBlpv9/MrP/f2WmpMBlpqTAmJn/f2Wm/3+YmaTAmJmkwMyM/3+Ymf9/zIykwMyMpMD/f/9/zIz/f/9/pMA="),
+"format": 34896613399,
+"index_count": 120,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAAACAAQAAAAFAAMAAAAEAAYAAAAHAAUAAAAGAAgAAAAJAAcAAAAIAAoAAAAKAAkACwAMAA0ACwAOAAwACwANAA8ACwAQAA4ACwAPABEACwASABAACwARABMACwAUABIACwATABUACwAVABQAFgAXABgAFgAZABcAGgAbABwAGgAdABsAHgAfACAAHgAhAB8AIgAjACQAIgAlACMAJgAnACgAJgApACcAKgArACwAKgAtACsALgAvADAALgAxAC8AMgAzADQAMgA1ADMANgA3ADgANgA5ADcAOgA7ADwAOgA9ADsA"),
+"material": SubResource("StandardMaterial3D_uc5hq"),
+"primitive": 3,
+"uv_scale": Vector4(2, 1.98, 0, 0),
+"vertex_count": 62,
+"vertex_data": PackedByteArray("/38AAP9//z8azwAAchj/P/9/AAAAAP8///8AAHFY/z/kMAAAchj/P///AACNp/8/AAAAAHFY/z8azwAAjOf/PwAAAACNp/8//38AAP///z/kMAAAjOf/P/9/////f/+//3///wAA/78az///chj/v+Qw//9yGP+//////3FY/78AAP//cVj/v/////+Np/+/AAD//42n/78az///jOf/v+Qw//+M5/+//3///////7//fwAAAAAy8xrP//9yGDLz/3///wAAMvMazwAAchgy8xrPAAByGJjZ/////3FYmNkaz///chiY2f//AABxWJjZ//8AAHFY/7//////jaf/v/////9xWP+///8AAI2n/7///wAAjadlphrP//+M52Wm/////42nZaYazwAAjOdlphrPAACM58uM/3//////y4waz///jOfLjP9/AAD//8uM/38AAP//y4zkMP//jOfLjP9//////8uM5DAAAIzny4zkMAAAjOdlpgAA//+Np2Wm5DD//4znZaYAAAAAjadlpgAAAACNp/+/AAD//3FY/78AAP//jaf/vwAAAABxWP+/AAAAAHFYmNnkMP//chiY2QAA//9xWJjZ5DAAAHIYmNnkMAAAchgy8/9///8AADLz5DD//3IYMvP/fwAAAAAy8wAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f////3////9/////f////3////9/////f////3//fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xpfg0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayxnw"]
+albedo_texture = ExtResource("1_guv4r")
+
+[node name="TomatoSlice" type="Node3D" unique_id=856144410]
+
+[node name="TomatoSlice" type="MeshInstance3D" parent="." unique_id=1358881493]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("ArrayMesh_w48kv")
+surface_material_override/0 = SubResource("StandardMaterial3D_ayxnw")
