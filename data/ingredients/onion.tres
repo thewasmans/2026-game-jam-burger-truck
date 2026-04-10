@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_26b5r"]
 [ext_resource type="Texture2D" uid="uid://duuf7ikxre4bm" path="res://contents/ui/icons/ingredients/onion.png" id="1_u8eol"]
-[ext_resource type="PackedScene" uid="uid://623i4wb6g6kt" path="res://contents/meshes/ingredients/onion/onion_slice_3d.glb" id="2_iw7w2"]
+[ext_resource type="PackedScene" uid="uid://d2oby5tktrod4" path="res://contents/meshes/ingredients/onion/onion_slice.tscn" id="2_iw7w2"]
 
 [resource]
 script = ExtResource("1_26b5r")
