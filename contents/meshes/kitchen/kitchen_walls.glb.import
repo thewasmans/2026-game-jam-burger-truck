@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://brckj3htmeyq1"
-path="res://.godot/imported/sidewalk.glb-f458923016256140344ab2aa0153580c.scn"
+uid="uid://c24tt4ewivnqu"
+path="res://.godot/imported/kitchen_walls.glb-0c074143210a5f5fcf42a51287abf180.scn"
 
 [deps]
 
-source_file="res://contents/meshes/environment/sidewalk.glb"
-dest_files=["res://.godot/imported/sidewalk.glb-f458923016256140344ab2aa0153580c.scn"]
+source_file="res://contents/meshes/kitchen/kitchen_walls.glb"
+dest_files=["res://.godot/imported/kitchen_walls.glb-0c074143210a5f5fcf42a51287abf180.scn"]
 
 [params]
 

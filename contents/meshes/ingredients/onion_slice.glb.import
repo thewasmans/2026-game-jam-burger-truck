@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://brckj3htmeyq1"
-path="res://.godot/imported/sidewalk.glb-f458923016256140344ab2aa0153580c.scn"
+uid="uid://dv7d8uw6aamrs"
+path="res://.godot/imported/onion_slice.glb-4adea51ea83877b2d4b3251b313584f7.scn"
 
 [deps]
 
-source_file="res://contents/meshes/environment/sidewalk.glb"
-dest_files=["res://.godot/imported/sidewalk.glb-f458923016256140344ab2aa0153580c.scn"]
+source_file="res://contents/meshes/ingredients/onion_slice.glb"
+dest_files=["res://.godot/imported/onion_slice.glb-4adea51ea83877b2d4b3251b313584f7.scn"]
 
 [params]
 
