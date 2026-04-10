@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://6ekfmab0p5cg"]
 
-[ext_resource type="PackedScene" uid="uid://ckkm7xwnuxqgx" path="res://contents/meshes/ingredient_crates/ingredient_crate_cheese.glb" id="1_c7qkx"]
-[ext_resource type="Texture2D" uid="uid://bwq7y2nyoabrd" path="res://contents/textures/new_textures/ingredient_crate_atlas.png" id="2_58yrg"]
+[ext_resource type="Texture2D" uid="uid://bwq7y2nyoabrd" path="res://contents/textures/new_textures/ingredient_crate_atlas.png" id="2_6b21q"]
+[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="2_58yrg"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="3_58yrg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwhv1"]
@@ -37,21 +37,23 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6b21q")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scb56"]
-albedo_texture = ExtResource("2_58yrg")
+albedo_texture = ExtResource("2_6b21q")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3y2s"]
 
-[node name="ingredient_crate_cheese" unique_id=1465609460 instance=ExtResource("1_c7qkx")]
+[node name="IngredientCrateCheese" type="Node3D" unique_id=1465609460]
+script = ExtResource("2_58yrg")
 
-[node name="Ingredient_Crate2_008" parent="." index="0" unique_id=1023200483]
+[node name="IngredientCrate" type="MeshInstance3D" parent="." unique_id=1023200483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("ArrayMesh_8pcqf")
 surface_material_override/0 = SubResource("StandardMaterial3D_scb56")
 
-[node name="Anchor" parent="Ingredient_Crate2_008" index="0" unique_id=952649832 instance=ExtResource("3_58yrg")]
+[node name="Anchor" parent="IngredientCrate" unique_id=952649832 instance=ExtResource("3_58yrg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47065592, 0)
 
-[node name="Area3D" type="Area3D" parent="." index="1" unique_id=2005079522]
+[node name="Area3D" type="Area3D" parent="." unique_id=2005079522]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1886880546]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1886880546]
 shape = SubResource("BoxShape3D_s3y2s")

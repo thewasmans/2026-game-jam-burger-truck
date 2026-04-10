@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c48a266u7g4sb"]
 
-[ext_resource type="PackedScene" uid="uid://bomyahgma00ua" path="res://contents/meshes/ingredient_crates/ingredient_crate_meat.glb" id="1_w25hv"]
 [ext_resource type="Texture2D" uid="uid://bwq7y2nyoabrd" path="res://contents/textures/new_textures/ingredient_crate_atlas.png" id="2_hr0m6"]
+[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="2_nydxa"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="3_hr0m6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvnre"]
@@ -41,17 +41,19 @@ albedo_texture = ExtResource("2_hr0m6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3y2s"]
 
-[node name="ingredient_crate_meat" unique_id=1817698737 instance=ExtResource("1_w25hv")]
+[node name="IngredientCrateMeat" type="Node3D" unique_id=1817698737]
+script = ExtResource("2_nydxa")
 
-[node name="Ingredient_Crate2_004" parent="." index="0" unique_id=2076159782]
+[node name="IngredientCrate" type="MeshInstance3D" parent="." unique_id=2076159782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("ArrayMesh_hr0m6")
 surface_material_override/0 = SubResource("StandardMaterial3D_nydxa")
 
-[node name="Anchor" parent="Ingredient_Crate2_004" index="0" unique_id=952649832 instance=ExtResource("3_hr0m6")]
+[node name="Anchor" parent="IngredientCrate" unique_id=952649832 instance=ExtResource("3_hr0m6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4569981, 0)
 
-[node name="Area3D" type="Area3D" parent="." index="1" unique_id=380715463]
+[node name="Area3D" type="Area3D" parent="." unique_id=380715463]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1005234269]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1005234269]
 shape = SubResource("BoxShape3D_s3y2s")
