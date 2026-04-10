@@ -128,7 +128,7 @@ placement_zone = NodePath("Level/PlacementZoneFurniture")
 [node name="Global" type="Node" parent="." unique_id=1804165768]
 
 [node name="Camera3D" type="Camera3D" parent="Global" unique_id=1998703230]
-transform = Transform3D(-1, -7.864184e-08, 3.8186425e-08, 0, 0.4368018, 0.89955777, -8.742278e-08, 0.89955777, -0.4368018, 0.42, 11.8, -4.64)
+transform = Transform3D(-1, 8.463815e-08, -2.188891e-08, 0, 0.25037995, 0.96814764, 8.742278e-08, 0.96814764, -0.25037995, 0.372, 13.177, -1.7257224)
 fov = 60.0
 
 [node name="Level" type="Node" parent="." unique_id=751625337]
