@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b7hk7qjtttpsi"
-path="res://.godot/imported/bun_bottom_3d.glb-f20488ca47e2468b388a7f9d67868e93.scn"
+uid="uid://03hvbonklywu"
+path="res://.godot/imported/cheese_3d.glb-5ed61762ed332de6f758b8cf979d11d1.scn"
 
 [deps]
 
-source_file="res://contents/3d/ingredients/bun_bottom_3d.glb"
-dest_files=["res://.godot/imported/bun_bottom_3d.glb-f20488ca47e2468b388a7f9d67868e93.scn"]
+source_file="res://contents/meshes/ingredients/cheese_3d.glb"
+dest_files=["res://.godot/imported/cheese_3d.glb-5ed61762ed332de6f758b8cf979d11d1.scn"]
 
 [params]
 
@@ -39,10 +39,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"mat_bread": {
+"mat_cheese": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://contents/3d/materials/bun_mat.tres",
-"use_external/path": "uid://cf65shwfnmn43"
+"use_external/fallback_path": "res://contents/materials/cheese_mat.tres",
+"use_external/path": "uid://1yqmopi68nf4"
 }
 }
 }

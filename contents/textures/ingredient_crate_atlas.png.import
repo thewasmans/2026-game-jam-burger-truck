@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1i5i8840kovg"
-path="res://.godot/imported/board.png-e1ff5a78477532d46a159f6bad6018cc.ctex"
+uid="uid://bwq7y2nyoabrd"
+path="res://.godot/imported/ingredient_crate_atlas.png-9b5b5584ca4cbf9ede4c399ae1ebfb7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/textures/new_textures/board.png"
-dest_files=["res://.godot/imported/board.png-e1ff5a78477532d46a159f6bad6018cc.ctex"]
+source_file="res://contents/textures/ingredient_crate_atlas.png"
+dest_files=["res://.godot/imported/ingredient_crate_atlas.png-9b5b5584ca4cbf9ede4c399ae1ebfb7f.ctex"]
 
 [params]
 
