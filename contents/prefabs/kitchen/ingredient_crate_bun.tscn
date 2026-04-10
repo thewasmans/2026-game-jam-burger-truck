@@ -41,8 +41,10 @@ albedo_texture = ExtResource("2_73khl")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3y2s"]
 
-[node name="IngredientCrateBun" type="Node3D" unique_id=2082175122]
+[node name="IngredientCrateBun" type="Node3D" unique_id=2082175122 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn")]
 script = ExtResource("2_j0jkq")
+node_hover_feedback = NodePath("IngredientCrate")
+anchor_spawn = NodePath("IngredientCrate/AnchorCrate")
 
 [node name="IngredientCrate" type="MeshInstance3D" parent="." unique_id=619686891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
