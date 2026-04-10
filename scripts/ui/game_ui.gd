@@ -2,7 +2,6 @@ extends Control
 
 class_name GameUI
 
-signal select_plate_changed(side:int)
 signal furniture_selected(furniture:FurnitureData)
 
 @export var reputation_slider: HSlider
@@ -36,7 +35,3 @@ func add_ingredient(ingredient:IngredientData):
 
 func set_money_value(value:float):
 	money_label.text = str(floor(value)) + "$"
-
-func select_plate(side:int):
-	select_plate_changed.emit(side)
-	

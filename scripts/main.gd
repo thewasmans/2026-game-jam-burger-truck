@@ -19,7 +19,6 @@ var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
 var _waiting_queue: Array[HungryClient] = []
 var _clients: Array[HungryClient] = []
 var _plates: Array[Plate]
-var _current_index_plate: int
 var current_plate:Plate
 var current_burger:Array[IngredientData]:
 	get:
@@ -33,7 +32,6 @@ func _ready() -> void:
 	kitchen.reputation_changed.connect(game_ui.on_reputation_changed)
 	kitchen.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
 	game_ui.init_buttons_furnitures(furnitures)
-	game_ui.select_plate_changed.connect(plate_selected_changed)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
 	for button in game_ui.ingredients_buttons:
 		var ingredient:IngredientData = button.get_meta("ingredient")
@@ -100,12 +98,6 @@ func add_ingredient_on_plate(ingredient: IngredientData):
 		var client := burger_match_with_client(current_burger)
 		if client:
 			feed_client(client, current_plate)
-
-
-	
-func plate_selected_changed(side:int):
-	_current_index_plate = clamp( _current_index_plate + side, 0, anchor_plates.size() - 1)
-	plate_selector.global_position = current_plate._anchor.global_position
 	
 func check_all_burgers() -> void:
 	for plate: Plate in _plates:

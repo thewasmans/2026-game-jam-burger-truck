@@ -179,7 +179,6 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.99
 
 [node name="Selector" parent="Level" unique_id=375739968 instance=ExtResource("22_y6deb")]
 transform = Transform3D(1, 0, 0, 0, 0.980782, 0.19510747, 0, -0.19510747, 0.980782, 0.4914863, 1.4025671, 4.77714)
-visible = false
 
 [node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target") instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
