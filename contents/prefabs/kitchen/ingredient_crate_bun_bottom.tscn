@@ -1,9 +1,9 @@
-[gd_scene format=4 uid="uid://b8lhp5o3d801f"]
+[gd_scene format=4 uid="uid://5ys54fpydrpq"]
 
-[ext_resource type="Texture2D" uid="uid://bwq7y2nyoabrd" path="res://contents/textures/new_textures/ingredient_crate_atlas.png" id="2_73khl"]
-[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="2_j0jkq"]
-[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="2_s3y2s"]
-[ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="3_73khl"]
+[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="1_lpvhg"]
+[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_7t7lm"]
+[ext_resource type="Texture2D" uid="uid://bwq7y2nyoabrd" path="res://contents/textures/ingredient_crate_atlas.png" id="3_sgf2a"]
+[ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="4_gioio"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0djgw"]
 
@@ -38,14 +38,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_w5ch6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0jkq"]
-albedo_texture = ExtResource("2_73khl")
+albedo_texture = ExtResource("3_sgf2a")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3y2s"]
 
-[node name="IngredientCrateBun" type="Node3D" unique_id=2082175122 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn")]
-script = ExtResource("2_j0jkq")
+[node name="IngredientCrateBunBottom" type="Node3D" unique_id=2082175122 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn")]
+script = ExtResource("1_lpvhg")
 node_hover_feedback = NodePath("IngredientCrate")
-ingredient = ExtResource("2_s3y2s")
+ingredient = ExtResource("2_7t7lm")
 anchor_spawn = NodePath("IngredientCrate/AnchorCrate")
 
 [node name="IngredientCrate" type="MeshInstance3D" parent="." unique_id=619686891]
@@ -53,7 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("ArrayMesh_73khl")
 surface_material_override/0 = SubResource("StandardMaterial3D_j0jkq")
 
-[node name="AnchorCrate" parent="IngredientCrate" unique_id=952649832 instance=ExtResource("3_73khl")]
+[node name="AnchorCrate" parent="IngredientCrate" unique_id=952649832 instance=ExtResource("4_gioio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47226453, 0)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1715357108]

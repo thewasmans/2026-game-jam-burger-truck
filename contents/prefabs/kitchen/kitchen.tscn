@@ -5,12 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://e7ki1w7purcq" path="res://contents/prefabs/kitchen/kitchen_walls.tscn" id="2_sfdcp"]
 [ext_resource type="PackedScene" uid="uid://c48a266u7g4sb" path="res://contents/prefabs/kitchen/ingredient_crate_meat.tscn" id="3_870tw"]
 [ext_resource type="PackedScene" uid="uid://btn56u0cjwte3" path="res://contents/prefabs/kitchen/stove.tscn" id="3_wsxgx"]
-[ext_resource type="PackedScene" uid="uid://b8lhp5o3d801f" path="res://contents/prefabs/kitchen/ingredient_crate_bun.tscn" id="4_lgyoh"]
+[ext_resource type="PackedScene" uid="uid://b8lhp5o3d801f" path="res://contents/prefabs/kitchen/ingredient_crate_bun_top.tscn" id="4_lgyoh"]
 [ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="4_sd4tf"]
 [ext_resource type="PackedScene" uid="uid://6ekfmab0p5cg" path="res://contents/prefabs/kitchen/ingredient_crate_cheese.tscn" id="5_akdsp"]
 [ext_resource type="PackedScene" uid="uid://do63m8wjds1s6" path="res://contents/prefabs/kitchen/chopping_board.tscn" id="5_cxkoo"]
 [ext_resource type="PackedScene" uid="uid://bmjudp7a5lbqv" path="res://contents/prefabs/kitchen/ingredient_crate_salad.tscn" id="6_eqcjw"]
 [ext_resource type="PackedScene" uid="uid://bdcuwmfqri1eu" path="res://contents/prefabs/kitchen/ingredient_crate_tomato.tscn" id="10_sfdcp"]
+[ext_resource type="PackedScene" uid="uid://5ys54fpydrpq" path="res://contents/prefabs/kitchen/ingredient_crate_bun_bottom.tscn" id="11_cxkoo"]
 [ext_resource type="PackedScene" uid="uid://ln0xvjyi4mjp" path="res://contents/prefabs/kitchen/ingredient_crate_onion.tscn" id="11_sd4tf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hs2o"]
@@ -96,28 +97,11 @@ size = Vector3(9.846085, 0.9956665, 4.748947)
 
 [node name="Kitchen" type="StaticBody3D" unique_id=328235971 node_paths=PackedStringArray("ingredient_box", "plates_box")]
 script = ExtResource("1_frebv")
-ingredient_box = [NodePath("KitchenWalls/ingredient_crate_meat"), NodePath("KitchenWalls/ingredient_crate_bun"), NodePath("KitchenWalls/ingredient_crate_cheese"), NodePath("KitchenWalls/ingredient_crate_salad"), NodePath("KitchenWalls/ingredient_crate_tomato"), NodePath("KitchenWalls/ingredient_crate_onion")]
+ingredient_box = [NodePath("KitchenWalls/IngredientCrateMeat"), NodePath("KitchenWalls/IngredientCrateBunTop"), NodePath("KitchenWalls/IngredientCrateCheese"), NodePath("KitchenWalls/IngredientCrateSalad"), NodePath("KitchenWalls/IngredientCrateTomato"), NodePath("KitchenWalls/IngredientCrateOnion"), NodePath("KitchenWalls/IngredientCrateBunBottom")]
 plates_box = [NodePath("KitchenWalls/Counter04"), NodePath("KitchenWalls/Counter05"), NodePath("KitchenWalls/Counter06"), NodePath("KitchenWalls/Counter07"), NodePath("KitchenWalls/Counter08"), NodePath("KitchenWalls/Counter09"), NodePath("KitchenWalls/Counter10")]
 
 [node name="KitchenWalls" parent="." unique_id=979950950 instance=ExtResource("2_sfdcp")]
 transform = Transform3D(1.2749999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
-
-[node name="Counter01" type="Node3D" parent="KitchenWalls" unique_id=660217541]
-transform = Transform3D(0.78431386, 0, 0, 0, 1.0000013, 0, 0, 0, 1.0000013, -3.1374357, 0.31399927, -1.351357)
-
-[node name="Counter" type="MeshInstance3D" parent="KitchenWalls/Counter01" unique_id=1333423262]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("ArrayMesh_1sgcf")
-
-[node name="Cube" type="MeshInstance3D" parent="KitchenWalls/Counter01/Counter" unique_id=1099761209]
-mesh = SubResource("ArrayMesh_t35ol")
-
-[node name="Area3D" type="Area3D" parent="KitchenWalls/Counter01" unique_id=534787278]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KitchenWalls/Counter01/Area3D" unique_id=90275458]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0234375, 0)
-shape = SubResource("BoxShape3D_s3y2s")
 
 [node name="Counter02" type="Node3D" parent="KitchenWalls" unique_id=646444895]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000013, 0, 0, 0, 1.0000013, 3.137079, 0.31399927, -1.351357)
@@ -243,22 +227,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0234375, 0)
 shape = SubResource("BoxShape3D_s3y2s")
 
-[node name="ingredient_crate_meat" parent="KitchenWalls" unique_id=1245749798 instance=ExtResource("3_870tw")]
+[node name="IngredientCrateMeat" parent="KitchenWalls" unique_id=1245749798 instance=ExtResource("3_870tw")]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.000001, 0, 0, 0, 1.000001, 0.000111644775, 0.31429824, -1.3490198)
 
-[node name="ingredient_crate_bun" parent="KitchenWalls" unique_id=814188862 instance=ExtResource("4_lgyoh")]
+[node name="IngredientCrateBunTop" parent="KitchenWalls" unique_id=814188862 instance=ExtResource("4_lgyoh")]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.000001, 0, 0, 0, 1.000001, -0.78420234, 0.31429824, -1.3490198)
 
-[node name="ingredient_crate_cheese" parent="KitchenWalls" unique_id=1799325268 instance=ExtResource("5_akdsp")]
-transform = Transform3D(0.78431374, 0, 2.7864426e-15, 0, 1.000001, 0, -3.5527175e-15, 0, 1.000001, -1.5685165, 0.31399927, -1.3493574)
+[node name="IngredientCrateCheese" parent="KitchenWalls" unique_id=1799325268 instance=ExtResource("5_akdsp")]
+transform = Transform3D(0.78431374, 0, 2.7864426e-15, 0, 1.0000012, 0, -3.5527183e-15, 0, 1.0000012, -2.3368251, 0.31399938, -1.3493578)
 
-[node name="ingredient_crate_salad" parent="KitchenWalls" unique_id=50451063 instance=ExtResource("6_eqcjw")]
-transform = Transform3D(0.78431374, 0, 2.7864426e-15, 0, 1.000001, 0, -3.5527175e-15, 0, 1.000001, -2.3528304, 0.3139995, -1.3503577)
+[node name="IngredientCrateSalad" parent="KitchenWalls" unique_id=50451063 instance=ExtResource("6_eqcjw")]
+transform = Transform3D(0.78431374, 0, 2.7864426e-15, 0, 1.0000013, 0, -3.5527188e-15, 0, 1.0000013, -3.1211395, 0.3227401, -1.3503584)
 
-[node name="ingredient_crate_tomato" parent="KitchenWalls" unique_id=335073314 instance=ExtResource("10_sfdcp")]
+[node name="IngredientCrateTomato" parent="KitchenWalls" unique_id=335073314 instance=ExtResource("10_sfdcp")]
 transform = Transform3D(-3.4868318e-08, 1.104274e-10, 0.78431386, 0, 1.000001, -1.4079325e-10, -1.000001, 0, -4.4457156e-08, -3.1371448, 0.31399927, -0.3483568)
 
-[node name="ingredient_crate_onion" parent="KitchenWalls" unique_id=743235345 instance=ExtResource("11_sd4tf")]
+[node name="IngredientCrateBunBottom" parent="KitchenWalls" unique_id=2082175122 instance=ExtResource("11_cxkoo")]
+transform = Transform3D(0.7842875, 0.0019191274, -0.006166808, -0.0024450752, 0.9999983, 0.00024073334, 0.007863252, -0.00022150985, 0.9999704, -1.5636669, 0.3138974, -1.3421549)
+
+[node name="IngredientCrateOnion" parent="KitchenWalls" unique_id=743235345 instance=ExtResource("11_sd4tf")]
 transform = Transform3D(-3.4868318e-08, 1.104274e-10, 0.78431386, 0, 1.000001, -1.4079325e-10, -1.000001, 0, -4.4457156e-08, -3.1371448, 0.31399927, 0.64864415)
 
 [node name="Stove01" parent="KitchenWalls" unique_id=153617488 instance=ExtResource("3_wsxgx")]
