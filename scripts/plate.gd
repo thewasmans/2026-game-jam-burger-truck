@@ -13,7 +13,6 @@ func add_ingredient(ingredient:IngredientData):
 	instance.position += Vector3.UP * _ingredients.size() * .25
 	instance.scale = Vector3.ONE * .25
 	_anchor.add_child(instance)
-	print("_anchor ", _anchor)
 
 func clear():
 	for child in _anchor.get_children():
