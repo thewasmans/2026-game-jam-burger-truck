@@ -2,8 +2,6 @@ extends Node3D
 
 class_name Main
 
-signal money_changed
-
 @export var kitchen: Kitchen
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
@@ -22,8 +20,6 @@ var _waiting_queue: Array[HungryClient] = []
 var _clients: Array[HungryClient] = []
 var _plates: Array[Plate]
 var _current_index_plate: int
-var _current_furniture:FurnitureData
-var _current_furniture_instance: Node3D
 var current_plate:Plate
 var current_burger:Array[IngredientData]:
 	get:
@@ -34,12 +30,11 @@ var anchor_plates: Array:
 		return box
 
 func _ready() -> void:
-	_current_furniture = null
 	kitchen.reputation_changed.connect(game_ui.on_reputation_changed)
 	kitchen.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.select_plate_changed.connect(plate_selected_changed)
-	game_ui.furniture_selected.connect(furniture_selected)
+	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
 	for button in game_ui.ingredients_buttons:
 		var ingredient:IngredientData = button.get_meta("ingredient")
 		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
@@ -52,56 +47,8 @@ func _ready() -> void:
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
 		
-		MoneyManager.initialize(default_amount_money)
-
-func furniture_selected(furniture:FurnitureData):
-	_current_furniture = furniture
-	if is_instance_valid(_current_furniture_instance):
-		_current_furniture_instance.queue_free()
-	if _current_furniture != null:
-		_current_furniture_instance = _current_furniture.model_3d.instantiate()
-		add_child(_current_furniture_instance)
-		
-func is_inside_placement_zone(point: Vector3) -> bool:
-	var shape_node = placement_zone.get_node("CollisionShape3D")
-	var shape = shape_node.shape as BoxShape3D
-	
-	var local_point = placement_zone.to_local(point)
-	var half_size = shape.size * 0.5
-	
-	return (
-		abs(local_point.x) <= half_size.x and
-		abs(local_point.y) <= half_size.y and
-		abs(local_point.z) <= half_size.z
-	)
-
-func _process(_delta: float) -> void:
-	if is_instance_valid(_current_furniture_instance):
-		var camera: Camera3D = get_viewport().get_camera_3d()
-		if camera:
-			var mouse_pos: Vector2 = get_viewport().get_mouse_position()
-			var ray_origin: Vector3 = camera.project_ray_origin(mouse_pos)
-			var ray_dir: Vector3 = camera.project_ray_normal(mouse_pos)
-			var plane: Plane = Plane(Vector3.UP, 0)
-			var intersection: Variant = plane.intersects_ray(ray_origin, ray_dir)
-			if intersection != null:
-				_current_furniture_instance.global_position = intersection
-
-func _unhandled_input(event: InputEvent) -> void:
-	if is_instance_valid(_current_furniture_instance):
-		if event is InputEventMouseButton and event.pressed:
-			if event.button_index == MOUSE_BUTTON_LEFT:
-				print("CLICK")
-				print(is_inside_placement_zone(_current_furniture_instance.global_position))
-				if is_inside_placement_zone(_current_furniture_instance.global_position):
-					_current_furniture_instance.reparent(navigation)
-					navigation.bake_navigation_mesh()
-					_current_furniture = null
-					_current_furniture_instance = null
-			elif event.button_index == MOUSE_BUTTON_RIGHT:
-				_current_furniture_instance.queue_free()
-				_current_furniture = null
-				_current_furniture_instance = null
+	MoneyManager.initialize(default_amount_money)
+	FurnituresManager.initialize(navigation, placement_zone)
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is HungryClient:
