@@ -9,7 +9,7 @@ radial_segments = 10
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nnye"]
 albedo_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
 
-[node name="Node3D" type="Node3D" unique_id=606715255]
+[node name="Chair" type="Node3D" unique_id=606715255]
 
 [node name="Sit" type="MeshInstance3D" parent="." unique_id=1739446554]
 transform = Transform3D(0.6, 0, 0, 0, 0.020957101, 0, 0, 0, 0.6, 0, 0.854424, 0)

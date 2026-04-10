@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c52ss737lhbvd" path="res://contents/meshes/furnitures/table.glb" id="1_qcuv0"]
 
-[node name="round_table_02" type="Node3D" unique_id=1112525421]
+[node name="RoundTable02" type="Node3D" unique_id=1112525421]
 
 [node name="table" parent="." unique_id=1425745787 instance=ExtResource("1_qcuv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008687377, 0, -0.012563348)
