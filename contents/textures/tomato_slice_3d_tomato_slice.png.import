@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnsy8bstnuilv"
-path.s3tc="res://.godot/imported/board_board.png-c75bab87bb27dad6ec11c542899372e4.s3tc.ctex"
+uid="uid://dpt3vcko1scls"
+path.s3tc="res://.godot/imported/tomato_slice_3d_tomato_slice.png-9bf14ef61445fb8c7ccd5d3a2ee553f1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "dbe87cafc2ce5788ac650c15e86f0321"
+"md5": "46880217b52a93e4a6c83fd335388383"
 }
 
 [deps]
 
-source_file="res://contents/textures/old_textures/ingredients/board_board.png"
-dest_files=["res://.godot/imported/board_board.png-c75bab87bb27dad6ec11c542899372e4.s3tc.ctex"]
+source_file="res://contents/textures/tomato_slice_3d_tomato_slice.png"
+dest_files=["res://.godot/imported/tomato_slice_3d_tomato_slice.png-9bf14ef61445fb8c7ccd5d3a2ee553f1.s3tc.ctex"]
 
 [params]
 
