@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://2b7clhtdiqa4"
-path="res://.godot/imported/tomato_slice_3d.glb-205be786fbe4c842e1249df5a4b4a90e.scn"
+path="res://.godot/imported/tomato_slice_3d.glb-0704eb4210503d00d3d990aab38a94ff.scn"
 
 [deps]
 
-source_file="res://contents/3d/ingredients/tomato_slice_3d.glb"
-dest_files=["res://.godot/imported/tomato_slice_3d.glb-205be786fbe4c842e1249df5a4b4a90e.scn"]
+source_file="res://contents/meshes/ingredients/tomato/tomato_slice_3d.glb"
+dest_files=["res://.godot/imported/tomato_slice_3d.glb-0704eb4210503d00d3d990aab38a94ff.scn"]
 
 [params]
 
