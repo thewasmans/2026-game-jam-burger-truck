@@ -107,7 +107,6 @@ func feed_client(client:HungryClient, plate:Plate):
 	vfx_burger_disappear.global_position = plate._anchor.global_position
 	client.give_food(plate._ingredients)
 	MoneyManager.add_money(client._burger_request.price)
-	#game_ui.set_money_value(_money)
 	plate.clear()
 	_clients.erase(client)
 	_waiting_queue.erase(client)
