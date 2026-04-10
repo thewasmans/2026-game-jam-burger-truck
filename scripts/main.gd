@@ -4,7 +4,7 @@ class_name Main
 
 signal money_changed
 
-@export var snack_truck: SnackTruck
+@export var kitchen: Kitchen
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
 @export var burgers_data: Array[BurgerData]
@@ -31,13 +31,13 @@ var current_burger:Array[IngredientData]:
 		return current_plate._ingredients
 var anchor_plates: Array:
 	get:
-		var box = snack_truck.plates_box.map(func(elt:BoxInterract): return elt.anchor_spawn)
+		var box = kitchen.plates_box.map(func(elt:BoxInterract): return elt.anchor_spawn)
 		return box
 
 func _ready() -> void:
 	_current_furniture = null
-	snack_truck.reputation_changed.connect(game_ui.on_reputation_changed)
-	snack_truck.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
+	kitchen.reputation_changed.connect(game_ui.on_reputation_changed)
+	kitchen.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.select_plate_changed.connect(plate_selected_changed)
 	game_ui.furniture_selected.connect(furniture_selected)
@@ -45,7 +45,7 @@ func _ready() -> void:
 		var ingredient:IngredientData = button.get_meta("ingredient")
 		button.pressed.connect(add_ingredient_on_plate.bind(ingredient))
 		
-	for box in snack_truck.plates_box:
+	for box in kitchen.plates_box:
 		var plate = Plate.new(box.anchor_spawn)
 		box._plate = plate
 		_plates.append(plate)
@@ -126,7 +126,7 @@ func on_enemy_leaving_hungry(client:HungryClient) -> void:
 	_clients.erase(client)
 	_waiting_queue.erase(client)
 	release_client_plate(client)
-	snack_truck.take_damage(1)
+	kitchen.take_damage(1)
 
 func on_client_waiting_food(client: HungryClient) -> void:
 	_waiting_queue.append(client)

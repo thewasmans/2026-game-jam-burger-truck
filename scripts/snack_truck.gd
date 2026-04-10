@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-class_name SnackTruck
+class_name Kitchen
 
 signal reputation_changed(new_reputation: int)
 signal ingredient_plate_assigned(box:BoxInterract, ingredient:IngredientData)
