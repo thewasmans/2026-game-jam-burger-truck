@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://sjoespgma806"]
+
+[ext_resource type="PackedScene" uid="uid://b7hk7qjtttpsi" path="res://contents/meshes/ingredients/bun_bottom_3d.glb" id="1_wm40w"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o3m4a"]
+
+[node name="BunBotto!" type="Node3D" unique_id=60632081]
+
+[node name="bun_bottom_3d" parent="." unique_id=366075605 instance=ExtResource("1_wm40w")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1976507775]
+transform = Transform3D(1.885, 0, 0, 0, 0.142, 0, 0, 0, 1.885, 0, 0.14335805, 0)
+mesh = SubResource("CylinderMesh_o3m4a")
