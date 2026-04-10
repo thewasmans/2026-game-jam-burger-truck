@@ -9,12 +9,12 @@ signal leaved
 
 enum State { MOVING_TO_TRUCK, WAITING, LEAVING }
 
-@export var speed: float = 5.0
+@export var speed: float = 4.0
 @export var target_position: Vector3
 @export var target_leaving: Vector3
 @export var client_request_ui: ClientRequestUI
 @export var hover_node: Node3D
-@export var wait_time: Vector2 = Vector2(10, 15)
+@export var wait_time: Vector2 = Vector2(12, 18)
 @export var anchor_burger: Node3D
 @export var collision: CollisionShape3D
 @export var agent: NavigationAgent3D

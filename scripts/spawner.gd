@@ -9,8 +9,8 @@ signal client_spawned(client:HungryClient)
 @export var front_truck_target: MeshInstance3D 
 @export var out_screen_target: MeshInstance3D 
 var spawn_time := RandomNumberGenerator.new()
-@export var minimal_spawn_time: float = 2.0
-@export var maximal_spawn_time: float = 5.0
+@export var minimal_spawn_time: float = 4.0
+@export var maximal_spawn_time: float = 8.0
 
 var timer: Timer
 var _hungries_clients: Array[HungryClient] = []
