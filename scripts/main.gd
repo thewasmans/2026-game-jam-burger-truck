@@ -39,7 +39,7 @@ func on_child_entered_tree(node: Node) -> void:
 			client.set_burger(burger_data)
 		client.leaving_hungry.connect(kitchen.on_enemy_leaving_hungry.bind(client))
 		client.waiting_food.connect(func():
-			kitchen.on_client_waiting_food.bind(client)
+			kitchen.on_client_waiting_food(client)
 			check_all_burgers())
 		ClientsManager._clients.append(client)
 		client.leaved.connect(free_client.bind(client))
@@ -53,7 +53,7 @@ func _on_ingredient_plate_assigned(box: BoxInterract, ingredient: IngredientData
 func add_ingredient_on_plate(ingredient: IngredientData, plate:Plate):
 	if MoneyManager.buy_ingredient(ingredient):
 		plate.add_ingredient(ingredient)
-		var client := ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
+		var client = ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
 		if client:
 			ClientsManager.feed_client(client, plate)
 			kitchen.release_client_plate(client)
