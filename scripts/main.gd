@@ -6,7 +6,6 @@ class_name Main
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
 @export var anchor_plates_clients: Array[Node3D]
-@export var plate_selector: Node3D
 @export var vfx_burger_disappear: GPUParticles3D
 @export var default_amount_money: float = 10.0
 @export var furnitures:Array[FurnitureData]
