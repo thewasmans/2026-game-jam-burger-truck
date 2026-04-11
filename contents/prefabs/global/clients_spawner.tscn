@@ -1,20 +1,15 @@
 [gd_scene format=3 uid="uid://ckuxgrtn5s1cd"]
 
-[ext_resource type="Script" path="res://scripts/spawner.gd" id="1_devoi"]
+[ext_resource type="Script" uid="uid://dl30bfxeahsmq" path="res://scripts/spawner.gd" id="1_devoi"]
 [ext_resource type="PackedScene" uid="uid://b6h3u02w2i8s" path="res://contents/prefabs/global/hungry_client.tscn" id="2_xl0gr"]
-[ext_resource type="Shape3D" uid="uid://dfp85wqupdio5" path="res://contents/others/spawn_box_shape_3d.tres" id="3_xl0gr"]
+[ext_resource type="Material" uid="uid://gxs0qgqlmm36" path="res://contents/materials/debug_material.tres" id="4_nbol0"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_xl0gr"]
+[sub_resource type="SphereMesh" id="SphereMesh_458yu"]
 
-[node name="ClientsSpawner" type="Area3D" unique_id=42760824]
+[node name="ClientsSpawner" type="Node3D" unique_id=962042507]
 script = ExtResource("1_devoi")
 enemy_scene = ExtResource("2_xl0gr")
-spawn_area = ExtResource("3_xl0gr")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2124859015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18618375, 0)
-shape = ExtResource("3_xl0gr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1531484805]
-transform = Transform3D(1, 0, 0, 0, 0.16, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_xl0gr")
+material_override = ExtResource("4_nbol0")
+mesh = SubResource("SphereMesh_458yu")

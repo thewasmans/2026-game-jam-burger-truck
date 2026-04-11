@@ -41,6 +41,7 @@ func _ready() -> void:
 		
 	MoneyManager.initialize(default_amount_money)
 	FurnituresManager.initialize(navigation, placement_zone)
+	ClientsManager.initialize()
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is HungryClient:

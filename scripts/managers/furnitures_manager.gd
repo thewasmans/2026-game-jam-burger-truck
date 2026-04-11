@@ -1,13 +1,15 @@
 extends Node
 
-var _current_furniture:FurnitureData = null
-var _current_furniture_instance: Node3D = null
+var _current_furniture:FurnitureData
+var _current_furniture_instance: Node3D
 var _navigation:NavigationRegion3D
 var _placement_zone:Area3D
 
 func initialize(navigation:NavigationRegion3D, placement_zone:Area3D):
 	_navigation = navigation
 	_placement_zone = placement_zone
+	_current_furniture = null
+	_current_furniture_instance = null
 
 func _process(_delta: float) -> void:
 	if is_instance_valid(_current_furniture_instance):

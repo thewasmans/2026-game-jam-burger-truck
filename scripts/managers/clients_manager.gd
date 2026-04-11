@@ -3,6 +3,10 @@ extends Node
 var _clients: Array[HungryClient] = []
 var _waiting_queue: Array[HungryClient] = []
 
+func initialize():
+	_clients = []
+	_waiting_queue = []
+
 func feed_client(client:HungryClient, plate:Plate):
 	client.give_food(plate._ingredients)
 	MoneyManager.add_money(client._burger_request.price)

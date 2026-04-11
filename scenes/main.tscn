@@ -129,16 +129,6 @@ fixed_fps = 0
 process_material = SubResource("ParticleProcessMaterial_xt8e8")
 draw_pass_1 = SubResource("SphereMesh_ithj1")
 
-[node name="TargetPositionClients" type="Node3D" parent="Level/Kitchen" unique_id=1746330562]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.2929997, 0, 3.210757)
-
-[node name="FrontTruck" type="MeshInstance3D" parent="Level/Kitchen/TargetPositionClients" unique_id=1816251431]
-mesh = SubResource("SphereMesh_0wfyh")
-
-[node name="Leaving" type="MeshInstance3D" parent="Level/Kitchen/TargetPositionClients" unique_id=696312194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4920025, 0, 0)
-mesh = SubResource("SphereMesh_0wfyh")
-
 [node name="AnchorPlateClients" type="Node3D" parent="Level/Kitchen" unique_id=425371094]
 
 [node name="AnchorClient01" parent="Level/Kitchen/AnchorPlateClients" unique_id=1267885147 instance=ExtResource("28_tel4y")]
@@ -158,8 +148,16 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.99
 
 [node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target") instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
-front_truck_target = NodePath("../Kitchen/TargetPositionClients/FrontTruck")
-out_screen_target = NodePath("../Kitchen/TargetPositionClients/Leaving")
+front_truck_target = NodePath("FrontTruck")
+out_screen_target = NodePath("Leaving")
+
+[node name="FrontTruck" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=1816251431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.103453636, 13.155243)
+mesh = SubResource("SphereMesh_0wfyh")
+
+[node name="Leaving" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=696312194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4920025, -0.103453636, 13.155243)
+mesh = SubResource("SphereMesh_0wfyh")
 
 [node name="AreaFurnitures" type="Area3D" parent="Level" unique_id=1980600924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15556955, -7.206752)
