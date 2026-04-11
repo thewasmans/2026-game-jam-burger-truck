@@ -93,12 +93,11 @@ size = Vector3(10, 10, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
 
-[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "anchor_plates_clients", "vfx_burger_disappear", "navigation", "placement_zone")]
+[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "vfx_burger_disappear", "navigation", "placement_zone")]
 script = ExtResource("4_abcde")
 kitchen = NodePath("Level/Kitchen")
 game_ui = NodePath("GameUI")
 spawner = NodePath("Level/HungryClientSpawner")
-anchor_plates_clients = [NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient01"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient02"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient03"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient04"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient05")]
 vfx_burger_disappear = NodePath("Level/Kitchen/GPUParticles3D")
 default_amount_money = 100.0
 furnitures = Array[ExtResource("19_og1vs")]([ExtResource("24_qkpxi"), ExtResource("23_tel4y"), ExtResource("22_fv21b"), ExtResource("25_5q0nq")])
@@ -114,8 +113,9 @@ fov = 60.0
 
 [node name="Level" type="Node" parent="." unique_id=751625337]
 
-[node name="Kitchen" parent="Level" unique_id=848894539 node_paths=PackedStringArray("camera") instance=ExtResource("2_jyhfs")]
+[node name="Kitchen" parent="Level" unique_id=848894539 node_paths=PackedStringArray("anchor_plates_clients", "camera") instance=ExtResource("2_jyhfs")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.293, 0, 6.366)
+anchor_plates_clients = [NodePath("AnchorPlateClients/AnchorClient01"), NodePath("AnchorPlateClients/AnchorClient02"), NodePath("AnchorPlateClients/AnchorClient03"), NodePath("AnchorPlateClients/AnchorClient04"), NodePath("AnchorPlateClients/AnchorClient05")]
 camera = NodePath("../../Global/Camera3D")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Level/Kitchen" unique_id=1636278527]

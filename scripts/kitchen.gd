@@ -7,6 +7,7 @@ signal ingredient_plate_assigned(box:BoxInterract, ingredient:IngredientData)
 
 @export var ingredient_box: Array[BoxInterract]
 @export var plates_box: Array[BoxInterract]
+@export var anchor_plates_clients: Array[Node3D]
 @export var camera:Camera3D
 @export var distance:float
 
@@ -23,7 +24,21 @@ func _ready() -> void:
 		
 	for box in plates_box:
 		box.box_selected.connect(_on_box_plate_selected.bind(box))
-
+		box._plate = Plate.new(box.anchor_spawn)
+		_plates.append(box._plate)
+		
+	for anchor in anchor_plates_clients:
+		_plates_availalble[anchor] = null
+		
+func _process(_delta: float) -> void:
+	if _current_ingredient:
+		var mouse_pos: Vector2 = get_viewport().get_mouse_position()
+		var ray_origin: Vector3 = camera.project_ray_origin(mouse_pos)
+		var ray_direction: Vector3 = camera.project_ray_normal(mouse_pos)
+		var world_plane: Plane = Plane(Vector3.UP, 1.7)
+		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
+		_current_ingredient.global_position = intersection
+		
 func take_damage(amount: int) -> void:
 	current_reputation -= amount
 	reputation_changed.emit(current_reputation)
@@ -47,12 +62,28 @@ func instantiate_ingredient(crate:BoxInterract) -> Node3D:
 	crate.anchor_spawn.add_child(instance)
 	instance.set_meta("data", crate.ingredient)
 	return instance
+	
+func assign_clients_to_plates() -> void:
+	for anchor: Node3D in anchor_plates_clients:
+		var size = ClientsManager._waiting_queue.size()
+		if _plates_availalble[anchor] == null and ClientsManager._waiting_queue.size() > 0:
+			var next_client: HungryClient = ClientsManager._waiting_queue.pop_front()
+			_plates_availalble[anchor] = next_client
+			next_client.global_position = anchor.global_position
 
-func _process(_delta: float) -> void:
-	if _current_ingredient:
-		var mouse_pos: Vector2 = get_viewport().get_mouse_position()
-		var ray_origin: Vector3 = camera.project_ray_origin(mouse_pos)
-		var ray_direction: Vector3 = camera.project_ray_normal(mouse_pos)
-		var world_plane: Plane = Plane(Vector3.UP, 1.7)
-		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
-		_current_ingredient.global_position = intersection
+func release_client_plate(client: HungryClient) -> void:
+	for anchor: Node3D in _plates_availalble.keys():
+		if _plates_availalble[anchor] == client:
+			_plates_availalble[anchor] = null
+			break
+	assign_clients_to_plates()
+
+func on_enemy_leaving_hungry(client:HungryClient) -> void:
+	ClientsManager.release_client(client)
+	release_client_plate(client)
+	take_damage(1)
+
+func on_client_waiting_food(client: HungryClient) -> void:
+	ClientsManager._waiting_queue.append(client)
+	assign_clients_to_plates()
+	
