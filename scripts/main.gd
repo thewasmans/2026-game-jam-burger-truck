@@ -16,8 +16,7 @@ class_name Main
 @export var placement_zone: Area3D
 
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
-var _waiting_queue: Array[HungryClient] = []
-var _clients: Array[HungryClient] = []
+
 var _plates: Array[Plate]
 var current_plate:Plate
 var current_burger:Array[IngredientData]:
@@ -54,27 +53,26 @@ func on_child_entered_tree(node: Node) -> void:
 		client.leaving_hungry.connect(on_enemy_leaving_hungry.bind(client))
 		client.waiting_food.connect(check_all_burgers)
 		client.waiting_food.connect(on_client_waiting_food.bind(client))
-		_clients.append(client)
+		ClientsManager._clients.append(client)
 		client.leaved.connect(free_client.bind(client))
 
 func free_client(client:HungryClient):
 	client.queue_free()
 
 func on_enemy_leaving_hungry(client:HungryClient) -> void:
-	_clients.erase(client)
-	_waiting_queue.erase(client)
+	ClientsManager.release_client(client)
 	release_client_plate(client)
 	kitchen.take_damage(1)
 
 func on_client_waiting_food(client: HungryClient) -> void:
-	_waiting_queue.append(client)
+	ClientsManager._waiting_queue.append(client)
 	assign_clients_to_plates()
 	check_all_burgers()
 
 func assign_clients_to_plates() -> void:
 	for anchor: Node3D in anchor_plates_clients:
-		if _plates_availalble[anchor] == null and _waiting_queue.size() > 0:
-			var next_client: HungryClient = _waiting_queue.pop_front()
+		if _plates_availalble[anchor] == null and ClientsManager._waiting_queue.size() > 0:
+			var next_client: HungryClient = ClientsManager._waiting_queue.pop_front()
 			_plates_availalble[anchor] = next_client
 			next_client.global_position = anchor.global_position
 
@@ -92,41 +90,20 @@ func _on_ingredient_plate_assigned(box: BoxInterract, ingredient: IngredientData
 func add_ingredient_on_plate(ingredient: IngredientData):
 	if MoneyManager.buy_ingredient(ingredient):
 		current_plate.add_ingredient(ingredient)
-		var client := burger_match_with_client(current_burger)
+		var client := ClientsManager.burger_match_with_client(current_burger, _plates_availalble)
 		if client:
-			feed_client(client, current_plate)
+			ClientsManager.feed_client(client, current_plate)
+			release_client_plate(client)
+			play_vfx(current_plate)
 	
 func check_all_burgers() -> void:
 	for plate: Plate in _plates:
-		var client: HungryClient = burger_match_with_client(plate._ingredients)
+		var client: HungryClient = ClientsManager.burger_match_with_client(plate._ingredients, _plates_availalble)
 		if client:
-			feed_client(client, plate)
+			ClientsManager.feed_client(client, plate)
+			release_client_plate(client)
+			play_vfx(plate)
 			
-func feed_client(client:HungryClient, plate:Plate):
+func play_vfx(plate:Plate):
 	vfx_burger_disappear.emitting = true
 	vfx_burger_disappear.global_position = plate._anchor.global_position
-	client.give_food(plate._ingredients)
-	MoneyManager.add_money(client._burger_request.price)
-	plate.clear()
-	_clients.erase(client)
-	_waiting_queue.erase(client)
-	release_client_plate(client)
-
-func burger_match_with_client(burger: Array[IngredientData]) -> HungryClient:
-	for client: HungryClient in _clients:
-		if client.is_waiting and client in _plates_availalble.values():
-			var request_ingredients: Array[IngredientData] = client._burger_request.ingredients
-			var is_match: bool = true
-			
-			if request_ingredients.size() != burger.size():
-				is_match = false
-			else:
-				for i: int in range(burger.size()):
-					if request_ingredients[i] != burger[i]:
-						is_match = false
-						break
-						
-			if is_match:
-				return client
-			
-	return null
