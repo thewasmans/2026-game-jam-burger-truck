@@ -5,8 +5,6 @@ class_name Main
 @export var kitchen: Kitchen
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
-@export var burgers_data: Array[BurgerData]
-@export var ingredients_data: Array[IngredientData]
 @export var anchor_plates_clients: Array[Node3D]
 @export var plate_selector: Node3D
 @export var vfx_burger_disappear: GPUParticles3D
@@ -14,18 +12,19 @@ class_name Main
 @export var furnitures:Array[FurnitureData]
 @export var navigation:NavigationRegion3D
 @export var placement_zone: Area3D
+@export var game_data:GameData
 
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
-
 var _plates: Array[Plate]
-var current_plate:Plate
-var current_burger:Array[IngredientData]:
-	get:
-		return current_plate._ingredients
+
 var anchor_plates: Array:
 	get:
 		var box = kitchen.plates_box.map(func(elt:BoxInterract): return elt.anchor_spawn)
 		return box
+		
+var burgers_data:
+	get:
+		return game_data.burgers_data
 
 func _ready() -> void:
 	kitchen.reputation_changed.connect(game_ui.on_reputation_changed)
@@ -84,17 +83,16 @@ func release_client_plate(client: HungryClient) -> void:
 	assign_clients_to_plates()
 	
 func _on_ingredient_plate_assigned(box: BoxInterract, ingredient: IngredientData):
-	current_plate = box._plate
-	add_ingredient_on_plate(ingredient)
+	add_ingredient_on_plate(ingredient, box._plate)
 
-func add_ingredient_on_plate(ingredient: IngredientData):
+func add_ingredient_on_plate(ingredient: IngredientData, plate:Plate):
 	if MoneyManager.buy_ingredient(ingredient):
-		current_plate.add_ingredient(ingredient)
-		var client := ClientsManager.burger_match_with_client(current_burger, _plates_availalble)
+		plate.add_ingredient(ingredient)
+		var client := ClientsManager.burger_match_with_client(plate._ingredients, _plates_availalble)
 		if client:
-			ClientsManager.feed_client(client, current_plate)
+			ClientsManager.feed_client(client, plate)
 			release_client_plate(client)
-			play_vfx(current_plate)
+			play_vfx(plate)
 	
 func check_all_burgers() -> void:
 	for plate: Plate in _plates:

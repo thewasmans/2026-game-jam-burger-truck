@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="GameData" format=3 uid="uid://ddk3mrn06dwtw"]
+
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_vllua"]
+[ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/4_ingredients/burger_1.tres" id="2_d15be"]
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_r34r7"]
+[ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/4_ingredients/burger_3.tres" id="3_c7j1l"]
+[ext_resource type="Script" uid="uid://c30h6fapr0wgf" path="res://scripts/data/game_data.gd" id="3_k2o1c"]
+[ext_resource type="Resource" uid="uid://qqfwtw1fhufy" path="res://data/burgers/4_ingredients/burger_6.tres" id="4_ux8ld"]
+[ext_resource type="Resource" uid="uid://qcba3r6d0xe" path="res://data/burgers/5_ingredients/burger_2.tres" id="5_l84in"]
+[ext_resource type="Resource" uid="uid://bqka8eee1t5e2" path="res://data/burgers/6_ingredients/burger_4.tres" id="6_iwpjk"]
+[ext_resource type="Resource" uid="uid://c6bgmod8bpaa8" path="res://data/burgers/6_ingredients/burger_5.tres" id="7_e6v3s"]
+[ext_resource type="Resource" uid="uid://bkq0nluw4vlem" path="res://data/burgers/6_ingredients/burger_8.tres" id="8_53n6h"]
+[ext_resource type="Resource" uid="uid://cuu7aqcr35s2l" path="res://data/burgers/6_ingredients/burger_9.tres" id="9_jxnqk"]
+[ext_resource type="Resource" uid="uid://q20hrcix7jti" path="res://data/burgers/6_ingredients/burger_10.tres" id="10_b1qmr"]
+[ext_resource type="Resource" uid="uid://5kd2bmstigmj" path="res://data/burgers/6_ingredients/burger_13.tres" id="11_r4uws"]
+[ext_resource type="Resource" uid="uid://bhce871haki3c" path="res://data/burgers/7_ingredients/burger_12.tres" id="12_4ls4r"]
+[ext_resource type="Resource" uid="uid://bqaj644qt5row" path="res://data/burgers/7_ingredients/burger_14.tres" id="13_xbtbc"]
+
+[resource]
+script = ExtResource("3_k2o1c")
+burgers_data = Array[ExtResource("1_vllua")]([ExtResource("2_d15be"), ExtResource("3_c7j1l"), ExtResource("4_ux8ld"), ExtResource("5_l84in"), ExtResource("6_iwpjk"), ExtResource("7_e6v3s"), ExtResource("8_53n6h"), ExtResource("9_jxnqk"), ExtResource("10_b1qmr"), ExtResource("11_r4uws"), ExtResource("12_4ls4r"), ExtResource("13_xbtbc")])
+metadata/_custom_type_script = "uid://c30h6fapr0wgf"
