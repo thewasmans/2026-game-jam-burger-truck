@@ -13,6 +13,8 @@ signal ingredient_plate_assigned(box:BoxInterract, ingredient:IngredientData)
 var MAX_REPUTATION: int = 10
 var current_reputation: int = MAX_REPUTATION
 var _current_ingredient: Node3D = null
+var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
+var _plates: Array[Plate]
 
 func _ready() -> void:
 	reputation_changed.emit(current_reputation)

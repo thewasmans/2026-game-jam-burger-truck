@@ -13,9 +13,6 @@ class_name Main
 @export var placement_zone: Area3D
 @export var game_data:GameData
 
-var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
-var _plates: Array[Plate]
-
 var anchor_plates: Array:
 	get:
 		var box = kitchen.plates_box.map(func(elt:BoxInterract): return elt.anchor_spawn)

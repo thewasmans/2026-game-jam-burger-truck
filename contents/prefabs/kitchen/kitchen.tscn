@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dhsoftcr8jh33"]
 
 [ext_resource type="PackedScene" uid="uid://p88ke4grqydx" path="res://contents/prefabs/kitchen/counter.tscn" id="1_3r5eq"]
-[ext_resource type="Script" uid="uid://c48dl325ub3ad" path="res://scripts/snack_truck.gd" id="1_frebv"]
+[ext_resource type="Script" uid="uid://c48dl325ub3ad" path="res://scripts/kitchen.gd" id="1_frebv"]
 [ext_resource type="PackedScene" uid="uid://e7ki1w7purcq" path="res://contents/prefabs/kitchen/kitchen_walls.tscn" id="2_sfdcp"]
 [ext_resource type="PackedScene" uid="uid://c48a266u7g4sb" path="res://contents/prefabs/kitchen/ingredient_crate_meat.tscn" id="3_870tw"]
 [ext_resource type="PackedScene" uid="uid://btn56u0cjwte3" path="res://contents/prefabs/kitchen/stove.tscn" id="3_wsxgx"]
