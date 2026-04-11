@@ -66,8 +66,6 @@ albedo_color = Color(0.88235295, 0, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_0wfyh"]
 material = SubResource("StandardMaterial3D_0wfyh")
 
-[sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_5q0nq"]
 size = Vector3(20, 1, 17)
 
@@ -94,6 +92,8 @@ glow_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
 size = Vector3(10, 10, 10)
 
+[sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
+
 [node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "anchor_plates_clients", "plate_selector", "vfx_burger_disappear", "navigation", "placement_zone")]
 script = ExtResource("4_abcde")
 kitchen = NodePath("Level/Kitchen")
@@ -105,7 +105,7 @@ vfx_burger_disappear = NodePath("Level/Kitchen/GPUParticles3D")
 default_amount_money = 100.0
 furnitures = Array[ExtResource("19_og1vs")]([ExtResource("24_qkpxi"), ExtResource("23_tel4y"), ExtResource("22_fv21b"), ExtResource("25_5q0nq")])
 navigation = NodePath("Level/NavigationRegion3D")
-placement_zone = NodePath("Level/PlacementZoneFurniture")
+placement_zone = NodePath("Level/AreaFurnitures")
 game_data = ExtResource("7_a8y0u")
 
 [node name="Global" type="Node" parent="." unique_id=1804165768]
@@ -166,14 +166,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
 front_truck_target = NodePath("../Kitchen/TargetPositionClients/FrontTruck")
 out_screen_target = NodePath("../Kitchen/TargetPositionClients/Leaving")
 
-[node name="Ground" type="MeshInstance3D" parent="Level" unique_id=1600320922]
-transform = Transform3D(100.000015, 0, 0, 0, 0.1, 0, 0, 0, 100.000015, 0, 0, 0)
-mesh = SubResource("BoxMesh_sugp2")
-
-[node name="PlacementZoneFurniture" type="Area3D" parent="Level" unique_id=1980600924]
+[node name="AreaFurnitures" type="Area3D" parent="Level" unique_id=1980600924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15556955, -7.206752)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/PlacementZoneFurniture" unique_id=2059791750]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/AreaFurnitures" unique_id=2059791750]
 shape = SubResource("BoxShape3D_5q0nq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Level" unique_id=1196850353]
@@ -184,9 +180,12 @@ navigation_mesh = SubResource("NavigationMesh_5q0nq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.8896427)
 mesh = SubResource("BoxMesh_5q0nq")
 
+[node name="TimerBoard" parent="Level" unique_id=879052196 instance=ExtResource("33_5q0nq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2563047, 0.15928459, 4.2732744)
+
 [node name="Environments" type="Node" parent="." unique_id=382932535]
 
-[node name="Envrionment" parent="Environments" unique_id=1062952153 instance=ExtResource("31_tel4y")]
+[node name="Environment" parent="Environments" unique_id=1062952153 instance=ExtResource("31_tel4y")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environments" unique_id=574237056]
 environment = SubResource("Environment_jyhfs")
@@ -195,7 +194,7 @@ environment = SubResource("Environment_jyhfs")
 transform = Transform3D(-0.6293203, -0.6013868, -0.4922295, 0, -0.63338095, 0.7738401, -0.77714604, 0.4869933, 0.3985995, 0, 10, 0)
 shadow_enabled = true
 
-[node name="Placeholder Enviro" type="MeshInstance3D" parent="Environments" unique_id=123015361]
+[node name="Placeholder Enviro1" type="MeshInstance3D" parent="Environments" unique_id=123015361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.745, 3.64, 15.63)
 mesh = SubResource("BoxMesh_jyhfs")
 
@@ -215,11 +214,12 @@ mesh = SubResource("BoxMesh_jyhfs")
 transform = Transform3D(0.635, 0, 0, 0, 1, 0, 0, 0, 0.635, 1.38, 3.58, 31.565)
 mesh = SubResource("BoxMesh_jyhfs")
 
+[node name="Ground" type="MeshInstance3D" parent="Environments" unique_id=1600320922]
+transform = Transform3D(100.000015, 0, 0, 0, 0.1, 0, 0, 0, 100.000015, 0, 0, 0)
+mesh = SubResource("BoxMesh_sugp2")
+
 [node name="GameUI" parent="." unique_id=149232493 instance=ExtResource("3_jyhfs")]
 mouse_filter = 2
-
-[node name="TimerBoard" parent="." unique_id=879052196 instance=ExtResource("33_5q0nq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2563047, 0.15928459, 4.2732744)
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
 [connection signal="child_entered_tree" from="GameUI" to="GameUI" method="_on_child_entered_tree"]
