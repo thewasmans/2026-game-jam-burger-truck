@@ -20,6 +20,7 @@ theme_ingredients = ExtResource("3_uuvj8")
 container_furnitures = NodePath("Money/FoldableContainer/GridContainer")
 
 [node name="HSlider" type="HSlider" parent="." unique_id=74886958]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
