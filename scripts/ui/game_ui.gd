@@ -4,7 +4,6 @@ class_name GameUI
 
 signal furniture_selected(furniture:FurnitureData)
 
-@export var reputation_slider: HSlider
 @export var money_label:Label
 @export var theme_ingredients:Theme
 @export var container_furnitures:GridContainer
@@ -26,7 +25,6 @@ func init_buttons_furnitures(furnitures:Array[FurnitureData]):
 		container_furnitures.add_child(button)
 
 func on_reputation_changed(new_reputation: int) -> void:
-	reputation_slider.value = new_reputation
 	board.set_reputation(new_reputation/10.0)
 
 func add_ingredient(ingredient:IngredientData):
