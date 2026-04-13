@@ -8,6 +8,7 @@ signal furniture_selected(furniture:FurnitureData)
 @export var money_label:Label
 @export var theme_ingredients:Theme
 @export var container_furnitures:GridContainer
+@export var board:BoardUI
 var ingredients_buttons:Array[Button]
 
 func _ready() -> void:
@@ -26,6 +27,7 @@ func init_buttons_furnitures(furnitures:Array[FurnitureData]):
 
 func on_reputation_changed(new_reputation: int) -> void:
 	reputation_slider.value = new_reputation
+	board.set_reputation(new_reputation/10.0)
 
 func add_ingredient(ingredient:IngredientData):
 	var ingredient_texture := TextureRect.new()

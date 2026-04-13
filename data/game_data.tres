@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/4_ingredients/burger_1.tres" id="2_d15be"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_r34r7"]
 [ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/4_ingredients/burger_3.tres" id="3_c7j1l"]
-[ext_resource type="Script" uid="uid://c30h6fapr0wgf" path="res://scripts/data/game_data.gd" id="3_k2o1c"]
+[ext_resource type="Script" path="res://scripts/data/game_data.gd" id="3_k2o1c"]
 [ext_resource type="Resource" uid="uid://qqfwtw1fhufy" path="res://data/burgers/4_ingredients/burger_6.tres" id="4_ux8ld"]
 [ext_resource type="Resource" uid="uid://qcba3r6d0xe" path="res://data/burgers/5_ingredients/burger_2.tres" id="5_l84in"]
 [ext_resource type="Resource" uid="uid://bqka8eee1t5e2" path="res://data/burgers/6_ingredients/burger_4.tres" id="6_iwpjk"]
