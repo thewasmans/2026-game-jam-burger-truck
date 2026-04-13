@@ -5,14 +5,14 @@ class_name HungryClientSpawner
 signal client_spawned(client:HungryClient)
 
 @export var enemy_scene: PackedScene
-@export var spawn_area: BoxShape3D
 @export var front_truck_target: MeshInstance3D 
-@export var out_screen_target: MeshInstance3D 
-var spawn_time := RandomNumberGenerator.new()
+@export var out_screen_target: MeshInstance3D
 @export var minimal_spawn_time: float = 4.0
 @export var maximal_spawn_time: float = 8.0
+@export var radius_spawn: float = 2.0
 
 var timer: Timer
+var spawn_time := RandomNumberGenerator.new()
 var _hungries_clients: Array[HungryClient] = []
 
 func _ready() -> void:
@@ -47,7 +47,8 @@ func spawn_enemy() -> void:
 	
 
 func get_random_spawn_position() -> Vector3:
-	var spawn_area_size: Vector3 = spawn_area.size
-	var x: float = randf_range(-spawn_area_size.x / 2, spawn_area_size.x / 2)
-	var z: float = randf_range(-spawn_area_size.z / 2, spawn_area_size.z / 2)
+	var radius = randf() * radius_spawn
+	var angle = randf() * TAU
+	var x: float = cos(angle) * radius
+	var z: float = sin(angle) * radius
 	return global_transform.origin + Vector3(x, 0, z)

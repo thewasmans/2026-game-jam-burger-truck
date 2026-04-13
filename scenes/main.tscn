@@ -1,31 +1,12 @@
 [gd_scene format=3 uid="uid://cgrt8n5e5c5q8"]
 
 [ext_resource type="PackedScene" uid="uid://ckuxgrtn5s1cd" path="res://contents/prefabs/global/clients_spawner.tscn" id="1_0wfyh"]
-[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="2_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dhsoftcr8jh33" path="res://contents/prefabs/kitchen/kitchen.tscn" id="2_jyhfs"]
-[ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/4_ingredients/burger_1.tres" id="3_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://djc6xavhxsjd6" path="res://contents/prefabs/ui/game_ui.tscn" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://dpaetc3xgp6qg" path="res://scripts/main.gd" id="4_abcde"]
-[ext_resource type="Resource" uid="uid://qcba3r6d0xe" path="res://data/burgers/5_ingredients/burger_2.tres" id="4_muem4"]
-[ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/4_ingredients/burger_3.tres" id="5_dp3eg"]
-[ext_resource type="Resource" uid="uid://bqka8eee1t5e2" path="res://data/burgers/6_ingredients/burger_4.tres" id="6_0ld40"]
-[ext_resource type="Resource" uid="uid://qqfwtw1fhufy" path="res://data/burgers/4_ingredients/burger_6.tres" id="9_jscy8"]
-[ext_resource type="Resource" uid="uid://bkq0nluw4vlem" path="res://data/burgers/6_ingredients/burger_8.tres" id="10_pm3ni"]
-[ext_resource type="Resource" uid="uid://cuu7aqcr35s2l" path="res://data/burgers/6_ingredients/burger_9.tres" id="11_y6deb"]
-[ext_resource type="Resource" uid="uid://bhce871haki3c" path="res://data/burgers/7_ingredients/burger_12.tres" id="12_5q0nq"]
-[ext_resource type="Resource" uid="uid://q20hrcix7jti" path="res://data/burgers/6_ingredients/burger_10.tres" id="12_og1vs"]
-[ext_resource type="Resource" uid="uid://5kd2bmstigmj" path="res://data/burgers/6_ingredients/burger_13.tres" id="13_dgi5k"]
-[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="13_pm3ni"]
-[ext_resource type="Resource" uid="uid://bqaj644qt5row" path="res://data/burgers/7_ingredients/burger_14.tres" id="14_j8jky"]
-[ext_resource type="Resource" uid="uid://c6bgmod8bpaa8" path="res://data/burgers/6_ingredients/burger_5.tres" id="14_qkpxi"]
-[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="14_y6deb"]
-[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="15_og1vs"]
-[ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="16_2wyq8"]
-[ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="17_vxglm"]
+[ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="7_a8y0u"]
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/data/furniture_data.gd" id="19_og1vs"]
-[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="19_yq6so"]
 [ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
-[ext_resource type="PackedScene" path="res://scenes/selector.tscn" id="22_y6deb"]
 [ext_resource type="Resource" uid="uid://blfgjhw8oqugu" path="res://data/furnitures/furniture_02.tres" id="23_tel4y"]
 [ext_resource type="Resource" uid="uid://2vameyebt50x" path="res://data/furnitures/furniture_03.tres" id="24_qkpxi"]
 [ext_resource type="Resource" uid="uid://c454qusiang0y" path="res://data/furnitures/furniture_04.tres" id="25_5q0nq"]
@@ -84,8 +65,6 @@ albedo_color = Color(0.88235295, 0, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_0wfyh"]
 material = SubResource("StandardMaterial3D_0wfyh")
 
-[sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_5q0nq"]
 size = Vector3(20, 1, 17)
 
@@ -112,20 +91,19 @@ glow_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
 size = Vector3(10, 10, 10)
 
-[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "anchor_plates_clients", "plate_selector", "vfx_burger_disappear", "navigation", "placement_zone")]
+[sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
+
+[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "vfx_burger_disappear", "navigation", "placement_zone")]
 script = ExtResource("4_abcde")
 kitchen = NodePath("Level/Kitchen")
 game_ui = NodePath("GameUI")
 spawner = NodePath("Level/HungryClientSpawner")
-burgers_data = Array[ExtResource("2_jkv2x")]([ExtResource("3_jbj1t"), ExtResource("4_muem4"), ExtResource("5_dp3eg"), ExtResource("6_0ld40"), ExtResource("9_jscy8"), ExtResource("10_pm3ni"), ExtResource("11_y6deb"), ExtResource("12_og1vs"), ExtResource("12_5q0nq"), ExtResource("13_dgi5k"), ExtResource("14_j8jky"), ExtResource("14_qkpxi")])
-ingredients_data = Array[ExtResource("13_pm3ni")]([ExtResource("14_y6deb"), ExtResource("15_og1vs"), ExtResource("16_2wyq8"), ExtResource("17_vxglm"), ExtResource("19_yq6so")])
-anchor_plates_clients = [NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient01"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient02"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient03"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient04"), NodePath("Level/Kitchen/AnchorPlateClients/AnchorClient05")]
-plate_selector = NodePath("Level/Selector")
 vfx_burger_disappear = NodePath("Level/Kitchen/GPUParticles3D")
 default_amount_money = 100.0
 furnitures = Array[ExtResource("19_og1vs")]([ExtResource("24_qkpxi"), ExtResource("23_tel4y"), ExtResource("22_fv21b"), ExtResource("25_5q0nq")])
 navigation = NodePath("Level/NavigationRegion3D")
-placement_zone = NodePath("Level/PlacementZoneFurniture")
+placement_zone = NodePath("Level/AreaFurnitures")
+game_data = ExtResource("7_a8y0u")
 
 [node name="Global" type="Node" parent="." unique_id=1804165768]
 
@@ -135,8 +113,9 @@ fov = 60.0
 
 [node name="Level" type="Node" parent="." unique_id=751625337]
 
-[node name="Kitchen" parent="Level" unique_id=848894539 node_paths=PackedStringArray("camera") instance=ExtResource("2_jyhfs")]
+[node name="Kitchen" parent="Level" unique_id=848894539 node_paths=PackedStringArray("anchor_plates_clients", "camera") instance=ExtResource("2_jyhfs")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.293, 0, 6.366)
+anchor_plates_clients = [NodePath("AnchorPlateClients/AnchorClient01"), NodePath("AnchorPlateClients/AnchorClient02"), NodePath("AnchorPlateClients/AnchorClient03"), NodePath("AnchorPlateClients/AnchorClient04"), NodePath("AnchorPlateClients/AnchorClient05")]
 camera = NodePath("../../Global/Camera3D")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Level/Kitchen" unique_id=1636278527]
@@ -149,16 +128,6 @@ explosiveness = 1.0
 fixed_fps = 0
 process_material = SubResource("ParticleProcessMaterial_xt8e8")
 draw_pass_1 = SubResource("SphereMesh_ithj1")
-
-[node name="TargetPositionClients" type="Node3D" parent="Level/Kitchen" unique_id=1746330562]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.2929997, 0, 3.210757)
-
-[node name="FrontTruck" type="MeshInstance3D" parent="Level/Kitchen/TargetPositionClients" unique_id=1816251431]
-mesh = SubResource("SphereMesh_0wfyh")
-
-[node name="Leaving" type="MeshInstance3D" parent="Level/Kitchen/TargetPositionClients" unique_id=696312194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4920025, 0, 0)
-mesh = SubResource("SphereMesh_0wfyh")
 
 [node name="AnchorPlateClients" type="Node3D" parent="Level/Kitchen" unique_id=425371094]
 
@@ -177,22 +146,23 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.99
 [node name="AnchorClient05" parent="Level/Kitchen/AnchorPlateClients" unique_id=1737106433 instance=ExtResource("28_tel4y")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.990742, 0.41701627, 3.2756715)
 
-[node name="Selector" parent="Level" unique_id=375739968 instance=ExtResource("22_y6deb")]
-transform = Transform3D(1, 0, 0, 0, 0.980782, 0.19510747, 0, -0.19510747, 0.980782, 0.4914863, 1.4025671, 4.77714)
-
 [node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target") instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
-front_truck_target = NodePath("../Kitchen/TargetPositionClients/FrontTruck")
-out_screen_target = NodePath("../Kitchen/TargetPositionClients/Leaving")
+front_truck_target = NodePath("FrontTruck")
+out_screen_target = NodePath("Leaving")
 
-[node name="Ground" type="MeshInstance3D" parent="Level" unique_id=1600320922]
-transform = Transform3D(100.000015, 0, 0, 0, 0.1, 0, 0, 0, 100.000015, 0, 0, 0)
-mesh = SubResource("BoxMesh_sugp2")
+[node name="FrontTruck" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=1816251431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.103453636, 13.155243)
+mesh = SubResource("SphereMesh_0wfyh")
 
-[node name="PlacementZoneFurniture" type="Area3D" parent="Level" unique_id=1980600924]
+[node name="Leaving" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=696312194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4920025, -0.103453636, 13.155243)
+mesh = SubResource("SphereMesh_0wfyh")
+
+[node name="AreaFurnitures" type="Area3D" parent="Level" unique_id=1980600924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15556955, -7.206752)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/PlacementZoneFurniture" unique_id=2059791750]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/AreaFurnitures" unique_id=2059791750]
 shape = SubResource("BoxShape3D_5q0nq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Level" unique_id=1196850353]
@@ -208,6 +178,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.63586
 
 [node name="Environments" type="Node" parent="." unique_id=382932535]
 
+[node name="Environment" parent="Environments" unique_id=1062952153 instance=ExtResource("31_tel4y")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environments" unique_id=574237056]
 environment = SubResource("Environment_jyhfs")
 
@@ -215,7 +187,7 @@ environment = SubResource("Environment_jyhfs")
 transform = Transform3D(-0.6293203, -0.6013868, -0.4922295, 0, -0.63338095, 0.7738401, -0.77714604, 0.4869933, 0.3985995, 0, 10, 0)
 shadow_enabled = true
 
-[node name="Placeholder Enviro" type="MeshInstance3D" parent="Environments" unique_id=123015361]
+[node name="Placeholder Enviro1" type="MeshInstance3D" parent="Environments" unique_id=123015361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.745, 3.64, 15.63)
 mesh = SubResource("BoxMesh_jyhfs")
 
@@ -235,10 +207,13 @@ mesh = SubResource("BoxMesh_jyhfs")
 transform = Transform3D(0.635, 0, 0, 0, 1, 0, 0, 0, 0.635, 1.38, 3.58, 31.565)
 mesh = SubResource("BoxMesh_jyhfs")
 
-[node name="GameUI" parent="." unique_id=149232493 instance=ExtResource("3_jyhfs")]
-mouse_filter = 2
+[node name="Ground" type="MeshInstance3D" parent="Environments" unique_id=1600320922]
+transform = Transform3D(100.000015, 0, 0, 0, 0.1, 0, 0, 0, 100.000015, 0, 0, 0)
+mesh = SubResource("BoxMesh_sugp2")
 
-[node name="RepAndTimeBoard" parent="." unique_id=1062952153 instance=ExtResource("31_tel4y")]
+[node name="GameUI" parent="." unique_id=149232493 node_paths=PackedStringArray("board") instance=ExtResource("3_jyhfs")]
+mouse_filter = 2
+board = NodePath("../Level/Board")
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
 [connection signal="child_entered_tree" from="GameUI" to="GameUI" method="_on_child_entered_tree"]
