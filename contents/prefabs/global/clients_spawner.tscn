@@ -9,6 +9,8 @@
 [node name="ClientsSpawner" type="Node3D" unique_id=962042507]
 script = ExtResource("1_devoi")
 enemy_scene = ExtResource("2_xl0gr")
+minimal_spawn_time = 8.0
+maximal_spawn_time = 12.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1531484805]
 material_override = ExtResource("4_nbol0")
