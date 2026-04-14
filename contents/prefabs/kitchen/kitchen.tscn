@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bdcuwmfqri1eu" path="res://contents/prefabs/kitchen/ingredient_crate_tomato.tscn" id="10_sfdcp"]
 [ext_resource type="PackedScene" uid="uid://5ys54fpydrpq" path="res://contents/prefabs/kitchen/ingredient_crate_bun_bottom.tscn" id="11_cxkoo"]
 [ext_resource type="PackedScene" uid="uid://ln0xvjyi4mjp" path="res://contents/prefabs/kitchen/ingredient_crate_onion.tscn" id="11_sd4tf"]
+[ext_resource type="PackedScene" uid="uid://bmokkqipohyjr" path="res://contents/prefabs/kitchen/trash_can.tscn" id="14_cxkoo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hs2o"]
 resource_name = "Material.Counter"
@@ -92,10 +93,11 @@ shadow_mesh = SubResource("ArrayMesh_fcxq1")
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3y2s"]
 size = Vector3(1, 1.046875, 1)
 
-[node name="Kitchen" type="Node3D" unique_id=1051125650 node_paths=PackedStringArray("ingredient_box", "plates_box")]
+[node name="Kitchen" type="Node3D" unique_id=1051125650 node_paths=PackedStringArray("ingredient_box", "plates_box", "crate_trash")]
 script = ExtResource("1_frebv")
 ingredient_box = [NodePath("CrateIngredients/IngredientCrateMeat"), NodePath("CrateIngredients/IngredientCrateBunTop"), NodePath("CrateIngredients/IngredientCrateCheese"), NodePath("CrateIngredients/IngredientCrateSalad"), NodePath("CrateIngredients/IngredientCrateTomato"), NodePath("CrateIngredients/IngredientCrateOnion"), NodePath("CrateIngredients/IngredientCrateBunBottom")]
 plates_box = [NodePath("CratePlates/Counter04"), NodePath("CratePlates/Counter05"), NodePath("CratePlates/Counter06"), NodePath("CratePlates/Counter07"), NodePath("CratePlates/Counter08"), NodePath("CratePlates/Counter09"), NodePath("CratePlates/Counter10")]
+crate_trash = NodePath("TrashCan")
 
 [node name="KitchenWalls" parent="." unique_id=979950950 instance=ExtResource("2_sfdcp")]
 transform = Transform3D(1.2749999, 0, 0, 0, 0.9781475, -0.20791167, 0, 0.20791167, 0.9781475, 0, 0, 0)
@@ -141,23 +143,6 @@ mesh = SubResource("ArrayMesh_t35ol")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CrateEmpties/Counter02/Area3D" unique_id=176072546]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0234375, 0)
-shape = SubResource("BoxShape3D_s3y2s")
-
-[node name="Counter03" type="Node3D" parent="CrateEmpties" unique_id=1285824686]
-transform = Transform3D(1, 0, 0, 0, 1.0000011, 0, 0, 0, 1.0000011, -4.00023, 0.31399924, 1.6486461)
-
-[node name="Counter" type="MeshInstance3D" parent="CrateEmpties/Counter03" unique_id=624906714]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("ArrayMesh_1sgcf")
-
-[node name="Cube" type="MeshInstance3D" parent="CrateEmpties/Counter03/Counter" unique_id=462869201]
-mesh = SubResource("ArrayMesh_t35ol")
-
-[node name="Area3D" type="Area3D" parent="CrateEmpties/Counter03" unique_id=1696272852]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CrateEmpties/Counter03/Area3D" unique_id=72827760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0234375, 0)
 shape = SubResource("BoxShape3D_s3y2s")
 
@@ -262,3 +247,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CrateCuttingBoards/Counter13/Area3D" unique_id=225093979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0234375, 0)
 shape = SubResource("BoxShape3D_s3y2s")
+
+[node name="TrashCan" parent="." unique_id=1514840030 instance=ExtResource("14_cxkoo")]
+transform = Transform3D(1, 0, 0, 0, 0.9781487, -0.20791192, 0, 0.20791192, 0.9781487, -4.00023, -0.035635203, 1.6779034)
+
+[editable path="CrateCuttingBoards/Counter12/Counter/ChoppingBoard01"]
+[editable path="CrateCuttingBoards/Counter13/Counter/ChoppingBoard02"]
