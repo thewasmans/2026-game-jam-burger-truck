@@ -91,6 +91,18 @@ glow_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
 size = Vector3(10, 10, 10)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trceg"]
+albedo_color = Color(0.6528057, 0.48832518, 0.47092736, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8y0u"]
+albedo_color = Color(0.7407556, 0.6454095, 0.58961767, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbj1t"]
+albedo_color = Color(0.5041667, 0.34679568, 0.28615913, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkv2x"]
+albedo_color = Color(0.8623366, 0.6799608, 0.50337213, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
 
 [node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "vfx_burger_disappear", "navigation", "placement_zone")]
@@ -190,18 +202,22 @@ shadow_enabled = true
 [node name="Placeholder Enviro1" type="MeshInstance3D" parent="Environments" unique_id=123015361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.745, 3.64, 15.63)
 mesh = SubResource("BoxMesh_jyhfs")
+surface_material_override/0 = SubResource("StandardMaterial3D_trceg")
 
 [node name="Placeholder Enviro4" type="MeshInstance3D" parent="Environments" unique_id=728387048]
 transform = Transform3D(1.875, 0, 0, 0, 1.41, 0, 0, 0, 1, -9.785, 3.64, 22.535)
 mesh = SubResource("BoxMesh_jyhfs")
+surface_material_override/0 = SubResource("StandardMaterial3D_a8y0u")
 
 [node name="Placeholder Enviro5" type="MeshInstance3D" parent="Environments" unique_id=1259912896]
 transform = Transform3D(1.875, 0, 0, 0, 1.41, 0, 0, 0, 1, -22.455, 3.64, 14.41)
 mesh = SubResource("BoxMesh_jyhfs")
+surface_material_override/0 = SubResource("StandardMaterial3D_jbj1t")
 
 [node name="Placeholder Enviro2" type="MeshInstance3D" parent="Environments" unique_id=568876925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22, 1.1, 20.03)
 mesh = SubResource("BoxMesh_jyhfs")
+surface_material_override/0 = SubResource("StandardMaterial3D_jkv2x")
 
 [node name="Placeholder Enviro3" type="MeshInstance3D" parent="Environments" unique_id=1669315401]
 transform = Transform3D(0.635, 0, 0, 0, 1, 0, 0, 0, 0.635, 1.38, 3.58, 31.565)
