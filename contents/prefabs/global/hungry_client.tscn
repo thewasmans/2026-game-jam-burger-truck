@@ -78,12 +78,12 @@ mesh = SubResource("CylinderMesh_ntmap")
 surface_material_override/0 = SubResource("StandardMaterial3D_rtm0h")
 
 [node name="Anchor Burger" type="Node3D" parent="." unique_id=1795400529]
-transform = Transform3D(1, 0, 0, 0, 0.5238373, -0.8518184, 0, 0.8518184, 0.5238373, -0.0035933852, 1.5426348, -1.1485513)
+transform = Transform3D(-4.371139e-08, 0.86602545, -0.49999997, 0, 0.49999997, 0.86602545, 1, 3.7855173e-08, -2.1855692e-08, -1.06099, 1.6157125, -0.017888188)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2083574708]
 
 [node name="Hover" type="MeshInstance3D" parent="." unique_id=771406449]
-transform = Transform3D(-1.7510003, -1.4609533e-07, -3.9229855e-07, -1.08014774e-07, 1.041624, -2.178655, 2.413231e-07, -0.59381855, -3.8216047, 0, 2.0545483, -0.27399072)
+transform = Transform3D(-1.4960595e-08, -0.5938185, -3.821604, -1.08014774e-07, 1.041624, -2.1786551, 1.7510002, 5.918154e-08, -1.6704762e-07, -0.18675977, 2.127626, 0.006418109)
 mesh = SubResource("PlaneMesh_i5gv5")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=769199299]
