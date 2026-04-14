@@ -15,9 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://ln0xvjyi4mjp" path="res://contents/prefabs/kitchen/ingredient_crate_onion.tscn" id="11_sd4tf"]
 [ext_resource type="PackedScene" uid="uid://c3fli6xsks4la" path="res://contents/prefabs/kitchen/trash_can.tscn" id="14_cxkoo"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_frebv"]
-size = Vector3(9.846085, 0.9956665, 4.748947)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hs2o"]
 resource_name = "Material.Counter"
 cull_mode = 2
@@ -96,14 +93,10 @@ shadow_mesh = SubResource("ArrayMesh_fcxq1")
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3y2s"]
 size = Vector3(1, 1.046875, 1)
 
-[node name="Kitchen" type="StaticBody3D" unique_id=328235971 node_paths=PackedStringArray("ingredient_box", "plates_box")]
+[node name="Kitchen" type="Node3D" unique_id=1051125650 node_paths=PackedStringArray("ingredient_box", "plates_box")]
 script = ExtResource("1_frebv")
 ingredient_box = [NodePath("CrateIngredients/IngredientCrateMeat"), NodePath("CrateIngredients/IngredientCrateBunTop"), NodePath("CrateIngredients/IngredientCrateCheese"), NodePath("CrateIngredients/IngredientCrateSalad"), NodePath("CrateIngredients/IngredientCrateTomato"), NodePath("CrateIngredients/IngredientCrateOnion"), NodePath("CrateIngredients/IngredientCrateBunBottom")]
 plates_box = [NodePath("CratePlates/Counter04"), NodePath("CratePlates/Counter05"), NodePath("CratePlates/Counter06"), NodePath("CratePlates/Counter07"), NodePath("CratePlates/Counter08"), NodePath("CratePlates/Counter09"), NodePath("CratePlates/Counter10")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2015096152]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013309479, 0.47373676, -0.017052293)
-shape = SubResource("BoxShape3D_frebv")
 
 [node name="KitchenWalls" parent="." unique_id=979950950 instance=ExtResource("2_sfdcp")]
 transform = Transform3D(1.2749999, 0, 0, 0, 0.9781475, -0.20791167, 0, 0.20791167, 0.9781475, 0, 0, 0)

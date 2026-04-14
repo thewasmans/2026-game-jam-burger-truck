@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/theme/ingredients_theme.tres" id="3_uuvj8"]
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("reputation_slider", "money_label", "container_furnitures")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,28 +14,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ajtxk")
 script = ExtResource("1_84on6")
-reputation_slider = NodePath("HSlider")
 money_label = NodePath("Money/PanelContainer/Label")
 theme_ingredients = ExtResource("3_uuvj8")
 container_furnitures = NodePath("Money/FoldableContainer/GridContainer")
-
-[node name="HSlider" type="HSlider" parent="." unique_id=74886958]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -179.0
-offset_top = -98.0
-offset_right = 179.0
-offset_bottom = -60.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-max_value = 10.0
-value = 10.0
-editable = false
 
 [node name="Money" parent="." unique_id=1829518468 instance=ExtResource("5_ytt4t")]
 layout_mode = 1

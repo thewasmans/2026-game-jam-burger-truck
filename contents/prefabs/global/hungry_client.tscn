@@ -45,6 +45,7 @@ script = ExtResource("1_mntof")
 speed = 1.0
 client_request_ui = NodePath("SubViewport/ClientRequest")
 hover_node = NodePath("Hover")
+wait_time = Vector2(14, 22)
 anchor_burger = NodePath("Anchor Burger")
 collision = NodePath("CollisionShape3D")
 agent = NodePath("NavigationAgent3D")
