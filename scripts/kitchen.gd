@@ -3,10 +3,10 @@ extends Node3D
 class_name Kitchen
 
 signal reputation_changed(new_reputation: int)
-signal ingredient_plate_assigned(box:BoxInterract, ingredient:IngredientData)
+signal ingredient_plate_assigned(crate:CratePlate, ingredient:IngredientData)
 
-@export var ingredient_box: Array[BoxInterract]
-@export var plates_box: Array[BoxInterract]
+@export var ingredient_crates: Array[CrateIngredient]
+@export var plates_crates: Array[CratePlate]
 @export var crate_trash: BoxInterract
 @export var anchor_plates_clients: Array[Node3D]
 @export var camera:Camera3D
@@ -16,17 +16,17 @@ var MAX_REPUTATION: int = 10
 var current_reputation: int = MAX_REPUTATION
 var _current_ingredient: Node3D = null
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
-var _plates: Array[Plate]
 
 func _ready() -> void:
 	reputation_changed.emit(current_reputation)
-	for box in ingredient_box:
-		box.box_selected.connect(_on_box_ingredient_selected.bind(box))
+	
+	for crate in ingredient_crates:
+		crate.crate_selected.connect(_on_box_ingredient_selected.bind(crate))
 		
-	for box in plates_box:
-		box.box_selected.connect(_on_box_plate_selected.bind(box))
-		box._plate = Plate.new(box.anchor_spawn)
-		_plates.append(box._plate)
+	for crate in plates_crates:
+		crate.crate_selected.connect(_on_crate_plate_selected.bind(crate))
+		#crate._plate = Plate.new(box.anchor_spawn)
+		#_plates.append(box._plate)
 		
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
@@ -48,18 +48,19 @@ func take_damage(amount: int) -> void:
 	if current_reputation <= 0:
 		get_tree().reload_current_scene()
 		
-func _on_box_ingredient_selected(box:BoxInterract):
+func _on_box_ingredient_selected(crate:CrateIngredient):
 	if _current_ingredient == null:
-		_current_ingredient = instantiate_ingredient(box)
+		_current_ingredient = instantiate_ingredient(crate)
 		
-func _on_box_plate_selected(box:BoxInterract):
+func _on_crate_plate_selected(crate:CratePlate):
 	if _current_ingredient:
 		var data = _current_ingredient.get_meta("data")
 		_current_ingredient.queue_free()
 		_current_ingredient = null
-		ingredient_plate_assigned.emit(box, data)
+		ingredient_plate_assigned.emit(crate, data)
 
-func instantiate_ingredient(crate:BoxInterract) -> Node3D:
+func instantiate_ingredient(crate:CrateIngredient) -> Node3D:
+	if _current_ingredient != null: return null
 	var instance: Node3D = crate.ingredient.model_3d.instantiate()
 	instance.scale = Vector3.ONE * .25
 	crate.anchor_spawn.add_child(instance)
