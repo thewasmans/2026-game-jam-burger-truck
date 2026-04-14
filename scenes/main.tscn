@@ -66,7 +66,7 @@ albedo_color = Color(0.88235295, 0, 0, 1)
 material = SubResource("StandardMaterial3D_0wfyh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5q0nq"]
-size = Vector3(20, 1, 9.447205)
+size = Vector3(20, 1, 10)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5q0nq"]
 vertices = PackedVector3Array(-24.5, 1, -9.389643, -24.5, 1, 1.6103573, 24.5, 1, 1.6103573, 24.5, 1, -9.389643)
@@ -160,10 +160,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.43817, -0.103453636, 0.83
 mesh = SubResource("SphereMesh_0wfyh")
 
 [node name="AreaFurnitures" type="Area3D" parent="Level" unique_id=1980600924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.973551, 0.15556955, 2.0744324)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.973551, 0.15556955, 4.9430804)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/AreaFurnitures" unique_id=2059791750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0083923)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06292534)
 shape = SubResource("BoxShape3D_5q0nq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Level" unique_id=1196850353]
