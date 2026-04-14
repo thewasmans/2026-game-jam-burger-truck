@@ -4,13 +4,13 @@ class_name Kitchen
 
 signal reputation_changed(new_reputation: int)
 signal ingredient_plate_assigned(crate:CratePlate, ingredient:IngredientData)
+signal crate_ingredient_clicked(crate:CrateIngredient)
 
 @export var ingredient_crates: Array[CrateIngredient]
 @export var plates_crates: Array[CratePlate]
-@export var crate_trash: BoxInterract
+@export var crate_trash: CrateInterract
 @export var anchor_plates_clients: Array[Node3D]
 @export var camera:Camera3D
-@export var distance:float
 
 var MAX_REPUTATION: int = 10
 var current_reputation: int = MAX_REPUTATION
@@ -29,7 +29,7 @@ func _ready() -> void:
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
 		
-	crate_trash.box_selected.connect(_on_trash_selected)
+	crate_trash.crate_selected.connect(_on_trash_selected)
 		
 func _process(_delta: float) -> void:
 	if _current_ingredient:
@@ -40,30 +40,20 @@ func _process(_delta: float) -> void:
 		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
 		_current_ingredient.global_position = intersection
 		
-func take_damage(amount: int) -> void:
-	current_reputation -= amount
-	reputation_changed.emit(current_reputation)
-	if current_reputation <= 0:
-		get_tree().reload_current_scene()
-		
 func _on_crate_ingredient_selected(crate:CrateIngredient):
 	if _current_ingredient == null:
-		_current_ingredient = instantiate_ingredient(crate)
+		_current_ingredient = crate.instantiate_ingredient()
+		crate_ingredient_clicked.emit(crate)
 		
 func _on_crate_plate_selected(crate:CratePlate):
 	if _current_ingredient:
-		var data = _current_ingredient.get_meta("data")
-		_current_ingredient.queue_free()
-		_current_ingredient = null
+		var data = get_current_ingredient_data()
+		crate.add_ingredient(data)
 		ingredient_plate_assigned.emit(crate, data)
-
-func instantiate_ingredient(crate:CrateIngredient) -> Node3D:
-	if _current_ingredient != null: return null
-	var instance: Node3D = crate.ingredient.model_3d.instantiate()
-	instance.scale = Vector3.ONE * .25
-	crate.anchor_spawn.add_child(instance)
-	instance.set_meta("data", crate.ingredient)
-	return instance
+		
+func _on_trash_selected():
+	_current_ingredient.queue_free()
+	_current_ingredient = null
 	
 func assign_clients_to_plates() -> void:
 	for anchor: Node3D in anchor_plates_clients:
@@ -89,6 +79,16 @@ func on_client_waiting_food(client: HungryClient) -> void:
 	ClientsManager._waiting_queue.append(client)
 	assign_clients_to_plates()
 
-func _on_trash_selected():
+func get_current_ingredient_data() -> IngredientData:
+	var data = _current_ingredient.get_meta("data")
 	_current_ingredient.queue_free()
 	_current_ingredient = null
+	return data
+
+		
+func take_damage(amount: int) -> void:
+	current_reputation -= amount
+	reputation_changed.emit(current_reputation)
+	if current_reputation <= 0:
+		get_tree().reload_current_scene()
+		

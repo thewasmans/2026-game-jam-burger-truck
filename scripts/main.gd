@@ -58,7 +58,7 @@ func add_ingredient_on_plate(ingredient: IngredientData, plate:CratePlate):
 			ClientsManager.feed_client(client, plate)
 			kitchen.release_client_plate(client)
 			play_vfx(plate)
-	
+			
 func check_all_burgers() -> void:
 	for plate: CratePlate in kitchen.plates_crates:
 		var client: HungryClient = ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
