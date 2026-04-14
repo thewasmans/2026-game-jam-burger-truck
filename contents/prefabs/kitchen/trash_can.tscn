@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bmokkqipohyjr"]
 
-[ext_resource type="Shader" path="res://contents/shaders/trash_can.gdshader" id="1_ih74o"]
+[ext_resource type="Shader" uid="uid://dhu8v6qt1mnip" path="res://contents/shaders/trash_can.gdshader" id="1_ih74o"]
 [ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="1_s5vro"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm4op"]
@@ -69,12 +69,12 @@ anchor_spawn = NodePath("Model/TrashCan")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
 mesh = SubResource("ArrayMesh_pxeyh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Model" unique_id=1296818717]
+[node name="SideShadow" type="MeshInstance3D" parent="Model" unique_id=1296818717]
 transform = Transform3D(0.79, 0, 0, 0, 0.635, 0, 0, 0, 0.79, 0, 0.5899166, 0)
 mesh = SubResource("BoxMesh_s5vro")
 surface_material_override/0 = SubResource("ShaderMaterial_5uow6")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model" unique_id=1316724271]
+[node name="BottomShadow" type="MeshInstance3D" parent="Model" unique_id=1316724271]
 transform = Transform3D(0.4, 0, 0, 0, 0.506, 0, 0, 0, 0.4, 0, 0.26978314, 0)
 mesh = SubResource("PlaneMesh_ih74o")
 surface_material_override/0 = SubResource("StandardMaterial3D_s5vro")
