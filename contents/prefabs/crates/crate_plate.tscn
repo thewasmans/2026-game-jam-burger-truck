@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dbq3p4mibtx8k"]
 
-[ext_resource type="PackedScene" uid="uid://dpa4wy00xu6qy" path="res://contents/prefabs/kitchen/crates/crate_interract.tscn" id="1_pg454"]
+[ext_resource type="PackedScene" uid="uid://dpa4wy00xu6qy" path="res://contents/prefabs/crates/crate_interract.tscn" id="1_pg454"]
 [ext_resource type="PackedScene" uid="uid://cduw1pe1m48rv" path="res://contents/prefabs/kitchen/plate.tscn" id="2_hsuyo"]
 [ext_resource type="Material" uid="uid://6dkgx545golh" path="res://contents/materials/steak_mat.tres" id="2_x7w6q"]
 

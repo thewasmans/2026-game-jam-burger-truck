@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b43pxddlxof8n"]
 
-[ext_resource type="PackedScene" uid="uid://dpa4wy00xu6qy" path="res://contents/prefabs/kitchen/crates/crate_interract.tscn" id="1_3b6wk"]
+[ext_resource type="PackedScene" uid="uid://dpa4wy00xu6qy" path="res://contents/prefabs/crates/crate_interract.tscn" id="1_3b6wk"]
 [ext_resource type="PackedScene" uid="uid://bmokkqipohyjr" path="res://contents/prefabs/kitchen/trash_can.tscn" id="2_1qj6u"]
 
 [node name="CrateTrash" unique_id=2258064 instance=ExtResource("1_3b6wk")]
