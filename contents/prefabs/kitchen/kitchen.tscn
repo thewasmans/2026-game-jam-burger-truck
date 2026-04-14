@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bdcuwmfqri1eu" path="res://contents/prefabs/kitchen/ingredient_crate_tomato.tscn" id="10_sfdcp"]
 [ext_resource type="PackedScene" uid="uid://5ys54fpydrpq" path="res://contents/prefabs/kitchen/ingredient_crate_bun_bottom.tscn" id="11_cxkoo"]
 [ext_resource type="PackedScene" uid="uid://ln0xvjyi4mjp" path="res://contents/prefabs/kitchen/ingredient_crate_onion.tscn" id="11_sd4tf"]
-[ext_resource type="PackedScene" uid="uid://c3fli6xsks4la" path="res://contents/prefabs/kitchen/trash_can.tscn" id="14_cxkoo"]
+[ext_resource type="PackedScene" uid="uid://bmokkqipohyjr" path="res://contents/prefabs/kitchen/trash_can.tscn" id="14_cxkoo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hs2o"]
 resource_name = "Material.Counter"
@@ -93,10 +93,11 @@ shadow_mesh = SubResource("ArrayMesh_fcxq1")
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3y2s"]
 size = Vector3(1, 1.046875, 1)
 
-[node name="Kitchen" type="Node3D" unique_id=1051125650 node_paths=PackedStringArray("ingredient_box", "plates_box")]
+[node name="Kitchen" type="Node3D" unique_id=1051125650 node_paths=PackedStringArray("ingredient_box", "plates_box", "crate_trash")]
 script = ExtResource("1_frebv")
 ingredient_box = [NodePath("CrateIngredients/IngredientCrateMeat"), NodePath("CrateIngredients/IngredientCrateBunTop"), NodePath("CrateIngredients/IngredientCrateCheese"), NodePath("CrateIngredients/IngredientCrateSalad"), NodePath("CrateIngredients/IngredientCrateTomato"), NodePath("CrateIngredients/IngredientCrateOnion"), NodePath("CrateIngredients/IngredientCrateBunBottom")]
 plates_box = [NodePath("CratePlates/Counter04"), NodePath("CratePlates/Counter05"), NodePath("CratePlates/Counter06"), NodePath("CratePlates/Counter07"), NodePath("CratePlates/Counter08"), NodePath("CratePlates/Counter09"), NodePath("CratePlates/Counter10")]
+crate_trash = NodePath("TrashCan")
 
 [node name="KitchenWalls" parent="." unique_id=979950950 instance=ExtResource("2_sfdcp")]
 transform = Transform3D(1.2749999, 0, 0, 0, 0.9781475, -0.20791167, 0, 0.20791167, 0.9781475, 0, 0, 0)
