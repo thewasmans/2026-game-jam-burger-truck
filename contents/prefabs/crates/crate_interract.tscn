@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dpa4wy00xu6qy"]
 
-[ext_resource type="Script" uid="uid://da8vqy1xri0um" path="res://scripts/crate_interract.gd" id="1_7ikkr"]
+[ext_resource type="Script" uid="uid://da8vqy1xri0um" path="res://scripts/crates/crate_interract.gd" id="1_7ikkr"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="2_6qxn6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wj6ty"]
