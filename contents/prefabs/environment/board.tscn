@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://dwbihghpkmpdq"]
 
 [ext_resource type="Texture2D" uid="uid://c1i5i8840kovg" path="res://contents/textures/board.png" id="1_eiruw"]
-[ext_resource type="FontFile" uid="uid://dpm42ue08gex7" path="res://contents/ui/fonts/paper_scratch.otf" id="2_6ph2c"]
 [ext_resource type="Texture2D" uid="uid://cor3hjpqmmvmu" path="res://contents/ui/icons/ReputationBar_bg.png" id="3_6ph2c"]
 [ext_resource type="Script" uid="uid://dxgp27gfp76am" path="res://scripts/ui/score_timer_ui.gd" id="3_bi15u"]
+[ext_resource type="FontFile" uid="uid://bt0kfwffbytcw" path="res://contents/ui/fonts/Chalk.otf" id="3_qbe7i"]
 [ext_resource type="Texture2D" uid="uid://dk1tspdrq107x" path="res://contents/ui/icons/ReputationBar_fill.png" id="4_bi15u"]
 [ext_resource type="Shader" uid="uid://cgy1a7u3n84h5" path="res://contents/shaders/board.gdshader" id="4_k8b6f"]
 
@@ -75,11 +75,11 @@ mesh = SubResource("ArrayMesh_x3n5f")
 surface_material_override/0 = SubResource("StandardMaterial3D_k8b6f")
 
 [node name="LabelOpenSince" type="Label3D" parent="Panel" unique_id=1172247555]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013974905, 1.4509844, 0.02230692)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013974905, 1.3687123, 0.02230692)
 shaded = true
 text = "OPEN SINCE: XX:XX:XX"
-font = ExtResource("2_6ph2c")
-font_size = 68
+font = ExtResource("3_qbe7i")
+font_size = 79
 outline_size = 0
 
 [node name="ReputationBar" type="Node3D" parent="Panel" unique_id=1108644004]
