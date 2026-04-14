@@ -66,14 +66,14 @@ albedo_color = Color(0.88235295, 0, 0, 1)
 material = SubResource("StandardMaterial3D_0wfyh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5q0nq"]
-size = Vector3(20, 1, 17)
+size = Vector3(20, 1, 9.447205)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5q0nq"]
-vertices = PackedVector3Array(-9.5, 1, -13.389643, -9.5, 1, 5.6103573, 9.5, 1, 5.6103573, 9.5, 1, -13.389643)
+vertices = PackedVector3Array(-24.5, 1, -9.389643, -24.5, 1, 1.6103573, 24.5, 1, 1.6103573, 24.5, 1, -9.389643)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5q0nq"]
-size = Vector3(20, 1, 20)
+size = Vector3(50, 1, 12)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -108,13 +108,13 @@ game_data = ExtResource("7_a8y0u")
 [node name="Global" type="Node" parent="." unique_id=1804165768]
 
 [node name="Camera3D" type="Camera3D" parent="Global" unique_id=1998703230]
-transform = Transform3D(-1, 8.463816e-08, -2.1888908e-08, 1.7877618e-08, 0.44307116, 0.89648646, 8.55753e-08, 0.89648646, -0.44307116, 0.372, 13.398943, -3.9975224)
+transform = Transform3D(-0.94551104, 0.2878159, -0.15222001, 0.03756455, 0.56082946, 0.8270787, 0.32341588, 0.77629393, -0.54108214, 3.8589687, 11.110886, -1.1347437)
 fov = 60.0
 
 [node name="Level" type="Node" parent="." unique_id=751625337]
 
 [node name="Kitchen" parent="Level" unique_id=848894539 node_paths=PackedStringArray("anchor_plates_clients", "camera") instance=ExtResource("2_jyhfs")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.293, 0.1266756, 6.366)
+transform = Transform3D(-0.9991783, 0, 0.040532805, 0, 1, 0, -0.040532805, 0, -0.9991783, 0.32447475, 0.1266756, 8.131841)
 anchor_plates_clients = [NodePath("AnchorPlateClients/AnchorClient01"), NodePath("AnchorPlateClients/AnchorClient02"), NodePath("AnchorPlateClients/AnchorClient03"), NodePath("AnchorPlateClients/AnchorClient04"), NodePath("AnchorPlateClients/AnchorClient05")]
 camera = NodePath("../../Global/Camera3D")
 
@@ -147,26 +147,27 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.99
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.990742, 0.41701627, 3.2756715)
 
 [node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target") instance=ExtResource("1_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.290104, 0.103453636, 2.8255482)
 front_truck_target = NodePath("FrontTruck")
 out_screen_target = NodePath("Leaving")
 
 [node name="FrontTruck" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=1816251431]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.103453636, 13.155243)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.713985, -0.103453636, 1.5981216)
 mesh = SubResource("SphereMesh_0wfyh")
 
 [node name="Leaving" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=696312194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4920025, -0.103453636, 13.155243)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.43817, -0.103453636, 0.8388605)
 mesh = SubResource("SphereMesh_0wfyh")
 
 [node name="AreaFurnitures" type="Area3D" parent="Level" unique_id=1980600924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15556955, -7.206752)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.973551, 0.15556955, 2.0744324)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/AreaFurnitures" unique_id=2059791750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0083923)
 shape = SubResource("BoxShape3D_5q0nq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Level" unique_id=1196850353]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.74210477, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.949813, -0.74210477, 8.983139)
 navigation_mesh = SubResource("NavigationMesh_5q0nq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level/NavigationRegion3D" unique_id=767979883]
@@ -174,7 +175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.8896427)
 mesh = SubResource("BoxMesh_5q0nq")
 
 [node name="Board" parent="Level" unique_id=2101916 instance=ExtResource("30_5q0nq")]
-transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 2.6044483, 7.918475)
+transform = Transform3D(-0.9991783, -0.025773356, 0.031283285, -5.4870632e-08, 0.7718022, 0.6358627, -0.040532827, 0.6353403, -0.771168, 0.28971598, 2.6044483, 9.684182)
 
 [node name="Environments" type="Node" parent="." unique_id=382932535]
 
