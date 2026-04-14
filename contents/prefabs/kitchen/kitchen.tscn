@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bdcuwmfqri1eu" path="res://contents/prefabs/kitchen/ingredient_crate_tomato.tscn" id="10_sfdcp"]
 [ext_resource type="PackedScene" uid="uid://5ys54fpydrpq" path="res://contents/prefabs/kitchen/ingredient_crate_bun_bottom.tscn" id="11_cxkoo"]
 [ext_resource type="PackedScene" uid="uid://ln0xvjyi4mjp" path="res://contents/prefabs/kitchen/ingredient_crate_onion.tscn" id="11_sd4tf"]
-[ext_resource type="PackedScene" uid="uid://bmokkqipohyjr" path="res://contents/prefabs/kitchen/trash_can.tscn" id="14_cxkoo"]
+[ext_resource type="PackedScene" path="res://contents/prefabs/kitchen/trash_can.tscn" id="14_cxkoo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hs2o"]
 resource_name = "Material.Counter"
@@ -202,11 +202,10 @@ transform = Transform3D(-4.44571e-08, 1.4079492e-10, 1, 0, 1.0000008, -1.4079324
 [node name="CrateCuttingBoards" type="Node3D" parent="." unique_id=1831971397]
 transform = Transform3D(1.2749999, 0, 0, 0, 0.9781475, -0.20791167, 0, 0.20791167, 0.9781475, 0, 0, 0)
 
-[node name="Counter12" type="Node3D" parent="CrateCuttingBoards" unique_id=1376785588 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn")]
+[node name="Counter12" type="Node3D" parent="CrateCuttingBoards" unique_id=1376785588 node_paths=PackedStringArray("node_hover_feedback")]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000013, 1.4901161e-08, 0, -1.4901161e-08, 1.0000013, 3.137079, 0.31399828, 0.6486453)
 script = ExtResource("4_sd4tf")
 node_hover_feedback = NodePath("Counter")
-anchor_spawn = NodePath("")
 
 [node name="Counter" type="MeshInstance3D" parent="CrateCuttingBoards/Counter12" unique_id=1019985970]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -225,11 +224,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0234375, 0)
 shape = SubResource("BoxShape3D_s3y2s")
 
-[node name="Counter13" type="Node3D" parent="CrateCuttingBoards" unique_id=449704294 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn")]
+[node name="Counter13" type="Node3D" parent="CrateCuttingBoards" unique_id=449704294 node_paths=PackedStringArray("node_hover_feedback")]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000014, -1.4901161e-08, 0, 1.4901161e-08, 1.0000014, 3.137079, 0.31399828, -0.3513559)
 script = ExtResource("4_sd4tf")
 node_hover_feedback = NodePath("Counter")
-anchor_spawn = NodePath("")
 
 [node name="Counter" type="MeshInstance3D" parent="CrateCuttingBoards/Counter13" unique_id=1921540974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
