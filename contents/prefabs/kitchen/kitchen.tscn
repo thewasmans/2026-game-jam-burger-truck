@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bdcuwmfqri1eu" path="res://contents/prefabs/kitchen/ingredient_crate_tomato.tscn" id="10_sfdcp"]
 [ext_resource type="PackedScene" uid="uid://5ys54fpydrpq" path="res://contents/prefabs/kitchen/ingredient_crate_bun_bottom.tscn" id="11_cxkoo"]
 [ext_resource type="PackedScene" uid="uid://ln0xvjyi4mjp" path="res://contents/prefabs/kitchen/ingredient_crate_onion.tscn" id="11_sd4tf"]
-[ext_resource type="PackedScene" path="res://contents/prefabs/kitchen/trash_can.tscn" id="14_cxkoo"]
+[ext_resource type="PackedScene" uid="uid://bmokkqipohyjr" path="res://contents/prefabs/kitchen/trash_can.tscn" id="14_cxkoo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hs2o"]
 resource_name = "Material.Counter"
