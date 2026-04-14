@@ -42,6 +42,44 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_eujd8")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0c1k"]
+resource_name = "Material.road"
+cull_mode = 2
+albedo_color = Color(0.24682947, 0.23886484, 0.22891252, 1)
+roughness = 0.8
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1rlu6"]
+_surfaces = [{
+"aabb": AABB(0, -0.14148317, -0.06745297, 10, 0.16272044, 4.067453),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Material.road",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7ctat"]
+resource_name = "sidewalk_Cube_013"
+_surfaces = [{
+"aabb": AABB(0, -0.14148317, -0.06745297, 10, 0.16272044, 4.067453),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_d0c1k"),
+"name": "Material.road",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1rlu6")
+
 [node name="Envrionment" type="Node3D" unique_id=1062952153]
 
 [node name="Tree 1" parent="." unique_id=1599454774 instance=ExtResource("3_hj7nv")]
@@ -50,10 +88,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.024361, 0, 5.8428)
 [node name="Base" parent="Tree 1" unique_id=563968777 instance=ExtResource("6_re61j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10502291, 0.14687121, -0.033241272)
 
+[node name="Base2" parent="Tree 1" unique_id=2018235032 instance=ExtResource("6_re61j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10502291, 0.14687121, -0.033241272)
+
+[node name="Tree 4" parent="." unique_id=1927377043 instance=ExtResource("3_hj7nv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.02436, 0, 5.8428)
+
+[node name="Base" parent="Tree 4" unique_id=384818275 instance=ExtResource("6_re61j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10502291, 0.14687121, -0.033241272)
+
+[node name="Base2" parent="Tree 4" unique_id=481309862 instance=ExtResource("6_re61j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10502291, 0.14687121, -0.033241272)
+
 [node name="Tree 2" parent="." unique_id=1834087585 instance=ExtResource("3_hj7nv")]
 transform = Transform3D(0.24530742, 0, -0.96944535, 0, 1, 0, 0.96944535, 0, 0.24530742, -6.2099266, 0, 5.783615)
 
 [node name="Base" parent="Tree 2" unique_id=1698047254 instance=ExtResource("6_re61j")]
+transform = Transform3D(0.24530742, 0, 0.96944535, 0, 1, 0, -0.96944535, 0, 0.24530742, 0.035910606, 0.14687121, -0.036155224)
+
+[node name="Tree 3" parent="." unique_id=1965399780 instance=ExtResource("3_hj7nv")]
+transform = Transform3D(0.24530742, 0, -0.96944535, 0, 1, 0, 0.96944535, 0, 0.24530742, -19.209927, 0, 5.783615)
+
+[node name="Base" parent="Tree 3" unique_id=1588401034 instance=ExtResource("6_re61j")]
 transform = Transform3D(0.24530742, 0, 0.96944535, 0, 1, 0, -0.96944535, 0, 0.24530742, 0.035910606, 0.14687121, -0.036155224)
 
 [node name="Sidewalk 1" parent="." unique_id=1402712168 instance=ExtResource("5_obma5")]
@@ -63,6 +119,32 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15.3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 0.092501655, -13.965683)
 mesh = SubResource("ArrayMesh_6ce8n")
 
+[node name="Road" type="MeshInstance3D" parent="Sidewalk 1" unique_id=1533245552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = SubResource("ArrayMesh_7ctat")
+
+[node name="Sidewalk 4" parent="." unique_id=255555719 instance=ExtResource("5_obma5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 25.306124, 0.08167791, -1.1273642)
+
+[node name="Walk" type="MeshInstance3D" parent="Sidewalk 4" unique_id=984488450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 0.092501655, -13.965683)
+mesh = SubResource("ArrayMesh_6ce8n")
+
+[node name="Road" type="MeshInstance3D" parent="Sidewalk 4" unique_id=1296498527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = SubResource("ArrayMesh_7ctat")
+
+[node name="Sidewalk 5" parent="." unique_id=1339610542 instance=ExtResource("5_obma5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 35.30612, 0.08167791, -1.1273642)
+
+[node name="Walk" type="MeshInstance3D" parent="Sidewalk 5" unique_id=780778945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 0.092501655, -13.965683)
+mesh = SubResource("ArrayMesh_6ce8n")
+
+[node name="Road" type="MeshInstance3D" parent="Sidewalk 5" unique_id=1058040676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.000001)
+mesh = SubResource("ArrayMesh_7ctat")
+
 [node name="Sidewalk 2" parent="." unique_id=748144221 instance=ExtResource("5_obma5")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.3117332, 0.08167791, -1.1273642)
 
@@ -70,9 +152,28 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.31
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 0.092501655, -13.965683)
 mesh = SubResource("ArrayMesh_6ce8n")
 
+[node name="Road" type="MeshInstance3D" parent="Sidewalk 2" unique_id=1393603014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0056090355, 0, 4)
+mesh = SubResource("ArrayMesh_7ctat")
+
 [node name="Sidewalk 3" parent="." unique_id=1214590131 instance=ExtResource("5_obma5")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.683174, 0.08167791, -1.1273642)
 
 [node name="Walk" type="MeshInstance3D" parent="Sidewalk 3" unique_id=507653559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 0.092501655, -13.965683)
 mesh = SubResource("ArrayMesh_6ce8n")
+
+[node name="Road" type="MeshInstance3D" parent="Sidewalk 3" unique_id=2128049071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010701656, 0, 4)
+mesh = SubResource("ArrayMesh_7ctat")
+
+[node name="Sidewalk 6" parent="." unique_id=1178280420 instance=ExtResource("5_obma5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14.683174, 0.08167791, -1.1273642)
+
+[node name="Walk" type="MeshInstance3D" parent="Sidewalk 6" unique_id=1865258399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 0.092501655, -13.965683)
+mesh = SubResource("ArrayMesh_6ce8n")
+
+[node name="Road" type="MeshInstance3D" parent="Sidewalk 6" unique_id=574291566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010702133, 0, 4)
+mesh = SubResource("ArrayMesh_7ctat")
