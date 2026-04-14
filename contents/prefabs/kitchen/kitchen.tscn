@@ -221,7 +221,7 @@ transform = Transform3D(1.2749999, 0, 0, 0, 0.9781475, -0.20791167, 0, 0.2079116
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000013, 1.4901161e-08, 0, -1.4901161e-08, 1.0000013, 3.137079, 0.31399828, 0.6486453)
 script = ExtResource("4_sd4tf")
 node_hover_feedback = NodePath("Counter")
-anchor_spawn = NodePath("Counter/ChoppingBoard01/Anchor")
+anchor_spawn = NodePath("")
 
 [node name="Counter" type="MeshInstance3D" parent="CrateCuttingBoards/Counter12" unique_id=1019985970]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -231,10 +231,7 @@ mesh = SubResource("ArrayMesh_1sgcf")
 mesh = SubResource("ArrayMesh_t35ol")
 
 [node name="ChoppingBoard01" parent="CrateCuttingBoards/Counter12/Counter" unique_id=1796928714 instance=ExtResource("5_cxkoo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5411771, 0)
-
-[node name="Whetstone" parent="CrateCuttingBoards/Counter12/Counter/ChoppingBoard01" index="2" unique_id=834128981]
-surface_material_override/0 = null
+transform = Transform3D(1, 0, 0, 0, 0.99999875, -4.4703484e-08, 0, 4.4703484e-08, 0.99999875, 0, 0.5319997, -0.0055336356)
 
 [node name="Area3D" type="Area3D" parent="CrateCuttingBoards/Counter12" unique_id=1612844310]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -247,7 +244,7 @@ shape = SubResource("BoxShape3D_s3y2s")
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000014, -1.4901161e-08, 0, 1.4901161e-08, 1.0000014, 3.137079, 0.31399828, -0.3513559)
 script = ExtResource("4_sd4tf")
 node_hover_feedback = NodePath("Counter")
-anchor_spawn = NodePath("Counter/ChoppingBoard02/Anchor")
+anchor_spawn = NodePath("")
 
 [node name="Counter" type="MeshInstance3D" parent="CrateCuttingBoards/Counter13" unique_id=1921540974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -256,11 +253,8 @@ mesh = SubResource("ArrayMesh_1sgcf")
 [node name="Cube" type="MeshInstance3D" parent="CrateCuttingBoards/Counter13/Counter" unique_id=1025640376]
 mesh = SubResource("ArrayMesh_t35ol")
 
-[node name="ChoppingBoard02" parent="CrateCuttingBoards/Counter13/Counter" unique_id=1190428002 instance=ExtResource("5_cxkoo")]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -4.7683716e-07, 0.54117703, -5.9604645e-08)
-
-[node name="Whetstone" parent="CrateCuttingBoards/Counter13/Counter/ChoppingBoard02" index="2" unique_id=834128981]
-surface_material_override/0 = null
+[node name="ChoppingBoard02" parent="CrateCuttingBoards/Counter13/Counter" unique_id=1535363399 instance=ExtResource("5_cxkoo")]
+transform = Transform3D(1, 0, 0, 0, 0.9999987, 0, 0, 0, 0.9999987, 0, 0.5319997, -1.1920929e-07)
 
 [node name="Area3D" type="Area3D" parent="CrateCuttingBoards/Counter13" unique_id=802732210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -268,6 +262,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CrateCuttingBoards/Counter13/Area3D" unique_id=225093979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0234375, 0)
 shape = SubResource("BoxShape3D_s3y2s")
-
-[editable path="CrateCuttingBoards/Counter12/Counter/ChoppingBoard01"]
-[editable path="CrateCuttingBoards/Counter13/Counter/ChoppingBoard02"]
