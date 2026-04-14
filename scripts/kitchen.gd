@@ -21,12 +21,10 @@ func _ready() -> void:
 	reputation_changed.emit(current_reputation)
 	
 	for crate in ingredient_crates:
-		crate.crate_selected.connect(_on_box_ingredient_selected.bind(crate))
+		crate.crate_selected.connect(_on_crate_ingredient_selected.bind(crate))
 		
 	for crate in plates_crates:
 		crate.crate_selected.connect(_on_crate_plate_selected.bind(crate))
-		#crate._plate = Plate.new(box.anchor_spawn)
-		#_plates.append(box._plate)
 		
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
@@ -48,7 +46,7 @@ func take_damage(amount: int) -> void:
 	if current_reputation <= 0:
 		get_tree().reload_current_scene()
 		
-func _on_box_ingredient_selected(crate:CrateIngredient):
+func _on_crate_ingredient_selected(crate:CrateIngredient):
 	if _current_ingredient == null:
 		_current_ingredient = instantiate_ingredient(crate)
 		
