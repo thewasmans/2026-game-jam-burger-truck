@@ -41,7 +41,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fcxq1")
 
-[node name="CrateInterract" unique_id=2258064 instance=ExtResource("1_pg454")]
+[node name="CratePlate" unique_id=2258064 instance=ExtResource("1_pg454")]
 
 [node name="CrateModel3D" parent="." index="0" unique_id=1087754842]
 surface_material_override/0 = ExtResource("2_x7w6q")
