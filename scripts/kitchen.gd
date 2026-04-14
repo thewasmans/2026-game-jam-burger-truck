@@ -7,6 +7,7 @@ signal ingredient_plate_assigned(box:BoxInterract, ingredient:IngredientData)
 
 @export var ingredient_box: Array[BoxInterract]
 @export var plates_box: Array[BoxInterract]
+@export var crate_trash: BoxInterract
 @export var anchor_plates_clients: Array[Node3D]
 @export var camera:Camera3D
 @export var distance:float
@@ -29,6 +30,8 @@ func _ready() -> void:
 		
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
+		
+	crate_trash.box_selected.connect(_on_trash_selected)
 		
 func _process(_delta: float) -> void:
 	if _current_ingredient:
@@ -86,4 +89,7 @@ func on_enemy_leaving_hungry(client:HungryClient) -> void:
 func on_client_waiting_food(client: HungryClient) -> void:
 	ClientsManager._waiting_queue.append(client)
 	assign_clients_to_plates()
-	
+
+func _on_trash_selected():
+	_current_ingredient.queue_free()
+	_current_ingredient = null
