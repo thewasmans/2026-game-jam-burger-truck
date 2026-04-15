@@ -59,8 +59,9 @@ func _on_trash_selected():
 	
 func _on_crate_tool_selected(crate_tool: CrateTool):
 	if _current_ingredient:
-		crate_tool.use_tool(_current_ingredient)
-		free_current_ingredient()
+		if _current_ingredient.ingredient_data.provide_ingredient != null:
+			crate_tool.use_tool(_current_ingredient)
+			free_current_ingredient()
 	else:
 		_current_ingredient = crate_tool._ingredient
 	
