@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_3lgsw"]
 [ext_resource type="Texture2D" uid="uid://cobi1lvid0mbt" path="res://contents/ui/icons/ingredients/bun_bottom.png" id="1_jm00w"]
+[ext_resource type="Material" uid="uid://gtnb4elmm5ar" path="res://contents/materials/box_ingredient_bun_bottom_mat.tres" id="2_085sy"]
 [ext_resource type="PackedScene" uid="uid://sjoespgma806" path="res://contents/prefabs/ingredients/bun_bottom.tscn" id="2_jm00w"]
 
 [resource]
 script = ExtResource("1_3lgsw")
 name = "Bun Bottom"
 icon = ExtResource("1_jm00w")
+material = ExtResource("2_085sy")
 model_3d = ExtResource("2_jm00w")
 price = 0.5

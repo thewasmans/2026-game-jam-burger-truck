@@ -3,10 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://pooo8qf5qtf3" path="res://contents/ui/icons/ingredients/cheese.png" id="1_2tg6n"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_abcde"]
 [ext_resource type="PackedScene" uid="uid://03hvbonklywu" path="res://contents/meshes/ingredients/cheese_3d.glb" id="2_2tg6n"]
+[ext_resource type="Material" uid="uid://r8cvgrxi3e4q" path="res://contents/materials/box_ingredient_cheese_mat.tres" id="2_871ga"]
 
 [resource]
 script = ExtResource("1_abcde")
 name = "Cheese"
 icon = ExtResource("1_2tg6n")
+material = ExtResource("2_871ga")
 model_3d = ExtResource("2_2tg6n")
 price = 1.5
