@@ -47,7 +47,8 @@ func set_burger(burger_data:BurgerData):
 	anchor_burger.add_child(burger_node)
 	for ingredient in burger_data.ingredients:
 		var instance: Node3D = ingredient.model_3d.instantiate()
-		instance.position += Vector3.UP * burger_node.get_child_count() * .35
+		instance.position += Vector3.UP * burger_node.get_child_count() * .35 #+ Vector3.BACK * burger_node.get_child_count() * .35
+		instance.rotate_x(-PI * .1)
 		burger_node.add_child(instance)
 
 func _physics_process(delta: float) -> void:
