@@ -1,8 +1,30 @@
 [gd_scene format=4 uid="uid://bctaal8fr8t6o"]
 
+[ext_resource type="Script" uid="uid://ce81lavb2vgnr" path="res://scripts/environment/leaf_particle_system.gd" id="2_gjsym"]
 [ext_resource type="PackedScene" uid="uid://dmq6e4f8rymce" path="res://contents/meshes/environment/tree.glb" id="3_hj7nv"]
+[ext_resource type="Script" uid="uid://d1x6n2c1dhy1e" path="res://scripts/environment/shake_tree.gd" id="4_r288j"]
 [ext_resource type="PackedScene" uid="uid://brckj3htmeyq1" path="res://contents/meshes/environment/sidewalk.glb" id="5_obma5"]
 [ext_resource type="PackedScene" uid="uid://dljsqkaph6uci" path="res://contents/meshes/environment/tree_bed.glb" id="6_re61j"]
+
+[sub_resource type="Curve" id="Curve_gjsym"]
+_data = [Vector2(0, 0.29878867), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7am6d"]
+curve = SubResource("Curve_gjsym")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r288j"]
+emission_shape = 2
+emission_sphere_radius = 1.0
+scale_curve = SubResource("CurveTexture_7am6d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjsym"]
+albedo_color = Color(0.3882353, 0.6156863, 0.2901961, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0dwts"]
+material = SubResource("StandardMaterial3D_gjsym")
+radial_segments = 6
+rings = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6dni"]
 resource_name = "Material.sidewalk"
@@ -80,16 +102,27 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1rlu6")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gjsym"]
+radius = 0.35888672
+height = 3.1660156
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gjsym"]
+radius = 1.568656
+
 [node name="Envrionment" type="Node3D" unique_id=1062952153]
+
+[node name="Base" parent="." unique_id=563968777 instance=ExtResource("6_re61j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.129384, 0.14687121, 5.809559)
 
 [node name="Tree 1" parent="." unique_id=1599454774 instance=ExtResource("3_hj7nv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.024361, 0, 5.8428)
 
-[node name="Base" parent="Tree 1" unique_id=563968777 instance=ExtResource("6_re61j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10502291, 0.14687121, -0.033241272)
-
-[node name="Base2" parent="Tree 1" unique_id=2018235032 instance=ExtResource("6_re61j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10502291, 0.14687121, -0.033241272)
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Tree 1" unique_id=779005323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13558865, 2.7863579, 0)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_r288j")
+draw_pass_1 = SubResource("SphereMesh_0dwts")
+script = ExtResource("2_gjsym")
 
 [node name="Tree 4" parent="." unique_id=1927377043 instance=ExtResource("3_hj7nv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.02436, 0, 5.8428)
@@ -100,11 +133,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10502291, 0.14687121, -0.03
 [node name="Base2" parent="Tree 4" unique_id=481309862 instance=ExtResource("6_re61j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10502291, 0.14687121, -0.033241272)
 
+[node name="Base3" parent="." unique_id=1698047254 instance=ExtResource("6_re61j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.166067, 0.14687121, 5.8095593)
+
 [node name="Tree 2" parent="." unique_id=1834087585 instance=ExtResource("3_hj7nv")]
 transform = Transform3D(0.24530742, 0, -0.96944535, 0, 1, 0, 0.96944535, 0, 0.24530742, -6.2099266, 0, 5.783615)
 
-[node name="Base" parent="Tree 2" unique_id=1698047254 instance=ExtResource("6_re61j")]
-transform = Transform3D(0.24530742, 0, 0.96944535, 0, 1, 0, -0.96944535, 0, 0.24530742, 0.035910606, 0.14687121, -0.036155224)
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Tree 2" unique_id=1868711556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13558865, 2.7863579, 0)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_r288j")
+draw_pass_1 = SubResource("SphereMesh_0dwts")
+script = ExtResource("2_gjsym")
 
 [node name="Tree 3" parent="." unique_id=1965399780 instance=ExtResource("3_hj7nv")]
 transform = Transform3D(0.24530742, 0, -0.96944535, 0, 1, 0, 0.96944535, 0, 0.24530742, -19.209927, 0, 5.783615)
@@ -177,3 +217,29 @@ mesh = SubResource("ArrayMesh_6ce8n")
 [node name="Road" type="MeshInstance3D" parent="Sidewalk 6" unique_id=574291566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010702133, 0, 4)
 mesh = SubResource("ArrayMesh_7ctat")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=891320625 node_paths=PackedStringArray("_visual_node", "_leaf_particles")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0223465, 1.7037874, 5.8486505)
+script = ExtResource("4_r288j")
+_visual_node = NodePath("../Tree 1")
+_leaf_particles = NodePath("../Tree 1/GPUParticles3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=739235123]
+shape = SubResource("CapsuleShape3D_gjsym")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=496311526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.214573, 0)
+shape = SubResource("SphereShape3D_gjsym")
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=1042978301 node_paths=PackedStringArray("_visual_node", "_leaf_particles")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2116528, 1.7037874, 5.8486505)
+script = ExtResource("4_r288j")
+_visual_node = NodePath("../Tree 2")
+_leaf_particles = NodePath("../Tree 2/GPUParticles3D2")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D2" unique_id=2030854632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0520148, 0)
+shape = SubResource("SphereShape3D_gjsym")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1714667608]
+shape = SubResource("CapsuleShape3D_gjsym")
