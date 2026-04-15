@@ -29,6 +29,7 @@ var value_waiting: float = -1
 var is_waiting:
 	get:
 		return current_state == State.WAITING
+var _original_scale:Vector3
 
 func _ready() -> void:
 	_is_hungry = true
@@ -39,18 +40,8 @@ func _ready() -> void:
 	wait_timer.one_shot = true
 	wait_timer.timeout.connect(_on_wait_timer_timeout)
 	add_child(wait_timer)
+	_original_scale = anchor_burger.scale
 	
-func set_burger(burger_data:BurgerData):
-	_burger_request = burger_data
-	var burger_node = Node3D.new()
-	burger_node.scale *= .25
-	anchor_burger.add_child(burger_node)
-	for ingredient in burger_data.ingredients:
-		var instance: Node3D = ingredient.model_3d.instantiate()
-		instance.position += Vector3.UP * burger_node.get_child_count() * .35 #+ Vector3.BACK * burger_node.get_child_count() * .35
-		instance.rotate_x(-PI * .1)
-		burger_node.add_child(instance)
-
 func _physics_process(delta: float) -> void:
 	if _is_leaved:
 		return 
@@ -63,7 +54,7 @@ func _physics_process(delta: float) -> void:
 			else:
 				var current_agent_position: Vector3 = global_position
 				var next_path_position: Vector3 = agent.get_next_path_position()
-
+				
 				velocity = current_agent_position.direction_to(next_path_position) * speed
 		
 		State.WAITING:
@@ -91,7 +82,34 @@ func _on_wait_timer_timeout() -> void:
 		leaving_hungry.emit()
 	else:
 		leaving_satiated.emit()
-		
+
+func _on_area_3d_mouse_entered() -> void:
+	for i in anchor_burger.get_child(0).get_child_count():
+		var child: Node3D = anchor_burger.get_child(0).get_child(i)
+		create_tween()\
+			.tween_property(child, "position", child.position + Vector3.UP * i * .5, .15)\
+			.set_ease(Tween.EASE_IN_OUT)\
+			.set_trans(Tween.TRANS_ELASTIC)
+
+func _on_area_3d_mouse_exited() -> void:
+	for i in anchor_burger.get_child(0).get_child_count():
+		var child: Node3D = anchor_burger.get_child(0).get_child(i)
+		create_tween()\
+			.tween_property(child, "position", Vector3.UP * i * .35, .15)\
+			.set_ease(Tween.EASE_IN_OUT)\
+			.set_trans(Tween.TRANS_ELASTIC)
+
+func set_burger(burger_data:BurgerData):
+	_burger_request = burger_data
+	var burger_node = Node3D.new()
+	burger_node.scale *= .25
+	anchor_burger.add_child(burger_node)
+	for ingredient in burger_data.ingredients:
+		var instance: Node3D = ingredient.model_3d.instantiate()
+		instance.position += Vector3.UP * burger_node.get_child_count() * .35
+		instance.rotate_x(-PI * .1)
+		burger_node.add_child(instance)
+
 func give_food(_burger:Array[IngredientData])-> bool:
 	if current_state == State.WAITING:
 		_is_hungry = false
@@ -100,4 +118,3 @@ func give_food(_burger:Array[IngredientData])-> bool:
 		anchor_burger.hide()
 		return true
 	return false
-	
