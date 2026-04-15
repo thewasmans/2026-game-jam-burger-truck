@@ -11,11 +11,6 @@ class_name Main
 @export var navigation:NavigationRegion3D
 @export var placement_zone: Area3D
 @export var game_data:GameData
-
-var anchor_plates: Array:
-	get:
-		var box = kitchen.plates_box.map(func(elt:BoxInterract): return elt.anchor_spawn)
-		return box
 		
 var burgers_data:
 	get:
