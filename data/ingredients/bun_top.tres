@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_abcde"]
 [ext_resource type="Texture2D" uid="uid://cl7qecjpe8cep" path="res://contents/ui/icons/ingredients/bun_top.png" id="1_veirf"]
-[ext_resource type="Material" uid="uid://bdcdi8roxey1x" path="res://contents/materials/box_ingredient_bun_top_mat.tres" id="2_paplt"]
-[ext_resource type="PackedScene" uid="uid://dvwq2ngf5kyh7" path="res://contents/meshes/ingredients/bun_top_3d.glb" id="2_veirf"]
+[ext_resource type="Material" uid="uid://bdcdi8roxey1x" path="res://contents/materials/ingredients/box_ingredient_bun_top_mat.tres" id="2_paplt"]
+[ext_resource type="PackedScene" uid="uid://dvwq2ngf5kyh7" path="res://contents/meshes/ingredients/bun/bun_top_3d.glb" id="2_veirf"]
 
 [resource]
 script = ExtResource("1_abcde")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sjoespgma806"]
 
-[ext_resource type="PackedScene" uid="uid://b7hk7qjtttpsi" path="res://contents/meshes/ingredients/bun_bottom_3d.glb" id="1_wm40w"]
+[ext_resource type="PackedScene" uid="uid://b7hk7qjtttpsi" path="res://contents/meshes/ingredients/bun/bun_bottom_3d.glb" id="1_wm40w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wm40w"]
 albedo_color = Color(0.769067, 0.6908688, 0.5097291, 1)
