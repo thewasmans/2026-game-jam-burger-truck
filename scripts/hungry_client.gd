@@ -88,7 +88,7 @@ func _on_area_3d_mouse_entered() -> void:
 		var child: Node3D = anchor_burger.get_child(0).get_child(i)
 		create_tween()\
 			.tween_property(child, "position", child.position + Vector3.UP * i * .5, .15)\
-			.set_ease(Tween.EASE_IN_OUT)\
+			.set_ease(Tween.EASE_IN)\
 			.set_trans(Tween.TRANS_ELASTIC)
 
 func _on_area_3d_mouse_exited() -> void:
