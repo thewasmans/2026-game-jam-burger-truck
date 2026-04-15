@@ -38,7 +38,7 @@ func _process(_delta: float) -> void:
 		var ray_direction: Vector3 = camera.project_ray_normal(mouse_pos)
 		var world_plane: Plane = Plane(Vector3.UP, 1.7)
 		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
-		_current_ingredient.global_position = intersection
+		_current_ingredient.instance.global_position = intersection
 		
 func _on_crate_ingredient_selected(crate:CrateIngredient):
 	if _current_ingredient == null:
@@ -79,8 +79,9 @@ func on_client_waiting_food(client: HungryClient) -> void:
 	assign_clients_to_plates()
 
 func get_current_ingredient_data() -> IngredientData:
-	var data = _current_ingredient.get_meta("data")
-	_current_ingredient.queue_free()
+	var data := _current_ingredient.ingredient_data
+	_current_ingredient.instance.queue_free()
+	_current_ingredient.free()
 	_current_ingredient = null
 	return data
 
