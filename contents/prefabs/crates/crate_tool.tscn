@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ke47s5h8xkay"]
+
+[ext_resource type="PackedScene" uid="uid://dpa4wy00xu6qy" path="res://contents/prefabs/crates/crate_interract.tscn" id="1_1si1n"]
+[ext_resource type="Script" uid="uid://dr1ecqicx6met" path="res://scripts/crates/crate_tool.gd" id="2_3b1ux"]
+
+[node name="CrateTool" unique_id=2258064 instance=ExtResource("1_1si1n")]
+script = ExtResource("2_3b1ux")
+ingredient_data = null

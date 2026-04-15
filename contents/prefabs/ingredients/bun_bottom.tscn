@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://sjoespgma806"]
 
-[ext_resource type="PackedScene" uid="uid://b7hk7qjtttpsi" path="res://contents/meshes/ingredients/bun_bottom_3d.glb" id="1_wm40w"]
+[ext_resource type="Script" uid="uid://1xx70eih7vkr" path="res://scripts/ingredient.gd" id="1_5rl1l"]
+[ext_resource type="PackedScene" uid="uid://b7hk7qjtttpsi" path="res://contents/meshes/ingredients/bun/bun_bottom_3d.glb" id="1_wm40w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wm40w"]
 albedo_color = Color(0.769067, 0.6908688, 0.5097291, 1)
@@ -8,7 +9,8 @@ albedo_color = Color(0.769067, 0.6908688, 0.5097291, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_o3m4a"]
 material = SubResource("StandardMaterial3D_wm40w")
 
-[node name="BunBotto!" type="Node3D" unique_id=60632081]
+[node name="BunBottom" type="Node3D" unique_id=60632081]
+script = ExtResource("1_5rl1l")
 
 [node name="bun_bottom_3d" parent="." unique_id=366075605 instance=ExtResource("1_wm40w")]
 
