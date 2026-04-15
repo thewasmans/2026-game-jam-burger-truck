@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bt0kfwffbytcw"
-path="res://.godot/imported/Chalk.otf-e626a5bf82dc0d929c989c394dea791a.fontdata"
+uid="uid://bkvxejk7pxu6d"
+path="res://.godot/imported/chalkline_outline.otf-4d8204578dbccfafc86933b9f9c12572.fontdata"
 
 [deps]
 
-source_file="res://contents/ui/fonts/Chalk.otf"
-dest_files=["res://.godot/imported/Chalk.otf-e626a5bf82dc0d929c989c394dea791a.fontdata"]
+source_file="res://contents/ui/fonts/chalkline_outline.otf"
+dest_files=["res://.godot/imported/chalkline_outline.otf-4d8204578dbccfafc86933b9f9c12572.fontdata"]
 
 [params]
 
