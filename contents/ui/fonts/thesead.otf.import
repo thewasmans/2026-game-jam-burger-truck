@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bt0kfwffbytcw"
-path="res://.godot/imported/Chalk.otf-e626a5bf82dc0d929c989c394dea791a.fontdata"
+uid="uid://b4cgabxfthsbj"
+path="res://.godot/imported/thesead.otf-2b14c637b322cf5d53da85d09f925024.fontdata"
 
 [deps]
 
-source_file="res://contents/ui/fonts/Chalk.otf"
-dest_files=["res://.godot/imported/Chalk.otf-e626a5bf82dc0d929c989c394dea791a.fontdata"]
+source_file="res://contents/ui/fonts/thesead.otf"
+dest_files=["res://.godot/imported/thesead.otf-2b14c637b322cf5d53da85d09f925024.fontdata"]
 
 [params]
 

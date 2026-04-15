@@ -65,15 +65,22 @@ albedo_color = Color(0.88235295, 0, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_0wfyh"]
 material = SubResource("StandardMaterial3D_0wfyh")
 
+[sub_resource type="Curve3D" id="Curve3D_trceg"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.44921, -0.103453636, -0.015566826, 0, 0, 0, 0, 0, 0, 9.542612, -0.103453636, -0.015566826),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_5q0nq"]
-size = Vector3(20, 1, 17)
+size = Vector3(20, 1, 10.801025)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_5q0nq"]
-vertices = PackedVector3Array(-9.5, 1, -13.389643, -9.5, 1, 5.6103573, 9.5, 1, 5.6103573, 9.5, 1, -13.389643)
+vertices = PackedVector3Array(-12.1425, 1, -10.894643, -12.1425, 1, 3.1053572, 12.1075, 1, 3.1053572, 12.1075, 1, -10.894643)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5q0nq"]
-size = Vector3(20, 1, 20)
+size = Vector3(25.285, 1, 15.01)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -177,14 +184,21 @@ mesh = SubResource("SphereMesh_0wfyh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4920025, -0.103453636, 13.155243)
 mesh = SubResource("SphereMesh_0wfyh")
 
+[node name="SpawnPath" type="Path3D" parent="Level/HungryClientSpawner" unique_id=1395796014]
+curve = SubResource("Curve3D_trceg")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="Level/HungryClientSpawner/SpawnPath" unique_id=251475332]
+transform = Transform3D(-4.371129e-08, 0, -0.99999774, 0, 1, 0, 0.99999774, 0, -4.371129e-08, -9.44921, -0.103453636, -0.015566826)
+
 [node name="AreaFurnitures" type="Area3D" parent="Level" unique_id=1980600924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15556955, -7.206752)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/AreaFurnitures" unique_id=2059791750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0994873)
 shape = SubResource("BoxShape3D_5q0nq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Level" unique_id=1196850353]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.74210477, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.742, 0.645)
 navigation_mesh = SubResource("NavigationMesh_5q0nq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level/NavigationRegion3D" unique_id=767979883]

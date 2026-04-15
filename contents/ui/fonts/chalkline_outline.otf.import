@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bkvxejk7pxu6d"
-path="res://.godot/imported/ChalkLine-Outline.otf-97154922437f391150dd73289dff2efb.fontdata"
+path="res://.godot/imported/chalkline_outline.otf-4d8204578dbccfafc86933b9f9c12572.fontdata"
 
 [deps]
 
-source_file="res://contents/ui/fonts/ChalkLine-Outline.otf"
-dest_files=["res://.godot/imported/ChalkLine-Outline.otf-97154922437f391150dd73289dff2efb.fontdata"]
+source_file="res://contents/ui/fonts/chalkline_outline.otf"
+dest_files=["res://.godot/imported/chalkline_outline.otf-4d8204578dbccfafc86933b9f9c12572.fontdata"]
 
 [params]
 

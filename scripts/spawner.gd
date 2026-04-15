@@ -9,7 +9,7 @@ signal client_spawned(client:HungryClient)
 @export var out_screen_target: MeshInstance3D
 @export var minimal_spawn_time: float = 4.0
 @export var maximal_spawn_time: float = 8.0
-@export var radius_spawn: float = 2.0
+@onready var spawn_location: PathFollow3D = $SpawnPath/SpawnLocation
 
 @export var difficulty_step: float = 0.5
 @export var minimum_limit: float = 5.0
@@ -73,8 +73,6 @@ func increase_difficulty() -> void:
 
 
 func get_random_spawn_position() -> Vector3:
-	var radius = randf() * radius_spawn
-	var angle = randf() * TAU
-	var x: float = cos(angle) * radius
-	var z: float = sin(angle) * radius
-	return global_transform.origin + Vector3(x, 0, z)
+	spawn_location.progress_ratio = randf()
+	
+	return spawn_location.global_position
