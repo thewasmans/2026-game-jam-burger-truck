@@ -2,16 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dpa4wy00xu6qy" path="res://contents/prefabs/crates/crate_interract.tscn" id="1_vcgj0"]
 [ext_resource type="Script" uid="uid://01xm7et4y6a4" path="res://scripts/crates/crate_ingredient.gd" id="2_df7do"]
-[ext_resource type="Material" uid="uid://be2vofendgyym" path="res://contents/materials/box_ingredients_mat.tres" id="2_iurgr"]
 
-[node name="CrateIngredient" unique_id=2258064 node_paths=PackedStringArray("box_ingredient") instance=ExtResource("1_vcgj0")]
+[node name="CrateIngredient" unique_id=2258064 instance=ExtResource("1_vcgj0")]
 script = ExtResource("2_df7do")
 ingredient = null
-box_ingredient = NodePath("CrateModel3D")
-
-[node name="CrateModel3D" parent="." index="0" unique_id=1087754842]
-transform = Transform3D(1, 0, 0, 0, -0.009634113, 0.9999537, 0, -0.9999537, -0.009634113, 0, 0.5, 0)
-surface_material_override/0 = ExtResource("2_iurgr")
-
-[node name="Anchor" parent="CrateModel3D" index="0" unique_id=952649832]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)

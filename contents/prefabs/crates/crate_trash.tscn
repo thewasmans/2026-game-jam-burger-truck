@@ -5,11 +5,4 @@
 
 [node name="CrateTrash" unique_id=2258064 instance=ExtResource("1_3b6wk")]
 
-[node name="CrateModel3D" parent="." index="0" unique_id=1087754842]
-mesh = null
-
-[node name="TrashCan" parent="CrateModel3D" index="0" unique_id=1514840030 instance=ExtResource("2_1qj6u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-
-[node name="Anchor" parent="CrateModel3D" index="1" unique_id=952649832]
-visible = false
+[node name="TrashCan" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=1514840030 instance=ExtResource("2_1qj6u")]
