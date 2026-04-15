@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b4cgabxfthsbj"
-path="res://.godot/imported/Thesead.otf-6131f1f48f0c00f0332a53c9dddcbe4c.fontdata"
+path="res://.godot/imported/thesead.otf-2b14c637b322cf5d53da85d09f925024.fontdata"
 
 [deps]
 
-source_file="res://contents/ui/fonts/Thesead.otf"
-dest_files=["res://.godot/imported/Thesead.otf-6131f1f48f0c00f0332a53c9dddcbe4c.fontdata"]
+source_file="res://contents/ui/fonts/thesead.otf"
+dest_files=["res://.godot/imported/thesead.otf-2b14c637b322cf5d53da85d09f925024.fontdata"]
 
 [params]
 
