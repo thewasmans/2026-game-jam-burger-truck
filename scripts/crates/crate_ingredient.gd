@@ -5,9 +5,9 @@ extends CrateInterract
 @export var ingredient:IngredientData:
 	set(value):
 		ingredient = value
-		if ingredient and ingredient.material and box_ingredient:
-			box_ingredient.set_surface_override_material(0, ingredient.material)
-@export var box_ingredient:MeshInstance3D
+		if ingredient and ingredient.material and mesh_instance_crate:
+			mesh_instance_crate.set_surface_override_material(0, ingredient.material)
+@export var mesh_instance_crate:MeshInstance3D
 
 func instantiate_ingredient() -> Ingredient:
 	var instance: Ingredient = ingredient.model_3d.instantiate()
