@@ -47,10 +47,10 @@ func on_child_entered_tree(node: Node) -> void:
 func free_client(client:HungryClient):
 	client.queue_free()
 
-func _on_ingredient_plate_assigned(box: BoxInterract, ingredient: IngredientData):
-	add_ingredient_on_plate(ingredient, box._plate)
+func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData):
+	add_ingredient_on_plate(ingredient, crate)
 
-func add_ingredient_on_plate(ingredient: IngredientData, plate:Plate):
+func add_ingredient_on_plate(ingredient: IngredientData, plate:CratePlate):
 	if MoneyManager.buy_ingredient(ingredient):
 		plate.add_ingredient(ingredient)
 		var client = ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
@@ -58,15 +58,15 @@ func add_ingredient_on_plate(ingredient: IngredientData, plate:Plate):
 			ClientsManager.feed_client(client, plate)
 			kitchen.release_client_plate(client)
 			play_vfx(plate)
-	
+			
 func check_all_burgers() -> void:
-	for plate: Plate in kitchen._plates:
+	for plate: CratePlate in kitchen.plates_crates:
 		var client: HungryClient = ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
 		if client:
 			ClientsManager.feed_client(client, plate)
 			kitchen.release_client_plate(client)
 			play_vfx(plate)
 			
-func play_vfx(plate:Plate):
+func play_vfx(plate:CratePlate):
 	vfx_burger_disappear.emitting = true
-	vfx_burger_disappear.global_position = plate._anchor.global_position
+	vfx_burger_disappear.global_position = plate.anchor_spawn.global_position

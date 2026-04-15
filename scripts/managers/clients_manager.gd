@@ -7,7 +7,7 @@ func initialize():
 	_clients = []
 	_waiting_queue = []
 
-func feed_client(client:HungryClient, plate:Plate):
+func feed_client(client:HungryClient, plate:CratePlate):
 	client.give_food(plate._ingredients)
 	MoneyManager.add_money(client._burger_request.price)
 	plate.clear()

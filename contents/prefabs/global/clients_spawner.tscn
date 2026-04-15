@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dl30bfxeahsmq" path="res://scripts/spawner.gd" id="1_devoi"]
 [ext_resource type="PackedScene" uid="uid://b6h3u02w2i8s" path="res://contents/prefabs/global/hungry_client.tscn" id="2_xl0gr"]
-[ext_resource type="Material" uid="uid://gxs0qgqlmm36" path="res://contents/materials/debug_material.tres" id="4_nbol0"]
+[ext_resource type="Material" uid="uid://gxs0qgqlmm36" path="res://contents/materials/debug_mat.tres" id="4_nbol0"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_458yu"]
 
