@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://da52klgb8iem0"]
 
 [ext_resource type="Texture2D" uid="uid://5t3txf5ap6dl" path="res://contents/ui/icons/ingredients/meat.png" id="1_vyhdy"]
-[ext_resource type="PackedScene" uid="uid://dn6oqdluiig68" path="res://contents/meshes/ingredients/steak_3d.glb" id="2_b7rw3"]
 [ext_resource type="Material" uid="uid://bvkp3cfqvrna4" path="res://contents/materials/ingredients/box_ingredient_meat_mat.tres" id="2_cygl2"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_vyhdy"]
+[ext_resource type="PackedScene" uid="uid://dd0nd1ua82cvb" path="res://contents/prefabs/ingredients/steak_3d.tscn" id="3_b7rw3"]
 
 [resource]
 script = ExtResource("2_vyhdy")
 name = "steak"
 icon = ExtResource("1_vyhdy")
 material = ExtResource("2_cygl2")
-model_3d = ExtResource("2_b7rw3")
+model_3d = ExtResource("3_b7rw3")
 price = 3.0

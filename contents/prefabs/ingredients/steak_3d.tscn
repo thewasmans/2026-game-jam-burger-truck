@@ -16,7 +16,7 @@ script = ExtResource("2_tr54m")
 _mesh = NodePath("Meat")
 _doneness_bar = NodePath("DonenessBar/ProgressBar")
 
-[node name="Meat" parent="." index="0" unique_id=255983270]
+[node name="Meat" parent="." index="0" unique_id=1376973690]
 surface_material_override/0 = SubResource("ShaderMaterial_q0si4")
 
 [node name="DonenessBar" type="Control" parent="." index="1" unique_id=1365554849]
