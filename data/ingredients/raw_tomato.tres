@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://pwcioofuedpg"]
+
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_hmt3m"]
+[ext_resource type="Texture2D" uid="uid://d08m5s7p3wmbl" path="res://contents/ui/icons/ingredients/tomato.png" id="1_wkd7j"]
+[ext_resource type="Material" uid="uid://bfioy72kjsvgc" path="res://contents/materials/ingredients/box_ingredient_tomato_mat.tres" id="2_dg6o7"]
+[ext_resource type="PackedScene" uid="uid://b7s5eumiaajja" path="res://contents/meshes/ingredients/tomato/tomato_3d.glb" id="2_do3qb"]
+[ext_resource type="Resource" uid="uid://byemthqhebahh" path="res://data/ingredients/tomato.tres" id="3_do3qb"]
+
+[resource]
+script = ExtResource("1_hmt3m")
+name = "Plain Tomato"
+icon = ExtResource("1_wkd7j")
+material = ExtResource("2_dg6o7")
+model_3d = ExtResource("2_do3qb")
+price = 23.0
+provide_ingredient = ExtResource("3_do3qb")
+metadata/_custom_type_script = "uid://btvvuw6kwk0cc"

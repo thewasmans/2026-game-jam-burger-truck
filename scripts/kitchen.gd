@@ -8,6 +8,7 @@ signal crate_ingredient_clicked(crate:CrateIngredient)
 
 @export var ingredient_crates: Array[CrateIngredient]
 @export var plates_crates: Array[CratePlate]
+@export var tool_crates: Array[CrateTool]
 @export var crate_trash: CrateInterract
 @export var anchor_plates_clients: Array[Node3D]
 @export var camera:Camera3D
@@ -26,6 +27,9 @@ func _ready() -> void:
 	for crate in plates_crates:
 		crate.crate_selected.connect(_on_crate_plate_selected.bind(crate))
 		
+	for crate in tool_crates:
+		crate.crate_selected.connect(_on_crate_tool_selected.bind(crate))
+		
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
 		
@@ -40,18 +44,25 @@ func _process(_delta: float) -> void:
 		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
 		_current_ingredient.instance.global_position = intersection
 		
-func _on_crate_ingredient_selected(crate:CrateIngredient):
+func _on_crate_ingredient_selected(crate: CrateIngredient):
 	if _current_ingredient == null:
 		_current_ingredient = crate.instantiate_ingredient()
 		crate_ingredient_clicked.emit(crate)
 		
-func _on_crate_plate_selected(crate_plate:CratePlate):
+func _on_crate_plate_selected(crate_plate: CratePlate):
 	if _current_ingredient:
 		var data = get_current_ingredient_data()
 		ingredient_plate_assigned.emit(crate_plate, data)
 		
 func _on_trash_selected():
 	free_current_ingredient()
+	
+func _on_crate_tool_selected(crate_tool: CrateTool):
+	if _current_ingredient:
+		crate_tool.use_tool(_current_ingredient)
+		free_current_ingredient()
+	else:
+		_current_ingredient = crate_tool._ingredient
 	
 func assign_clients_to_plates() -> void:
 	for anchor: Node3D in anchor_plates_clients:
