@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://bfmopjudgwf0u"]
 
-[ext_resource type="FontFile" uid="uid://b4cgabxfthsbj" path="res://contents/ui/fonts/thesead.otf" id="1_km2md"]
+[ext_resource type="FontFile" uid="uid://ci4mpyl4losmh" path="res://contents/ui/fonts/thesead.otf" id="1_km2md"]
 [ext_resource type="Texture2D" uid="uid://d3reikr8breno" path="res://contents/ui/theme/slider/rep_bar_slider.png" id="2_ixh4u"]
 [ext_resource type="Texture2D" uid="uid://dcwcwi1wkl3k2" path="res://contents/ui/theme/slider/rep_bar_top.png" id="3_kw3id"]
 [ext_resource type="Texture2D" uid="uid://xqtndduxksku" path="res://contents/ui/theme/slider/rep_bar_bottom.png" id="4_1a6p2"]
