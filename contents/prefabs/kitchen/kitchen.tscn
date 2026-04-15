@@ -93,9 +93,11 @@ shadow_mesh = SubResource("ArrayMesh_fcxq1")
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3y2s"]
 size = Vector3(1, 1.046875, 1)
 
-[node name="Kitchen" type="Node3D" unique_id=1051125650 node_paths=PackedStringArray("crate_trash")]
+[node name="Kitchen" type="Node3D" unique_id=1051125650 node_paths=PackedStringArray("ingredient_crates", "plates_crates", "crate_trash")]
 transform = Transform3D(1, 0, 0, 0, 0.9781476, -0.2079117, 0, 0.2079117, 0.9781476, 0, 0, 0)
 script = ExtResource("1_frebv")
+ingredient_crates = [NodePath("IngredientsCratePrefab/CrateIngredientCheese"), NodePath("IngredientsCratePrefab/CrateIngredientSalad"), NodePath("IngredientsCratePrefab/CrateIngredientOnion"), NodePath("IngredientsCratePrefab/CrateIngredientTomato"), NodePath("IngredientsCratePrefab/CrateIngredientMeat"), NodePath("IngredientsCratePrefab/CrateIngredientBunTop"), NodePath("IngredientsCratePrefab/CrateIngredientBunBottom")]
+plates_crates = [NodePath("PlatesPrefab/CratePlate01"), NodePath("PlatesPrefab/CratePlate02"), NodePath("PlatesPrefab/CratePlate03"), NodePath("PlatesPrefab/CratePlate04"), NodePath("PlatesPrefab/CratePlate05"), NodePath("PlatesPrefab/CratePlate06"), NodePath("PlatesPrefab/CratePlate07")]
 crate_trash = NodePath("TrashPrefab/CrateTrash")
 
 [node name="KitchenWalls" parent="." unique_id=979950950 instance=ExtResource("2_sfdcp")]
