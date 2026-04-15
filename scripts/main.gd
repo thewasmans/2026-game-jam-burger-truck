@@ -51,13 +51,13 @@ func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData
 	add_ingredient_on_plate(ingredient, crate)
 
 func add_ingredient_on_plate(ingredient: IngredientData, plate:CratePlate):
-	if MoneyManager.buy_ingredient(ingredient):
-		plate.add_ingredient(ingredient)
-		var client = ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
-		if client:
-			ClientsManager.feed_client(client, plate)
-			kitchen.release_client_plate(client)
-			play_vfx(plate)
+	#if MoneyManager.buy_ingredient(ingredient):
+	plate.add_ingredient(ingredient)
+	var client = ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
+	if client:
+		ClientsManager.feed_client(client, plate)
+		kitchen.release_client_plate(client)
+		play_vfx(plate)
 			
 func check_all_burgers() -> void:
 	for plate: CratePlate in kitchen.plates_crates:

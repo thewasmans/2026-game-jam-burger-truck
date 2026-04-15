@@ -14,7 +14,7 @@ signal crate_ingredient_clicked(crate:CrateIngredient)
 
 var MAX_REPUTATION: int = 10
 var current_reputation: int = MAX_REPUTATION
-var _current_ingredient: Node3D = null
+var _current_ingredient: Ingredient = null
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
 
 func _ready() -> void:
@@ -45,10 +45,10 @@ func _on_crate_ingredient_selected(crate:CrateIngredient):
 		_current_ingredient = crate.instantiate_ingredient()
 		crate_ingredient_clicked.emit(crate)
 		
-func _on_crate_plate_selected(crate:CratePlate):
+func _on_crate_plate_selected(crate_plate:CratePlate):
 	if _current_ingredient:
 		var data = get_current_ingredient_data()
-		ingredient_plate_assigned.emit(crate, data)
+		ingredient_plate_assigned.emit(crate_plate, data)
 		
 func _on_trash_selected():
 	_current_ingredient.queue_free()
