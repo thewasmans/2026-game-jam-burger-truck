@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://b43pxddlxof8n" path="res://contents/prefabs/crates/crate_trash.tscn" id="7_gr4wk"]
 [ext_resource type="PackedScene" uid="uid://cxya5joe5057p" path="res://contents/prefabs/crates/crate_ingredient.tscn" id="8_jsw62"]
 [ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="9_e7hnh"]
-[ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="10_6ofnw"]
-[ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="11_qw44q"]
-[ext_resource type="Resource" uid="uid://byemthqhebahh" path="res://data/ingredients/tomato.tres" id="12_ri23j"]
-[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="13_jrvic"]
-[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="14_7eu1n"]
-[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="15_cy67m"]
+[ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="10_eqcjw"]
+[ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="11_n3lqd"]
+[ext_resource type="Resource" uid="uid://byemthqhebahh" path="res://data/ingredients/tomato.tres" id="12_sfdcp"]
+[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="13_sd4tf"]
+[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="14_cxkoo"]
+[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="15_u40xe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hs2o"]
 resource_name = "Material.Counter"
@@ -228,31 +228,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.35270357, 1.6472421)
 
 [node name="CrateIngredientCheese" parent="IngredientsCratePrefab" unique_id=884519690 instance=ExtResource("8_jsw62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9927356, 0.31500983, -1.341539)
-ingredient = ExtResource("9_e7hnh")
+ingredient_data = ExtResource("9_e7hnh")
 
 [node name="CrateIngredientSalad" parent="IngredientsCratePrefab" unique_id=405860334 instance=ExtResource("8_jsw62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9927356, 0.31500983, -1.341539)
-ingredient = ExtResource("10_6ofnw")
+ingredient_data = ExtResource("10_eqcjw")
 
 [node name="CrateIngredientOnion" parent="IngredientsCratePrefab" unique_id=594956729 instance=ExtResource("8_jsw62")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9927356, 0.31500983, 0.658461)
-ingredient = ExtResource("11_qw44q")
+ingredient_data = ExtResource("11_n3lqd")
 
 [node name="CrateIngredientTomato" parent="IngredientsCratePrefab" unique_id=569543113 instance=ExtResource("8_jsw62")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9927356, 0.31500983, -0.34153903)
-ingredient = ExtResource("12_ri23j")
+ingredient_data = ExtResource("12_sfdcp")
 
 [node name="CrateIngredientMeat" parent="IngredientsCratePrefab" unique_id=821221129 instance=ExtResource("8_jsw62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0072643757, 0.31500983, -1.341539)
-ingredient = ExtResource("13_jrvic")
+ingredient_data = ExtResource("13_sd4tf")
 
 [node name="CrateIngredientBunTop" parent="IngredientsCratePrefab" unique_id=818585458 instance=ExtResource("8_jsw62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9927356, 0.31500983, -1.341539)
-ingredient = ExtResource("14_7eu1n")
+ingredient_data = ExtResource("14_cxkoo")
 
 [node name="CrateIngredientBunBottom" parent="IngredientsCratePrefab" unique_id=1039937974 instance=ExtResource("8_jsw62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9927356, 0.31500983, -1.341539)
-ingredient = ExtResource("15_cy67m")
+ingredient_data = ExtResource("15_u40xe")
 
 [editable path="CrateCuttingBoards/Counter12/Counter/ChoppingBoard01"]
 [editable path="CrateCuttingBoards/Counter13/Counter/ChoppingBoard02"]

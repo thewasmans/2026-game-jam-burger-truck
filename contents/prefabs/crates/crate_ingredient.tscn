@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://dpa4wy00xu6qy" path="res://contents/prefabs/crates/crate_interract.tscn" id="1_vcgj0"]
 [ext_resource type="Script" uid="uid://01xm7et4y6a4" path="res://scripts/crates/crate_ingredient.gd" id="2_df7do"]
-[ext_resource type="Material" uid="uid://bq52ume8v0c7q" path="res://contents/materials/ingredients/box_ingredient_salad_mat.tres" id="3_cpbf3"]
 [ext_resource type="ArrayMesh" uid="uid://chy3ogwv3o76b" path="res://contents/meshes/crate/crate_mesh.tres" id="3_df7do"]
+[ext_resource type="Material" uid="uid://r8cvgrxi3e4q" path="res://contents/materials/ingredients/box_ingredient_cheese_mat.tres" id="4_cpbf3"]
 
 [node name="CrateIngredient" unique_id=2258064 node_paths=PackedStringArray("mesh_instance_crate") instance=ExtResource("1_vcgj0")]
 script = ExtResource("2_df7do")
-ingredient = null
+ingredient_data = null
 mesh_instance_crate = NodePath("Model3D/CrateMesh")
 
 [node name="CrateMesh" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="1" unique_id=1440739830]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-material_override = ExtResource("3_cpbf3")
 mesh = ExtResource("3_df7do")
+surface_material_override/0 = ExtResource("4_cpbf3")
