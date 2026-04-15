@@ -48,7 +48,6 @@ func _on_crate_ingredient_selected(crate:CrateIngredient):
 func _on_crate_plate_selected(crate:CratePlate):
 	if _current_ingredient:
 		var data = get_current_ingredient_data()
-		crate.add_ingredient(data)
 		ingredient_plate_assigned.emit(crate, data)
 		
 func _on_trash_selected():
