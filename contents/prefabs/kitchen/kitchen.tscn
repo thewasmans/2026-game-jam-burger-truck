@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c48dl325ub3ad" path="res://scripts/kitchen.gd" id="1_frebv"]
 [ext_resource type="PackedScene" uid="uid://e7ki1w7purcq" path="res://contents/prefabs/kitchen/kitchen_walls.tscn" id="2_sfdcp"]
 [ext_resource type="PackedScene" uid="uid://btn56u0cjwte3" path="res://contents/prefabs/kitchen/stove.tscn" id="3_wsxgx"]
-[ext_resource type="Script" uid="uid://bkl2qtdmyvhyu" path="res://scripts/box_interract.gd" id="4_sd4tf"]
 [ext_resource type="PackedScene" uid="uid://do63m8wjds1s6" path="res://contents/prefabs/kitchen/chopping_board.tscn" id="5_cxkoo"]
 [ext_resource type="PackedScene" uid="uid://dbq3p4mibtx8k" path="res://contents/prefabs/crates/crate_plate.tscn" id="6_u40xe"]
 [ext_resource type="PackedScene" uid="uid://b43pxddlxof8n" path="res://contents/prefabs/crates/crate_trash.tscn" id="7_gr4wk"]
@@ -152,10 +151,8 @@ transform = Transform3D(1, 0, 0, 0, 1.0000008, 0, 0, 0, 1.0000008, 3.0001435, 0.
 [node name="CrateCuttingBoards" type="Node3D" parent="." unique_id=1831971397]
 transform = Transform3D(1.2749999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
 
-[node name="Counter12" type="Node3D" parent="CrateCuttingBoards" unique_id=1376785588 node_paths=PackedStringArray("node_hover_feedback")]
+[node name="Counter12" type="Node3D" parent="CrateCuttingBoards" unique_id=1376785588]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000013, 1.4901161e-08, 0, -1.4901161e-08, 1.0000013, 3.137079, 0.31399828, 0.6486453)
-script = ExtResource("4_sd4tf")
-node_hover_feedback = NodePath("Counter")
 
 [node name="Counter" type="MeshInstance3D" parent="CrateCuttingBoards/Counter12" unique_id=1019985970]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -174,10 +171,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0234375, 0)
 shape = SubResource("BoxShape3D_s3y2s")
 
-[node name="Counter13" type="Node3D" parent="CrateCuttingBoards" unique_id=449704294 node_paths=PackedStringArray("node_hover_feedback")]
+[node name="Counter13" type="Node3D" parent="CrateCuttingBoards" unique_id=449704294]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000014, -1.4901161e-08, 0, 1.4901161e-08, 1.0000014, 3.137079, 0.31399828, -0.3513559)
-script = ExtResource("4_sd4tf")
-node_hover_feedback = NodePath("Counter")
 
 [node name="Counter" type="MeshInstance3D" parent="CrateCuttingBoards/Counter13" unique_id=1921540974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
