@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://bctaal8fr8t6o"]
 
-[ext_resource type="Script" uid="uid://ce81lavb2vgnr" path="res://scripts/environment/leaf_particle_system.gd" id="2_gjsym"]
+[ext_resource type="Script" path="res://scripts/environment/leaf_particle_system.gd" id="2_gjsym"]
 [ext_resource type="PackedScene" uid="uid://dmq6e4f8rymce" path="res://contents/meshes/environment/tree.glb" id="3_hj7nv"]
-[ext_resource type="Script" uid="uid://d1x6n2c1dhy1e" path="res://scripts/environment/shake_tree.gd" id="4_r288j"]
+[ext_resource type="Script" path="res://scripts/environment/shake_tree.gd" id="4_r288j"]
 [ext_resource type="PackedScene" uid="uid://brckj3htmeyq1" path="res://contents/meshes/environment/sidewalk.glb" id="5_obma5"]
 [ext_resource type="PackedScene" uid="uid://dljsqkaph6uci" path="res://contents/meshes/environment/tree_bed.glb" id="6_re61j"]
 
