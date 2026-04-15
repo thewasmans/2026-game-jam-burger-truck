@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cor3hjpqmmvmu"
-path.s3tc="res://.godot/imported/ReputationBar_bg.png-55e7879353ac6eb36cd93c6a5cc74410.s3tc.ctex"
+uid="uid://dk1tspdrq107x"
+path.s3tc="res://.godot/imported/reputation_bar_fill.png-ab4fb50f0cee5d827b787463a79922c5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://contents/ui/icons/ReputationBar_bg.png"
-dest_files=["res://.godot/imported/ReputationBar_bg.png-55e7879353ac6eb36cd93c6a5cc74410.s3tc.ctex"]
+source_file="res://contents/ui/icons/reputation_bar_fill.png"
+dest_files=["res://.godot/imported/reputation_bar_fill.png-ab4fb50f0cee5d827b787463a79922c5.s3tc.ctex"]
 
 [params]
 
