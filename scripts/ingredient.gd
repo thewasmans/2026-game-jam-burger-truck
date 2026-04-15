@@ -1,4 +1,5 @@
 class_name Ingredient
-extends Node3D
+extends Object
 
-@export var ingredient_data: IngredientData
+var ingredient_data: IngredientData
+var instance: Node3D
