@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bdcdi8roxey1x"]
+
+[ext_resource type="Texture2D" uid="uid://bwq7y2nyoabrd" path="res://contents/textures/ingredient_crate_atlas.png" id="1_6n0qq"]
+
+[resource]
+albedo_texture = ExtResource("1_6n0qq")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_offset = Vector3(0.815, -0.2, 0)

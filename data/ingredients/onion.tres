@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_26b5r"]
 [ext_resource type="Texture2D" uid="uid://duuf7ikxre4bm" path="res://contents/ui/icons/ingredients/onion.png" id="1_u8eol"]
-[ext_resource type="Material" uid="uid://be2vofendgyym" path="res://contents/materials/box_ingredients_mat.tres" id="2_4lphb"]
+[ext_resource type="Material" uid="uid://dl720tfm4w7qo" path="res://contents/materials/box_ingredient_onion_mat.tres" id="2_4lphb"]
 [ext_resource type="PackedScene" uid="uid://d2oby5tktrod4" path="res://contents/meshes/ingredients/onion/onion_slice.tscn" id="2_iw7w2"]
 
 [resource]

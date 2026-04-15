@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dpa4wy00xu6qy" path="res://contents/prefabs/crates/crate_interract.tscn" id="1_pg454"]
 [ext_resource type="PackedScene" uid="uid://cduw1pe1m48rv" path="res://contents/prefabs/kitchen/plate.tscn" id="2_hsuyo"]
+[ext_resource type="Script" uid="uid://2oln5viyl61j" path="res://scripts/crates/crate_plate.gd" id="2_njnk6"]
 [ext_resource type="Material" uid="uid://6dkgx545golh" path="res://contents/materials/steak_mat.tres" id="2_x7w6q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlycv"]
@@ -42,6 +43,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fcxq1")
 
 [node name="CratePlate" unique_id=2258064 instance=ExtResource("1_pg454")]
+script = ExtResource("2_njnk6")
 
 [node name="CrateModel3D" parent="." index="0" unique_id=1087754842]
 surface_material_override/0 = ExtResource("2_x7w6q")
