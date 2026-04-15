@@ -4,6 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://cduw1pe1m48rv" path="res://contents/prefabs/kitchen/plate.tscn" id="2_hsuyo"]
 [ext_resource type="Script" uid="uid://2oln5viyl61j" path="res://scripts/crates/crate_plate.gd" id="2_njnk6"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uejpa"]
+albedo_color = Color(0.5984267, 0.30334547, 0.16486213, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_njnk6"]
+material = SubResource("StandardMaterial3D_uejpa")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlycv"]
 resource_name = "Material.CounterTop"
 cull_mode = 2
@@ -44,9 +50,13 @@ shadow_mesh = SubResource("ArrayMesh_fcxq1")
 [node name="CratePlate" unique_id=2258064 instance=ExtResource("1_pg454")]
 script = ExtResource("2_njnk6")
 
-[node name="Cover" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=903941740]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=1753118726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_njnk6")
+
+[node name="Cover" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="1" unique_id=903941740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("ArrayMesh_rsb2i")
 
-[node name="Plate" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="1" unique_id=426704297 instance=ExtResource("2_hsuyo")]
+[node name="Plate" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="2" unique_id=426704297 instance=ExtResource("2_hsuyo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
