@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dd0nd1ua82cvb"]
 
-[ext_resource type="PackedScene" uid="uid://dn6oqdluiig68" path="res://contents/meshes/ingredients/steak/steak_3d.glb" id="1_6g6b6"]
+[ext_resource type="PackedScene" uid="uid://dn6oqdluiig68" path="res://contents/meshes/ingredients/steak_3d.glb" id="1_6g6b6"]
 [ext_resource type="Script" uid="uid://dalq67poekwk3" path="res://scripts/steak_cooking.gd" id="2_tr54m"]
 [ext_resource type="Shader" uid="uid://crdjkodgtqowd" path="res://contents/shaders/steak_cooking/steak_cooking.gdshader" id="3_l31y5"]
 
