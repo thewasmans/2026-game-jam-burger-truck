@@ -51,8 +51,7 @@ func _on_crate_plate_selected(crate_plate:CratePlate):
 		ingredient_plate_assigned.emit(crate_plate, data)
 		
 func _on_trash_selected():
-	_current_ingredient.queue_free()
-	_current_ingredient = null
+	free_current_ingredient()
 	
 func assign_clients_to_plates() -> void:
 	for anchor: Node3D in anchor_plates_clients:
@@ -80,9 +79,7 @@ func on_client_waiting_food(client: HungryClient) -> void:
 
 func get_current_ingredient_data() -> IngredientData:
 	var data := _current_ingredient.ingredient_data
-	_current_ingredient.instance.queue_free()
-	_current_ingredient.free()
-	_current_ingredient = null
+	free_current_ingredient()
 	return data
 
 		
@@ -92,3 +89,8 @@ func take_damage(amount: int) -> void:
 	if current_reputation <= 0:
 		get_tree().reload_current_scene()
 		
+
+func free_current_ingredient():
+	_current_ingredient.instance.queue_free()
+	_current_ingredient.free()
+	_current_ingredient = null
