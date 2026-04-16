@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://djc6xavhxsjd6" path="res://contents/prefabs/ui/game_ui.tscn" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://dpaetc3xgp6qg" path="res://scripts/main.gd" id="4_abcde"]
 [ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="7_a8y0u"]
-[ext_resource type="Script" uid="uid://cf4mpdjpr5wxv" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
+[ext_resource type="Script" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/data/furniture_data.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
 [ext_resource type="Resource" uid="uid://blfgjhw8oqugu" path="res://data/furnitures/furniture_02.tres" id="23_tel4y"]
