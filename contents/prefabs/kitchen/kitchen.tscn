@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="10_eqcjw"]
 [ext_resource type="Resource" uid="uid://pwcioofuedpg" path="res://data/ingredients/raw_tomato.tres" id="11_cxkoo"]
 [ext_resource type="Resource" uid="uid://tj8r6mbo6yvd" path="res://data/ingredients/raw_onion.tres" id="12_u40xe"]
-[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="13_sd4tf"]
+[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/raw_steak.tres" id="13_sd4tf"]
 [ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="14_cxkoo"]
 [ext_resource type="PackedScene" uid="uid://d2wjc63hacmbg" path="res://contents/prefabs/crates/crate_chopping.tscn" id="14_u40xe"]
 [ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="15_u40xe"]
