@@ -160,11 +160,11 @@ transform = Transform3D(1.2749999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0,
 
 [node name="CrateChopping 1" parent="CrateCuttingBoards" unique_id=2258064 instance=ExtResource("14_u40xe")]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000013, 2.9802322e-08, 0, -2.9802322e-08, 1.0000013, 3.137079, 0.31399825, 0.6486452)
-ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("11_cxkoo"), ExtResource("12_u40xe")])
+ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("12_u40xe"), ExtResource("11_cxkoo")])
 
 [node name="CrateChopping 2" parent="CrateCuttingBoards" unique_id=11255452 instance=ExtResource("14_u40xe")]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000014, -2.9802322e-08, 0, 2.9802322e-08, 1.0000014, 3.137079, 0.31399828, -0.3513559)
-ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("12_u40xe"), ExtResource("13_sd4tf")])
+ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("12_u40xe"), ExtResource("11_cxkoo")])
 
 [node name="PlatesPrefab" type="Node3D" parent="." unique_id=1418069035]
 
