@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_3sukc"]
 [ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_658ou"]
-[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/raw_steak.tres" id="3_hl50t"]
+[ext_resource type="Resource" uid="uid://p3x44aw4ollh" path="res://data/ingredients/cooked_steak.tres" id="3_upvqs"]
 [ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="5_se5qy"]
 [ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="6_tmem1"]
 [ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="7_xm2p6"]
 
 [resource]
 script = ExtResource("7_xm2p6")
-ingredients = Array[ExtResource("1_3sukc")]([ExtResource("2_658ou"), ExtResource("3_hl50t"), ExtResource("5_se5qy"), ExtResource("6_tmem1")])
+ingredients = Array[ExtResource("1_3sukc")]([ExtResource("2_658ou"), ExtResource("3_upvqs"), ExtResource("5_se5qy"), ExtResource("6_tmem1")])
 name = "Saladburger"
 price = 6
 metadata/_custom_type_script = "uid://b250qdutrqhpq"
