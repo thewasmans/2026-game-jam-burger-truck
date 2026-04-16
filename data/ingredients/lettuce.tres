@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_abcde"]
 [ext_resource type="Texture2D" uid="uid://bswelmlauf01g" path="res://contents/ui/icons/ingredients/salad.png" id="1_jnmx8"]
-[ext_resource type="PackedScene" uid="uid://bgup57wukn4bu" path="res://contents/meshes/ingredients/salad_3d.glb" id="2_jnmx8"]
-[ext_resource type="Material" uid="uid://bq52ume8v0c7q" path="res://contents/materials/box_ingredient_salad_mat.tres" id="2_pwqpp"]
+[ext_resource type="Material" uid="uid://bq52ume8v0c7q" path="res://contents/materials/ingredients_crates/box_ingredient_salad_mat.tres" id="2_pwqpp"]
+[ext_resource type="PackedScene" uid="uid://cwb2o7c5nsjfi" path="res://contents/prefabs/ingredients/salad_3d.tscn" id="3_pwqpp"]
 
 [resource]
 script = ExtResource("1_abcde")
 name = "Lettuce"
 icon = ExtResource("1_jnmx8")
 material = ExtResource("2_pwqpp")
-model_3d = ExtResource("2_jnmx8")
+model_3d = ExtResource("3_pwqpp")
 price = 0.5

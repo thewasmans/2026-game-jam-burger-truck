@@ -55,13 +55,14 @@ func _on_crate_plate_selected(crate_plate: CratePlate):
 		ingredient_plate_assigned.emit(crate_plate, data)
 		
 func _on_trash_selected():
-	free_current_ingredient()
+	if _current_ingredient:
+		free_current_ingredient()
 	
 func _on_crate_tool_selected(crate_tool: CrateTool):
 	if _current_ingredient:
 		if _current_ingredient.ingredient_data.provide_ingredient != null:
-			crate_tool.use_tool(_current_ingredient)
-			free_current_ingredient()
+			if crate_tool.use_tool(_current_ingredient):
+				free_current_ingredient()
 	else:
 		_current_ingredient = crate_tool._ingredient
 	
