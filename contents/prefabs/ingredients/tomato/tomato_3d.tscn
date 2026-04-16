@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bm64kjc85aq2h"]
+
+[ext_resource type="PackedScene" uid="uid://b7s5eumiaajja" path="res://contents/meshes/ingredients/tomato/tomato_3d.glb" id="1_qft4v"]
+
+[node name="Tomato3D" type="Node3D" unique_id=621603196]
+
+[node name="ModelScale" type="Node3D" parent="." unique_id=1558445761]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Tomato3D" parent="ModelScale" unique_id=1710853215 instance=ExtResource("1_qft4v")]

@@ -7,7 +7,7 @@ func add_ingredient(ingredient:IngredientData):
 	var instance: Node3D = ingredient.model_3d.instantiate()
 	_ingredients.append(ingredient)
 	instance.position += Vector3.UP * _ingredients.size() * .10
-	instance.scale = Vector3.ONE * .25
+	instance.scale = Vector3.ONE
 	anchor_spawn.add_child(instance)
 
 func clear():

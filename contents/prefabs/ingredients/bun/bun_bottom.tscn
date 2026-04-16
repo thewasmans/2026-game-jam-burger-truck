@@ -12,8 +12,11 @@ material = SubResource("StandardMaterial3D_wm40w")
 [node name="BunBottom" type="Node3D" unique_id=60632081]
 script = ExtResource("1_5rl1l")
 
-[node name="bun_bottom_3d" parent="." unique_id=366075605 instance=ExtResource("1_wm40w")]
+[node name="ModelScale" type="Node3D" parent="." unique_id=382257519]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1976507775]
+[node name="BunBottom3D" parent="ModelScale" unique_id=366075605 instance=ExtResource("1_wm40w")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ModelScale" unique_id=1976507775]
 transform = Transform3D(1.885, 0, 0, 0, 0.142, 0, 0, 0, 1.885, 0, 0.14335805, 0)
 mesh = SubResource("CylinderMesh_o3m4a")
