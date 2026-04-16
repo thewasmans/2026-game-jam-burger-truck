@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="9_e7hnh"]
 [ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="10_eqcjw"]
 [ext_resource type="Resource" uid="uid://pwcioofuedpg" path="res://data/ingredients/raw_tomato.tres" id="11_cxkoo"]
-[ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="11_n3lqd"]
+[ext_resource type="Resource" uid="uid://tj8r6mbo6yvd" path="res://data/ingredients/raw_onion.tres" id="12_u40xe"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/steak.tres" id="13_sd4tf"]
 [ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="14_cxkoo"]
 [ext_resource type="PackedScene" uid="uid://d2wjc63hacmbg" path="res://contents/prefabs/crates/crate_chopping.tscn" id="14_u40xe"]
@@ -157,11 +157,11 @@ transform = Transform3D(1.2749999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0,
 
 [node name="CrateChopping 1" parent="CrateCuttingBoards" unique_id=2258064 instance=ExtResource("14_u40xe")]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000013, 2.9802322e-08, 0, -2.9802322e-08, 1.0000013, 3.137079, 0.31399825, 0.6486452)
-ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("11_cxkoo")])
+ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("11_cxkoo"), ExtResource("12_u40xe")])
 
 [node name="CrateChopping 2" parent="CrateCuttingBoards" unique_id=11255452 instance=ExtResource("14_u40xe")]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000014, -2.9802322e-08, 0, 2.9802322e-08, 1.0000014, 3.137079, 0.31399828, -0.3513559)
-ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("11_cxkoo")])
+ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("11_cxkoo"), ExtResource("12_u40xe")])
 
 [node name="PlatesPrefab" type="Node3D" parent="." unique_id=1418069035]
 
@@ -203,7 +203,7 @@ ingredient_data = ExtResource("10_eqcjw")
 
 [node name="CrateIngredientOnion" parent="IngredientsCratePrefab" unique_id=594956729 instance=ExtResource("8_jsw62")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9927356, 0.31500983, 0.658461)
-ingredient_data = ExtResource("11_n3lqd")
+ingredient_data = ExtResource("12_u40xe")
 
 [node name="CrateIngredientTomato" parent="IngredientsCratePrefab" unique_id=569543113 instance=ExtResource("8_jsw62")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.9927356, 0.31500983, -0.34153903)
