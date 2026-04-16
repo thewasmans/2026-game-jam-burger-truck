@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://6ye1h6dln54f"]
+
+[ext_resource type="Texture2D" uid="uid://bs7p7lqickctu" path="res://contents/ui/icons/menu/ui_shop_crate.png" id="1_retrw"]
+
+[resource]
+content_margin_top = 15.0
+texture = ExtResource("1_retrw")
+texture_margin_left = 35.0
+texture_margin_top = 40.0
+texture_margin_right = 46.0
+texture_margin_bottom = 45.0

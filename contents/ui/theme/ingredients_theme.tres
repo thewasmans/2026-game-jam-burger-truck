@@ -2,13 +2,10 @@
 
 [ext_resource type="FontFile" uid="uid://bkvxejk7pxu6d" path="res://contents/ui/fonts/chalkline_outline.otf" id="1_i2vx5"]
 [ext_resource type="Texture2D" uid="uid://bs7p7lqickctu" path="res://contents/ui/icons/menu/ui_shop_crate.png" id="2_vdub7"]
+[ext_resource type="StyleBox" uid="uid://6ye1h6dln54f" path="res://contents/ui/theme/style_box_texture_shop_crate.tres" id="3_vdub7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2vx5"]
 texture = ExtResource("2_vdub7")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vdub7"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dv3im"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i1bpr"]
 content_margin_top = 15.0
@@ -17,18 +14,19 @@ texture_margin_left = 35.0
 texture_margin_top = 40.0
 texture_margin_right = 46.0
 texture_margin_bottom = 45.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gj5vs"]
+modulate_color = Color(0.6957539, 0.6752602, 0.6576448, 1)
 
 [resource]
 Button/colors/font_color = Color(0.16784829, 0.10780152, 0.05457201, 1)
-Button/colors/icon_disabled_color = Color(0.59607846, 0.59607846, 0.59607846, 0.7921569)
+Button/colors/font_hover_color = Color(0.16784829, 0.10780152, 0.05457201, 1)
+Button/colors/icon_disabled_color = Color(0.59607846, 0.59607846, 0.59607846, 0.8980392)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
 Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/constants/icon_max_width = 200
 Button/font_sizes/font_size = 22
 Button/fonts/font = ExtResource("1_i2vx5")
 Button/styles/disabled = SubResource("StyleBoxTexture_i2vx5")
-Button/styles/focus = SubResource("StyleBoxTexture_vdub7")
-Button/styles/hover = SubResource("StyleBoxTexture_dv3im")
-Button/styles/normal = SubResource("StyleBoxTexture_i1bpr")
-Button/styles/pressed = SubResource("StyleBoxTexture_gj5vs")
+Button/styles/focus = ExtResource("3_vdub7")
+Button/styles/hover = SubResource("StyleBoxTexture_i1bpr")
+Button/styles/normal = ExtResource("3_vdub7")
+Button/styles/pressed = ExtResource("3_vdub7")
