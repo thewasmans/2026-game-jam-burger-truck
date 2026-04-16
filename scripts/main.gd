@@ -45,6 +45,7 @@ func start_game():
 	MoneyManager.initialize(default_amount_money)
 	FurnituresManager.initialize(navigation, placement_zone)
 	ClientsManager.initialize()
+	spawner.initialize()
 	
 
 func free_client(client:HungryClient):

@@ -38,9 +38,9 @@ func _ready() -> void:
 	difficulty_timer.wait_time = 60.0
 	difficulty_timer.timeout.connect(increase_difficulty)
 	add_child(difficulty_timer)
-	difficulty_timer.start()
-
-	await get_tree().create_timer(.01).timeout
+	difficulty_timer.start()	
+	
+func initialize():
 	spawn_enemy()
 
 
