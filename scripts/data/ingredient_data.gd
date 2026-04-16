@@ -1,3 +1,4 @@
+@tool
 extends Resource
 
 class_name IngredientData
@@ -7,3 +8,4 @@ class_name IngredientData
 @export var material: Material
 @export var model_3d: PackedScene
 @export var price: float
+@export var provide_ingredient:IngredientData

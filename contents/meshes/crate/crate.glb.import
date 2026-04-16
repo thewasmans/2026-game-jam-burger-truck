@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvwq2ngf5kyh7"
-path="res://.godot/imported/bun_top_3d.glb-fd133c8aa6bf0cf195bb5dea33cb95a4.scn"
+uid="uid://ba07fw5m8fa7x"
+path="res://.godot/imported/crate.glb-fb0fff342bbe6330f261c237ebe24653.scn"
 
 [deps]
 
-source_file="res://contents/meshes/ingredients/bun_top_3d.glb"
-dest_files=["res://.godot/imported/bun_top_3d.glb-fd133c8aa6bf0cf195bb5dea33cb95a4.scn"]
+source_file="res://contents/meshes/crate/crate.glb"
+dest_files=["res://.godot/imported/crate.glb-fb0fff342bbe6330f261c237ebe24653.scn"]
 
 [params]
 
@@ -38,11 +38,15 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
-"materials": {
-"mat_bread.001": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://contents/materials/bun_mat.tres",
-"use_external/path": "uid://cf65shwfnmn43"
+"meshes": {
+"crate_Ingredient_Crate2_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://contents/meshes/crate/crate_mesh.tres",
+"save_to_file/path": "uid://chy3ogwv3o76b"
 }
 }
 }

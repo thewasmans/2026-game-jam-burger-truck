@@ -8,13 +8,14 @@ signal crate_ingredient_clicked(crate:CrateIngredient)
 
 @export var ingredient_crates: Array[CrateIngredient]
 @export var plates_crates: Array[CratePlate]
+@export var tool_crates: Array[CrateTool]
 @export var crate_trash: CrateInterract
 @export var anchor_plates_clients: Array[Node3D]
 @export var camera:Camera3D
 
 var MAX_REPUTATION: int = 10
 var current_reputation: int = MAX_REPUTATION
-var _current_ingredient: Node3D = null
+var _current_ingredient: Ingredient = null
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
 
 func _ready() -> void:
@@ -25,6 +26,9 @@ func _ready() -> void:
 		
 	for crate in plates_crates:
 		crate.crate_selected.connect(_on_crate_plate_selected.bind(crate))
+		
+	for crate in tool_crates:
+		crate.crate_selected.connect(_on_crate_tool_selected.bind(crate))
 		
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
@@ -38,21 +42,28 @@ func _process(_delta: float) -> void:
 		var ray_direction: Vector3 = camera.project_ray_normal(mouse_pos)
 		var world_plane: Plane = Plane(Vector3.UP, 1.7)
 		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
-		_current_ingredient.global_position = intersection
+		_current_ingredient.instance.global_position = intersection
 		
-func _on_crate_ingredient_selected(crate:CrateIngredient):
+func _on_crate_ingredient_selected(crate: CrateIngredient):
 	if _current_ingredient == null:
 		_current_ingredient = crate.instantiate_ingredient()
 		crate_ingredient_clicked.emit(crate)
 		
-func _on_crate_plate_selected(crate:CratePlate):
+func _on_crate_plate_selected(crate_plate: CratePlate):
 	if _current_ingredient:
 		var data = get_current_ingredient_data()
-		ingredient_plate_assigned.emit(crate, data)
+		ingredient_plate_assigned.emit(crate_plate, data)
 		
 func _on_trash_selected():
-	_current_ingredient.queue_free()
-	_current_ingredient = null
+	free_current_ingredient()
+	
+func _on_crate_tool_selected(crate_tool: CrateTool):
+	if _current_ingredient:
+		if _current_ingredient.ingredient_data.provide_ingredient != null:
+			crate_tool.use_tool(_current_ingredient)
+			free_current_ingredient()
+	else:
+		_current_ingredient = crate_tool._ingredient
 	
 func assign_clients_to_plates() -> void:
 	for anchor: Node3D in anchor_plates_clients:
@@ -79,9 +90,8 @@ func on_client_waiting_food(client: HungryClient) -> void:
 	assign_clients_to_plates()
 
 func get_current_ingredient_data() -> IngredientData:
-	var data = _current_ingredient.get_meta("data")
-	_current_ingredient.queue_free()
-	_current_ingredient = null
+	var data := _current_ingredient.ingredient_data
+	free_current_ingredient()
 	return data
 
 		
@@ -91,3 +101,8 @@ func take_damage(amount: int) -> void:
 	if current_reputation <= 0:
 		get_tree().reload_current_scene()
 		
+
+func free_current_ingredient():
+	_current_ingredient.instance.queue_free()
+	_current_ingredient.free()
+	_current_ingredient = null

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b7hk7qjtttpsi"
-path="res://.godot/imported/bun_bottom_3d.glb-52cce7d81ffa28ee0e6f4179d3ab7954.scn"
+path="res://.godot/imported/bun_bottom_3d.glb-c7c366d26264a2d006cf0eac12b48a8f.scn"
 
 [deps]
 
-source_file="res://contents/meshes/ingredients/bun_bottom_3d.glb"
-dest_files=["res://.godot/imported/bun_bottom_3d.glb-52cce7d81ffa28ee0e6f4179d3ab7954.scn"]
+source_file="res://contents/meshes/ingredients/bun/bun_bottom_3d.glb"
+dest_files=["res://.godot/imported/bun_bottom_3d.glb-c7c366d26264a2d006cf0eac12b48a8f.scn"]
 
 [params]
 

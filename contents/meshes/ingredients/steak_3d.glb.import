@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://jcg228d8l7dg"
-path="res://.godot/imported/ingredient_crate_onion.glb-6d3f63288099ef2f1491f8326c772a83.scn"
+uid="uid://dn6oqdluiig68"
+path="res://.godot/imported/steak_3d.glb-43230fb02355df1a56f1933e423bb15a.scn"
 
 [deps]
 
-source_file="res://contents/meshes/ingredient_crates/ingredient_crate_onion.glb"
-dest_files=["res://.godot/imported/ingredient_crate_onion.glb-6d3f63288099ef2f1491f8326c772a83.scn"]
+source_file="res://contents/meshes/ingredients/steak_3d.glb"
+dest_files=["res://.godot/imported/steak_3d.glb-43230fb02355df1a56f1933e423bb15a.scn"]
 
 [params]
 
