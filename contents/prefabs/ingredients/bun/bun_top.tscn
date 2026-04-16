@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://hp6iccf06e61"]
+
+[ext_resource type="PackedScene" uid="uid://dvwq2ngf5kyh7" path="res://contents/meshes/ingredients/bun/bun_top_3d.glb" id="1_kfhrq"]
+
+[node name="BunTop" type="Node3D" unique_id=1894090635]
+
+[node name="BunTop3D" parent="." unique_id=1828370793 instance=ExtResource("1_kfhrq")]
