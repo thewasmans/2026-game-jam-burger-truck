@@ -34,4 +34,39 @@ visible = false
 [node name="Label" parent="Money/PanelContainer" parent_id_path=PackedInt32Array(1829518468, 135392274) index="0" unique_id=31775040]
 text = "XXX $"
 
+[node name="StartMenu" type="Control" parent="." unique_id=1042170719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="TextureRect" parent="StartMenu" unique_id=1526959378]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 216.0
+offset_top = 167.0
+offset_right = -216.0
+offset_bottom = -167.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="StartMenu/ColorRect" unique_id=644379721]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.0
+offset_top = 32.0
+offset_right = 155.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "START"
+
 [editable path="Money"]
