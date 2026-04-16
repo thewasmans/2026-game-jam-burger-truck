@@ -12,6 +12,6 @@ name = "Plain Tomato"
 icon = ExtResource("1_wkd7j")
 material = ExtResource("2_dg6o7")
 model_3d = ExtResource("2_do3qb")
-price = 23.0
+price = 1.0
 provide_ingredient = ExtResource("3_do3qb")
 metadata/_custom_type_script = "uid://btvvuw6kwk0cc"
