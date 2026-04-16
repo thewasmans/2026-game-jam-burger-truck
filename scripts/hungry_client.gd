@@ -87,7 +87,7 @@ func _on_area_3d_mouse_entered() -> void:
 	for i in anchor_burger.get_child(0).get_child_count():
 		var child: Node3D = anchor_burger.get_child(0).get_child(i)
 		create_tween()\
-			.tween_property(child, "position", child.position + Vector3.UP * i * .5, .15)\
+			.tween_property(child, "position", child.position + Vector3.UP * i * .3, .15)\
 			.set_ease(Tween.EASE_IN)\
 			.set_trans(Tween.TRANS_ELASTIC)
 
@@ -95,18 +95,18 @@ func _on_area_3d_mouse_exited() -> void:
 	for i in anchor_burger.get_child(0).get_child_count():
 		var child: Node3D = anchor_burger.get_child(0).get_child(i)
 		create_tween()\
-			.tween_property(child, "position", Vector3.UP * i * .35, .15)\
+			.tween_property(child, "position", Vector3.UP * i * .1, .15)\
 			.set_ease(Tween.EASE_IN_OUT)\
 			.set_trans(Tween.TRANS_ELASTIC)
 
 func set_burger(burger_data:BurgerData):
 	_burger_request = burger_data
 	var burger_node = Node3D.new()
-	burger_node.scale *= .25
+	burger_node.scale *= .75
 	anchor_burger.add_child(burger_node)
 	for ingredient in burger_data.ingredients:
 		var instance: Node3D = ingredient.model_3d.instantiate()
-		instance.position += Vector3.UP * burger_node.get_child_count() * .35
+		instance.position += Vector3.UP * burger_node.get_child_count() * .1
 		instance.rotate_x(-PI * .1)
 		burger_node.add_child(instance)
 
