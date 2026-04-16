@@ -99,7 +99,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9781476, -0.2079117, 0, 0.2079117, 0.97814
 script = ExtResource("1_frebv")
 ingredient_crates = [NodePath("IngredientsCratePrefab/CrateIngredientCheese"), NodePath("IngredientsCratePrefab/CrateIngredientSalad"), NodePath("IngredientsCratePrefab/CrateIngredientOnion"), NodePath("IngredientsCratePrefab/CrateIngredientTomato"), NodePath("IngredientsCratePrefab/CrateIngredientMeat"), NodePath("IngredientsCratePrefab/CrateIngredientBunTop"), NodePath("IngredientsCratePrefab/CrateIngredientBunBottom")]
 plates_crates = [NodePath("PlatesPrefab/CratePlate01"), NodePath("PlatesPrefab/CratePlate02"), NodePath("PlatesPrefab/CratePlate03"), NodePath("PlatesPrefab/CratePlate04"), NodePath("PlatesPrefab/CratePlate05"), NodePath("PlatesPrefab/CratePlate06"), NodePath("PlatesPrefab/CratePlate07")]
-tool_crates = [NodePath("CrateCuttingBoards/CrateChopping 1"), NodePath("CrateCuttingBoards/CrateChopping 2")]
+tool_crates = [NodePath("CrateCuttingBoards/CrateChopping 1"), NodePath("CrateCuttingBoards/CrateChopping 2"), NodePath("CrateStove/Stove01"), NodePath("CrateStove/Stove02"), NodePath("CrateStove/Stove03")]
 crate_trash = NodePath("TrashPrefab/CrateTrash")
 
 [node name="KitchenWalls" parent="." unique_id=979950950 instance=ExtResource("2_sfdcp")]
@@ -145,12 +145,15 @@ shape = SubResource("BoxShape3D_s3y2s")
 
 [node name="Stove01" parent="CrateStove" unique_id=153617488 instance=ExtResource("3_wsxgx")]
 transform = Transform3D(1, 0, 0, 0, 1.0000008, 0, 0, 0, 1.0000008, 1.0001426, 0.3142982, -1.3490196)
+ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("13_sd4tf")])
 
 [node name="Stove02" parent="CrateStove" unique_id=317811751 instance=ExtResource("3_wsxgx")]
 transform = Transform3D(1, 0, 0, 0, 1.0000008, 0, 0, 0, 1.0000008, 2.000143, 0.3142982, -1.3490196)
+ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("13_sd4tf")])
 
 [node name="Stove03" parent="CrateStove" unique_id=1137081799 instance=ExtResource("3_wsxgx")]
 transform = Transform3D(1, 0, 0, 0, 1.0000008, 0, 0, 0, 1.0000008, 3.0001435, 0.3142982, -1.3490196)
+ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("13_sd4tf")])
 
 [node name="CrateCuttingBoards" type="Node3D" parent="." unique_id=1831971397]
 transform = Transform3D(1.2749999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
@@ -161,7 +164,7 @@ ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("11_cxkoo"), ExtRes
 
 [node name="CrateChopping 2" parent="CrateCuttingBoards" unique_id=11255452 instance=ExtResource("14_u40xe")]
 transform = Transform3D(0.78431386, 0, 0, 0, 1.0000014, -2.9802322e-08, 0, 2.9802322e-08, 1.0000014, 3.137079, 0.31399828, -0.3513559)
-ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("11_cxkoo"), ExtResource("12_u40xe")])
+ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("12_u40xe"), ExtResource("13_sd4tf")])
 
 [node name="PlatesPrefab" type="Node3D" parent="." unique_id=1418069035]
 

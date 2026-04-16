@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://btn56u0cjwte3"]
 
+[ext_resource type="Script" uid="uid://dr1ecqicx6met" path="res://scripts/crates/crate_tool.gd" id="1_wu3ff"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="2_c4bwf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mh7rm"]
@@ -297,7 +298,10 @@ shadow_mesh = SubResource("ArrayMesh_jx7vd")
 [sub_resource type="BoxShape3D" id="BoxShape3D_5brmi"]
 size = Vector3(1, 1.0620117, 1)
 
-[node name="Stove" type="Node3D" unique_id=1867471394]
+[node name="Stove" type="Node3D" unique_id=1867471394 node_paths=PackedStringArray("node_hover_feedback", "anchor_spawn")]
+script = ExtResource("1_wu3ff")
+node_hover_feedback = NodePath("Stove")
+anchor_spawn = NodePath("Stove/Pan/Anchor")
 
 [node name="Stove" type="MeshInstance3D" parent="." unique_id=351758418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49675575, 0)
