@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bpkor2rcs28bt"]
+
+[ext_resource type="PackedScene" uid="uid://dn6oqdluiig68" path="res://contents/meshes/ingredients/steak_3d.glb" id="1_rwimf"]
+[ext_resource type="Material" uid="uid://6dkgx545golh" path="res://contents/materials/cooked_steak_mat.tres" id="2_2ku2x"]
+
+[node name="Steak3D" type="Node3D" unique_id=1152186279]
+
+[node name="ModelScale" type="Node3D" parent="." unique_id=1572038794]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Steak3D" parent="ModelScale" unique_id=1755167675 instance=ExtResource("1_rwimf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011147022, 0, -0.016004682)
+
+[node name="Meat" parent="ModelScale/Steak3D" index="0" unique_id=920503549]
+material_override = ExtResource("2_2ku2x")
+
+[node name="DonenessBar" type="Control" parent="." unique_id=1365554849]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="DonenessBar" unique_id=1238218381]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+indeterminate = true
+editor_preview_indeterminate = false
+
+[editable path="ModelScale/Steak3D"]

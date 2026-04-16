@@ -4,4 +4,7 @@
 
 [node name="BunTop" type="Node3D" unique_id=1894090635]
 
-[node name="BunTop3D" parent="." unique_id=1828370793 instance=ExtResource("1_kfhrq")]
+[node name="ModelScale" type="Node3D" parent="." unique_id=165686368]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="BunTop3D" parent="ModelScale" unique_id=1828370793 instance=ExtResource("1_kfhrq")]

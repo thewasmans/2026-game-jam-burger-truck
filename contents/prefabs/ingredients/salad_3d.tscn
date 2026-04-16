@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cwb2o7c5nsjfi"]
+
+[ext_resource type="PackedScene" uid="uid://bgup57wukn4bu" path="res://contents/meshes/ingredients/salad_3d.glb" id="1_wk0c2"]
+
+[node name="Salad3D" type="Node3D" unique_id=1971657480]
+
+[node name="ModelScale" type="Node3D" parent="." unique_id=1620513525]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Salad3D" parent="ModelScale" unique_id=751433334 instance=ExtResource("1_wk0c2")]

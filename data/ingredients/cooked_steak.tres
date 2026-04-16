@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://p3x44aw4ollh"]
 
 [ext_resource type="Texture2D" uid="uid://5t3txf5ap6dl" path="res://contents/ui/icons/ingredients/meat.png" id="1_l7w54"]
-[ext_resource type="Material" uid="uid://bvkp3cfqvrna4" path="res://contents/materials/ingredients/box_ingredient_meat_mat.tres" id="2_qvmln"]
-[ext_resource type="PackedScene" uid="uid://bpkor2rcs28bt" path="res://contents/prefabs/ingredients/cooked_steak.tscn" id="3_l7w54"]
+[ext_resource type="Material" uid="uid://bvkp3cfqvrna4" path="res://contents/materials/ingredients_crates/box_ingredient_meat_mat.tres" id="2_qvmln"]
+[ext_resource type="PackedScene" uid="uid://bpkor2rcs28bt" path="res://contents/prefabs/ingredients/steak/cooked_steak.tscn" id="3_l7w54"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="4_xbp24"]
 
 [resource]

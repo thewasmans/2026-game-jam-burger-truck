@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://tj8r6mbo6yvd"]
 
 [ext_resource type="Texture2D" uid="uid://duuf7ikxre4bm" path="res://contents/ui/icons/ingredients/onion.png" id="1_wxcrj"]
-[ext_resource type="Material" uid="uid://dl720tfm4w7qo" path="res://contents/materials/ingredients/box_ingredient_onion_mat.tres" id="2_1j3lm"]
-[ext_resource type="PackedScene" uid="uid://dkauu1j16ut33" path="res://contents/meshes/ingredients/onion/onion_3d.glb" id="3_8ybln"]
+[ext_resource type="Material" uid="uid://dl720tfm4w7qo" path="res://contents/materials/ingredients_crates/box_ingredient_onion_mat.tres" id="2_1j3lm"]
+[ext_resource type="PackedScene" uid="uid://bm3s46jhhmc78" path="res://contents/prefabs/ingredients/onion/onion_3d.tscn" id="3_wxcrj"]
 [ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="4_aclbe"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="5_0yv4n"]
 
@@ -11,7 +11,7 @@ script = ExtResource("5_0yv4n")
 name = "Plain Onion"
 icon = ExtResource("1_wxcrj")
 material = ExtResource("2_1j3lm")
-model_3d = ExtResource("3_8ybln")
+model_3d = ExtResource("3_wxcrj")
 price = 1.0
 provide_ingredient = ExtResource("4_aclbe")
 metadata/_custom_type_script = "uid://btvvuw6kwk0cc"
