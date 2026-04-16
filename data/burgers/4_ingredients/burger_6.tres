@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_glqki"]
 [ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_lomjj"]
-[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/raw_steak.tres" id="3_u31ya"]
+[ext_resource type="Resource" uid="uid://p3x44aw4ollh" path="res://data/ingredients/cooked_steak.tres" id="3_vu04u"]
 [ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="4_kjqwt"]
 [ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="5_lfdlr"]
 
 [resource]
 script = ExtResource("5_lfdlr")
-ingredients = Array[ExtResource("1_glqki")]([ExtResource("2_lomjj"), ExtResource("3_u31ya"), ExtResource("3_u31ya"), ExtResource("3_u31ya"), ExtResource("4_kjqwt")])
+ingredients = Array[ExtResource("1_glqki")]([ExtResource("2_lomjj"), ExtResource("3_vu04u"), ExtResource("3_vu04u"), ExtResource("3_vu04u"), ExtResource("4_kjqwt")])
 name = "Steak Burger"
 price = 14
 metadata/_custom_type_script = "uid://b250qdutrqhpq"

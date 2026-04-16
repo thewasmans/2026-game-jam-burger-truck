@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="2_edf0r"]
 [ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_wgsh7"]
 [ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="3_54pwo"]
-[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/raw_steak.tres" id="3_iantk"]
+[ext_resource type="Resource" uid="uid://p3x44aw4ollh" path="res://data/ingredients/cooked_steak.tres" id="3_hokoa"]
 [ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="4_cxnxg"]
 [ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="5_0nvqi"]
 [ext_resource type="Resource" uid="uid://byemthqhebahh" path="res://data/ingredients/tomato.tres" id="7_7sw1c"]
@@ -12,7 +12,7 @@
 
 [resource]
 script = ExtResource("4_cxnxg")
-ingredients = Array[ExtResource("1_ejke0")]([ExtResource("2_wgsh7"), ExtResource("3_iantk"), ExtResource("3_54pwo"), ExtResource("5_0nvqi"), ExtResource("2_edf0r"), ExtResource("7_7sw1c"), ExtResource("8_a3ube")])
+ingredients = Array[ExtResource("1_ejke0")]([ExtResource("2_wgsh7"), ExtResource("3_hokoa"), ExtResource("3_54pwo"), ExtResource("5_0nvqi"), ExtResource("2_edf0r"), ExtResource("7_7sw1c"), ExtResource("8_a3ube")])
 name = "Everything Burger"
 price = 14
 metadata/_custom_type_script = "uid://b250qdutrqhpq"
