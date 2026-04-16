@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://djc6xavhxsjd6" path="res://contents/prefabs/ui/game_ui.tscn" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://dpaetc3xgp6qg" path="res://scripts/main.gd" id="4_abcde"]
 [ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="7_a8y0u"]
+[ext_resource type="Script" uid="uid://cf4mpdjpr5wxv" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/data/furniture_data.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
 [ext_resource type="Resource" uid="uid://blfgjhw8oqugu" path="res://data/furnitures/furniture_02.tres" id="23_tel4y"]
@@ -94,6 +95,9 @@ background_mode = 2
 sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
 glow_enabled = true
+adjustment_brightness = 1.18
+adjustment_contrast = 1.055
+adjustment_saturation = 1.18
 
 [sub_resource type="BoxMesh" id="BoxMesh_jyhfs"]
 size = Vector3(10, 10, 10)
@@ -215,9 +219,12 @@ transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.63586
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environments" unique_id=574237056]
 environment = SubResource("Environment_jyhfs")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environments" unique_id=330718780]
-transform = Transform3D(-0.6293203, -0.6013868, -0.4922295, 0, -0.63338095, 0.7738401, -0.77714604, 0.4869933, 0.3985995, 0, 10, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environments" unique_id=330718780 node_paths=PackedStringArray("sun")]
+transform = Transform3D(-0.6293205, -0.60138655, -0.4922295, -9.563787e-08, -0.63338095, 0.7738401, -0.7771459, 0.48699346, 0.39859957, 0, 10, 0)
 shadow_enabled = true
+script = ExtResource("13_a8y0u")
+sun = NodePath(".")
+speed = 0.01
 
 [node name="Placeholder Enviro1" type="MeshInstance3D" parent="Environments" unique_id=123015361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.745, 3.64, 15.63)
