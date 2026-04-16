@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://ke47s5h8xkay" path="res://contents/prefabs/crates/crate_tool.tscn" id="1_476wp"]
 [ext_resource type="PackedScene" uid="uid://82egtjxef1ia" path="res://contents/meshes/kitchen/chopping_board.glb" id="2_dbi4x"]
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_rx8vl"]
 [ext_resource type="PackedScene" uid="uid://bl2dpplmoqxld" path="res://contents/meshes/kitchen/counter.glb" id="3_rx8vl"]
 
 [node name="CrateChopping" unique_id=2258064 instance=ExtResource("1_476wp")]
+ingredient_data = Array[ExtResource("2_rx8vl")]([])
 
 [node name="chopping_board" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=644597961 instance=ExtResource("2_dbi4x")]
 transform = Transform3D(0.505, 0, 0, 0, 0.505, 0, 0, 0, 0.505, 0, 1.0419953, 0)
