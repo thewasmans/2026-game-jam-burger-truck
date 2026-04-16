@@ -4,13 +4,16 @@ signal money_initialized
 signal money_changed
 
 var _money: float = 0
+var initialized: bool = false
 
 func initialize(default_amount_money:float):
 	_money = default_amount_money
 	money_initialized.emit()
 	money_changed.emit()
+	initialized = true
 
 func _process(_delta: float) -> void:
+	if not initialized: return
 	_money += _delta
 	money_changed.emit()
 

@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://b8ox1k3noecv8" path="res://scripts/ui/game_ui.gd" id="1_84on6"]
 [ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/theme/in_game_theme.tres" id="1_ajtxk"]
 [ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/theme/ingredients_theme.tres" id="3_uuvj8"]
+[ext_resource type="Texture2D" uid="uid://b1j3xbjfoaxvh" path="res://contents/ui/splash_screen_explain.png" id="5_77pjo"]
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "sart_menu", "button_start")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +18,8 @@ script = ExtResource("1_84on6")
 money_label = NodePath("Money/PanelContainer/Label")
 theme_ingredients = ExtResource("3_uuvj8")
 container_furnitures = NodePath("Money/FoldableContainer/GridContainer")
+sart_menu = NodePath("StartMenu")
+button_start = NodePath("StartMenu/SplashScreenExplain/ButtonStart")
 
 [node name="Money" parent="." unique_id=1829518468 instance=ExtResource("5_ytt4t")]
 layout_mode = 1
@@ -42,7 +45,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="TextureRect" parent="StartMenu" unique_id=1526959378]
+[node name="Panel" type="Panel" parent="StartMenu" unique_id=743851201]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SplashScreenExplain" type="TextureRect" parent="StartMenu" unique_id=1526959378]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,20 +64,26 @@ offset_right = -216.0
 offset_bottom = -167.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("5_77pjo")
+expand_mode = 2
+stretch_mode = 5
 
-[node name="Button" type="Button" parent="StartMenu/ColorRect" unique_id=644379721]
+[node name="ButtonStart" type="Button" parent="StartMenu/SplashScreenExplain" unique_id=644379721]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -155.0
-offset_top = 32.0
-offset_right = 155.0
-offset_bottom = 110.0
+offset_left = -212.0
+offset_top = 8.0
+offset_right = 212.0
+offset_bottom = 134.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 102
 text = "START"
+
+[connection signal="pressed" from="StartMenu/SplashScreenExplain/ButtonStart" to="." method="_on_button_start_pressed"]
 
 [editable path="Money"]

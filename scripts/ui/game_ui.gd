@@ -3,11 +3,14 @@ extends Control
 class_name GameUI
 
 signal furniture_selected(furniture:FurnitureData)
+signal button_start_clicked
 
 @export var money_label:Label
 @export var theme_ingredients:Theme
 @export var container_furnitures:GridContainer
 @export var board:BoardUI
+@export var sart_menu:Control
+@export var button_start:Button
 var ingredients_buttons:Array[Button]
 
 func _ready() -> void:
@@ -26,6 +29,10 @@ func init_buttons_furnitures(furnitures:Array[FurnitureData]):
 
 func on_reputation_changed(new_reputation: int) -> void:
 	board.set_reputation(new_reputation/10.0)
+
+func _on_button_start_pressed() -> void:
+	sart_menu.hide()
+	button_start_clicked.emit()
 
 func add_ingredient(ingredient:IngredientData):
 	var ingredient_texture := TextureRect.new()

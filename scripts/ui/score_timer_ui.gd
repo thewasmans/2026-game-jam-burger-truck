@@ -4,8 +4,13 @@ extends Node3D
 @export var timer_label: Label3D
 @export var mesh_instance: MeshInstance3D
 var timer: float = 0.0
+var initialized: bool = false
+
+func initialize():
+	initialized = true
 
 func _process(delta: float) -> void:
+	if not initialized: return
 	timer += delta
 	timer_label.text = "OPEN SINCE " + format_time(timer)
 
