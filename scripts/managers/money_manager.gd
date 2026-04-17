@@ -20,6 +20,13 @@ func buy_ingredient(ingredient: IngredientData) -> bool:
 	_money -= ingredient.price
 	money_changed.emit()
 	return true
+	
+func buy_furniture(furniture: FurnitureData) -> bool:
+	if _money - furniture.price < 0:
+		return false
+	_money -= furniture.price
+	money_changed.emit()
+	return true
 
 func add_money(price: float):
 	_money += price
