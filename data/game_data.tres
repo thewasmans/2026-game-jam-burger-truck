@@ -19,4 +19,5 @@
 [resource]
 script = ExtResource("3_k2o1c")
 burgers_data = Array[ExtResource("1_vllua")]([ExtResource("2_d15be"), ExtResource("3_c7j1l"), ExtResource("4_ux8ld"), ExtResource("5_l84in"), ExtResource("6_iwpjk"), ExtResource("7_e6v3s"), ExtResource("8_53n6h"), ExtResource("9_jxnqk"), ExtResource("10_b1qmr"), ExtResource("11_r4uws"), ExtResource("12_4ls4r"), ExtResource("13_xbtbc")])
+speed_money_increment = 0.25
 metadata/_custom_type_script = "uid://c30h6fapr0wgf"

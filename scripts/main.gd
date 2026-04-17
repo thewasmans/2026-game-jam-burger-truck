@@ -22,7 +22,7 @@ func _ready() -> void:
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
 		
-	MoneyManager.initialize(default_amount_money)
+	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
 	FurnituresManager.initialize(navigation, placement_zone)
 	ClientsManager.initialize()
 
