@@ -9,5 +9,5 @@
 script = ExtResource("4_dpil0")
 ingredients = Array[ExtResource("1_8kd25")]([ExtResource("2_18nma"), ExtResource("3_x3q66"), ExtResource("2_18nma")])
 name = "CheeseSalader"
-price = 5
+price = 6
 metadata/_custom_type_script = "uid://b250qdutrqhpq"

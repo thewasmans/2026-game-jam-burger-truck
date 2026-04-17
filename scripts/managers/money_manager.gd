@@ -13,7 +13,7 @@ func initialize(default_amount_money: float, factor_increment: float = 1.0):
 	money_changed.emit()
 
 func _process(_delta: float) -> void:
-	_money += _delta * _factor_increment
+	#_money += _delta * _factor_increment
 	money_changed.emit()
 
 func buy_ingredient(ingredient: IngredientData) -> bool:

@@ -12,5 +12,5 @@
 script = ExtResource("9_sknuj")
 ingredients = Array[ExtResource("1_r62ni")]([ExtResource("2_oo6oq"), ExtResource("7_2ev3d"), ExtResource("6_4akjd"), ExtResource("7_2ev3d"), ExtResource("5_3xjnx"), ExtResource("8_d7v5s")])
 name = "Vegan Burger"
-price = 7
+price = 9
 metadata/_custom_type_script = "uid://b250qdutrqhpq"
