@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 
 [node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "sart_menu", "button_start")]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

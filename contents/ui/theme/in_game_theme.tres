@@ -1,9 +1,40 @@
 [gd_resource type="Theme" format=3 uid="uid://bfmopjudgwf0u"]
 
-[ext_resource type="FontFile" uid="uid://b4cgabxfthsbj" path="res://contents/ui/fonts/thesead.otf" id="1_km2md"]
+[ext_resource type="FontFile" uid="uid://ci4mpyl4losmh" path="res://contents/ui/fonts/thesead.otf" id="1_km2md"]
+[ext_resource type="Texture2D" uid="uid://bri0icrsinn3b" path="res://contents/ui/icons/menu/arrow_down.png" id="2_1a6p2"]
 [ext_resource type="Texture2D" uid="uid://d3reikr8breno" path="res://contents/ui/theme/slider/rep_bar_slider.png" id="2_ixh4u"]
+[ext_resource type="Texture2D" uid="uid://db0pp8prx86ps" path="res://contents/ui/icons/menu/arrow_right.png" id="3_idev4"]
 [ext_resource type="Texture2D" uid="uid://dcwcwi1wkl3k2" path="res://contents/ui/theme/slider/rep_bar_top.png" id="3_kw3id"]
 [ext_resource type="Texture2D" uid="uid://xqtndduxksku" path="res://contents/ui/theme/slider/rep_bar_bottom.png" id="4_1a6p2"]
+[ext_resource type="StyleBox" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="4_idev4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kw3id"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ixh4u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4sms"]
+bg_color = Color(0.063079454, 0.07795326, 0.06060127, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.49272734, 0.39435518, 0.2512719, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7i7gb"]
+bg_color = Color(0.063079454, 0.07795326, 0.06060127, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.49272734, 0.39435518, 0.2512719, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v23nn"]
 texture = ExtResource("3_kw3id")
@@ -29,6 +60,15 @@ Button/colors/icon_normal_color = Color(0, 0, 0, 1)
 Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 20
 Button/fonts/font = ExtResource("1_km2md")
+FoldableContainer/fonts/font = ExtResource("1_km2md")
+FoldableContainer/icons/expanded_arrow = ExtResource("2_1a6p2")
+FoldableContainer/icons/folded_arrow = ExtResource("3_idev4")
+FoldableContainer/styles/focus = SubResource("StyleBoxEmpty_kw3id")
+FoldableContainer/styles/panel = SubResource("StyleBoxEmpty_ixh4u")
+FoldableContainer/styles/title_collapsed_hover_panel = SubResource("StyleBoxFlat_k4sms")
+FoldableContainer/styles/title_collapsed_panel = ExtResource("4_idev4")
+FoldableContainer/styles/title_hover_panel = SubResource("StyleBoxFlat_7i7gb")
+FoldableContainer/styles/title_panel = ExtResource("4_idev4")
 HSlider/constants/center_grabber = 1
 HSlider/icons/grabber = ExtResource("2_ixh4u")
 HSlider/icons/grabber_disabled = ExtResource("2_ixh4u")
@@ -49,3 +89,4 @@ Label/fonts/font = ExtResource("1_km2md")
 Label/styles/focus = null
 Label/styles/normal = null
 Panel/styles/customer_order = null
+PanelContainer/styles/panel = ExtResource("4_idev4")

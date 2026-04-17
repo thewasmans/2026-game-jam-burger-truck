@@ -24,7 +24,8 @@ func _process(_delta: float) -> void:
 				_current_furniture_instance.global_position = intersection
 
 func furniture_selected(furniture:FurnitureData):
-	_current_furniture = furniture
+	if MoneyManager.buy_furniture(furniture):
+		_current_furniture = furniture
 	if is_instance_valid(_current_furniture_instance):
 		_current_furniture_instance.queue_free()
 	if _current_furniture != null:

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://da52klgb8iem0"]
+
+[ext_resource type="Texture2D" uid="uid://5t3txf5ap6dl" path="res://contents/ui/icons/ingredients/meat.png" id="1_ql6or"]
+[ext_resource type="Material" uid="uid://bvkp3cfqvrna4" path="res://contents/materials/ingredients_crates/box_ingredient_meat_mat.tres" id="2_nj8kr"]
+[ext_resource type="PackedScene" uid="uid://dd0nd1ua82cvb" path="res://contents/prefabs/ingredients/steak/raw_steak.tscn" id="3_pbgy1"]
+[ext_resource type="Resource" uid="uid://p3x44aw4ollh" path="res://data/ingredients/cooked_steak.tres" id="4_5ryop"]
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="5_2udbd"]
+
+[resource]
+script = ExtResource("5_2udbd")
+name = "steak"
+icon = ExtResource("1_ql6or")
+material = ExtResource("2_nj8kr")
+model_3d = ExtResource("3_pbgy1")
+price = 3.0
+provide_ingredient = ExtResource("4_5ryop")

@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="Furniture" format=3 uid="uid://blfgjhw8oqugu"]
+[gd_resource type="Resource" script_class="FurnitureData" format=3 uid="uid://blfgjhw8oqugu"]
 
-[ext_resource type="Texture2D" uid="uid://cmhjjopw0bxps" path="res://contents/ui/icons/furnitures/round_table_b_icon.png" id="1_4byl2"]
+[ext_resource type="Texture2D" uid="uid://dntpyu3e6a0uy" path="res://contents/ui/icons/furnitures/table02.png" id="1_4byl2"]
 [ext_resource type="PackedScene" uid="uid://b8brhg5t7mx4k" path="res://contents/prefabs/furnitures/round_table_02.tscn" id="1_073hl"]
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/data/furniture_data.gd" id="2_4byl2"]
 
 [resource]
 script = ExtResource("2_4byl2")
-name = "Round Table 2"
+name = "Small Table"
 icon = ExtResource("1_4byl2")
 model_3d = ExtResource("1_073hl")
 price = 18.0

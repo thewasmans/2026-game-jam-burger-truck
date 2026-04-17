@@ -109,17 +109,20 @@ albedo_texture = ExtResource("1_kyud2")
 
 [node name="OnionSlice" type="Node3D" unique_id=1915714559]
 
-[node name="OnionRing01" type="MeshInstance3D" parent="." unique_id=1869626465]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.027489126, 0.053902358, 0.023335457)
+[node name="ModelScale" type="Node3D" parent="." unique_id=792997928]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.8626451e-09, 0, 0)
+
+[node name="OnionRing01" type="MeshInstance3D" parent="ModelScale" unique_id=1869626465]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.027489128, 0.053902358, 0.023335457)
 mesh = SubResource("ArrayMesh_vrrk8")
 surface_material_override/0 = SubResource("StandardMaterial3D_1xxq4")
 
-[node name="OnionRing02" type="MeshInstance3D" parent="." unique_id=1716477547]
-transform = Transform3D(2.226, 0, 0, 0, 2.094465, -0.7538519, 0, 0.7538519, 2.094465, 0.010826796, 0.20567489, 1.0323443)
+[node name="OnionRing02" type="MeshInstance3D" parent="ModelScale" unique_id=1716477547]
+transform = Transform3D(2.226, 0, 0, 0, 2.094465, -0.7538519, 0, 0.7538519, 2.094465, 0.010826798, 0.20567489, 1.0323443)
 mesh = SubResource("ArrayMesh_574v0")
 surface_material_override/0 = SubResource("StandardMaterial3D_dg8k7")
 
-[node name="OnionRing03" type="MeshInstance3D" parent="." unique_id=1990402833]
-transform = Transform3D(1.8149366, 0, 0.768665, 0, 2.466, 0, -0.768665, 0, 1.8149366, 0.014435703, 0.053902358, -0.0074856877)
+[node name="OnionRing03" type="MeshInstance3D" parent="ModelScale" unique_id=1990402833]
+transform = Transform3D(1.8149366, 0, 0.768665, 0, 2.466, 0, -0.768665, 0, 1.8149366, 0.014435705, 0.053902358, -0.0074856877)
 mesh = SubResource("ArrayMesh_axaua")
 surface_material_override/0 = SubResource("StandardMaterial3D_f7fr6")

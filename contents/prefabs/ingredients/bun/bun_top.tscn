@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://hp6iccf06e61"]
+
+[ext_resource type="PackedScene" uid="uid://dvwq2ngf5kyh7" path="res://contents/meshes/ingredients/bun/bun_top_3d.glb" id="1_kfhrq"]
+
+[node name="BunTop" type="Node3D" unique_id=1894090635]
+
+[node name="ModelScale" type="Node3D" parent="." unique_id=165686368]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="BunTop3D" parent="ModelScale" unique_id=1828370793 instance=ExtResource("1_kfhrq")]

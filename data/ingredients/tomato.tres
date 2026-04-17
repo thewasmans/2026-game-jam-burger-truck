@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_abcde"]
 [ext_resource type="Texture2D" uid="uid://d08m5s7p3wmbl" path="res://contents/ui/icons/ingredients/tomato.png" id="1_yrw8v"]
-[ext_resource type="PackedScene" uid="uid://bq2ir2cvkyius" path="res://contents/prefabs/ingredients/tomato_slice.tscn" id="2_4deeg"]
-[ext_resource type="Material" uid="uid://bfioy72kjsvgc" path="res://contents/materials/ingredients/box_ingredient_tomato_mat.tres" id="2_crpnf"]
+[ext_resource type="PackedScene" uid="uid://bq2ir2cvkyius" path="res://contents/prefabs/ingredients/tomato/tomato_slice.tscn" id="2_4deeg"]
+[ext_resource type="Material" uid="uid://bfioy72kjsvgc" path="res://contents/materials/ingredients_crates/box_ingredient_tomato_mat.tres" id="2_crpnf"]
 
 [resource]
 script = ExtResource("1_abcde")

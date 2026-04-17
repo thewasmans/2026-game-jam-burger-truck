@@ -5,9 +5,11 @@ signal money_changed
 
 var _money: float = 0
 var initialized: bool = false
+var _factor_increment: float
 
-func initialize(default_amount_money:float):
+func initialize(default_amount_money: float, factor_increment: float = 1.0):
 	_money = default_amount_money
+	_factor_increment = factor_increment
 	money_initialized.emit()
 	money_changed.emit()
 	initialized = true
@@ -15,12 +17,20 @@ func initialize(default_amount_money:float):
 func _process(_delta: float) -> void:
 	if not initialized: return
 	_money += _delta
+	_money += _delta * _factor_increment
 	money_changed.emit()
 
-func buy_ingredient(ingredient) -> bool:
+func buy_ingredient(ingredient: IngredientData) -> bool:
 	if _money - ingredient.price < 0:
 		return false
 	_money -= ingredient.price
+	money_changed.emit()
+	return true
+	
+func buy_furniture(furniture: FurnitureData) -> bool:
+	if _money - furniture.price < 0:
+		return false
+	_money -= furniture.price
 	money_changed.emit()
 	return true
 

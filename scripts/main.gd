@@ -22,7 +22,12 @@ func _ready() -> void:
 	kitchen.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
+		
+	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
+	FurnituresManager.initialize(navigation, placement_zone)
+	ClientsManager.initialize()
 	game_ui.button_start_clicked.connect(start_game)
+	get_tree().paused = true
 
 func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData):
 	add_ingredient_on_plate(ingredient, crate)
@@ -41,12 +46,7 @@ func on_child_entered_tree(node: Node) -> void:
 		client.leaved.connect(free_client.bind(client))
 
 func start_game():
-	board_ui.initialize()
-	MoneyManager.initialize(default_amount_money)
-	FurnituresManager.initialize(navigation, placement_zone)
-	ClientsManager.initialize()
-	spawner.initialize()
-	
+	get_tree().paused = false
 
 func free_client(client:HungryClient):
 	client.queue_free()

@@ -13,6 +13,6 @@ func instantiate_ingredient() -> Ingredient:
 	var ingredient := Ingredient.new()
 	ingredient.ingredient_data = ingredient_data
 	ingredient.instance = ingredient_data.model_3d.instantiate()
-	ingredient.instance.scale = Vector3.ONE * .25
+	ingredient.instance.scale = Vector3.ONE
 	anchor_spawn.add_child(ingredient.instance)
 	return ingredient

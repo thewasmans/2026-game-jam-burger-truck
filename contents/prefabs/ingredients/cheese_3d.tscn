@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dl380lqorxdn"]
+
+[ext_resource type="PackedScene" uid="uid://03hvbonklywu" path="res://contents/meshes/ingredients/cheese_3d.glb" id="1_j0mte"]
+
+[node name="Cheese3D" type="Node3D" unique_id=1155928147]
+
+[node name="ModelScale" type="Node3D" parent="." unique_id=957627226]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Cheese3D" parent="ModelScale" unique_id=1265913763 instance=ExtResource("1_j0mte")]
