@@ -116,7 +116,7 @@ albedo_color = Color(0.8623366, 0.6799608, 0.50337213, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
 
-[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "vfx_burger_disappear", "navigation", "placement_zone")]
+[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "vfx_burger_disappear", "navigation", "placement_zone", "board_ui")]
 script = ExtResource("4_abcde")
 kitchen = NodePath("Level/Kitchen")
 game_ui = NodePath("GameUI")
@@ -127,6 +127,7 @@ furnitures = Array[ExtResource("19_og1vs")]([ExtResource("24_qkpxi"), ExtResourc
 navigation = NodePath("Level/NavigationRegion3D")
 placement_zone = NodePath("Level/AreaFurnitures")
 game_data = ExtResource("7_a8y0u")
+board_ui = NodePath("Level/Board")
 
 [node name="Global" type="Node" parent="." unique_id=1804165768]
 

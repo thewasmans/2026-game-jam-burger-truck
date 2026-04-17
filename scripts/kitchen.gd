@@ -43,7 +43,7 @@ func _process(_delta: float) -> void:
 		var world_plane: Plane = Plane(Vector3.UP, 1.7)
 		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
 		_current_ingredient.instance.global_position = intersection
-		
+
 func _on_crate_ingredient_selected(crate: CrateIngredient):
 	if _current_ingredient == null:
 		if MoneyManager.buy_ingredient(crate.ingredient_data):
