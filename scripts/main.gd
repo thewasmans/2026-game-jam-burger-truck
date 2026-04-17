@@ -13,6 +13,7 @@ class_name Main
 @export var game_data:GameData
 @export var board_ui:BoardUI
 @export var sounds: Dictionary[String, AudioStream]
+@export var stream_player: AudioStreamPlayer
 
 var burgers_data:
 	get:
@@ -27,7 +28,7 @@ func _ready() -> void:
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
 	FurnituresManager.initialize(navigation, placement_zone)
 	ClientsManager.initialize()
-	AudioManager.initialize(sounds)
+	AudioManager.initialize(sounds, stream_player)
 	game_ui.button_start_clicked.connect(start_game)
 	get_tree().paused = true
 	AudioManager.play_music("main-music")

@@ -2,10 +2,10 @@ extends Node
 
 var sounds: Dictionary[String, AudioStream]
 
-func initialize(_sounds:Dictionary[String, AudioStream]):
+func initialize(_sounds:Dictionary[String, AudioStream], stream_player_sfx: AudioStreamPlayer):
 	sounds = _sounds
 
-func play_sfx(sound_name: String, volume_db: float = 0.0):
+func play_sfx(sound_name: String, volume_db: float = -15.0):
 	if sounds.has(sound_name):
 		var asp = AudioStreamPlayer.new()
 		asp.stream = sounds[sound_name]
