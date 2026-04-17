@@ -46,8 +46,9 @@ func _process(_delta: float) -> void:
 		
 func _on_crate_ingredient_selected(crate: CrateIngredient):
 	if _current_ingredient == null:
-		_current_ingredient = crate.instantiate_ingredient()
-		crate_ingredient_clicked.emit(crate)
+		if MoneyManager.buy_ingredient(crate.ingredient_data):
+			_current_ingredient = crate.instantiate_ingredient()
+			crate_ingredient_clicked.emit(crate)
 		
 func _on_crate_plate_selected(crate_plate: CratePlate):
 	if _current_ingredient:
