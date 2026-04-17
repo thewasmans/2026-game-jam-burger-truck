@@ -17,6 +17,7 @@ border_width_bottom = 19
 border_color = Color(0.16565639, 0.16565642, 0.1656563, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta5aa"]
+bg_color = Color(0.2, 1, 0.2, 1)
 
 [node name="ClientRequestUI" type="VBoxContainer" unique_id=2100109262 node_paths=PackedStringArray("waiting")]
 anchors_preset = 10
