@@ -4,7 +4,6 @@ signal money_initialized
 signal money_changed
 
 var _money: float = 0
-var initialized: bool = false
 var _factor_increment: float
 
 func initialize(default_amount_money: float, factor_increment: float = 1.0):
@@ -12,11 +11,8 @@ func initialize(default_amount_money: float, factor_increment: float = 1.0):
 	_factor_increment = factor_increment
 	money_initialized.emit()
 	money_changed.emit()
-	initialized = true
 
 func _process(_delta: float) -> void:
-	if not initialized: return
-	_money += _delta
 	_money += _delta * _factor_increment
 	money_changed.emit()
 

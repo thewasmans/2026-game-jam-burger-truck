@@ -40,9 +40,8 @@ func _ready() -> void:
 	add_child(difficulty_timer)
 	difficulty_timer.start()	
 	
-func initialize():
+	await get_tree().create_timer(0.01).timeout
 	spawn_enemy()
-
 
 func spawn_enemy() -> void:
 	if enemy_scene == null:
