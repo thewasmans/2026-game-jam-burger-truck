@@ -160,6 +160,7 @@ process_material = SubResource("ParticleProcessMaterial_xt8e8")
 draw_pass_1 = SubResource("SphereMesh_ithj1")
 
 [node name="AnchorPlateClients" type="Node3D" parent="Level/Kitchen" unique_id=425371094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 0, 0.4603691)
 
 [node name="AnchorClient01" parent="Level/Kitchen/AnchorPlateClients" unique_id=1267885147 instance=ExtResource("28_tel4y")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.9943163, 0.41701627, 3.2756712)
