@@ -19,6 +19,7 @@ func _process(_delta: float) -> void:
 func buy_ingredient(ingredient: IngredientData) -> bool:
 	if _money - ingredient.price < 0:
 		return false
+	AudioManager.play_sfx("sfx-money")
 	_money -= ingredient.price
 	money_changed.emit()
 	return true
