@@ -11,7 +11,8 @@ class_name Main
 @export var navigation:NavigationRegion3D
 @export var placement_zone: Area3D
 @export var game_data:GameData
-		
+@export var board_ui:BoardUI
+
 var burgers_data:
 	get:
 		return game_data.burgers_data
@@ -25,6 +26,11 @@ func _ready() -> void:
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
 	FurnituresManager.initialize(navigation, placement_zone)
 	ClientsManager.initialize()
+	game_ui.button_start_clicked.connect(start_game)
+	get_tree().paused = true
+
+func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData):
+	add_ingredient_on_plate(ingredient, crate)
 
 func on_child_entered_tree(node: Node) -> void:
 	if node is HungryClient:
@@ -39,11 +45,11 @@ func on_child_entered_tree(node: Node) -> void:
 		ClientsManager._clients.append(client)
 		client.leaved.connect(free_client.bind(client))
 
+func start_game():
+	get_tree().paused = false
+
 func free_client(client:HungryClient):
 	client.queue_free()
-
-func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData):
-	add_ingredient_on_plate(ingredient, crate)
 
 func add_ingredient_on_plate(ingredient: IngredientData, plate:CratePlate):
 	#if MoneyManager.buy_ingredient(ingredient):
