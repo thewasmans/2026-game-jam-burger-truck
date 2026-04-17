@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bkvxejk7pxu6d" path="res://contents/ui/fonts/chalkline_outline.otf" id="1_i2vx5"]
 [ext_resource type="Texture2D" uid="uid://bs7p7lqickctu" path="res://contents/ui/icons/menu/ui_shop_crate.png" id="2_vdub7"]
-[ext_resource type="StyleBox" path="res://contents/ui/theme/style_box_texture_shop_crate.tres" id="3_vdub7"]
+[ext_resource type="StyleBox" uid="uid://6ye1h6dln54f" path="res://contents/ui/theme/style_box_texture_shop_crate.tres" id="3_vdub7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2vx5"]
 texture = ExtResource("2_vdub7")

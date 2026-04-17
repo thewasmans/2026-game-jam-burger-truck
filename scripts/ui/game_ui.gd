@@ -8,6 +8,7 @@ signal button_start_clicked
 @export var money_label:Label
 @export var theme_ingredients:Theme
 @export var container_furnitures:GridContainer
+@export var container_menu:FoldableContainer
 @export var board:BoardUI
 @export var sart_menu:Control
 @export var button_start:Button
@@ -24,7 +25,10 @@ func init_buttons_furnitures(furnitures:Array[FurnitureData]):
 		button.text = furniture.name + "\n" + str(furniture.price) + "$"
 		button.custom_minimum_size = Vector2(200, 200)
 		button.theme = theme_ingredients
-		button.pressed.connect(func(): furniture_selected.emit(furniture))
+		button.pressed.connect(func(): 
+			furniture_selected.emit(furniture)
+			container_menu.folded = true
+			)
 		container_furnitures.add_child(button)
 
 func on_reputation_changed(new_reputation: int) -> void:
