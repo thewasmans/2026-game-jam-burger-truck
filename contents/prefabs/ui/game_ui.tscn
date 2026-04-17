@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/theme/ingredients_theme.tres" id="3_uuvj8"]
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,7 @@ script = ExtResource("1_84on6")
 money_label = NodePath("Money/PanelContainer/Label")
 theme_ingredients = ExtResource("3_uuvj8")
 container_furnitures = NodePath("Money/FoldableContainer/GridContainer")
+container_menu = NodePath("Money/FoldableContainer")
 
 [node name="Money" parent="." unique_id=1829518468 instance=ExtResource("5_ytt4t")]
 layout_mode = 1
