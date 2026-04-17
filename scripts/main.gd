@@ -12,6 +12,7 @@ class_name Main
 @export var placement_zone: Area3D
 @export var game_data:GameData
 @export var board_ui:BoardUI
+@export var sounds: Dictionary[String, AudioStream]
 
 var burgers_data:
 	get:
@@ -26,8 +27,10 @@ func _ready() -> void:
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
 	FurnituresManager.initialize(navigation, placement_zone)
 	ClientsManager.initialize()
+	AudioManager.initialize(sounds)
 	game_ui.button_start_clicked.connect(start_game)
 	get_tree().paused = true
+	AudioManager.play_music("main-music")
 
 func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData):
 	add_ingredient_on_plate(ingredient, crate)
