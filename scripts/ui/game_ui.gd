@@ -12,6 +12,7 @@ signal button_start_clicked
 @export var board:BoardUI
 @export var sart_menu:Control
 @export var button_start:Button
+@export var button_mute:Button
 var ingredients_buttons:Array[Button]
 
 func _ready() -> void:
@@ -46,3 +47,11 @@ func add_ingredient(ingredient:IngredientData):
 
 func set_money_value(value:float):
 	money_label.text = str(floor(value)) + "$"
+
+func _on_button_mute_audio_pressed():
+	if AudioManager.muted:
+		AudioManager.resume_all_sounds()
+		button_mute.text = "Mute audio"
+	else:
+		AudioManager.mute_all_sounds()
+		button_mute.text = "Resume Audio"
