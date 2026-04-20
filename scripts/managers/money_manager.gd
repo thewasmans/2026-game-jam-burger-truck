@@ -27,6 +27,7 @@ func buy_ingredient(ingredient: IngredientData) -> bool:
 func buy_furniture(furniture: FurnitureData) -> bool:
 	if _money - furniture.price < 0:
 		return false
+	AudioManager.play_sfx("sfx-money")
 	_money -= furniture.price
 	money_changed.emit()
 	return true

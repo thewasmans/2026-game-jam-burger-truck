@@ -5,8 +5,9 @@
 [ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/theme/ingredients_theme.tres" id="3_uuvj8"]
 [ext_resource type="Texture2D" uid="uid://b1j3xbjfoaxvh" path="res://contents/ui/splash_screen_explain.png" id="5_77pjo"]
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
+[ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "sart_menu", "button_start")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "sart_menu", "button_start", "button_mute")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_ajtxk")
 script = ExtResource("1_84on6")
 money_label = NodePath("Money/PanelContainer/Label")
@@ -22,6 +24,7 @@ container_furnitures = NodePath("Money/FoldableContainer/GridContainer")
 container_menu = NodePath("Money/FoldableContainer")
 sart_menu = NodePath("StartMenu")
 button_start = NodePath("StartMenu/SplashScreenExplain/ButtonStart")
+button_mute = NodePath("ButtonMuteAudio")
 
 [node name="Money" parent="." unique_id=1829518468 instance=ExtResource("5_ytt4t")]
 layout_mode = 1
@@ -86,6 +89,20 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 102
 text = "START"
 
+[node name="ButtonMuteAudio" type="Button" parent="." unique_id=1745831176]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -145.97498
+offset_top = 24.26
+offset_right = -22.130371
+offset_bottom = 66.19
+grow_horizontal = 0
+theme_override_styles/normal = ExtResource("6_77pjo")
+text = "MUTE AUDIO"
+
 [connection signal="pressed" from="StartMenu/SplashScreenExplain/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="ButtonMuteAudio" to="." method="_on_button_mute_audio_pressed"]
 
 [editable path="Money"]
