@@ -12,6 +12,7 @@ signal crate_ingredient_clicked(crate:CrateIngredient)
 @export var crate_trash: CrateInterract
 @export var anchor_plates_clients: Array[Node3D]
 @export var camera:Camera3D
+@export var vfx_ingredient_dismiss: GPUParticles3D
 
 var MAX_REPUTATION: int = 10
 var current_reputation: int = MAX_REPUTATION
@@ -46,6 +47,8 @@ func _process(_delta: float) -> void:
 		_current_ingredient.instance.global_position = intersection
 	if _current_ingredient_should_release:
 		_current_ingredient_should_release = false
+		vfx_ingredient_dismiss.emitting = true
+		vfx_ingredient_dismiss.global_position = _current_ingredient.instance.global_position
 		free_current_ingredient()
 		
 func _input(event: InputEvent) -> void:
@@ -73,8 +76,8 @@ func _on_trash_selected():
 	
 func _on_crate_tool_selected(crate_tool: CrateTool):
 	if _current_ingredient:
-		_current_ingredient_should_release = false
 		if _current_ingredient.ingredient_data.provide_ingredient != null:
+			_current_ingredient_should_release = false
 			if crate_tool.use_tool(_current_ingredient):
 				free_current_ingredient()
 	else:

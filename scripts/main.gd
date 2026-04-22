@@ -5,7 +5,6 @@ class_name Main
 @export var kitchen: Kitchen
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
-@export var vfx_burger_disappear: GPUParticles3D
 @export var default_amount_money: float = 10.0
 @export var furnitures:Array[FurnitureData]
 @export var navigation:NavigationRegion3D
@@ -73,5 +72,5 @@ func check_all_burgers() -> void:
 			play_vfx(plate)
 			
 func play_vfx(plate:CratePlate):
-	vfx_burger_disappear.emitting = true
-	vfx_burger_disappear.global_position = plate.anchor_spawn.global_position
+	kitchen.vfx_ingredient_dismiss.emitting = true
+	kitchen.vfx_ingredient_dismiss.global_position = plate.anchor_spawn.global_position
