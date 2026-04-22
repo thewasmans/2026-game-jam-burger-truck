@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="WavesData" format=3 uid="uid://dqnvx1e4j36tb"]
+
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_8i2bu"]
+[ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/4_ingredients/burger_1.tres" id="2_oh6kn"]
+[ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/4_ingredients/burger_3.tres" id="3_44ftp"]
+[ext_resource type="Resource" uid="uid://qcba3r6d0xe" path="res://data/burgers/5_ingredients/burger_2.tres" id="4_1j3n3"]
+[ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/new_data/client_data.gd" id="5_7r3dy"]
+[ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/new_data/waves_data.gd" id="6_1x25e"]
+
+[sub_resource type="Resource" id="Resource_el8an"]
+script = ExtResource("5_7r3dy")
+t_spawn = 5.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_tbxor"]
+script = ExtResource("5_7r3dy")
+t_spawn = 8.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_2el3i"]
+script = ExtResource("5_7r3dy")
+t_spawn = 11.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_md5ak"]
+script = ExtResource("5_7r3dy")
+t_spawn = 14.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_jl4u5"]
+script = ExtResource("5_7r3dy")
+t_spawn = 17.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_685mk"]
+script = ExtResource("5_7r3dy")
+t_spawn = 20.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[resource]
+script = ExtResource("6_1x25e")
+clients = Array[ExtResource("5_7r3dy")]([SubResource("Resource_el8an"), SubResource("Resource_tbxor"), SubResource("Resource_2el3i"), SubResource("Resource_md5ak"), SubResource("Resource_jl4u5"), SubResource("Resource_685mk")])
+burgers = Array[ExtResource("1_8i2bu")]([ExtResource("2_oh6kn"), ExtResource("3_44ftp"), ExtResource("4_1j3n3")])
