@@ -1,4 +1,4 @@
-class_name WavesData
+class_name WavesPresetData
 extends Resource
 
 @export var clients:Array[ClientData]
