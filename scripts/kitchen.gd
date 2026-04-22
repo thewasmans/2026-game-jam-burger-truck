@@ -17,6 +17,7 @@ var MAX_REPUTATION: int = 10
 var current_reputation: int = MAX_REPUTATION
 var _current_ingredient: Ingredient = null
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
+var _current_ingredient_should_release: bool = false
 
 func _ready() -> void:
 	reputation_changed.emit(current_reputation)
@@ -43,6 +44,16 @@ func _process(_delta: float) -> void:
 		var world_plane: Plane = Plane(Vector3.UP, 1.7)
 		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
 		_current_ingredient.instance.global_position = intersection
+	if _current_ingredient_should_release:
+		_current_ingredient_should_release = false
+		free_current_ingredient()
+		
+func _input(event: InputEvent) -> void:
+	if 	event is InputEventMouseButton and\
+		event.button_index == MouseButton.MOUSE_BUTTON_LEFT and\
+		event.is_released() and\
+		_current_ingredient != null:
+			_current_ingredient_should_release = true
 
 func _on_crate_ingredient_selected(crate: CrateIngredient):
 	if _current_ingredient == null:
@@ -53,6 +64,7 @@ func _on_crate_ingredient_selected(crate: CrateIngredient):
 func _on_crate_plate_selected(crate_plate: CratePlate):
 	if _current_ingredient:
 		var data = get_current_ingredient_data()
+		_current_ingredient_should_release = false
 		ingredient_plate_assigned.emit(crate_plate, data)
 		
 func _on_trash_selected():
@@ -61,6 +73,7 @@ func _on_trash_selected():
 	
 func _on_crate_tool_selected(crate_tool: CrateTool):
 	if _current_ingredient:
+		_current_ingredient_should_release = false
 		if _current_ingredient.ingredient_data.provide_ingredient != null:
 			if crate_tool.use_tool(_current_ingredient):
 				free_current_ingredient()
