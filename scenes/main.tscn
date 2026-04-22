@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="7_a8y0u"]
 [ext_resource type="AudioStream" uid="uid://jgqg5ipsguxv" path="res://contents/audios/awesomeness.wav" id="8_jkv2x"]
 [ext_resource type="AudioStream" uid="uid://d38m6vreqqyon" path="res://contents/audios/coin.11.ogg" id="9_jbj1t"]
-[ext_resource type="Script" uid="uid://cf4mpdjpr5wxv" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
+[ext_resource type="Script" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/data/furniture_data.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
 [ext_resource type="Resource" uid="uid://blfgjhw8oqugu" path="res://data/furnitures/furniture_02.tres" id="23_tel4y"]
@@ -16,51 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="28_tel4y"]
 [ext_resource type="PackedScene" uid="uid://dwbihghpkmpdq" path="res://contents/prefabs/environment/board.tscn" id="30_5q0nq"]
 [ext_resource type="PackedScene" uid="uid://bctaal8fr8t6o" path="res://contents/prefabs/global/environment.tscn" id="31_tel4y"]
-
-[sub_resource type="Gradient" id="Gradient_vnvi5"]
-offsets = PackedFloat32Array(0, 0.437018, 1)
-colors = PackedColorArray(0.38170326, 0.38170326, 0.3817031, 0.84705883, 1, 0.9372549, 0.8117647, 0.88235295, 0.9529412, 0.92941177, 0.6901961, 0.9411765)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_w3lu1"]
-gradient = SubResource("Gradient_vnvi5")
-
-[sub_resource type="Curve" id="Curve_457x1"]
-_limits = [0.0, 4.45, 0.0, 1.0]
-_data = [Vector2(0, 1.4444716), 0.0, 0.41160738, 0, 0, Vector2(1, 0.03161621), -4.619612, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_6rs2f"]
-curve = SubResource("Curve_457x1")
-
-[sub_resource type="Curve" id="Curve_eb7q1"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ti0k1"]
-curve = SubResource("Curve_eb7q1")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xt8e8"]
-lifetime_randomness = 0.4
-emission_shape = 1
-emission_sphere_radius = 1.0
-spread = 180.0
-initial_velocity_min = 0.29999998
-initial_velocity_max = 1.5
-gravity = Vector3(0, 1.1, 0)
-scale_min = 0.19999999
-scale_max = 0.39999998
-scale_curve = SubResource("CurveTexture_ti0k1")
-color = Color(0.65882355, 0.65882355, 0.65882355, 0.67058825)
-color_initial_ramp = SubResource("GradientTexture1D_w3lu1")
-emission_curve = SubResource("CurveTexture_6rs2f")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7jxu"]
-transparency = 1
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_ithj1"]
-material = SubResource("StandardMaterial3D_a7jxu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_color = Color(0.88235295, 0, 0, 1)
@@ -147,17 +102,6 @@ fov = 60.0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.293, 0.1266756, 6.366)
 anchor_plates_clients = [NodePath("AnchorPlateClients/AnchorClient01"), NodePath("AnchorPlateClients/AnchorClient02"), NodePath("AnchorPlateClients/AnchorClient03"), NodePath("AnchorPlateClients/AnchorClient04"), NodePath("AnchorPlateClients/AnchorClient05"), NodePath("AnchorPlateClients/AnchorClient06"), NodePath("AnchorPlateClients/AnchorClient07")]
 camera = NodePath("../../Global/Camera3D")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Level/Kitchen" unique_id=1636278527]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.3301512, 1.1950979, 1.7882056)
-emitting = false
-amount = 20
-lifetime = 0.8
-one_shot = true
-explosiveness = 1.0
-fixed_fps = 0
-process_material = SubResource("ParticleProcessMaterial_xt8e8")
-draw_pass_1 = SubResource("SphereMesh_ithj1")
 
 [node name="AnchorPlateClients" type="Node3D" parent="Level/Kitchen" unique_id=425371094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 0, 0.4603691)
@@ -263,7 +207,6 @@ transform = Transform3D(100.000015, 0, 0, 0, 0.1, 0, 0, 0, 100.000015, 0, 0, 0)
 mesh = SubResource("BoxMesh_sugp2")
 
 [node name="GameUI" parent="." unique_id=149232493 node_paths=PackedStringArray("board") instance=ExtResource("3_jyhfs")]
-mouse_filter = 2
 board = NodePath("../Level/Board")
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
