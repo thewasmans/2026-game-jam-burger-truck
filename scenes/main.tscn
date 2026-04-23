@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="7_a8y0u"]
 [ext_resource type="AudioStream" uid="uid://jgqg5ipsguxv" path="res://contents/audios/awesomeness.wav" id="8_jkv2x"]
 [ext_resource type="AudioStream" uid="uid://d38m6vreqqyon" path="res://contents/audios/coin.11.ogg" id="9_jbj1t"]
-[ext_resource type="Script" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
+[ext_resource type="Script" uid="uid://cf4mpdjpr5wxv" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/data/furniture_data.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
 [ext_resource type="Resource" uid="uid://blfgjhw8oqugu" path="res://data/furnitures/furniture_02.tres" id="23_tel4y"]
@@ -73,12 +73,11 @@ albedo_color = Color(0.8623366, 0.6799608, 0.50337213, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
 
-[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "vfx_burger_disappear", "navigation", "placement_zone", "board_ui")]
+[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "navigation", "placement_zone", "board_ui")]
 script = ExtResource("4_abcde")
 kitchen = NodePath("Level/Kitchen")
 game_ui = NodePath("GameUI")
 spawner = NodePath("Level/HungryClientSpawner")
-vfx_burger_disappear = NodePath("Level/Kitchen/GPUParticles3D")
 default_amount_money = 100.0
 furnitures = Array[ExtResource("19_og1vs")]([ExtResource("24_qkpxi"), ExtResource("23_tel4y"), ExtResource("22_fv21b"), ExtResource("25_5q0nq")])
 navigation = NodePath("Level/NavigationRegion3D")
@@ -95,6 +94,14 @@ sounds = Dictionary[String, AudioStream]({
 [node name="Camera3D" type="Camera3D" parent="Global" unique_id=1998703230]
 transform = Transform3D(-1, 8.463816e-08, -2.1888908e-08, 1.7877618e-08, 0.44307116, 0.89648646, 8.55753e-08, 0.89648646, -0.44307116, 0.372, 13.398943, -3.9975224)
 fov = 60.0
+
+[node name="CameraKitchen" type="Camera3D" parent="Global" unique_id=404669961]
+transform = Transform3D(-1, 8.4638145e-08, -2.1888901e-08, 2.38769e-08, 0.50528085, 0.862955, 8.409895e-08, 0.862955, -0.50528085, 0.372, 10.317457, 0.95350695)
+fov = 60.0
+
+[node name="CameraGrid" type="Camera3D" parent="Global" unique_id=208566722]
+transform = Transform3D(-1, -8.7422784e-08, -1.7763568e-15, -2.310678e-08, 0.26431075, 0.9644376, -8.431381e-08, 0.9644376, -0.26431075, 0, 11.777371, -14.135768)
+fov = 70.0
 
 [node name="Level" type="Node" parent="." unique_id=751625337]
 
