@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ClientData" format=3 uid="uid://c6f4tcuwmdhuu"]
+
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_le8gw"]
+[ext_resource type="PackedScene" uid="uid://b6h3u02w2i8s" path="res://contents/prefabs/global/hungry_client.tscn" id="2_0k7vl"]
+[ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/client_data.gd" id="3_2vtab"]
+
+[resource]
+script = ExtResource("3_2vtab")
+patience = 15.0
+model_3d = ExtResource("2_0k7vl")
