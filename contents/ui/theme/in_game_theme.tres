@@ -103,6 +103,7 @@ Label/fonts/font = ExtResource("1_km2md")
 Label/styles/focus = null
 Label/styles/normal = null
 Panel/styles/customer_order = null
+Panel/styles/panel = ExtResource("4_idev4")
 PanelContainer/styles/panel = ExtResource("4_idev4")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_1a6p2")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_idev4")
