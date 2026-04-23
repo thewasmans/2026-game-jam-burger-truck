@@ -73,12 +73,11 @@ albedo_color = Color(0.8623366, 0.6799608, 0.50337213, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
 
-[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "vfx_burger_disappear", "navigation", "placement_zone", "board_ui")]
+[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "navigation", "placement_zone", "board_ui")]
 script = ExtResource("4_abcde")
 kitchen = NodePath("Level/Kitchen")
 game_ui = NodePath("GameUI")
 spawner = NodePath("Level/HungryClientSpawner")
-vfx_burger_disappear = NodePath("Level/Kitchen/GPUParticles3D")
 default_amount_money = 100.0
 furnitures = Array[ExtResource("19_og1vs")]([ExtResource("24_qkpxi"), ExtResource("23_tel4y"), ExtResource("22_fv21b"), ExtResource("25_5q0nq")])
 navigation = NodePath("Level/NavigationRegion3D")
@@ -127,6 +126,10 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.99
 [node name="AnchorClient07" parent="Level/Kitchen/AnchorPlateClients" unique_id=1210756636 instance=ExtResource("28_tel4y")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.990742, 0.41701627, 3.2756715)
 
+[node name="CameraKitchen" type="Camera3D" parent="Level/Kitchen" unique_id=404669961]
+transform = Transform3D(1, -9.196228e-09, -2.2284155e-08, 2.38769e-08, 0.50528085, 0.862955, 3.3238265e-09, -0.862955, 0.50528085, -0.07900047, 10.190782, 5.412493)
+fov = 60.0
+
 [node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target") instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
 front_truck_target = NodePath("FrontTruck")
@@ -160,6 +163,10 @@ navigation_mesh = SubResource("NavigationMesh_5q0nq")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level/NavigationRegion3D" unique_id=767979883]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.8896427)
 mesh = SubResource("BoxMesh_5q0nq")
+
+[node name="CameraGrid" type="Camera3D" parent="Level/NavigationRegion3D" unique_id=208566722]
+transform = Transform3D(-1, -8.7422784e-08, -1.7763568e-15, -2.310678e-08, 0.26431075, 0.9644376, -8.431381e-08, 0.9644376, -0.26431075, 0, 12.519371, -14.780767)
+fov = 70.0
 
 [node name="Board" parent="Level" unique_id=2101916 instance=ExtResource("30_5q0nq")]
 transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 2.6044483, 7.918475)
