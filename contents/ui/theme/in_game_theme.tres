@@ -44,6 +44,20 @@ texture = ExtResource("4_1a6p2")
 texture_margin_top = 13.0
 texture_margin_bottom = 13.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1a6p2"]
+bg_color = Color(0.21209751, 0.21209751, 0.21209751, 0.70000005)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idev4"]
+bg_color = Color(0.98412615, 0.37654793, 0.39097285, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 1
+
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_disabled_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
@@ -90,3 +104,5 @@ Label/styles/focus = null
 Label/styles/normal = null
 Panel/styles/customer_order = null
 PanelContainer/styles/panel = ExtResource("4_idev4")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_1a6p2")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_idev4")

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dr1ecqicx6met" path="res://scripts/crates/crate_tool.gd" id="1_wu3ff"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="2_c4bwf"]
+[ext_resource type="Script" uid="uid://cjbncojx475m4" path="res://scripts/ui/stove_progress_ui.gd" id="3_5brmi"]
+[ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/theme/in_game_theme.tres" id="4_pjwvd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mh7rm"]
 resource_name = "Material.Stove"
@@ -344,3 +346,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1637955162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03100586, 0)
 shape = SubResource("BoxShape3D_5brmi")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=291906715]
+offset_right = 50.0
+offset_bottom = 7.0
+theme = ExtResource("4_pjwvd")
+show_percentage = false
+script = ExtResource("3_5brmi")
