@@ -2,10 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://bstje2bl0wdt8" path="res://contents/ui/icons/furnitures_grid/furniture_2b_01_icon.png" id="1_a23u2"]
 [ext_resource type="Script" uid="uid://jtqj8ushvihc" path="res://scripts/data/furniture_grid_data.gd" id="1_uw10h"]
+[ext_resource type="PackedScene" uid="uid://d1ajml224b5lt" path="res://contents/prefabs/furnitures/grid_furnitures/furniture_2b_01.tscn" id="2_lcl0r"]
 
 [resource]
 script = ExtResource("1_uw10h")
 name = "2 boxes diagonal A"
 icon = ExtResource("1_a23u2")
+model_3d = ExtResource("2_lcl0r")
 price = 20.0
 resell_price = 6.0
