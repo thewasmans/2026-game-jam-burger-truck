@@ -3,84 +3,9 @@
 [ext_resource type="Script" uid="uid://6v6hhr42hf61" path="res://scripts/data/new_data/wave_data.gd" id="1_7njms"]
 [ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/new_data/wave_preset_data.gd" id="2_7i03t"]
 [ext_resource type="Resource" uid="uid://ji4gput83v4b" path="res://data/new_data/waves/wave_1/wave_1a.tres" id="3_id6x0"]
-[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="4_dqjku"]
-[ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/4_ingredients/burger_3.tres" id="5_fe0gw"]
-[ext_resource type="Resource" uid="uid://bqka8eee1t5e2" path="res://data/burgers/6_ingredients/burger_4.tres" id="6_58wrr"]
-[ext_resource type="Resource" uid="uid://cuu7aqcr35s2l" path="res://data/burgers/6_ingredients/burger_9.tres" id="7_bauti"]
-[ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/new_data/client_data.gd" id="8_llqh1"]
-[ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/4_ingredients/burger_1.tres" id="9_o01t3"]
-[ext_resource type="Resource" uid="uid://qcba3r6d0xe" path="res://data/burgers/5_ingredients/burger_2.tres" id="10_013qn"]
-
-[sub_resource type="Resource" id="Resource_el8an"]
-script = ExtResource("8_llqh1")
-time_spawn = 5.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_tbxor"]
-script = ExtResource("8_llqh1")
-time_spawn = 6.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_2el3i"]
-script = ExtResource("8_llqh1")
-time_spawn = 12.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_md5ak"]
-script = ExtResource("8_llqh1")
-time_spawn = 13.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_jl4u5"]
-script = ExtResource("8_llqh1")
-time_spawn = 18.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_685mk"]
-script = ExtResource("8_llqh1")
-time_spawn = 19.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_bb588"]
-script = ExtResource("2_7i03t")
-clients = Array[ExtResource("8_llqh1")]([SubResource("Resource_el8an"), SubResource("Resource_tbxor"), SubResource("Resource_2el3i"), SubResource("Resource_md5ak"), SubResource("Resource_jl4u5"), SubResource("Resource_685mk")])
-burgers = Array[ExtResource("4_dqjku")]([ExtResource("5_fe0gw"), ExtResource("6_58wrr"), ExtResource("7_bauti")])
-
-[sub_resource type="Resource" id="Resource_bccwy"]
-script = ExtResource("8_llqh1")
-time_spawn = 5.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_tqmml"]
-script = ExtResource("8_llqh1")
-time_spawn = 7.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_yulel"]
-script = ExtResource("8_llqh1")
-time_spawn = 11.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_r3jmo"]
-script = ExtResource("8_llqh1")
-time_spawn = 14.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_ys4nr"]
-script = ExtResource("8_llqh1")
-time_spawn = 17.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_kfrxw"]
-script = ExtResource("8_llqh1")
-time_spawn = 21.0
-metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
-
-[sub_resource type="Resource" id="Resource_vl5xy"]
-script = ExtResource("2_7i03t")
-clients = Array[ExtResource("8_llqh1")]([SubResource("Resource_bccwy"), SubResource("Resource_tqmml"), SubResource("Resource_yulel"), SubResource("Resource_r3jmo"), SubResource("Resource_ys4nr"), SubResource("Resource_kfrxw")])
-burgers = Array[ExtResource("4_dqjku")]([ExtResource("9_o01t3"), ExtResource("5_fe0gw"), ExtResource("10_013qn")])
+[ext_resource type="Resource" uid="uid://dluyyjyvk78y1" path="res://data/new_data/waves/wave_1/wave_1b.tres" id="4_4x8ex"]
+[ext_resource type="Resource" uid="uid://bx8v5c75lbqwv" path="res://data/new_data/waves/wave_1/wave_1c.tres" id="5_gh0vo"]
 
 [resource]
 script = ExtResource("1_7njms")
-waves = Array[ExtResource("2_7i03t")]([ExtResource("3_id6x0"), SubResource("Resource_bb588"), SubResource("Resource_vl5xy")])
+waves = Array[ExtResource("2_7i03t")]([ExtResource("3_id6x0"), ExtResource("4_4x8ex"), ExtResource("5_gh0vo")])
