@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cdwif856qhrm8"]
+
+[ext_resource type="Shader" uid="uid://crdjkodgtqowd" path="res://contents/shaders/steak_cooking/steak_cooking.gdshader" id="1_ahokb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ahokb")
+shader_parameter/_base_color = Color(0.82, 0.23, 0.18, 1)
+shader_parameter/_cooked_color = Color(0.2, 0.09, 0.02, 1)
+shader_parameter/_cook_progress = 0.0
