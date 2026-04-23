@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="WavesData" format=3 uid="uid://dltmlfpal5jvm"]
+[gd_resource type="Resource" script_class="WavesPresetData" format=3 uid="uid://dltmlfpal5jvm"]
 
 [ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_xlndk"]
 [ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/4_ingredients/burger_1.tres" id="2_mnodc"]
