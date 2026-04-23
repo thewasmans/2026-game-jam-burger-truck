@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://830oxh1pjr54"]
 
-[ext_resource type="PackedScene" uid="uid://c144sagnaxcwa" path="res://contents/prefabs/furnitures/grid_furnitures/furnitures_global.tscn" id="1_ts0oc"]
+[ext_resource type="PackedScene" uid="uid://c144sagnaxcwa" path="res://contents/prefabs/furnitures/grid_furnitures/furniture_base.tscn" id="1_ts0oc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxr1o"]
 albedo_color = Color(0.5977076, 0.3390272, 0.2081399, 1)
