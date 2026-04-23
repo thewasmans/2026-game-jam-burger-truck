@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b153g13oxp4su"]
+
+[ext_resource type="PackedScene" uid="uid://c144sagnaxcwa" path="res://contents/prefabs/furnitures/grid_furnitures/furniture_base.tscn" id="1_mxvep"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxvep"]
+albedo_color = Color(0.913972, 0.76932013, 0.11181147, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rqrh6"]
+material = SubResource("StandardMaterial3D_mxvep")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4703y"]
+
+[node name="Furniture1" unique_id=1741332122 instance=ExtResource("1_mxvep")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="1" unique_id=1747320091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_rqrh6")
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=516374808]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=886318814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_4703y")
