@@ -78,7 +78,7 @@ func _on_crate_tool_selected(crate_tool: CrateTool):
 	if _current_ingredient:
 		if _current_ingredient.ingredient_data.provide_ingredient != null:
 			_current_ingredient_should_release = false
-			if crate_tool.use_tool(_current_ingredient):
+			if crate_tool.assign_ingredient(_current_ingredient):
 				free_current_ingredient()
 	else:
 		_current_ingredient = crate_tool._ingredient

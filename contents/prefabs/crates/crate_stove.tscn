@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b4a7bt2avgfce"]
+
+[ext_resource type="PackedScene" uid="uid://ke47s5h8xkay" path="res://contents/prefabs/crates/crate_tool.tscn" id="1_dj7xs"]
+[ext_resource type="PackedScene" uid="uid://b2d8b1y2smj1s" path="res://contents/meshes/kitchen/stove.glb" id="2_cavd5"]
+[ext_resource type="Script" uid="uid://dnddo3wtx6885" path="res://scripts/crates/crate_coocking.gd" id="2_q8rnc"]
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_txfty"]
+[ext_resource type="Material" uid="uid://cdwif856qhrm8" path="res://contents/materials/steack_shader_material.tres" id="3_jx72g"]
+[ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/raw_steak.tres" id="3_q8rnc"]
+
+[node name="CrateStove" unique_id=2258064 instance=ExtResource("1_dj7xs")]
+script = ExtResource("2_q8rnc")
+shader_coocking = ExtResource("3_jx72g")
+ingredient_data = Array[ExtResource("2_txfty")]([ExtResource("3_q8rnc")])
+
+[node name="stove" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=735104877 instance=ExtResource("2_cavd5")]
+
+[node name="Anchor" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="1" unique_id=952649832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21135111, 1.1112946, 0.18964559)

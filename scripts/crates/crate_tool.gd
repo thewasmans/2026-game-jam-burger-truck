@@ -4,7 +4,7 @@ extends CrateInterract
 @export var ingredient_data:Array[IngredientData]
 var _ingredient: Ingredient
 
-func use_tool(ingredient:Ingredient) -> bool:
+func assign_ingredient(ingredient:Ingredient) -> bool:
 	if not can_used_ingredient(ingredient):
 		print("CANT USE THIS TOOL WITH THE INGREDIENT")
 		return false
