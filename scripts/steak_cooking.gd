@@ -1,4 +1,5 @@
 extends Node3D
+class_name SteakCoocking
 
 @export var _mesh : MeshInstance3D
 @export var _shader : Shader

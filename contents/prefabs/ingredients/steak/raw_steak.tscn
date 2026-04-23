@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://dn6oqdluiig68" path="res://contents/meshes/ingredients/steak_3d.glb" id="1_jed6b"]
 [ext_resource type="Script" uid="uid://dalq67poekwk3" path="res://scripts/steak_cooking.gd" id="1_wv6my"]
-[ext_resource type="Shader" uid="uid://crdjkodgtqowd" path="res://contents/shaders/steak_cooking/steak_cooking.gdshader" id="2_pun28"]
+[ext_resource type="Shader" uid="uid://crdjkodgtqowd" path="res://contents/shaders/steak_cooking/steak_cooking.gdshader" id="2_wv6my"]
 [ext_resource type="Material" uid="uid://cah6gthxpy7nb" path="res://contents/materials/raw_steak_mat.tres" id="3_cqxbf"]
 
 [node name="Steak3D" type="Node3D" unique_id=1152186279 node_paths=PackedStringArray("_mesh")]
 script = ExtResource("1_wv6my")
 _mesh = NodePath("ModelScale/Steak3D/Meat")
-_shader = ExtResource("2_pun28")
+_shader = ExtResource("2_wv6my")
 
 [node name="ModelScale" type="Node3D" parent="." unique_id=1138477845]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -16,7 +16,7 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 [node name="Steak3D" parent="ModelScale" unique_id=1759101719 instance=ExtResource("1_jed6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005726099, 0, -0.010914922)
 
-[node name="Meat" parent="ModelScale/Steak3D" index="0" unique_id=260538133]
+[node name="Meat" parent="ModelScale/Steak3D" index="0" unique_id=1578817385]
 material_override = ExtResource("3_cqxbf")
 
 [editable path="ModelScale/Steak3D"]

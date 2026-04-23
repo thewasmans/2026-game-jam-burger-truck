@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://b2d8b1y2smj1s" path="res://contents/meshes/kitchen/stove.glb" id="2_cavd5"]
 [ext_resource type="Script" uid="uid://dnddo3wtx6885" path="res://scripts/crates/crate_coocking.gd" id="2_q8rnc"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_txfty"]
-[ext_resource type="Material" uid="uid://cdwif856qhrm8" path="res://contents/materials/steack_shader_material.tres" id="3_jx72g"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/raw_steak.tres" id="3_q8rnc"]
 [ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/theme/in_game_theme.tres" id="7_juqj1"]
 [ext_resource type="Script" uid="uid://cjbncojx475m4" path="res://scripts/ui/stove_progress_ui.gd" id="8_lei3o"]
@@ -17,25 +16,25 @@ resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_juqj1")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ilr34"]
+resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_lei3o")
 size = Vector2(0.855, 0.225)
 
 [node name="CrateStove" unique_id=2258064 node_paths=PackedStringArray("ui") instance=ExtResource("1_dj7xs")]
 script = ExtResource("2_q8rnc")
-shader_coocking = ExtResource("3_jx72g")
 ui = NodePath("SubViewport/ProgressBar")
 ingredient_data = Array[ExtResource("2_txfty")]([ExtResource("3_q8rnc")])
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0" unique_id=404850065]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=404850065]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, -0.0140661, 1.2255192, -0.37432402)
 mesh = SubResource("PlaneMesh_ilr34")
 
-[node name="stove" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=735104877 instance=ExtResource("2_cavd5")]
+[node name="stove" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="1" unique_id=735104877 instance=ExtResource("2_cavd5")]
 
-[node name="Anchor" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="1" unique_id=952649832]
+[node name="Anchor" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="2" unique_id=952649832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21135111, 1.1112946, 0.18964559)
 
-[node name="SubViewport" type="SubViewport" parent="." index="3" unique_id=1609680147]
+[node name="SubViewport" type="SubViewport" parent="." index="2" unique_id=1609680147]
 size = Vector2i(512, 128)
 
 [node name="ProgressBar" type="ProgressBar" parent="SubViewport" index="0" unique_id=725253265]
@@ -45,5 +44,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_juqj1")
+max_value = 1.0
 show_percentage = false
 script = ExtResource("8_lei3o")

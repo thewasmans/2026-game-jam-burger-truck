@@ -8,11 +8,9 @@ func assign_ingredient(ingredient:Ingredient) -> bool:
 	if not can_used_ingredient(ingredient):
 		print("CANT USE THIS TOOL WITH THE INGREDIENT")
 		return false
-	var provide_ingredient := Ingredient.new()
-	provide_ingredient.ingredient_data = ingredient.ingredient_data.provide_ingredient
-	provide_ingredient.instance = provide_ingredient.ingredient_data.model_3d.instantiate()
-	anchor_spawn.add_child(provide_ingredient.instance)
-	_ingredient = provide_ingredient
+	_ingredient = ingredient
+	ingredient.instance.reparent(anchor_spawn)
+	ingredient.instance.position = Vector3.ZERO
 	return true
 
 func can_used_ingredient(ingredient: Ingredient):
