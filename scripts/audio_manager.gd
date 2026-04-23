@@ -4,7 +4,7 @@ var sounds: Dictionary[String, AudioStream]
 var _music_players:Array[AudioStreamPlayer] = []
 var muted: bool
 
-func initialize(_sounds:Dictionary[String, AudioStream], stream_player_sfx: AudioStreamPlayer):
+func initialize(_sounds:Dictionary[String, AudioStream], _stream_player_sfx: AudioStreamPlayer):
 	sounds = _sounds
 	muted = false
 

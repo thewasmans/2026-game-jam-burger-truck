@@ -3,8 +3,6 @@ extends Node3D
 @export var _mesh : MeshInstance3D
 @export var _shader : Shader
 var _material: ShaderMaterial
-var _raw = Color(0.82,0.23,0.18)
-var _cooked = Color(0.20,0.09,0.02)
 
 func _ready():
 	if not _mesh:
