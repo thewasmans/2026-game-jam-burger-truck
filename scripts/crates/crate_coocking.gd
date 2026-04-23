@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 		_value_progress = 1.0 * .1
 		_coocking_started = false
 		_spawn_coocked_ingredient()
+		ingredient_transformed = true
 		ingredient_coocked.emit()
 	else:
 		_value_progress += delta
