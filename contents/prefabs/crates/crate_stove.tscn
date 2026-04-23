@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_txfty"]
 [ext_resource type="Material" uid="uid://cdwif856qhrm8" path="res://contents/materials/steack_shader_material.tres" id="3_jx72g"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/raw_steak.tres" id="3_q8rnc"]
+[ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/theme/in_game_theme.tres" id="7_juqj1"]
+[ext_resource type="Script" uid="uid://cjbncojx475m4" path="res://scripts/ui/stove_progress_ui.gd" id="8_lei3o"]
 
 [node name="CrateStove" unique_id=2258064 instance=ExtResource("1_dj7xs")]
 script = ExtResource("2_q8rnc")
@@ -16,3 +18,16 @@ ingredient_data = Array[ExtResource("2_txfty")]([ExtResource("3_q8rnc")])
 
 [node name="Anchor" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="1" unique_id=952649832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21135111, 1.1112946, 0.18964559)
+
+[node name="SubViewport" type="SubViewport" parent="." index="2" unique_id=1609680147]
+size = Vector2i(512, 128)
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport" index="0" unique_id=725253265]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_juqj1")
+show_percentage = false
+script = ExtResource("8_lei3o")
