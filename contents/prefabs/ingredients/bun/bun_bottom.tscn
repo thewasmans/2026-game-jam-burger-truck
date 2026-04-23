@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://sjoespgma806"]
 
-[ext_resource type="Script" uid="uid://1xx70eih7vkr" path="res://scripts/ingredient.gd" id="1_5rl1l"]
+[ext_resource type="Script" path="res://scripts/ingredient.gd" id="1_5rl1l"]
 [ext_resource type="PackedScene" uid="uid://b7hk7qjtttpsi" path="res://contents/meshes/ingredients/bun/bun_bottom_3d.glb" id="1_wm40w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wm40w"]

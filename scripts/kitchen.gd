@@ -78,10 +78,11 @@ func _on_crate_tool_selected(crate_tool: CrateTool):
 	if _current_ingredient:
 		if _current_ingredient.ingredient_data.provide_ingredient != null:
 			_current_ingredient_should_release = false
-			if crate_tool.use_tool(_current_ingredient):
-				free_current_ingredient()
+			if crate_tool.assign_ingredient(_current_ingredient):
+				_current_ingredient = null
 	else:
-		_current_ingredient = crate_tool._ingredient
+		if crate_tool.ingredient_transformed:
+			_current_ingredient = crate_tool._ingredient
 	
 func assign_clients_to_plates() -> void:
 	for anchor: Node3D in anchor_plates_clients:
