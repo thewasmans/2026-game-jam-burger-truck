@@ -1,6 +1,13 @@
 [gd_resource type="Resource" script_class="FurnitureGridData" format=3 uid="uid://dhpk3pd48dae5"]
 
+[ext_resource type="Texture2D" uid="uid://bcxvmkd4bodud" path="res://contents/ui/icons/furnitures_grid/furniture_1_icon.png" id="1_a54ah"]
 [ext_resource type="Script" uid="uid://jtqj8ushvihc" path="res://scripts/data/furniture_grid_data.gd" id="1_bw8oj"]
+[ext_resource type="PackedScene" uid="uid://b153g13oxp4su" path="res://contents/prefabs/furnitures/grid_furnitures/furniture_1.tscn" id="2_ajgbm"]
 
 [resource]
 script = ExtResource("1_bw8oj")
+name = "1x1"
+icon = ExtResource("1_a54ah")
+model_3d = ExtResource("2_ajgbm")
+price = 10.0
+resell_price = 3.0

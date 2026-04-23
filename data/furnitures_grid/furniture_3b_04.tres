@@ -1,6 +1,11 @@
 [gd_resource type="Resource" script_class="FurnitureGridData" format=3 uid="uid://dy5a1l7cf3i0j"]
 
 [ext_resource type="Script" uid="uid://jtqj8ushvihc" path="res://scripts/data/furniture_grid_data.gd" id="1_hdvqg"]
+[ext_resource type="Texture2D" uid="uid://2o4slj7sba0k" path="res://contents/ui/icons/furnitures_grid/furniture_3b_04_icon.png" id="1_l775v"]
 
 [resource]
 script = ExtResource("1_hdvqg")
+name = "L shape 3 boxes D"
+icon = ExtResource("1_l775v")
+price = 28.0
+resell_price = 8.5

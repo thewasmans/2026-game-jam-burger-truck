@@ -1,6 +1,11 @@
 [gd_resource type="Resource" script_class="FurnitureGridData" format=3 uid="uid://dkd86w2y1atu1"]
 
+[ext_resource type="Texture2D" uid="uid://epwclgsevggn" path="res://contents/ui/icons/furnitures_grid/furniture_3c_02_icon.png" id="1_48t31"]
 [ext_resource type="Script" uid="uid://jtqj8ushvihc" path="res://scripts/data/furniture_grid_data.gd" id="1_b61bx"]
 
 [resource]
 script = ExtResource("1_b61bx")
+name = "3 boxes diagonal B"
+icon = ExtResource("1_48t31")
+price = 35.0
+resell_price = 10.5

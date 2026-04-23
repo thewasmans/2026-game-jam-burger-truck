@@ -1,6 +1,11 @@
 [gd_resource type="Resource" script_class="FurnitureGridData" format=3 uid="uid://bymkrkmnxkvkd"]
 
 [ext_resource type="Script" uid="uid://jtqj8ushvihc" path="res://scripts/data/furniture_grid_data.gd" id="1_ltghg"]
+[ext_resource type="Texture2D" uid="uid://wq3w4b7devdm" path="res://contents/ui/icons/furnitures_grid/furniture_3a_01_icon.png" id="1_wt7dk"]
 
 [resource]
 script = ExtResource("1_ltghg")
+name = "3x1"
+icon = ExtResource("1_wt7dk")
+price = 25.0
+resell_price = 7.5
