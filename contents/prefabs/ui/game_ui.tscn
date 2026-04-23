@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 [ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "sart_menu", "button_start", "button_mute")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "sart_menu", "button_start", "button_mute", "label_clients")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -25,6 +25,25 @@ container_menu = NodePath("Money/FoldableContainer")
 sart_menu = NodePath("StartMenu")
 button_start = NodePath("StartMenu/SplashScreenExplain/ButtonStart")
 button_mute = NodePath("ButtonMuteAudio")
+label_clients = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=2103994670]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = -109.140015
+offset_right = 158.0
+offset_bottom = -37.140015
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "XXX CLIENTS WILL COMING"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Money" parent="." unique_id=1829518468 instance=ExtResource("5_ytt4t")]
 layout_mode = 1

@@ -5,14 +5,15 @@ class_name GameUI
 signal furniture_selected(furniture:FurnitureData)
 signal button_start_clicked
 
-@export var money_label:Label
-@export var theme_ingredients:Theme
-@export var container_furnitures:GridContainer
-@export var container_menu:FoldableContainer
-@export var board:BoardUI
-@export var sart_menu:Control
-@export var button_start:Button
-@export var button_mute:Button
+@export var money_label: Label
+@export var theme_ingredients: Theme
+@export var container_furnitures: GridContainer
+@export var container_menu: FoldableContainer
+@export var board: BoardUI
+@export var sart_menu: Control
+@export var button_start: Button
+@export var button_mute: Button
+@export var label_clients: Label
 var ingredients_buttons:Array[Button]
 
 func _ready() -> void:
@@ -55,3 +56,7 @@ func _on_button_mute_audio_pressed():
 	else:
 		AudioManager.mute_all_sounds()
 		button_mute.text = "Resume Audio"
+		
+func set_wave_information(wave:WavesPresetData):
+	label_clients.text = str(wave.clients.size()) + " CLIENTS WILL COMING"
+	print_debug(wave.resource_path)
