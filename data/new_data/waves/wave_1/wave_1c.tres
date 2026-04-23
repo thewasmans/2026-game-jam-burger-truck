@@ -1,37 +1,50 @@
-[gd_resource type="Resource" script_class="WavesPresetData" format=3 uid="uid://dltmlfpal5jvm"]
+[gd_resource type="Resource" script_class="WavesPresetData" format=3 uid="uid://bx8v5c75lbqwv"]
 
 [ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_xlndk"]
 [ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/4_ingredients/burger_1.tres" id="2_mnodc"]
 [ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/4_ingredients/burger_3.tres" id="3_c1xpj"]
 [ext_resource type="Resource" uid="uid://qcba3r6d0xe" path="res://data/burgers/5_ingredients/burger_2.tres" id="4_hroya"]
+[ext_resource type="Resource" uid="uid://c6bgmod8bpaa8" path="res://data/burgers/6_ingredients/burger_5.tres" id="5_c1xpj"]
 [ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/new_data/client_data.gd" id="5_feg2a"]
+[ext_resource type="Resource" uid="uid://q20hrcix7jti" path="res://data/burgers/6_ingredients/burger_10.tres" id="6_hroya"]
 [ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/new_data/wave_preset_data.gd" id="6_inxcw"]
 
-[sub_resource type="Resource" id="Resource_el8an"]
+[sub_resource type="Resource" id="Resource_bccwy"]
 script = ExtResource("5_feg2a")
+time_spawn = 5.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
-[sub_resource type="Resource" id="Resource_tbxor"]
+[sub_resource type="Resource" id="Resource_tqmml"]
 script = ExtResource("5_feg2a")
+time_spawn = 7.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
-[sub_resource type="Resource" id="Resource_2el3i"]
+[sub_resource type="Resource" id="Resource_yulel"]
 script = ExtResource("5_feg2a")
+time_spawn = 11.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
-[sub_resource type="Resource" id="Resource_md5ak"]
+[sub_resource type="Resource" id="Resource_r3jmo"]
 script = ExtResource("5_feg2a")
+time_spawn = 14.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
-[sub_resource type="Resource" id="Resource_jl4u5"]
+[sub_resource type="Resource" id="Resource_ys4nr"]
 script = ExtResource("5_feg2a")
+time_spawn = 17.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
-[sub_resource type="Resource" id="Resource_685mk"]
+[sub_resource type="Resource" id="Resource_kfrxw"]
 script = ExtResource("5_feg2a")
+time_spawn = 21.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_feg2a"]
+script = ExtResource("5_feg2a")
+time_spawn = 23.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [resource]
 script = ExtResource("6_inxcw")
-clients = Array[ExtResource("5_feg2a")]([SubResource("Resource_el8an"), SubResource("Resource_tbxor"), SubResource("Resource_2el3i"), SubResource("Resource_md5ak"), SubResource("Resource_jl4u5"), SubResource("Resource_685mk")])
-burgers = Array[ExtResource("1_xlndk")]([ExtResource("2_mnodc"), ExtResource("3_c1xpj"), ExtResource("4_hroya")])
+clients = Array[ExtResource("5_feg2a")]([SubResource("Resource_bccwy"), SubResource("Resource_tqmml"), SubResource("Resource_yulel"), SubResource("Resource_r3jmo"), SubResource("Resource_ys4nr"), SubResource("Resource_kfrxw"), SubResource("Resource_feg2a")])
+burgers = Array[ExtResource("1_xlndk")]([ExtResource("2_mnodc"), ExtResource("3_c1xpj"), ExtResource("4_hroya"), ExtResource("5_c1xpj"), ExtResource("6_hroya")])
