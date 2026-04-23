@@ -4,7 +4,7 @@ extends CrateTool
 signal ingredient_coocked()
 
 @export var shader_coocking:ShaderMaterial
-@export var ui:Control
+@export var ui:ProgressCoocking
 
 var _coocking_started: bool
 var _value_progress: float
@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	else:
 		_value_progress += delta
 		shader_coocking.set_shader_parameter("value", _value_progress)
-		ui.progress_bar.set_value(_value_progress)
+		ui.set_progress(_value_progress)
 		
 func assign_ingredient(ingredient:Ingredient) -> bool:
 	_value_progress = 0

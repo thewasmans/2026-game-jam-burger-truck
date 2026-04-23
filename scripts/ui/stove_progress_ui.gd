@@ -1,3 +1,4 @@
+class_name ProgressCoocking
 extends ProgressBar
 
 @export var _camera: Camera3D
