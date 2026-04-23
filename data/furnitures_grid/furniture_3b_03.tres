@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="FurnitureGridData" format=3 uid="uid://cch7pl81q0liw"]
+
+[ext_resource type="Script" uid="uid://jtqj8ushvihc" path="res://scripts/data/furniture_grid_data.gd" id="1_rx3rm"]
+
+[resource]
+script = ExtResource("1_rx3rm")
