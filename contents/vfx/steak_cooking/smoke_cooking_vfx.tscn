@@ -50,9 +50,9 @@ rings = 4
 [node name="SmokeCookingVFX" type="Node3D" unique_id=869497307]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1636278527]
-amount = 50
-lifetime = 0.75
-speed_scale = 0.5
+amount = 20
+lifetime = 0.6
+speed_scale = 0.25
 explosiveness = 0.12
 randomness = 0.3
 fixed_fps = 0
