@@ -21,6 +21,8 @@ enum State { MOVING_TO_TRUCK, WAITING, LEAVING }
 
 var current_state: State = State.MOVING_TO_TRUCK
 var wait_timer: Timer
+var current_path : PackedVector3Array = []
+var target_index := 0
 
 var _burger_request:BurgerData
 var _is_hungry: bool
@@ -41,6 +43,18 @@ func _ready() -> void:
 	wait_timer.timeout.connect(_on_wait_timer_timeout)
 	add_child(wait_timer)
 	_original_scale = anchor_burger.scale
+	
+func _process(delta):
+	if current_path.size() > 0 and target_index < current_path.size():
+		var target_pos = current_path[target_index]
+		var direction = target_pos - global_position
+		
+		if direction.length() < 0.1:
+			target_index += 1
+		else:
+			global_position += direction.normalized() * speed * delta
+			# Optionnel : fait regarder l'unité vers sa cible
+			look_at(target_pos, Vector3.UP)
 	
 func _physics_process(delta: float) -> void:
 	if _is_leaved:
@@ -118,3 +132,7 @@ func give_food(_burger:Array[IngredientData])-> bool:
 		anchor_burger.hide()
 		return true
 	return false
+
+func follow_path(path: PackedVector3Array):
+	current_path = path
+	target_index = 0

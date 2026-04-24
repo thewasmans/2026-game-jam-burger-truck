@@ -1,18 +1,25 @@
 class_name GridSystem
 extends Node3D
 
+@export_group("Settings")
 @export var grid_size := Vector2(10, 10)
+@export var cell_size := 1.0
+
+@export_group("Prefabs")
 @export var prefab_til: PackedScene
 @export var prefab_unit: PackedScene
-@export var cell_size := 1.0
+
+@export_group("Navigation Target")
+@export var target_grid_pos := Vector2(5, 5)
 
 var astar = AStar2D.new()
 
 func _ready():
 	_setup_grid()
 	_connect_points()
-	await get_tree().create_timer(2.0).timeout
-	spawn_unit_at_edge(Vector2(5, 5))
+	
+	await get_tree().create_timer(1.0).timeout
+	spawn_unit_at_edge(target_grid_pos)
 
 func _get_unique_id(pos: Vector2) -> int:
 	return int(pos.x + (pos.y * grid_size.x))
@@ -40,6 +47,18 @@ func _connect_points():
 				if _is_within_bounds(n_pos):
 					astar.connect_points(id, _get_unique_id(n_pos))
 
+func spawn_unit_at_edge(target: Vector2):
+	var edge_pos = _get_random_edge_pos()
+	if prefab_unit:
+		var unit = prefab_unit.instantiate()
+		add_child(unit)
+		unit.position = Vector3(edge_pos.x * cell_size, 0, edge_pos.y * cell_size)
+		
+		var path = get_path_world(unit.position, Vector3(target.x * cell_size, 0, target.y * cell_size))
+		
+		if unit.has_method("follow_path"):
+			unit.follow_path(path)
+
 func _get_random_edge_pos() -> Vector2:
 	var edge = randi() % 4
 	match edge:
@@ -47,18 +66,6 @@ func _get_random_edge_pos() -> Vector2:
 		1: return Vector2(randi() % int(grid_size.x), int(grid_size.y) - 1)
 		2: return Vector2(0, randi() % int(grid_size.y))
 		_: return Vector2(int(grid_size.x) - 1, randi() % int(grid_size.y))
-
-func spawn_unit_at_edge(target_grid_pos: Vector2):
-	var edge_pos = _get_random_edge_pos()
-	if prefab_unit:
-		var unit = prefab_unit.instantiate()
-		add_child(unit)
-		unit.position = Vector3(edge_pos.x * cell_size, 0, edge_pos.y * cell_size)
-		
-		var path = get_path_world(unit.position, Vector3(target_grid_pos.x * cell_size, 0, target_grid_pos.y * cell_size))
-		
-		if unit.has_method("follow_path"):
-			unit.follow_path(path)
 
 func get_path_world(start_v3: Vector3, end_v3: Vector3) -> PackedVector3Array:
 	var s_id = _get_unique_id(Vector2(round(start_v3.x / cell_size), round(start_v3.z / cell_size)))
