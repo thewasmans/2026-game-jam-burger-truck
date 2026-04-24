@@ -1,8 +1,6 @@
 class_name CrateChopping
 extends CrateTool
 
-signal ingredient_sliced
-
 var _sliced_step: int
 
 func assign_ingredient(ingredient:Ingredient) -> bool:

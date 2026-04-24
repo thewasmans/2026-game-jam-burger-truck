@@ -13,6 +13,7 @@ class_name Main
 @export var board_ui:BoardUI
 @export var sounds: Dictionary[String, AudioStream]
 @export var stream_player: AudioStreamPlayer
+@export var camera_switcher: CameraSwitcher
 
 var burgers_data:
 	get:
@@ -23,8 +24,12 @@ func _ready() -> void:
 	kitchen.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
-	spawner.next_wave_started.connect(game_ui.set_wave_information)
-		
+	spawner.next_wave_started.connect(func(data, number):
+		camera_switcher.set_camera_kitchen()
+		game_ui.set_wave_information(data, number))
+	spawner.waiting_next_wave.connect(func(): camera_switcher.set_camera_furnitures())
+	camera_switcher.set_camera_kitchen()
+	
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
 	FurnituresManager.initialize(navigation, placement_zone)
 	ClientsManager.initialize()

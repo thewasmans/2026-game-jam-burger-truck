@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="7_a8y0u"]
 [ext_resource type="AudioStream" uid="uid://jgqg5ipsguxv" path="res://contents/audios/awesomeness.wav" id="8_jkv2x"]
 [ext_resource type="AudioStream" uid="uid://d38m6vreqqyon" path="res://contents/audios/coin.11.ogg" id="9_jbj1t"]
+[ext_resource type="Script" uid="uid://cqq0jnutdxp31" path="res://scripts/camera_swticher.gd" id="10_muem4"]
 [ext_resource type="Script" uid="uid://cf4mpdjpr5wxv" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/data/furniture_data.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
@@ -73,7 +74,7 @@ albedo_color = Color(0.8623366, 0.6799608, 0.50337213, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
 
-[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "navigation", "placement_zone", "board_ui")]
+[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "navigation", "placement_zone", "board_ui", "camera_switcher")]
 script = ExtResource("4_abcde")
 kitchen = NodePath("Level/Kitchen")
 game_ui = NodePath("GameUI")
@@ -88,12 +89,16 @@ sounds = Dictionary[String, AudioStream]({
 "main-music": ExtResource("8_jkv2x"),
 "sfx-money": ExtResource("9_jbj1t")
 })
+camera_switcher = NodePath("Global/Camera3D")
 
 [node name="Global" type="Node" parent="." unique_id=1804165768]
 
-[node name="Camera3D" type="Camera3D" parent="Global" unique_id=1998703230]
+[node name="Camera3D" type="Camera3D" parent="Global" unique_id=1998703230 node_paths=PackedStringArray("camera_kitchen", "camera_furnitures")]
 transform = Transform3D(-1, 8.463816e-08, -2.1888908e-08, 1.7877618e-08, 0.44307116, 0.89648646, 8.55753e-08, 0.89648646, -0.44307116, 0.372, 13.398943, -3.9975224)
 fov = 60.0
+script = ExtResource("10_muem4")
+camera_kitchen = NodePath("../../Level/Kitchen/CameraKitchen")
+camera_furnitures = NodePath("../../Level/NavigationRegion3D/CameraGrid")
 
 [node name="Level" type="Node" parent="." unique_id=751625337]
 
@@ -165,7 +170,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.8896427)
 mesh = SubResource("BoxMesh_5q0nq")
 
 [node name="CameraGrid" type="Camera3D" parent="Level/NavigationRegion3D" unique_id=208566722]
-transform = Transform3D(-1, -8.7422784e-08, -1.7763568e-15, -2.310678e-08, 0.26431075, 0.9644376, -8.431381e-08, 0.9644376, -0.26431075, 0, 12.519371, -14.780767)
+transform = Transform3D(-1, -8.7422784e-08, -1.7763568e-15, -2.310678e-08, 0.26431075, 0.9644376, -8.431381e-08, 0.9644376, -0.26431075, 0, 14.976709, -9.983158)
 fov = 70.0
 
 [node name="Board" parent="Level" unique_id=2101916 instance=ExtResource("30_5q0nq")]
