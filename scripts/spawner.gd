@@ -3,7 +3,7 @@ extends Node3D
 class_name HungryClientSpawner
 
 signal client_spawned(client:HungryClient)
-signal next_wave_started(_current_preset_wave)
+signal next_wave_started(current_preset_wave:WavesPresetData, number_wave: int)
 
 @export var enemy_scene: PackedScene
 @export var front_truck_target: MeshInstance3D 
@@ -22,6 +22,8 @@ var time: float
 var _hungries_clients: Array[HungryClient] = []
 var _index_current_wave: int = 0
 var _current_preset_wave: WavesPresetData
+var _client_waiting_to_spawn: Array[ClientData]
+var number_wave: int = 0
 
 func _ready() -> void:
 	randomize()
@@ -36,9 +38,9 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	time += delta
-	for client in _current_preset_wave.clients.duplicate():
+	for client in _client_waiting_to_spawn.duplicate():
 		if time >= client.time_spawn:
-			_current_preset_wave.clients.erase(client)
+			_client_waiting_to_spawn.erase(client)
 			spawn_client(client)
 	var i = 0
 	while i < _hungries_clients.size():
@@ -47,19 +49,20 @@ func _process(delta: float) -> void:
 		else:
 			i+=1
 			
-	if _current_preset_wave.clients.size() == 0 and _hungries_clients.size() == 0 and timer_next_wave.is_stopped():
+	if _client_waiting_to_spawn.size() == 0 and _hungries_clients.size() == 0 and timer_next_wave.is_stopped():
 		start_wait_next_wave()
 
 func next_wave():
+	number_wave += 1
 	_index_current_wave = (_index_current_wave + 1) % game_data.waves.size()
 	_current_preset_wave = game_data.waves[_index_current_wave].waves_presets.pick_random()
+	_client_waiting_to_spawn = _current_preset_wave.clients.duplicate()
 	time = 0
-	next_wave_started.emit(_current_preset_wave)
+	next_wave_started.emit(_current_preset_wave, number_wave)
 	
 func spawn_client(client: ClientData) -> void:
 	if enemy_scene == null:
 		return
-	print("client")
 	var instance: HungryClient = enemy_scene.instantiate()
 	instance.agent.target_position = front_truck_target.global_position
 	instance.target_position = front_truck_target.global_position
@@ -79,5 +82,5 @@ func get_random_spawn_position() -> Vector3:
 	return spawn_location.global_position
 	
 func start_wait_next_wave():
-	print("wait next wave")
+	print("Wait next wave")
 	timer_next_wave.start()

@@ -22,3 +22,4 @@ material_override = ExtResource("4_nbol0")
 mesh = SubResource("SphereMesh_458yu")
 
 [node name="TimerWaitingNextWave" type="Timer" parent="." unique_id=1241154616]
+one_shot = true
