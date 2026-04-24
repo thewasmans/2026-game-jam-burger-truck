@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="WavesPresetData" format=3 uid="uid://dluyyjyvk78y1"]
 
 [ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_0je1w"]
-[ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/4_ingredients/burger_3.tres" id="2_m1dsf"]
-[ext_resource type="Resource" uid="uid://bqka8eee1t5e2" path="res://data/burgers/6_ingredients/burger_4.tres" id="3_kkbvb"]
-[ext_resource type="Resource" uid="uid://cuu7aqcr35s2l" path="res://data/burgers/6_ingredients/burger_9.tres" id="4_ye02g"]
+[ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/burger_3.tres" id="2_0je1w"]
+[ext_resource type="Resource" uid="uid://bqka8eee1t5e2" path="res://data/burgers/burger_4.tres" id="3_m1dsf"]
+[ext_resource type="Resource" uid="uid://cuu7aqcr35s2l" path="res://data/burgers/burger_9.tres" id="4_kkbvb"]
 [ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/client_data.gd" id="5_megyj"]
 [ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/waves/wave_preset_data.gd" id="6_s8r5n"]
 
@@ -40,4 +40,4 @@ metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 [resource]
 script = ExtResource("6_s8r5n")
 clients = Array[ExtResource("5_megyj")]([SubResource("Resource_el8an"), SubResource("Resource_tbxor"), SubResource("Resource_2el3i"), SubResource("Resource_md5ak"), SubResource("Resource_jl4u5"), SubResource("Resource_685mk")])
-burgers = Array[ExtResource("1_0je1w")]([ExtResource("2_m1dsf"), ExtResource("3_kkbvb"), ExtResource("4_ye02g")])
+burgers = Array[ExtResource("1_0je1w")]([ExtResource("2_0je1w"), ExtResource("3_m1dsf"), ExtResource("4_kkbvb")])
