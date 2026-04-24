@@ -13,6 +13,7 @@ signal crate_ingredient_clicked(crate:CrateIngredient)
 @export var anchor_plates_clients: Array[Node3D]
 @export var camera:Camera3D
 @export var vfx_ingredient_dismiss: GPUParticles3D
+@export var game_data: GameData
 
 var MAX_REPUTATION: int = 10
 var current_reputation: int = MAX_REPUTATION
@@ -31,6 +32,7 @@ func _ready() -> void:
 		
 	for crate in tool_crates:
 		crate.crate_selected.connect(_on_crate_tool_selected.bind(crate))
+		crate.crate_pressed.connect(_on_crate_tool_pressed.bind(crate))
 		
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
@@ -73,7 +75,14 @@ func _on_crate_plate_selected(crate_plate: CratePlate):
 func _on_trash_selected():
 	if _current_ingredient:
 		free_current_ingredient()
-	
+
+func _on_crate_tool_pressed(crate_tool: CrateTool):
+	if crate_tool._ingredient and not crate_tool.ingredient_transformed:
+		crate_tool.use_tool()
+		if crate_tool is CrateChopping:
+			if crate_tool._sliced_step >= game_data.max_steps_sclices:
+				crate_tool.ingredient_transformed = true
+		
 func _on_crate_tool_selected(crate_tool: CrateTool):
 	if _current_ingredient:
 		if _current_ingredient.ingredient_data.provide_ingredient != null:
@@ -81,7 +90,7 @@ func _on_crate_tool_selected(crate_tool: CrateTool):
 			if crate_tool.assign_ingredient(_current_ingredient):
 				_current_ingredient = null
 	else:
-		if crate_tool.ingredient_transformed:
+		if crate_tool and crate_tool.ingredient_transformed:
 			_current_ingredient = crate_tool._ingredient
 	
 func assign_clients_to_plates() -> void:

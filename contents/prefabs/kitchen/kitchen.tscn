@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dhsoftcr8jh33"]
 
 [ext_resource type="Script" uid="uid://c48dl325ub3ad" path="res://scripts/kitchen.gd" id="1_frebv"]
+[ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="2_gr4wk"]
 [ext_resource type="PackedScene" uid="uid://e7ki1w7purcq" path="res://contents/prefabs/kitchen/kitchen_walls.tscn" id="2_sfdcp"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="5_u40xe"]
 [ext_resource type="PackedScene" uid="uid://dbq3p4mibtx8k" path="res://contents/prefabs/crates/crate_plate.tscn" id="6_u40xe"]
@@ -146,6 +147,7 @@ plates_crates = [NodePath("PlatesPrefab/CratePlate01"), NodePath("PlatesPrefab/C
 tool_crates = [NodePath("CrateCuttingBoards/CrateChopping 1"), NodePath("CrateCuttingBoards/CrateChopping 2"), NodePath("CrateStove/CrateStove 1"), NodePath("CrateStove/CrateStove 2"), NodePath("CrateStove/CrateStove 3")]
 crate_trash = NodePath("TrashPrefab/CrateTrash")
 vfx_ingredient_dismiss = NodePath("GPUParticles3D")
+game_data = ExtResource("2_gr4wk")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1636278527]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.24888659, -5.9604645e-08, 3.5180712)

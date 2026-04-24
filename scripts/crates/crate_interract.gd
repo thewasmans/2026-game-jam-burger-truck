@@ -2,6 +2,7 @@ class_name CrateInterract
 extends Node
 
 signal crate_selected()
+signal crate_pressed()
 
 @export var node_hover_feedback:Node3D
 @export var speed_animation:float = .35 
@@ -23,3 +24,5 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: 
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			crate_selected.emit()
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			crate_pressed.emit()

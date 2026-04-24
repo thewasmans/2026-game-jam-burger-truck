@@ -17,6 +17,9 @@ func assign_ingredient(ingredient:Ingredient) -> bool:
 
 func can_used_ingredient(ingredient: Ingredient):
 	for data in ingredient_data:
-		if ingredient.ingredient_data == data:
+		if ingredient.ingredient_data == data and _ingredient == null:
 			return true
 	return false
+	
+func use_tool():
+	pass
