@@ -47,7 +47,7 @@ material = SubResource("StandardMaterial3D_a7jxu")
 radial_segments = 8
 rings = 4
 
-[node name="SmokeVFX" type="Node3D" unique_id=869497307]
+[node name="SmokeCookingVFX" type="Node3D" unique_id=869497307]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1636278527]
 amount = 50
