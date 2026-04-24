@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WavesData" format=3 uid="uid://dg6u1w0ffajee"]
+
+[ext_resource type="Script" uid="uid://6v6hhr42hf61" path="res://scripts/data/waves/wave_data.gd" id="1_cdw28"]
+[ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/waves/wave_preset_data.gd" id="2_liodj"]
+[ext_resource type="Resource" uid="uid://htph83h3j1yb" path="res://data/waves/wave_4/wave_4a.tres" id="3_blukl"]
+[ext_resource type="Resource" uid="uid://cxapkmrtpytqy" path="res://data/waves/wave_4/wave_4b.tres" id="4_iajmq"]
+[ext_resource type="Resource" uid="uid://ch4v648cei6c5" path="res://data/waves/wave_4/wave_4c.tres" id="5_3g3sm"]
+
+[resource]
+script = ExtResource("1_cdw28")
+waves_presets = Array[ExtResource("2_liodj")]([ExtResource("3_blukl"), ExtResource("4_iajmq"), ExtResource("5_3g3sm")])

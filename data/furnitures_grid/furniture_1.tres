@@ -8,6 +8,6 @@
 script = ExtResource("1_bw8oj")
 name = "1x1"
 icon = ExtResource("1_a54ah")
-model_3d = ExtResource("2_ajgbm")
+prefab = ExtResource("2_ajgbm")
 price = 10.0
 resell_price = 3.0
