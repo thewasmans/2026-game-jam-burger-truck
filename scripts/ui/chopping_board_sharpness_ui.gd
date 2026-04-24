@@ -3,13 +3,7 @@ extends Control
 @onready var progress_bar = $ProgressBar
 @onready var frame = $TextureRect
 
-@export var _frames:= {
-	1: preload("res://contents/ui/icons/kitchen/sharpness_5_ui.png"), 
-	0.75: preload("res://contents/ui/icons/kitchen/sharpness_4_ui.png"), 
-	0.5: preload("res://contents/ui/icons/kitchen/sharpness_3_ui.png"), 
-	0.25: preload("res://contents/ui/icons/kitchen/sharpness_2_ui.png"), 
-	0.0: preload("res://contents/ui/icons/kitchen/sharpness_1_ui.png")
-}
+@export var _frames: Dictionary[float, Resource]
 
 func update_visuals():
 	var ratio = progress_bar.value / progress_bar.max_value

@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://c40v1rk2lg1ge"]
 
-[ext_resource type="Script" uid="uid://dijnsx2q57eyw" path="res://contents/prefabs/ui/chopping_board_sharpness_ui.gd" id="1_2p5gk"]
+[ext_resource type="Script" uid="uid://dijnsx2q57eyw" path="res://scripts/ui/chopping_board_sharpness_ui.gd" id="1_gxs6i"]
 [ext_resource type="Texture2D" uid="uid://dgukoqymkcv3j" path="res://contents/ui/icons/kitchen/sharpness_5_ui.png" id="1_vlt56"]
+[ext_resource type="Texture2D" uid="uid://bsrme8lbu0cxs" path="res://contents/ui/icons/kitchen/sharpness_1_ui.png" id="2_61m8f"]
+[ext_resource type="Texture2D" uid="uid://c6wpgv3g5x37" path="res://contents/ui/icons/kitchen/sharpness_2_ui.png" id="3_5qwio"]
+[ext_resource type="Texture2D" uid="uid://cxojsbculsvjr" path="res://contents/ui/icons/kitchen/sharpness_3_ui.png" id="4_w31q7"]
+[ext_resource type="Texture2D" uid="uid://crw1wgu6a6s7t" path="res://contents/ui/icons/kitchen/sharpness_4_ui.png" id="5_whvug"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2p5gk"]
 bg_color = Color(0.5158667, 0.5158667, 0.5158666, 1)
@@ -16,7 +20,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2p5gk")
+script = ExtResource("1_gxs6i")
+_frames = Dictionary[float, Resource]({
+0.0: ExtResource("2_61m8f"),
+0.25: ExtResource("3_5qwio"),
+0.5: ExtResource("4_w31q7"),
+0.75: ExtResource("5_whvug"),
+1.0: ExtResource("1_vlt56")
+})
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=589669622]
 layout_mode = 0
