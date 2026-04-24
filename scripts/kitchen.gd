@@ -14,7 +14,7 @@ signal crate_ingredient_clicked(crate:CrateIngredient)
 @export var camera:Camera3D
 @export var vfx_ingredient_dismiss: GPUParticles3D
 
-var MAX_REPUTATION: int = 100
+var MAX_REPUTATION: int = 10
 var current_reputation: int = MAX_REPUTATION
 var _current_ingredient: Ingredient = null
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
