@@ -8,6 +8,6 @@
 script = ExtResource("1_k8yjt")
 name = "2 boxes diagonal B"
 icon = ExtResource("1_msklh")
-model_3d = ExtResource("2_t2ogg")
+prefab = ExtResource("2_t2ogg")
 price = 20.0
 resell_price = 6.0

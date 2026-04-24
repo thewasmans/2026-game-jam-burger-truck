@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="WavesPresetData" format=3 uid="uid://bx8v5c75lbqwv"]
 
 [ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_jqfna"]
-[ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/4_ingredients/burger_1.tres" id="2_06bh3"]
-[ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/4_ingredients/burger_3.tres" id="3_l5eqf"]
-[ext_resource type="Resource" uid="uid://qcba3r6d0xe" path="res://data/burgers/5_ingredients/burger_2.tres" id="4_g5cut"]
-[ext_resource type="Resource" uid="uid://c6bgmod8bpaa8" path="res://data/burgers/6_ingredients/burger_5.tres" id="5_bbdl0"]
-[ext_resource type="Resource" uid="uid://q20hrcix7jti" path="res://data/burgers/6_ingredients/burger_10.tres" id="6_37dpu"]
+[ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/burger_1.tres" id="2_jqfna"]
+[ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/burger_3.tres" id="3_06bh3"]
+[ext_resource type="Resource" uid="uid://qcba3r6d0xe" path="res://data/burgers/burger_2.tres" id="4_l5eqf"]
+[ext_resource type="Resource" uid="uid://c6bgmod8bpaa8" path="res://data/burgers/burger_5.tres" id="5_g5cut"]
+[ext_resource type="Resource" uid="uid://q20hrcix7jti" path="res://data/burgers/burger_10.tres" id="6_bbdl0"]
 [ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/client_data.gd" id="7_nqpqf"]
 [ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/waves/wave_preset_data.gd" id="8_udkni"]
 
@@ -47,4 +47,4 @@ metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 [resource]
 script = ExtResource("8_udkni")
 clients = Array[ExtResource("7_nqpqf")]([SubResource("Resource_bccwy"), SubResource("Resource_tqmml"), SubResource("Resource_yulel"), SubResource("Resource_r3jmo"), SubResource("Resource_ys4nr"), SubResource("Resource_kfrxw"), SubResource("Resource_feg2a")])
-burgers = Array[ExtResource("1_jqfna")]([ExtResource("2_06bh3"), ExtResource("3_l5eqf"), ExtResource("4_g5cut"), ExtResource("5_bbdl0"), ExtResource("6_37dpu")])
+burgers = Array[ExtResource("1_jqfna")]([ExtResource("2_jqfna"), ExtResource("3_06bh3"), ExtResource("4_l5eqf"), ExtResource("5_g5cut"), ExtResource("6_bbdl0")])

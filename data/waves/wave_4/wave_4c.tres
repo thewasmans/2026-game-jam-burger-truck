@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="WavesPresetData" format=3 uid="uid://ch4v648cei6c5"]
+
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_7t4ef"]
+[ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/burger_1.tres" id="2_aajv1"]
+[ext_resource type="Resource" uid="uid://c6bgmod8bpaa8" path="res://data/burgers/burger_5.tres" id="3_tr6ya"]
+[ext_resource type="Resource" uid="uid://cuu7aqcr35s2l" path="res://data/burgers/burger_9.tres" id="4_8inev"]
+[ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/client_data.gd" id="5_5jhtl"]
+[ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/waves/wave_preset_data.gd" id="6_vj2ug"]
+
+[sub_resource type="Resource" id="Resource_um1dg"]
+script = ExtResource("5_5jhtl")
+time_spawn = 5.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_4neto"]
+script = ExtResource("5_5jhtl")
+time_spawn = 7.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_vowoa"]
+script = ExtResource("5_5jhtl")
+time_spawn = 9.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_br0l8"]
+script = ExtResource("5_5jhtl")
+time_spawn = 11.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_fmxna"]
+script = ExtResource("5_5jhtl")
+time_spawn = 13.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_mckyg"]
+script = ExtResource("5_5jhtl")
+time_spawn = 15.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_5ctec"]
+script = ExtResource("5_5jhtl")
+time_spawn = 17.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_mtljy"]
+script = ExtResource("5_5jhtl")
+time_spawn = 19.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[resource]
+script = ExtResource("6_vj2ug")
+clients = Array[ExtResource("5_5jhtl")]([SubResource("Resource_um1dg"), SubResource("Resource_4neto"), SubResource("Resource_vowoa"), SubResource("Resource_br0l8"), SubResource("Resource_fmxna"), SubResource("Resource_mckyg"), SubResource("Resource_5ctec"), SubResource("Resource_mtljy")])
+burgers = Array[ExtResource("1_7t4ef")]([ExtResource("2_aajv1"), ExtResource("3_tr6ya"), ExtResource("4_8inev")])
