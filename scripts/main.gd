@@ -23,6 +23,7 @@ func _ready() -> void:
 	kitchen.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
+	spawner.next_wave_started.connect(game_ui.set_wave_information)
 		
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
 	FurnituresManager.initialize(navigation, placement_zone)
@@ -55,7 +56,6 @@ func free_client(client:HungryClient):
 	client.queue_free()
 
 func add_ingredient_on_plate(ingredient: IngredientData, plate:CratePlate):
-	#if MoneyManager.buy_ingredient(ingredient):
 	plate.add_ingredient(ingredient)
 	var client = ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
 	if client:

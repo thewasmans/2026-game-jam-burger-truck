@@ -2,18 +2,24 @@
 
 [ext_resource type="Script" uid="uid://dl30bfxeahsmq" path="res://scripts/spawner.gd" id="1_devoi"]
 [ext_resource type="PackedScene" uid="uid://b6h3u02w2i8s" path="res://contents/prefabs/global/hungry_client.tscn" id="2_xl0gr"]
+[ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="3_nbol0"]
 [ext_resource type="Material" uid="uid://gxs0qgqlmm36" path="res://contents/materials/debug_mat.tres" id="4_nbol0"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_458yu"]
 
-[node name="ClientsSpawner" type="Node3D" unique_id=962042507]
+[node name="ClientsSpawner" type="Node3D" unique_id=962042507 node_paths=PackedStringArray("timer_next_wave")]
 script = ExtResource("1_devoi")
 enemy_scene = ExtResource("2_xl0gr")
 minimal_spawn_time = 10.0
 maximal_spawn_time = 15.0
 difficulty_step = 1.0
 minimum_limit = 6.0
+timer_next_wave = NodePath("TimerWaitingNextWave")
+game_data = ExtResource("3_nbol0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1531484805]
 material_override = ExtResource("4_nbol0")
 mesh = SubResource("SphereMesh_458yu")
+
+[node name="TimerWaitingNextWave" type="Timer" parent="." unique_id=1241154616]
+one_shot = true
