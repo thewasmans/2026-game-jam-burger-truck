@@ -20,7 +20,7 @@ func _ready() -> void:
 	money_label.text = "0 $"
 	MoneyManager.money_changed.connect(func(): set_money_value(MoneyManager._money))
 
-func init_buttons_furnitures(furnitures:Array[FurnitureData]):
+func init_buttons_furnitures(furnitures:Array[FurnitureGridData]):
 	for furniture in furnitures:
 		var button := Button.new()
 		button.icon = furniture.icon
