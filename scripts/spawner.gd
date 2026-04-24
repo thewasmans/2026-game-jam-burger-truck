@@ -4,6 +4,7 @@ class_name HungryClientSpawner
 
 signal client_spawned(client:HungryClient)
 signal next_wave_started(current_preset_wave:WavesPresetData, number_wave: int)
+signal waiting_next_wave()
 
 @export var enemy_scene: PackedScene
 @export var front_truck_target: MeshInstance3D 
@@ -60,7 +61,7 @@ func next_wave():
 	time = 0
 	next_wave_started.emit(_current_preset_wave, number_wave)
 	
-func spawn_client(client: ClientData) -> void:
+func spawn_client(_client: ClientData) -> void:
 	if enemy_scene == null:
 		return
 	var instance: HungryClient = enemy_scene.instantiate()
@@ -82,5 +83,5 @@ func get_random_spawn_position() -> Vector3:
 	return spawn_location.global_position
 	
 func start_wait_next_wave():
-	print("Wait next wave")
+	waiting_next_wave.emit()
 	timer_next_wave.start()

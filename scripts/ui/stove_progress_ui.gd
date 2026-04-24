@@ -1,7 +1,6 @@
 class_name ProgressCoocking
 extends ProgressBar
 
-@export var _camera: Camera3D
 var _target: Node3D = null
 var _raw = Color(0.82, 0.23, 0.18)
 var _cooked = Color(0.20, 0.09, 0.02)
