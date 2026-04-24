@@ -63,6 +63,7 @@ func set_wave_information(wave:WavesPresetData, number_wave: int):
 	
 func animate_label(label: Label):
 	var tween = create_tween()
+	label.pivot_offset = label.size / 2
 	label.scale = Vector2.ONE
 	label.modulate = Color.WHITE
 	tween.parallel().tween_property(label, "scale", Vector2(2.3, 2.3), 0.1)
