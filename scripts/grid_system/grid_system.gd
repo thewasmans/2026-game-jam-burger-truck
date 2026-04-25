@@ -36,14 +36,14 @@ var astar = AStar2D.new()
 
 var _parent_tiles: Node3D
 
+func _ready() -> void:
+	if not Engine.is_editor_hint():
+		spawn_unit_at_edge(Vector2(tile_spawn.position.x, tile_spawn.position.z))
+
 func init_grid():
 	_clear_tiles()
 	_setup_grid()
 	_connect_points()
-	if tile_spawn:
-		spawn_unit_at_edge(Vector2(tile_spawn.position.x, tile_spawn.position.z))
-	else:
-		push_warning("Can't spawn not define")
 
 func set_position_anchor(anchor: Node3D, tile: Node3D):
 	if anchor and tile:
