@@ -40,7 +40,10 @@ func init_grid():
 	_clear_tiles()
 	_setup_grid()
 	_connect_points()
-	spawn_unit_at_edge(Vector2(tile_spawn.position.x, tile_spawn.position.z))
+	if tile_spawn:
+		spawn_unit_at_edge(Vector2(tile_spawn.position.x, tile_spawn.position.z))
+	else:
+		push_warning("Can't spawn not define")
 
 func set_position_anchor(anchor: Node3D, tile: Node3D):
 	if anchor and tile:
@@ -53,8 +56,9 @@ func _is_within_bounds(pos: Vector2) -> bool:
 	return pos.x >= 0 and pos.x < grid_size.x and pos.y >= 0 and pos.y < grid_size.y
 	
 func _clear_tiles():
-	_parent_tiles.queue_free()
-	_parent_tiles = null
+	if _parent_tiles:
+		_parent_tiles.queue_free()
+		_parent_tiles = null
 
 func create_parent() -> Node3D:
 	var parent = Node3D.new()
@@ -95,6 +99,7 @@ func spawn_unit_at_edge(target: Vector2):
 	if prefab_unit:
 		var unit = prefab_unit.instantiate()
 		add_child(unit)
+		unit.owner = self
 		unit.position = Vector3(edge_pos.x * cell_size, 0, edge_pos.y * cell_size)
 		
 		var path = get_path_world(unit.position, Vector3(target.x * cell_size, 0, target.y * cell_size))
