@@ -9,9 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://d38m6vreqqyon" path="res://contents/audios/coin.11.ogg" id="9_jbj1t"]
 [ext_resource type="Script" uid="uid://cqq0jnutdxp31" path="res://scripts/camera_swticher.gd" id="10_muem4"]
 [ext_resource type="Script" uid="uid://cf4mpdjpr5wxv" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
-[ext_resource type="Script" uid="uid://12qycfola7xs" path="res://scripts/grid_system/grid_system.gd" id="15_dp3eg"]
-[ext_resource type="PackedScene" uid="uid://dxx6w6gjh1fdo" path="res://contents/prefabs/tile.tscn" id="16_0ld40"]
-[ext_resource type="PackedScene" uid="uid://b6h3u02w2i8s" path="res://contents/prefabs/global/hungry_client.tscn" id="17_gqmmt"]
+[ext_resource type="PackedScene" uid="uid://63oqeps6vaq5" path="res://contents/prefabs/grid_system/grid.tscn" id="18_dp3eg"]
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/data/furniture_data.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
 [ext_resource type="Resource" uid="uid://blfgjhw8oqugu" path="res://data/furnitures/furniture_02.tres" id="23_tel4y"]
@@ -166,6 +164,7 @@ debug_color = Color(0.68461084, 0.26608613, 0.19272071, 0.627451)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Level" unique_id=1196850353]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.742, 0.645)
+visible = false
 navigation_mesh = SubResource("NavigationMesh_5q0nq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level/NavigationRegion3D" unique_id=767979883]
@@ -179,15 +178,10 @@ fov = 70.0
 [node name="Board" parent="Level" unique_id=2101916 instance=ExtResource("30_5q0nq")]
 transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 2.6044483, 7.918475)
 
-[node name="Grid" type="Node3D" parent="Level" unique_id=1499002279]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4575396, 0.71179605, -4)
-script = ExtResource("15_dp3eg")
-prefab_til = ExtResource("16_0ld40")
-prefab_unit = ExtResource("17_gqmmt")
-
 [node name="Environments" type="Node" parent="." unique_id=382932535]
 
 [node name="Environment" parent="Environments" unique_id=1062952153 instance=ExtResource("31_tel4y")]
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environments" unique_id=574237056]
 environment = SubResource("Environment_jyhfs")
@@ -201,34 +195,42 @@ speed = 0.01
 
 [node name="Placeholder Enviro1" type="MeshInstance3D" parent="Environments" unique_id=123015361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.745, 3.64, 15.63)
+visible = false
 mesh = SubResource("BoxMesh_jyhfs")
 surface_material_override/0 = SubResource("StandardMaterial3D_trceg")
 
 [node name="Placeholder Enviro4" type="MeshInstance3D" parent="Environments" unique_id=728387048]
 transform = Transform3D(1.875, 0, 0, 0, 1.41, 0, 0, 0, 1, -9.785, 3.64, 22.535)
+visible = false
 mesh = SubResource("BoxMesh_jyhfs")
 surface_material_override/0 = SubResource("StandardMaterial3D_a8y0u")
 
 [node name="Placeholder Enviro5" type="MeshInstance3D" parent="Environments" unique_id=1259912896]
 transform = Transform3D(1.875, 0, 0, 0, 1.41, 0, 0, 0, 1, -22.455, 3.64, 14.41)
+visible = false
 mesh = SubResource("BoxMesh_jyhfs")
 surface_material_override/0 = SubResource("StandardMaterial3D_jbj1t")
 
 [node name="Placeholder Enviro2" type="MeshInstance3D" parent="Environments" unique_id=568876925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22, 1.1, 20.03)
+visible = false
 mesh = SubResource("BoxMesh_jyhfs")
 surface_material_override/0 = SubResource("StandardMaterial3D_jkv2x")
 
 [node name="Placeholder Enviro3" type="MeshInstance3D" parent="Environments" unique_id=1669315401]
 transform = Transform3D(0.635, 0, 0, 0, 1, 0, 0, 0, 0.635, 1.38, 3.58, 31.565)
+visible = false
 mesh = SubResource("BoxMesh_jyhfs")
 
 [node name="Ground" type="MeshInstance3D" parent="Environments" unique_id=1600320922]
 transform = Transform3D(100.000015, 0, 0, 0, 0.1, 0, 0, 0, 100.000015, 0, 0, 0)
+visible = false
 mesh = SubResource("BoxMesh_sugp2")
 
 [node name="GameUI" parent="." unique_id=149232493 node_paths=PackedStringArray("board") instance=ExtResource("3_jyhfs")]
 board = NodePath("../Level/Board")
+
+[node name="Grid" parent="." unique_id=621197692 instance=ExtResource("18_dp3eg")]
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
 [connection signal="child_entered_tree" from="GameUI" to="GameUI" method="_on_child_entered_tree"]

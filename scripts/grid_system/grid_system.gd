@@ -1,5 +1,4 @@
 @tool
-
 class_name GridSystem
 extends Node3D
 
@@ -33,21 +32,43 @@ extends Node3D
 		set_position_anchor(anchor_exit, tile_exit)
 
 var astar = AStar2D.new()
-
 var _parent_tiles: Node3D
 
 func _ready() -> void:
+	# Toujours générer la logique AStar au lancement, peu importe la position du node
+	_setup_astar_logic()
+	
 	if not Engine.is_editor_hint():
-		spawn_unit_at_edge(Vector2(tile_spawn.position.x, tile_spawn.position.z))
+		if tile_spawn and tile_exit:
+			var s_pos = world_to_grid(tile_spawn.global_position)
+			var e_pos = world_to_grid(tile_exit.global_position)
+			spawn_unit_at_edge(s_pos, e_pos)
 
 func init_grid():
 	_clear_tiles()
-	_setup_grid()
-	_connect_points()
+	_setup_visual_grid()
+	_setup_astar_logic()
 
 func set_position_anchor(anchor: Node3D, tile: Node3D):
-	if anchor and tile:
-			anchor.global_position = tile.global_position
+	if anchor and tile and tile.is_inside_tree() and anchor.is_inside_tree():
+		anchor.global_position = tile.global_position
+
+# --- Helpers de Conversion (Crucial pour le déplacement du GridSystem) ---
+
+func world_to_grid(world_pos: Vector3) -> Vector2:
+	# On soustrait la position du GridSystem pour obtenir la position relative (locale)
+	var local_pos = to_local(world_pos)
+	return Vector2(
+		round(local_pos.x / cell_size),
+		round(local_pos.z / cell_size)
+	)
+
+func grid_to_world(grid_pos: Vector2) -> Vector3:
+	# On calcule la position locale puis on la transforme en position globale
+	var local_pos = Vector3(grid_pos.x * cell_size, 0, grid_pos.y * cell_size)
+	return to_global(local_pos)
+
+# -----------------------------------------------------------------------
 
 func _get_unique_id(pos: Vector2) -> int:
 	return int(pos.x + (pos.y * grid_size.x))
@@ -56,33 +77,41 @@ func _is_within_bounds(pos: Vector2) -> bool:
 	return pos.x >= 0 and pos.x < grid_size.x and pos.y >= 0 and pos.y < grid_size.y
 	
 func _clear_tiles():
-	if _parent_tiles:
-		_parent_tiles.queue_free()
-		_parent_tiles = null
+	# Si node_tiles est assigné, on vide ses enfants, sinon on cherche _parent_tiles
+	var p = node_tiles if node_tiles else _parent_tiles
+	if p:
+		for child in p.get_children():
+			child.queue_free()
 
-func create_parent() -> Node3D:
-	var parent = Node3D.new()
-	parent.name = "Tiles"
-	add_child(parent)
-	parent.owner = self
-	_parent_tiles = parent
-	return parent
-
-func _setup_grid():
+func _setup_visual_grid():
 	var parent: Node3D = node_tiles
 	if parent == null:
-		parent = create_parent()
+		if _parent_tiles == null:
+			parent = Node3D.new()
+			parent.name = "Tiles"
+			add_child(parent)
+			parent.owner = self
+			_parent_tiles = parent
+		else:
+			parent = _parent_tiles
 	
 	for x in grid_size.x:
 		for y in grid_size.y:
-			var grid_pos = Vector2(x, y)
-			astar.add_point(_get_unique_id(grid_pos), grid_pos)
 			if prefab_til:
 				var tile = prefab_til.instantiate()
 				parent.add_child(tile)
 				tile.owner = self
-				tile.name = "Tile %s %s" % [str(floori(x)), str(floori(y))]
+				tile.name = "Tile_%d_%d" % [x, y]
+				# Position locale par rapport au parent (qui est enfant de GridSystem)
 				tile.position = Vector3(x * cell_size, 0, y * cell_size)
+
+func _setup_astar_logic():
+	astar.clear()
+	for x in grid_size.x:
+		for y in grid_size.y:
+			var grid_pos = Vector2(x, y)
+			astar.add_point(_get_unique_id(grid_pos), grid_pos)
+	_connect_points()
 
 func _connect_points():
 	for x in grid_size.x:
@@ -94,33 +123,34 @@ func _connect_points():
 				if _is_within_bounds(n_pos):
 					astar.connect_points(id, _get_unique_id(n_pos))
 
-func spawn_unit_at_edge(target: Vector2):
-	var edge_pos = _get_random_edge_pos()
+func spawn_unit_at_edge(grid_spawn: Vector2, grid_exit: Vector2):
 	if prefab_unit:
 		var unit = prefab_unit.instantiate()
 		add_child(unit)
 		unit.owner = self
-		unit.position = Vector3(edge_pos.x * cell_size, 0, edge_pos.y * cell_size)
+		# Positionnement via notre helper
+		unit.global_position = grid_to_world(grid_spawn)
 		
-		var path = get_path_world(unit.position, Vector3(target.x * cell_size, 0, target.y * cell_size))
+		var target_world = grid_to_world(grid_exit)
+		var path = get_path_world(unit.global_position, target_world)
 		
 		if unit.has_method("follow_path"):
 			unit.follow_path(path)
 
-func _get_random_edge_pos() -> Vector2:
-	var edge = randi() % 4
-	match edge:
-		0: return Vector2(randi() % int(grid_size.x), 0)
-		1: return Vector2(randi() % int(grid_size.x), int(grid_size.y) - 1)
-		2: return Vector2(0, randi() % int(grid_size.y))
-		_: return Vector2(int(grid_size.x) - 1, randi() % int(grid_size.y))
-
 func get_path_world(start_v3: Vector3, end_v3: Vector3) -> PackedVector3Array:
-	var s_id = _get_unique_id(Vector2(round(start_v3.x / cell_size), round(start_v3.z / cell_size)))
-	var e_id = _get_unique_id(Vector2(round(end_v3.x / cell_size), round(end_v3.z / cell_size)))
+	var s_grid = world_to_grid(start_v3)
+	var e_grid = world_to_grid(end_v3)
+	
+	var s_id = _get_unique_id(s_grid)
+	var e_id = _get_unique_id(e_grid)
+	
 	var path_v3 = PackedVector3Array()
+	
 	if astar.has_point(s_id) and astar.has_point(e_id):
 		var path_v2 = astar.get_point_path(s_id, e_id)
-		for p in path_v2:
-			path_v3.append(Vector3(p.x * cell_size, 0, p.y * cell_size))
+		for p_grid in path_v2:
+			path_v3.append(grid_to_world(p_grid))
+	else:
+		push_warning("AStar: Point de départ ou d'arrivée hors grille. IDs: ", s_id, " ", e_id)
+		
 	return path_v3
