@@ -164,7 +164,6 @@ debug_color = Color(0.68461084, 0.26608613, 0.19272071, 0.627451)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Level" unique_id=1196850353]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.742, 0.645)
-visible = false
 navigation_mesh = SubResource("NavigationMesh_5q0nq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level/NavigationRegion3D" unique_id=767979883]
@@ -181,7 +180,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.63586
 [node name="Environments" type="Node" parent="." unique_id=382932535]
 
 [node name="Environment" parent="Environments" unique_id=1062952153 instance=ExtResource("31_tel4y")]
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environments" unique_id=574237056]
 environment = SubResource("Environment_jyhfs")
@@ -195,36 +193,30 @@ speed = 0.01
 
 [node name="Placeholder Enviro1" type="MeshInstance3D" parent="Environments" unique_id=123015361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.745, 3.64, 15.63)
-visible = false
 mesh = SubResource("BoxMesh_jyhfs")
 surface_material_override/0 = SubResource("StandardMaterial3D_trceg")
 
 [node name="Placeholder Enviro4" type="MeshInstance3D" parent="Environments" unique_id=728387048]
 transform = Transform3D(1.875, 0, 0, 0, 1.41, 0, 0, 0, 1, -9.785, 3.64, 22.535)
-visible = false
 mesh = SubResource("BoxMesh_jyhfs")
 surface_material_override/0 = SubResource("StandardMaterial3D_a8y0u")
 
 [node name="Placeholder Enviro5" type="MeshInstance3D" parent="Environments" unique_id=1259912896]
 transform = Transform3D(1.875, 0, 0, 0, 1.41, 0, 0, 0, 1, -22.455, 3.64, 14.41)
-visible = false
 mesh = SubResource("BoxMesh_jyhfs")
 surface_material_override/0 = SubResource("StandardMaterial3D_jbj1t")
 
 [node name="Placeholder Enviro2" type="MeshInstance3D" parent="Environments" unique_id=568876925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22, 1.1, 20.03)
-visible = false
 mesh = SubResource("BoxMesh_jyhfs")
 surface_material_override/0 = SubResource("StandardMaterial3D_jkv2x")
 
 [node name="Placeholder Enviro3" type="MeshInstance3D" parent="Environments" unique_id=1669315401]
 transform = Transform3D(0.635, 0, 0, 0, 1, 0, 0, 0, 0.635, 1.38, 3.58, 31.565)
-visible = false
 mesh = SubResource("BoxMesh_jyhfs")
 
 [node name="Ground" type="MeshInstance3D" parent="Environments" unique_id=1600320922]
 transform = Transform3D(100.000015, 0, 0, 0, 0.1, 0, 0, 0, 100.000015, 0, 0, 0)
-visible = false
 mesh = SubResource("BoxMesh_sugp2")
 
 [node name="GameUI" parent="." unique_id=149232493 node_paths=PackedStringArray("board") instance=ExtResource("3_jyhfs")]
