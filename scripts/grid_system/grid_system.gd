@@ -35,7 +35,6 @@ var astar = AStar2D.new()
 var _parent_tiles: Node3D
 
 func _ready() -> void:
-	# Toujours générer la logique AStar au lancement, peu importe la position du node
 	_setup_astar_logic()
 	
 	if not Engine.is_editor_hint():
@@ -53,10 +52,7 @@ func set_position_anchor(anchor: Node3D, tile: Node3D):
 	if anchor and tile and tile.is_inside_tree() and anchor.is_inside_tree():
 		anchor.global_position = tile.global_position
 
-# --- Helpers de Conversion (Crucial pour le déplacement du GridSystem) ---
-
 func world_to_grid(world_pos: Vector3) -> Vector2:
-	# On soustrait la position du GridSystem pour obtenir la position relative (locale)
 	var local_pos = to_local(world_pos)
 	return Vector2(
 		round(local_pos.x / cell_size),
@@ -64,11 +60,8 @@ func world_to_grid(world_pos: Vector3) -> Vector2:
 	)
 
 func grid_to_world(grid_pos: Vector2) -> Vector3:
-	# On calcule la position locale puis on la transforme en position globale
 	var local_pos = Vector3(grid_pos.x * cell_size, 0, grid_pos.y * cell_size)
 	return to_global(local_pos)
-
-# -----------------------------------------------------------------------
 
 func _get_unique_id(pos: Vector2) -> int:
 	return int(pos.x + (pos.y * grid_size.x))
@@ -77,7 +70,6 @@ func _is_within_bounds(pos: Vector2) -> bool:
 	return pos.x >= 0 and pos.x < grid_size.x and pos.y >= 0 and pos.y < grid_size.y
 	
 func _clear_tiles():
-	# Si node_tiles est assigné, on vide ses enfants, sinon on cherche _parent_tiles
 	var p = node_tiles if node_tiles else _parent_tiles
 	if p:
 		for child in p.get_children():
@@ -102,7 +94,6 @@ func _setup_visual_grid():
 				parent.add_child(tile)
 				tile.owner = self
 				tile.name = "Tile_%d_%d" % [x, y]
-				# Position locale par rapport au parent (qui est enfant de GridSystem)
 				tile.position = Vector3(x * cell_size, 0, y * cell_size)
 
 func _setup_astar_logic():
@@ -128,7 +119,6 @@ func spawn_unit_at_edge(grid_spawn: Vector2, grid_exit: Vector2):
 		var unit = prefab_unit.instantiate()
 		add_child(unit)
 		unit.owner = self
-		# Positionnement via notre helper
 		unit.global_position = grid_to_world(grid_spawn)
 		
 		var target_world = grid_to_world(grid_exit)
