@@ -17,7 +17,6 @@ enum State { MOVING_TO_TRUCK, WAITING, LEAVING }
 @export var wait_time: Vector2 = Vector2(12, 18)
 @export var anchor_burger: Node3D
 @export var collision: CollisionShape3D
-@export var agent: NavigationAgent3D
 
 var current_state: State = State.MOVING_TO_TRUCK
 var wait_timer: Timer
