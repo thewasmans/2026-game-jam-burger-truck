@@ -223,6 +223,7 @@ mesh = SubResource("BoxMesh_sugp2")
 board = NodePath("../Level/Board")
 
 [node name="Grid" parent="." unique_id=621197692 instance=ExtResource("18_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4845076, 0.45693302, -7.392695)
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
 [connection signal="child_entered_tree" from="GameUI" to="GameUI" method="_on_child_entered_tree"]
