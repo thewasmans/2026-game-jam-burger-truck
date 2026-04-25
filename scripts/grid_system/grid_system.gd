@@ -11,7 +11,7 @@ extends Node3D
 
 @export_group("Prefabs")
 @export var prefab_til: PackedScene
-@export var prefab_unit: PackedScene
+@export var prefab_hungry_client: PackedScene
 
 @export_group("Navigation Target")
 @export var anchor_spawn: Node3D:
@@ -35,18 +35,19 @@ var astar = AStar2D.new()
 var _parent_tiles: Node3D
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	_setup_astar_logic()
-	
-	if not Engine.is_editor_hint():
-		if tile_spawn and tile_exit:
-			var s_pos = world_to_grid(tile_spawn.global_position)
-			var e_pos = world_to_grid(tile_exit.global_position)
-			spawn_unit_at_edge(s_pos, e_pos)
 
 func init_grid():
 	_clear_tiles()
 	_setup_visual_grid()
 	_setup_astar_logic()
+
+func spawn_client_at_spawn():
+	var s_pos = world_to_grid(tile_spawn.global_position)
+	var e_pos = world_to_grid(tile_exit.global_position)
+	spawn_client(s_pos, e_pos)
 
 func set_position_anchor(anchor: Node3D, tile: Node3D):
 	if anchor and tile and tile.is_inside_tree() and anchor.is_inside_tree():
@@ -114,18 +115,18 @@ func _connect_points():
 				if _is_within_bounds(n_pos):
 					astar.connect_points(id, _get_unique_id(n_pos))
 
-func spawn_unit_at_edge(grid_spawn: Vector2, grid_exit: Vector2):
-	if prefab_unit:
-		var unit = prefab_unit.instantiate()
-		add_child(unit)
-		unit.owner = self
-		unit.global_position = grid_to_world(grid_spawn)
-		
-		var target_world = grid_to_world(grid_exit)
-		var path = get_path_world(unit.global_position, target_world)
-		
-		if unit.has_method("follow_path"):
-			unit.follow_path(path)
+func spawn_client(grid_spawn: Vector2, grid_exit: Vector2) -> HungryClient:
+	var instance = prefab_hungry_client.instantiate()
+	add_child(instance)
+	instance.owner = self
+	instance.global_position = grid_to_world(grid_spawn)
+	
+	var target_world = grid_to_world(grid_exit)
+	var path = get_path_world(instance.global_position, target_world)
+	
+	if instance.has_method("follow_path"):
+		instance.follow_path(path)
+	return instance
 
 func get_path_world(start_v3: Vector3, end_v3: Vector3) -> PackedVector3Array:
 	var s_grid = world_to_grid(start_v3)

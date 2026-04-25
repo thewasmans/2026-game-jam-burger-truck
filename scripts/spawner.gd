@@ -16,6 +16,7 @@ signal waiting_next_wave()
 @export var minimum_limit: float = 5.0
 @export var timer_next_wave: Timer
 @export var game_data: GameData
+@export var grid_system: GridSystem
 
 var spawn_time := RandomNumberGenerator.new()
 var time: float
@@ -64,15 +65,10 @@ func next_wave():
 func spawn_client(_client: ClientData) -> void:
 	if enemy_scene == null:
 		return
-	var instance: HungryClient = enemy_scene.instantiate()
-	instance.agent.target_position = front_truck_target.global_position
-	instance.target_position = front_truck_target.global_position
-	instance.target_leaving = out_screen_target.global_position
+	var instance: HungryClient = grid_system.spawn_client_at_spawn()
 	
-	var spawn_position: Vector3 = get_random_spawn_position()
-	
-	get_parent().add_child(instance)
-	instance.global_transform.origin = spawn_position
+	#get_parent().add_child(instance)
+	#instance.global_transform.origin = spawn_position
 	
 	client_spawned.emit(instance)
 	_hungries_clients.append(instance)

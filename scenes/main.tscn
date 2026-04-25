@@ -136,10 +136,11 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.99
 transform = Transform3D(1, -9.196228e-09, -2.2284155e-08, 2.38769e-08, 0.50528085, 0.862955, 3.3238265e-09, -0.862955, 0.50528085, -0.07900047, 10.190782, 5.412493)
 fov = 60.0
 
-[node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target") instance=ExtResource("1_0wfyh")]
+[node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target", "grid_system") instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
 front_truck_target = NodePath("FrontTruck")
 out_screen_target = NodePath("Leaving")
+grid_system = NodePath("../../Grid")
 
 [node name="FrontTruck" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=1816251431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.103453636, 13.155243)
