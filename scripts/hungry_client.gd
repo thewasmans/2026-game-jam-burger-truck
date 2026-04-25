@@ -43,34 +43,25 @@ func _ready() -> void:
 	wait_timer.timeout.connect(_on_wait_timer_timeout)
 	add_child(wait_timer)
 	_original_scale = anchor_burger.scale
-	
-func _process(delta):
-	if current_path.size() > 0 and target_index < current_path.size():
-		var target_pos = current_path[target_index]
-		var direction = target_pos - global_position
-		
-		if direction.length() < 0.1:
-			target_index += 1
-		else:
-			global_position += direction.normalized() * speed * delta
-			# Optionnel : fait regarder l'unité vers sa cible
-			look_at(target_pos, Vector3.UP)
-	
+
 func _physics_process(delta: float) -> void:
 	if _is_leaved:
 		return 
 	match current_state:
 		State.MOVING_TO_TRUCK:
-			if agent.is_navigation_finished():
-				velocity = Vector3.ZERO
+			
+			if current_path.size() > 0 and target_index < current_path.size():
+				var target_pos = current_path[target_index]
+				var direction = target_pos - global_position
+				
+				if direction.length() < 0.1:
+					target_index += 1
+				else:
+					global_position += direction.normalized() * speed * delta
+					look_at(target_pos, Vector3.UP)
+			else:
 				current_state = State.WAITING
 				wait_timer.start()
-			else:
-				var current_agent_position: Vector3 = global_position
-				var next_path_position: Vector3 = agent.get_next_path_position()
-				
-				velocity = current_agent_position.direction_to(next_path_position) * speed
-		
 		State.WAITING:
 			collision.disabled = true
 			if value_waiting >= 0:
