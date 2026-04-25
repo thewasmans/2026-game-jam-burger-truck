@@ -44,10 +44,10 @@ func init_grid():
 	_setup_visual_grid()
 	_setup_astar_logic()
 
-func spawn_client_at_spawn():
+func spawn_client_at_spawn() -> HungryClient:
 	var s_pos = world_to_grid(tile_spawn.global_position)
 	var e_pos = world_to_grid(tile_exit.global_position)
-	spawn_client(s_pos, e_pos)
+	return spawn_client(s_pos, e_pos)
 
 func set_position_anchor(anchor: Node3D, tile: Node3D):
 	if anchor and tile and tile.is_inside_tree() and anchor.is_inside_tree():

@@ -140,7 +140,7 @@ fov = 60.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
 front_truck_target = NodePath("FrontTruck")
 out_screen_target = NodePath("Leaving")
-grid_system = NodePath("../../Grid")
+grid_system = NodePath("../Grid")
 
 [node name="FrontTruck" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=1816251431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.103453636, 13.155243)
@@ -177,6 +177,9 @@ fov = 70.0
 
 [node name="Board" parent="Level" unique_id=2101916 instance=ExtResource("30_5q0nq")]
 transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 2.6044483, 7.918475)
+
+[node name="Grid" parent="Level" unique_id=621197692 instance=ExtResource("18_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2887745, 0.21064639, -6.336212)
 
 [node name="Environments" type="Node" parent="." unique_id=382932535]
 
@@ -222,9 +225,6 @@ mesh = SubResource("BoxMesh_sugp2")
 
 [node name="GameUI" parent="." unique_id=149232493 node_paths=PackedStringArray("board") instance=ExtResource("3_jyhfs")]
 board = NodePath("../Level/Board")
-
-[node name="Grid" parent="." unique_id=621197692 instance=ExtResource("18_dp3eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4845076, 0.45693302, -7.392695)
 
 [connection signal="child_entered_tree" from="Level" to="." method="on_child_entered_tree"]
 [connection signal="child_entered_tree" from="GameUI" to="GameUI" method="_on_child_entered_tree"]

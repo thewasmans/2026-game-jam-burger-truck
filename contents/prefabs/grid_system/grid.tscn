@@ -8,7 +8,7 @@
 [node name="Grid" type="Node3D" unique_id=621197692 node_paths=PackedStringArray("anchor_spawn", "anchor_exit", "tile_spawn", "tile_exit")]
 script = ExtResource("1_a4nsl")
 prefab_til = ExtResource("2_2c1ye")
-prefab_unit = ExtResource("3_5fkju")
+prefab_hungry_client = ExtResource("3_5fkju")
 anchor_spawn = NodePath("AnchorSpawn")
 anchor_exit = NodePath("AnchorExit")
 tile_spawn = NodePath("Tiles/Tile 5 0")
@@ -16,7 +16,6 @@ tile_exit = NodePath("Tiles/Tile 5 9")
 
 [node name="AnchorSpawn" parent="." unique_id=952649832 instance=ExtResource("4_5fkju")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-debug_view = true
 
 [node name="AnchorExit" parent="." unique_id=1026353539 instance=ExtResource("4_5fkju")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 9)
