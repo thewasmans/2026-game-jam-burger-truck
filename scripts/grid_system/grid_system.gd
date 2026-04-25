@@ -1,5 +1,10 @@
+@tool
+
 class_name GridSystem
 extends Node3D
+
+@export_tool_button("Generate Grid", "Callable") var button_generate_grid = init_grid
+@export var node_tiles: Node3D
 
 @export_group("Settings")
 @export var grid_size := Vector2(10, 10)
@@ -10,31 +15,69 @@ extends Node3D
 @export var prefab_unit: PackedScene
 
 @export_group("Navigation Target")
-@export var target_grid_pos := Vector2(5, 5)
+@export var anchor_spawn: Node3D:
+	set(value):
+		anchor_spawn = value
+		set_position_anchor(anchor_spawn, tile_spawn)
+@export var anchor_exit: Node3D:
+	set(value):
+		anchor_exit = value
+		set_position_anchor(anchor_exit, tile_exit)
+@export var tile_spawn: Node3D:
+	set(value):
+		tile_spawn = value
+		set_position_anchor(anchor_spawn, tile_spawn)
+@export var tile_exit: Node3D:
+	set(value):
+		tile_exit = value
+		set_position_anchor(anchor_exit, tile_exit)
 
 var astar = AStar2D.new()
 
-func _ready():
+var _parent_tiles: Node3D
+
+func init_grid():
+	_clear_tiles()
 	_setup_grid()
 	_connect_points()
-	
-	await get_tree().create_timer(1.0).timeout
-	spawn_unit_at_edge(target_grid_pos)
+	spawn_unit_at_edge(Vector2(tile_spawn.position.x, tile_spawn.position.z))
+
+func set_position_anchor(anchor: Node3D, tile: Node3D):
+	if anchor and tile:
+			anchor.global_position = tile.global_position
 
 func _get_unique_id(pos: Vector2) -> int:
 	return int(pos.x + (pos.y * grid_size.x))
 
 func _is_within_bounds(pos: Vector2) -> bool:
 	return pos.x >= 0 and pos.x < grid_size.x and pos.y >= 0 and pos.y < grid_size.y
+	
+func _clear_tiles():
+	_parent_tiles.queue_free()
+	_parent_tiles = null
+
+func create_parent() -> Node3D:
+	var parent = Node3D.new()
+	parent.name = "Tiles"
+	add_child(parent)
+	parent.owner = self
+	_parent_tiles = parent
+	return parent
 
 func _setup_grid():
+	var parent: Node3D = node_tiles
+	if parent == null:
+		parent = create_parent()
+	
 	for x in grid_size.x:
 		for y in grid_size.y:
 			var grid_pos = Vector2(x, y)
 			astar.add_point(_get_unique_id(grid_pos), grid_pos)
 			if prefab_til:
 				var tile = prefab_til.instantiate()
-				add_child(tile)
+				parent.add_child(tile)
+				tile.owner = self
+				tile.name = "Tile %s %s" % [str(floori(x)), str(floori(y))]
 				tile.position = Vector3(x * cell_size, 0, y * cell_size)
 
 func _connect_points():
