@@ -28,6 +28,7 @@ func _ready() -> void:
 		camera_switcher.set_camera_kitchen()
 		game_ui.set_wave_information(data, number))
 	spawner.waiting_next_wave.connect(func(): camera_switcher.set_camera_furnitures())
+	spawner.client_spawned.connect(client_spawned)
 	camera_switcher.set_camera_kitchen()
 	
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
@@ -41,23 +42,22 @@ func _ready() -> void:
 func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData):
 	add_ingredient_on_plate(ingredient, crate)
 
-func on_child_entered_tree(node: Node) -> void:
-	if node is HungryClient:
-		var client: HungryClient = node as HungryClient
-		if burgers_data.size() > 0:
-			var burger_data = burgers_data.pick_random()
-			client.set_burger(burger_data)
-		client.leaving_hungry.connect(kitchen.on_enemy_leaving_hungry.bind(client))
-		client.waiting_food.connect(func():
-			kitchen.on_client_waiting_food(client)
-			check_all_burgers())
-		ClientsManager._clients.append(client)
-		client.leaved.connect(free_client.bind(client))
+func client_spawned(client: HungryClient):
+	if burgers_data.size() > 0:
+		var burger_data = burgers_data.pick_random()
+		client.set_burger(burger_data)
+	client.leaving_hungry.connect(kitchen.on_enemy_leaving_hungry.bind(client))
+	client.waiting_food.connect(func():
+		kitchen.on_client_waiting_food(client)
+		check_all_burgers())
+	ClientsManager._clients.append(client)
+	client.leaved.connect(free_client.bind(client))
 
 func start_game():
 	get_tree().paused = false
 
 func free_client(client:HungryClient):
+	spawner.remove_client(client)
 	client.queue_free()
 
 func add_ingredient_on_plate(ingredient: IngredientData, plate:CratePlate):

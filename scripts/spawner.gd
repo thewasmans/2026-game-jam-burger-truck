@@ -16,6 +16,7 @@ signal waiting_next_wave()
 @export var minimum_limit: float = 5.0
 @export var timer_next_wave: Timer
 @export var game_data: GameData
+@export var grid_system: GridSystem
 
 var spawn_time := RandomNumberGenerator.new()
 var time: float
@@ -43,12 +44,6 @@ func _process(delta: float) -> void:
 		if time >= client.time_spawn:
 			_client_waiting_to_spawn.erase(client)
 			spawn_client(client)
-	var i = 0
-	while i < _hungries_clients.size():
-		if _hungries_clients[i] == null:
-			_hungries_clients.remove_at(i)
-		else:
-			i+=1
 			
 	if _client_waiting_to_spawn.size() == 0 and _hungries_clients.size() == 0 and timer_next_wave.is_stopped():
 		start_wait_next_wave()
@@ -60,22 +55,17 @@ func next_wave():
 	_client_waiting_to_spawn = _current_preset_wave.clients.duplicate()
 	time = 0
 	next_wave_started.emit(_current_preset_wave, number_wave)
+
+func remove_client(client: HungryClient):
+	_hungries_clients.erase(client)
 	
 func spawn_client(_client: ClientData) -> void:
 	if enemy_scene == null:
 		return
-	var instance: HungryClient = enemy_scene.instantiate()
-	instance.agent.target_position = front_truck_target.global_position
-	instance.target_position = front_truck_target.global_position
-	instance.target_leaving = out_screen_target.global_position
+	var instance: HungryClient = grid_system.spawn_client_at_spawn()
 	
-	var spawn_position: Vector3 = get_random_spawn_position()
-	
-	get_parent().add_child(instance)
-	instance.global_transform.origin = spawn_position
-	
-	client_spawned.emit(instance)
 	_hungries_clients.append(instance)
+	client_spawned.emit(instance)
 
 func get_random_spawn_position() -> Vector3:
 	spawn_location.progress_ratio = randf()
