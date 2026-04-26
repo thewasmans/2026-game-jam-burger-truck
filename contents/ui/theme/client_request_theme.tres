@@ -1,0 +1,16 @@
+[gd_resource type="Theme" format=3 uid="uid://gt1ysbb6s0tt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pyba"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrody"]
+bg_color = Color(0.66931534, 0.6693154, 0.6693153, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntxot"]
+bg_color = Color(0.46129745, 0.87439346, 1.92523e-06, 1)
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_4pyba")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_rrody")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_ntxot")
