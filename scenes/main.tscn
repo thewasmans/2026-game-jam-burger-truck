@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://d38m6vreqqyon" path="res://contents/audios/coin.11.ogg" id="9_jbj1t"]
 [ext_resource type="Script" uid="uid://cqq0jnutdxp31" path="res://scripts/camera_swticher.gd" id="10_muem4"]
 [ext_resource type="Script" uid="uid://cf4mpdjpr5wxv" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://63oqeps6vaq5" path="res://contents/prefabs/grid_system/grid.tscn" id="18_dp3eg"]
 [ext_resource type="Script" uid="uid://cby3s6lg60sk5" path="res://scripts/data/furniture_data.gd" id="19_og1vs"]
 [ext_resource type="Resource" uid="uid://ceppbwd4jotj4" path="res://data/furnitures/furniture_01.tres" id="22_fv21b"]
 [ext_resource type="Resource" uid="uid://blfgjhw8oqugu" path="res://data/furnitures/furniture_02.tres" id="23_tel4y"]
@@ -135,10 +136,11 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.99
 transform = Transform3D(1, -9.196228e-09, -2.2284155e-08, 2.38769e-08, 0.50528085, 0.862955, 3.3238265e-09, -0.862955, 0.50528085, -0.07900047, 10.190782, 5.412493)
 fov = 60.0
 
-[node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target") instance=ExtResource("1_0wfyh")]
+[node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target", "grid_system") instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
 front_truck_target = NodePath("FrontTruck")
 out_screen_target = NodePath("Leaving")
+grid_system = NodePath("../Grid")
 
 [node name="FrontTruck" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=1816251431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.103453636, 13.155243)
@@ -175,6 +177,9 @@ fov = 70.0
 
 [node name="Board" parent="Level" unique_id=2101916 instance=ExtResource("30_5q0nq")]
 transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 2.6044483, 7.918475)
+
+[node name="Grid" parent="Level" unique_id=621197692 instance=ExtResource("18_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2887745, 0.21064639, -6.336212)
 
 [node name="Environments" type="Node" parent="." unique_id=382932535]
 

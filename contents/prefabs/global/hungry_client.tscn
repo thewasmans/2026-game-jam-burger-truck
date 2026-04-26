@@ -42,7 +42,7 @@ size = Vector2(0.5, 0.053)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n2o8w"]
 
-[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui", "hover_node", "anchor_burger", "collision", "agent")]
+[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui", "hover_node", "anchor_burger", "collision")]
 script = ExtResource("1_mntof")
 speed = 1.0
 client_request_ui = NodePath("SubViewport/ClientRequest")
@@ -50,7 +50,6 @@ hover_node = NodePath("Hover")
 wait_time = Vector2(18, 24)
 anchor_burger = NodePath("Anchor Burger")
 collision = NodePath("CollisionShape3D")
-agent = NodePath("NavigationAgent3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1118751600]
 transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0.824, 0)
@@ -80,12 +79,10 @@ mesh = SubResource("CylinderMesh_ntmap")
 surface_material_override/0 = SubResource("StandardMaterial3D_rtm0h")
 
 [node name="Anchor Burger" type="Node3D" parent="." unique_id=1795400529]
-transform = Transform3D(1, 0, 0, 0, 0.5238373, -0.8518184, 0, 0.8518184, 0.5238373, -0.0035933852, 1.5426348, -1.1485513)
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2083574708]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -0.004, 1.543, 1.149)
 
 [node name="Hover" type="MeshInstance3D" parent="." unique_id=771406449]
-transform = Transform3D(-1.7510003, -1.4609533e-07, -3.9229855e-07, -1.08014774e-07, 1.041624, -2.178655, 2.413231e-07, -0.59381855, -3.8216047, 0, 2.0545483, -0.27399072)
+transform = Transform3D(1.751, 1.9800858e-07, 7.2639375e-07, -1.0801477e-07, 1.0416238, -2.1786547, -3.9440033e-07, 0.5938185, 3.8216045, 0, 2.055, 0.274)
 mesh = SubResource("PlaneMesh_i5gv5")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=769199299]
@@ -94,9 +91,9 @@ size = Vector2i(1152, 96)
 [node name="ClientRequest" parent="SubViewport" unique_id=853921984 instance=ExtResource("2_tnfmv")]
 
 [node name="Area3D" type="Area3D" parent="." unique_id=14976632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.572, 1.008)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2046416435]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5719783, -1.0080669)
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=2046416435]
 shape = SubResource("BoxShape3D_n2o8w")
 
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
