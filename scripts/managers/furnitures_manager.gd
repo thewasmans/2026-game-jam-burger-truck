@@ -1,6 +1,6 @@
 extends Node
 
-var _current_furniture:FurnitureData
+var _current_furniture:FurnitureGridData
 var _current_furniture_instance: Node3D
 var _navigation:NavigationRegion3D
 var _placement_zone:Area3D
@@ -23,13 +23,13 @@ func _process(_delta: float) -> void:
 			if intersection != null:
 				_current_furniture_instance.global_position = intersection
 
-func furniture_selected(furniture:FurnitureData):
+func furniture_selected(furniture:FurnitureGridData):
 	if MoneyManager.buy_furniture(furniture):
 		_current_furniture = furniture
 	if is_instance_valid(_current_furniture_instance):
 		_current_furniture_instance.queue_free()
 	if _current_furniture != null:
-		_current_furniture_instance = _current_furniture.model_3d.instantiate()
+		_current_furniture_instance = _current_furniture.prefab.instantiate()
 		add_child(_current_furniture_instance)
 
 func _unhandled_input(event: InputEvent) -> void:

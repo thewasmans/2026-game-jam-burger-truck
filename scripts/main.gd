@@ -6,7 +6,7 @@ class_name Main
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
 @export var default_amount_money: float = 10.0
-@export var furnitures:Array[FurnitureData]
+@export var furnitures:Array[FurnitureGridData]
 @export var navigation:NavigationRegion3D
 @export var placement_zone: Area3D
 @export var game_data:GameData
