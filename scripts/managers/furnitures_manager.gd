@@ -45,7 +45,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_instance_valid(_current_furniture_instance):
 		if event is InputEventMouseButton and event.pressed:
 			if event.button_index == MOUSE_BUTTON_LEFT:
-				if _grid.add_obstacles(_current_furniture_instance.blocks_to_2D_positions()):
+				if _grid.add_obstacles(_current_furniture_instance.blocks_to_2D_positions(_tile_position)):
 					_current_furniture_instance.reparent(_grid)
 					_current_furniture = null
 					_current_furniture_instance = null
