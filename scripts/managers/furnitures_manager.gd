@@ -1,7 +1,7 @@
 extends Node3D
 
 var _current_furniture:FurnitureGridData
-var _current_furniture_instance: Node3D
+var _current_furniture_instance: Furniture3D
 var _grid: GridSystem
 var _tile_position: Vector2
 
@@ -45,7 +45,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_instance_valid(_current_furniture_instance):
 		if event is InputEventMouseButton and event.pressed:
 			if event.button_index == MOUSE_BUTTON_LEFT:
-				if _grid.add_obstacle(_tile_position):
+				if _grid.add_obstacles(_current_furniture_instance.blocks_to_2D_positions()):
 					_current_furniture_instance.reparent(_grid)
 					_current_furniture = null
 					_current_furniture_instance = null

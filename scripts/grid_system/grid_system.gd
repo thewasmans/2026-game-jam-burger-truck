@@ -146,6 +146,12 @@ func get_path_world(start_v3: Vector3, end_v3: Vector3) -> PackedVector3Array:
 		push_warning("AStar: Point de départ ou d'arrivée hors grille. IDs: ", s_id, " ", e_id)
 		
 	return path_v3
+	
+func add_obstacles(grid_positions: Array[Vector2]) -> bool:
+	for pos in grid_positions:
+		if not add_obstacle(pos):
+			return false
+	return true
 
 func add_obstacle(grid_pos: Vector2) -> bool:
 	if grid_pos == world_to_grid(tile_spawn.global_position): return false
