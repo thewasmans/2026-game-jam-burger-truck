@@ -9,3 +9,4 @@ class_name IngredientData
 @export var model_3d: PackedScene
 @export var price: float
 @export var provide_ingredient:IngredientData
+@export var cut_vfx: PackedScene
