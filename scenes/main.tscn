@@ -41,16 +41,6 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5q0nq"]
-size = Vector3(19.145, 1, 11.551)
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_5q0nq"]
-vertices = PackedVector3Array(-13.985, 1, -10.894643, -13.985, 1, 3.1053572, 14.015, 1, 3.1053572, 14.015, 1, -10.894643)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-
-[sub_resource type="BoxMesh" id="BoxMesh_5q0nq"]
-size = Vector3(28.97, 1, 15.01)
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -84,15 +74,13 @@ albedo_color = Color(0.8623366, 0.6799608, 0.50337213, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sugp2"]
 
-[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "navigation", "placement_zone", "board_ui", "camera_switcher")]
+[node name="Main" type="Node3D" unique_id=113603498 node_paths=PackedStringArray("kitchen", "game_ui", "spawner", "board_ui", "camera_switcher")]
 script = ExtResource("4_abcde")
 kitchen = NodePath("Level/Kitchen")
 game_ui = NodePath("GameUI")
 spawner = NodePath("Level/HungryClientSpawner")
 default_amount_money = 100.0
 furnitures = Array[ExtResource("2_og1vs")]([ExtResource("3_2wyq8"), ExtResource("4_vxglm"), ExtResource("5_2f3dj"), ExtResource("6_yq6so"), ExtResource("7_fv21b"), ExtResource("8_tel4y"), ExtResource("9_qkpxi"), ExtResource("10_5q0nq"), ExtResource("11_dgi5k"), ExtResource("12_j8jky"), ExtResource("13_kmb1v"), ExtResource("14_fuf3a"), ExtResource("15_pibwh")])
-navigation = NodePath("Level/NavigationRegion3D")
-placement_zone = NodePath("Level/AreaFurnitures")
 game_data = ExtResource("7_a8y0u")
 board_ui = NodePath("Level/Board")
 sounds = Dictionary[String, AudioStream]({
@@ -164,21 +152,6 @@ curve = SubResource("Curve3D_trceg")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="Level/HungryClientSpawner/SpawnPath" unique_id=251475332]
 transform = Transform3D(-4.371129e-08, 0, -0.99999774, 0, 1, 0, 0.99999774, 0, -4.371129e-08, -9.44921, -0.103453636, -0.015566826)
-
-[node name="AreaFurnitures" type="Area3D" parent="Level" unique_id=1980600924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29597855, 0.15556955, -4.6604285)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/AreaFurnitures" unique_id=2059791750]
-shape = SubResource("BoxShape3D_5q0nq")
-debug_color = Color(0.68461084, 0.26608613, 0.19272071, 0.627451)
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Level" unique_id=1196850353]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.742, 0.645)
-navigation_mesh = SubResource("NavigationMesh_5q0nq")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/NavigationRegion3D" unique_id=767979883]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.8896427)
-mesh = SubResource("BoxMesh_5q0nq")
 
 [node name="Board" parent="Level" unique_id=2101916 instance=ExtResource("30_5q0nq")]
 transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 2.6044483, 7.918475)

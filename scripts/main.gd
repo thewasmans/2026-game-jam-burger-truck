@@ -7,8 +7,6 @@ class_name Main
 @export var spawner: HungryClientSpawner
 @export var default_amount_money: float = 10.0
 @export var furnitures:Array[FurnitureGridData]
-@export var navigation:NavigationRegion3D
-@export var placement_zone: Area3D
 @export var game_data:GameData
 @export var board_ui:BoardUI
 @export var sounds: Dictionary[String, AudioStream]
@@ -35,7 +33,7 @@ func _ready() -> void:
 	camera_switcher.set_camera_kitchen()
 	
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
-	FurnituresManager.initialize(navigation, placement_zone)
+	FurnituresManager.initialize()
 	ClientsManager.initialize()
 	AudioManager.initialize(sounds, stream_player)
 	game_ui.button_start_clicked.connect(start_game)

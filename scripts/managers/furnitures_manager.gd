@@ -2,12 +2,8 @@ extends Node3D
 
 var _current_furniture:FurnitureGridData
 var _current_furniture_instance: Node3D
-var _navigation:NavigationRegion3D
-var _placement_zone:Area3D
 
-func initialize(navigation:NavigationRegion3D, placement_zone:Area3D):
-	_navigation = navigation
-	_placement_zone = placement_zone
+func initialize():
 	_current_furniture = null
 	_current_furniture_instance = null
 
@@ -26,9 +22,12 @@ func _process(_delta: float) -> void:
 		
 		if result:
 			var tile := result.collider as Node
-			if tile and tile.get_meta("tile"):
-				var tile_3D := tile as Node3D
-				_current_furniture_instance.global_position = tile_3D.global_position
+			if tile:
+				if tile.has_meta("tile"):
+					var meta = tile.get_meta("tile")
+					var tile_3D := tile as Node3D
+					_current_furniture_instance.global_position = tile_3D.global_position
+					
 
 func furniture_selected(furniture:FurnitureGridData):
 	if MoneyManager.buy_furniture(furniture):
@@ -38,7 +37,7 @@ func furniture_selected(furniture:FurnitureGridData):
 	if _current_furniture != null:
 		_current_furniture_instance = _current_furniture.prefab.instantiate()
 		add_child(_current_furniture_instance)
-
+"""
 func _unhandled_input(event: InputEvent) -> void:
 	if is_instance_valid(_current_furniture_instance):
 		if event is InputEventMouseButton and event.pressed:
@@ -65,3 +64,4 @@ func is_inside_placement_zone(point: Vector3) -> bool:
 		abs(local_point.y) <= half_size.y and
 		abs(local_point.z) <= half_size.z
 	)
+"""
