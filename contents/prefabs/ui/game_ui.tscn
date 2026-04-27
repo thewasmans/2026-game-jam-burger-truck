@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b8ox1k3noecv8" path="res://scripts/ui/game_ui.gd" id="1_84on6"]
 [ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/theme/in_game_theme.tres" id="1_ajtxk"]
 [ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/theme/ingredients_theme.tres" id="3_uuvj8"]
-[ext_resource type="Texture2D" uid="uid://b1j3xbjfoaxvh" path="res://contents/ui/splash_screen_explain.png" id="5_77pjo"]
+[ext_resource type="Texture2D" uid="uid://b0nlh5j5f5gi0" path="res://contents/ui/start_screen.png" id="5_77pjo"]
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 [ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
 
@@ -41,7 +41,7 @@ offset_bottom = -37.140015
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
-text = "XXX CLIENTS WILL COMING"
+text = "XXX CLIENTS ARE INCOMING"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -79,15 +79,10 @@ grow_vertical = 2
 
 [node name="SplashScreenExplain" type="TextureRect" parent="StartMenu" unique_id=1526959378]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 216.0
-offset_top = 167.0
-offset_right = -216.0
-offset_bottom = -167.0
+offset_bottom = 496.0
 grow_horizontal = 2
-grow_vertical = 2
 texture = ExtResource("5_77pjo")
 expand_mode = 2
 stretch_mode = 5
