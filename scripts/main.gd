@@ -5,6 +5,7 @@ class_name Main
 @export var kitchen: Kitchen
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
+@export var grid: GridSystem
 @export var default_amount_money: float = 10.0
 @export var furnitures:Array[FurnitureGridData]
 @export var game_data:GameData
@@ -33,7 +34,7 @@ func _ready() -> void:
 	camera_switcher.set_camera_kitchen()
 	
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
-	FurnituresManager.initialize()
+	FurnituresManager.initialize(grid)
 	ClientsManager.initialize()
 	AudioManager.initialize(sounds, stream_player)
 	game_ui.button_start_clicked.connect(start_game)

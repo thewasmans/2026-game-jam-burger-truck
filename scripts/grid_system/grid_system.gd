@@ -146,3 +146,16 @@ func get_path_world(start_v3: Vector3, end_v3: Vector3) -> PackedVector3Array:
 		push_warning("AStar: Point de départ ou d'arrivée hors grille. IDs: ", s_id, " ", e_id)
 		
 	return path_v3
+
+func add_obstacle(grid_pos: Vector2) -> bool:
+	if grid_pos == world_to_grid(tile_spawn.global_position): return false
+	if grid_pos == world_to_grid(tile_exit.global_position): return false
+	if _is_within_bounds(grid_pos):
+		var id = _get_unique_id(grid_pos)
+		if astar.is_point_disabled(id):
+			return false
+		astar.set_point_disabled(id, true)
+		return true
+	else:
+		push_warning("Tentative d'ajouter un obstacle hors limites: ", grid_pos)
+	return false
