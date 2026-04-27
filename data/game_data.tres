@@ -39,8 +39,8 @@
 
 [resource]
 script = ExtResource("3_k2o1c")
-furnitures = Array[ExtResource("15_pg0xh")]([ExtResource("16_sudy3"), ExtResource("17_d2i17"), ExtResource("18_wjy3c"), ExtResource("19_o0qo7"), ExtResource("20_hxihq"), ExtResource("21_wmfrq"), ExtResource("22_x34ux"), ExtResource("23_42erl"), ExtResource("24_0wlxu"), ExtResource("25_h7ofl"), ExtResource("26_8ri8c"), ExtResource("27_qqbc6"), ExtResource("28_o8amu")])
 burgers_data = Array[ExtResource("1_vllua")]([ExtResource("2_d15be"), ExtResource("3_c7j1l"), ExtResource("4_ux8ld"), ExtResource("5_l84in"), ExtResource("6_iwpjk"), ExtResource("7_e6v3s"), ExtResource("8_53n6h"), ExtResource("9_jxnqk"), ExtResource("10_b1qmr"), ExtResource("11_r4uws"), ExtResource("12_4ls4r"), ExtResource("13_xbtbc")])
+furnitures = Array[ExtResource("15_pg0xh")]([ExtResource("16_sudy3"), ExtResource("17_d2i17"), ExtResource("18_wjy3c"), ExtResource("19_o0qo7"), ExtResource("20_hxihq"), ExtResource("21_wmfrq"), ExtResource("22_x34ux"), ExtResource("23_42erl"), ExtResource("24_0wlxu"), ExtResource("25_h7ofl"), ExtResource("26_8ri8c"), ExtResource("27_qqbc6"), ExtResource("28_o8amu")])
 waves = Array[ExtResource("17_l84in")]([ExtResource("18_jxnqk"), ExtResource("19_b1qmr"), ExtResource("20_r4uws"), ExtResource("21_4ls4r"), ExtResource("22_xbtbc")])
 default_client = ExtResource("14_ux8ld")
 metadata/_custom_type_script = "uid://c30h6fapr0wgf"
