@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bv28dd7s476so"]
+
+[sub_resource type="Gradient" id="Gradient_0k2uf"]
+offsets = PackedFloat32Array(0, 0.48165137, 1)
+colors = PackedColorArray(1.8638881, 1.1934114, 3.080368e-06, 1, 2.454227, 1.3722818, 0.65409386, 1, 2.454227, 0.7566922, 0.2996635, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6iy8j"]
+gradient = SubResource("Gradient_0k2uf")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_yvdsu"]
+_data = [Vector2(0, 0.8621533), 0.0, 0.0, 0, 0, Vector2(0.95081955, 0), -2.6730356, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_meqbe"]
+curve = SubResource("Curve_yvdsu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m2pt1"]
+lifetime_randomness = 0.25
+emission_shape_offset = Vector3(0.2, 0, 0)
+emission_shape_scale = Vector3(0.625, 1, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 140.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, -2, 0)
+linear_accel_min = -4.0000024
+linear_accel_max = -2.0000021
+scale_min = 0.25
+color_initial_ramp = SubResource("GradientTexture1D_6iy8j")
+emission_curve = SubResource("CurveTexture_meqbe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2pt1"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_0k2uf"]
+material = SubResource("StandardMaterial3D_m2pt1")
+radius = 0.07
+height = 0.235
+radial_segments = 4
+rings = 1
+
+[node name="Sharpening" type="Node3D" unique_id=1687323319]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1406499514]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0, 0, 0)
+amount = 15
+lifetime = 0.5
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_m2pt1")
+draw_pass_1 = SubResource("SphereMesh_0k2uf")
