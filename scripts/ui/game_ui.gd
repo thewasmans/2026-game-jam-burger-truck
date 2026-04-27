@@ -73,5 +73,4 @@ func animate_label(label: Label):
 	tween.parallel().tween_property(label, "modulate", Color.WHITE, 0.15)
 
 func set_visible_furnitures_menu(visible: bool):
-	return
 	container_menu.visible = visible
