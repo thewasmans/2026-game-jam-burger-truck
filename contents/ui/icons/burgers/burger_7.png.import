@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgjc1p6t2f3d1"
-path="res://.godot/imported/burgers_.png-c34bbe584e4361c915241e5761f08b85.ctex"
+path="res://.godot/imported/burger_7.png-f65faf8b70a56a688cc43c0903d0d67b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://contents/ui/icons/burgers/burgers_.png"
-dest_files=["res://.godot/imported/burgers_.png-c34bbe584e4361c915241e5761f08b85.ctex"]
+source_file="res://contents/ui/icons/burgers/burger_7.png"
+dest_files=["res://.godot/imported/burger_7.png-f65faf8b70a56a688cc43c0903d0d67b.ctex"]
 
 [params]
 
