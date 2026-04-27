@@ -108,7 +108,7 @@ transform = Transform3D(-1, 8.463816e-08, -2.1888908e-08, 1.7877618e-08, 0.44307
 fov = 60.0
 script = ExtResource("10_muem4")
 camera_kitchen = NodePath("../../Level/Kitchen/CameraKitchen")
-camera_furnitures = NodePath("../../Level/NavigationRegion3D/CameraGrid")
+camera_furnitures = NodePath("../../Level/Grid/CameraGrid")
 
 [node name="Level" type="Node" parent="." unique_id=751625337]
 
@@ -180,15 +180,15 @@ navigation_mesh = SubResource("NavigationMesh_5q0nq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.8896427)
 mesh = SubResource("BoxMesh_5q0nq")
 
-[node name="CameraGrid" type="Camera3D" parent="Level/NavigationRegion3D" unique_id=208566722]
-transform = Transform3D(-1, -8.7422784e-08, -1.7763568e-15, -2.310678e-08, 0.26431075, 0.9644376, -8.431381e-08, 0.9644376, -0.26431075, 0, 14.976709, -9.983158)
-fov = 70.0
-
 [node name="Board" parent="Level" unique_id=2101916 instance=ExtResource("30_5q0nq")]
 transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 2.6044483, 7.918475)
 
 [node name="Grid" parent="Level" unique_id=621197692 instance=ExtResource("18_dp3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2887745, 0.21064639, -6.336212)
+
+[node name="CameraGrid" type="Camera3D" parent="Level/Grid" unique_id=208566722]
+transform = Transform3D(-1, -8.7422784e-08, -1.7763568e-15, -2.310678e-08, 0.26431075, 0.9644376, -8.431381e-08, 0.9644376, -0.26431075, 4.2887745, 14.024063, -3.0019455)
+fov = 70.0
 
 [node name="Environments" type="Node" parent="." unique_id=382932535]
 
