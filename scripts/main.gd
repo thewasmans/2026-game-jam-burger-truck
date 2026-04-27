@@ -5,10 +5,9 @@ class_name Main
 @export var kitchen: Kitchen
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
+@export var grid: GridSystem
 @export var default_amount_money: float = 10.0
 @export var furnitures:Array[FurnitureGridData]
-@export var navigation:NavigationRegion3D
-@export var placement_zone: Area3D
 @export var game_data:GameData
 @export var board_ui:BoardUI
 @export var sounds: Dictionary[String, AudioStream]
@@ -25,14 +24,17 @@ func _ready() -> void:
 	game_ui.init_buttons_furnitures(furnitures)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
 	spawner.next_wave_started.connect(func(data, number):
+		game_ui.set_visible_furnitures_menu(false)
 		camera_switcher.set_camera_kitchen()
 		game_ui.set_wave_information(data, number))
-	spawner.waiting_next_wave.connect(func(): camera_switcher.set_camera_furnitures())
+	spawner.waiting_next_wave.connect(func():
+		camera_switcher.set_camera_furnitures()
+		game_ui.set_visible_furnitures_menu(true))
 	spawner.client_spawned.connect(client_spawned)
 	camera_switcher.set_camera_kitchen()
 	
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
-	FurnituresManager.initialize(navigation, placement_zone)
+	FurnituresManager.initialize(grid)
 	ClientsManager.initialize()
 	AudioManager.initialize(sounds, stream_player)
 	game_ui.button_start_clicked.connect(start_game)
