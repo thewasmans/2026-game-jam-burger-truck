@@ -19,6 +19,7 @@ var ingredients_buttons:Array[Button]
 func _ready() -> void:
 	money_label.text = "0 $"
 	MoneyManager.money_changed.connect(func(): set_money_value(MoneyManager._money))
+	set_visible_furnitures_menu(false)
 
 func init_buttons_furnitures(furnitures:Array[FurnitureGridData]):
 	for furniture in furnitures:
@@ -70,3 +71,7 @@ func animate_label(label: Label):
 	tween.parallel().tween_property(label, "modulate", Color.YELLOW, 0.1)
 	tween.tween_property(label, "scale", Vector2.ONE, 0.15)
 	tween.parallel().tween_property(label, "modulate", Color.WHITE, 0.15)
+
+func set_visible_furnitures_menu(visible: bool):
+	print("mdr")
+	container_menu.visible = visible

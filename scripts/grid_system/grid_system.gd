@@ -96,6 +96,7 @@ func _setup_visual_grid():
 				tile.owner = self
 				tile.name = "Tile_%d_%d" % [x, y]
 				tile.position = Vector3(x * cell_size, 0, y * cell_size)
+				tile.set_meta("tile", tile.position)
 
 func _setup_astar_logic():
 	astar.clear()
@@ -145,3 +146,22 @@ func get_path_world(start_v3: Vector3, end_v3: Vector3) -> PackedVector3Array:
 		push_warning("AStar: Point de départ ou d'arrivée hors grille. IDs: ", s_id, " ", e_id)
 		
 	return path_v3
+	
+func add_obstacles(grid_positions: Array[Vector2]) -> bool:
+	for pos in grid_positions:
+		if not add_obstacle(pos):
+			return false
+	return true
+
+func add_obstacle(grid_pos: Vector2) -> bool:
+	if grid_pos == world_to_grid(tile_spawn.global_position): return false
+	if grid_pos == world_to_grid(tile_exit.global_position): return false
+	if _is_within_bounds(grid_pos):
+		var id = _get_unique_id(grid_pos)
+		if astar.is_point_disabled(id):
+			return false
+		astar.set_point_disabled(id, true)
+		return true
+	else:
+		push_warning("Tentative d'ajouter un obstacle hors limites: ", grid_pos)
+	return false
