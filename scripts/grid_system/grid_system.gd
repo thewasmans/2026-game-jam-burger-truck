@@ -96,6 +96,7 @@ func _setup_visual_grid():
 				tile.owner = self
 				tile.name = "Tile_%d_%d" % [x, y]
 				tile.position = Vector3(x * cell_size, 0, y * cell_size)
+				tile.set_meta("tile", tile.position)
 
 func _setup_astar_logic():
 	astar.clear()
