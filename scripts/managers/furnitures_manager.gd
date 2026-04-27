@@ -4,10 +4,13 @@ var _current_furniture:FurnitureGridData
 var _current_furniture_instance: Furniture3D
 var _grid: GridSystem
 var _tile_position: Vector2
+var _currents_furnitures_availbles: Array[FurnitureData]
+var _furnitures: Array[FurnitureGridData]
 
-func initialize(grid: GridSystem):
+func initialize(grid: GridSystem, game_data: GameData):
 	_current_furniture = null
 	_current_furniture_instance = null
+	_furnitures = game_data.furnitures
 	_grid = grid
 
 func _process(_delta: float) -> void:
