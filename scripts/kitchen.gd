@@ -94,6 +94,7 @@ func _on_crate_tool_selected(crate_tool: CrateTool):
 	else:
 		if crate_tool and crate_tool.ingredient_transformed:
 			_current_ingredient = crate_tool._ingredient
+			AudioManager.stop_sfx("sfx-overcooking-steak-loop")
 	
 func assign_clients_to_plates() -> void:
 	for anchor: Node3D in anchor_plates_clients:
