@@ -21,7 +21,9 @@ func _ready() -> void:
 	MoneyManager.money_changed.connect(func(): set_money_value(MoneyManager._money))
 	set_visible_furnitures_menu(false)
 
-func init_buttons_furnitures(furnitures:Array[FurnitureGridData]):
+func set_buttons_furnitures(furnitures:Array[FurnitureGridData]):
+	for child in container_furnitures.get_children():
+		child.queue_free()
 	for furniture in furnitures:
 		var button := Button.new()
 		button.icon = furniture.icon

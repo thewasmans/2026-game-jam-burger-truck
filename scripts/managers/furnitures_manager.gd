@@ -4,11 +4,16 @@ var _current_furniture:FurnitureGridData
 var _current_furniture_instance: Furniture3D
 var _grid: GridSystem
 var _tile_position: Vector2
+var _currents_furnitures_availbles: Array[FurnitureData]
+var _furnitures: Array[FurnitureGridData]
+var _game_data: GameData
 
-func initialize(grid: GridSystem):
+func initialize(grid: GridSystem, game_data: GameData):
 	_current_furniture = null
 	_current_furniture_instance = null
+	_furnitures = game_data.furnitures
 	_grid = grid
+	_game_data = game_data
 
 func _process(_delta: float) -> void:
 	if _current_furniture_instance:
@@ -31,16 +36,7 @@ func _process(_delta: float) -> void:
 					var meta_data := tile_3D.get_meta("tile") as Vector3
 					_tile_position = Vector2(meta_data.x, meta_data.z)
 					_current_furniture_instance.global_position = tile_3D.global_position
-
-func furniture_selected(furniture:FurnitureGridData):
-	if MoneyManager.buy_furniture(furniture):
-		_current_furniture = furniture
-	if is_instance_valid(_current_furniture_instance):
-		_current_furniture_instance.queue_free()
-	if _current_furniture != null:
-		_current_furniture_instance = _current_furniture.prefab.instantiate()
-		add_child(_current_furniture_instance)
-
+					
 func _unhandled_input(event: InputEvent) -> void:
 	if is_instance_valid(_current_furniture_instance):
 		if event is InputEventMouseButton and event.pressed:
@@ -53,3 +49,18 @@ func _unhandled_input(event: InputEvent) -> void:
 				_current_furniture_instance.queue_free()
 				_current_furniture = null
 				_current_furniture_instance = null
+				
+func furniture_selected(furniture:FurnitureGridData):
+	if MoneyManager.buy_furniture(furniture):
+		_current_furniture = furniture
+	if is_instance_valid(_current_furniture_instance):
+		_current_furniture_instance.queue_free()
+	if _current_furniture != null:
+		_current_furniture_instance = _current_furniture.prefab.instantiate()
+		add_child(_current_furniture_instance)
+
+func shuffle_selection_furnitures() -> Array[FurnitureGridData]:
+	var furnitures: Array[FurnitureGridData] = []
+	for elt in _game_data.furnitures_selection:
+		furnitures.append(_furnitures.pick_random())
+	return furnitures
