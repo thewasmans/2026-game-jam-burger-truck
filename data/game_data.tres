@@ -16,16 +16,31 @@
 [ext_resource type="Resource" uid="uid://bhce871haki3c" path="res://data/burgers/burger_12.tres" id="12_4ls4r"]
 [ext_resource type="Resource" uid="uid://bqaj644qt5row" path="res://data/burgers/burger_14.tres" id="13_xbtbc"]
 [ext_resource type="Resource" uid="uid://c6f4tcuwmdhuu" path="res://data/client/client_default.tres" id="14_ux8ld"]
+[ext_resource type="Script" uid="uid://jtqj8ushvihc" path="res://scripts/data/furniture_grid_data.gd" id="15_pg0xh"]
+[ext_resource type="Resource" uid="uid://dhpk3pd48dae5" path="res://data/furnitures_grid/furniture_1.tres" id="16_sudy3"]
+[ext_resource type="Resource" uid="uid://cdo6o2kkvvt50" path="res://data/furnitures_grid/furniture_2a_01.tres" id="17_d2i17"]
 [ext_resource type="Script" uid="uid://6v6hhr42hf61" path="res://scripts/data/waves/wave_data.gd" id="17_l84in"]
 [ext_resource type="Resource" uid="uid://148t4g3raup6" path="res://data/waves/wave_1/wave_1_data.tres" id="18_jxnqk"]
+[ext_resource type="Resource" uid="uid://npldh5ww1six" path="res://data/furnitures_grid/furniture_2a_02.tres" id="18_wjy3c"]
 [ext_resource type="Resource" uid="uid://d1m2xsinkt7np" path="res://data/waves/wave_2/wave_2_data.tres" id="19_b1qmr"]
+[ext_resource type="Resource" uid="uid://v6bt1y44ci76" path="res://data/furnitures_grid/furniture_2b_01.tres" id="19_o0qo7"]
+[ext_resource type="Resource" uid="uid://cs0edr34kbmrg" path="res://data/furnitures_grid/furniture_2b_02.tres" id="20_hxihq"]
 [ext_resource type="Resource" uid="uid://dddmdrdyt2eq3" path="res://data/waves/wave_3/wave_3_data.tres" id="20_r4uws"]
 [ext_resource type="Resource" uid="uid://dg6u1w0ffajee" path="res://data/waves/wave_4/wave_4_data.tres" id="21_4ls4r"]
+[ext_resource type="Resource" uid="uid://bymkrkmnxkvkd" path="res://data/furnitures_grid/furniture_3a_01.tres" id="21_wmfrq"]
+[ext_resource type="Resource" uid="uid://1hasjopw81pd" path="res://data/furnitures_grid/furniture_3a_02.tres" id="22_x34ux"]
 [ext_resource type="Resource" uid="uid://bi6xb4ek6l7ra" path="res://data/waves/wave_5/wave_5_data.tres" id="22_xbtbc"]
+[ext_resource type="Resource" uid="uid://rb3s4pvntjb6" path="res://data/furnitures_grid/furniture_3b_01.tres" id="23_42erl"]
+[ext_resource type="Resource" uid="uid://8pnkjr7ywa6w" path="res://data/furnitures_grid/furniture_3b_02.tres" id="24_0wlxu"]
+[ext_resource type="Resource" uid="uid://cch7pl81q0liw" path="res://data/furnitures_grid/furniture_3b_03.tres" id="25_h7ofl"]
+[ext_resource type="Resource" uid="uid://dy5a1l7cf3i0j" path="res://data/furnitures_grid/furniture_3b_04.tres" id="26_8ri8c"]
+[ext_resource type="Resource" uid="uid://dhw83oj0admw6" path="res://data/furnitures_grid/furniture_3c_01.tres" id="27_qqbc6"]
+[ext_resource type="Resource" uid="uid://dkd86w2y1atu1" path="res://data/furnitures_grid/furniture_3c_02.tres" id="28_o8amu"]
 
 [resource]
 script = ExtResource("3_k2o1c")
 burgers_data = Array[ExtResource("1_vllua")]([ExtResource("2_d15be"), ExtResource("3_c7j1l"), ExtResource("4_ux8ld"), ExtResource("5_l84in"), ExtResource("6_iwpjk"), ExtResource("7_e6v3s"), ExtResource("8_53n6h"), ExtResource("9_jxnqk"), ExtResource("10_b1qmr"), ExtResource("11_r4uws"), ExtResource("12_4ls4r"), ExtResource("13_xbtbc")])
+furnitures = Array[ExtResource("15_pg0xh")]([ExtResource("16_sudy3"), ExtResource("17_d2i17"), ExtResource("18_wjy3c"), ExtResource("19_o0qo7"), ExtResource("20_hxihq"), ExtResource("21_wmfrq"), ExtResource("22_x34ux"), ExtResource("23_42erl"), ExtResource("24_0wlxu"), ExtResource("25_h7ofl"), ExtResource("26_8ri8c"), ExtResource("27_qqbc6"), ExtResource("28_o8amu")])
 waves = Array[ExtResource("17_l84in")]([ExtResource("18_jxnqk"), ExtResource("19_b1qmr"), ExtResource("20_r4uws"), ExtResource("21_4ls4r"), ExtResource("22_xbtbc")])
 default_client = ExtResource("14_ux8ld")
 metadata/_custom_type_script = "uid://c30h6fapr0wgf"
