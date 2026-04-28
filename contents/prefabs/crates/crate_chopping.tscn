@@ -4,11 +4,25 @@
 [ext_resource type="PackedScene" uid="uid://82egtjxef1ia" path="res://contents/meshes/kitchen/chopping_board.glb" id="2_dbi4x"]
 [ext_resource type="Script" uid="uid://ckwlkbdclh0fo" path="res://scripts/crates/crate_chopping.gd" id="2_m0355"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_rx8vl"]
+[ext_resource type="Resource" uid="uid://tj8r6mbo6yvd" path="res://data/ingredients/raw_onion.tres" id="3_1bwjw"]
 [ext_resource type="PackedScene" uid="uid://bl2dpplmoqxld" path="res://contents/meshes/kitchen/counter.glb" id="3_rx8vl"]
+[ext_resource type="PackedScene" uid="uid://bn8j1imft8x20" path="res://contents/vfx/chopping_ingredients/chopping_onion.tscn" id="4_0vcbq"]
+[ext_resource type="Resource" uid="uid://pwcioofuedpg" path="res://data/ingredients/raw_tomato.tres" id="4_b818o"]
+[ext_resource type="PackedScene" uid="uid://bxkcdvbcjx7gv" path="res://contents/vfx/chopping_ingredients/chopping_tomato.tscn" id="5_aqdyr"]
 
-[node name="CrateChopping" unique_id=2258064 instance=ExtResource("1_476wp")]
+[node name="CrateChopping" unique_id=2258064 node_paths=PackedStringArray("chopping_vfx") instance=ExtResource("1_476wp")]
 script = ExtResource("2_m0355")
+chopping_vfx = {
+ExtResource("3_1bwjw"): NodePath("ChoppingOnion"),
+ExtResource("4_b818o"): NodePath("ChoppingTomato")
+}
 ingredient_data = Array[ExtResource("2_rx8vl")]([])
+
+[node name="ChoppingOnion" parent="." index="0" unique_id=1687323319 instance=ExtResource("4_0vcbq")]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0, 1.0757685, 0)
+
+[node name="ChoppingTomato" parent="." index="1" unique_id=1719642696 instance=ExtResource("5_aqdyr")]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0, 1.0757685, 0)
 
 [node name="chopping_board" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=644597961 instance=ExtResource("2_dbi4x")]
 transform = Transform3D(0.505, 0, 0, 0, 0.505, 0, 0, 0, 0.505, 0, 1.0419953, 0)

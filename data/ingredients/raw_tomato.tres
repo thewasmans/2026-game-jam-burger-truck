@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://pwcioofuedpg"]
 
+[ext_resource type="PackedScene" uid="uid://bxkcdvbcjx7gv" path="res://contents/vfx/chopping_ingredients/chopping_tomato.tscn" id="1_00xfu"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_hmt3m"]
 [ext_resource type="Texture2D" uid="uid://d08m5s7p3wmbl" path="res://contents/ui/icons/ingredients/tomato.png" id="1_wkd7j"]
 [ext_resource type="Material" uid="uid://bfioy72kjsvgc" path="res://contents/materials/ingredients_crates/box_ingredient_tomato_mat.tres" id="2_dg6o7"]
@@ -14,4 +15,5 @@ material = ExtResource("2_dg6o7")
 model_3d = ExtResource("3_dg6o7")
 price = 1.0
 provide_ingredient = ExtResource("3_do3qb")
+cut_vfx = ExtResource("1_00xfu")
 metadata/_custom_type_script = "uid://btvvuw6kwk0cc"
