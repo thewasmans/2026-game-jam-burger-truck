@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FurnitureGridData" format=3 uid="uid://dy5a1l7cf3i0j"]
 
 [ext_resource type="Script" uid="uid://jtqj8ushvihc" path="res://scripts/data/furniture_grid_data.gd" id="1_hdvqg"]
-[ext_resource type="Texture2D" uid="uid://2o4slj7sba0k" path="res://contents/ui/icons/furnitures_grid/furniture_3b_04_icon.png" id="1_l775v"]
+[ext_resource type="Texture2D" uid="uid://swf7gayab51b" path="res://contents/ui/icons/furnitures_grid/furniture_3b_04_icon.png" id="1_l775v"]
 [ext_resource type="PackedScene" uid="uid://c6dv4vhinqcp4" path="res://contents/prefabs/furnitures/grid_furnitures/furniture_3b_04.tscn" id="2_ase2u"]
 
 [resource]
