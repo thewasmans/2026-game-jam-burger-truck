@@ -24,14 +24,8 @@ func use_tool():
 		_ingredient = provide_ingredient
 
 func play_cut_vfx():
-	if _ingredient == null:
-		return
 
 	var data: IngredientData = _ingredient.ingredient_data
-
-	if not chopping_vfx.has(data):
-		print("No VFX for:", data)
-		return
 
 	var particles: GPUParticles3D = chopping_vfx[data]
 
