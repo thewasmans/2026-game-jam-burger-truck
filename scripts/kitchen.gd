@@ -64,6 +64,7 @@ func _on_crate_ingredient_selected(crate: CrateIngredient):
 	if _current_ingredient == null:
 		if MoneyManager.buy_ingredient(crate.ingredient_data):
 			_current_ingredient = crate.instantiate_ingredient()
+			AudioManager.play_sfx("sfx-crate")
 			crate_ingredient_clicked.emit(crate)
 		
 func _on_crate_plate_selected(crate_plate: CratePlate):
@@ -75,6 +76,7 @@ func _on_crate_plate_selected(crate_plate: CratePlate):
 func _on_trash_selected():
 	if _current_ingredient:
 		free_current_ingredient()
+		AudioManager.play_sfx_random(["sfx-trash-1","sfx-trash-2"])
 
 func _on_crate_tool_pressed(crate_tool: CrateTool):
 	if crate_tool._ingredient and not crate_tool.ingredient_transformed:
@@ -92,6 +94,7 @@ func _on_crate_tool_selected(crate_tool: CrateTool):
 	else:
 		if crate_tool and crate_tool.ingredient_transformed:
 			_current_ingredient = crate_tool._ingredient
+			AudioManager.stop_sfx("sfx-overcooking-steak-loop")
 	
 func assign_clients_to_plates() -> void:
 	for anchor: Node3D in anchor_plates_clients:
