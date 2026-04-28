@@ -10,14 +10,13 @@ func initialize(_sounds:Dictionary[String, AudioStream], _stream_player_sfx: Aud
 	muted = false
 
 func play_sfx(sound_name: String, volume_db: float = -15.0):
-	if sounds.has(sound_name):
+	if sounds.has(sound_name) and not muted:
 		var asp = AudioStreamPlayer.new()
 		asp.stream = sounds[sound_name]
 		asp.volume_db = volume_db
 		asp.bus = "SFX"
 		
 		add_child(asp)
-		_music_players.append(asp)
 		asp.play()
 		
 		_active_sfx[sound_name] = asp
