@@ -13,6 +13,8 @@ func _process(delta: float) -> void:
 	if not _coocking_started: return
 	
 	if _value_progress >= 1.0:
+		AudioManager.stop_sfx("sfx-cooking-steak-loop")
+		AudioManager.play_sfx("sfx-overcooking-steak-loop")
 		_value_progress = 1.0 * .1
 		_coocking_started = false
 		_spawn_coocked_ingredient()
@@ -35,6 +37,7 @@ func _spawn_coocked_ingredient():
 func assign_ingredient(ingredient:Ingredient) -> bool:
 	_value_progress = 0
 	_coocking_started = true
+	AudioManager.play_sfx("sfx-cooking-steak-loop")
 	var assigned = super.assign_ingredient(ingredient)
 	if assigned:
 		if ingredient.instance is SteakCoocking:

@@ -3,6 +3,8 @@ extends CrateTool
 
 var _sliced_step: int
 
+@export var chopping_vfx: Dictionary[IngredientData, GPUParticles3D]
+
 func assign_ingredient(ingredient:Ingredient) -> bool:
 	_sliced_step = 0
 	return super.assign_ingredient(ingredient)
@@ -10,6 +12,8 @@ func assign_ingredient(ingredient:Ingredient) -> bool:
 func use_tool():
 	_sliced_step += 1
 	print("_sliced_step ", _sliced_step)
+	AudioManager.play_sfx_random(["sfx-chopping-1","sfx-chopping-2"])
+	play_cut_vfx()
 	if _sliced_step >= 5:
 		print("sliced ",)
 		var provide_ingredient := Ingredient.new()
@@ -19,3 +23,14 @@ func use_tool():
 		_ingredient.instance.queue_free()
 		_ingredient.free()
 		_ingredient = provide_ingredient
+
+func play_cut_vfx():
+
+	var data: IngredientData = _ingredient.ingredient_data
+
+	var particles: GPUParticles3D = chopping_vfx[data]
+
+	particles.global_position = anchor_spawn.global_position
+
+	particles.restart()
+	particles.emitting = true

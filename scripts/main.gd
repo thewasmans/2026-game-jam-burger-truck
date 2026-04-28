@@ -65,6 +65,7 @@ func free_client(client:HungryClient):
 
 func add_ingredient_on_plate(ingredient: IngredientData, plate:CratePlate):
 	plate.add_ingredient(ingredient)
+	AudioManager.play_sfx("sfx-plate")
 	var client = ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
 	if client:
 		ClientsManager.feed_client(client, plate)

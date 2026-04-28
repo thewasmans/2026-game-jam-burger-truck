@@ -4,11 +4,24 @@
 [ext_resource type="PackedScene" uid="uid://dhsoftcr8jh33" path="res://contents/prefabs/kitchen/kitchen.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://djc6xavhxsjd6" path="res://contents/prefabs/ui/game_ui.tscn" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://dpaetc3xgp6qg" path="res://scripts/main.gd" id="4_abcde"]
+[ext_resource type="AudioStream" uid="uid://0wkwierroh84" path="res://contents/audios/plate/plate_sfx.wav" id="5_0ld40"]
+[ext_resource type="AudioStream" uid="uid://dxrvtl8yt33cw" path="res://contents/audios/crate_opening/opening_crate_sfx.wav" id="6_gqmmt"]
 [ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="7_a8y0u"]
+[ext_resource type="AudioStream" uid="uid://b761mvmuudlxc" path="res://contents/audios/chopping/chopping_1_sfx.wav" id="7_yc10j"]
 [ext_resource type="AudioStream" uid="uid://jgqg5ipsguxv" path="res://contents/audios/awesomeness.wav" id="8_jkv2x"]
+[ext_resource type="AudioStream" uid="uid://bgd2dygxqrhwx" path="res://contents/audios/trash/trash_1_sfx.wav" id="8_jscy8"]
 [ext_resource type="AudioStream" uid="uid://d38m6vreqqyon" path="res://contents/audios/coin.11.ogg" id="9_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://b5oeadepog16h" path="res://contents/audios/placing_furniture/placing_furniture_1_sfx.wav" id="9_pm3ni"]
+[ext_resource type="AudioStream" uid="uid://dssq8dwfrwy3y" path="res://contents/audios/cooking_steak/cooking_steak_loop_sfx.wav" id="10_0ld40"]
 [ext_resource type="Script" uid="uid://cqq0jnutdxp31" path="res://scripts/camera_swticher.gd" id="10_muem4"]
+[ext_resource type="AudioStream" uid="uid://dsh55yn31kk3h" path="res://contents/audios/cooking_steak/overcooking_steak_loop_sfx.wav" id="11_gqmmt"]
+[ext_resource type="AudioStream" uid="uid://cso2k1iyv8atc" path="res://contents/audios/chopping/chopping_2_sfx.wav" id="12_yc10j"]
 [ext_resource type="Script" uid="uid://cf4mpdjpr5wxv" path="res://scripts/environment/env_turn_sun.gd" id="13_a8y0u"]
+[ext_resource type="AudioStream" uid="uid://u2yvk8jqb8lt" path="res://contents/audios/placing_furniture/placing_furniture_2_sfx.wav" id="13_jscy8"]
+[ext_resource type="AudioStream" uid="uid://ckpwimxe6gdq3" path="res://contents/audios/trash/trash_2_sfx.wav" id="14_2wyq8"]
+[ext_resource type="AudioStream" uid="uid://ddg6yel6ydo26" path="res://contents/audios/sharpening_knife/sharpening_knife_1_sfx.wav" id="15_vxglm"]
+[ext_resource type="AudioStream" uid="uid://biii0qdl5ehxu" path="res://contents/audios/sharpening_knife/sharpening_knife_2_sfx.wav" id="16_2f3dj"]
+[ext_resource type="AudioStream" uid="uid://help7ta25snw" path="res://contents/audios/sharpening_knife/sharpening_knife_3_sfx.wav" id="17_yq6so"]
 [ext_resource type="PackedScene" uid="uid://63oqeps6vaq5" path="res://contents/prefabs/grid_system/grid.tscn" id="18_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="28_tel4y"]
 [ext_resource type="PackedScene" uid="uid://dwbihghpkmpdq" path="res://contents/prefabs/environment/board.tscn" id="30_5q0nq"]
@@ -71,7 +84,20 @@ game_data = ExtResource("7_a8y0u")
 board_ui = NodePath("Level/Board")
 sounds = Dictionary[String, AudioStream]({
 "main-music": ExtResource("8_jkv2x"),
-"sfx-money": ExtResource("9_jbj1t")
+"sfx-chopping-1": ExtResource("7_yc10j"),
+"sfx-chopping-2": ExtResource("12_yc10j"),
+"sfx-cooking-steak-loop": ExtResource("10_0ld40"),
+"sfx-crate": ExtResource("6_gqmmt"),
+"sfx-furniture-1": ExtResource("9_pm3ni"),
+"sfx-furniture-2": ExtResource("13_jscy8"),
+"sfx-money": ExtResource("9_jbj1t"),
+"sfx-overcooking-steak-loop": ExtResource("11_gqmmt"),
+"sfx-plate": ExtResource("5_0ld40"),
+"sfx-sharpening-knife-1": ExtResource("15_vxglm"),
+"sfx-sharpening-knife-2": ExtResource("16_2f3dj"),
+"sfx-sharpening-knife-3": ExtResource("17_yq6so"),
+"sfx-trash-1": ExtResource("8_jscy8"),
+"sfx-trash-2": ExtResource("14_2wyq8")
 })
 camera_switcher = NodePath("Global/Camera3D")
 
