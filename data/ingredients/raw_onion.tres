@@ -1,6 +1,5 @@
 [gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://tj8r6mbo6yvd"]
 
-[ext_resource type="PackedScene" uid="uid://bn8j1imft8x20" path="res://contents/vfx/chopping_ingredients/chopping_onion.tscn" id="1_1j3lm"]
 [ext_resource type="Texture2D" uid="uid://duuf7ikxre4bm" path="res://contents/ui/icons/ingredients/onion.png" id="1_wxcrj"]
 [ext_resource type="Material" uid="uid://dl720tfm4w7qo" path="res://contents/materials/ingredients_crates/box_ingredient_onion_mat.tres" id="2_1j3lm"]
 [ext_resource type="PackedScene" uid="uid://bm3s46jhhmc78" path="res://contents/prefabs/ingredients/onion/onion_3d.tscn" id="3_wxcrj"]
@@ -15,5 +14,4 @@ material = ExtResource("2_1j3lm")
 model_3d = ExtResource("3_wxcrj")
 price = 1.0
 provide_ingredient = ExtResource("4_aclbe")
-cut_vfx = ExtResource("1_1j3lm")
 metadata/_custom_type_script = "uid://btvvuw6kwk0cc"

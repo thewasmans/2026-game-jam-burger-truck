@@ -2,6 +2,7 @@ extends Node
 
 var sounds: Dictionary[String, AudioStream]
 var _music_players:Array[AudioStreamPlayer] = []
+var _active_sfx: Dictionary[String, AudioStreamPlayer] = {}
 var muted: bool
 
 func initialize(_sounds:Dictionary[String, AudioStream], _stream_player_sfx: AudioStreamPlayer):
@@ -19,9 +20,26 @@ func play_sfx(sound_name: String, volume_db: float = -15.0):
 		_music_players.append(asp)
 		asp.play()
 		
-		asp.finished.connect(asp.queue_free)
+		_active_sfx[sound_name] = asp
+		
+		asp.finished.connect(func():
+			if _active_sfx.has(sound_name):
+				_active_sfx.erase(sound_name)
+			asp.queue_free()
+		)
 	else:
 		push_error("Le son '" + sound_name + "' n'existe pas dans AudioManager")
+
+func play_sfx_random(sound_names: Array[String], volume_db: float = -15.0):
+	if sound_names.is_empty():
+		return
+	play_sfx(sound_names.pick_random(), volume_db)
+
+func stop_sfx(sound_name: String):
+	if _active_sfx.has(sound_name):
+		_active_sfx[sound_name].stop()
+		_active_sfx[sound_name].queue_free()
+		_active_sfx.erase(sound_name)
 
 func play_music(music_path: String, volume_db: float = -10.0):
 	var music_player := AudioStreamPlayer.new()

@@ -12,6 +12,7 @@ func assign_ingredient(ingredient:Ingredient) -> bool:
 func use_tool():
 	_sliced_step += 1
 	print("_sliced_step ", _sliced_step)
+	AudioManager.play_sfx_random(["sfx-chopping-1","sfx-chopping-2"])
 	play_cut_vfx()
 	if _sliced_step >= 5:
 		print("sliced ",)
