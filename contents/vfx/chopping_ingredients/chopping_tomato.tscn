@@ -23,7 +23,8 @@ emission_sphere_radius = 1.0
 initial_velocity_min = 1.0
 initial_velocity_max = 4.0
 gravity = Vector3(0, -8, 0)
-scale_min = 0.25
+scale_min = 0.099999994
+scale_max = 0.39999998
 color_initial_ramp = SubResource("GradientTexture1D_6iy8j")
 emission_curve = SubResource("CurveTexture_meqbe")
 
@@ -37,12 +38,10 @@ height = 0.2
 radial_segments = 4
 rings = 1
 
-[node name="ChoppingTomato" type="Node3D" unique_id=1687323319]
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1406499514]
-transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0, 0, 0)
+[node name="ChoppingTomato" type="GPUParticles3D" unique_id=1406499514]
+transform = Transform3D(-3.4969112e-08, -0.8, 0, 0.8, -3.4969112e-08, 0, 0, 0, 0.8, 0, 0, 0)
 emitting = false
-amount = 20
+amount = 16
 lifetime = 0.25
 one_shot = true
 explosiveness = 1.0
