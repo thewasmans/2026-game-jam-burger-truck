@@ -3,6 +3,8 @@ extends CrateTool
 
 var _sliced_step: int
 
+@export var chopping_vfx: Dictionary[IngredientData, GPUParticles3D]
+
 func assign_ingredient(ingredient:Ingredient) -> bool:
 	_sliced_step = 0
 	return super.assign_ingredient(ingredient)
@@ -25,18 +27,15 @@ func play_cut_vfx():
 	if _ingredient == null:
 		return
 
-	var vfx_scene := _ingredient.ingredient_data.cut_vfx
-	if vfx_scene == null:
+	var data: IngredientData = _ingredient.ingredient_data
+
+	if not chopping_vfx.has(data):
+		print("No VFX for:", data)
 		return
 
-	var vfx_root := vfx_scene.instantiate()
-	get_tree().current_scene.add_child(vfx_root)
+	var particles: GPUParticles3D = chopping_vfx[data]
 
-	vfx_root.global_position = anchor_spawn.global_position
+	particles.global_position = anchor_spawn.global_position
 
-	var particles := vfx_root.get_node_or_null("GPUParticles3D")
-
-	if particles:
-		particles.emitting = true
-	else:
-		push_error("No GPUParticles3D found in VFX scene")
+	particles.restart()
+	particles.emitting = true
