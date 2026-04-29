@@ -10,15 +10,20 @@ signal button_start_clicked
 @export var container_furnitures: GridContainer
 @export var container_menu: FoldableContainer
 @export var board: BoardUI
-@export var sart_menu: Control
+@export var start_menu: Control
+@export var end_menu: Control
 @export var mini_map: Control
 @export var button_start: Button
+@export var button_return_to_start: Button
 @export var button_mute: Button
 @export var label_clients: Label
+@export var label_score: Label
 var ingredients_buttons:Array[Button]
 
 func _ready() -> void:
 	money_label.text = "0 $"
+	start_menu.visible = true
+	end_menu.visible = false
 	MoneyManager.money_changed.connect(func(): set_money_value(MoneyManager._money))
 	set_visible_furnitures_menu(false)
 
@@ -41,8 +46,11 @@ func on_reputation_changed(new_reputation: int) -> void:
 	board.set_reputation(new_reputation/10.0)
 
 func _on_button_start_pressed() -> void:
-	sart_menu.hide()
+	start_menu.hide()
 	button_start_clicked.emit()
+
+func _on_button_return_pressed() -> void:
+	get_tree().reload_current_scene()
 
 func add_ingredient(ingredient:IngredientData):
 	var ingredient_texture := TextureRect.new()
@@ -78,3 +86,7 @@ func animate_label(label: Label):
 func set_visible_furnitures_menu(visible: bool):
 	mini_map.visible = not visible
 	container_menu.visible = visible
+
+func show_end_score_menu(time: String = "XX:XX:XX", score: String = "XX"):
+	end_menu.visible = true
+	label_score.text = "GAME TERMINATE\n\nSCORE\n%s\n%s CLIENTS SERVED" % [time, score]

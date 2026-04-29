@@ -5,6 +5,7 @@ class_name Kitchen
 signal reputation_changed(new_reputation: int)
 signal ingredient_plate_assigned(crate:CratePlate, ingredient:IngredientData)
 signal crate_ingredient_clicked(crate:CrateIngredient)
+signal reputation_reached_zero()
 
 @export var ingredient_crates: Array[CrateIngredient]
 @export var plates_crates: Array[CratePlate]
@@ -117,8 +118,7 @@ func take_damage(amount: int) -> void:
 	current_reputation -= amount
 	reputation_changed.emit(current_reputation)
 	if current_reputation <= 0:
-		get_tree().reload_current_scene()
-		
+		reputation_reached_zero.emit()
 
 func free_current_ingredient():
 	_current_ingredient.instance.queue_free()
