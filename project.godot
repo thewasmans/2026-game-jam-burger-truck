@@ -24,6 +24,14 @@ ClientsManager="*uid://bybylblrecbnu"
 AudioManager="*uid://c7c5wow6e8puf"
 IngredientsManager="*uid://cum6jxama6kdy"
 
+[display]
+
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

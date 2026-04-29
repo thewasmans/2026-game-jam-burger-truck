@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b8ox1k3noecv8" path="res://scripts/ui/game_ui.gd" id="1_84on6"]
 [ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/theme/in_game_theme.tres" id="1_ajtxk"]
 [ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/theme/ingredients_theme.tres" id="3_uuvj8"]
+[ext_resource type="PackedScene" uid="uid://c4i1ks8v6ixe7" path="res://contents/prefabs/ui/minimap.tscn" id="4_nkv2q"]
 [ext_resource type="Texture2D" uid="uid://b0nlh5j5f5gi0" path="res://contents/ui/start_screen.png" id="5_77pjo"]
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 [ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
@@ -23,9 +24,12 @@ theme_ingredients = ExtResource("3_uuvj8")
 container_furnitures = NodePath("Money/FoldableContainer/GridContainer")
 container_menu = NodePath("Money/FoldableContainer")
 sart_menu = NodePath("StartMenu")
-button_start = NodePath("StartMenu/SplashScreenExplain/ButtonStart")
+button_start = NodePath("StartMenu/Panel/ButtonStart")
 button_mute = NodePath("ButtonMuteAudio")
 label_clients = NodePath("Label")
+
+[node name="Minimap" parent="." unique_id=1304258662 instance=ExtResource("4_nkv2q")]
+layout_mode = 1
 
 [node name="Label" type="Label" parent="." unique_id=2103994670]
 layout_mode = 1
@@ -53,12 +57,20 @@ offset_right = 25.0
 offset_bottom = 38.0
 
 [node name="FoldableContainer" parent="Money" index="0" unique_id=106615898]
+visible = false
 folded = true
 
 [node name="GridContainer" parent="Money/FoldableContainer" index="0" unique_id=35522992]
 visible = false
 
-[node name="Label" parent="Money/PanelContainer" parent_id_path=PackedInt32Array(1829518468, 135392274) index="0" unique_id=31775040]
+[node name="PanelContainer" parent="Money" index="1" unique_id=135392274]
+layout_mode = 1
+offset_left = 19.3
+offset_right = 319.3
+offset_bottom = 80.0
+
+[node name="Label" parent="Money/PanelContainer" index="0" unique_id=31775040]
+theme_override_font_sizes/font_size = 60
 text = "XXX $"
 
 [node name="StartMenu" type="Control" parent="." unique_id=1042170719]
@@ -77,46 +89,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SplashScreenExplain" type="TextureRect" parent="StartMenu" unique_id=1526959378]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 496.0
-grow_horizontal = 2
-texture = ExtResource("5_77pjo")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="ButtonStart" type="Button" parent="StartMenu/SplashScreenExplain" unique_id=644379721]
+[node name="ButtonStart" type="Button" parent="StartMenu/Panel" unique_id=644379721]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -212.0
-offset_top = 8.0
-offset_right = 212.0
-offset_bottom = 134.0
+offset_left = -320.5
+offset_top = -316.945
+offset_right = 320.50024
+offset_bottom = -37.9458
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 102
+theme_override_font_sizes/font_size = 180
 text = "START"
+
+[node name="SplashScreenExplain" type="TextureRect" parent="StartMenu/Panel" unique_id=1526959378]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1079.0
+grow_horizontal = 2
+texture = ExtResource("5_77pjo")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="ButtonMuteAudio" type="Button" parent="." unique_id=1745831176]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-offset_left = -145.97498
-offset_top = 24.26
-offset_right = -22.130371
-offset_bottom = 66.19
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -120.0
+offset_right = -20.0
+offset_bottom = -20.0
 grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 46
 theme_override_styles/normal = ExtResource("6_77pjo")
 text = "MUTE AUDIO"
 
-[connection signal="pressed" from="StartMenu/SplashScreenExplain/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="StartMenu/Panel/ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="ButtonMuteAudio" to="." method="_on_button_mute_audio_pressed"]
 
 [editable path="Money"]
