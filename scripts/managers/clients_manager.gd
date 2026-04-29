@@ -2,6 +2,7 @@ extends Node
 
 var _clients: Array[HungryClient] = []
 var _waiting_queue: Array[HungryClient] = []
+var clients_feeded: int = 0
 
 func initialize():
 	_clients = []
@@ -11,6 +12,7 @@ func feed_client(client:HungryClient, plate:CratePlate):
 	client.give_food(plate._ingredients)
 	MoneyManager.add_money(client._burger_request.price)
 	plate.clear()
+	clients_feeded += 1
 	_clients.erase(client)
 	_waiting_queue.erase(client)
 

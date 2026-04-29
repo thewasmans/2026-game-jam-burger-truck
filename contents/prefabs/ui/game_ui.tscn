@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 [ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "sart_menu", "mini_map", "button_start", "button_mute", "label_clients")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "start_menu", "end_menu", "mini_map", "button_start", "button_return_to_start", "button_mute", "label_clients", "label_score")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -23,11 +23,14 @@ money_label = NodePath("Money/PanelContainer/Label")
 theme_ingredients = ExtResource("3_uuvj8")
 container_furnitures = NodePath("Money/FoldableContainer/GridContainer")
 container_menu = NodePath("Money/FoldableContainer")
-sart_menu = NodePath("StartMenu")
+start_menu = NodePath("StartMenu")
+end_menu = NodePath("EndMenu")
 mini_map = NodePath("Minimap")
 button_start = NodePath("StartMenu/Panel/ButtonStart")
+button_return_to_start = NodePath("EndMenu/Panel/ButtonReturn")
 button_mute = NodePath("ButtonMuteAudio")
 label_clients = NodePath("Label")
+label_score = NodePath("EndMenu/Panel/ScoreLabel")
 
 [node name="Minimap" parent="." unique_id=1304258662 instance=ExtResource("4_nkv2q")]
 layout_mode = 1
@@ -79,6 +82,7 @@ theme_override_font_sizes/font_size = 60
 text = "XXX $"
 
 [node name="StartMenu" type="Control" parent="." unique_id=1042170719]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -120,6 +124,61 @@ texture = ExtResource("5_77pjo")
 expand_mode = 2
 stretch_mode = 5
 
+[node name="EndMenu" type="Control" parent="." unique_id=2010971725]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="EndMenu" unique_id=995304084]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonReturn" type="Button" parent="EndMenu/Panel" unique_id=722028344]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -545.99976
+offset_top = -316.94507
+offset_right = 546.0
+offset_bottom = -37.9458
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 158
+text = "BACK TO MENU"
+
+[node name="ScoreLabel" type="Label" parent="EndMenu/Panel" unique_id=1224486225]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -9.5
+offset_right = 61.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_uuvj8")
+theme_override_font_sizes/font_size = 102
+text = "GAME TERMINATE
+
+SCORE
+XX:XX:XX
+XX CLIENTS SERVED
+"
+horizontal_alignment = 1
+
 [node name="ButtonMuteAudio" type="Button" parent="." unique_id=1745831176]
 layout_mode = 1
 anchors_preset = 3
@@ -138,6 +197,7 @@ theme_override_styles/normal = ExtResource("6_77pjo")
 text = "MUTE AUDIO"
 
 [connection signal="pressed" from="StartMenu/Panel/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="EndMenu/Panel/ButtonReturn" to="." method="_on_button_return_pressed"]
 [connection signal="pressed" from="ButtonMuteAudio" to="." method="_on_button_mute_audio_pressed"]
 
 [editable path="Money"]

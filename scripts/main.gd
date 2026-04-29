@@ -20,6 +20,7 @@ var burgers_data:
 func _ready() -> void:
 	kitchen.reputation_changed.connect(game_ui.on_reputation_changed)
 	kitchen.ingredient_plate_assigned.connect(_on_ingredient_plate_assigned)
+	kitchen.reputation_reached_zero.connect(_reputation_reached_zero)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
 	spawner.next_wave_started.connect(func(data, number):
 		game_ui.set_visible_furnitures_menu(false)
@@ -43,6 +44,10 @@ func _ready() -> void:
 
 func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData):
 	add_ingredient_on_plate(ingredient, crate)
+	
+func _reputation_reached_zero():
+	get_tree().paused = true
+	game_ui.show_end_score_menu(board_ui.format_time(board_ui.timer), str(ClientsManager.clients_feeded))
 
 func client_spawned(client: HungryClient):
 	if burgers_data.size() > 0:
