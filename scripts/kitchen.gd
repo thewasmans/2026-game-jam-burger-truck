@@ -24,7 +24,7 @@ var _current_ingredient_should_release: bool = false
 func _ready() -> void:
 	reputation_changed.emit(current_reputation)
 	IngredientsManager._vfx_ingredient_dismiss = vfx_ingredient_dismiss
-	return
+	
 	for crate in ingredient_crates:
 		crate.crate_selected.connect(_on_crate_ingredient_selected.bind(crate))
 		
@@ -98,7 +98,6 @@ func _on_crate_tool_selected(crate_tool: CrateTool):
 			AudioManager.stop_sfx("sfx-overcooking-steak-loop")
 	
 func assign_clients_to_plates() -> void:
-	return
 	for anchor: Node3D in anchor_plates_clients:
 		var size = ClientsManager._waiting_queue.size()
 		if _plates_availalble[anchor] == null and ClientsManager._waiting_queue.size() > 0:
