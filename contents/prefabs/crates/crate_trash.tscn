@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b43pxddlxof8n"]
 
 [ext_resource type="PackedScene" uid="uid://dpa4wy00xu6qy" path="res://contents/prefabs/crates/crate_interract.tscn" id="1_3b6wk"]
-[ext_resource type="Shader" path="res://contents/shaders/trash_can.gdshader" id="2_f6wdh"]
+[ext_resource type="Shader" uid="uid://dhu8v6qt1mnip" path="res://contents/shaders/trash_can.gdshader" id="2_f6wdh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm4op"]
 resource_name = "Material"

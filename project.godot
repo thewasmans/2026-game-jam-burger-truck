@@ -22,6 +22,7 @@ FurnituresManager="*uid://cb7g1j4su2jc4"
 MoneyManager="*uid://c5qlt4o26pexc"
 ClientsManager="*uid://bybylblrecbnu"
 AudioManager="*uid://c7c5wow6e8puf"
+IngredientsManager="*uid://cum6jxama6kdy"
 
 [physics]
 

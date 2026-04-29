@@ -1,5 +1,5 @@
 class_name CrateInterract
-extends Node
+extends Area3D
 
 signal crate_selected()
 signal crate_pressed()
@@ -10,9 +10,9 @@ signal crate_pressed()
 @export var anchor_spawn:Node3D
 
 func _ready() -> void:
-	$Area3D.mouse_entered.connect(_on_area_3d_mouse_entered)
-	$Area3D.mouse_exited.connect(_on_area_3d_mouse_exited)
-	$Area3D.input_event.connect(_on_area_3d_input_event)
+	mouse_entered.connect(_on_area_3d_mouse_entered)
+	mouse_exited.connect(_on_area_3d_mouse_exited)
+	input_event.connect(_on_area_3d_input_event)
 
 func _on_area_3d_mouse_entered() -> void:
 	create_tween().tween_property(node_hover_feedback, "scale", Vector3.ONE * scale_animation, speed_animation).set_trans(Tween.TRANS_ELASTIC)
