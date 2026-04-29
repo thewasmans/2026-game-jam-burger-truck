@@ -25,15 +25,8 @@ func _ready() -> void:
 	reputation_changed.emit(current_reputation)
 	IngredientsManager._vfx_ingredient_dismiss = vfx_ingredient_dismiss
 	
-	for crate in ingredient_crates:
-		crate.crate_selected.connect(_on_crate_ingredient_selected.bind(crate))
-		
 	for crate in plates_crates:
 		crate.crate_selected.connect(_on_crate_plate_selected.bind(crate))
-		
-	for crate in tool_crates:
-		crate.crate_selected.connect(_on_crate_tool_selected.bind(crate))
-		crate.crate_pressed.connect(_on_crate_tool_pressed.bind(crate))
 		
 	for anchor in anchor_plates_clients:
 		_plates_availalble[anchor] = null
@@ -65,18 +58,15 @@ func _on_crate_ingredient_selected(crate: CrateIngredient):
 	if _current_ingredient == null:
 		if MoneyManager.buy_ingredient(crate.ingredient_data):
 			_current_ingredient = crate.instantiate_ingredient()
-			AudioManager.play_sfx("sfx-crate")
+			
 			crate_ingredient_clicked.emit(crate)
 		
 func _on_crate_plate_selected(crate_plate: CratePlate):
-	if _current_ingredient:
-		var data = get_current_ingredient_data()
-		_current_ingredient_should_release = false
-		ingredient_plate_assigned.emit(crate_plate, data)
+	ingredient_plate_assigned.emit(crate_plate, null)
 		
 func _on_trash_selected():
-	if _current_ingredient:
-		free_current_ingredient()
+	if IngredientsManager._current_ingredient:
+		IngredientsManager.free_current_ingredient()
 		AudioManager.play_sfx_random(["sfx-trash-1","sfx-trash-2"])
 
 func _on_crate_tool_pressed(crate_tool: CrateTool):
@@ -92,10 +82,6 @@ func _on_crate_tool_selected(crate_tool: CrateTool):
 			_current_ingredient_should_release = false
 			if crate_tool.assign_ingredient(_current_ingredient):
 				_current_ingredient = null
-	else:
-		if crate_tool and crate_tool.ingredient_transformed:
-			_current_ingredient = crate_tool._ingredient
-			AudioManager.stop_sfx("sfx-overcooking-steak-loop")
 	
 func assign_clients_to_plates() -> void:
 	for anchor: Node3D in anchor_plates_clients:
