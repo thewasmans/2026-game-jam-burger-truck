@@ -61,7 +61,7 @@ func _on_button_mute_audio_pressed():
 		button_mute.text = "Resume Audio"
 		
 func set_wave_information(wave:WavesPresetData, number_wave: int):
-	label_clients.text = "WAVE " + str(number_wave ) + " - " + str(wave.clients.size()) + " CLIENTS WILL COMING"
+	label_clients.text = "WAVE " + str(number_wave )
 	animate_label(label_clients)
 	
 func animate_label(label: Label):
