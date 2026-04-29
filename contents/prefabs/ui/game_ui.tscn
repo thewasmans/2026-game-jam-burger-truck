@@ -57,7 +57,11 @@ offset_right = 25.0
 offset_bottom = 38.0
 
 [node name="FoldableContainer" parent="Money" index="0" unique_id=106615898]
-visible = false
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 320.0
+offset_bottom = 1081.0
+theme_override_font_sizes/font_size = 48
 folded = true
 
 [node name="GridContainer" parent="Money/FoldableContainer" index="0" unique_id=35522992]
@@ -65,8 +69,8 @@ visible = false
 
 [node name="PanelContainer" parent="Money" index="1" unique_id=135392274]
 layout_mode = 1
-offset_left = 19.3
-offset_right = 319.3
+offset_left = 20.0
+offset_right = 320.0
 offset_bottom = 80.0
 
 [node name="Label" parent="Money/PanelContainer" index="0" unique_id=31775040]
