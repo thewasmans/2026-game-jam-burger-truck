@@ -11,4 +11,3 @@ name = "Cooked Steak"
 icon = ExtResource("1_l7w54")
 material = ExtResource("2_qvmln")
 model_3d = ExtResource("3_l7w54")
-price = 3.0

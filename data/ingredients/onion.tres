@@ -11,4 +11,3 @@ name = "Onion"
 icon = ExtResource("1_u8eol")
 material = ExtResource("2_4lphb")
 model_3d = ExtResource("2_iw7w2")
-price = 1.0
