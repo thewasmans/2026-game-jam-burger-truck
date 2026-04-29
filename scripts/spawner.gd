@@ -9,6 +9,7 @@ signal waiting_next_wave()
 @export var enemy_scene: PackedScene
 @export var front_truck_target: MeshInstance3D 
 @export var out_screen_target: MeshInstance3D
+@export var hungry_client_spawner: Node3D
 @export var minimal_spawn_time: float = 4.0
 @export var maximal_spawn_time: float = 8.0
 @onready var spawn_location: PathFollow3D = $SpawnPath/SpawnLocation
@@ -31,6 +32,7 @@ func _ready() -> void:
 	randomize()
 	front_truck_target.hide()
 	out_screen_target.hide()
+	hungry_client_spawner.hide()
 	
 	timer_next_wave.timeout.connect(next_wave)
 	timer_next_wave.wait_time = game_data.waiting_next_wave
