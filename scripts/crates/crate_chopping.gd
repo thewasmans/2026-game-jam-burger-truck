@@ -11,11 +11,9 @@ func assign_ingredient(ingredient:Ingredient) -> bool:
 
 func use_tool():
 	_sliced_step += 1
-	print("_sliced_step ", _sliced_step)
 	AudioManager.play_sfx_random(["sfx-chopping-1","sfx-chopping-2"])
 	play_cut_vfx()
 	if _sliced_step >= 5:
-		print("sliced ",)
 		var provide_ingredient := Ingredient.new()
 		provide_ingredient.ingredient_data = _ingredient.ingredient_data.provide_ingredient
 		provide_ingredient.instance = provide_ingredient.ingredient_data.model_3d.instantiate()
@@ -23,6 +21,7 @@ func use_tool():
 		_ingredient.instance.queue_free()
 		_ingredient.free()
 		_ingredient = provide_ingredient
+		ingredient_transformed = true
 
 func play_cut_vfx():
 

@@ -35,11 +35,11 @@ func _spawn_coocked_ingredient():
 	_ingredient = provide_ingredient
 		
 func assign_ingredient(ingredient:Ingredient) -> bool:
-	_value_progress = 0
-	_coocking_started = true
-	AudioManager.play_sfx("sfx-cooking-steak-loop")
 	var assigned = super.assign_ingredient(ingredient)
 	if assigned:
+		_value_progress = 0
+		_coocking_started = true
+		AudioManager.play_sfx("sfx-cooking-steak-loop")
 		if ingredient.instance is SteakCoocking:
 			_raw_steack = ingredient.instance
 	return assigned
