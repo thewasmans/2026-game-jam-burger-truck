@@ -23,6 +23,7 @@ var _current_ingredient_should_release: bool = false
 
 func _ready() -> void:
 	reputation_changed.emit(current_reputation)
+	IngredientsManager._vfx_ingredient_dismiss = vfx_ingredient_dismiss
 	return
 	for crate in ingredient_crates:
 		crate.crate_selected.connect(_on_crate_ingredient_selected.bind(crate))

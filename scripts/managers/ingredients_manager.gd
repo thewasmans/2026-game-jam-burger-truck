@@ -4,6 +4,7 @@ var _current_ingredient: Ingredient = null
 var _crate_drag: CrateInterract = null
 var _is_dragging: bool
 var _camera: Camera3D
+var _vfx_ingredient_dismiss: GPUParticles3D
 
 func _ready() -> void:
 	_camera = get_viewport().get_camera_3d()
@@ -42,11 +43,9 @@ func _on_drag_started():
 	 
 	if _crate_drag is CrateIngredient:
 		_current_ingredient = _crate_drag.instantiate_ingredient()
-		print("Spawn Ingredient")
 	
 	elif _crate_drag is CrateTool and _crate_drag.ingredient_transformed:
 		_current_ingredient = _crate_drag._ingredient
-		print("Grab Ingredient")
 
 func _on_drag_dropped():
 	var crate := get_crate_targeted()
@@ -56,25 +55,25 @@ func _on_drag_dropped():
 	if crate is CrateTool:
 		if _current_ingredient:
 			if _crate_drag == crate:
-				print("Ingredient return back to tool")
+				_current_ingredient.instance.position = Vector3.ZERO
+				_current_ingredient = null
 			else:
-				print("Assign ingredient to tool")
 				if crate.assign_ingredient(_current_ingredient):
 					_current_ingredient = null
 				else:
+					play_vfx_disapear_ingredient()
 					free_current_ingredient()
 	if crate is CrateIngredient:
-		print("Release ingredient")
+		play_vfx_disapear_ingredient()
 		free_current_ingredient()
 	if crate is CratePlate:
 		if _current_ingredient == null: 
 			return
-		print("Add ingredient to plate")
 		crate.add_ingredient(_current_ingredient.ingredient_data)
 		free_current_ingredient()
 	
 	if not crate and get_ground():
-		print("Release food on the ground")
+		play_vfx_disapear_ingredient()
 		free_current_ingredient()
 
 func get_ground() -> Kitchen:
@@ -148,3 +147,8 @@ func free_current_ingredient():
 	_current_ingredient.instance.queue_free()
 	_current_ingredient.free()
 	_current_ingredient = null
+	
+func play_vfx_disapear_ingredient():
+	_vfx_ingredient_dismiss.restart()
+	_vfx_ingredient_dismiss.emitting = true
+	_vfx_ingredient_dismiss.global_position = _current_ingredient.instance.global_position
