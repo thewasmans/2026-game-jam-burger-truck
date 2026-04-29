@@ -11,6 +11,7 @@ signal button_start_clicked
 @export var container_menu: FoldableContainer
 @export var board: BoardUI
 @export var sart_menu: Control
+@export var mini_map: Control
 @export var button_start: Button
 @export var button_mute: Button
 @export var label_clients: Label
@@ -75,4 +76,5 @@ func animate_label(label: Label):
 	tween.parallel().tween_property(label, "modulate", Color.WHITE, 0.15)
 
 func set_visible_furnitures_menu(visible: bool):
+	mini_map.visible = not visible
 	container_menu.visible = visible

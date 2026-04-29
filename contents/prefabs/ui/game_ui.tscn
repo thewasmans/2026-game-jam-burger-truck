@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 [ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "sart_menu", "button_start", "button_mute", "label_clients")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "sart_menu", "mini_map", "button_start", "button_mute", "label_clients")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -24,6 +24,7 @@ theme_ingredients = ExtResource("3_uuvj8")
 container_furnitures = NodePath("Money/FoldableContainer/GridContainer")
 container_menu = NodePath("Money/FoldableContainer")
 sart_menu = NodePath("StartMenu")
+mini_map = NodePath("Minimap")
 button_start = NodePath("StartMenu/Panel/ButtonStart")
 button_mute = NodePath("ButtonMuteAudio")
 label_clients = NodePath("Label")
