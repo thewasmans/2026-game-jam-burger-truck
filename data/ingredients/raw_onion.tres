@@ -12,6 +12,5 @@ name = "Plain Onion"
 icon = ExtResource("1_wxcrj")
 material = ExtResource("2_1j3lm")
 model_3d = ExtResource("3_wxcrj")
-price = 1.0
 provide_ingredient = ExtResource("4_aclbe")
 metadata/_custom_type_script = "uid://btvvuw6kwk0cc"

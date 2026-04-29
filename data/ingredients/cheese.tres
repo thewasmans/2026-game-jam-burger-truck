@@ -11,4 +11,3 @@ name = "Cheese"
 icon = ExtResource("1_2tg6n")
 material = ExtResource("2_871ga")
 model_3d = ExtResource("3_871ga")
-price = 1.5

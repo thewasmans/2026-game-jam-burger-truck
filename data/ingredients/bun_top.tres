@@ -11,4 +11,3 @@ name = "Bun Top"
 icon = ExtResource("1_veirf")
 material = ExtResource("2_paplt")
 model_3d = ExtResource("3_paplt")
-price = 0.5

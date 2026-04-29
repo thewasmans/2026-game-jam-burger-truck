@@ -11,4 +11,3 @@ name = "Lettuce"
 icon = ExtResource("1_jnmx8")
 material = ExtResource("2_pwqpp")
 model_3d = ExtResource("3_pwqpp")
-price = 0.5
