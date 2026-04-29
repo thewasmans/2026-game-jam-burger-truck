@@ -12,5 +12,4 @@ name = "steak"
 icon = ExtResource("1_ql6or")
 material = ExtResource("2_nj8kr")
 model_3d = ExtResource("3_pbgy1")
-price = 3.0
 provide_ingredient = ExtResource("4_5ryop")
