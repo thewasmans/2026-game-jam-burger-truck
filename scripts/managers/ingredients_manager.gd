@@ -43,9 +43,11 @@ func _on_drag_started():
 	 
 	if _crate_drag is CrateIngredient:
 		_current_ingredient = _crate_drag.instantiate_ingredient()
+		AudioManager.play_sfx("sfx-crate")
 	
 	elif _crate_drag is CrateTool and _crate_drag.ingredient_transformed:
 		_current_ingredient = _crate_drag._ingredient
+		AudioManager.stop_sfx("sfx-overcooking-steak-loop")
 
 func _on_drag_dropped():
 	var crate := get_crate_targeted()
