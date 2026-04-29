@@ -41,7 +41,7 @@ offset_bottom = -37.140015
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
-text = "XXX CLIENTS ARE INCOMING"
+text = "XXX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
