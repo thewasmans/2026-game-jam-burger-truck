@@ -54,9 +54,13 @@ func play_music(music_path: String, volume_db: float = -10.0):
 func mute_all_sounds():
 	for player in _music_players:
 		player.stop()
+	for key in _active_sfx:
+		_active_sfx[key].stop()
 	muted = true
 	
 func resume_all_sounds():
 	for player in _music_players:
 		player.play()
+	for key in _active_sfx:
+		_active_sfx[key].play()
 	muted = false
