@@ -2,6 +2,7 @@ class_name ClientOrderUI
 extends Control
 
 @export var waiting: ProgressBar
+@export var burger_texture: TextureRect
 @export var ingredients_texture: Array[TextureRect]
 var _burger_data: BurgerData
 	
@@ -22,6 +23,7 @@ func set_burger_data(burger_data:BurgerData):
 	_burger_data = burger_data
 	reset_textures_ingredients()
 	set_textures_ingredients(burger_data)
+	burger_texture.texture = burger_data.image
 
 func reset_textures_ingredients():
 	for texture in ingredients_texture:
@@ -32,4 +34,4 @@ func set_textures_ingredients(burger_data: BurgerData):
 		push_error("[ ClientOrderUI ] Burger Data have to mush ingredient")
 		return
 	for i in burger_data.ingredients.size():
-		ingredients_texture[i].texture = burger_data.ingredients[i].icon
+		ingredients_texture[burger_data.ingredients.size() - 1 - i].texture = burger_data.ingredients[i].icon

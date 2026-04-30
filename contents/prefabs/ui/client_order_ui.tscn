@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://gt1ysbb6s0tt" path="res://contents/ui/theme/client_request_theme.tres" id="1_m2jcn"]
 [ext_resource type="Texture2D" uid="uid://bqs513gh076et" path="res://contents/ui/order_ticket.png" id="2_dfql8"]
 
-[node name="ClientOrderUIs" type="Control" unique_id=1780644722 node_paths=PackedStringArray("waiting", "ingredients_texture")]
+[node name="ClientOrderUIs" type="Control" unique_id=1780644722 node_paths=PackedStringArray("waiting", "burger_texture", "ingredients_texture")]
 custom_minimum_size = Vector2(312, 270)
 layout_mode = 3
 anchors_preset = 15
@@ -16,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2u6ed")
 waiting = NodePath("PanelContainer/ProgressBar")
+burger_texture = NodePath("PanelContainer/BurgerImage")
 ingredients_texture = [NodePath("PanelContainer/VBoxContainer/Ingredient7"), NodePath("PanelContainer/VBoxContainer/Ingredient6"), NodePath("PanelContainer/VBoxContainer/Ingredient5"), NodePath("PanelContainer/VBoxContainer/Ingredient4"), NodePath("PanelContainer/VBoxContainer/Ingredient3"), NodePath("PanelContainer/VBoxContainer/Ingredient2"), NodePath("PanelContainer/VBoxContainer/Ingredient1")]
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2063860934]
