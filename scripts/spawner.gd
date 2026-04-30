@@ -23,7 +23,7 @@ var spawn_time := RandomNumberGenerator.new()
 var time: float
 
 var _hungries_clients: Array[HungryClient] = []
-var _index_current_wave: int = 0
+var _index_current_wave: int = -1
 var _current_preset_wave: WavesPresetData
 var _client_waiting_to_spawn: Array[ClientData]
 var number_wave: int = 0
