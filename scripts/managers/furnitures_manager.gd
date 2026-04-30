@@ -69,8 +69,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				
 func furniture_selected(furniture:FurnitureGridData):
 	if _current_furniture_placed.size() >= _game_data.furnitures_placement:
-		#return
-		pass
+		return
 	if MoneyManager.buy_furniture(furniture):
 		_current_furniture = furniture
 	if is_instance_valid(_current_furniture_instance):
