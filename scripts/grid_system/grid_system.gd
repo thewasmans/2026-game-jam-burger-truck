@@ -166,6 +166,8 @@ func add_obstacle(grid_pos: Vector2) -> bool:
 		push_warning("Tentative d'ajouter un obstacle hors limites: ", grid_pos)
 	return false
 
+func set_visible_grid(visibility: bool):
+	node_tiles.visible = visibility
 func exist_path_for_clients(obstacle_positions: Array[Vector2]) -> bool:
 	var spawn_pos = world_to_grid(tile_spawn.global_position)
 	var exit_pos = world_to_grid(tile_exit.global_position)

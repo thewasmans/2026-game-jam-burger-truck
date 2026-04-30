@@ -28,12 +28,14 @@ func _ready() -> void:
 		current_wave_burgers = data.burgers
 		game_ui.set_visible_furnitures_menu(false)
 		camera_switcher.set_camera_kitchen()
+		grid.set_visible_grid(false)
 		game_ui.set_wave_information(data, number))
 	spawner.waiting_next_wave.connect(func():
 		var furnitures := FurnituresManager.shuffle_selection_furnitures()
 		game_ui.reset_orders()
 		game_ui.set_buttons_furnitures(furnitures)
 		camera_switcher.set_camera_furnitures()
+		grid.set_visible_grid(true)
 		game_ui.set_visible_furnitures_menu(true))
 	spawner.client_spawned.connect(client_spawned)
 	camera_switcher.set_camera_kitchen()
