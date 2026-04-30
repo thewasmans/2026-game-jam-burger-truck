@@ -16,7 +16,7 @@ signal reputation_reached_zero()
 @export var vfx_ingredient_dismiss: GPUParticles3D
 @export var game_data: GameData
 
-var MAX_REPUTATION: int = 10
+var MAX_REPUTATION: int = 1000
 var current_reputation: int = MAX_REPUTATION
 var _current_ingredient: Ingredient = null
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
