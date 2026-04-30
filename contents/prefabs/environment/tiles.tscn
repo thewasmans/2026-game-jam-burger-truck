@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cmjlddqnega83"]
+
+[ext_resource type="Material" uid="uid://c586nx60xk1aj" path="res://contents/materials/ground_mat.tres" id="1_ue3dp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tyu0y"]
+
+[node name="Node3D" type="Node3D" unique_id=1389039419]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1883237590]
+mesh = SubResource("PlaneMesh_tyu0y")
+surface_material_override/0 = ExtResource("1_ue3dp")
