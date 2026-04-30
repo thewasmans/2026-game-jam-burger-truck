@@ -4,6 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://croqpai0ck5r" path="res://contents/meshes/furnitures/chair.glb" id="2_03pnp"]
 [ext_resource type="PackedScene" uid="uid://c52ss737lhbvd" path="res://contents/meshes/furnitures/table.glb" id="3_ppe7l"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_03pnp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ppe7l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xagsg"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_d3t5e"]
 size = Vector3(2, 1, 1)
 
@@ -11,7 +17,7 @@ size = Vector3(2, 1, 1)
 
 [node name="Furniture3B03" unique_id=1741332122 node_paths=PackedStringArray("blocks") instance=ExtResource("1_77jxt")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-blocks = [NodePath("Model3D/Chair1"), NodePath("Model3D/Table"), NodePath("Model3D/Chair2")]
+blocks = [NodePath("Model3D/MeshInstance3D"), NodePath("Model3D/MeshInstance3D2"), NodePath("Model3D/MeshInstance3D3")]
 
 [node name="Chair1" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="1" unique_id=1930029020 instance=ExtResource("2_03pnp")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1, 0, 0)
@@ -21,6 +27,21 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0
 
 [node name="Chair2" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="3" unique_id=228963207 instance=ExtResource("2_03pnp")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="4" unique_id=456542997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+visible = false
+mesh = SubResource("BoxMesh_03pnp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="5" unique_id=284175902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+mesh = SubResource("BoxMesh_ppe7l")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="6" unique_id=1213193404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+visible = false
+mesh = SubResource("BoxMesh_xagsg")
 
 [node name="Area3D" type="Area3D" parent="." index="1" unique_id=1036346118]
 
