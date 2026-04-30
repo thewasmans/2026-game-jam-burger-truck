@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d1b7haemgnr86"]
 
 [ext_resource type="PackedScene" uid="uid://c144sagnaxcwa" path="res://contents/prefabs/furnitures/grid_furnitures/furniture_base.tscn" id="1_0wkc0"]
+[ext_resource type="PackedScene" uid="uid://llhjqstasxwe" path="res://contents/meshes/furnitures/divider_long.glb" id="2_uymat"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxr1o"]
 albedo_color = Color(0.6984765, 0.23383299, 0.18583226, 1)
@@ -20,15 +21,21 @@ blocks = [NodePath("Model3D/MeshInstance3D"), NodePath("Model3D/MeshInstance3D2"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="1" unique_id=2045801138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 1)
+visible = false
 mesh = SubResource("BoxMesh_0yx01")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="2" unique_id=1437028529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
 mesh = SubResource("BoxMesh_0yx01")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="3" unique_id=2112465489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -1)
+visible = false
 mesh = SubResource("BoxMesh_0yx01")
+
+[node name="Divider" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="4" unique_id=463800902 instance=ExtResource("2_uymat")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="." index="1" unique_id=1036346118]
 
