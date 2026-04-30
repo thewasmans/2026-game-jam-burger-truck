@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dy451protn743"]
+
+[ext_resource type="Material" path="res://contents/materials/ground_mat.tres" id="1_ue3dp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tyu0y"]
+
+[node name="Node3D" type="Node3D" unique_id=1389039419]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1883237590]
+transform = Transform3D(10.315082, 0, 0, 0, 1, 0, 0, 0, 10.315082, 0, 0, 0)
+mesh = SubResource("PlaneMesh_tyu0y")
+surface_material_override/0 = ExtResource("1_ue3dp")

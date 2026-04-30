@@ -179,6 +179,7 @@ fov = 70.0
 [node name="Environments" type="Node" parent="." unique_id=382932535]
 
 [node name="Environment" parent="Environments" unique_id=1062952153 instance=ExtResource("31_tel4y")]
+transform = Transform3D(0.9782039, 0, 0, 0, 0.9782039, 0, 0, 0, 0.9782039, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environments" unique_id=574237056]
 environment = SubResource("Environment_jyhfs")

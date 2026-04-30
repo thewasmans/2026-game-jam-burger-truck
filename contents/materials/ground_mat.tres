@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b1si0fg8rrot"]
+
+[ext_resource type="Texture2D" uid="uid://cy0nn8mw0avro" path="res://contents/textures/tiling.png" id="1_65531"]
+[ext_resource type="Texture2D" uid="uid://ddwkl5wk0kf4u" path="res://contents/textures/tiling_n.png" id="2_l5kie"]
+
+[resource]
+albedo_texture = ExtResource("1_65531")
+normal_enabled = true
+normal_scale = 1.4
+normal_texture = ExtResource("2_l5kie")
+uv1_scale = Vector3(33.655, 33.655, 33.655)
+uv1_offset = Vector3(-0.037, 0, 0.115)
+uv1_triplanar = true
