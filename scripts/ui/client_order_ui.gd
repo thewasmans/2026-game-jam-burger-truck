@@ -30,8 +30,7 @@ func reset_textures_ingredients():
 		texture.texture = null
 
 func set_textures_ingredients(burger_data: BurgerData):
-	if burger_data.ingredients.size() >= ingredients_texture.size():
-		push_error("[ ClientOrderUI ] Burger Data have to mush ingredient")
-		return
+	assert(burger_data.ingredients.size() <= ingredients_texture.size(), "[ ClientOrderUI ] Burger Data have to mush ingredient")
+		
 	for i in burger_data.ingredients.size():
 		ingredients_texture[burger_data.ingredients.size() - 1 - i].texture = burger_data.ingredients[i].icon
