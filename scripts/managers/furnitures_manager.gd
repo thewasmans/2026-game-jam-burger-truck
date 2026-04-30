@@ -54,7 +54,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_instance_valid(_current_furniture_instance):
 		if event is InputEventMouseButton and event.pressed:
 			if event.button_index == MOUSE_BUTTON_LEFT:
-				if _grid.add_obstacles(_current_furniture_instance.blocks_to_2D_positions(_tile_position)):
+				var obstacles := _current_furniture_instance.blocks_to_2D_positions(_tile_position)
+				if _grid.can_add_obstacles(obstacles) and _grid.exist_path_for_clients(obstacles):
+					_grid.add_obstacles(_current_furniture_instance.blocks_to_2D_positions(_tile_position))
 					AudioManager.play_sfx_random(["sfx-furniture-1","sfx-furniture-2"])
 					_current_furniture_instance.reparent(_grid)
 					_current_furniture = null
