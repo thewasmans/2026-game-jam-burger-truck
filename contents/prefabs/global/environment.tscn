@@ -252,4 +252,4 @@ shape = SubResource("SphereShape3D_gjsym")
 shape = SubResource("CapsuleShape3D_gjsym")
 
 [node name="Ground" parent="." unique_id=1389039419 instance=ExtResource("6_7am6d")]
-transform = Transform3D(20, 0, 0, 0, 0.935, 0, 0, 0, 20, 0, 0.13633955, 0)
+transform = Transform3D(20, 0, 0, 0, 0.935, 0, 0, 0, 20, 0.55, 0.136, 0)
