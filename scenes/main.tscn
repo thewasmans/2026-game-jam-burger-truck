@@ -146,18 +146,18 @@ transform = Transform3D(1, -9.196228e-09, -2.2284155e-08, 2.38769e-08, 0.5052808
 fov = 60.0
 
 [node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target", "hungry_client_spawner", "grid_system") instance=ExtResource("1_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103453636, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26790273, 0.103453636, -12.749668)
 front_truck_target = NodePath("FrontTruck")
 out_screen_target = NodePath("Leaving")
 hungry_client_spawner = NodePath(".")
 grid_system = NodePath("../Grid")
 
 [node name="FrontTruck" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=1816251431]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.103453636, 13.155243)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.103453636, 15.023006)
 mesh = SubResource("SphereMesh_0wfyh")
 
 [node name="Leaving" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=696312194]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4920025, -0.103453636, 13.155243)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4920025, -0.103453636, 15.023006)
 mesh = SubResource("SphereMesh_0wfyh")
 
 [node name="SpawnPath" type="Path3D" parent="Level/HungryClientSpawner" unique_id=1395796014]
@@ -170,10 +170,10 @@ transform = Transform3D(-4.371129e-08, 0, -0.99999774, 0, 1, 0, 0.99999774, 0, -
 transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 2.6044483, 7.918475)
 
 [node name="Grid" parent="Level" unique_id=621197692 instance=ExtResource("18_dp3eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2887745, 0.21064639, -10.190483)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.739, 0.211, -10.19)
 
 [node name="CameraGrid" type="Camera3D" parent="Level/Grid" unique_id=208566722]
-transform = Transform3D(-1, -8.7422784e-08, -1.7763568e-15, -2.310678e-08, 0.26431075, 0.9644376, -8.431381e-08, 0.9644376, -0.26431075, 4.2887745, 14.024063, 0.85232544)
+transform = Transform3D(-1, -8.7422784e-08, -1.7763568e-15, -2.310678e-08, 0.26431075, 0.9644376, -8.431381e-08, 0.9644376, -0.26431075, 5.0361648, 14.024, 0.85200024)
 fov = 70.0
 
 [node name="Environments" type="Node" parent="." unique_id=382932535]
