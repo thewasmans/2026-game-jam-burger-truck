@@ -90,7 +90,7 @@ func assign_clients_to_plates() -> void:
 		if _plates_availalble[anchor] == null and ClientsManager._waiting_queue.size() > 0:
 			var next_client: HungryClient = ClientsManager._waiting_queue.pop_front()
 			_plates_availalble[anchor] = next_client
-			next_client.global_position = anchor.global_position
+			next_client.assign_to_plate(anchor.global_position)
 
 func release_client_plate(client: HungryClient) -> void:
 	for anchor: Node3D in _plates_availalble.keys():

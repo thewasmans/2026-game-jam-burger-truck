@@ -31,6 +31,8 @@ var is_waiting:
 		return current_state == State.WAITING
 var _original_scale:Vector3
 var _order_ui: ClientOrderUI
+var _plate_position: Vector3
+var _moving_to_plate: bool = false
 
 func _ready() -> void:
 	_is_hungry = true
@@ -60,6 +62,13 @@ func _physics_process(delta: float) -> void:
 				current_state = State.WAITING
 				wait_timer.start()
 		State.WAITING:
+			if _moving_to_plate:
+				var dist = _plate_position - global_position
+				var dir = dist.normalized()
+				global_position += dir * delta
+				if dist.length() < .01:
+					_moving_to_plate = false
+				return
 			collision.disabled = true
 			if value_waiting >= 0:
 				value_waiting += delta
@@ -129,3 +138,7 @@ func set_order_ui(order_ui: ClientOrderUI):
 	_order_ui = order_ui
 	_order_ui.waiting.max_value = wait_timer.wait_time
 	_order_ui.waiting.value = wait_timer.wait_time
+	
+func assign_to_plate(plate_position: Vector3):
+	_moving_to_plate = true
+	_plate_position = plate_position
