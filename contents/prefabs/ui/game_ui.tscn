@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 [ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "start_menu", "end_menu", "mini_map", "button_start", "button_return_to_start", "button_mute", "label_clients", "label_score")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "start_menu", "end_menu", "mini_map", "button_start", "button_return_to_start", "button_mute", "label_clients", "label_score", "container_orders", "label_remaining")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -30,13 +30,16 @@ mini_map = NodePath("Minimap")
 button_start = NodePath("StartMenu/Panel/ButtonStart")
 button_return_to_start = NodePath("EndMenu/Panel/ButtonReturn")
 button_mute = NodePath("ButtonMuteAudio")
-label_clients = NodePath("Label")
+label_clients = NodePath("WaveLabel")
 label_score = NodePath("EndMenu/Panel/ScoreLabel")
+order_ui_prefab = ExtResource("5_ckmay")
+container_orders = NodePath("Control/ScrollContainer/ClientRequestSideUi")
+label_remaining = NodePath("Control/RemainingLabel")
 
 [node name="Minimap" parent="." unique_id=1304258662 instance=ExtResource("4_nkv2q")]
 layout_mode = 1
 
-[node name="Label" type="Label" parent="." unique_id=2103994670]
+[node name="WaveLabel" type="Label" parent="." unique_id=2103994670]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -54,30 +57,27 @@ text = "XXX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ClientRequestSideUi" type="VBoxContainer" parent="." unique_id=177915295]
+[node name="Control" type="VBoxContainer" parent="." unique_id=1993244119]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -636.0
-offset_right = 319.0
-offset_bottom = 636.0
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 241.0
+offset_right = 312.0
 grow_vertical = 2
 
-[node name="ClientOrderUI" parent="ClientRequestSideUi" unique_id=1780644722 instance=ExtResource("5_ckmay")]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=1658963808]
+custom_minimum_size = Vector2(0, 1100)
 layout_mode = 2
 
-[node name="ClientOrderUI2" parent="ClientRequestSideUi" unique_id=444927761 instance=ExtResource("5_ckmay")]
+[node name="ClientRequestSideUi" type="VBoxContainer" parent="Control/ScrollContainer" unique_id=177915295]
 layout_mode = 2
 
-[node name="ClientOrderUI3" parent="ClientRequestSideUi" unique_id=273161142 instance=ExtResource("5_ckmay")]
+[node name="RemainingLabel" type="Label" parent="Control" unique_id=639356348]
+visible = false
 layout_mode = 2
-
-[node name="ClientOrderUI4" parent="ClientRequestSideUi" unique_id=631366839 instance=ExtResource("5_ckmay")]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="ClientRequestSideUi" unique_id=639356348]
-layout_mode = 2
+size_flags_vertical = 0
+text = "+XX orders remaining"
+horizontal_alignment = 1
 
 [node name="Money" parent="." unique_id=1829518468 instance=ExtResource("5_ytt4t")]
 layout_mode = 1

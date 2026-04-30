@@ -18,14 +18,17 @@ signal button_start_clicked
 @export var button_mute: Button
 @export var label_clients: Label
 @export var label_score: Label
-@export var prefab_order_ui: ClientOrderUI
-@export var container_orders: VBoxContainer
+@export var order_ui_prefab: PackedScene
+@export var container_orders: Control
+@export var label_remaining: Label
 var ingredients_buttons:Array[Button]
+var _clients_orders: Dictionary[HungryClient, ClientOrderUI]
 
 func _ready() -> void:
 	money_label.text = "0 $"
 	start_menu.visible = true
 	end_menu.visible = false
+	reset_orders()
 	MoneyManager.money_changed.connect(func(): set_money_value(MoneyManager._money))
 	set_visible_furnitures_menu(false)
 
@@ -92,3 +95,22 @@ func set_visible_furnitures_menu(visible: bool):
 func show_end_score_menu(time: String = "XX:XX:XX", score: String = "XX"):
 	end_menu.visible = true
 	label_score.text = "GAME TERMINATE\n\nSCORE\n%s\n%s CLIENTS SERVED" % [time, score]
+	
+func add_order(client: HungryClient) -> ClientOrderUI:
+	var instance: ClientOrderUI = order_ui_prefab.instantiate()
+	_clients_orders[client] = instance
+	instance.set_burger_data(client._burger_request)
+	container_orders.add_child(instance)
+	return instance
+
+func release_order(client: HungryClient):
+	if _clients_orders.has(client):
+		_clients_orders[client].queue_free()
+		_clients_orders.erase(client)
+	
+func reset_orders():
+	for order: Control in _clients_orders.values():
+		order.queue_free()
+	_clients_orders = {}
+	label_remaining.visible = false
+	

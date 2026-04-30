@@ -12,7 +12,6 @@ enum State { MOVING_TO_TRUCK, WAITING, LEAVING }
 @export var speed: float = 4.0
 @export var target_position: Vector3
 @export var target_leaving: Vector3
-@export var client_request_ui: ClientRequestUI
 @export var hover_node: Node3D
 @export var wait_time: Vector2 = Vector2(12, 18)
 @export var anchor_burger: Node3D
@@ -31,13 +30,12 @@ var is_waiting:
 	get:
 		return current_state == State.WAITING
 var _original_scale:Vector3
+var _order_ui: ClientOrderUI
 
 func _ready() -> void:
 	_is_hungry = true
 	wait_timer = Timer.new()
 	wait_timer.wait_time = randf_range(wait_time.x, wait_time.y)
-	client_request_ui.waiting.max_value = wait_timer.wait_time
-	client_request_ui.waiting.value = wait_timer.wait_time
 	wait_timer.one_shot = true
 	wait_timer.timeout.connect(_on_wait_timer_timeout)
 	add_child(wait_timer)
@@ -65,7 +63,7 @@ func _physics_process(delta: float) -> void:
 			collision.disabled = true
 			if value_waiting >= 0:
 				value_waiting += delta
-				client_request_ui.set_waiting(wait_timer.wait_time - value_waiting)
+				_order_ui.set_waiting(wait_timer.wait_time - value_waiting)
 			else:
 				waiting_food.emit()
 				value_waiting = 0
@@ -126,3 +124,8 @@ func give_food(_burger:Array[IngredientData])-> bool:
 func follow_path(path: PackedVector3Array):
 	current_path = path
 	target_index = 0
+
+func set_order_ui(order_ui: ClientOrderUI):
+	_order_ui = order_ui
+	_order_ui.waiting.max_value = wait_timer.wait_time
+	_order_ui.waiting.value = wait_timer.wait_time

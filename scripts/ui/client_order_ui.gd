@@ -21,6 +21,7 @@ func set_waiting(value:float):
 func set_burger_data(burger_data:BurgerData):
 	_burger_data = burger_data
 	reset_textures_ingredients()
+	set_textures_ingredients(burger_data)
 
 func reset_textures_ingredients():
 	for texture in ingredients_texture:
