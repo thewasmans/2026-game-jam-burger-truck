@@ -24,6 +24,7 @@ func _ready() -> void:
 	kitchen.reputation_reached_zero.connect(_reputation_reached_zero)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
 	spawner.next_wave_started.connect(func(data, number):
+		FurnituresManager.reset_current_furniture_placed()
 		current_wave_burgers = data.burgers
 		game_ui.set_visible_furnitures_menu(false)
 		camera_switcher.set_camera_kitchen()
