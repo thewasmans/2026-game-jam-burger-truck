@@ -42,10 +42,9 @@ size = Vector2(0.5, 0.053)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n2o8w"]
 
-[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("client_request_ui", "hover_node", "anchor_burger", "collision")]
+[node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("hover_node", "anchor_burger", "collision")]
 script = ExtResource("1_mntof")
 speed = 1.0
-client_request_ui = NodePath("SubViewport/ClientRequest")
 hover_node = NodePath("Hover")
 wait_time = Vector2(45, 45)
 anchor_burger = NodePath("Anchor Burger")
@@ -80,20 +79,25 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rtm0h")
 
 [node name="Anchor Burger" type="Node3D" parent="." unique_id=1795400529]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, -0.004, 1.543, 1.149)
+visible = false
 
 [node name="Hover" type="MeshInstance3D" parent="." unique_id=771406449]
 transform = Transform3D(1.751, 1.9800858e-07, 7.2639375e-07, -1.0801477e-07, 1.0416238, -2.1786547, -3.9440033e-07, 0.5938185, 3.8216045, 0, 2.055, 0.274)
+visible = false
 mesh = SubResource("PlaneMesh_i5gv5")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=769199299]
 size = Vector2i(1152, 96)
 
 [node name="ClientRequest" parent="SubViewport" unique_id=853921984 instance=ExtResource("2_tnfmv")]
+visible = false
 
 [node name="Area3D" type="Area3D" parent="." unique_id=14976632]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.572, 1.008)
+visible = false
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=2046416435]
+visible = false
 shape = SubResource("BoxShape3D_n2o8w")
 
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
