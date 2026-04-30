@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/theme/ingredients_theme.tres" id="3_uuvj8"]
 [ext_resource type="PackedScene" uid="uid://c4i1ks8v6ixe7" path="res://contents/prefabs/ui/minimap.tscn" id="4_nkv2q"]
 [ext_resource type="Texture2D" uid="uid://b0nlh5j5f5gi0" path="res://contents/ui/start_screen.png" id="5_77pjo"]
+[ext_resource type="PackedScene" uid="uid://jtsp8ua8vooh" path="res://contents/prefabs/ui/client_order_ui.tscn" id="5_ckmay"]
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 [ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
 
@@ -52,6 +53,31 @@ theme_override_font_sizes/font_size = 32
 text = "XXX"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ClientRequestSideUi" type="VBoxContainer" parent="." unique_id=177915295]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -636.0
+offset_right = 319.0
+offset_bottom = 636.0
+grow_vertical = 2
+
+[node name="ClientOrderUI" parent="ClientRequestSideUi" unique_id=1780644722 instance=ExtResource("5_ckmay")]
+layout_mode = 2
+
+[node name="ClientOrderUI2" parent="ClientRequestSideUi" unique_id=444927761 instance=ExtResource("5_ckmay")]
+layout_mode = 2
+
+[node name="ClientOrderUI3" parent="ClientRequestSideUi" unique_id=273161142 instance=ExtResource("5_ckmay")]
+layout_mode = 2
+
+[node name="ClientOrderUI4" parent="ClientRequestSideUi" unique_id=631366839 instance=ExtResource("5_ckmay")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ClientRequestSideUi" unique_id=639356348]
+layout_mode = 2
 
 [node name="Money" parent="." unique_id=1829518468 instance=ExtResource("5_ytt4t")]
 layout_mode = 1
@@ -125,6 +151,7 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="EndMenu" type="Control" parent="." unique_id=2010971725]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

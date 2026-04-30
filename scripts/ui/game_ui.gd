@@ -18,6 +18,8 @@ signal button_start_clicked
 @export var button_mute: Button
 @export var label_clients: Label
 @export var label_score: Label
+@export var prefab_order_ui: ClientOrderUI
+@export var container_orders: VBoxContainer
 var ingredients_buttons:Array[Button]
 
 func _ready() -> void:
