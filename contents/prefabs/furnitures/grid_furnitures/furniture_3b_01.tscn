@@ -4,12 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://croqpai0ck5r" path="res://contents/meshes/furnitures/chair.glb" id="2_ykrii"]
 [ext_resource type="PackedScene" uid="uid://c52ss737lhbvd" path="res://contents/meshes/furnitures/table.glb" id="3_8j10t"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_ykrii"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8j10t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dvttd"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_d3t5e"]
 size = Vector3(2, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v4kla"]
 
-[node name="Furniture3B01" unique_id=1741332122 instance=ExtResource("1_v4kla")]
+[node name="Furniture3B01" unique_id=1741332122 node_paths=PackedStringArray("blocks") instance=ExtResource("1_v4kla")]
+blocks = [NodePath("Model3D/MeshInstance3D"), NodePath("Model3D/MeshInstance3D2"), NodePath("Model3D/MeshInstance3D3")]
 
 [node name="Chair1" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="1" unique_id=1930029020 instance=ExtResource("2_ykrii")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1)
@@ -18,6 +25,21 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 
 [node name="Chair2" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="3" unique_id=1556425214 instance=ExtResource("2_ykrii")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="4" unique_id=834655027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+visible = false
+mesh = SubResource("BoxMesh_ykrii")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="5" unique_id=654830373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+mesh = SubResource("BoxMesh_8j10t")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="6" unique_id=1324628866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+visible = false
+mesh = SubResource("BoxMesh_dvttd")
 
 [node name="Area3D" type="Area3D" parent="." index="1" unique_id=1036346118]
 
