@@ -7,7 +7,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_d3t5e"]
 size = Vector3(3, 1, 1)
 
-[node name="Furniture3A01" unique_id=1741332122 instance=ExtResource("1_lpqqb")]
+[node name="Furniture3A01" unique_id=1741332122 node_paths=PackedStringArray("blocks") instance=ExtResource("1_lpqqb")]
+blocks = [NodePath("Model3D/Chair1"), NodePath("Model3D/Table"), NodePath("Model3D/Chair2")]
 
 [node name="Chair1" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="1" unique_id=1930029020 instance=ExtResource("2_8pivv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
