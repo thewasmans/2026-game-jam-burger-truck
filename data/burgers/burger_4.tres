@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://bqka8eee1t5e2"]
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_qo1hc"]
+[ext_resource type="Texture2D" uid="uid://c3bobdxtg8hb8" path="res://contents/ui/icons/burgers/burger_4.png" id="1_roxe5"]
 [ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_roxe5"]
 [ext_resource type="Resource" uid="uid://p3x44aw4ollh" path="res://data/ingredients/cooked_steak.tres" id="3_cngkr"]
 [ext_resource type="Resource" uid="uid://cswgje7b0i4vs" path="res://data/ingredients/cheese.tres" id="4_qo1hc"]
@@ -10,6 +11,7 @@
 [resource]
 script = ExtResource("6_ft341")
 ingredients = Array[ExtResource("1_qo1hc")]([ExtResource("2_roxe5"), ExtResource("3_cngkr"), ExtResource("4_qo1hc"), ExtResource("3_cngkr"), ExtResource("4_qo1hc"), ExtResource("5_3c8i8")])
+image = ExtResource("1_roxe5")
 name = "Double Cheeseburger"
 price = 12
 metadata/_custom_type_script = "uid://b250qdutrqhpq"

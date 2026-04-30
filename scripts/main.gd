@@ -31,6 +31,7 @@ func _ready() -> void:
 		game_ui.set_wave_information(data, number))
 	spawner.waiting_next_wave.connect(func():
 		var furnitures := FurnituresManager.shuffle_selection_furnitures()
+		game_ui.reset_orders()
 		game_ui.set_buttons_furnitures(furnitures)
 		camera_switcher.set_camera_furnitures()
 		game_ui.set_visible_furnitures_menu(true))
@@ -56,6 +57,8 @@ func client_spawned(client: HungryClient):
 	if burgers_data.size() > 0:
 		var burger_data = current_wave_burgers.pick_random()
 		client.set_burger(burger_data)
+		var order := game_ui.add_order(client)
+		client.set_order_ui(order)
 	client.leaving_hungry.connect(kitchen.on_enemy_leaving_hungry.bind(client))
 	client.waiting_food.connect(func():
 		kitchen.on_client_waiting_food(client)
@@ -67,6 +70,7 @@ func start_game():
 	get_tree().paused = false
 
 func free_client(client:HungryClient):
+	game_ui.release_order(client)
 	spawner.remove_client(client)
 	client.queue_free()
 
@@ -75,6 +79,7 @@ func add_ingredient_on_plate(ingredient: IngredientData, plate:CratePlate):
 	var client = ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
 	if client:
 		ClientsManager.feed_client(client, plate)
+		game_ui.release_order(client)
 		kitchen.release_client_plate(client)
 		play_vfx(plate)
 			

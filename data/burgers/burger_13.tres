@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://5kd2bmstigmj"]
 
+[ext_resource type="Texture2D" uid="uid://delesuwiixyik" path="res://contents/ui/icons/burgers/burger_13.png" id="1_araln"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_r62ni"]
 [ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_oo6oq"]
 [ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="5_3xjnx"]
@@ -11,6 +12,7 @@
 [resource]
 script = ExtResource("9_sknuj")
 ingredients = Array[ExtResource("1_r62ni")]([ExtResource("2_oo6oq"), ExtResource("7_2ev3d"), ExtResource("6_4akjd"), ExtResource("7_2ev3d"), ExtResource("5_3xjnx"), ExtResource("8_d7v5s")])
+image = ExtResource("1_araln")
 name = "Vegan Burger"
 price = 7
 metadata/_custom_type_script = "uid://b250qdutrqhpq"

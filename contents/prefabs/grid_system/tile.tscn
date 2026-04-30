@@ -6,6 +6,10 @@ size = Vector3(0.9, 0.09, 0.9)
 [sub_resource type="BoxMesh" id="BoxMesh_7h4m1"]
 size = Vector3(1, 0.1, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1is30"]
+transparency = 1
+albedo_color = Color(0, 0.43633327, 0.77, 0.5764706)
+
 [node name="Tile" type="Area3D" unique_id=1371709330]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1271065319]
@@ -14,3 +18,4 @@ shape = SubResource("BoxShape3D_1is30")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1664123436]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 mesh = SubResource("BoxMesh_7h4m1")
+surface_material_override/0 = SubResource("StandardMaterial3D_1is30")
