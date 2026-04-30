@@ -2,7 +2,7 @@ extends Node
 
 var sounds: Dictionary[String, AudioStream]
 var _music_players:Array[AudioStreamPlayer] = []
-var _active_sfx: Dictionary[String, AudioStreamPlayer] = {}
+var _active_sfx: Dictionary[String, Array] = {}
 var muted: bool
 
 func initialize(_sounds:Dictionary[String, AudioStream], _stream_player_sfx: AudioStreamPlayer):
@@ -19,11 +19,14 @@ func play_sfx(sound_name: String, volume_db: float = -15.0):
 		add_child(asp)
 		asp.play()
 		
-		_active_sfx[sound_name] = asp
+		if not _active_sfx.has(sound_name):
+			_active_sfx[sound_name] = []
+			
+		_active_sfx[sound_name].append(asp)
 		
 		asp.finished.connect(func():
 			if _active_sfx.has(sound_name):
-				_active_sfx.erase(sound_name)
+				_active_sfx[sound_name].erase(asp)
 			asp.queue_free()
 		)
 	else:
@@ -36,9 +39,11 @@ func play_sfx_random(sound_names: Array[String], volume_db: float = -15.0):
 
 func stop_sfx(sound_name: String):
 	if _active_sfx.has(sound_name):
-		_active_sfx[sound_name].stop()
-		_active_sfx[sound_name].queue_free()
-		_active_sfx.erase(sound_name)
+		for player in _active_sfx[sound_name]:
+			if is_instance_valid(player):
+				player.stop()
+				player.queue_free()
+		_active_sfx[sound_name].clear()
 
 func play_music(music_path: String, volume_db: float = -10.0):
 	var music_player := AudioStreamPlayer.new()
@@ -55,12 +60,16 @@ func mute_all_sounds():
 	for player in _music_players:
 		player.stop()
 	for key in _active_sfx:
-		_active_sfx[key].stop()
+		for player in _active_sfx[key]:
+			if is_instance_valid(player):
+				player.stop()
 	muted = true
 	
 func resume_all_sounds():
 	for player in _music_players:
 		player.play()
 	for key in _active_sfx:
-		_active_sfx[key].play()
+		for player in _active_sfx[key]:
+			if is_instance_valid(player):
+				player.play()
 	muted = false
