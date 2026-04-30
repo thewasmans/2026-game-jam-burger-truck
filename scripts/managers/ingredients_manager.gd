@@ -48,6 +48,8 @@ func _on_drag_started():
 	elif _crate_drag is CrateTool and _crate_drag.ingredient_transformed:
 		_current_ingredient = _crate_drag._ingredient
 		AudioManager.stop_sfx("sfx-overcooking-steak-loop")
+	elif _crate_drag is CrateCoocking:
+		_crate_drag = null
 
 func _on_drag_dropped():
 	var crate := get_crate_targeted()
@@ -64,6 +66,7 @@ func _on_drag_dropped():
 					_current_ingredient = null
 				else:
 					play_vfx_disapear_ingredient()
+					reset_crate_tool()
 					free_current_ingredient()
 	if crate is CrateIngredient:
 		play_vfx_disapear_ingredient()
@@ -76,6 +79,7 @@ func _on_drag_dropped():
 	
 	if not crate and get_ground():
 		play_vfx_disapear_ingredient()
+		reset_crate_tool()
 		free_current_ingredient()
 
 func get_ground() -> Kitchen:
@@ -144,6 +148,11 @@ func _process(_delta: float) -> void:
 		var world_plane: Plane = Plane(Vector3.UP, 1.7)
 		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
 		_current_ingredient.instance.global_position = intersection
+
+func reset_crate_tool():
+	if _crate_drag is CrateTool:
+		_crate_drag.ingredient_transformed = false
+		_crate_drag._ingredient = null
 
 func free_current_ingredient():
 	_current_ingredient.instance.queue_free()

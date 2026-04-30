@@ -12,6 +12,7 @@ class_name Main
 @export var sounds: Dictionary[String, AudioStream]
 @export var stream_player: AudioStreamPlayer
 @export var camera_switcher: CameraSwitcher
+var current_wave_burgers: Array[BurgerData] = []
 
 var burgers_data:
 	get:
@@ -23,6 +24,8 @@ func _ready() -> void:
 	kitchen.reputation_reached_zero.connect(_reputation_reached_zero)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
 	spawner.next_wave_started.connect(func(data, number):
+		FurnituresManager.reset_current_furniture_placed()
+		current_wave_burgers = data.burgers
 		game_ui.set_visible_furnitures_menu(false)
 		camera_switcher.set_camera_kitchen()
 		game_ui.set_wave_information(data, number))
@@ -51,7 +54,7 @@ func _reputation_reached_zero():
 
 func client_spawned(client: HungryClient):
 	if burgers_data.size() > 0:
-		var burger_data = burgers_data.pick_random()
+		var burger_data = current_wave_burgers.pick_random()
 		client.set_burger(burger_data)
 	client.leaving_hungry.connect(kitchen.on_enemy_leaving_hungry.bind(client))
 	client.waiting_food.connect(func():
