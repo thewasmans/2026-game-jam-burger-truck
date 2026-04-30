@@ -165,3 +165,6 @@ func add_obstacle(grid_pos: Vector2) -> bool:
 	else:
 		push_warning("Tentative d'ajouter un obstacle hors limites: ", grid_pos)
 	return false
+
+func set_visible_grid(visibility: bool):
+	node_tiles.visible = visibility
