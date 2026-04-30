@@ -421,3 +421,43 @@ metadata/tile = Vector3(9, 0, 8)
 [node name="Tile_9_9" parent="Tiles" unique_id=539576425 instance=ExtResource("2_2c1ye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 9)
 metadata/tile = Vector3(9, 0, 9)
+
+[node name="Tile_10_0" parent="Tiles" unique_id=1583121902 instance=ExtResource("2_2c1ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+metadata/tile = Vector3(9, 0, 0)
+
+[node name="Tile_10_1" parent="Tiles" unique_id=462446558 instance=ExtResource("2_2c1ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 1)
+metadata/tile = Vector3(9, 0, 1)
+
+[node name="Tile_10_2" parent="Tiles" unique_id=2012606304 instance=ExtResource("2_2c1ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 2)
+metadata/tile = Vector3(9, 0, 2)
+
+[node name="Tile_10_3" parent="Tiles" unique_id=172525875 instance=ExtResource("2_2c1ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 3)
+metadata/tile = Vector3(9, 0, 3)
+
+[node name="Tile_10_4" parent="Tiles" unique_id=1976887699 instance=ExtResource("2_2c1ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4)
+metadata/tile = Vector3(9, 0, 4)
+
+[node name="Tile_10_5" parent="Tiles" unique_id=861941960 instance=ExtResource("2_2c1ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5)
+metadata/tile = Vector3(9, 0, 5)
+
+[node name="Tile_10_6" parent="Tiles" unique_id=1216858006 instance=ExtResource("2_2c1ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6)
+metadata/tile = Vector3(9, 0, 6)
+
+[node name="Tile_10_7" parent="Tiles" unique_id=1530253022 instance=ExtResource("2_2c1ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 7)
+metadata/tile = Vector3(9, 0, 7)
+
+[node name="Tile_10_8" parent="Tiles" unique_id=706539993 instance=ExtResource("2_2c1ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 8)
+metadata/tile = Vector3(9, 0, 8)
+
+[node name="Tile_10_9" parent="Tiles" unique_id=320076074 instance=ExtResource("2_2c1ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 9)
+metadata/tile = Vector3(9, 0, 9)
