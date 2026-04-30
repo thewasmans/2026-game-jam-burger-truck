@@ -70,6 +70,7 @@ func start_game():
 	get_tree().paused = false
 
 func free_client(client:HungryClient):
+	game_ui.release_order(client)
 	spawner.remove_client(client)
 	client.queue_free()
 
