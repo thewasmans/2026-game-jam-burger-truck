@@ -4,7 +4,6 @@ var _current_furniture:FurnitureGridData
 var _current_furniture_instance: Furniture3D
 var _grid: GridSystem
 var _tile_position: Vector2
-var _currents_furnitures_availbles: Array[FurnitureData]
 var _furnitures: Array[FurnitureGridData]
 var _game_data: GameData
 var _current_furniture_placed: Array

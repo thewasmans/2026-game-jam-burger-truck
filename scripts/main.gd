@@ -74,7 +74,7 @@ func free_client(client:HungryClient):
 	spawner.remove_client(client)
 	client.queue_free()
 
-func add_ingredient_on_plate(ingredient: IngredientData, plate:CratePlate):
+func add_ingredient_on_plate(_ingredient: IngredientData, plate:CratePlate):
 	AudioManager.play_sfx("sfx-plate")
 	var client = ClientsManager.burger_match_with_client(plate._ingredients, kitchen._plates_availalble)
 	if client:

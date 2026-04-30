@@ -74,7 +74,7 @@ func _on_button_mute_audio_pressed():
 		AudioManager.mute_all_sounds()
 		button_mute.text = "Resume Audio"
 		
-func set_wave_information(wave:WavesPresetData, number_wave: int):
+func set_wave_information(_wave:WavesPresetData, number_wave: int):
 	label_clients.text = "WAVE " + str(number_wave )
 	animate_label(label_clients)
 	
@@ -88,9 +88,9 @@ func animate_label(label: Label):
 	tween.tween_property(label, "scale", Vector2.ONE, 0.15)
 	tween.parallel().tween_property(label, "modulate", Color.WHITE, 0.15)
 
-func set_visible_furnitures_menu(visible: bool):
-	mini_map.visible = not visible
-	container_menu.visible = visible
+func set_visible_furnitures_menu(visibility: bool):
+	mini_map.visible = not visibility
+	container_menu.visible = visibility
 
 func show_end_score_menu(time: String = "XX:XX:XX", score: String = "XX"):
 	end_menu.visible = true

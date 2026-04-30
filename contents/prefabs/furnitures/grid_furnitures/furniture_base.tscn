@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c144sagnaxcwa"]
 
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="1_3x8tt"]
-[ext_resource type="Script" uid="uid://bdgt7rsakbke3" path="res://scripts/furniture.gd" id="1_ntmpx"]
+[ext_resource type="Script" path="res://scripts/furniture.gd" id="1_ntmpx"]
 
 [node name="FurnituresGlobal" type="Node3D" unique_id=1741332122]
 script = ExtResource("1_ntmpx")
