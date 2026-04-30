@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://qqfwtw1fhufy"]
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_glqki"]
+[ext_resource type="Texture2D" uid="uid://dgjc1p6t2f3d1" path="res://contents/ui/icons/burgers/burger_6.png" id="1_ydifg"]
 [ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_lomjj"]
 [ext_resource type="Resource" uid="uid://p3x44aw4ollh" path="res://data/ingredients/cooked_steak.tres" id="3_vu04u"]
 [ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="4_kjqwt"]
@@ -9,6 +10,7 @@
 [resource]
 script = ExtResource("5_lfdlr")
 ingredients = Array[ExtResource("1_glqki")]([ExtResource("2_lomjj"), ExtResource("3_vu04u"), ExtResource("3_vu04u"), ExtResource("3_vu04u"), ExtResource("4_kjqwt")])
+image = ExtResource("1_ydifg")
 name = "Steak Burger"
 price = 14
 metadata/_custom_type_script = "uid://b250qdutrqhpq"
