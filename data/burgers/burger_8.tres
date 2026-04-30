@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://bkq0nluw4vlem"]
 
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="1_iv2n4"]
+[ext_resource type="Texture2D" uid="uid://dtpcnm6457vh7" path="res://contents/ui/icons/burgers/burger_8.png" id="1_ll77q"]
 [ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="2_r3e0r"]
 [ext_resource type="Resource" uid="uid://p3x44aw4ollh" path="res://data/ingredients/cooked_steak.tres" id="3_u2fsa"]
 [ext_resource type="Resource" uid="uid://c12ckpkly0n7a" path="res://data/ingredients/lettuce.tres" id="4_r3e0r"]
@@ -10,6 +11,7 @@
 [resource]
 script = ExtResource("5_2fu7n")
 ingredients = Array[ExtResource("1_iv2n4")]([ExtResource("2_r3e0r"), ExtResource("3_u2fsa"), ExtResource("2_r3e0r"), ExtResource("3_u2fsa"), ExtResource("4_r3e0r"), ExtResource("4_x88qq")])
+image = ExtResource("1_ll77q")
 name = "2 Floor Burger"
 price = 12
 metadata/_custom_type_script = "uid://b250qdutrqhpq"

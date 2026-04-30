@@ -50,6 +50,8 @@ func _on_drag_started():
 		AudioManager.stop_sfx("sfx-overcooking-steak-loop")
 	elif _crate_drag is CrateCoocking:
 		_crate_drag = null
+	elif _crate_drag is CrateChopping:
+		_crate_drag = null
 
 func _on_drag_dropped():
 	var crate := get_crate_targeted()

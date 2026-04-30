@@ -5,10 +5,11 @@
 [ext_resource type="Theme" uid="uid://cvnnsdpuxjgqj" path="res://contents/ui/theme/ingredients_theme.tres" id="3_uuvj8"]
 [ext_resource type="PackedScene" uid="uid://c4i1ks8v6ixe7" path="res://contents/prefabs/ui/minimap.tscn" id="4_nkv2q"]
 [ext_resource type="Texture2D" uid="uid://b0nlh5j5f5gi0" path="res://contents/ui/start_screen.png" id="5_77pjo"]
+[ext_resource type="PackedScene" uid="uid://jtsp8ua8vooh" path="res://contents/prefabs/ui/client_order_ui.tscn" id="5_ckmay"]
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 [ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "start_menu", "end_menu", "mini_map", "button_start", "button_return_to_start", "button_mute", "label_clients", "label_score")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "start_menu", "end_menu", "mini_map", "button_start", "button_return_to_start", "button_mute", "label_clients", "label_score", "container_orders", "label_remaining")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -29,13 +30,16 @@ mini_map = NodePath("Minimap")
 button_start = NodePath("StartMenu/Panel/ButtonStart")
 button_return_to_start = NodePath("EndMenu/Panel/ButtonReturn")
 button_mute = NodePath("ButtonMuteAudio")
-label_clients = NodePath("Label")
+label_clients = NodePath("WaveLabel")
 label_score = NodePath("EndMenu/Panel/ScoreLabel")
+order_ui_prefab = ExtResource("5_ckmay")
+container_orders = NodePath("Control/ScrollContainer/ClientRequestSideUi")
+label_remaining = NodePath("Control/RemainingLabel")
 
 [node name="Minimap" parent="." unique_id=1304258662 instance=ExtResource("4_nkv2q")]
 layout_mode = 1
 
-[node name="Label" type="Label" parent="." unique_id=2103994670]
+[node name="WaveLabel" type="Label" parent="." unique_id=2103994670]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -53,6 +57,28 @@ text = "XXX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Control" type="VBoxContainer" parent="." unique_id=1993244119]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 241.0
+offset_right = 312.0
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control" unique_id=1658963808]
+custom_minimum_size = Vector2(0, 1100)
+layout_mode = 2
+
+[node name="ClientRequestSideUi" type="VBoxContainer" parent="Control/ScrollContainer" unique_id=177915295]
+layout_mode = 2
+
+[node name="RemainingLabel" type="Label" parent="Control" unique_id=639356348]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+text = "+XX orders remaining"
+horizontal_alignment = 1
+
 [node name="Money" parent="." unique_id=1829518468 instance=ExtResource("5_ytt4t")]
 layout_mode = 1
 offset_left = 25.0
@@ -66,10 +92,9 @@ offset_top = 80.0
 offset_right = 320.0
 offset_bottom = 1081.0
 theme_override_font_sizes/font_size = 48
-folded = true
 
 [node name="GridContainer" parent="Money/FoldableContainer" index="0" unique_id=35522992]
-visible = false
+columns = 1
 
 [node name="PanelContainer" parent="Money" index="1" unique_id=135392274]
 layout_mode = 1
@@ -125,6 +150,7 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="EndMenu" type="Control" parent="." unique_id=2010971725]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -171,7 +197,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_uuvj8")
 theme_override_font_sizes/font_size = 102
-text = "GAME TERMINATE
+text = "GAME OVER
 
 SCORE
 XX:XX:XX

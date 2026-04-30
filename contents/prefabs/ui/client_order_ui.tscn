@@ -1,36 +1,39 @@
 [gd_scene format=3 uid="uid://jtsp8ua8vooh"]
 
+[ext_resource type="Script" uid="uid://cdhu8yyerjr5u" path="res://scripts/ui/client_order_ui.gd" id="1_2u6ed"]
 [ext_resource type="Theme" uid="uid://gt1ysbb6s0tt" path="res://contents/ui/theme/client_request_theme.tres" id="1_m2jcn"]
-[ext_resource type="Texture2D" uid="uid://cl7qecjpe8cep" path="res://contents/ui/icons/ingredients/bun_top.png" id="2_086k1"]
 [ext_resource type="Texture2D" uid="uid://bqs513gh076et" path="res://contents/ui/order_ticket.png" id="2_dfql8"]
-[ext_resource type="Texture2D" uid="uid://bswelmlauf01g" path="res://contents/ui/icons/ingredients/salad.png" id="3_7ugii"]
-[ext_resource type="Texture2D" uid="uid://pooo8qf5qtf3" path="res://contents/ui/icons/ingredients/cheese.png" id="4_tqp7j"]
-[ext_resource type="Texture2D" uid="uid://5t3txf5ap6dl" path="res://contents/ui/icons/ingredients/meat.png" id="5_rybo1"]
-[ext_resource type="Texture2D" uid="uid://cobi1lvid0mbt" path="res://contents/ui/icons/ingredients/bun_bottom.png" id="6_jytut"]
-[ext_resource type="Texture2D" uid="uid://bhh1tjewvoxjn" path="res://contents/ui/icons/burgers/cheeseburger.png" id="7_7sbyv"]
 
-[node name="ClientRequestPrefabUI" type="Control" unique_id=1780644722]
+[node name="ClientOrderUIs" type="Control" unique_id=1780644722 node_paths=PackedStringArray("waiting", "burger_texture", "ingredients_texture")]
+custom_minimum_size = Vector2(312, 270)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -2248.0
+offset_bottom = -1170.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2u6ed")
+waiting = NodePath("PanelContainer/ProgressBar")
+burger_texture = NodePath("PanelContainer/BurgerImage")
+ingredients_texture = [NodePath("PanelContainer/VBoxContainer/Ingredient7"), NodePath("PanelContainer/VBoxContainer/Ingredient6"), NodePath("PanelContainer/VBoxContainer/Ingredient5"), NodePath("PanelContainer/VBoxContainer/Ingredient4"), NodePath("PanelContainer/VBoxContainer/Ingredient3"), NodePath("PanelContainer/VBoxContainer/Ingredient2"), NodePath("PanelContainer/VBoxContainer/Ingredient1")]
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2063860934]
+clip_children = 2
 layout_mode = 0
-offset_right = 156.0
-offset_bottom = 128.0
+offset_right = 312.0
+offset_bottom = 260.0
 theme = ExtResource("1_m2jcn")
 
 [node name="ProgressBar" type="ProgressBar" parent="PanelContainer" unique_id=1837942822]
-custom_minimum_size = Vector2(116, 16)
+custom_minimum_size = Vector2(232, 44)
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme = ExtResource("1_m2jcn")
-value = 61.46
+value = 100.0
 show_percentage = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1106044258]
@@ -43,69 +46,63 @@ alignment = 2
 
 [node name="Ingredient7" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=820703537]
 z_index = 1
-custom_minimum_size = Vector2(40, 19)
+custom_minimum_size = Vector2(80, 37)
 layout_mode = 2
 size_flags_horizontal = 8
 expand_mode = 1
 
 [node name="Ingredient6" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=284839683]
 z_index = 1
-custom_minimum_size = Vector2(40, 19)
+custom_minimum_size = Vector2(80, 38)
 layout_mode = 2
 size_flags_horizontal = 8
 expand_mode = 1
 
 [node name="Ingredient5" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=312463599]
 z_index = 1
-custom_minimum_size = Vector2(40, 19)
+custom_minimum_size = Vector2(80, 37)
 layout_mode = 2
 size_flags_horizontal = 8
-texture = ExtResource("2_086k1")
 expand_mode = 1
 
 [node name="Ingredient4" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=1373921565]
 z_index = 1
-custom_minimum_size = Vector2(40, 19)
+custom_minimum_size = Vector2(80, 37)
 layout_mode = 2
 size_flags_horizontal = 8
-texture = ExtResource("3_7ugii")
 expand_mode = 1
 
 [node name="Ingredient3" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=2049258839]
 z_index = 1
-custom_minimum_size = Vector2(40, 19)
+custom_minimum_size = Vector2(80, 37)
 layout_mode = 2
 size_flags_horizontal = 8
-texture = ExtResource("4_tqp7j")
 expand_mode = 1
 
 [node name="Ingredient2" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=1286743965]
 z_index = 1
-custom_minimum_size = Vector2(40, 19)
+custom_minimum_size = Vector2(80, 37)
 layout_mode = 2
 size_flags_horizontal = 8
-texture = ExtResource("5_rybo1")
 expand_mode = 1
 
 [node name="Ingredient1" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=129466838]
 z_index = 1
-custom_minimum_size = Vector2(40, 19)
+custom_minimum_size = Vector2(80, 37)
 layout_mode = 2
 size_flags_horizontal = 8
-texture = ExtResource("6_jytut")
 expand_mode = 1
 
 [node name="BurgerImage" type="TextureRect" parent="PanelContainer" unique_id=1557974525]
-custom_minimum_size = Vector2(116, 116)
+custom_minimum_size = Vector2(232, 216)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("7_7sbyv")
 expand_mode = 1
 
 [node name="IngredientBG" type="TextureRect" parent="PanelContainer" unique_id=1129737880]
 modulate = Color(1, 1, 1, 0.627451)
-custom_minimum_size = Vector2(40, 0)
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 localize_numeral_system = false
