@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b47evmm3yxiqf"]
 
-[ext_resource type="Script" uid="uid://cdhu8yyerjr5u" path="res://scripts/ui/client_request_ui.gd" id="1_e2jbl"]
+[ext_resource type="Script" uid="uid://cdhu8yyerjr5u" path="res://scripts/ui/client_order_ui.gd" id="1_e2jbl"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ta5aa"]
 
