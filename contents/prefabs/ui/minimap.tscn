@@ -10,20 +10,22 @@ layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
+offset_left = 190.0
+offset_right = 190.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=605536744]
 transparent_bg = true
-size = Vector2i(768, 384)
+size = Vector2i(450, 384)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1869119845]
-transform = Transform3D(-1, 8.742278e-08, 0, 3.821371e-15, 4.371139e-08, 1, 8.742278e-08, 1, -4.371139e-08, 0, 7, -4.677125)
+transform = Transform3D(-1, 1.509958e-07, 6.600236e-15, 0, -4.371139e-08, 1, 1.509958e-07, 1, 4.371139e-08, 0.20595169, 7, -5.681203)
 projection = 1
 current = true
-size = 8.0
+size = 11.0
 
 [node name="Panel" type="Panel" parent="." unique_id=1138317720]
 layout_mode = 1
@@ -32,7 +34,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -796.0
 offset_top = 20.0
-offset_right = -20.0
+offset_right = -338.0
 offset_bottom = 412.0
 grow_horizontal = 0
 theme = ExtResource("1_lj7mc")
@@ -42,9 +44,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -772.0
+offset_left = -453.86
 offset_top = 4.0
-offset_right = -4.0
+offset_right = -3.8596802
 offset_bottom = 388.0
 grow_horizontal = 0
 texture = SubResource("ViewportTexture_o13pn")
