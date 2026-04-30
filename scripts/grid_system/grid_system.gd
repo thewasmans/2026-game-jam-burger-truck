@@ -165,3 +165,46 @@ func add_obstacle(grid_pos: Vector2) -> bool:
 	else:
 		push_warning("Tentative d'ajouter un obstacle hors limites: ", grid_pos)
 	return false
+
+func exist_path_for_clients(obstacle_positions: Array[Vector2]) -> bool:
+	var spawn_pos = world_to_grid(tile_spawn.global_position)
+	var exit_pos = world_to_grid(tile_exit.global_position)
+	
+	var spawn_id = _get_unique_id(spawn_pos)
+	var exit_id = _get_unique_id(exit_pos)
+	
+	var temporary_disabled_ids: Array[int] = []
+	
+	for pos in obstacle_positions:
+		if _is_within_bounds(pos):
+			var id = _get_unique_id(pos)
+			
+			if not astar.is_point_disabled(id):
+				astar.set_point_disabled(id, true)
+				temporary_disabled_ids.append(id)
+	
+	
+	var path = astar.get_id_path(spawn_id, exit_id)
+	var path_exists = path.size() > 0
+	
+	for id in temporary_disabled_ids:
+		astar.set_point_disabled(id, false)
+		
+	return path_exists
+	
+func can_add_obstacles(grid_positions: Array[Vector2]) -> bool:
+	var spawn_pos = world_to_grid(tile_spawn.global_position)
+	var exit_pos = world_to_grid(tile_exit.global_position)
+	
+	for pos in grid_positions:
+		if not _is_within_bounds(pos):
+			return false
+		
+		if pos == spawn_pos or pos == exit_pos:
+			return false
+			
+		var id = _get_unique_id(pos)
+		if astar.is_point_disabled(id):
+			return false
+			
+	return exist_path_for_clients(grid_positions)
