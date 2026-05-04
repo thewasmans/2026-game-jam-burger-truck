@@ -20,12 +20,14 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_lei3o")
 size = Vector2(0.855, 0.225)
 
-[node name="CrateStove" unique_id=2258064 node_paths=PackedStringArray("ui") instance=ExtResource("1_dj7xs")]
+[node name="CrateStove" unique_id=2258064 node_paths=PackedStringArray("ui", "viewport_mesh_ui") instance=ExtResource("1_dj7xs")]
 script = ExtResource("2_q8rnc")
 ui = NodePath("SubViewport/ProgressBar")
+viewport_mesh_ui = NodePath("Model3D/ViewportMeshUI")
+time_coocking = 2.0
 ingredient_data = Array[ExtResource("2_txfty")]([ExtResource("3_q8rnc")])
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=404850065]
+[node name="ViewportMeshUI" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=404850065]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, -0.0140661, 1.2255192, -0.37432402)
 mesh = SubResource("PlaneMesh_ilr34")
 
