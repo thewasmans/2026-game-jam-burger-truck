@@ -5,11 +5,15 @@ var _crate_drag: CrateInterract = null
 var _is_dragging: bool
 var _camera: Camera3D
 var _vfx_ingredient_dismiss: GPUParticles3D
+var _enable_interract: bool
 
 func _ready() -> void:
+	_enable_interract = true
 	_camera = get_viewport().get_camera_3d()
 
 func _input(event: InputEvent) -> void:
+	if not _enable_interract:
+		return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
@@ -165,3 +169,6 @@ func play_vfx_disapear_ingredient():
 	_vfx_ingredient_dismiss.restart()
 	_vfx_ingredient_dismiss.emitting = true
 	_vfx_ingredient_dismiss.global_position = _current_ingredient.instance.global_position
+
+func set_enable_kitchen(enable: bool):
+	_enable_interract = enable

@@ -4,26 +4,32 @@ extends CrateTool
 signal ingredient_coocked()
 
 @export var ui:ProgressCoocking
+@export var viewport_mesh_ui: Node3D
+@export var time_coocking: float = 1.0
 
 var _raw_steack:SteakCoocking
 var _coocking_started: bool
 var _value_progress: float
 
+func _ready() -> void:
+	viewport_mesh_ui.hide()
+
 func _process(delta: float) -> void:
 	if not _coocking_started: return
 	
-	if _value_progress >= 1.0:
+	if _value_progress >= time_coocking:
 		AudioManager.stop_sfx("sfx-cooking-steak-loop")
 		AudioManager.play_sfx("sfx-overcooking-steak-loop")
 		_value_progress = 1.0 * .1
 		_coocking_started = false
 		_spawn_coocked_ingredient()
 		ingredient_transformed = true
+		viewport_mesh_ui.hide()
 		ingredient_coocked.emit()
 	else:
 		_value_progress += delta
-		_raw_steack.set_progress(_value_progress)
-		ui.set_progress(_value_progress)
+		_raw_steack.set_progress(_value_progress / time_coocking)
+		ui.set_progress(_value_progress / time_coocking)
 		
 func _spawn_coocked_ingredient():
 	var provide_ingredient := Ingredient.new()
@@ -39,6 +45,7 @@ func assign_ingredient(ingredient:Ingredient) -> bool:
 	if assigned:
 		_value_progress = 0
 		_coocking_started = true
+		viewport_mesh_ui.show()
 		AudioManager.play_sfx("sfx-cooking-steak-loop")
 		if ingredient.instance is SteakCoocking:
 			_raw_steack = ingredient.instance
