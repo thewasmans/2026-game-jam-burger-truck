@@ -121,6 +121,7 @@ func take_damage(amount: int) -> void:
 		reputation_reached_zero.emit()
 
 func free_current_ingredient():
-	_current_ingredient.instance.queue_free()
-	_current_ingredient.free()
-	_current_ingredient = null
+	if _current_ingredient:
+		_current_ingredient.instance.queue_free()
+		_current_ingredient.free()
+		_current_ingredient = null

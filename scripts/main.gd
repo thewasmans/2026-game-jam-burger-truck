@@ -24,6 +24,7 @@ func _ready() -> void:
 	kitchen.reputation_reached_zero.connect(_reputation_reached_zero)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
 	spawner.next_wave_started.connect(func(data, number):
+		IngredientsManager.set_enable_kitchen(true)
 		FurnituresManager.reset_current_furniture_placed()
 		current_wave_burgers = data.burgers
 		game_ui.set_visible_furnitures_menu(false)
@@ -31,6 +32,8 @@ func _ready() -> void:
 		grid.set_visible_grid(false)
 		game_ui.set_wave_information(data, number))
 	spawner.waiting_next_wave.connect(func():
+		IngredientsManager.set_enable_kitchen(false)
+		kitchen.free_current_ingredient()
 		var furnitures := FurnituresManager.shuffle_selection_furnitures()
 		game_ui.reset_orders()
 		game_ui.set_buttons_furnitures(furnitures)

@@ -24,7 +24,7 @@ size = Vector2(0.855, 0.225)
 script = ExtResource("2_q8rnc")
 ui = NodePath("SubViewport/ProgressBar")
 viewport_mesh_ui = NodePath("Model3D/ViewportMeshUI")
-time_coocking = 2.0
+time_coocking = 4.0
 ingredient_data = Array[ExtResource("2_txfty")]([ExtResource("3_q8rnc")])
 
 [node name="ViewportMeshUI" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=404850065]
