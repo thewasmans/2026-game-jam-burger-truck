@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dpa4wy00xu6qy" path="res://contents/prefabs/crates/crate_interract.tscn" id="1_3b6wk"]
 [ext_resource type="Shader" uid="uid://dhu8v6qt1mnip" path="res://contents/shaders/trash_can.gdshader" id="2_f6wdh"]
+[ext_resource type="Script" uid="uid://cc1toe84fne1s" path="res://scripts/crates/crate_trash.gd" id="2_ptcht"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm4op"]
 resource_name = "Material"
@@ -56,6 +57,7 @@ shader_parameter/strength = 1.27
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="CrateTrash" unique_id=2258064 instance=ExtResource("1_3b6wk")]
+script = ExtResource("2_ptcht")
 
 [node name="TrashCan" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=153855026]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.5, 0)
