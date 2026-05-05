@@ -67,6 +67,7 @@ func _on_crate_plate_selected(crate_plate: CratePlate):
 		
 func _on_trash_selected():
 	if IngredientsManager._current_ingredient:
+		IngredientsManager.play_vfx_disapear_ingredient()
 		IngredientsManager.free_current_ingredient()
 		AudioManager.play_sfx_random(["sfx-trash-1","sfx-trash-2"])
 

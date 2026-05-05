@@ -1,13 +1,16 @@
 extends Node3D
 
 var _current_ingredient: Ingredient = null
+var _current_plate: CratePlate = null
 var _crate_drag: CrateInterract = null
 var _is_dragging: bool
 var _camera: Camera3D
 var _vfx_ingredient_dismiss: GPUParticles3D
 var _enable_interract: bool
+var input_released: bool
 
 func _ready() -> void:
+	input_released = true
 	_enable_interract = true
 	_camera = get_viewport().get_camera_3d()
 
@@ -20,6 +23,7 @@ func _input(event: InputEvent) -> void:
 				_is_dragging = false           
 			else:
 				if _is_dragging:
+					input_released = true
 					_on_drag_dropped()
 				else:
 					_on_pressed()
@@ -29,6 +33,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if not _is_dragging:
 			_is_dragging = true
+			input_released = false
 			_on_drag_started()
 
 func _on_pressed():
@@ -43,7 +48,8 @@ func _on_drag_started():
 	_crate_drag = get_crate_targeted()
 	
 	if _crate_drag is CratePlate:
-		_crate_drag = null
+		if _crate_drag._ingredients.size() > 0 :
+			_current_plate = _crate_drag
 	 
 	if _crate_drag is CrateIngredient:
 		_current_ingredient = _crate_drag.instantiate_ingredient()
@@ -74,7 +80,7 @@ func _on_drag_dropped():
 					play_vfx_disapear_ingredient()
 					reset_crate_tool()
 					free_current_ingredient()
-	if crate is CrateIngredient:
+	if crate is CrateIngredient and _current_ingredient:
 		play_vfx_disapear_ingredient()
 		free_current_ingredient()
 	if crate is CratePlate:
@@ -83,10 +89,21 @@ func _on_drag_dropped():
 		crate.add_ingredient(_current_ingredient.ingredient_data)
 		free_current_ingredient()
 	
-	if not crate and get_ground():
+	if not crate and get_ground() and _current_ingredient:
 		play_vfx_disapear_ingredient()
 		reset_crate_tool()
 		free_current_ingredient()
+		
+	if _current_plate and crate is CrateTrash:
+		input_released = false
+		var tween = create_tween()
+		tween.tween_property(_current_plate._burger_node, "global_position", crate.global_position, .075)
+		tween.set_trans(Tween.TRANS_BACK)
+		tween.set_ease(Tween.EASE_IN)
+		tween.tween_callback(func():
+			play_vfx_disapear_burger()
+			_current_plate.clear()
+			_current_plate = null)
 
 func get_ground() -> Kitchen:
 	var space_state = get_world_3d().direct_space_state
@@ -154,6 +171,17 @@ func _process(_delta: float) -> void:
 		var world_plane: Plane = Plane(Vector3.UP, 1.7)
 		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
 		_current_ingredient.instance.global_position = intersection
+	elif _current_plate:
+		if input_released:
+			_current_plate._burger_node.position = Vector3.ZERO
+			_current_plate = null
+		else:
+			var mouse_pos: Vector2 = get_viewport().get_mouse_position()
+			var ray_origin: Vector3 = _camera.project_ray_origin(mouse_pos)
+			var ray_direction: Vector3 = _camera.project_ray_normal(mouse_pos)
+			var world_plane: Plane = Plane(Vector3.UP, 1.7)
+			var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
+			_current_plate._burger_node.global_position = intersection
 
 func reset_crate_tool():
 	if _crate_drag is CrateTool:
@@ -169,6 +197,11 @@ func play_vfx_disapear_ingredient():
 	_vfx_ingredient_dismiss.restart()
 	_vfx_ingredient_dismiss.emitting = true
 	_vfx_ingredient_dismiss.global_position = _current_ingredient.instance.global_position
+
+func play_vfx_disapear_burger():
+	_vfx_ingredient_dismiss.restart()
+	_vfx_ingredient_dismiss.emitting = true
+	_vfx_ingredient_dismiss.global_position = _current_plate._burger_node.global_position
 
 func set_enable_kitchen(enable: bool):
 	_enable_interract = enable

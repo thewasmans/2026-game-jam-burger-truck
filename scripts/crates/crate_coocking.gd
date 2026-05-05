@@ -12,6 +12,7 @@ var _coocking_started: bool
 var _value_progress: float
 
 func _ready() -> void:
+	super._ready()
 	viewport_mesh_ui.hide()
 
 func _process(delta: float) -> void:
