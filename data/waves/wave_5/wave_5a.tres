@@ -14,47 +14,47 @@ metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_xvau6"]
 script = ExtResource("3_55iv1")
-time_spawn = 5.5
+time_spawn = 6.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_7fsh2"]
 script = ExtResource("3_55iv1")
-time_spawn = 6.0
+time_spawn = 7.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_g1xuv"]
 script = ExtResource("3_55iv1")
-time_spawn = 6.5
+time_spawn = 8.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_u7pw1"]
 script = ExtResource("3_55iv1")
-time_spawn = 12.0
+time_spawn = 15.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_l37n0"]
 script = ExtResource("3_55iv1")
-time_spawn = 12.5
+time_spawn = 16.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_rcui8"]
 script = ExtResource("3_55iv1")
-time_spawn = 13.0
+time_spawn = 17.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_wdpq1"]
 script = ExtResource("3_55iv1")
-time_spawn = 13.5
+time_spawn = 18.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_nuenb"]
 script = ExtResource("3_55iv1")
-time_spawn = 15.0
+time_spawn = 19.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_m23e4"]
 script = ExtResource("3_55iv1")
-time_spawn = 17.0
+time_spawn = 20.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [resource]
