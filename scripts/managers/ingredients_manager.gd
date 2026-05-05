@@ -23,6 +23,7 @@ func _input(event: InputEvent) -> void:
 				_is_dragging = false           
 			else:
 				if _is_dragging:
+					input_released = true
 					_on_drag_dropped()
 				else:
 					_on_pressed()
@@ -32,6 +33,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if not _is_dragging:
 			_is_dragging = true
+			input_released = false
 			_on_drag_started()
 
 func _on_pressed():
@@ -93,7 +95,15 @@ func _on_drag_dropped():
 		free_current_ingredient()
 		
 	if _current_plate and crate is CrateTrash:
-		_current_plate.clear()
+		input_released = false
+		var tween = create_tween()
+		tween.tween_property(_current_plate._burger_node, "global_position", crate.global_position, .075)
+		tween.set_trans(Tween.TRANS_BACK)
+		tween.set_ease(Tween.EASE_IN)
+		tween.tween_callback(func():
+			play_vfx_disapear_burger()
+			_current_plate.clear()
+			_current_plate = null)
 
 func get_ground() -> Kitchen:
 	var space_state = get_world_3d().direct_space_state
@@ -162,8 +172,9 @@ func _process(_delta: float) -> void:
 		var intersection = world_plane.intersects_ray(ray_origin, ray_direction)
 		_current_ingredient.instance.global_position = intersection
 	elif _current_plate:
-		if _is_dragging:
-			pass
+		if input_released:
+			_current_plate._burger_node.position = Vector3.ZERO
+			_current_plate = null
 		else:
 			var mouse_pos: Vector2 = get_viewport().get_mouse_position()
 			var ray_origin: Vector3 = _camera.project_ray_origin(mouse_pos)
@@ -186,6 +197,11 @@ func play_vfx_disapear_ingredient():
 	_vfx_ingredient_dismiss.restart()
 	_vfx_ingredient_dismiss.emitting = true
 	_vfx_ingredient_dismiss.global_position = _current_ingredient.instance.global_position
+
+func play_vfx_disapear_burger():
+	_vfx_ingredient_dismiss.restart()
+	_vfx_ingredient_dismiss.emitting = true
+	_vfx_ingredient_dismiss.global_position = _current_plate._burger_node.global_position
 
 func set_enable_kitchen(enable: bool):
 	_enable_interract = enable
