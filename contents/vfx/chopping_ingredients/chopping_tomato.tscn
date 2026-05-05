@@ -23,8 +23,8 @@ emission_sphere_radius = 1.0
 initial_velocity_min = 1.0
 initial_velocity_max = 4.0
 gravity = Vector3(0, -8, 0)
-scale_min = 0.099999994
-scale_max = 0.39999998
+scale_min = 0.19999999
+scale_max = 0.59999996
 color_initial_ramp = SubResource("GradientTexture1D_6iy8j")
 emission_curve = SubResource("CurveTexture_meqbe")
 
