@@ -113,7 +113,7 @@ camera_furnitures = NodePath("../../Level/Grid/CameraGrid")
 [node name="Level" type="Node" parent="." unique_id=751625337]
 
 [node name="Kitchen" parent="Level" unique_id=848894539 node_paths=PackedStringArray("anchor_plates_clients", "camera") instance=ExtResource("2_jyhfs")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.293, 0.1266756, 6.366)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.293, -0.17527938, 5.5705547)
 anchor_plates_clients = [NodePath("AnchorPlateClients/AnchorClient01"), NodePath("AnchorPlateClients/AnchorClient02"), NodePath("AnchorPlateClients/AnchorClient03"), NodePath("AnchorPlateClients/AnchorClient04"), NodePath("AnchorPlateClients/AnchorClient05"), NodePath("AnchorPlateClients/AnchorClient06"), NodePath("AnchorPlateClients/AnchorClient07")]
 camera = NodePath("../../Global/Camera3D")
 
@@ -167,7 +167,7 @@ curve = SubResource("Curve3D_trceg")
 transform = Transform3D(-4.371129e-08, 0, -0.99999774, 0, 1, 0, 0.99999774, 0, -4.371129e-08, -9.44921, -0.103453636, -0.015566826)
 
 [node name="Board" parent="Level" unique_id=2101916 instance=ExtResource("30_5q0nq")]
-transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 2.6044483, 7.918475)
+transform = Transform3D(-1, 0, -8.742278e-08, -5.5588885e-08, 0.7718022, 0.6358627, 6.747309e-08, 0.6358627, -0.7718022, 0.3211907, 1.9499655, 7.6245737)
 
 [node name="Grid" parent="Level" unique_id=621197692 instance=ExtResource("18_dp3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.739, 0.211, -8.19)
