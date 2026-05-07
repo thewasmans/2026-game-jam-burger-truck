@@ -60,7 +60,6 @@ func _physics_process(delta: float) -> void:
 					look_at(target_pos, Vector3.UP)
 			else:
 				current_state = State.WAITING
-				wait_timer.start()
 		State.WAITING:
 			if _moving_to_plate:
 				var dist = _plate_position - global_position
@@ -73,6 +72,9 @@ func _physics_process(delta: float) -> void:
 			if value_waiting >= 0:
 				value_waiting += delta
 				_order_ui.set_waiting(wait_timer.wait_time - value_waiting)
+				if value_waiting >= wait_timer.wait_time:
+					_on_wait_timer_timeout()
+					_order_ui.hide()
 			else:
 				waiting_food.emit()
 				value_waiting = 0

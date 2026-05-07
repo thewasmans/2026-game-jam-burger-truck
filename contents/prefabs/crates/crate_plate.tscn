@@ -59,4 +59,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("ArrayMesh_rsb2i")
 
 [node name="Plate" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="2" unique_id=426704297 instance=ExtResource("2_hsuyo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9975641, 0.06975647, 0, -0.06975647, 0.9975641, 0, 1.0239085, 0)
+
+[node name="Anchor" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="3" unique_id=952649832]
+transform = Transform3D(1, 0, 0, 0, 0.9659257, 0.258819, 0, -0.258819, 0.9659257, 0, 1, 0)

@@ -218,10 +218,9 @@ transform = Transform3D(1, 0, 0, 0, 1.0000007, 0, 0, 0, 1.0000007, 2.000143, 0.3
 transform = Transform3D(1, 0, 0, 0, 1.0000007, 0, 0, 0, 1.0000007, 3.0001435, 0.31429818, -1.3490195)
 
 [node name="CrateCuttingBoards" type="Node3D" parent="." unique_id=1831971397]
-transform = Transform3D(1.2749999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
 
 [node name="CrateChopping 1" parent="CrateCuttingBoards" unique_id=1961872735 node_paths=PackedStringArray("chopping_vfx") instance=ExtResource("14_u40xe")]
-transform = Transform3D(0.78431386, 0, 0, 0, 1.0000013, 2.9802322e-08, 0, -2.9802322e-08, 1.0000013, 3.137079, 0.31399825, 0.6486452)
+transform = Transform3D(1, 0, 0, 0, 1, 2.9802283e-08, 0, -2.9802283e-08, 1, 4.00023, 0.31399825, 0.6486452)
 chopping_vfx = {
 ExtResource("12_u40xe"): NodePath("ChoppingOnion"),
 ExtResource("11_cxkoo"): NodePath("ChoppingTomato")
@@ -229,7 +228,7 @@ ExtResource("11_cxkoo"): NodePath("ChoppingTomato")
 ingredient_data = Array[ExtResource("5_u40xe")]([ExtResource("12_u40xe"), ExtResource("11_cxkoo")])
 
 [node name="CrateChopping 2" parent="CrateCuttingBoards" unique_id=11255452 node_paths=PackedStringArray("chopping_vfx") instance=ExtResource("14_u40xe")]
-transform = Transform3D(0.78431386, 0, 0, 0, 1.0000014, -2.9802322e-08, 0, 2.9802322e-08, 1.0000014, 3.137079, 0.31399828, -0.3513559)
+transform = Transform3D(1, 0, 0, 0, 1, -2.980228e-08, 0, 2.980228e-08, 1, 4.00023, 0.31399828, -0.3513559)
 chopping_vfx = {
 ExtResource("12_u40xe"): NodePath("ChoppingOnion"),
 ExtResource("11_cxkoo"): NodePath("ChoppingTomato")
