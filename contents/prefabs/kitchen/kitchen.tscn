@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c48dl325ub3ad" path="res://scripts/kitchen.gd" id="1_frebv"]
 [ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="2_gr4wk"]
 [ext_resource type="PackedScene" uid="uid://e7ki1w7purcq" path="res://contents/prefabs/kitchen/kitchen_walls.tscn" id="2_sfdcp"]
+[ext_resource type="PackedScene" uid="uid://dsiuf3qjsxop8" path="res://contents/vfx/steak_cooking/smoke_overcooking_vfx.tscn" id="5_jsw62"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="5_u40xe"]
 [ext_resource type="PackedScene" uid="uid://dbq3p4mibtx8k" path="res://contents/prefabs/crates/crate_plate.tscn" id="6_u40xe"]
 [ext_resource type="PackedScene" uid="uid://b43pxddlxof8n" path="res://contents/prefabs/crates/crate_trash.tscn" id="7_gr4wk"]
@@ -208,14 +209,26 @@ shape = SubResource("BoxShape3D_s3y2s")
 
 [node name="CrateStove" type="Node3D" parent="." unique_id=1976855028]
 
-[node name="CrateStove 1" parent="CrateStove" unique_id=2258064 instance=ExtResource("16_gr4wk")]
+[node name="CrateStove 1" parent="CrateStove" unique_id=2258064 node_paths=PackedStringArray("overcooking_particles") instance=ExtResource("16_gr4wk")]
 transform = Transform3D(1, 0, 0, 0, 1.0000007, 0, 0, 0, 1.0000007, 1.0001426, 0.31429818, -1.3490195)
+overcooking_particles = NodePath("../SmokeOvercookingVFX1")
 
-[node name="CrateStove 2" parent="CrateStove" unique_id=1202162967 instance=ExtResource("16_gr4wk")]
+[node name="SmokeOvercookingVFX1" parent="CrateStove" unique_id=1007273776 instance=ExtResource("5_jsw62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2030036, 1.2709968, -1.2526572)
+
+[node name="CrateStove 2" parent="CrateStove" unique_id=1202162967 node_paths=PackedStringArray("overcooking_particles") instance=ExtResource("16_gr4wk")]
 transform = Transform3D(1, 0, 0, 0, 1.0000007, 0, 0, 0, 1.0000007, 2.000143, 0.31429818, -1.3490195)
+overcooking_particles = NodePath("../SmokeOvercookingVFX2")
 
-[node name="CrateStove 3" parent="CrateStove" unique_id=759683177 instance=ExtResource("16_gr4wk")]
+[node name="SmokeOvercookingVFX2" parent="CrateStove" unique_id=2139483043 instance=ExtResource("5_jsw62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2238266, 1.2709968, -1.2526572)
+
+[node name="CrateStove 3" parent="CrateStove" unique_id=759683177 node_paths=PackedStringArray("overcooking_particles") instance=ExtResource("16_gr4wk")]
 transform = Transform3D(1, 0, 0, 0, 1.0000007, 0, 0, 0, 1.0000007, 3.0001435, 0.31429818, -1.3490195)
+overcooking_particles = NodePath("../SmokeOvercookingVFX3")
+
+[node name="SmokeOvercookingVFX3" parent="CrateStove" unique_id=1071030658 instance=ExtResource("5_jsw62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2560456, 1.2709968, -1.2526572)
 
 [node name="CrateCuttingBoards" type="Node3D" parent="." unique_id=1831971397]
 
