@@ -4,8 +4,11 @@
 [ext_resource type="Resource" uid="uid://bhce871haki3c" path="res://data/burgers/burger_12.tres" id="2_f8kx6"]
 [ext_resource type="Resource" uid="uid://5kd2bmstigmj" path="res://data/burgers/burger_13.tres" id="3_ul16y"]
 [ext_resource type="Resource" uid="uid://bqaj644qt5row" path="res://data/burgers/burger_14.tres" id="4_7jkma"]
+[ext_resource type="Resource" uid="uid://qcba3r6d0xe" path="res://data/burgers/burger_2.tres" id="5_7jkma"]
 [ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/client_data.gd" id="5_uuii2"]
 [ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/waves/wave_preset_data.gd" id="6_nt3u2"]
+[ext_resource type="Resource" uid="uid://cuu7aqcr35s2l" path="res://data/burgers/burger_9.tres" id="6_uuii2"]
+[ext_resource type="Resource" uid="uid://c6bgmod8bpaa8" path="res://data/burgers/burger_5.tres" id="7_nt3u2"]
 
 [sub_resource type="Resource" id="Resource_um1dg"]
 script = ExtResource("5_uuii2")
@@ -14,30 +17,30 @@ metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_4neto"]
 script = ExtResource("5_uuii2")
-time_spawn = 8.0
+time_spawn = 9.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_vowoa"]
 script = ExtResource("5_uuii2")
-time_spawn = 10.0
+time_spawn = 12.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_br0l8"]
 script = ExtResource("5_uuii2")
-time_spawn = 14.0
+time_spawn = 16.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_fmxna"]
 script = ExtResource("5_uuii2")
-time_spawn = 22.0
+time_spawn = 23.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_mckyg"]
 script = ExtResource("5_uuii2")
-time_spawn = 25.0
+time_spawn = 27.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [resource]
 script = ExtResource("6_nt3u2")
 clients = Array[ExtResource("5_uuii2")]([SubResource("Resource_um1dg"), SubResource("Resource_4neto"), SubResource("Resource_vowoa"), SubResource("Resource_br0l8"), SubResource("Resource_fmxna"), SubResource("Resource_mckyg")])
-burgers = Array[ExtResource("1_0jkfq")]([ExtResource("2_f8kx6"), ExtResource("3_ul16y"), ExtResource("4_7jkma")])
+burgers = Array[ExtResource("1_0jkfq")]([ExtResource("2_f8kx6"), ExtResource("3_ul16y"), ExtResource("4_7jkma"), ExtResource("5_7jkma"), ExtResource("6_uuii2"), ExtResource("5_7jkma"), ExtResource("6_uuii2"), ExtResource("5_7jkma"), ExtResource("6_uuii2"), ExtResource("7_nt3u2"), ExtResource("7_nt3u2")])
