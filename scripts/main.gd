@@ -42,6 +42,7 @@ func _ready() -> void:
 		game_ui.set_visible_furnitures_menu(true))
 	spawner.client_spawned.connect(client_spawned)
 	camera_switcher.set_camera_kitchen()
+	game_ui.next_wave_button.pressed.connect(func(): spawner.next_wave())
 	
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
 	FurnituresManager.initialize(grid, game_data)
