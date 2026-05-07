@@ -34,7 +34,7 @@ vertex_color_use_as_albedo = true
 [sub_resource type="SphereMesh" id="SphereMesh_0k2uf"]
 material = SubResource("StandardMaterial3D_m2pt1")
 radius = 0.1
-height = 0.2
+height = 0.35
 radial_segments = 4
 rings = 1
 
