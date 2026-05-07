@@ -60,7 +60,6 @@ func _physics_process(delta: float) -> void:
 					look_at(target_pos, Vector3.UP)
 			else:
 				current_state = State.WAITING
-				#wait_timer.start()
 		State.WAITING:
 			if _moving_to_plate:
 				var dist = _plate_position - global_position
