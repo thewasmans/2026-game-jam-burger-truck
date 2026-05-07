@@ -12,6 +12,10 @@ func assign_ingredient(ingredient:Ingredient) -> bool:
 func use_tool():
 	_sliced_step += 1
 	AudioManager.play_sfx_random(["sfx-chopping-1","sfx-chopping-2"])
+	var tween = create_tween()
+	var original_scale = node_hover_feedback.scale
+	tween.tween_property(node_hover_feedback, "scale", original_scale * 1.25, .05).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_property(node_hover_feedback, "scale", original_scale, .05).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_ELASTIC)
 	play_cut_vfx()
 	if _sliced_step >= 5:
 		var provide_ingredient := Ingredient.new()
