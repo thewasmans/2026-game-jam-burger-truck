@@ -16,7 +16,6 @@ size = Vector3(2, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_v4kla"]
 
 [node name="Furniture3B04" unique_id=1741332122 node_paths=PackedStringArray("blocks") instance=ExtResource("1_iql13")]
-transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 0, 0)
 blocks = [NodePath("Model3D/MeshInstance3D"), NodePath("Model3D/MeshInstance3D2"), NodePath("Model3D/MeshInstance3D3")]
 
 [node name="Chair1" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="1" unique_id=1930029020 instance=ExtResource("2_2iaa3")]
@@ -26,7 +25,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 
 transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, 0, 0, 0)
 
 [node name="Chair2" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="3" unique_id=104754508 instance=ExtResource("2_2iaa3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="4" unique_id=1170758650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
@@ -39,7 +38,7 @@ visible = false
 mesh = SubResource("BoxMesh_eeuft")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="6" unique_id=230739477]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, -1)
 visible = false
 mesh = SubResource("BoxMesh_drl04")
 
@@ -50,5 +49,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0)
 shape = SubResource("BoxShape3D_d3t5e")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" index="1" unique_id=1458670407]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1)
 shape = SubResource("BoxShape3D_v4kla")

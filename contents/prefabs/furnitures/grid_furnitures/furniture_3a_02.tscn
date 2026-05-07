@@ -14,20 +14,19 @@
 size = Vector3(3, 1, 1)
 
 [node name="Furniture3A02" unique_id=1741332122 node_paths=PackedStringArray("blocks") instance=ExtResource("1_u7x2o")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 blocks = [NodePath("Model3D/MeshInstance3D"), NodePath("Model3D/MeshInstance3D2"), NodePath("Model3D/MeshInstance3D3")]
 
 [node name="Chair1" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="1" unique_id=1930029020 instance=ExtResource("2_uijml")]
-transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -1, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -1)
 
 [node name="Table" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="2" unique_id=1321909808 instance=ExtResource("3_uj18b")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Chair2" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="3" unique_id=1360313644 instance=ExtResource("2_uijml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="4" unique_id=63514289]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, -1)
 visible = false
 mesh = SubResource("BoxMesh_uijml")
 
@@ -37,12 +36,12 @@ visible = false
 mesh = SubResource("BoxMesh_uj18b")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="6" unique_id=1873221571]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.5, 1)
 visible = false
 mesh = SubResource("BoxMesh_jmkfj")
 
 [node name="Area3D" type="Area3D" parent="." index="1" unique_id=1036346118]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=254650447]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_d3t5e")

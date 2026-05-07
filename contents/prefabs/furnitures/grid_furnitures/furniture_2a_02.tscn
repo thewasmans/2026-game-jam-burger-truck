@@ -14,7 +14,6 @@ material = SubResource("StandardMaterial3D_jxr1o")
 size = Vector3(2, 1, 1)
 
 [node name="Furniture2A02" unique_id=1741332122 node_paths=PackedStringArray("blocks") instance=ExtResource("1_2lsfg")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 blocks = [NodePath("Model3D/MeshInstance3D"), NodePath("Model3D/MeshInstance3D2")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="1" unique_id=2045801138]
@@ -23,18 +22,18 @@ visible = false
 mesh = SubResource("BoxMesh_0yx01")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="2" unique_id=1437028529]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
 visible = false
 mesh = SubResource("BoxMesh_0yx01")
 
 [node name="TrashcanRegular" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="3" unique_id=1774769300 instance=ExtResource("2_nm6wi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="TrashcanRecycling" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="4" unique_id=1929737759 instance=ExtResource("3_kkpj6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 1)
 
 [node name="Area3D" type="Area3D" parent="." index="1" unique_id=1036346118]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=254650447]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5, 0.5)
 shape = SubResource("BoxShape3D_d3t5e")
