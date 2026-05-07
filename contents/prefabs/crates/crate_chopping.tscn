@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://ckwlkbdclh0fo" path="res://scripts/crates/crate_chopping.gd" id="2_m0355"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_rx8vl"]
 [ext_resource type="PackedScene" uid="uid://bl2dpplmoqxld" path="res://contents/meshes/kitchen/counter.glb" id="3_rx8vl"]
-[ext_resource type="PackedScene" uid="uid://bn8j1imft8x20" path="res://contents/vfx/chopping_ingredients/chopping_onion.tscn" id="4_0vcbq"]
-[ext_resource type="PackedScene" uid="uid://bxkcdvbcjx7gv" path="res://contents/vfx/chopping_ingredients/chopping_tomato.tscn" id="5_aqdyr"]
+[ext_resource type="PackedScene" uid="uid://bn8j1imft8x20" path="res://contents/vfx/chopping_ingredients/chopping_onion_vfx.tscn" id="4_0vcbq"]
+[ext_resource type="PackedScene" uid="uid://bxkcdvbcjx7gv" path="res://contents/vfx/chopping_ingredients/chopping_tomato_vfx.tscn" id="5_aqdyr"]
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="8_1bwjw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppu0k"]

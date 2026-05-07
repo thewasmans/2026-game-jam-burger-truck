@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bn8j1imft8x20"]
+[gd_scene format=3 uid="uid://bxkcdvbcjx7gv"]
 
 [sub_resource type="Gradient" id="Gradient_0k2uf"]
-offsets = PackedFloat32Array(0, 0.48165137, 1)
-colors = PackedColorArray(0.8948059, 0.6579825, 0.9496071, 1, 0.7655382, 0.3117764, 0.86652756, 1, 0.4032812, 0.076338015, 0.47037256, 1)
+offsets = PackedFloat32Array(0, 0.34974092, 0.7901554)
+colors = PackedColorArray(0.99998957, 0.12393088, 0.09294049, 1, 0.7209007, 0.19312167, 0.16343614, 1, 0.43593687, 0.00041415307, 0.00022703275, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_6iy8j"]
 gradient = SubResource("Gradient_0k2uf")
@@ -14,6 +14,13 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_meqbe"]
 curve = SubResource("Curve_yvdsu")
 
+[sub_resource type="Curve" id="Curve_hs1i1"]
+_data = [Vector2(0, 0), 0.0, 2.6708493, 0, 0, Vector2(0.2964602, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_s56g1"]
+curve = SubResource("Curve_hs1i1")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m2pt1"]
 lifetime_randomness = 0.2
 emission_shape_offset = Vector3(0.2, 0, 0)
@@ -23,8 +30,9 @@ emission_sphere_radius = 1.0
 initial_velocity_min = 1.0
 initial_velocity_max = 4.0
 gravity = Vector3(0, -8, 0)
-scale_min = 0.099999994
-scale_max = 0.39999998
+scale_min = 0.14999999
+scale_max = 0.59999996
+scale_curve = SubResource("CurveTexture_s56g1")
 color_initial_ramp = SubResource("GradientTexture1D_6iy8j")
 emission_curve = SubResource("CurveTexture_meqbe")
 
@@ -33,17 +41,18 @@ vertex_color_use_as_albedo = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_0k2uf"]
 material = SubResource("StandardMaterial3D_m2pt1")
-radius = 0.1
-height = 0.2
+radius = 0.15
+height = 0.45
 radial_segments = 4
 rings = 1
 
-[node name="ChoppingOnion" type="GPUParticles3D" unique_id=1406499514]
+[node name="ChoppingTomato" type="GPUParticles3D" unique_id=1406499514]
 transform = Transform3D(-3.4969112e-08, -0.8, 0, 0.8, -3.4969112e-08, 0, 0, 0, 0.8, 0, 0, 0)
 emitting = false
-amount = 16
-lifetime = 0.25
+amount = 10
+lifetime = 0.8
 one_shot = true
+speed_scale = 1.5
 explosiveness = 1.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_m2pt1")

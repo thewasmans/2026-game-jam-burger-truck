@@ -6,6 +6,7 @@ signal ingredient_coocked()
 @export var ui:ProgressCoocking
 @export var viewport_mesh_ui: Node3D
 @export var time_coocking: float = 1.0
+@export var overcooking_particles: GPUParticles3D
 
 var _raw_steack:SteakCoocking
 var _coocking_started: bool
@@ -21,6 +22,9 @@ func _process(delta: float) -> void:
 	if _value_progress >= time_coocking:
 		AudioManager.stop_sfx("sfx-cooking-steak-loop")
 		AudioManager.play_sfx("sfx-overcooking-steak-loop")
+		overcooking_particles.global_position = anchor_spawn.global_position
+		overcooking_particles.restart()
+		overcooking_particles.emitting = true
 		_value_progress = 1.0 * .1
 		_coocking_started = false
 		_spawn_coocked_ingredient()

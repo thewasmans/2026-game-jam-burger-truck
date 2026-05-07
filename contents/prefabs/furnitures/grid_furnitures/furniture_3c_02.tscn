@@ -16,11 +16,10 @@ material = SubResource("StandardMaterial3D_jxr1o")
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3skr"]
 
 [node name="Furniture3C02" unique_id=1741332122 node_paths=PackedStringArray("blocks") instance=ExtResource("1_0wkc0")]
-transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 0, 0)
 blocks = [NodePath("Model3D/MeshInstance3D"), NodePath("Model3D/MeshInstance3D2"), NodePath("Model3D/MeshInstance3D3")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="1" unique_id=2045801138]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 1)
 visible = false
 mesh = SubResource("BoxMesh_0yx01")
 
@@ -30,12 +29,12 @@ visible = false
 mesh = SubResource("BoxMesh_0yx01")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="3" unique_id=2112465489]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -1)
 visible = false
 mesh = SubResource("BoxMesh_0yx01")
 
 [node name="Divider" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="4" unique_id=463800902 instance=ExtResource("2_uymat")]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0, 0, 0)
+transform = Transform3D(-0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071067, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="." index="1" unique_id=1036346118]
 
@@ -44,9 +43,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_d3t5e")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" index="1" unique_id=1181747193]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 1)
 shape = SubResource("BoxShape3D_xluoq")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D" index="2" unique_id=896463364]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -1)
 shape = SubResource("BoxShape3D_h3skr")
