@@ -2,6 +2,7 @@ extends Node
 
 signal money_initialized
 signal money_changed
+signal furniture_bought(furniture: FurnitureGridData)
 
 var _money: float = 0
 var _factor_increment: float
@@ -28,9 +29,13 @@ func buy_furniture(furniture: FurnitureGridData) -> bool:
 		return false
 	AudioManager.play_sfx("sfx-money")
 	_money -= furniture.price
+	furniture_bought.emit(furniture)
 	money_changed.emit()
 	return true
 
 func add_money(price: float):
 	_money += price
 	money_changed.emit()
+	
+func can_buy_furniture(furniture: FurnitureGridData) -> bool:
+	return _money >= furniture.price

@@ -55,12 +55,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			if event.button_index == MOUSE_BUTTON_LEFT:
 				var obstacles := _current_furniture_instance.blocks_to_2D_positions(_tile_position)
 				if _grid.can_add_obstacles(obstacles) and _grid.exist_path_for_clients(obstacles):
-					_grid.add_obstacles(_current_furniture_instance.blocks_to_2D_positions(_tile_position))
-					AudioManager.play_sfx_random(["sfx-furniture-1","sfx-furniture-2"])
-					_current_furniture_instance.reparent(_grid)
-					_current_furniture = null
-					_current_furniture_instance = null
-					_current_furniture_placed.append(_current_furniture_instance)
+					if MoneyManager.buy_furniture(_current_furniture):
+						_grid.add_obstacles(_current_furniture_instance.blocks_to_2D_positions(_tile_position))
+						AudioManager.play_sfx_random(["sfx-furniture-1","sfx-furniture-2"])
+						_current_furniture_instance.reparent(_grid)
+						_current_furniture = null
+						_current_furniture_instance = null
+						_current_furniture_placed.append(_current_furniture_instance)
 			elif event.button_index == MOUSE_BUTTON_RIGHT:
 				_current_furniture_instance.queue_free()
 				_current_furniture = null
@@ -69,7 +70,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func furniture_selected(furniture:FurnitureGridData):
 	if _current_furniture_placed.size() >= _game_data.furnitures_placement:
 		return
-	if MoneyManager.buy_furniture(furniture):
+	if MoneyManager.can_buy_furniture(furniture):
 		_current_furniture = furniture
 	if is_instance_valid(_current_furniture_instance):
 		_current_furniture_instance.queue_free()
