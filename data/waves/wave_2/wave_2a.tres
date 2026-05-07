@@ -15,30 +15,30 @@ metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_xvau6"]
 script = ExtResource("6_dvnas")
-time_spawn = 5.5
+time_spawn = 9.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_7fsh2"]
 script = ExtResource("6_dvnas")
-time_spawn = 6.0
+time_spawn = 13.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_g1xuv"]
 script = ExtResource("6_dvnas")
-time_spawn = 12.0
+time_spawn = 21.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_u7pw1"]
 script = ExtResource("6_dvnas")
-time_spawn = 12.5
+time_spawn = 25.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_l37n0"]
 script = ExtResource("6_dvnas")
-time_spawn = 13.0
+time_spawn = 29.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [resource]
 script = ExtResource("7_rihjm")
 clients = Array[ExtResource("6_dvnas")]([SubResource("Resource_7hd5o"), SubResource("Resource_xvau6"), SubResource("Resource_7fsh2"), SubResource("Resource_g1xuv"), SubResource("Resource_u7pw1"), SubResource("Resource_l37n0")])
-burgers = Array[ExtResource("1_kww7y")]([ExtResource("2_0486c"), ExtResource("3_klvft"), ExtResource("4_j4e5d"), ExtResource("5_t5bro")])
+burgers = Array[ExtResource("1_kww7y")]([ExtResource("2_0486c"), ExtResource("3_klvft"), ExtResource("4_j4e5d"), ExtResource("5_t5bro"), ExtResource("2_0486c"), ExtResource("3_klvft"), ExtResource("4_j4e5d")])

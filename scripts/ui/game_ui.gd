@@ -21,8 +21,10 @@ signal button_start_clicked
 @export var order_ui_prefab: PackedScene
 @export var container_orders: Control
 @export var label_remaining: Label
+@export var next_wave_button: Button
 var ingredients_buttons:Array[Button]
 var _clients_orders: Dictionary[HungryClient, ClientOrderUI]
+var _button_furniture_selected: Button
 
 func _ready() -> void:
 	money_label.text = "0 $"
@@ -44,6 +46,7 @@ func set_buttons_furnitures(furnitures:Array[FurnitureGridData]):
 		button.pressed.connect(func(): 
 			furniture_selected.emit(furniture)
 			container_menu.folded = true
+			_button_furniture_selected = button
 			)
 		container_furnitures.add_child(button)
 
@@ -73,7 +76,10 @@ func _on_button_mute_audio_pressed():
 	else:
 		AudioManager.mute_all_sounds()
 		button_mute.text = "Resume Audio"
-		
+	
+func _on_next_wave_button_pressed() -> void:
+	pass # Replace with function body.
+	
 func set_wave_information(_wave:WavesPresetData, number_wave: int):
 	label_clients.text = "WAVE " + str(number_wave )
 	animate_label(label_clients)
@@ -91,6 +97,9 @@ func animate_label(label: Label):
 func set_visible_furnitures_menu(visibility: bool):
 	mini_map.visible = not visibility
 	container_menu.visible = visibility
+	next_wave_button.visible = visibility
+	if visibility:
+		label_clients.text += " - Finished"
 
 func show_end_score_menu(time: String = "XX:XX:XX", score: String = "XX"):
 	end_menu.visible = true
@@ -113,4 +122,3 @@ func reset_orders():
 		order.queue_free()
 	_clients_orders = {}
 	label_remaining.visible = false
-	

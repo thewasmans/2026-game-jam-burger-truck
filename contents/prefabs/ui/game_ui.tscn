@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 [ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "start_menu", "end_menu", "mini_map", "button_start", "button_return_to_start", "button_mute", "label_clients", "label_score", "container_orders", "label_remaining")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "start_menu", "end_menu", "mini_map", "button_start", "button_return_to_start", "button_mute", "label_clients", "label_score", "container_orders", "label_remaining", "next_wave_button")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -35,6 +35,7 @@ label_score = NodePath("EndMenu/Panel/ScoreLabel")
 order_ui_prefab = ExtResource("5_ckmay")
 container_orders = NodePath("Control/ScrollContainer/ClientRequestSideUi")
 label_remaining = NodePath("Control/RemainingLabel")
+next_wave_button = NodePath("WaveLabel/NextWaveButton")
 
 [node name="Minimap" parent="." unique_id=1304258662 instance=ExtResource("4_nkv2q")]
 layout_mode = 1
@@ -56,6 +57,17 @@ theme_override_font_sizes/font_size = 32
 text = "XXX"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="NextWaveButton" type="Button" parent="WaveLabel" unique_id=1720450115]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -76.859985
+offset_bottom = -76.859985
+grow_horizontal = 2
+grow_vertical = 2
+text = "NEXT WAVE"
 
 [node name="Control" type="VBoxContainer" parent="." unique_id=1993244119]
 layout_mode = 1
@@ -222,6 +234,7 @@ theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = ExtResource("6_77pjo")
 text = "MUTE AUDIO"
 
+[connection signal="pressed" from="WaveLabel/NextWaveButton" to="." method="_on_next_wave_button_pressed"]
 [connection signal="pressed" from="StartMenu/Panel/ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="EndMenu/Panel/ButtonReturn" to="." method="_on_button_return_pressed"]
 [connection signal="pressed" from="ButtonMuteAudio" to="." method="_on_button_mute_audio_pressed"]

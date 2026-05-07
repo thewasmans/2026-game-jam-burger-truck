@@ -6,6 +6,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2vx5"]
 texture = ExtResource("2_vdub7")
+modulate_color = Color(0.46680552, 0.52672416, 0.5871984, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i1bpr"]
 content_margin_top = 15.0
@@ -18,8 +19,9 @@ modulate_color = Color(0.6957539, 0.6752602, 0.6576448, 1)
 
 [resource]
 Button/colors/font_color = Color(0.9862388, 0.9651486, 0.9495302, 1)
+Button/colors/font_disabled_color = Color(0.70980394, 0.70980394, 0.70980394, 0.34509805)
 Button/colors/font_hover_color = Color(0.16784829, 0.10780152, 0.05457201, 1)
-Button/colors/icon_disabled_color = Color(0.59607846, 0.59607846, 0.59607846, 0.8980392)
+Button/colors/icon_disabled_color = Color(0.48439813, 0.4843982, 0.48439813, 0.6313726)
 Button/colors/icon_hover_color = Color(1, 1, 1, 1)
 Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/constants/icon_max_width = 200

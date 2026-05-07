@@ -27,6 +27,7 @@ var _index_current_wave: int = -1
 var _current_preset_wave: WavesPresetData
 var _client_waiting_to_spawn: Array[ClientData]
 var number_wave: int = 0
+var furniture_phase: bool
 
 func _ready() -> void:
 	randomize()
@@ -47,10 +48,11 @@ func _process(delta: float) -> void:
 			_client_waiting_to_spawn.erase(client)
 			spawn_client(client)
 			
-	if _client_waiting_to_spawn.size() == 0 and _hungries_clients.size() == 0 and timer_next_wave.is_stopped():
+	if _client_waiting_to_spawn.size() == 0 and _hungries_clients.size() == 0 and timer_next_wave.is_stopped() and not furniture_phase:
 		start_wait_next_wave()
 
 func next_wave():
+	furniture_phase = false
 	number_wave += 1
 	_index_current_wave = (_index_current_wave + 1) % game_data.waves.size()
 	_current_preset_wave = game_data.waves[_index_current_wave].waves_presets.pick_random()
@@ -76,4 +78,5 @@ func get_random_spawn_position() -> Vector3:
 	
 func start_wait_next_wave():
 	waiting_next_wave.emit()
-	timer_next_wave.start()
+	furniture_phase = true
+	#timer_next_wave.start()

@@ -42,6 +42,7 @@ func _ready() -> void:
 		game_ui.set_visible_furnitures_menu(true))
 	spawner.client_spawned.connect(client_spawned)
 	camera_switcher.set_camera_kitchen()
+	game_ui.next_wave_button.pressed.connect(func(): spawner.next_wave())
 	
 	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
 	FurnituresManager.initialize(grid, game_data)
@@ -50,6 +51,9 @@ func _ready() -> void:
 	game_ui.button_start_clicked.connect(start_game)
 	get_tree().paused = true
 	AudioManager.play_music("main-music")
+	MoneyManager.furniture_bought.connect(func (furniture: FurnitureGridData):
+		if game_ui._button_furniture_selected:
+			game_ui._button_furniture_selected.disabled = true)
 
 func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData):
 	add_ingredient_on_plate(ingredient, crate)
