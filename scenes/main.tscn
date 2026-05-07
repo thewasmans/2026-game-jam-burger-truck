@@ -105,7 +105,7 @@ camera_switcher = NodePath("Global/Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Global" unique_id=1998703230 node_paths=PackedStringArray("camera_kitchen", "camera_furnitures")]
 transform = Transform3D(-1, 8.463816e-08, -2.1888908e-08, 1.7877618e-08, 0.44307116, 0.89648646, 8.55753e-08, 0.89648646, -0.44307116, 0.372, 13.398943, -3.9975224)
-fov = 60.0
+fov = 50.0
 script = ExtResource("10_muem4")
 camera_kitchen = NodePath("../../Level/Kitchen/CameraKitchen")
 camera_furnitures = NodePath("../../Level/Grid/CameraGrid")
@@ -143,7 +143,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.99
 
 [node name="CameraKitchen" type="Camera3D" parent="Level/Kitchen" unique_id=404669961]
 transform = Transform3D(1, -9.196228e-09, -2.2284155e-08, 2.38769e-08, 0.50528085, 0.862955, 3.3238265e-09, -0.862955, 0.50528085, -0.079, 10.796, 7.001)
-fov = 50.0
+fov = 40.0
 
 [node name="HungryClientSpawner" parent="Level" unique_id=872537981 node_paths=PackedStringArray("front_truck_target", "out_screen_target", "hungry_client_spawner", "grid_system") instance=ExtResource("1_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26790273, 0.103453636, -12.749668)
