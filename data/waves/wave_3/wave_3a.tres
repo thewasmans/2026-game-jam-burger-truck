@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_7fsh2"]
 script = ExtResource("5_jncee")
-time_spawn = 11.0
+time_spawn = 12.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_g1xuv"]
