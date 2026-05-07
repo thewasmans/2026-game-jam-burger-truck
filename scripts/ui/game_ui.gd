@@ -24,6 +24,7 @@ signal button_start_clicked
 @export var next_wave_button: Button
 var ingredients_buttons:Array[Button]
 var _clients_orders: Dictionary[HungryClient, ClientOrderUI]
+var _button_furniture_selected: Button
 
 func _ready() -> void:
 	money_label.text = "0 $"
@@ -45,6 +46,7 @@ func set_buttons_furnitures(furnitures:Array[FurnitureGridData]):
 		button.pressed.connect(func(): 
 			furniture_selected.emit(furniture)
 			container_menu.folded = true
+			_button_furniture_selected = button
 			)
 		container_furnitures.add_child(button)
 
