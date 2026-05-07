@@ -20,7 +20,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				_is_dragging = false           
+				pass         
 			else:
 				if _is_dragging:
 					input_released = true
@@ -54,8 +54,7 @@ func _on_drag_started():
 	if _crate_drag is CrateIngredient:
 		_current_ingredient = _crate_drag.instantiate_ingredient()
 		AudioManager.play_sfx("sfx-crate")
-	
-	elif _crate_drag is CrateTool and _crate_drag.ingredient_transformed:
+	elif _crate_drag is CrateTool and _crate_drag.ingredient_transformed and is_instance_valid(_crate_drag._ingredient):
 		_current_ingredient = _crate_drag._ingredient
 		AudioManager.stop_sfx("sfx-overcooking-steak-loop")
 	elif _crate_drag is CrateCoocking:
