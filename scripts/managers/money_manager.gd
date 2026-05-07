@@ -34,3 +34,6 @@ func buy_furniture(furniture: FurnitureGridData) -> bool:
 func add_money(price: float):
 	_money += price
 	money_changed.emit()
+	
+func can_buy_furniture(furniture: FurnitureGridData) -> bool:
+	return _money >= furniture.price
