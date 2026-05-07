@@ -15,27 +15,27 @@ metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_xvau6"]
 script = ExtResource("6_dvnas")
-time_spawn = 5.5
+time_spawn = 7.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_7fsh2"]
 script = ExtResource("6_dvnas")
-time_spawn = 6.0
+time_spawn = 9.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_g1xuv"]
 script = ExtResource("6_dvnas")
-time_spawn = 12.0
+time_spawn = 16.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_u7pw1"]
 script = ExtResource("6_dvnas")
-time_spawn = 12.5
+time_spawn = 18.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_l37n0"]
 script = ExtResource("6_dvnas")
-time_spawn = 13.0
+time_spawn = 20.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [resource]

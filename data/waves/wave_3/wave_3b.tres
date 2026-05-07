@@ -29,22 +29,22 @@ metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_xjg5b"]
 script = ExtResource("5_pwy66")
-time_spawn = 15.5
+time_spawn = 16.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_wub2r"]
 script = ExtResource("5_pwy66")
-time_spawn = 16.0
+time_spawn = 17.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_2dmit"]
 script = ExtResource("5_pwy66")
-time_spawn = 20.0
+time_spawn = 22.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [sub_resource type="Resource" id="Resource_y652g"]
 script = ExtResource("5_pwy66")
-time_spawn = 22.0
+time_spawn = 24.0
 metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 
 [resource]
