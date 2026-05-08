@@ -56,6 +56,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				var obstacles := _current_furniture_instance.blocks_to_2D_positions(_tile_position)
 				if _grid.can_add_obstacles(obstacles) and _grid.exist_path_for_clients(obstacles):
 					if MoneyManager.buy_furniture(_current_furniture):
+						_current_furniture_instance.set_enable_good_placement()
 						_grid.add_obstacles(_current_furniture_instance.blocks_to_2D_positions(_tile_position))
 						AudioManager.play_sfx_random(["sfx-furniture-1","sfx-furniture-2"])
 						_current_furniture_instance.reparent(_grid)

@@ -30,6 +30,12 @@ func set_enable_good_placement():
 	for mesh in meshs_feedback_placement:
 		mesh.visible = true
 		mesh.material_override = material_good_placement
+	var tween = create_tween()
+	var alpha = material_wrong_placement.albedo_color.a
+	tween.tween_property(material_good_placement, "albedo_color:a", 0.0, 0.45)
+	tween.tween_property(material_good_placement, "albedo_color:a", alpha, 0.45)
+	await get_tree().create_timer(.2).timeout
+	disable_placement_feedback()
 		
 func disable_placement_feedback():
 	for mesh in meshs_feedback_placement:
