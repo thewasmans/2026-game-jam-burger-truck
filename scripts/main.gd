@@ -6,7 +6,6 @@ class_name Main
 @export var game_ui: GameUI
 @export var spawner: HungryClientSpawner
 @export var grid: GridSystem
-@export var default_amount_money: float = 10.0
 @export var game_data:GameData
 @export var board_ui:BoardUI
 @export var sounds: Dictionary[String, AudioStream]
@@ -44,7 +43,7 @@ func _ready() -> void:
 	camera_switcher.set_camera_kitchen()
 	game_ui.next_wave_button.pressed.connect(func(): spawner.next_wave())
 	
-	MoneyManager.initialize(default_amount_money, game_data.speed_money_increment)
+	MoneyManager.initialize(game_data.initial_amount_money, game_data.speed_money_increment)
 	FurnituresManager.initialize(grid, game_data)
 	ClientsManager.initialize()
 	AudioManager.initialize(sounds, stream_player)

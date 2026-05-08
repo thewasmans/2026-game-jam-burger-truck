@@ -4,6 +4,8 @@ extends Resource
 @export var burgers_data: Array[BurgerData]
 @export var ingredients_data: Array[IngredientData]
 @export var speed_money_increment: float = 1.0
+@export var initial_amount_money: float = 20.0
+@export var initial_reputation: int = 20
 @export_custom(PROPERTY_HINT_NONE, "suffix:Steps") var max_steps_sclices: int = 5
 @export_group("Furnitures")
 @export var furnitures:Array[FurnitureGridData]
