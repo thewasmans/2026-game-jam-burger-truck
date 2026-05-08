@@ -19,6 +19,8 @@ signal waiting_next_wave()
 @export var game_data: GameData
 @export var grid_system: GridSystem
 @export var hungry_client_speed_increment: float = 1.0
+@export var hungry_client_patience_decrease: float = 5.0
+@export var minimum_client_patience: float = 10.0
 
 var spawn_time := RandomNumberGenerator.new()
 var time: float
@@ -30,6 +32,7 @@ var _client_waiting_to_spawn: Array[ClientData]
 var number_wave: int = 0
 var furniture_phase: bool
 var current_speed_bonus: float = 0.0
+var current_patience_decrease: float = 0.0
 
 func _ready() -> void:
 	randomize()
@@ -58,6 +61,7 @@ func next_wave():
 	number_wave += 1
 	if number_wave > 1 and (number_wave - 1) % game_data.waves.size() == 0:
 		current_speed_bonus += hungry_client_speed_increment
+		current_patience_decrease += hungry_client_patience_decrease
 	_index_current_wave = (_index_current_wave + 1) % game_data.waves.size()
 	_current_preset_wave = game_data.waves[_index_current_wave].waves_presets.pick_random()
 	_client_waiting_to_spawn = _current_preset_wave.clients.duplicate()
@@ -73,6 +77,10 @@ func spawn_client(_client: ClientData) -> void:
 	var instance: HungryClient = grid_system.spawn_client_at_spawn()
 	
 	instance.speed += current_speed_bonus
+	
+	instance.wait_time = max(minimum_client_patience,instance.wait_time - current_patience_decrease)
+	
+	instance.update_wait_timer()
 	
 	_hungries_clients.append(instance)
 	client_spawned.emit(instance)

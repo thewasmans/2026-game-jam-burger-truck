@@ -44,7 +44,6 @@ size = Vector2(0.5, 0.053)
 script = ExtResource("1_mntof")
 speed = 1.0
 hover_node = NodePath("Hover")
-wait_time = Vector2(25, 25)
 anchor_burger = NodePath("Anchor Burger")
 collision = NodePath("CollisionShape3D")
 

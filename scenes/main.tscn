@@ -151,6 +151,7 @@ front_truck_target = NodePath("FrontTruck")
 out_screen_target = NodePath("Leaving")
 hungry_client_spawner = NodePath(".")
 grid_system = NodePath("../Grid")
+hungry_client_speed_increment = 1.5
 
 [node name="FrontTruck" type="MeshInstance3D" parent="Level/HungryClientSpawner" unique_id=1816251431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.103453636, 15.023006)
