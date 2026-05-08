@@ -51,7 +51,7 @@ func _ready() -> void:
 	game_ui.button_start_clicked.connect(start_game)
 	get_tree().paused = true
 	AudioManager.play_music("main-music")
-	MoneyManager.furniture_bought.connect(func (furniture: FurnitureGridData):
+	MoneyManager.furniture_bought.connect(func (_furniture: FurnitureGridData):
 		if game_ui._button_furniture_selected:
 			game_ui._button_furniture_selected.disabled = true)
 
