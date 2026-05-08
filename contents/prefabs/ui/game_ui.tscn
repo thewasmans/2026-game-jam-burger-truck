@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b8q3ynq5ni8tq" path="res://contents/prefabs/ui/buy_menu_ui.tscn" id="5_ytt4t"]
 [ext_resource type="StyleBox" uid="uid://dkscjk6yjdp03" path="res://contents/ui/theme/style_box_flat_buy_menu.tres" id="6_77pjo"]
 
-[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "start_menu", "end_menu", "mini_map", "button_start", "button_return_to_start", "button_mute", "label_clients", "label_score", "container_orders", "label_remaining", "next_wave_button")]
+[node name="GameUI" type="Control" unique_id=149232493 node_paths=PackedStringArray("money_label", "container_furnitures", "container_menu", "start_menu", "end_menu", "mini_map", "button_start", "button_return_to_start", "button_mute", "label_clients", "label_score", "container_orders", "label_remaining", "next_wave_button", "re_roll_button")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -36,6 +36,7 @@ order_ui_prefab = ExtResource("5_ckmay")
 container_orders = NodePath("Control/ScrollContainer/ClientRequestSideUi")
 label_remaining = NodePath("Control/RemainingLabel")
 next_wave_button = NodePath("WaveLabel/NextWaveButton")
+re_roll_button = NodePath("ButtonReRoll")
 
 [node name="Minimap" parent="." unique_id=1304258662 instance=ExtResource("4_nkv2q")]
 layout_mode = 1
@@ -91,6 +92,16 @@ size_flags_vertical = 0
 text = "+XX orders remaining"
 horizontal_alignment = 1
 
+[node name="ButtonReRoll" type="Button" parent="." unique_id=337287562]
+layout_mode = 1
+offset_left = 45.0
+offset_top = 152.0
+offset_right = 347.0
+offset_bottom = 228.0
+theme = ExtResource("1_ajtxk")
+theme_override_font_sizes/font_size = 28
+text = "ROLL FURNITURE 5$"
+
 [node name="Money" parent="." unique_id=1829518468 instance=ExtResource("5_ytt4t")]
 layout_mode = 1
 offset_left = 25.0
@@ -100,7 +111,7 @@ offset_bottom = 38.0
 
 [node name="FoldableContainer" parent="Money" index="0" unique_id=106615898]
 offset_left = 20.0
-offset_top = 80.0
+offset_top = 209.0
 offset_right = 320.0
 offset_bottom = 1081.0
 theme_override_font_sizes/font_size = 48

@@ -8,8 +8,9 @@ extends Resource
 @export_group("Furnitures")
 @export var furnitures:Array[FurnitureGridData]
 @export_custom(PROPERTY_HINT_NONE, "suffix:Furnitures") var furnitures_selection: int = 3
-@export_custom(PROPERTY_HINT_NONE, "suffix:Furnitures") var furnitures_placement: int = 1
 @export var preview_placement_material: Material
+@export var reroll_price: int = 5
+@export var reroll_price_added_next: int = 5
 @export_group("Waves")
 @export var waves: Array[WavesData]
 @export var default_client: ClientData

@@ -22,6 +22,7 @@ signal button_start_clicked
 @export var container_orders: Control
 @export var label_remaining: Label
 @export var next_wave_button: Button
+@export var re_roll_button: Button
 var ingredients_buttons:Array[Button]
 var _clients_orders: Dictionary[HungryClient, ClientOrderUI]
 var _button_furniture_selected: Button
@@ -33,6 +34,7 @@ func _ready() -> void:
 	reset_orders()
 	MoneyManager.money_changed.connect(func(): set_money_value(MoneyManager._money))
 	set_visible_furnitures_menu(false)
+	re_roll_button.visible = false
 
 func set_buttons_furnitures(furnitures:Array[FurnitureGridData]):
 	for child in container_furnitures.get_children():
@@ -98,6 +100,7 @@ func set_visible_furnitures_menu(visibility: bool):
 	mini_map.visible = not visibility
 	container_menu.visible = visibility
 	next_wave_button.visible = visibility
+	re_roll_button.visible = visibility
 	if visibility:
 		label_clients.text += " - Finished"
 

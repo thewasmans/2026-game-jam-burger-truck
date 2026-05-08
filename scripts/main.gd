@@ -13,10 +13,10 @@ class_name Main
 @export var stream_player: AudioStreamPlayer
 @export var camera_switcher: CameraSwitcher
 var current_wave_burgers: Array[BurgerData] = []
-
 var burgers_data:
 	get:
 		return game_data.burgers_data
+var reroll_price: int
 
 func _ready() -> void:
 	kitchen.reputation_changed.connect(game_ui.on_reputation_changed)
@@ -32,6 +32,8 @@ func _ready() -> void:
 		grid.set_visible_grid(false)
 		game_ui.set_wave_information(data, number))
 	spawner.waiting_next_wave.connect(func():
+		reroll_price = game_data.reroll_price
+		game_ui.re_roll_button.text = "Roll Furniture " + str(game_data.reroll_price) + "$"
 		IngredientsManager.set_enable_kitchen(false)
 		kitchen.free_current_ingredient()
 		var furnitures := FurnituresManager.shuffle_selection_furnitures()
@@ -54,6 +56,14 @@ func _ready() -> void:
 	MoneyManager.furniture_bought.connect(func (_furniture: FurnitureGridData):
 		if game_ui._button_furniture_selected:
 			game_ui._button_furniture_selected.disabled = true)
+	game_ui.re_roll_button.pressed.connect(func():
+		if MoneyManager.can_buy(reroll_price):
+			var furnitures := FurnituresManager.shuffle_selection_furnitures()
+			game_ui.set_buttons_furnitures(furnitures)
+			MoneyManager.buy(reroll_price)
+			reroll_price = reroll_price + game_data.reroll_price_added_next
+			game_ui.re_roll_button.text = "Roll Furniture " + str(reroll_price) + "$"
+	)
 
 func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData):
 	add_ingredient_on_plate(ingredient, crate)

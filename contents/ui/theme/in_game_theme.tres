@@ -74,6 +74,7 @@ Button/colors/icon_normal_color = Color(0, 0, 0, 1)
 Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 20
 Button/fonts/font = ExtResource("1_km2md")
+Button/styles/normal = ExtResource("4_idev4")
 FoldableContainer/fonts/font = ExtResource("1_km2md")
 FoldableContainer/icons/expanded_arrow = ExtResource("2_1a6p2")
 FoldableContainer/icons/folded_arrow = ExtResource("3_idev4")

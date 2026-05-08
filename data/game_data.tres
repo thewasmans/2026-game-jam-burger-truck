@@ -46,6 +46,7 @@ speed_money_increment = 0.0
 furnitures = Array[ExtResource("15_pg0xh")]([ExtResource("16_sudy3"), ExtResource("16_sudy3"), ExtResource("16_sudy3"), ExtResource("16_sudy3"), ExtResource("16_sudy3"), ExtResource("17_d2i17"), ExtResource("18_wjy3c"), ExtResource("17_d2i17"), ExtResource("18_wjy3c"), ExtResource("17_d2i17"), ExtResource("18_wjy3c"), ExtResource("17_d2i17"), ExtResource("18_wjy3c"), ExtResource("19_o0qo7"), ExtResource("20_hxihq"), ExtResource("19_o0qo7"), ExtResource("20_hxihq"), ExtResource("19_o0qo7"), ExtResource("20_hxihq"), ExtResource("21_wmfrq"), ExtResource("22_x34ux"), ExtResource("23_42erl"), ExtResource("24_0wlxu"), ExtResource("25_h7ofl"), ExtResource("26_8ri8c"), ExtResource("21_wmfrq"), ExtResource("22_x34ux"), ExtResource("23_42erl"), ExtResource("24_0wlxu"), ExtResource("25_h7ofl"), ExtResource("26_8ri8c"), ExtResource("27_qqbc6"), ExtResource("28_o8amu")])
 furnitures_placement = 3
 preview_placement_material = ExtResource("30_sudy3")
+reroll_price = 15
 waves = Array[ExtResource("17_l84in")]([ExtResource("33_d2i17"), ExtResource("18_jxnqk"), ExtResource("19_b1qmr"), ExtResource("20_r4uws"), ExtResource("21_4ls4r"), ExtResource("22_xbtbc")])
 default_client = ExtResource("14_ux8ld")
 waiting_next_wave = 20.0
