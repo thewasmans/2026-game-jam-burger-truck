@@ -6,5 +6,5 @@
 
 [resource]
 script = ExtResource("3_2vtab")
-patience = 45.0
+patience = 25.0
 model_3d = ExtResource("2_0k7vl")
