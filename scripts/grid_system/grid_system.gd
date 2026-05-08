@@ -6,7 +6,7 @@ extends Node3D
 @export var node_tiles: Node3D
 
 @export_group("Settings")
-@export var grid_size := Vector2(10, 10)
+@export var grid_size := Vector2i(10, 10)
 @export var cell_size := 1.0
 
 @export_group("Prefabs")
