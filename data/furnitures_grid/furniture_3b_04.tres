@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_hdvqg")
-name = "L shape 3 boxes D"
+name = "Corner Table D"
 icon = ExtResource("1_l775v")
 prefab = ExtResource("2_ase2u")
 price = 28.0

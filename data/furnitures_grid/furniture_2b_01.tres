@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_uw10h")
-name = "2 boxes diagonal A"
+name = "Small Fence A"
 icon = ExtResource("1_a23u2")
 prefab = ExtResource("2_lcl0r")
 price = 20.0

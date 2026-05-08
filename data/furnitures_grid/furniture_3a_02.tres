@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_it1d2")
-name = "1x3"
+name = "Table for Two B"
 icon = ExtResource("1_h8noe")
 prefab = ExtResource("2_8grus")
 price = 25.0

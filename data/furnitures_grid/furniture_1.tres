@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_bw8oj")
-name = "1x1"
+name = "Flower Pot"
 icon = ExtResource("1_a54ah")
 prefab = ExtResource("2_ajgbm")
 price = 10.0

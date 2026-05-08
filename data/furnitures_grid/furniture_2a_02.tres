@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_v015s")
-name = "1x2"
+name = "Trash Cans B"
 icon = ExtResource("1_cl6iy")
 prefab = ExtResource("2_evp2s")
 price = 15.0
