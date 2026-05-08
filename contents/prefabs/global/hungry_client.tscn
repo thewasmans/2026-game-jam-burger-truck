@@ -40,19 +40,18 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_278i7")
 size = Vector2(0.5, 0.053)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_n2o8w"]
-
 [node name="HungryClient" type="CharacterBody3D" unique_id=636878034 node_paths=PackedStringArray("hover_node", "anchor_burger", "collision")]
 script = ExtResource("1_mntof")
 speed = 1.0
 hover_node = NodePath("Hover")
-wait_time = Vector2(45, 45)
+wait_time = Vector2(25, 25)
 anchor_burger = NodePath("Anchor Burger")
 collision = NodePath("CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1118751600]
 transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0.824, 0)
 shape = SubResource("BoxShape3D_mntof")
+disabled = true
 
 [node name="Model" type="Node3D" parent="." unique_id=702819584]
 transform = Transform3D(0.80952924, 0, 0, 0, 0.82090056, 0, 0, 0, 0.81373817, 0, 1.409066, 0)
@@ -91,14 +90,3 @@ size = Vector2i(1152, 96)
 
 [node name="ClientRequest" parent="SubViewport" unique_id=853921984 instance=ExtResource("2_tnfmv")]
 visible = false
-
-[node name="Area3D" type="Area3D" parent="." unique_id=14976632]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.572, 1.008)
-visible = false
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=2046416435]
-visible = false
-shape = SubResource("BoxShape3D_n2o8w")
-
-[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
-[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]
