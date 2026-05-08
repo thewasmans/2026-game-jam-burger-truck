@@ -7,6 +7,7 @@ signal ingredient_coocked()
 @export var viewport_mesh_ui: Node3D
 @export var time_coocking: float = 1.0
 @export var overcooking_particles: GPUParticles3D
+@export var flames_vfx: Array[Node3D]
 
 var _raw_steack:SteakCoocking
 var _coocking_started: bool
@@ -27,6 +28,7 @@ func _process(delta: float) -> void:
 		overcooking_particles.emitting = true
 		_value_progress = 1.0 * .1
 		_coocking_started = false
+		_set_vfx_state(false)
 		_spawn_coocked_ingredient()
 		ingredient_transformed = true
 		viewport_mesh_ui.hide()
@@ -50,8 +52,14 @@ func assign_ingredient(ingredient:Ingredient) -> bool:
 	if assigned:
 		_value_progress = 0
 		_coocking_started = true
+		_set_vfx_state(true)
 		viewport_mesh_ui.show()
 		AudioManager.play_sfx("sfx-cooking-steak-loop")
 		if ingredient.instance is SteakCoocking:
 			_raw_steack = ingredient.instance
 	return assigned
+
+func _set_vfx_state(is_active: bool) -> void:
+	for vfx in flames_vfx:
+		if vfx:
+			vfx.visible = is_active
