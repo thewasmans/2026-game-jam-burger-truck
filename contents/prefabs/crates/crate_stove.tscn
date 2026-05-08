@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dnddo3wtx6885" path="res://scripts/crates/crate_coocking.gd" id="2_q8rnc"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_txfty"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/raw_steak.tres" id="3_q8rnc"]
-[ext_resource type="PackedScene" uid="uid://b47g0jvcr4ror" path="res://contents/vfx/stove_fire.tscn" id="6_juqj1"]
+[ext_resource type="PackedScene" uid="uid://b47g0jvcr4ror" path="res://contents/vfx/stove_fire_vfx.tscn" id="6_juqj1"]
 [ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/theme/in_game_theme.tres" id="7_juqj1"]
 [ext_resource type="Script" uid="uid://cjbncojx475m4" path="res://scripts/ui/stove_progress_ui.gd" id="8_lei3o"]
 
