@@ -40,6 +40,7 @@ func _ready() -> void:
 		game_ui.set_buttons_furnitures(furnitures)
 		camera_switcher.set_camera_furnitures()
 		grid.set_visible_grid(true)
+		IngredientsManager.free_current_ingredient()
 		game_ui.set_visible_furnitures_menu(true))
 	spawner.client_spawned.connect(client_spawned)
 	camera_switcher.set_camera_kitchen()

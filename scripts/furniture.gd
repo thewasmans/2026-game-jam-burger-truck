@@ -17,7 +17,6 @@ func blocks_to_2D_positions(tile_position: Vector2) -> Array[Vector2]:
 	return positions
 
 func set_enable_wrong_placement():
-	print("lol")
 	for mesh in blocks:
 		mesh.visible = true
 		mesh.material_override = material_wrong_placement
