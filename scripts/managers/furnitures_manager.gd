@@ -56,12 +56,15 @@ func _unhandled_input(event: InputEvent) -> void:
 				var obstacles := _current_furniture_instance.blocks_to_2D_positions(_tile_position)
 				if _grid.can_add_obstacles(obstacles) and _grid.exist_path_for_clients(obstacles):
 					if MoneyManager.buy_furniture(_current_furniture):
+						_current_furniture_instance.set_enable_good_placement()
 						_grid.add_obstacles(_current_furniture_instance.blocks_to_2D_positions(_tile_position))
 						AudioManager.play_sfx_random(["sfx-furniture-1","sfx-furniture-2"])
 						_current_furniture_instance.reparent(_grid)
 						_current_furniture = null
 						_current_furniture_instance = null
 						_current_furniture_placed.append(_current_furniture_instance)
+				else:
+					_current_furniture_instance.set_enable_wrong_placement()
 			elif event.button_index == MOUSE_BUTTON_RIGHT:
 				_current_furniture_instance.queue_free()
 				_current_furniture = null
