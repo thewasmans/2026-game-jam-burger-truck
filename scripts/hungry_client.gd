@@ -128,3 +128,6 @@ func set_order_ui(order_ui: ClientOrderUI):
 func assign_to_plate(plate_position: Vector3):
 	_moving_to_plate = true
 	_plate_position = plate_position
+	
+func update_wait_timer():
+	wait_timer.wait_time = wait_time

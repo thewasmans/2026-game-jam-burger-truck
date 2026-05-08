@@ -80,6 +80,8 @@ func spawn_client(_client: ClientData) -> void:
 	
 	instance.wait_time = max(minimum_client_patience,instance.wait_time - current_patience_decrease)
 	
+	instance.update_wait_timer()
+	
 	_hungries_clients.append(instance)
 	client_spawned.emit(instance)
 
