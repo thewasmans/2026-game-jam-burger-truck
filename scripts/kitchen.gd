@@ -16,13 +16,13 @@ signal reputation_reached_zero()
 @export var vfx_ingredient_dismiss: GPUParticles3D
 @export var game_data: GameData
 
-var MAX_REPUTATION: int = 10
-var current_reputation: int = MAX_REPUTATION
+var current_reputation: int
 var _current_ingredient: Ingredient = null
 var _plates_availalble:Dictionary[Node3D, HungryClient] = {}
 var _current_ingredient_should_release: bool = false
 
 func _ready() -> void:
+	current_reputation = game_data.initial_reputation
 	reputation_changed.emit(current_reputation)
 	IngredientsManager._vfx_ingredient_dismiss = vfx_ingredient_dismiss
 	
