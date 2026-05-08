@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dnddo3wtx6885" path="res://scripts/crates/crate_coocking.gd" id="2_q8rnc"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_txfty"]
 [ext_resource type="Resource" uid="uid://da52klgb8iem0" path="res://data/ingredients/raw_steak.tres" id="3_q8rnc"]
+[ext_resource type="PackedScene" uid="uid://b47g0jvcr4ror" path="res://contents/vfx/stove_fire_vfx.tscn" id="6_juqj1"]
 [ext_resource type="Theme" uid="uid://bfmopjudgwf0u" path="res://contents/ui/theme/in_game_theme.tres" id="7_juqj1"]
 [ext_resource type="Script" uid="uid://cjbncojx475m4" path="res://scripts/ui/stove_progress_ui.gd" id="8_lei3o"]
 
@@ -35,6 +36,15 @@ mesh = SubResource("PlaneMesh_ilr34")
 
 [node name="Anchor" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="2" unique_id=952649832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21135111, 1.1112946, 0.18964559)
+
+[node name="StoveFire" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="3" unique_id=237617368 instance=ExtResource("6_juqj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22331434, 1, 0.2300024)
+
+[node name="StoveFire2" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="4" unique_id=1203615323 instance=ExtResource("6_juqj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22331434, 1, -0.24851954)
+
+[node name="StoveFire3" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="5" unique_id=1549710102 instance=ExtResource("6_juqj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24286047, 1, -0.24851954)
 
 [node name="SubViewport" type="SubViewport" parent="." index="2" unique_id=1609680147]
 size = Vector2i(512, 128)

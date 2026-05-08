@@ -1,0 +1,55 @@
+[gd_scene format=4 uid="uid://b47g0jvcr4ror"]
+
+[ext_resource type="Shader" uid="uid://ci5htb5a646yb" path="res://contents/shaders/fire_shader.tres" id="1_2u1ka"]
+[ext_resource type="Texture2D" uid="uid://isy7v1uxqufj" path="res://contents/textures/fire_texture.png" id="2_p4gi5"]
+[ext_resource type="Texture2D" uid="uid://bp67d1tw8s00d" path="res://contents/textures/fire_noise_texture.png" id="3_xdcpw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awn72"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_elpxi"]
+_surfaces = [{
+"aabb": AABB(-0.8108381, 0.0061198175, -0.8108381, 1.6216762, 0.2869681, 1.6216762),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEABAACAAYAAwAHAAUACAAEAAYABwAJAAUACAAGAAoABwALAAkADAAIAAoACwANAAkADAAKAA4ACwAPAA0AEAAMAA4ADwARAA0AEAAOABIADwATABEAFAAQABIAEwAVABEAFAASABYAEwAXABUAFwAUABYAFwAWABUA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/38AAKUyAAD/v///JhEAAP9///8AAAAArKYAAAI9AABSWQAAAj0AANju////PwAA/z///yYRAAD8wgAAUlkAAAI9AABSWQAA//////9/AAAmEf///z8AAFnNAAD/fwAApTIAAP9/AADY7v///78AAAAA////fwAA/MIAAKymAAACPQAArKYAAP+////Y7gAAJhH///+/AACspgAA/MIAAFJZAAD8wgAA/3//////AAD/P///2O4AAP9/AABZzQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g8jyg"]
+resource_name = "stove_fire_Cylinder"
+_surfaces = [{
+"aabb": AABB(-0.8108381, 0.0061198175, -0.8108381, 1.6216762, 0.2869681, 1.6216762),
+"attribute_data": PackedByteArray("////f6nqAAD//wAAqer/f6nq/39U1QAAqeoAAFTV/39U1f9//78AAFTVAAD/v/9//7//f6qqAAD/vwAAqqr/f6qq/39UlQAAqqoAAFSV/39Ulf9//38AAFSVAAD/f/9//3//f6pqAAD/fwAAqmr/f6pq/39VVQAAqmoAAFVV/39VVf9//z8AAFVVAAD/P/9//z//f6oqAAD/PwAAqir/f6oq/39VFQAAqioAAFUV/39VFf9/AAAAAFUVAAAAAP9/"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_awn72"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("/38AAKUyOvb/v///JhE69v9///8AADr2rKYAAAI9OvaspgAAAj3M4tju////P8zi/7///yYRzOL8wgAAUlnM4vzCAABSWcXP//////9/xc/Y7v///z/Fz1nNAAD/f8XPWc0AAP9/rL3Y7v///7+svf//////f6y9/MIAAKymrL38wgAArKa6rf+////Y7rqt2O7///+/uq2spgAA/MK6raymAAD8wh+j/3//////H6P/v///2O4fo/9/AABZzR+j/38AAFnNH6P/P///2O4fo/9//////x+jUlkAAPzCH6NSWQAA/MK6rSYR////v7qt/z///9juuq0CPQAArKa6rQI9AACspqy9AAD///9/rL0mEf///7+svaUyAAD/f6y9pTIAAP9/xc8mEf///z/FzwAA////f8XPAj0AAFJZxc8CPQAAUlnM4v8///8mEcziJhH///8/zOJSWQAAAj3M4lJZAAACPTr2/3///wAAOvb/P///JhE69v9/AAClMjr2EntYKhJ7WCoSe1gqEntYKq5x4jCuceIwrnHiMK5x4jDJZ8Q3yWfEN8lnxDfJZ8Q3rFsyQKxbMkCsWzJArFsyQNBJoEzQSaBM0EmgTNBJoEysJhVlrCYVZawmFWWsJhVl6RqspukarKbpGqym6Rqspl4zz8leM8/JXjPPyV4zz8nNP6vbzT+r280/q9vNP6vbOkjI5zpIyOc6SMjnOkjI5x1PrfEdT63xHU+t8R1PrfGmVRH7plUR+6ZVEfumVRH7")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_elpxi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c3xto"]
+render_priority = 0
+shader = ExtResource("1_2u1ka")
+shader_parameter/ColorParameter2 = Color(0.964706, 0.521569, 0, 1)
+shader_parameter/ColorParameter = Color(0.27450982, 0.3137255, 0.69411767, 1)
+shader_parameter/Tiling = Vector2(3, 1)
+shader_parameter/Speed = Vector2(0.01, 1)
+shader_parameter/Noise_Texture = ExtResource("3_xdcpw")
+shader_parameter/Distortion = 0.15
+shader_parameter/Base_Texture = ExtResource("2_p4gi5")
+
+[node name="StoveFire" type="Node3D" unique_id=237617368]
+
+[node name="Cylinder" type="MeshInstance3D" parent="." unique_id=395743440]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("ArrayMesh_g8jyg")
+surface_material_override/0 = SubResource("ShaderMaterial_c3xto")
