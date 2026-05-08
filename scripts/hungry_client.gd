@@ -96,22 +96,6 @@ func _on_wait_timer_timeout() -> void:
 	else:
 		leaving_satiated.emit()
 
-func _on_area_3d_mouse_entered() -> void:
-	for i in anchor_burger.get_child(0).get_child_count():
-		var child: Node3D = anchor_burger.get_child(0).get_child(i)
-		create_tween()\
-			.tween_property(child, "position", child.position + Vector3.UP * i * .3, .15)\
-			.set_ease(Tween.EASE_IN)\
-			.set_trans(Tween.TRANS_ELASTIC)
-
-func _on_area_3d_mouse_exited() -> void:
-	for i in anchor_burger.get_child(0).get_child_count():
-		var child: Node3D = anchor_burger.get_child(0).get_child(i)
-		create_tween()\
-			.tween_property(child, "position", Vector3.UP * i * .1, .15)\
-			.set_ease(Tween.EASE_IN_OUT)\
-			.set_trans(Tween.TRANS_ELASTIC)
-
 func set_burger(burger_data:BurgerData):
 	_burger_request = burger_data
 	var burger_node = Node3D.new()
