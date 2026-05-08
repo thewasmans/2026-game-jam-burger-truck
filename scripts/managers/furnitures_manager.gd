@@ -62,6 +62,8 @@ func _unhandled_input(event: InputEvent) -> void:
 						_current_furniture = null
 						_current_furniture_instance = null
 						_current_furniture_placed.append(_current_furniture_instance)
+				else:
+					_current_furniture_instance.set_enable_wrong_placement()
 			elif event.button_index == MOUSE_BUTTON_RIGHT:
 				_current_furniture_instance.queue_free()
 				_current_furniture = null
