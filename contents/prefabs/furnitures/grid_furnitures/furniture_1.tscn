@@ -10,9 +10,8 @@ albedo_color = Color(0.913972, 0.76932013, 0.11181147, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_rqrh6"]
 material = SubResource("StandardMaterial3D_mxvep")
 
-[node name="Furniture1" unique_id=1741332122 node_paths=PackedStringArray("blocks", "meshs_feedback_placement") instance=ExtResource("1_mxvep")]
+[node name="Furniture1" unique_id=1741332122 node_paths=PackedStringArray("blocks") instance=ExtResource("1_mxvep")]
 blocks = [NodePath("Model3D/MeshInstance3D")]
-meshs_feedback_placement = [NodePath("Model3D/MeshInstance3D")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="1" unique_id=1747320091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -21,6 +20,3 @@ material_override = ExtResource("2_r5nwo")
 mesh = SubResource("BoxMesh_rqrh6")
 
 [node name="planter" parent="Model3D" parent_id_path=PackedInt32Array(160957541) index="2" unique_id=2039419837 instance=ExtResource("2_4703y")]
-
-[node name="Camera3D" type="Camera3D" parent="." index="1" unique_id=1096916370]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4749787, 1.2471026, 1.821508)
