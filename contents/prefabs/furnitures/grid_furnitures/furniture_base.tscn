@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://c144sagnaxcwa"]
 
 [ext_resource type="PackedScene" uid="uid://ctj3ppi44odtp" path="res://contents/prefabs/anchor/anchor.tscn" id="1_3x8tt"]
-[ext_resource type="Script" path="res://scripts/furniture.gd" id="1_ntmpx"]
+[ext_resource type="Script" uid="uid://bdgt7rsakbke3" path="res://scripts/furniture.gd" id="1_ntmpx"]
+[ext_resource type="Material" uid="uid://yy1ph3p48fjr" path="res://contents/materials/feedbacks/wrong_placement_mat.tres" id="2_u63hr"]
+[ext_resource type="Material" uid="uid://10cvu1rfxejk" path="res://contents/materials/feedbacks/good_placement_mat.tres" id="3_vf86t"]
 
 [node name="FurnituresGlobal" type="Node3D" unique_id=1741332122]
 script = ExtResource("1_ntmpx")
+material_wrong_placement = ExtResource("2_u63hr")
+material_good_placement = ExtResource("3_vf86t")
 
 [node name="Model3D" type="Node3D" parent="." unique_id=160957541]
 
