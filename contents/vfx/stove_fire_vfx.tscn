@@ -47,9 +47,38 @@ shader_parameter/Noise_Texture = ExtResource("3_xdcpw")
 shader_parameter/Distortion = 0.15
 shader_parameter/Base_Texture = ExtResource("2_p4gi5")
 
+[sub_resource type="Animation" id="Animation_48sxj"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylinder")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_dyv7r"]
+resource_name = "toggle_flame_vfx"
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylinder")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 0.4, 0.4, 0.45, 0.3, 1, 0.35, 0.35, 0.35)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ocjx"]
+_data = {
+&"RESET": SubResource("Animation_48sxj"),
+&"toggle_flame_vfx": SubResource("Animation_dyv7r")
+}
+
 [node name="StoveFire" type="Node3D" unique_id=237617368]
 
 [node name="Cylinder" type="MeshInstance3D" parent="." unique_id=395743440]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_g8jyg")
 surface_material_override/0 = SubResource("ShaderMaterial_c3xto")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1600098141]
+libraries/ = SubResource("AnimationLibrary_1ocjx")

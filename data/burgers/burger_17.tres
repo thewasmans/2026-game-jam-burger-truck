@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://lx7631y08gpp"]
+
+[ext_resource type="Texture2D" uid="uid://cn1l7uk7gturh" path="res://contents/ui/icons/burgers/burger_17.png" id="1_083tk"]
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_h42d8"]
+[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="3_5ak1x"]
+[ext_resource type="Resource" uid="uid://p3x44aw4ollh" path="res://data/ingredients/cooked_steak.tres" id="4_s3h4s"]
+[ext_resource type="Resource" uid="uid://22nbf2njf608" path="res://data/ingredients/onion.tres" id="5_h42d8"]
+[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="6_lwjd5"]
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="7_lspar"]
+
+[resource]
+script = ExtResource("7_lspar")
+ingredients = Array[ExtResource("2_h42d8")]([ExtResource("3_5ak1x"), ExtResource("4_s3h4s"), ExtResource("5_h42d8"), ExtResource("6_lwjd5")])
+image = ExtResource("1_083tk")
+name = "Onion Burger"
+price = 7
+metadata/_custom_type_script = "uid://b250qdutrqhpq"
