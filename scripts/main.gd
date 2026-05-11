@@ -23,6 +23,7 @@ func _ready() -> void:
 	kitchen.reputation_reached_zero.connect(_reputation_reached_zero)
 	game_ui.furniture_selected.connect(FurnituresManager.furniture_selected)
 	spawner.next_wave_started.connect(func(data, number):
+		FurnituresManager.enable = false
 		IngredientsManager.set_enable_kitchen(true)
 		FurnituresManager.reset_current_furniture_placed()
 		current_wave_burgers = data.burgers
@@ -31,6 +32,7 @@ func _ready() -> void:
 		grid.set_visible_grid(false)
 		game_ui.set_wave_information(data, number))
 	spawner.waiting_next_wave.connect(func():
+		FurnituresManager.enable = true
 		reroll_price = game_data.reroll_price
 		game_ui.re_roll_button.text = "Roll Furniture " + str(game_data.reroll_price) + "$"
 		IngredientsManager.set_enable_kitchen(false)
