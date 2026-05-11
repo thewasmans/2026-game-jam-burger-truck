@@ -44,6 +44,9 @@ func _ready() -> void:
 	spawner.client_spawned.connect(client_spawned)
 	camera_switcher.set_camera_kitchen()
 	game_ui.next_wave_button.pressed.connect(func(): spawner.next_wave())
+	for plate in kitchen.plates_crates:
+		plate.crate_mouse_over.connect(plate_hover.bind(plate))
+		plate.crate_mouse_exit.connect(plate_exited.bind(plate))
 	
 	MoneyManager.initialize(game_data.initial_amount_money, game_data.speed_money_increment)
 	FurnituresManager.initialize(grid, game_data)
@@ -63,6 +66,13 @@ func _ready() -> void:
 			reroll_price = reroll_price + game_data.reroll_price_added_next
 			game_ui.re_roll_button.text = "Roll Furniture " + str(reroll_price) + "$"
 	)
+	
+func plate_hover(plate: CratePlate):
+	if not (IngredientsManager._current_ingredient or IngredientsManager._current_plate or plate._ingredients.size() == 0):
+		game_ui.set_enable_current_state_burger(true, plate)
+	
+func plate_exited(plate: CratePlate):
+	game_ui.set_enable_current_state_burger(false)
 
 func _on_ingredient_plate_assigned(crate: CratePlate, ingredient: IngredientData):
 	add_ingredient_on_plate(ingredient, crate)

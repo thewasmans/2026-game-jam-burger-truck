@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://fisjpf6nrqut"]
+
+[ext_resource type="StyleBox" uid="uid://btmgr43eiwf3k" path="res://contents/ui/theme/state_burger_panel_style_box_flat.tres" id="1_dvtx8"]
+[ext_resource type="Texture2D" uid="uid://pooo8qf5qtf3" path="res://contents/ui/icons/ingredients/cheese.png" id="1_eefen"]
+[ext_resource type="Script" uid="uid://qmnyeh7n8hof" path="res://scripts/ui/burger_state_ui.gd" id="1_elkfo"]
+
+[node name="BurgerStateUI" type="Panel" unique_id=1946865244 node_paths=PackedStringArray("textures_ingredient", "label_more")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2519.0
+offset_bottom = -1222.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_dvtx8")
+script = ExtResource("1_elkfo")
+textures_ingredient = [NodePath("Container/ColorRect7/ColorRect2"), NodePath("Container/ColorRect6/ColorRect2"), NodePath("Container/ColorRect5/ColorRect2"), NodePath("Container/ColorRect4/ColorRect2"), NodePath("Container/ColorRect3/ColorRect2"), NodePath("Container/ColorRect2/ColorRect2"), NodePath("Container/ColorRect/ColorRect2")]
+label_more = NodePath("Container/ColorRect8/MoreLabel")
+style = ExtResource("1_dvtx8")
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=2094816804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="ColorRect8" type="ColorRect" parent="Container" unique_id=1047092220]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="MoreLabel" type="Label" parent="Container/ColorRect8" unique_id=131416473]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = ". . ."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Container" unique_id=1011785699]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect2" type="TextureRect" parent="Container/ColorRect" unique_id=1349136802]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eefen")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect2" type="ColorRect" parent="Container" unique_id=1937292114]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect2" type="TextureRect" parent="Container/ColorRect2" unique_id=2057232339]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eefen")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect3" type="ColorRect" parent="Container" unique_id=239619884]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect2" type="TextureRect" parent="Container/ColorRect3" unique_id=2042282965]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eefen")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect4" type="ColorRect" parent="Container" unique_id=676027770]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect2" type="TextureRect" parent="Container/ColorRect4" unique_id=2144681749]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eefen")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect5" type="ColorRect" parent="Container" unique_id=2136620245]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect2" type="TextureRect" parent="Container/ColorRect5" unique_id=597418735]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eefen")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect6" type="ColorRect" parent="Container" unique_id=380203428]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect2" type="TextureRect" parent="Container/ColorRect6" unique_id=1452251349]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eefen")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect7" type="ColorRect" parent="Container" unique_id=2087151004]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
+
+[node name="ColorRect2" type="TextureRect" parent="Container/ColorRect7" unique_id=1640865483]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eefen")
+expand_mode = 1
+stretch_mode = 5
