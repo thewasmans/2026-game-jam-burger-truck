@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="WavesPresetData" format=3 uid="uid://bg3d07cspgm3k"]
+
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_lfksr"]
+[ext_resource type="Resource" uid="uid://q20hrcix7jti" path="res://data/burgers/burger_10.tres" id="2_42ao5"]
+[ext_resource type="Resource" uid="uid://bhce871haki3c" path="res://data/burgers/burger_12.tres" id="3_rjc8d"]
+[ext_resource type="Resource" uid="uid://5kd2bmstigmj" path="res://data/burgers/burger_13.tres" id="4_xgq5f"]
+[ext_resource type="Resource" uid="uid://bqaj644qt5row" path="res://data/burgers/burger_14.tres" id="5_f75hd"]
+[ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/client_data.gd" id="5_oaich"]
+[ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/waves/wave_preset_data.gd" id="6_41rtv"]
+
+[sub_resource type="Resource" id="Resource_um1dg"]
+script = ExtResource("5_oaich")
+time_spawn = 5.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_4neto"]
+script = ExtResource("5_oaich")
+time_spawn = 10.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_vowoa"]
+script = ExtResource("5_oaich")
+time_spawn = 15.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_br0l8"]
+script = ExtResource("5_oaich")
+time_spawn = 20.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_fmxna"]
+script = ExtResource("5_oaich")
+time_spawn = 25.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_mckyg"]
+script = ExtResource("5_oaich")
+time_spawn = 35.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_5ctec"]
+script = ExtResource("5_oaich")
+time_spawn = 40.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_mtljy"]
+script = ExtResource("5_oaich")
+time_spawn = 45.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_esded"]
+script = ExtResource("5_oaich")
+time_spawn = 50.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_6h8ct"]
+script = ExtResource("5_oaich")
+time_spawn = 55.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[resource]
+script = ExtResource("6_41rtv")
+clients = Array[ExtResource("5_oaich")]([SubResource("Resource_um1dg"), SubResource("Resource_4neto"), SubResource("Resource_vowoa"), SubResource("Resource_br0l8"), SubResource("Resource_fmxna"), SubResource("Resource_mckyg"), SubResource("Resource_5ctec"), SubResource("Resource_mtljy"), SubResource("Resource_esded"), SubResource("Resource_6h8ct")])
+burgers = Array[ExtResource("1_lfksr")]([ExtResource("2_42ao5"), ExtResource("3_rjc8d"), ExtResource("4_xgq5f"), ExtResource("5_f75hd")])

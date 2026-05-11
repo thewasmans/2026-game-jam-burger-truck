@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="GameData" format=3 uid="uid://jn3hhdvcvfx0"]
+
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_oyhkq"]
+[ext_resource type="Resource" uid="uid://bk10a4vqsufll" path="res://data/burgers/burger_1.tres" id="2_nct8p"]
+[ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/burger_3.tres" id="3_ab5lr"]
+[ext_resource type="Resource" uid="uid://qqfwtw1fhufy" path="res://data/burgers/burger_6.tres" id="4_mrqti"]
+[ext_resource type="Resource" uid="uid://qcba3r6d0xe" path="res://data/burgers/burger_2.tres" id="5_fqih3"]
+[ext_resource type="Resource" uid="uid://bqka8eee1t5e2" path="res://data/burgers/burger_4.tres" id="6_prrho"]
+[ext_resource type="Resource" uid="uid://c6bgmod8bpaa8" path="res://data/burgers/burger_5.tres" id="7_rqsla"]
+[ext_resource type="Resource" uid="uid://bkq0nluw4vlem" path="res://data/burgers/burger_8.tres" id="8_urhd5"]
+[ext_resource type="Resource" uid="uid://cuu7aqcr35s2l" path="res://data/burgers/burger_9.tres" id="9_8fic4"]
+[ext_resource type="Resource" uid="uid://q20hrcix7jti" path="res://data/burgers/burger_10.tres" id="10_hyeob"]
+[ext_resource type="Resource" uid="uid://5kd2bmstigmj" path="res://data/burgers/burger_13.tres" id="11_75ueu"]
+[ext_resource type="Resource" uid="uid://bhce871haki3c" path="res://data/burgers/burger_12.tres" id="12_avvtt"]
+[ext_resource type="Resource" uid="uid://bqaj644qt5row" path="res://data/burgers/burger_14.tres" id="13_fyrb5"]
+[ext_resource type="Resource" uid="uid://c6f4tcuwmdhuu" path="res://data/client/client_default.tres" id="14_hkyfw"]
+[ext_resource type="Script" uid="uid://jtqj8ushvihc" path="res://scripts/data/furniture_grid_data.gd" id="15_l25xu"]
+[ext_resource type="Resource" uid="uid://dhpk3pd48dae5" path="res://data/furnitures_grid/furniture_1.tres" id="16_l7hs8"]
+[ext_resource type="Resource" uid="uid://cdo6o2kkvvt50" path="res://data/furnitures_grid/furniture_2a_01.tres" id="17_15xoq"]
+[ext_resource type="Resource" uid="uid://npldh5ww1six" path="res://data/furnitures_grid/furniture_2a_02.tres" id="18_ndhfu"]
+[ext_resource type="Resource" uid="uid://v6bt1y44ci76" path="res://data/furnitures_grid/furniture_2b_01.tres" id="19_r7vpe"]
+[ext_resource type="Resource" uid="uid://cs0edr34kbmrg" path="res://data/furnitures_grid/furniture_2b_02.tres" id="20_b3dxd"]
+[ext_resource type="Resource" uid="uid://bymkrkmnxkvkd" path="res://data/furnitures_grid/furniture_3a_01.tres" id="21_fgp2k"]
+[ext_resource type="Resource" uid="uid://1hasjopw81pd" path="res://data/furnitures_grid/furniture_3a_02.tres" id="22_eclkr"]
+[ext_resource type="Resource" uid="uid://rb3s4pvntjb6" path="res://data/furnitures_grid/furniture_3b_01.tres" id="23_pxgo5"]
+[ext_resource type="Resource" uid="uid://8pnkjr7ywa6w" path="res://data/furnitures_grid/furniture_3b_02.tres" id="24_s2kdm"]
+[ext_resource type="Resource" uid="uid://cch7pl81q0liw" path="res://data/furnitures_grid/furniture_3b_03.tres" id="25_cgjjs"]
+[ext_resource type="Resource" uid="uid://dy5a1l7cf3i0j" path="res://data/furnitures_grid/furniture_3b_04.tres" id="26_5gr56"]
+[ext_resource type="Resource" uid="uid://dhw83oj0admw6" path="res://data/furnitures_grid/furniture_3c_01.tres" id="27_1m6ss"]
+[ext_resource type="Resource" uid="uid://dkd86w2y1atu1" path="res://data/furnitures_grid/furniture_3c_02.tres" id="28_8fve2"]
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="29_gkncp"]
+[ext_resource type="Material" uid="uid://c4m2vuejoho1o" path="res://contents/materials/preview_placement_mat.tres" id="30_5ygih"]
+[ext_resource type="Script" uid="uid://c30h6fapr0wgf" path="res://scripts/data/game_data.gd" id="31_wdp72"]
+[ext_resource type="Script" uid="uid://6v6hhr42hf61" path="res://scripts/data/waves/wave_data.gd" id="32_fgks8"]
+[ext_resource type="Resource" uid="uid://dxtf04yqrprjj" path="res://data/waves/normal_waves/wave_0/wave_0_data.tres" id="33_oyhkq"]
+[ext_resource type="Resource" uid="uid://148t4g3raup6" path="res://data/waves/normal_waves/wave_1/wave_1_data.tres" id="34_nct8p"]
+[ext_resource type="Resource" uid="uid://d1m2xsinkt7np" path="res://data/waves/normal_waves/wave_2/wave_2_data.tres" id="35_ab5lr"]
+[ext_resource type="Resource" uid="uid://dddmdrdyt2eq3" path="res://data/waves/normal_waves/wave_3/wave_3_data.tres" id="36_mrqti"]
+[ext_resource type="Resource" uid="uid://dg6u1w0ffajee" path="res://data/waves/normal_waves/wave_4/wave_4_data.tres" id="37_fqih3"]
+[ext_resource type="Resource" uid="uid://bi6xb4ek6l7ra" path="res://data/waves/normal_waves/wave_5/wave_5_data.tres" id="38_prrho"]
+
+[resource]
+script = ExtResource("31_wdp72")
+burgers_data = Array[ExtResource("1_oyhkq")]([ExtResource("2_nct8p"), ExtResource("3_ab5lr"), ExtResource("4_mrqti"), ExtResource("5_fqih3"), ExtResource("6_prrho"), ExtResource("7_rqsla"), ExtResource("8_urhd5"), ExtResource("9_8fic4"), ExtResource("10_hyeob"), ExtResource("11_75ueu"), ExtResource("12_avvtt"), ExtResource("13_fyrb5")])
+speed_money_increment = 0.0
+furnitures = Array[ExtResource("15_l25xu")]([ExtResource("16_l7hs8"), ExtResource("16_l7hs8"), ExtResource("16_l7hs8"), ExtResource("16_l7hs8"), ExtResource("16_l7hs8"), ExtResource("17_15xoq"), ExtResource("18_ndhfu"), ExtResource("17_15xoq"), ExtResource("18_ndhfu"), ExtResource("17_15xoq"), ExtResource("18_ndhfu"), ExtResource("17_15xoq"), ExtResource("18_ndhfu"), ExtResource("19_r7vpe"), ExtResource("20_b3dxd"), ExtResource("19_r7vpe"), ExtResource("20_b3dxd"), ExtResource("19_r7vpe"), ExtResource("20_b3dxd"), ExtResource("21_fgp2k"), ExtResource("22_eclkr"), ExtResource("23_pxgo5"), ExtResource("24_s2kdm"), ExtResource("25_cgjjs"), ExtResource("26_5gr56"), ExtResource("21_fgp2k"), ExtResource("22_eclkr"), ExtResource("23_pxgo5"), ExtResource("24_s2kdm"), ExtResource("25_cgjjs"), ExtResource("26_5gr56"), ExtResource("27_1m6ss"), ExtResource("28_8fve2")])
+preview_placement_material = ExtResource("30_5ygih")
+waves = Array[ExtResource("32_fgks8")]([ExtResource("33_oyhkq"), ExtResource("34_nct8p"), ExtResource("35_ab5lr"), ExtResource("36_mrqti"), ExtResource("37_fqih3"), ExtResource("38_prrho")])
+default_client = ExtResource("14_hkyfw")
+waiting_next_wave = 20.0
+metadata/_custom_type_script = "uid://c30h6fapr0wgf"
