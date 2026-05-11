@@ -5,8 +5,10 @@
 [ext_resource type="Resource" uid="uid://bqka8eee1t5e2" path="res://data/burgers/burger_4.tres" id="5_0xiiw"]
 [ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/client_data.gd" id="5_pwy66"]
 [ext_resource type="Resource" uid="uid://bhce871haki3c" path="res://data/burgers/burger_12.tres" id="5_y652g"]
+[ext_resource type="Resource" uid="uid://dx3lhntrq36q5" path="res://data/burgers/burger_18_bsocb.tres" id="6_34wso"]
 [ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/waves/wave_preset_data.gd" id="6_q5dmk"]
 [ext_resource type="Resource" uid="uid://bkq0nluw4vlem" path="res://data/burgers/burger_8.tres" id="6_y652g"]
+[ext_resource type="Resource" uid="uid://1h3yl4oydwt1" path="res://data/burgers/burger_19_bstb.tres" id="7_7wktm"]
 
 [sub_resource type="Resource" id="Resource_ioeg7"]
 script = ExtResource("5_pwy66")
@@ -51,4 +53,4 @@ metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
 [resource]
 script = ExtResource("6_q5dmk")
 clients = Array[ExtResource("5_pwy66")]([SubResource("Resource_ioeg7"), SubResource("Resource_63o70"), SubResource("Resource_g52fp"), SubResource("Resource_0b2v7"), SubResource("Resource_xjg5b"), SubResource("Resource_wub2r"), SubResource("Resource_2dmit"), SubResource("Resource_y652g")])
-burgers = Array[ExtResource("1_jytit")]([ExtResource("5_0xiiw"), ExtResource("6_y652g"), ExtResource("5_0xiiw"), ExtResource("6_y652g"), ExtResource("4_semkg"), ExtResource("5_y652g")])
+burgers = Array[ExtResource("1_jytit")]([ExtResource("5_0xiiw"), ExtResource("6_y652g"), ExtResource("4_semkg"), ExtResource("5_y652g"), ExtResource("6_34wso"), ExtResource("7_7wktm")])

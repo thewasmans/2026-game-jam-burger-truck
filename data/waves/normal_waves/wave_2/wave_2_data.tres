@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" uid="uid://6v6hhr42hf61" path="res://scripts/data/waves/wave_data.gd" id="1_gud4i"]
 [ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/waves/wave_preset_data.gd" id="2_m34go"]
-[ext_resource type="Resource" uid="uid://cj3wg4hoy7cfa" path="res://data/waves/wave_2/wave_2a.tres" id="3_sbbkg"]
-[ext_resource type="Resource" uid="uid://doaogkqae053w" path="res://data/waves/wave_2/wave_2b.tres" id="4_qwe5o"]
-[ext_resource type="Resource" uid="uid://dbdejibjrppl0" path="res://data/waves/wave_2/wave_2c.tres" id="5_tmvch"]
+[ext_resource type="Resource" uid="uid://cj3wg4hoy7cfa" path="res://data/waves/normal_waves/wave_2/wave_2a.tres" id="3_sbbkg"]
+[ext_resource type="Resource" uid="uid://doaogkqae053w" path="res://data/waves/normal_waves/wave_2/wave_2b.tres" id="4_qwe5o"]
 
 [resource]
 script = ExtResource("1_gud4i")
-waves_presets = Array[ExtResource("2_m34go")]([ExtResource("3_sbbkg"), ExtResource("4_qwe5o"), ExtResource("5_tmvch")])
+waves_presets = Array[ExtResource("2_m34go")]([ExtResource("3_sbbkg"), ExtResource("4_qwe5o")])
