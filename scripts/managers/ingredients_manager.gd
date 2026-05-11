@@ -188,9 +188,10 @@ func reset_crate_tool():
 		_crate_drag._ingredient = null
 
 func free_current_ingredient():
-	_current_ingredient.instance.queue_free()
-	_current_ingredient.free()
-	_current_ingredient = null
+	if _current_ingredient and _current_ingredient.instance:
+		_current_ingredient.instance.queue_free()
+		_current_ingredient.free()
+		_current_ingredient = null
 	
 func play_vfx_disapear_ingredient():
 	_vfx_ingredient_dismiss.restart()

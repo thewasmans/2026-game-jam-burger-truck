@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cgrt8n5e5c5q8"]
 
 [ext_resource type="PackedScene" uid="uid://ckuxgrtn5s1cd" path="res://contents/prefabs/global/clients_spawner.tscn" id="1_0wfyh"]
+[ext_resource type="Resource" uid="uid://jn3hhdvcvfx0" path="res://data/game_data_normal.tres" id="2_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://dhsoftcr8jh33" path="res://contents/prefabs/kitchen/kitchen.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://djc6xavhxsjd6" path="res://contents/prefabs/ui/game_ui.tscn" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://dpaetc3xgp6qg" path="res://scripts/main.gd" id="4_abcde"]
 [ext_resource type="AudioStream" uid="uid://0wkwierroh84" path="res://contents/audios/plate/plate_sfx.wav" id="5_0ld40"]
 [ext_resource type="AudioStream" uid="uid://dxrvtl8yt33cw" path="res://contents/audios/crate_opening/opening_crate_sfx.wav" id="6_gqmmt"]
-[ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="7_a8y0u"]
 [ext_resource type="AudioStream" uid="uid://b761mvmuudlxc" path="res://contents/audios/chopping/chopping_1_sfx.wav" id="7_yc10j"]
 [ext_resource type="AudioStream" uid="uid://jgqg5ipsguxv" path="res://contents/audios/awesomeness.wav" id="8_jkv2x"]
 [ext_resource type="AudioStream" uid="uid://bgd2dygxqrhwx" path="res://contents/audios/trash/trash_1_sfx.wav" id="8_jscy8"]
@@ -79,7 +79,7 @@ kitchen = NodePath("Level/Kitchen")
 game_ui = NodePath("GameUI")
 spawner = NodePath("Level/HungryClientSpawner")
 grid = NodePath("Level/Grid")
-game_data = ExtResource("7_a8y0u")
+game_data = ExtResource("2_2wyq8")
 board_ui = NodePath("Level/Board")
 sounds = Dictionary[String, AudioStream]({
 "main-music": ExtResource("8_jkv2x"),

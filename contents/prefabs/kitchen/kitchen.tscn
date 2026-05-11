@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dhsoftcr8jh33"]
 
 [ext_resource type="Script" uid="uid://c48dl325ub3ad" path="res://scripts/kitchen.gd" id="1_frebv"]
-[ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data.tres" id="2_gr4wk"]
+[ext_resource type="Resource" uid="uid://ddk3mrn06dwtw" path="res://data/game_data_hard.tres" id="2_gr4wk"]
 [ext_resource type="PackedScene" uid="uid://e7ki1w7purcq" path="res://contents/prefabs/kitchen/kitchen_walls.tscn" id="2_sfdcp"]
 [ext_resource type="PackedScene" uid="uid://dsiuf3qjsxop8" path="res://contents/vfx/steak_cooking/smoke_overcooking_vfx.tscn" id="5_jsw62"]
 [ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="5_u40xe"]

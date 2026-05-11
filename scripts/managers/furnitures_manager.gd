@@ -7,6 +7,7 @@ var _tile_position: Vector2
 var _furnitures: Array[FurnitureGridData]
 var _game_data: GameData
 var _current_furniture_placed: Array
+var enable: bool
 
 func initialize(grid: GridSystem, game_data: GameData):
 	_current_furniture = null
@@ -16,6 +17,7 @@ func initialize(grid: GridSystem, game_data: GameData):
 	_game_data = game_data
 	
 func _process(_delta: float) -> void:
+	if not enable : return
 	if _current_furniture_instance:
 		var space_state = get_world_3d().direct_space_state
 		var mouse_pos = get_viewport().get_mouse_position()
@@ -50,6 +52,7 @@ func _process(_delta: float) -> void:
 					_current_furniture_instance.global_position = tile_3D.global_position
 					
 func _unhandled_input(event: InputEvent) -> void:
+	if not enable : return
 	if is_instance_valid(_current_furniture_instance):
 		if event is InputEventMouseButton and event.pressed:
 			if event.button_index == MOUSE_BUTTON_LEFT:

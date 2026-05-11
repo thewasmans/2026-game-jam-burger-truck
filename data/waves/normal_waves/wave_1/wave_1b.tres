@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="WavesPresetData" format=3 uid="uid://dluyyjyvk78y1"]
+
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="1_0je1w"]
+[ext_resource type="Resource" uid="uid://b5ob2sghqwfhx" path="res://data/burgers/burger_3.tres" id="2_0je1w"]
+[ext_resource type="Resource" uid="uid://lx7631y08gpp" path="res://data/burgers/burger_17_bsob.tres" id="4_xvjj4"]
+[ext_resource type="Resource" uid="uid://qqfwtw1fhufy" path="res://data/burgers/burger_6.tres" id="4_xybed"]
+[ext_resource type="Resource" uid="uid://cxfs43b3uihb3" path="res://data/burgers/burger_16_bstb.tres" id="5_l7gjl"]
+[ext_resource type="Script" uid="uid://bqyc8nhpoao6k" path="res://scripts/data/client_data.gd" id="5_megyj"]
+[ext_resource type="Script" uid="uid://bpyuywo6ot7hn" path="res://scripts/data/waves/wave_preset_data.gd" id="6_s8r5n"]
+
+[sub_resource type="Resource" id="Resource_el8an"]
+script = ExtResource("5_megyj")
+time_spawn = 5.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_tbxor"]
+script = ExtResource("5_megyj")
+time_spawn = 7.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_2el3i"]
+script = ExtResource("5_megyj")
+time_spawn = 19.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_md5ak"]
+script = ExtResource("5_megyj")
+time_spawn = 21.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[sub_resource type="Resource" id="Resource_jl4u5"]
+script = ExtResource("5_megyj")
+time_spawn = 33.0
+metadata/_custom_type_script = "uid://bqyc8nhpoao6k"
+
+[resource]
+script = ExtResource("6_s8r5n")
+clients = Array[ExtResource("5_megyj")]([SubResource("Resource_el8an"), SubResource("Resource_tbxor"), SubResource("Resource_2el3i"), SubResource("Resource_md5ak"), SubResource("Resource_jl4u5")])
+burgers = Array[ExtResource("1_0je1w")]([ExtResource("2_0je1w"), ExtResource("4_xybed"), ExtResource("4_xvjj4"), ExtResource("5_l7gjl")])

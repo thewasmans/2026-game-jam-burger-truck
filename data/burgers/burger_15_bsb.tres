@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BurgerData" format=3 uid="uid://cewky86h77660"]
+
+[ext_resource type="Texture2D" uid="uid://5wcdrrjoeykk" path="res://contents/ui/icons/burgers/burger_15.png" id="1_ckfea"]
+[ext_resource type="Script" uid="uid://btvvuw6kwk0cc" path="res://scripts/data/ingredient_data.gd" id="2_dvbu1"]
+[ext_resource type="Resource" uid="uid://ds12p0l6sb6u3" path="res://data/ingredients/bun_bottom.tres" id="3_7qexx"]
+[ext_resource type="Resource" uid="uid://p3x44aw4ollh" path="res://data/ingredients/cooked_steak.tres" id="4_8ebtk"]
+[ext_resource type="Resource" uid="uid://bglklru7boruo" path="res://data/ingredients/bun_top.tres" id="5_etlk7"]
+[ext_resource type="Script" uid="uid://b250qdutrqhpq" path="res://scripts/data/burger_data.gd" id="6_0qlul"]
+
+[resource]
+script = ExtResource("6_0qlul")
+ingredients = Array[ExtResource("2_dvbu1")]([ExtResource("3_7qexx"), ExtResource("4_8ebtk"), ExtResource("5_etlk7")])
+image = ExtResource("1_ckfea")
+name = "Plain Burger"
+price = 6
+metadata/_custom_type_script = "uid://b250qdutrqhpq"
