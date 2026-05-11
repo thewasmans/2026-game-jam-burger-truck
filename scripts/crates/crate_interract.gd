@@ -3,6 +3,8 @@ extends Area3D
 
 signal crate_selected()
 signal crate_pressed()
+signal crate_mouse_over()
+signal crate_mouse_exit()
 
 @export var node_hover_feedback:Node3D
 @export var speed_animation:float = .35 
@@ -16,9 +18,11 @@ func _ready() -> void:
 
 func _on_area_3d_mouse_entered() -> void:
 	create_tween().tween_property(node_hover_feedback, "scale", Vector3.ONE * scale_animation, speed_animation).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	crate_mouse_over.emit()
 
 func _on_area_3d_mouse_exited() -> void:
 	create_tween().tween_property(node_hover_feedback, "scale", Vector3.ONE, speed_animation).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	crate_mouse_exit.emit()
 
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:

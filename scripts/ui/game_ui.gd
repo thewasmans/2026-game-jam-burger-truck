@@ -23,6 +23,7 @@ signal button_start_clicked
 @export var label_remaining: Label
 @export var next_wave_button: Button
 @export var re_roll_button: Button
+@export var burger_state_ui: Control
 var ingredients_buttons:Array[Button]
 var _clients_orders: Dictionary[HungryClient, ClientOrderUI]
 var _button_furniture_selected: Button
@@ -125,3 +126,10 @@ func reset_orders():
 		order.queue_free()
 	_clients_orders = {}
 	label_remaining.visible = false
+	
+func set_enable_current_state_burger(enable: bool, crate_plate: CratePlate = null):
+	burger_state_ui.visible = enable
+	burger_state_ui.position = get_viewport().get_mouse_position()
+	if crate_plate:
+		burger_state_ui.set_ingredients(crate_plate._ingredients)
+	
