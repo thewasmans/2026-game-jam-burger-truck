@@ -62,4 +62,14 @@ func assign_ingredient(ingredient:Ingredient) -> bool:
 func _set_vfx_state(is_active: bool) -> void:
 	for vfx in flames_vfx:
 		if vfx:
-			vfx.visible = is_active
+			var anim: AnimationPlayer = vfx.get_node_or_null("AnimationPlayer")
+			if anim:
+				if is_active:
+					vfx.show()
+					anim.play("toggle_flame_vfx")
+				else:
+					anim.play_backwards("toggle_flame_vfx")
+					if not anim.is_connected("animation_finished", vfx.hide):
+						anim.animation_finished.connect(func(_name): vfx.hide(), CONNECT_ONE_SHOT)
+			else:
+				vfx.visible = is_active

@@ -26,7 +26,7 @@ script = ExtResource("2_q8rnc")
 ui = NodePath("SubViewport/ProgressBar")
 viewport_mesh_ui = NodePath("Model3D/ViewportMeshUI")
 time_coocking = 4.0
-flames_vfx = [NodePath("Model3D/StoveFire"), NodePath("Model3D/StoveFire2"), NodePath("Model3D/StoveFire3")]
+flames_vfx = [NodePath("Model3D/StoveFire1"), NodePath("Model3D/StoveFire2"), NodePath("Model3D/StoveFire3")]
 ingredient_data = Array[ExtResource("2_txfty")]([ExtResource("3_q8rnc")])
 
 [node name="ViewportMeshUI" type="MeshInstance3D" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="0" unique_id=404850065]
@@ -38,16 +38,16 @@ mesh = SubResource("PlaneMesh_ilr34")
 [node name="Anchor" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="2" unique_id=952649832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21135111, 1.1112946, 0.18964559)
 
-[node name="StoveFire" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="3" unique_id=237617368 instance=ExtResource("6_juqj1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22331434, 1, 0.22255182)
+[node name="StoveFire1" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="3" unique_id=237617368 instance=ExtResource("6_juqj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22331434, 0.97293997, 0.22255182)
 visible = false
 
 [node name="StoveFire2" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="4" unique_id=1203615323 instance=ExtResource("6_juqj1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22331434, 1, -0.24851954)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22331434, 0.97293997, -0.24851954)
 visible = false
 
 [node name="StoveFire3" parent="Model3D" parent_id_path=PackedInt32Array(321177252) index="5" unique_id=1549710102 instance=ExtResource("6_juqj1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24286047, 1, -0.24851954)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24286047, 0.97293997, -0.24851954)
 visible = false
 
 [node name="SubViewport" type="SubViewport" parent="." index="2" unique_id=1609680147]
@@ -63,5 +63,3 @@ theme = ExtResource("7_juqj1")
 max_value = 1.0
 show_percentage = false
 script = ExtResource("8_lei3o")
-
-[editable path="Model3D/StoveFire"]
